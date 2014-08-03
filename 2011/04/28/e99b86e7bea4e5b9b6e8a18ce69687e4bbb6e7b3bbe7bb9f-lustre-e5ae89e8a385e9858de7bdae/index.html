@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>集群并行文件系统 lustre 安装配置 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="自:http://www.goc.ac.cn/liuag/html/gnulinux_lustre_deployment.html一 引言Lustre是一个开源的、基于对象存储技术的集群并行文件系统，它具有很高的可扩展性、可用性、性能、易用性等，在高性能计算系统中被广泛使用。它主要包括三个部分：元数据服务器MDS (Metadata Server)、对象存">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集群并行文件系统 lustre 安装配置">
+<meta property="og:url" content="http://yoursite.com/2011/04/28/e99b86e7bea4e5b9b6e8a18ce69687e4bbb6e7b3bbe7bb9f-lustre-e5ae89e8a385e9858de7bdae/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="自:http://www.goc.ac.cn/liuag/html/gnulinux_lustre_deployment.html一 引言Lustre是一个开源的、基于对象存储技术的集群并行文件系统，它具有很高的可扩展性、可用性、性能、易用性等，在高性能计算系统中被广泛使用。它主要包括三个部分：元数据服务器MDS (Metadata Server)、对象存">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="集群并行文件系统 lustre 安装配置">
+<meta name="twitter:description" content="自:http://www.goc.ac.cn/liuag/html/gnulinux_lustre_deployment.html一 引言Lustre是一个开源的、基于对象存储技术的集群并行文件系统，它具有很高的可扩展性、可用性、性能、易用性等，在高性能计算系统中被广泛使用。它主要包括三个部分：元数据服务器MDS (Metadata Server)、对象存">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main"><article id="post-e99b86e7bea4e5b9b6e8a18ce69687e4bbb6e7b3bbe7bb9f-lustre-e5ae89e8a385e9858de7bdae" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/04/28/e99b86e7bea4e5b9b6e8a18ce69687e4bbb6e7b3bbe7bb9f-lustre-e5ae89e8a385e9858de7bdae/" class="article-date">
+  <time datetime="2011-04-28T10:20:51.000Z" itemprop="datePublished">Apr 28 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      集群并行文件系统 lustre 安装配置
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+		<a data-url="http://yoursite.com/2011/04/28/e99b86e7bea4e5b9b6e8a18ce69687e4bbb6e7b3bbe7bb9f-lustre-e5ae89e8a385e9858de7bdae/" data-title="集群并行文件系统 lustre 安装配置" data-id="p6pi1aynwpps4lxn" class="article-share-link">Share</a>
+	  
+      
+        <a href="http://yoursite.com/2011/04/28/e99b86e7bea4e5b9b6e8a18ce69687e4bbb6e7b3bbe7bb9f-lustre-e5ae89e8a385e9858de7bdae/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lustre/">lustre</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">Contents</strong>
+			
+			</div>
+		
+		<!-- 文章目录结束 -->
+		
+        <table style="line-height: normal; table-layout: fixed"><tbody>     <tr>       <td style="filter: none; line-height: 18px; zoom: 1 !important; font-family: ; word-wrap: break-word; visibility: visible !important; word-break: break-all">         <div style="position: relative !important; filter: none; line-height: 20px; overflow-x: hidden; overflow-y: hidden; zoom: 1 !important; font-family: ; word-wrap: break-word; visibility: visible !important; color: ; word-break: normal" id="blog_text" class="cnt"><font face="Georgia"><font style="font-size: 9.8pt" color="#555555">自:<a href="http://www.goc.ac.cn/liuag/html/gnulinux_lustre_deployment.html" target="_blank" rel="external">http://www.goc.ac.cn/liuag/html/gnulinux_lustre_deployment.html</a><br>一 引言<br>Lustre是一个开源的、基于对象存储技术的集群并行文件系统，它具有很高的可扩展性、可用性、性能、易用性等，在高性能计算系统中被广泛使用。它主要包括三个部分：元数据服务器MDS (Metadata Server)、对象存储服务器OSS (Object Storage Server)和客户端Client。中科院高能所的BESIII 实验将使用网格计算技术(Grid Computing) 进行物理计算和分析，为此高能所计算中心正在基于gLite网格中间件搭建一个网格实验平台BES-GRID。传统的网络文件系统NFS在性能和可靠性等方面都存在问题，因此我们决定使用Lustre来替代NFS为网格环境提供共享存储空间。<br>下面我们在BES-GRID环境下进行Lustre部署。如果在其他计算环境下安装，请根据实际情况作相应改动。<br><br>二 总体规划<br></font></font><br><br><font face="Georgia"><font color="#555555"><font style="font-size: 9.8pt">BES-GRID</font><font style="font-size: 9.8pt">共有<span style="line-height: normal">8</span>台联想万全服务器<span style="line-height: normal">(</span>双<span style="line-height: normal">CPU)</span>组成，安装的<span style="line-height: normal">gLite</span>服务如下：</font></font></font><br>            <div align="center">             <table style="line-height: normal; border-collapse: collapse" border="0" cellspacing="0" cellpadding="0" width="408" align="center"><colgroup><col style="width: 97pt" width="129"><col style="width: 132pt; mso-width-source: userset; mso-width-alt: 5632" width="176"><col style="width: 79pt; mso-width-source: userset; mso-width-alt: 3360" width="105"></colgroup><tbody>                 <tr style="height: 18pt; mso-height-source: userset" height="24">                   <td style="border-bottom: windowtext 0.5pt solid; border-left: windowtext 0.5pt solid; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: windowtext 0.5pt solid; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" height="24" width="129">Hostname</td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: windowtext 0.5pt solid; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" width="166"><font style="font-size: 11pt">gLite Service</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: windowtext 0.5pt solid; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" width="111"><font style="font-size: 11pt">备注</font></td>                 </tr>                  <tr style="height: 18pt; mso-height-source: userset" height="24">                   <td style="border-bottom: windowtext 0.5pt solid; border-left: windowtext 0.5pt solid; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" height="24" width="129"><font style="font-size: 11pt">bg001.ihep.ac.cn</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" width="166"><font style="font-size: 11pt">CE</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: top; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl66" width="111"><font style="font-size: 11pt"> </font></td>                 </tr>                  <tr style="height: 18pt; mso-height-source: userset" height="24">                   <td style="border-bottom: windowtext 0.5pt solid; border-left: windowtext 0.5pt solid; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" height="24" width="129"><font style="font-size: 11pt">bg002.ihep.ac.cn</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" width="166"><font style="font-size: 11pt">SE</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: top; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl66" width="111"><font style="font-size: 11pt"> </font></td>                 </tr>                  <tr style="height: 18pt; mso-height-source: userset" height="24">                   <td style="border-bottom: windowtext 0.5pt solid; border-left: windowtext 0.5pt solid; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" height="24" width="129"><font style="font-size: 11pt">bg003.ihep.ac.cn</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" width="166"><font style="font-size: 11pt">RB</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: top; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl66" width="111"><font style="font-size: 11pt"> </font></td>                 </tr>                  <tr style="height: 18pt; mso-height-source: userset" height="24">                   <td style="border-bottom: windowtext 0.5pt solid; border-left: windowtext 0.5pt solid; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" height="24" width="129"><font style="font-size: 11pt">bg004.ihep.ac.cn</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" width="166"><font style="font-size: 11pt">GridICE</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" width="111"><font style="font-size: 11pt">Ganglia Server</font></td>                 </tr>                  <tr style="height: 18pt; mso-height-source: userset" height="24">                   <td style="border-bottom: windowtext 0.5pt solid; border-left: windowtext 0.5pt solid; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" height="24" width="129"><font style="font-size: 11pt">bg005.ihep.ac.cn</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" width="166"><font style="font-size: 11pt">BDII + WN</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" width="111"><font style="font-size: 11pt">Ganglia Client</font></td>                 </tr>                  <tr style="height: 18pt; mso-height-source: userset" height="24">                   <td style="border-bottom: windowtext 0.5pt solid; border-left: windowtext 0.5pt solid; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" height="24" width="129"><font style="font-size: 11pt">bg006.ihep.ac.cn</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" width="166"><font style="font-size: 11pt">AMGA + MyProxy +WN</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" width="111"><font style="font-size: 11pt">Ganglia Client</font></td>                 </tr>                  <tr style="height: 18pt; mso-height-source: userset" height="24">                   <td style="border-bottom: windowtext 0.5pt solid; border-left: windowtext 0.5pt solid; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" height="24" width="129"><font style="font-size: 11pt">bg007.ihep.ac.cn</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" width="166"><font style="font-size: 11pt">UI + LFC</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: top; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl66" width="111"><font style="font-size: 11pt"> </font></td>                 </tr>                  <tr style="height: 18pt; mso-height-source: userset" height="24">                   <td style="border-bottom: windowtext 0.5pt solid; border-left: windowtext 0.5pt solid; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" height="24" width="129"><font style="font-size: 11pt">bg008.ihep.ac.cn</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" width="166"><font style="font-size: 11pt">R-GMA + WN</font></td>                    <td style="border-bottom: windowtext 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: medium none; border-right: windowtext 0.5pt solid; padding-top: 1px" class="xl65" width="111">                     <div></div>                      <div></div> Ganglia Client</td>                 </tr>               </tbody></table>           </div>            <div align="center">·</div><br><br><font face="Georgia"><font color="#555555"><span style="line-height: 6px"><font style="font-size: 9.8pt"></font></span></font></font>&#160;<br><br><font face="Georgia"><font color="#555555"><span style="line-height: 6px"><font style="font-size: 9.8pt">SE</font></span><span style="line-height: 6px"><font style="font-size: 9.8pt">使用<span style="line-height: normal">bg001 ~ bg004</span>的<span style="line-height: normal"><span class="Apple-converted-space">&#160;</span>/data</span>盘组织存储空间，<span style="line-height: normal">bg005 ~ bg008</span>的剩余磁盘空间由<span style="line-height: normal">Lustre</span>分配使用。<span style="line-height: normal">Lustre</span>组件分布如下：</font></span></font></font><br>            <div align="center">             <table style="line-height: normal; border-collapse: collapse" border="0" cellspacing="0" cellpadding="0" width="507" align="center"><colgroup><col style="width: 106pt" span="span" width="141"></colgroup><tbody>                 <tr style="height: 20.25pt; mso-height-source: userset" height="27">                   <td style="border-bottom: black 0.5pt solid; border-left: black 0.5pt solid; padding-left: 1px; padding-right: 1px; vertical-align: middle; border-top: black 0.5pt solid; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" height="27" width="98">Hostname</td>                    <td style="border-bottom: black 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: black 0.5pt solid; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" width="137"><font style="font-size: 9pt">Components</font></td>                    <td style="border-bottom: black 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: black 0.5pt solid; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" width="117"><font style="font-size: 9pt">Device</font></td>                    <td style="border-bottom: black 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: black 0.5pt solid; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" width="153"><font style="font-size: 9pt">Space</font></td>                 </tr>                  <tr style="height: 20.25pt; mso-height-source: userset" height="27">                   <td style="border-bottom: black 0.5pt solid; border-left: black 0.5pt solid; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" height="27" width="98"><font style="font-size: 9pt">bg005.ihep.ac.cn</font></td>                    <td style="border-bottom: black 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" width="137"><font style="font-size: 9pt">OST1 + MDS + CLIENT</font></td>                    <td style="border-bottom: black 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" width="117"><font style="font-size: 9pt">/dev/sda4, /dev/sda3</font></td>                    <td style="border-bottom: black 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" width="153"><font style="font-size: 9pt">10GB + 25GB</font></td>                 </tr>                  <tr style="height: 20.25pt; mso-height-source: userset" height="27">                   <td style="border-bottom: black 0.5pt solid; border-left: black 0.5pt solid; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" height="27" width="98"><font style="font-size: 9pt">bg006.ihep.ac.cn</font></td>                    <td style="border-bottom: black 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" width="137"><font style="font-size: 9pt">OST2 + CLIENT</font></td>                    <td style="border-bottom: black 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" width="117"><font style="font-size: 9pt">/dev/sda3</font></td>                    <td style="border-bottom: black 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" width="153"><font style="font-size: 9pt">35GB</font></td>                 </tr>                  <tr style="height: 20.25pt; mso-height-source: userset" height="27">                   <td style="border-bottom: black 0.5pt solid; border-left: black 0.5pt solid; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" height="27" width="98"><font style="font-size: 9pt">bg007.ihep.ac.cn</font></td>                    <td style="border-bottom: black 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" width="137"><font style="font-size: 9pt">OST3+ CLIENT</font></td>                    <td style="border-bottom: black 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" width="117"><font style="font-size: 9pt">/dev/sda3</font></td>                    <td style="border-bottom: black 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" width="153"><font style="font-size: 9pt">35GB</font></td>                 </tr>                  <tr style="height: 20.25pt; mso-height-source: userset" height="27">                   <td style="border-bottom: black 0.5pt solid; border-left: black 0.5pt solid; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" height="27" width="98"><font style="font-size: 9pt">bg008.ihep.ac.cn</font></td>                    <td style="border-bottom: black 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" width="137"><font style="font-size: 9pt">OST4 + CLIENT</font></td>                    <td style="border-bottom: black 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" width="117"><font style="font-size: 9pt">/dev/sda3</font></td>                    <td style="border-bottom: black 0.5pt solid; border-left: medium none; padding-left: 1px; padding-right: 1px; zoom: 1 !important; word-wrap: break-word; vertical-align: middle; border-top: medium none; border-right: black 0.5pt solid; padding-top: 1px" class="xl65" width="153"><font style="font-size: 9pt">35GB</font> </td>                 </tr>               </tbody></table>           </div><br><br><font face="Georgia"><font style="font-size: 9.8pt" color="#555555">三 lustre安装<br>(1)&#160;&#160;&#160; 安装说明<br>Lustre版本为 1.4.7.1, 使用pre-patched内核 (smp-2.4.21-40.EL)，使用RPM安装，32位服务器，LINUX2.4内核。<br>(2)&#160;&#160;&#160; 软件下载<br>Lustre是开源的，从<a href="http://www.clusterfs.com/download.html" target="_blank" rel="external">http://www.clusterfs.com/download.html</a> 下载RPM包。你也可以下载源码进行编译安装，但是比较麻烦，推荐从RPM包进行安装。必需的RPM包括：<br>kernel-smp-2.4.21-40.EL_lustre.1.4.7.i686.rpm<br>lustre-1.4.7-2.4.21_40.EL_lustre.1.4.7smp.i686.rpm<br>lustre-modules-1.4.7-2.4.21_40.EL_lustre.1.4.7smp.i686.rpm<br>(3)&#160;&#160;&#160; 磁盘空间分配<br>Lustre可以使用文件系统和真实磁盘，考虑到性能，我们这里使用真实磁盘，将系统某些磁盘设备或分区分配给Lustre使用。这些设备和分区不能再进行mount操作，否则Lustre会出现错误。按照上面的规划将相应磁盘或分区进行处理，LINUX下可以使用FDISK工具，并在/etc/fstab中删去对应项。<br>(4)&#160;&#160;&#160; 软件安装<br>(a)&#160;&#160;&#160; 安装 pre-patched kernel RPM<br>rpm –ivh kernel-smp-2.4.21-40.EL_lustre.1.4.7.i686.rpm<span class="Apple-converted-space">&#160;</span><br>(b)&#160;&#160;&#160; 配置lilo.conf 或 grub.conf以启动新内核， 重启机器<br>(c)&#160;&#160;&#160; 安装Lustre内核模块和工具集<br>rpm –ivh lustre-modules-1.4.7-2.4.21_40.EL_lustre.1.4.7smp.i686.rpm<br>rpm –ivh lustre-1.4.7-2.4.21_40.EL_lustre.1.4.7smp.i686.rpm<br>(5)&#160;&#160;&#160; 配置<span class="Apple-converted-space">&#160;</span><br>(a)&#160;&#160;&#160; 编写配置Shell脚本 config.sh (可以在任何一个Lustre结点上进行)<br>#!/bin/sh<br># config.sh<br># Create nodes<br>rm -f config.xml<br>lmc -m config.xml —add net —node node-mds —nid node-mds —nettype tcp<br>lmc -m config.xml —add net —node node-ost1 —nid node-ost1 —nettype tcp<br>lmc -m config.xml —add net —node node-ost2 —nid node-ost2 —nettype tcp<br>lmc -m config.xml —add net —node node-ost3 —nid node-ost3 —nettype tcp<br>lmc -m config.xml —add net —node node-ost4 —nid node-ost4 —nettype tcp<br>lmc -m config.xml —add net —node client&#160;&#160;&#160; —nid ‘*’&#160;&#160;&#160;&#160;&#160;&#160; —nettype tcp<br># Cofigure MDS<br>lmc -m config.xml —add mds —node node-mds —mds mds-scratch —fstype ext3 —dev /dev/sda3<br># Create LOV<br>lmc -m config.xml —add lov —lov lov-scratch —mds mds-scratch —stripe_sz 1048576 —stripe_cnt 0 —stripe_pattern 0<br># Configures OSTs<br>lmc -m config.xml —add ost —node node-ost1 —lov lov-scratch —ost ost1-scratch —fstype ext3 —dev /dev/sda4<br>lmc -m config.xml —add ost —node node-ost2 —lov lov-scratch —ost ost2-scratch —fstype ext3 —dev /dev/sda3<br>lmc -m config.xml —add ost —node node-ost3 —lov lov-scratch —ost ost3-scratch —fstype ext3 —dev /dev/sda3<br>lmc -m config.xml —add ost —node node-ost4 —lov lov-scratch —ost ost4-scratch —fstype ext3 —dev /dev/sda3<br># Configure client (this is a ‘generic’ client used for all client mounts)<br>lmc -m config.xml —add mtpt —node client —path /scratch —mds mds-scratch —lov lov-scratch<br>(b)&#160;&#160;&#160; 生成XML配置文件 config.xml<br>sh config.sh<br>(c)&#160;&#160;&#160; 分发配置文件<br>Lustre所有结点启动都需要上面生成的config.xml文件，分发方式有多种：NFS、LDAP、AFS等，这些方式适合大规模安装。为了简单起见，我直接使用SCP将配置文件复制到各个结点。<br>(6)&#160;&#160;&#160; 名字定义<br>上面的config.sh中使用了服务器名字，可在DNS中定义或直接在/etc/hosts中定义，所以最好使用DNS定义。使用后者定义时，切记不要将名字映射到127.0.0.1，这会造成客户端无法和Servers通信。我直接在/etc/hosts中定义名字，每个结点上都要定义：<br>xxx.xxx.xxx.xxx node-ost1&#160;&#160;&#160; node-mds<br>xxx.xxx.xxx.xxx node-ost2<br>xxx.xxx.xxx.xxx node-ost3<br>xxx.xxx.xxx.xxx node-ost4<br>(7)&#160;&#160;&#160; 启动<br>按 OSTs -&gt; MDSs -&gt; CLIENTs顺序启动服务：<br># start OSTs， 首次启动需要加 –reformat选项 (格式化，以前数据全部清除)<br>lconf –reformat&#160;&#160; —node node-ost1 config.xml (bg005.ihep.ac.cn上)<br>lconf –reformat&#160;&#160; —node node-ost2 config.xml (bg006.ihep.ac.cn上)<br>lconf –reformat&#160;&#160; —node node-ost3 config.xml (bg007.ihep.ac.cn上)<br>lconf –reformat&#160;&#160; —node node-ost4 config.xml (bg008.ihep.ac.cn上)<br># start MDSs，首次启动需要加 –reformat选项 (格式化，以前数据全部清除)<br>lconf –reformat&#160;&#160; —node node-mds config.xml (bg005.ihep.ac.cn上)<br># start CLIENTs<br>lconf —node client config.xml (bg005.ihep.ac.cn上)<br>lconf —node client config.xml (bg006.ihep.ac.cn上)<br>lconf —node client config.xml (bg007.ihep.ac.cn上)<br>lconf —node client config.xml (bg008.ihep.ac.cn上)<br>另外，还可以使用0Config mount命令方式启动CLIENT：<br>mount –t luster node-mds:/mds-scratch/client&#160;&#160;&#160;&#160; /scratch<br>(8)&#160;&#160;&#160; 测试<br>OST、MDS成功启动，CLIENT成功加载后，可以使用LINUX相关命令检查安装情况，如：<br>[root@bg005 lustre]# df -hT<br>Filesystem&#160;&#160;&#160; Type&#160;&#160;&#160; Size Used Avail Use% Mounted on<br>/dev/sda1&#160;&#160;&#160;&#160; ext3&#160;&#160;&#160;&#160; 29G 3.6G&#160;&#160; 24G 13% /<br>none&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; tmpfs&#160;&#160;&#160; 2.0G&#160;&#160;&#160;&#160; 0 2.0G&#160;&#160; 0% /dev/shm<br>config lustre_lite&#160;&#160;&#160; 128G 1.6G 120G&#160;&#160; 2% /scratch<br>四 在lustre安装测试过程种遇到的问题 总结如下<br>(1)&#160;&#160;&#160; 网卡无法驱动<br>联想的万全服务器，换上Lustre prepatch kernel后网卡无法驱动，在其他机器还没有遇到过这样的问题。从联想的驱动光盘上找到网卡驱动，重新编译、安装后网卡正常启动。<br>(2)&#160;&#160;&#160; 防火墙设置<br>Lustre的MDS、OST、CLIENT之间需要使用端口进行相互通信，因此如果系统启动了Iptables服务，需要为Lustre打开端口 (988， 1021 ~ 1023)。这个问题花费了我好些时间，MDS开始就是无法启动，后来我把Iptables服务停掉后才成功。<br>(3)&#160;&#160;&#160; 启动顺序<br>正常的启动顺序是：OST -&gt; MDS -&gt; CLIENT ，MDS启动时需要与所有的OST尝试连接，如果存在OST没有启动，MDS将一直进行重试。当然不按这个顺序启动也可以，中间可能需要较长的等待时间，但Lustre仍是按照正常顺序启动，所有OST启动后才启动MDS， 最后启动所有的CLIENT。</font></font></div>       </td>     </tr>   </tbody></table>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+    <footer class="article-footer">
+		
+	<a align="left" href="/2011/04/22/e8bdace8bdbde585b3e4ba8ee8bf90e7bbb4e79a84e4b880e4ba9be7bb8fe9aa8c/" id="article-nav-older" class="article-nav-link-wrap">
+	  <div align="left" class="article-nav-title">上一篇 [转载]关于运维的一些经验</div>
+	</a>
+
+
+	<a align="right" href="/2011/05/04/wordpress-e588a9e794a8xml-rpce58699e8bf9ce7a88be697a5e5bf97efbc8ce694afe68c81custom-fields/" id="article-nav-newer" class="article-nav-link-wrap">
+	  <div align="right" class="article-nav-title">下一篇 WordPress 利用XML-RPC写远程日志，支持Custom Fields</div>
+	</a>
+
+
+    </footer>
+	
+  </div>
+</article>
+
+<section id="comments">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="集群并行文件系统 lustre 安装配置" data-title="集群并行文件系统 lustre 安装配置" data-url="http://yoursite.com/2011/04/28/e99b86e7bea4e5b9b6e8a18ce69687e4bbb6e7b3bbe7bb9f-lustre-e5ae89e8a385e9858de7bdae/"></div>
+	<!-- 多说评论框 end -->
+</section>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

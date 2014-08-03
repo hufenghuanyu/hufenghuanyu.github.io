@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/page/34/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-iise697a0e6b395e590afe58aa8e58f91e7949fe6848fe5a496e99499e8afaf0x8ffe2740" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/20/iise697a0e6b395e590afe58aa8e58f91e7949fe6848fe5a496e99499e8afaf0x8ffe2740/" class="article-date">
+  <time datetime="2008-05-20T05:57:00.000Z" itemprop="datePublished">May 20 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/20/iise697a0e6b395e590afe58aa8e58f91e7949fe6848fe5a496e99499e8afaf0x8ffe2740/">IIS无法启动,发生意外错误0x8ffe2740</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><a href="http://blog.csdn.net/itzhiren/archive/2007/01/24/1492334.aspx" target="_blank" rel="external">http://blog.csdn.net/itzhiren/archive/2007/01/24/1492334.aspx</a></p>
+<p>第一次发现这个错误的时候，以为IIS出了什么问题，所以就重装了（这是我经常用的方法,哈哈.革命就彻底一点）。重装之后，发现还是这个问题，一查，才知道，原来是装了一个 数字硬盘录像监控系统 惹的祸，这个软件占用了IIS的80端口，所以出现这个错误。知道了原因，就好解决了，下面</p>
+<p>总结一下：</p>
+<p>原因</p>
+<p>如果系统中存在端口冲突就有可能发生本情况. IIS默认使用80端口进行HTTP通信. 如果除IIS外的应用程序正在运行并且正在相同的IP地址上使用80端口,在您试图使用IIS管理器启动网站时您也可能收到该错误讯息.</p>
+<p>解决方法</p>
+<p>要解决这个问题,您可以进行以下任一项操作:</p>
+<p>&#8226; 在IIS管理器中更改网站绑定端口为除80端口外的其它端口.</p>
+<p>&#8226; 停止正在使用80端口的应用程序,然后从IIS管理器中启动网站.</p>
+<p>更多信息</p>
+<p>您可以使用诸如TCPView或FPort等第三方工具来判断其它正在使用80端口的其它应用程序.</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e8bdace8bdbde38091axure-rp-pro-4e69599e7a88b6-widgetse5b7a5e585b7-e4b88b" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/12/e38090e8bdace8bdbde38091axure-rp-pro-4e69599e7a88b6-widgetse5b7a5e585b7-e4b88b/" class="article-date">
+  <time datetime="2008-05-12T10:54:00.000Z" itemprop="datePublished">May 12 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/12/e38090e8bdace8bdbde38091axure-rp-pro-4e69599e7a88b6-widgetse5b7a5e585b7-e4b88b/">【转载】Axure RP Pro 4教程6 widgets工具-下</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原文地址：<a href="http://www.2tan.net/article.asp?id=17" target="_blank" rel="external">http://www.2tan.net/article.asp?id=17</a></p>
+<p>Axure RP pro 的widgets工具栏，另一个重要的工具组就是flow，流程工具。</p>
+<div align="center"><img src="http://www.2tan.net/attachments/month_0804/v200842122313.gif" alt=""></div>
+
+<p>对于画流程图，是我们经常会遇到的问题。我们和程序工程师沟通，用再多的口水，也无法挑明的事情，画一张简明的流程图，就能很直白的说明关键问题。</p>
+<p>有时候你可能会懊恼，因为程序员的思维犹如计算机，你告诉他为什么没有用，你就告诉他该怎么做，是左是右，是0是1就好了。这个时候，产品经理需要的是理性思维，清晰的思路，如果你不清晰，工程师大多数会跟着你的思路乱做一团。所以多画几个流程，多根据页面需求画清晰的流程，就能解决实际的问题。</p>
+<p>话不多说，本章主要介绍flow里面的工具，因为图形其实很好介绍，简单的英文翻译就好了，所以也顺带说说这些图形在流程里的作用。方式还和以前一样，编号，对号入座，咱们来一个萝卜，一个坑：</p>
+<p>1、rectangle：矩形</p>
+<p>&nbsp;&nbsp;  <strong>作用：</strong>一般用作要执行的处理（process），在程序流程图中做执行框。</p>
+<p>&nbsp;&nbsp;  在axure中如果是画页面框架图，那么也可以指代一个页面。有时候我会把页面和执行命令放在同一个流程中做说明，这个时候将两类不同的矩形做色彩区别，然后做说明就好了。</p>
+<p>2、rounded rectangle：圆角矩形或者扁圆</p>
+<p>&nbsp;&nbsp;  <strong>作用：</strong>表示程序的开始或者结束，在程序流程图中用作为起始框或者结束框。</p>
+<p>3、beveled rectangle：斜角矩形</p>
+<p>&nbsp;&nbsp;  <strong>作用：</strong>斜角矩形我几乎不使用，可以视情况自行定义。或者在其他的流程图中，有特殊含义，暂不知晓，也希望有识之士指点一二。</p>
+<p>4、diamond：菱形</p>
+<p>&nbsp;&nbsp;  <strong>作用：</strong>表示决策或判断（例如：If…Then…Else）,在程序流程图中，用作判别框。</p>
+<p>5、file：文件</p>
+<p>&nbsp;&nbsp;  <strong>作用：</strong>表达为一个文件，可以是生成的文件，或者是调用的文件。如何定义，需要自己根据实际情况做解释。</p>
+<p>6、bracket：括弧</p>
+<p>&nbsp;&nbsp;  <strong>作用：</strong>注释或者说明，也可以做条件叙述。一般流程到一个位置，做一段执行说明，或者特殊行为时，我会用到它。</p>
+<p>7、semicircle：半圆形</p>
+<p>&nbsp;&nbsp;  <strong>作用：</strong>半圆在使用中常作为流程页面跳转、流程跳转的标记。</p>
+<p>8、triangle：三角形</p>
+<p>&nbsp;&nbsp;  <strong>作用：</strong>控制传递，一般和线条结合使用，画数据传递。</p>
+<p>9、trapezoid：梯形</p>
+<p>&nbsp;&nbsp;  <strong>作用：</strong>一般用作手动操作。</p>
+<p>10、ellipse：椭圆形或圆形</p>
+<p>&nbsp;&nbsp;  <strong>作用：</strong>如果画小圆，一般是用来表示按顺序数据的流程。</p>
+<p>&nbsp;&nbsp;  如果是画椭圆形，很多人用作流程的结束。如果是在use case用例图中，椭圆就是一个用例了。</p>
+<p>11、hexagon：六边形</p>
+<p>&nbsp;&nbsp;  <strong>作用：</strong>表示准备之意，大多数人用作流程的起始，类似起始框。</p>
+<p>12、parallelogram：平行四边形</p>
+<p>&nbsp;&nbsp;  <strong>作用：</strong>一般表示数据，或确定的数据处理。或者表示资料输入（Input）。</p>
+<p>13、actor：角色</p>
+<p>&nbsp;&nbsp;  <strong>作用：</strong>来自于use case 用例，模拟流程中执行操作的角色是谁。需要注意的时，角色并非一定是人，有时候是机器自动执行，有时候也可是是模拟一个系统管理。</p>
+<p>14、database：数据</p>
+<p>&nbsp;&nbsp;  <strong>作用：</strong>就是指保存我们网站数据的数据库。</p>
+<p>15、image：图片</p>
+<p>&nbsp;&nbsp;  <strong>作用：</strong>表示一张图片，或者置入一个已经画好的图片、流程或者一个环境。</p>
+<p>基本上，axure讲基本流程图、页面框架图、use case 用例图涉及到的一些关键图形都囊括在flow流程工具中，模糊了流程图的区别，而尽量贴近交互设计时的工作内容。</p>
+<p>流程图无疑只是一个表达的工具，我们在使用的时候应该根据自己的实际情况使用，而不应该死钻牛角尖，非要知道某个图形的通用标准。理解和沟通是第一位的。而对于某些具有标准性含义的图形，大家人所共知，则我们应该遵循共同的准则，这样就能达到表达的目的。</p>
+<p>其实axure里面由于不涉及到具体的程序流程，所以有些标准的图形并没有提供，如不规则图形、侧面双矩形等，大家可以自己google一下或者baidu 一下很容易就知道。大多数情况下，还是自己自定义一下自己的符号标准，就跟prd文档加上名词解释一样，才是解决方法。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e8bdace8bdbde38091axure-rp-pro-4e69599e7a88b7-e6b3a8e9878aannotations" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/12/e38090e8bdace8bdbde38091axure-rp-pro-4e69599e7a88b7-e6b3a8e9878aannotations/" class="article-date">
+  <time datetime="2008-05-12T10:54:00.000Z" itemprop="datePublished">May 12 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/12/e38090e8bdace8bdbde38091axure-rp-pro-4e69599e7a88b7-e6b3a8e9878aannotations/">【转载】Axure RP Pro 4教程7 注释annotations</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <div class="date"><br><br>原文地址：<a href="http://www.2tan.net/article.asp?id=19" target="_blank" rel="external">http://www.2tan.net/article.asp?id=19</a><br><br></div><br><table class="FCK__ShowTableBorders" style="table-layout: fixed"><br>    <tbody><br>        <tr><br>            <td><br>            <div class="cnt"><br>            <div align="center"><img src="http://www.2tan.net/attachments/month_0804/92008416173056.jpg" alt=""></div>
+
+<pre><code>        Axure rp将interaction交互与annotations注释说明功能放在了一个面版上，同时又针对整个页面有一个交互与注释说明。
+
+        交互功能设置的是用户通过不同方式触发页面中元素或者载入页面时，发生的交互动作。而注释说明则用文字详细说明对应元素的细节或页面的说明。由于针对整个页面的说明和交互，与针对页面中某个元素的说明与交互在文档表现和生成的不同，而被分开，但是他们的实际功能是一致的，可以一起来说。
+
+        针对页面和针对页面元素的功能，分别默认处于软件界面的右侧和底侧。如下面两张图片所示：
+
+        <span class="variable">&lt;div align="center"&gt;</span>![](http://www.2tan.net/attachments/month_0804/0200841617337.jpg <span class="string">"在新窗口打开图片"</span>)<span class="variable">&lt;/div&gt;</span>
+
+        <span class="variable">&lt;div align="center"&gt;</span>底部<span class="variable">&lt;/div&gt;</span>
+
+        <span class="variable">&lt;div align="center"&gt;</span>![](http://www.2tan.net/attachments/month_0804/s2008416173346.jpg)<span class="variable">&lt;/div&gt;</span>
+
+        <span class="variable">&lt;div align="center"&gt;</span>右侧<span class="variable">&lt;/div&gt;</span>
+
+        对于交互与注释说明，有必要分开讲述。这一节主要讲述annotations，即注释说明。
+
+        首先，我定义一下对交互与注释说明的解释。
+
+        <span class="keyword">*</span><span class="keyword">*</span>Interaction：<span class="keyword">*</span><span class="keyword">*</span>交互功能，用以设置页面中的交互事件，如页面跳转、面版跳转。从而实现框架图中不同对象的实际功能。在生成html框架页面时，产生相应的对象功能，用以演示操作。
+
+        <span class="keyword">*</span><span class="keyword">*</span>Annotations：<span class="keyword">*</span><span class="keyword">*</span>注释说明，用以对页面或页面中的特定对象进行说明注释。可以根据实际情况分类编写说明内容。比如优先级、功能类型、交互效果、说明等。让程序在开发的时清楚了解该对象或该页面的程序实现详情与细节。
+
+        那么，现在重点来说注释。
+
+        <span class="keyword">*</span><span class="keyword">*</span>1、自定义注释与说明<span class="keyword">*</span><span class="keyword">*</span>
+
+        你也许看到e文会头大，你也许第一次看到annotations面版中specification、status、benefit、effect等一连串的英文单词脑袋发晕，那么我告诉你，你完全不用在意这些单词和选项的意义，因为也许它们根本就不适合你，而你可以自定义一套自己的说明选项。
+
+        我之所以说你不必去理解，出于两个理由，一是因为这些定义，是axure根据一些欧美公司文档中常见的字段归纳出来的，他不适合我们的国情和我们自己公司的实际情况，二则是一个文档中该向你的程序员、设计师表达什么，并没有一个完全的框架。你尽可以根据你要说明的事情，以及你们往常的沟通方式来定义。那么现在看看，我们怎么来定义吧。
+
+        如果是定义右侧的对象注释，选择 annotations &amp;amp; interactions &amp;gt; customize fields and viwe
+
+        如果是定义底部的页面注释，选择 page notes &amp;ndash; default &amp;gt; manage notes
+
+        就弹出了自定义窗口，由于功能类似，所以我只选择复杂的右侧的对象注释来说明
+
+        <span class="variable">&lt;div align="center"&gt;</span>![](http://www.2tan.net/attachments/month_0804/w2008416174131.jpg <span class="string">"在新窗口打开图片"</span>)<span class="variable">&lt;/div&gt;</span>
+
+        <span class="keyword">*</span><span class="keyword">*</span>如图所示，我们看到了两个区域：<span class="keyword">*</span><span class="keyword">*</span>
+
+        <span class="keyword">*</span><span class="keyword">*</span>区域一：<span class="keyword">*</span><span class="keyword">*</span>Fields：这是管理系统所有的说明字段的，这里定义了针对对象你要说明它的哪些属性，这些属性，用什么类型type的文字进行表述。
+
+        <span class="keyword">*</span><span class="keyword">*</span>A)新增字段<span class="keyword">*</span><span class="keyword">*</span>
+
+        <span class="variable">&lt;div align="center"&gt;</span>![](http://www.2tan.net/attachments/month_0804/42008416174453.jpg <span class="string">"在新窗口打开图片"</span>)<span class="variable">&lt;/div&gt;</span>
+
+        先在前面的下拉选择框中定义该字段的type类型，有四种类型：
+
+        <span class="keyword">*</span><span class="keyword">*</span>Text：<span class="keyword">*</span><span class="keyword">*</span>文本文字。说明字段中用大段的文字进行说明。
+
+        <span class="keyword">*</span><span class="keyword">*</span>Number：<span class="keyword">*</span><span class="keyword">*</span>数字。说明字段中只包含数字说明。
+
+        <span class="keyword">*</span><span class="keyword">*</span>Date：<span class="keyword">*</span><span class="keyword">*</span>日期。说明字段只有日期
+
+        <span class="keyword">*</span><span class="keyword">*</span>Selectlist：<span class="keyword">*</span><span class="keyword">*</span>选择列表。通过设置特定的选择条件，以供选择。
+
+        然后在后面的填空框中输入字段的名称，比如我想设置一个对页面中对象的开发优先级的说明字段，那么我就可以给这个字段命名为&amp;ldquo;优先级&amp;rdquo;。然后点击add按钮，你所设置的说明字段就被添加到下面的字段列表了。
+
+        <span class="keyword">*</span><span class="keyword">*</span>B)管理字段<span class="keyword">*</span><span class="keyword">*</span>
+
+        管理字段，首选必须选中你要管理的字段。
+
+        <span class="variable">&lt;div align="center"&gt;</span>![](http://www.2tan.net/attachments/month_0804/c200841617463.jpg <span class="string">"在新窗口打开图片"</span>)<span class="variable">&lt;/div&gt;</span>
+
+        然后可以通过选择右侧的功能按钮，对字段进行管理：
+
+        <span class="keyword">*</span><span class="keyword">*</span>[b]Remove：<span class="keyword">*</span><span class="keyword">*</span>[/b]删除此字段。
+
+        <span class="keyword">*</span><span class="keyword">*</span>Rename：<span class="keyword">*</span><span class="keyword">*</span>对字段重命名。
+
+        <span class="keyword">*</span><span class="keyword">*</span>Move up：<span class="keyword">*</span><span class="keyword">*</span>将字段排列顺序上移一格。
+
+        <span class="keyword">*</span><span class="keyword">*</span>Move down：<span class="keyword">*</span><span class="keyword">*</span>将字段排列顺序下移一格。
+
+        <span class="keyword">*</span><span class="keyword">*</span>Edit selectlist：<span class="keyword">*</span><span class="keyword">*</span>编辑选择列表中的项目，该功能只有当你所选择的说明字段的type类型是selectlist时，你才能选择。选择后会弹出编辑窗口，你可以根据自己的需求，填写不同的选择项，Axure定义，每一行为一个选择项。
+
+        <span class="variable">&lt;div align="center"&gt;</span>![](http://www.2tan.net/attachments/month_0804/w2008416174847.jpg)<span class="variable">&lt;/div&gt;</span>
+
+        点ok之后，你就完成了对所选项的管理。
+
+        <span class="keyword">*</span><span class="keyword">*</span>区域二<span class="keyword">*</span><span class="keyword">*</span>Custom views：这里是定义了我们自定义文件的版本。我们可以选择几个常用的说明字段，归纳起来生成一个自定义版本。
+
+        <span class="keyword">*</span><span class="keyword">*</span>A）新增用户自定义说明<span class="keyword">*</span><span class="keyword">*</span>
+
+        <span class="variable">&lt;div align="center"&gt;</span>![](http://www.2tan.net/attachments/month_0804/n2008416175349.jpg <span class="string">"在新窗口打开图片"</span>)<span class="variable">&lt;/div&gt;</span>
+
+        新增说明很简单，只要在输入框中输入一个名称，点选add，就会弹出一个选择框
+
+        <span class="variable">&lt;div align="center"&gt;</span>![](http://www.2tan.net/attachments/month_0804/v2008416175423.jpg <span class="string">"在新窗口打开图片"</span>)<span class="variable">&lt;/div&gt;</span>
+
+        你可以通过add field下拉列表选择你的自定义说明中要包含的说明字段项目，然后点add添加到你的自定义说明中。
+
+        当你都选择完成后，点done，就创建了一个你自己的自定义说明。
+
+        <span class="keyword">*</span><span class="keyword">*</span>B）管理自定义说明<span class="keyword">*</span><span class="keyword">*</span>
+
+        管理自定说明，和管理说明字段一样，在管理前，你必须选中你要管理的自定义说明。
+
+        <span class="keyword">*</span><span class="keyword">*</span>Rename：<span class="keyword">*</span><span class="keyword">*</span>对字段重命名。
+
+        <span class="keyword">*</span><span class="keyword">*</span>Edit：<span class="keyword">*</span><span class="keyword">*</span>重新定义此自定义说明中所包含的fields说明字段。弹出选择框，供你重新选择。
+
+        <span class="keyword">*</span><span class="keyword">*</span>Remove：<span class="keyword">*</span><span class="keyword">*</span>删除此自定义说明。
+
+        最后，当你即完成了对字段的处理，又完成了自定义说明的生成后，点done，你就定义完成了你自己的注释与说明。这个时候，你再选择annotations &amp;amp; interactions，你将会看到你自己的自定义说明：
+
+        <span class="variable">&lt;div align="center"&gt;</span>![](http://www.2tan.net/attachments/month_0804/n2008416175519.jpg)<span class="variable">&lt;/div&gt;</span>
+
+        选择后，右侧的注释与说明的字段就都是你自己的了：
+
+        <span class="variable">&lt;div align="center"&gt;</span>![](http://www.2tan.net/attachments/month_0804/32008416175558.jpg)<span class="variable">&lt;/div&gt;</span>
+
+        <span class="keyword">*</span><span class="keyword">*</span>2、自定义注释与说明的现实意义<span class="keyword">*</span><span class="keyword">*</span>
+
+        那么这些自定义说明到底对于我们有什么现实的意义呢？有的，下面我来说明一下。
+
+        这涉及到axure rp的两个文档生成功能
+
+        <span class="keyword">*</span><span class="keyword">*</span>生成演示文档：<span class="keyword">*</span><span class="keyword">*</span>我们利用axure完成文档的编写后，需要给程序演示，那么我们怎么演示呢？
+
+        请按下f5键，会弹出提示框，按照默认设置确定后，就会生成html演示文件。你就可以拿这些html文件，给程序员、设计师们演示你的文件了。
+
+        而我们自定义的这些说明，在编写好的时候会出现在如图中的位置：
+
+        <span class="variable">&lt;div align="center"&gt;</span>![](http://www.2tan.net/attachments/month_0804/02008416175753.jpg <span class="string">"在新窗口打开图片"</span>)<span class="variable">&lt;/div&gt;</span>
+
+        ![](http://www.2tan.net/attachments/month_0804/e2008416175819.jpg)就是说明面版的激活按钮，点击弹出你的说明文字。这样，用户就可以在不明白的时候在页面中调出说明文字，一一查看了。
+
+        <span class="keyword">*</span><span class="keyword">*</span>生成word文档：<span class="keyword">*</span><span class="keyword">*</span>我们也可以生成word的文档的说明文件，这样的文件甚至可以当作PRD文档使用，而说明则会根据label的标签以及编号，对应生成table说明文档。
+
+        生成word的快捷键是F6，生成specification说明书。
+
+        <span class="variable">&lt;div align="center"&gt;</span>![](http://www.2tan.net/attachments/month_0804/n200841617593.jpg)<span class="variable">&lt;/div&gt;</span>
+
+        综上所述，运用好了annotations，就可以解决好prd文档中最重要的工作，即功能说明。至于设置怎样的注释，完全就靠你自己来掌控了。
+
+        Ps：页面notes更加简单，因为针对页面的说明只能有一段文本，不存在特殊说明字段的编辑。<span class="variable">&lt;/div&gt;</span>
+        <span class="variable">&lt;/td&gt;</span>
+    <span class="variable">&lt;/tr&gt;</span>
+<span class="variable">&lt;/tbody&gt;</span>
+</code></pre><p></p></div></td></tr></tbody></table><p></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e8bdace8bdbde38091axure-rp-pro4e69599e7a88b4efbc9ae6a8a1e69dbfe5a48de794a8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/12/e38090e8bdace8bdbde38091axure-rp-pro4e69599e7a88b4efbc9ae6a8a1e69dbfe5a48de794a8/" class="article-date">
+  <time datetime="2008-05-12T10:53:00.000Z" itemprop="datePublished">May 12 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/12/e38090e8bdace8bdbde38091axure-rp-pro4e69599e7a88b4efbc9ae6a8a1e69dbfe5a48de794a8/">【转载】Axure RP Pro4教程4：模板复用</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <div align="center"><br><br>原文地址：<a href="http://www.2tan.net/article.asp?id=12" target="_blank" rel="external">http://www.2tan.net/article.asp?id=12</a><br><br><img src="http://www.2tan.net/attachments/month_0803/02008318223849.gif" alt=""><br><br></div>
+
+<p>masters和sitemap面板很相似，文档操作也一样，它们的本质区别是，sitemap里的文件是最终展示页面，masters里的文件却只是一个模块，是页面的一个部分。</p>
+<p>masters的英文直译是主人或雇主，但是我认为这里可以叫做模板，或者复用模块。masters的文件，是页面中重复的模块，由于在不同页面中这些模块是一样的，所以拿出来作为一个模块编辑，然后在不同页面中进行调用。</p>
+<p>这个功能类似于网页程序开发中的程序复用，不同页面中调用同一段程序，一般把这段程序单独做成一段页面程序，然后用include命令进行调用。 master的文件就相当于这段被调用的页面程序。dreamweaver也有类似的功能，就是template，可以参照理解。</p>
+<p><strong>一、功能条</strong></p>
+<p>master的功能条功能基本和sitemap一模一样，功能也基本一样。唯一不同的是master可以创建文件夹，可以通过文件夹收纳不同的文件，因此唯一不同的就是第一个功能按钮，功能作用是增加一个文件夹。</p>
+<p><strong>二、右键单击文档&mdash;&mdash;增加</strong></p>
+<div align="center"><img src="http://www.2tan.net/attachments/month_0803/m2008318224521.gif" alt=""></div>
+
+<p>增加功能的功能模块功能除了增加文件夹其他和sitemap相同，大家可以参考教程三中的二大条。</p>
+<p>而masters的文档组织结构主要依靠文件夹完成，页面文件之间不存在父子关系。这是文档操作与组织中与sitemap的最大不同。</p>
+<p><strong>三、右键单击文档&mdash;&mdash;移动</strong></p>
+<div align="center"><img src="http://www.2tan.net/attachments/month_0803/z2008318224933.gif" alt=""></div>
+
+<p>文件移动功能基本上也和sitemap完全相同，但是父子关系的文档移动是文件相对于文件夹完成，而不是相对于文件进行。</p>
+<p>功能，基本上也可以参考教程三的第三点。</p>
+<p><strong>四、右键单击文件&mdash;&mdash;文件身份&ldquo;行为&rdquo;</strong></p>
+<div align="center"><br><br><img src="http://www.2tan.net/attachments/month_0803/3200831822576.gif" alt=""></div>
+
+<p>behavior是行为的意思，这个功能是axure升级到4版本后加入的，是针对master的不同使用情况而添加的一个功能，也是要重点介绍的功能。</p>
+<p>1、normal：普通文件。就是一般的复用文件。是默认创建的复用文件。</p>
+<p>2、place in background：定位的复用模板，这类模板的特点是定位于页面的底层，并且锁定模板中的widgets在他原来创建的位置。这类复用模块主要用于创建head、foot、侧边栏等明确定位的复用模块。</p>
+<p>3、custom widgets behavior：自定义模块。这类模块就类似于自创了一个widgets。</p>
+<p>这类模块与其他类型的复用模块的不同在于，其他模块与复用到页面的模块是完全相同的，模块的功能设置是什么，功能说明是什么，页面中的模块设置和功能说明就是什么。</p>
+<p>而自定义模块与页面中被复用的模块是母子关系。自定义模块只决定了模块的功能和位置，但是进入到特定的页面中，模块中的各自部分的说明和功能可以重新定义。</p>
+<p>充分理解三种不同类型的复用模块的区别，根据不同环境有效的选择，也是非常重要的。</p>
+<p><strong>四、右键单击文件&mdash;&mdash;其他</strong></p>
+<div align="center"><img src="http://www.2tan.net/attachments/month_0803/62008318231447.gif" alt=""></div>
+
+<p>1、2、3功能都是文档文档操作功能，和sitemap一样，分别是删除、重命名和编辑master。</p>
+<p>4、5功能是对应的。前者是将所选模板文件批量运用于页面，后者是将所选模板文件，批量从页面中去除。通过选择此功能，会弹出sitemap文件的树形目录，你可以通过选择需要添加模板的页面，从而完成模板使用或移除。</p>
+<p>check all：选择所有页面</p>
+<p>uncheck all：所有页面都不选择</p>
+<p>check all children：选择所选页面以及其所有子页面</p>
+<p>uncheck all children：不选择所选页面以及其所有字页面</p>
+<p>在4中有特殊的position设置和options命令，</p>
+<p>position中有两个命令</p>
+<p>place in blackground：将文件至于页面背景</p>
+<p>specify location：是特殊定位，可以通过设置距离左侧和上边的距离，来将模板文件放入特定的位置。</p>
+<p>options里的多选框的意思是&ldquo;只有页面中没有此模板时才置入&rdquo;，默认是选择的。如果不选择而置入页面，就会出现如果页面中已经有模板，模板被再次置入的情况。当然如果有特殊需要的模块，就可以这么使用了。</p>
+<p>6、usage report：使用报告，点击后弹出面板，显示所有使用了此复用模板的列表，显示的是文件名称，通过双击文件名，可以在工作区打开，直接编辑。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e8bdace8bdbde38091axure-rp-pro-4e69599e7a88b5efbc9awidgetse5b7a5e585b7-e4b88a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/12/e38090e8bdace8bdbde38091axure-rp-pro-4e69599e7a88b5efbc9awidgetse5b7a5e585b7-e4b88a/" class="article-date">
+  <time datetime="2008-05-12T10:53:00.000Z" itemprop="datePublished">May 12 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/12/e38090e8bdace8bdbde38091axure-rp-pro-4e69599e7a88b5efbc9awidgetse5b7a5e585b7-e4b88a/">【转载】Axure RP Pro 4教程5：widgets工具-上</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原文地址：<a href="http://www.2tan.net/article.asp?id=14" target="_blank" rel="external">http://www.2tan.net/article.asp?id=14</a></p>
+<p>Axure RP的widgets工具栏，就是我们用来画线框图wireframe、流程图flow的工具，也可以说是组成我们最终输出图表的零件。好比我们小时候玩的组装积木，这些工具就是组装积木里的一个个小部件，组成什么？组合得怎样？完全依靠个人的经验和智慧。因此，熟悉每一个工具的用法和用途，才能随心所欲的画出脑海中的图形。</p>
+<p>Widgets工具栏，下分两类工具：</p>
+<p><strong>wireframe线框图工具：</strong>基本上对应着web页面中的各种图形。针对页面中交互行为的表达，Axure RP专门增加了image map region 图像映射区、dynamic panel动态面版、menu（vertical/horizontal）水平/垂直菜单等几个特殊的工具。</p>
+<p><strong>Flow工具：</strong>流程图所需的基本图形框架。</p>
+<p>我们先谈wireframe线框图工具。学习这部分工具，如果事先有html基础，或者对web页面元素有比较充分的理解，就很容易入手。以下我根据图片中的编码，依次讲解。</p>
+<div align="center"><img src="http://www.2tan.net/attachments/month_0803/k2008328154814.gif" alt=""></div>
+
+<p>1、image图片：给wireframe中插入一个图片站位，也可以直接置入真实的图片。</p>
+<p>2、text panel文本：插入文本。相当于插入了一个&lt; text &gt;标签。是不带链接的文本。但是其实也可以带链接，在interactions中我们会提到。</p>
+<p>3、hyperlink超链接：插入带链接的文本。相当于插入了一段带&lt; a &gt;标签的文字。但其实在Axure中它与普通文本除了外型不同，没有本质区别。</p>
+<p>之所以将两类文字区分开来，目的还是为了在视觉表达中让人直观的理解链接文本和普通文本，而这对于设计人员理解也非常重要，因此建议画图时尽量标准的区分链接文本和普通文本。</p>
+<p>4、rectangle矩形：插入一个矩形。可以对其进行图形样式编辑。此图形通畅被用来表达板块的边界。</p>
+<p>5、placeholder占位符：插入一个占位符。占位符通常用来表达在页面中某些特殊区域，比如情况复杂，或者在系统升级中不需要修改，又或者无关紧要的区域等等。作者需要结合说明文字，进行对应的详细表达。</p>
+<p>6、button按钮：插入一个按钮，相当于&lt; button &gt;标签。按钮一般结合表单使用，当然也可以作为强化的提示链接使用。</p>
+<p>7、 teble表格：插入一个表格。Axure的表格使用起来不是很方便，增加行、列，修改行、列宽度都不方便，算是一个败笔。期待在下一个版本的时候能够有更好的进步。与标准化制作网页一样，表格的使用在画wireframe的时候就应该明确其作用，是用来作为数据列表展示使用，而不是作为网页布局的控件。</p>
+<p>8、text field文本输入框：结合表单使用。一般用作表单中提交数据。比如搜索框、用户登录框、注册信息填写框等。用作字段提交或单行数据提交。</p>
+<p>9、text area文本区：结合表单使用。一般用作大段文字编辑、提交。比如文章编辑、留言等板块。</p>
+<p>10、droplist下拉列表框：结合表单使用。一般用作下拉菜单或者下拉列表选项，比如在搜索中，可以通过下拉列表框来定位搜索分类的范围。也有人用它来做友情链接，可以通过下拉选择直接进行页面跳转。</p>
+<p>11、listbox列表选择框：结合表单使用。通过文本框列表选项，通常使用在多项列表选择，比如在填写简历表的时候，选择你所感兴趣的行业，会提供列表选择框。不过列表选择框都会结合按钮使用。</p>
+<p>12、checkbox多项选择：多项选择通常使用在表单中，以提供多项选择。比如在有些有些注册要求用户选择兴趣爱好，会提供十多个选项，因为选项可以并列进行，因此使用的是多项选择。</p>
+<p>13、raido button单项选择：在一组选择中选择适合选项，选项关系非此即彼。比如在填写性别的时候提供男女选择，用户非男即女，只取一项。当然，不排除再多提供一个双性选择，这样就是三选一，但是同样是非此即彼的单一选择。</p>
+<p>14、15、horizontal line水平线、vertical line垂直线：用以分割页面中的不同板块区域。由于web页面中只能存在垂直与水平线，为了系统生成用于演示的html文件，特将两种线条分开使用。</p>
+<p>16、button shape形状按钮：相当于图形按钮，多用于导航，或者多帧切换的版面切换按钮。可进行边角编辑。</p>
+<p>17、 image map region图像映射区：它用于在web页面中制造一片不可见的区域，一般是图片的部分区域，相当于图片的热区，从而添加说明与互动。在现实的网页中经常会有一张大图中有某个区域是触发按钮，而图像映射区就可以用来说明这个区域的的功能和互动内容。</p>
+<p>18、inline frame框架：类似于html中的&lt; iframe &gt;对象。用于在页面中制造页面框架，每个框架中嵌入不同的页面。我们经常看到后台系统分左右两栏，一般都是使用了框架，左侧载入的是导航页面，右侧是载入的管理页面。</p>
+<p>Axure的缺点是，暂时不支持百分比，因此iframe都是按像素度量的，和实际页面效果还是有差距。</p>
+<p>19、 dynamic panel动态面版：是Axure为了表现多帧区域内容而制造的一个工具。它的图标很形象的说明了它的结构。它是不同的state叠加的一个动态区域，默认显示其中一个state，当用户触发按钮、图片或者下拉列表等时，可以设置相应动态面版切换到不同的state。不同state的关系，类似于 photoshop的层，也类似于html中的css属性layer。</p>
+<p>我们可以通过右击dynamic panel进行state编辑，然后通过打开对应state进行编辑，编辑方式和编辑页面相同。</p>
+<p>20、21、menu（vertical/horizontal）水平/垂直菜单：用于制作水平或者垂直的菜单，可以添加漂浮的的子菜单，添加方法很简单，就是选择所要添加的菜单项，添加submenu。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e8bdace8bdbde38091axure-rp-pro4-e69599e7a88b3efbc9ae69687e6a1a3e7aea1e79086" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/12/e38090e8bdace8bdbde38091axure-rp-pro4-e69599e7a88b3efbc9ae69687e6a1a3e7aea1e79086/" class="article-date">
+  <time datetime="2008-05-12T10:52:00.000Z" itemprop="datePublished">May 12 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/12/e38090e8bdace8bdbde38091axure-rp-pro4-e69599e7a88b3efbc9ae69687e6a1a3e7aea1e79086/">【转载】Axure RP Pro4 教程3：文档管理</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <div align="center"><br><br>原文地址：<a href="http://www.2tan.net/article.asp?id=11" target="_blank" rel="external">http://www.2tan.net/article.asp?id=11</a><br><br><img src="http://www.2tan.net/attachments/month_0803/q200831712432.jpg" alt=""><br><br></div>
+
+<p>开章要说的是文档管理。文档管理看似简单，但是这是从操作功能上来说的，而我在说功能上的时候，想把我对文档管理的理解也一并说一下。</p>
+<p>文档管理的目的，其实是为了有一个清晰的产品思路。刚开始工作的时候，我发现很多刚从学校出来的朋友对文档的命名与放置都是随心所欲的，我也不例外。没有好的整理习惯，这直接导致每次寻找先前的文档都要花费相当长的时间，甚至不小心误删，如果恰好有事请假，别的同事也无法接手工作。</p>
+<p>所以，做一个prototype需要首先构建一个清晰的文档关系，这样一方面能够让自己清楚文件关系与位置，更主要的是让开发者与接受者能清晰理解你的思路，生成更合理的产品说明word文档。</p>
+<p>Axure RP的sitemap，与windows的树形目录相似，是以父子关系构建页面关系的，每个页面既可以是一个页面page，也可以是一个流程图flow。</p>
+<p><strong>一、工具功能条</strong></p>
+<div align="center"><img src="http://www.2tan.net/attachments/month_0803/d200831714343.jpg" alt=""></div>
+
+<p>1、增加一个子页面：为所选择的页面创建一个子页面。</p>
+<p>2、页面上移：同等级的页面中，将所选页面的上下排列次序，上移一个位置。</p>
+<p>3、页面下移：同等级的页面中，将所选页面的上下排列次序，下移一个位置。</p>
+<p>4、页面降序：将所选页面等级降序，作为原等级中，排列在所选页面上方之页面的子页面。</p>
+<p>5、页面升序：将所选页面等级升序，将所选页面的页面等级，升序为父页面的同等级页面。</p>
+<p>6、删除页面：将所选页面删除，同时删除其子页面。</p>
+<p>7、编辑页面：在工作区打开所选择页面，进行编辑。</p>
+<p><strong>二、右键&mdash;增加</strong>为鼠标右击文件所显示命令，下同。</p>
+<div align="center"><img src="http://www.2tan.net/attachments/month_0803/k200831715930.gif" alt=""></div>
+
+<p>1、增加一个子页面：同 一，1。（表示和第一大点，第1小点功能相同，以下同此）</p>
+<p>2、在所选页面之上增加一个同等级页面。</p>
+<p>3、在所选页面之下增加一个同等级页面。</p>
+<p><strong>三、右键&mdash;移动</strong></p>
+<div align="center"><img src="http://www.2tan.net/attachments/month_0803/u20083172618.gif" alt=""></div>
+
+<p>1、页面上移：同一，2。</p>
+<p>2、页面下移：同一，3。</p>
+<p>3、页面降序：同一，4。</p>
+<p>4、页面升序：同一，5。</p>
+<p><strong>四、右键&mdash;复制</strong></p>
+<div align="center"><img src="http://www.2tan.net/attachments/month_0803/v200831721426.gif" alt=""></div>
+
+<p>1、复制页面：复制所选页面，作为同级页面显示在所选页面下方。不包含所选页面子页面。</p>
+<p>2、复制分支：复制所选页面以及子页面，作为同级分支显示在所选页面分支下方。</p>
+<p><strong>五、右键&mdash;页面类型</strong></p>
+<div align="center"><img src="http://www.2tan.net/attachments/month_0803/2200831722548.gif" alt=""></div>
+
+<p>1、wireframe：页面类型定为线框图，文件图标显示页面图标。</p>
+<p>2、flow：页面类型定位流程图，文件图标显示流程图标。</p>
+<p><strong>六、右键&mdash;其他</strong></p>
+<div align="center"><img src="http://www.2tan.net/attachments/month_0803/k200831722750.gif" alt=""></div>
+
+<p>1、删除页面：同一、6。</p>
+<p>2、重命名页面：为所选页面重命名。</p>
+<p>3、编辑页面：同一、7。</p>
+<p>4、生成流程表：将所选页面以及其子页面关系，生成流程图。生产图有两种页面布局方式可选。</p>
+<p>&nbsp;&nbsp;  标准模式，页面按照父子关系从上自下排列；阶梯模式，页面按照父子关系从左上至右下，以阶梯方式进行排列。</p>
+<p>5、复制页面链接到剪切板。</p>
+<p>以上就是sitemap所有命令，其实这些命令都很简单，也很容易理解，关键在于怎么去使用。</p>
+<p>由于页面有两种类型，wireframe与flow，所以要善于用这两种标记页面，从而让人理解你的意图。我总结大致这两种标记可以如下利用。</p>
+<p>flow图为父页面，wireframe图为子页面：先画流程图，然后根据流程图构建页面关系。这样在流程图的指引下结构页面关系，可以更清晰的理解页面框架。</p>
+<p>wireframe为父页面，flow为子页面：为页面线框图中的特殊部分做流程解释。可以对页面的细节部分进行详尽的解释。</p>
+<p>当然，这两种结构方式要活学活用，在复杂的产品页面结构中，他们完全是你中有我，我中有你的。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e8bdace8bdbde38091axure-rp-pro-4e69599e7a88b2efbc9ae7958ce99da2e4b88ee58a9fe883bd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/12/e38090e8bdace8bdbde38091axure-rp-pro-4e69599e7a88b2efbc9ae7958ce99da2e4b88ee58a9fe883bd/" class="article-date">
+  <time datetime="2008-05-12T10:52:00.000Z" itemprop="datePublished">May 12 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/12/e38090e8bdace8bdbde38091axure-rp-pro-4e69599e7a88b2efbc9ae7958ce99da2e4b88ee58a9fe883bd/">【转载】Axure RP Pro 4教程2：界面与功能</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原文地址：<a href="http://www.2tan.net/article.asp?id=10" target="_blank" rel="external">http://www.2tan.net/article.asp?id=10</a></p>
+<p>**一、欢迎界面与功能</p>
+<p>**</p>
+<div align="center"><strong><img src="http://www.2tan.net/images/useimg/001.jpg" alt=""></strong></div>
+
+<p>运行Axure RP后，首先弹出的是欢迎界面，它拥有的功能和其他软件的欢迎界面没有什么特别的不同。</p>
+<p><strong>功能区1：</strong>文档区，这个区域显示用户最近打开的Axure RP文件，用户可以快捷的打开之前编辑的文件。同时也提供快捷按钮，可以创建新文档与打开Axure RP默认文件夹。</p>
+<p><strong>功能区2：</strong>认证区，这个区域显示注册信息。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  已经注册的用户，显示注册者名称，与已经获得认证的图标。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  未注册用户，显示注册链接，引导用户完成注册注册。</p>
+<p><strong>功能区3：</strong>Axure RP学习中心。主要包括在线学习、帮助文档、问题反馈三个环节。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  a、<strong>在线学习</strong>提供了三个链接：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>video tutorial：</strong>点击后进入视频学习中心，可以通过观看相关的flash教程学习Axure RP，不过都是e文解说。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>online community：</strong>进入Axure RP的官方讨论组，在线讨论学习。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Axure blog：</strong>进入Axure的官方论坛，了解最新资讯。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  b、<strong>帮助文档</strong>也提供了两个链接，但是其实起到的是一样的效果，都是打开帮助文档，只是跳往不同的章节罢了。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  c、<strong>问题反馈</strong>，通过点击链接可以发邮件到support@axure.com，以寻求获得帮助。</p>
+<p>在欢迎界面中，Axure还提醒用户，用4.6高版本的软件创建保存的Axure文件，无法用以前的低版本查看。</p>
+<p>同时，如果我们不希望下次打开软件再看到这个面板，我们可以通过选择&ldquo;Don’t show this at startup&rdquo;实现。</p>
+<p><strong>二、软件主界面与功能</strong></p>
+<div align="center"><img src="http://www.2tan.net/images/useimg/002.jpg" alt="" title="在新窗口打开图片"></div>
+
+<p>关闭欢迎界面后，我们进入软件的主界面，淡蓝色调的ui，并不是很张扬。</p>
+<p><strong>功能区1：</strong>命令区，和我们操作的所有office软件一样，包含文件、编辑、查看和帮助，这些功能大抵是差不多的。table也很容易理解，就是对表格编辑的命令。而Axure特有的几个特殊的命令栏目是</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  a、<strong>wireframe：</strong>线框，包含所有画原型线框图的相关命令。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  b、<strong>object：</strong>包含所有对工作区物体的操作命令，操作放入工作区的所有widgets，包括组合、排序、锁定以及脚注命令等。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  c、<strong>generate：</strong>自动生成html演示文件、word说明文档，以及对生成规则进行自行编辑、定义。</p>
+<p><strong>功能区2：</strong>工具栏，基本和office风格一模一样，功能也很容易上手。</p>
+<p><strong>功能区3：</strong>工作区，这就是我们平常操作工具，创建prototype的舞台，将自己的构思在这里释放，将自己的想法在这里展现。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  工作区的上部显示打开的文件名，可同时打开多文档，进行操作。</p>
+<p><strong>功能区4：</strong>站点地图，Axsure RP创建的文件是模拟真实网站页面关系的，sitemap就是通过树形目录关系，管理所有的站点页面文件与流程图文件。科学的文件关系结构，对有效的演示文档与生成易读的说明文档相当重要。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  我的操作习惯是先画流程图，然后根据流程图构建页面文件框架，最后才开始页面的具体设置。期间可以将文件分为LOFI（低保真）与HIFI（高保真）两个部分进行分别展示，有利于不同的需求者使用。</p>
+<p><strong>功能区5：</strong>器具箱，囤积了所有用来画wireframe与流程图的对象。我们可以通过拖拽的方式将小图形放入工作区，进行操作。对于这里面的对象，我们有必要一一详细了解。</p>
+<p><strong>功能区6：</strong>复用模块区，这里创建的页面文件和sitemap的页面相似，唯一不同的是，master的每个文件，可以当作一个整体，被sitemap反复调用。这个功能就相当于程序开发中的程序复用，用好这个功能，可以减少我们很大一部的工作量。也更容易理解网页文件的关系，了解网页设计师、程序员是怎么构建网站的页面的。</p>
+<p><strong>功能区7：</strong>页面笔记，用来对当前创作页面进行注释与说明。同时可以在这里对页面里的关键字段和特殊问题进行详细的描述。</p>
+<p><strong>功能区8：</strong>页面载入时的交互功能。通过在这里设置，不同条件下，页面初次打开时的状况。</p>
+<p><strong>功能区9：</strong>注释与交互区。这个注释和交互和7、8不同，7、8针对的是页面，而9针对的是页面中的元素，也就是一个个widgets。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  功能区的上面部分设置交互条件。通过鼠标点击、滑入、滑出，设置触发的事件，与对应widgets相应的变化。这一部分对没有程序基础的人可能会有一点难度，我稍后会做详细解释。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  功能区的下面部分是注释部分，用户可以对选定的对象进行详细的注释。Axure已经设置了几个默认的注释字段，但是其实这些默认的注释字段，大家完全可以不使用，因为它可能和你要说明的东西风马牛不相及。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  那么该怎么办呢？Axure提供了自主设置字段，只要你自己设置好自己常用的字段，然后按照自己的习惯编写就可以了。比如说你要说明对象的功能、优先级、参数，那么你在设置中加入这三个字段就好了。Axure最大的优势就是你设置的这些注释，在生成说明文档时，Axure自动帮你生成PRD规格的表格文档，你可以省去相当大的编号工作，与文档工作。这些我在之后也会做说明。</p>
+<p>这些就是Axure的主要功能区，但是其实还有两个小的角落大家可能会忽略，那就是6、7、8区下面的一行系统信息，<strong>这里显示的信息很重要</strong>，但是一般人却经常会忽视。我只所以说重要，因为我们在给ui设计师wireframe的时候他们总会问，这里多少像素，那里多少像素，可是我们在画 wireframe的时候却无法度量。Axure创建的wireframe，完全可以生成html，因此我们可以在画的时候就度量好每个像素距离。但是我们要怎么做呢？这就需要利用到下面这行小信息栏了。</p>
+<p>信息栏左边显示的是文档保存情况。而右边呢，当你将一个widgets放入工作区，并选择这个widget时，这里就有用了，它显示的是你所选择widget的高宽，以及距离页面顶部和左边的px距离。通过使用上下左右键，结合这个信息栏，你可以一步一步将它移动到你想去的地方。有意思吧？</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e8bdace8bdbde38091axuree69599e7a88b1efbc9ae4bb8be7bb8d" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/12/e38090e8bdace8bdbde38091axuree69599e7a88b1efbc9ae4bb8be7bb8d/" class="article-date">
+  <time datetime="2008-05-12T10:51:00.000Z" itemprop="datePublished">May 12 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/12/e38090e8bdace8bdbde38091axuree69599e7a88b1efbc9ae4bb8be7bb8d/">【转载】Axure教程1：介绍</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原文地址：<a href="http://www.2tan.net/article.asp?id=9" target="_blank" rel="external">http://www.2tan.net/article.asp?id=9</a></p>
+<p>互联网行业产品经理的一项重要工作，就是进行产品原型设计(Prototype Design)。而产品原型设计最基础的工作，就是结合批注、大量的说明以及流程图画框架图wireframe，将自己的产品原型完整而准确的表述给 UI、UE、程序工程师，市场人员，并通过沟通会议，反复修改prototype 直至最终确认，开始投入执行。</p>
+<p>进行产品原型设计的软件工具也有很多种，我写的这个教程所介绍的Axure RP，是taobao、dangdang等国内大型网络公司的团队在推广使用的原型设计软件。同时，此软件也在产品经理圈子中广为流传。之所以Axure RP得到了大家的认同和推广，正是因为其简便的操作和使用，符合了产品经理、交互设计师们的需求。</p>
+<p>在正式谈Axure RP之前，我们先来看看做产品原型设计，现在大致有哪些工具可以使用，而他们的利弊何在。</p>
+<p><strong>纸笔：</strong>简单易得，上手难度为零。有力于瞬间创意的产生与记录，有力于对文档即时的讨论与修改。但是保真度不高，难以表述页面流程，更难以表述交互信息与程序需求细节。</p>
+<p><strong>Word：</strong>上手难度普通。可以画wireframe，能够画页面流程，能够使用批注与文字说明。但是对交互表达不好，也不利于演示。</p>
+<p><strong>PPT：</strong>上手难度普通。易于画框架图，易于做批注，也可以表达交互流程，也擅长演示。但是不利于大篇幅的文档表达。</p>
+<p><strong>Visio：</strong>功能相对比较复杂。善于画流程图，框架图。不利于批注与大篇幅的文字说明。同样不利于交互的表达与演示。</p>
+<p><strong>Photshop/fireworks：</strong>操作难度相对较大，易于画框架图、流程图。不利于表达交互设计，不擅长文字说明与批注。</p>
+<p><strong>Dreamweave：</strong>操作难度大，需要基础的html知识。易于画框架图、流程图、表达交互设计。不擅长文字说明与批注。</p>
+<p>以上这些工具，都是产品经理经常会使用到的，但是从根本上来说，这些工具都不是做prototype design的专门利器，需要根据产品开发不同的目的，不同的开发阶段，选择不同的工具搭配使用，才能达到表达、沟通的目的。</p>
+<p>比如使用纸笔，更适合在产品创意阶段使用，可以快速记录闪电般的思路和灵感；也可以在即时讨论沟通时使用，通过图形快速表达自己的产品思路，及时的画出来，是再好不过的方法。而word则适合在用文字详细表达产品，对产品进行细节说明时使用，图片结合文字的排版，是word最擅长的工作。而ppt自然是演示时更好。visio则可以适用于各种流程图、关系图的表达，更可通过画use case 获取用户需求。PS/FW是图片处理的工具，DW则是所见即所得的网页开发软件，这些是设计师的看家本领，对于普通的产品经理来说，需要耗费太多的精力去掌握。</p>
+<p>其实每件工具，每个软件，在创造它的初期，软件设计师们都给它赋予了性格、气质。因为每个工具的产生，都是为了满足人类的某一方面需求。比如锄头是锄土的，起子是起螺丝的，电熨斗是烫衣服的。但是不同的工具都有自己的工作领域，在其他领域它并不擅长。而以上的软件在创造的初期，并非为了帮助产品经理、ue完成产品原型设计，因此他们都不能在prototype design 这件工作上得心应手。而Axure RP正是在互联网产品大张其道的前提下，为满足prototype design创建的需求，应运而生。</p>
+<p><img src="http://www.2tan.net/attachments/month_0803/w200831323213.jpg" alt="" title="在新窗口打开图片"></p>
+<p>Axure RP 能帮助网站需求设计者，快捷而简便的创建 基于目录组织的原型文档、功能说明、交互界面以及带注释的wireframe网页，并可自动生成用于演示的网页文件和word文档，以提供演示与开发。</p>
+<p>没错！Axure RP 的特点是：</p>
+<ul>
+<li><p>快速创建带注释的wireframe文件，并可根据所设置的时间周期，软件自动保存文档，确保文件安全。</p>
+<pre><code>&amp;<span class="comment">#61548;</span>
+</code></pre></li>
+<li><p>在不写任何一条html与javascript语句的情况下，通过创建的文档以及相关条件和注释，一键生成html prototype演示。</p>
+<pre><code>&amp;<span class="comment">#61548;</span>
+</code></pre></li>
+<li>根据设计稿，一键生成一致而专业的word版本的原型设计文档。</li>
+</ul>
+<p>说到这里相信很多人已经激起了兴趣，但是在开始学习之前，我认为我们还是有必要先了解一下软件短短的历史，创造这一软件的公司&mdash;Axure Software Solutions, Inc.该公司创建于2002年五月，Axure RP是这一软件公司的旗舰产品，2003年一月Axure RP第一版本上线发表，至今已经正式发行到了第四个版本，而我提笔写到这里的时候，Axure 5.0版本beta版本已经正式提供下载试用，虽然我已经下载使用，但是我想，写教程还是应该先从稳定的4.6版说起，至于5.0版，我们可以伴随着软件一起成长。</p>
+<p>接下来我会结合图片，分几个步骤分享我对Axure的认识，</p>
+<p>一、 界面与功能</p>
+<p>二、 工具栏</p>
+<p>三、 站点地图</p>
+<p>四、 组件与使用方法</p>
+<p>五、 复用模板与使用</p>
+<p>六、 交互功能与注释</p>
+<p>七、 实例</p>
+<p>当然，在书写的过程中我会根据具体的情况再进行调整，尽量做到图文并茂，易于理解。写这个教程的目的，一方面为自己熟悉与更加理解Axure，另一方面也鞭策自己完善自己的blog网站<a href="http://www.2tan.net/" target="_blank" rel="external">www.2tan.net</a>，同时也希望以自己的绵薄之力，为希望学习Axure的朋友分享一点经验。由于这是我第一次尝试写教程，难免会出现偏颇，也希望朋友们能够不吝赐教，共同进步。</p>
+<p>另，为e文好的朋友附上自学Axure RP的几个途径：</p>
+<p>1、 打开软件，按F1调取帮助文档，对照文档学习。</p>
+<p>2、 登录<a href="http://www.axure.com/au-home.aspx" target="_blank" rel="external">http://www.axure.com/au-home.aspx</a> 查看flash视频学习。</p>
+<p>3、 登录 Axure 博客 <a href="http://axure.com/cs/blogs/Default.aspx" target="_blank" rel="external">http://axure.com/cs/blogs/Default.aspx</a>，了解软件最新信息。</p>
+<p>4、 登录讨论组<a href="http://axure.com/cs/forums/Default.aspx" target="_blank" rel="external">http://axure.com/cs/forums/Default.aspx</a>，参与讨论。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e7bc96e8af91ffmpege697b6-x264e99499e8afaf-e8a7a3e586b3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/07/e7bc96e8af91ffmpege697b6-x264e99499e8afaf-e8a7a3e586b3/" class="article-date">
+  <time datetime="2008-05-07T12:14:00.000Z" itemprop="datePublished">May 7 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/07/e7bc96e8af91ffmpege697b6-x264e99499e8afaf-e8a7a3e586b3/">编译FFmpeg时 x264错误 解决</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>之前终于搭建成功PHPmotion，不过有问题支持的视频格式太少了，不能支持3GP，而且没有声音，于是重新编译FFmpeg；编译x264的时候，直接去 ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ 下了最新的源码包，结果编译FFmpeg的时候出现错误：</p>
+<p>x264.c: In function ‘X264_init’:</p>
+<p>x264.c:145: error: ‘struct &lt;anonymous&gt;’ has no member named ‘i_rf_constant’</p>
+<p>x264.c:151: error: ‘struct &lt;anonymous&gt;’ has no member named ‘b_cbr’</p>
+<p>make[1]: <em>*</em> [x264.o] Error 1</p>
+<p><a href="http://osdir.com/ml/redhat.fedora.freeworld/2006-11/msg00058.html" target="_blank" rel="external">据说</a>是x264版本太新了，改变了之前的api，以至于出现错误</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e7bd91e7bb9ce59cb0e59d80e7bdaee68da2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/06/e7bd91e7bb9ce59cb0e59d80e7bdaee68da2/" class="article-date">
+  <time datetime="2008-05-06T10:59:00.000Z" itemprop="datePublished">May 6 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/06/e7bd91e7bb9ce59cb0e59d80e7bdaee68da2/">网络地址置换</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>一.使用netsh命令。</p>
+<p>1、先将网络设置的tcp/ip设置为电信网。</p>
+<p>2、进入命令行模式(开始&mdash;&mdash;〉运行&mdash;&mdash;〉CMD)，输入&quot;netsh -c interface dump &gt;c:\dx.txt&quot;(不含引号)。</p>
+<p>3、更改网络设置。将tcp/ip定成铁通的网络设置。</p>
+<p>4、再次在命令行中输入：&quot;netsh -c interface dump &gt;c:\tt.txt&quot;。</p>
+<p>5、做一个批处理文件进行网络设置的切换。新建文本文档，编辑内容为:&quot;netsh -f c:\dx.txt&quot;,然后选另存为，保存类型选&quot;所有文件&quot;，文件名为：&quot;切换为电信网.bat&quot;(不含引号)。</p>
+<p>6、新建文本文档，内容为:&quot;netsh -f c:\tt.txt&quot;,然后同样的另存为，不过将文件名改为&quot;切换为铁通网.bat&quot;，其他不变。</p>
+<p>以后要改为电信网设置就运行&quot;切换为电信网.bat&quot;，要改为铁通设置就运行&quot;切换为铁通网.bat&quot;。快速切换，省却了麻烦。</p>
+<p>二,使用转换IP地址的工具。</p>
+<p>  一是国产的免费东东&ldquo;IPchange轻松换&rdquo;，另一个是共享软件&ldquo;IPchanger2.0&rdquo;。相比而言，笔者主要推荐前者，主要原因当然是后者仅有一个月的试用器。当然&ldquo;IPchange轻松换&rdquo;常驻系统托盘，对资源还是有那么一点点的占用的。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/page/33/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/32/">32</a><a class="page-number" href="/archives/page/33/">33</a><span class="page-number current">34</span><a class="page-number" href="/archives/page/35/">35</a><a class="page-number" href="/archives/page/36/">36</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/57/">57</a><a class="extend next" rel="next" href="/archives/page/35/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

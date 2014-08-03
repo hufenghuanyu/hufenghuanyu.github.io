@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Category: 经验 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/categories/经验/page/2/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-e689b9e9878fe588a0e999a4e9a1b5e79c89e9a1b5e8849a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/01/15/e689b9e9878fe588a0e999a4e9a1b5e79c89e9a1b5e8849a/" class="article-date">
+  <time datetime="2011-01-15T12:56:35.000Z" itemprop="datePublished">Jan 15 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/01/15/e689b9e9878fe588a0e999a4e9a1b5e79c89e9a1b5e8849a/">批量删除页眉页脚</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/页眉/">页眉</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/页脚/">页脚</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>用宏的方式来做，无视分节：</p>
+<p><span style="widows: 2; text-transform: none; text-indent: 0px; border-collapse: separate; font: medium simsun; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(0,0,0); word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px" class="Apple-style-span"><span style="text-align: left; line-height: 22px; border-collapse: collapse; font-family: arial, sans-serif; color: rgb(25,15,0); font-size: 14px" class="Apple-style-span">Sub 删除页眉内容()<br>&#160;&#160;&#160; Dim j As Section<br>&#160;&#160;&#160; Dim y As HeaderFooter<br>&#160;&#160;&#160; For Each j In ActiveDocument.Sections<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160; For Each y In j.Headers<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; y.Range.Delete<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; y.Range.ParagraphFormat.Borders(wdBorderBottom).LineStyle = wdLineStyleNone<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160; Next<br>&#160;&#160;&#160; Next<br>End Sub</span></span><br> <span style="widows: 2; text-transform: none; text-indent: 0px; border-collapse: separate; font: medium simsun; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(0,0,0); word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px" class="Apple-style-span"><span style="text-align: left; line-height: 22px; border-collapse: collapse; font-family: arial, sans-serif; color: rgb(25,15,0); font-size: 14px" class="Apple-style-span">     </span></span></p>
+<p>Sub 删除页脚内容()<br>&#160;&#160;&#160; Dim j As Section<br>&#160;&#160;&#160; Dim y As HeaderFooter<br>&#160;&#160;&#160; For Each j In ActiveDocument.Sections<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160; For Each y In j.Footers<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; y.Range.Delete<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160; Next<br>&#160;&#160;&#160; Next<br>End Sub</p>
+<p>原文链接：<a href="http://club.excelhome.net/thread-609521-1-1.html" target="_blank" rel="external">http://club.excelhome.net/thread-609521-1-1.html</a><br>   </p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-blackboard-e4bfaee694b9e5b8aee58aa9e993bee68ea5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/01/10/blackboard-e4bfaee694b9e5b8aee58aa9e993bee68ea5/" class="article-date">
+  <time datetime="2011-01-10T03:42:08.000Z" itemprop="datePublished">Jan 10 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/01/10/blackboard-e4bfaee694b9e5b8aee58aa9e993bee68ea5/">Blackboard 修改帮助链接</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bb/">bb</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>修改了一次结果再修改又找了半天，记录一下，备忘：</p>
+<p>Blackboard Community System - 管理 -&gt; 品牌 –&gt; 默认品牌 –&gt;管理</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-swfobject-v1-5efbc9ae7a9bae6a0bce5afbce887b4e99d9eiee6b58fe8a788e599a8e5b58ce585a5e79a84flashe697a0e6b395e698bee7a4ba" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/11/19/swfobject-v1-5efbc9ae7a9bae6a0bce5afbce887b4e99d9eiee6b58fe8a788e599a8e5b58ce585a5e79a84flashe697a0e6b395e698bee7a4ba/" class="article-date">
+  <time datetime="2010-11-19T08:05:21.000Z" itemprop="datePublished">Nov 19 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/11/19/swfobject-v1-5efbc9ae7a9bae6a0bce5afbce887b4e99d9eiee6b58fe8a788e599a8e5b58ce585a5e79a84flashe697a0e6b395e698bee7a4ba/">SWFObject v1.5：空格导致非ie浏览器嵌入的Flash无法显示</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swfobject/">swfobject</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>症状：非IE浏览器，包括Chrome、Firefox等，一直“正在载入”，如下（左边是Chrome，右边是IE）：</p>
+<p><a href="http://jingyan.info/wp-content/uploads/2010/11/image.png" target="_blank" rel="external"><img src="http://jingyan.info/wp-content/uploads/2010/11/image_thumb.png" alt="image" title="image"></a><a href="http://jingyan.info/wp-content/uploads/2010/11/1.png" target="_blank" rel="external"><img src="http://jingyan.info/wp-content/uploads/2010/11/1_thumb.png" alt="捕获1" title="捕获1"></a></p>
+<p>经过排错，发现是控制flash的js的title内含空格，把空格去掉就没问题了，swfobject1.5兼容问题～</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-ftpe79a84e4b8a4e7a78de5b7a5e4bd9ce6a8a1e5bc8fefbc9ae4b8bbe58aa8e6a8a1e5bc8fe4b88ee8a2abe58aa8e6a8a1e5bc8fefbc89" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/10/23/ftpe79a84e4b8a4e7a78de5b7a5e4bd9ce6a8a1e5bc8fefbc9ae4b8bbe58aa8e6a8a1e5bc8fe4b88ee8a2abe58aa8e6a8a1e5bc8fefbc89/" class="article-date">
+  <time datetime="2010-10-22T17:38:17.000Z" itemprop="datePublished">Oct 23 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/10/23/ftpe79a84e4b8a4e7a78de5b7a5e4bd9ce6a8a1e5bc8fefbc9ae4b8bbe58aa8e6a8a1e5bc8fe4b88ee8a2abe58aa8e6a8a1e5bc8fefbc89/">FTP的两种工作模式：主动模式与被动模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ftp/">ftp</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <font color="#0000ff">对于采用了NAT端口映射的服务器来说，要么开放ftp连接端口（一般21）和数据端口20（采用主动模式），要么开发指定的高位端口范围，比如60000-65535，客户端指定采用被动模式连接，并且指定连接服务器所采用的本地端口范围；如果用户较少，从方便的角度来考虑，第一种方式比较合适。</font>
+
+<p><strong>转载，不过原地址找不到了，下面是引文：</strong></p>
+<p>ftp是基于tcp的服务，ftp使用2个端口，一个数据端口和一个命令端口（也叫做控制端口）。通常命令端口是21，数据端口是20。</p>
+<p>主动ftp<br>主动模式的ftp是这样的；客户端从一个任意的非特权端口n（n&gt;1024）连接到ftp服务器的命令端口（21），然后客户端开始监听端口n+1，并发送ftp命令“port n+1”到ftp服务器。服务器从它自己的数据端口20连接到客户端指定的数据端口n+1。<br>针对FTP服务器前面的防火墙来说，必须允许以下通讯才能支持主动方式FTP：<br>1. 任何端口到FTP服务器的21端口 （客户端初始化的连接 S&lt;-C）<br>2. FTP服务器的21端口到大于1024的端口（服务器响应客户端的控制端口 S-&gt;C）<br>3. FTP服务器的20端口到大于1024的端口（服务器端初始化数据连接到客户端的数据端口 S-&gt;C）<br>4. 大于1024端口到FTP服务器的20端口（客户端发送ACK响应到服务器的数据端口 S&lt;-C）<br>在第1步中，客户端的命令端口与FTP服务器的命令端口建立连接，并发送命令“PORT 1027”。然后在第2步中，FTP服务器给客户端的命令端口返回一个\&quot;ACK\&quot;。在第3步中，FTP服务器发起一个从它自己的数据端口（20）到客户端先前指定的数据端口（1027）的连接，最后客户端在第4步中给服务器端返回一个\&quot;ACK\&quot;。</p>
+<p> 主动方式FTP的主要问题实际上在于客户端。FTP的客户端并没有实际建立一个到服务器数据端口的连接，它只是简单的告诉服务器自己监听的端口号，服务器再回来连接客户端这个指定的端口。对于客户端的防火墙来说，这是从外部系统建立到内部客户端的连接，这是通常会被阻塞的。</p>
+<p>被动ftp<br>在被动模式ftp中，命令连接和数据连接都由客户端，这样就可以解决从服务器到客户端的数据端口的入方向连接被防火墙过滤掉的问题。当开启一个 FTP连接时，客户端打开两个任意的非特权本地端口（N &gt; 1024和N+1）。第一个端口连接服务器的21端口，但与主动方式的FTP不同，客户端不会提交PORT命令并允许服务器来回连它的数据端口，而是提交 PASV命令。这样做的结果是服务器会开启一个任意的非特权端口（P &gt; 1024），并发送PORT P命令给客户端。然后客户端发起从本地端口N+1到服务器的端口P的连接用来传送数据。 </p>
+<p>对于服务器端的防火墙来说，必须允许下面的通讯才能支持被动方式的FTP:</p>
+<p>1. 从任何端口到服务器的21端口 （客户端初始化的连接 S&lt;-C）<br>2. 服务器的21端口到任何大于1024的端口 （服务器响应到客户端的控制端口的连接 S-&gt;C）<br>3. 从任何端口到服务器的大于1024端口 （入；客户端初始化数据连接到服务器指定的任意端口 S&lt;-C）<br>4. 服务器的大于1024端口到远程的大于1024的端口（出；服务器发送ACK响应和数据到客户端的数据端口 S-&gt;C）</p>
+<p>&#160;&#160; 在第1步中，客户端的命令端口与服务器的命令端口建立连接，并发送命令“PASV”。然后在第2步中，服务器返回命令\&quot;PORT 2024\&quot;，告诉客户端（服务器）用哪个端口侦听数据连接。在第3步中，客户端初始化一个从自己的数据端口到服务器端指定的数据端口的数据连接。最后服务器在第4 步中给客户端的数据端口返回一个\&quot;ACK\&quot;响应。<br>&#160;&#160;&#160; 被动方式的FTP解决了客户端的许多问题，但同时给服务器端带来了更多的问题。最大的问题是需要允许从任意远程终端到服务器高位端口的连接。幸运的是，许多FTP守护程序，包括流行的WU-FTPD允许管理员指定FTP服务器使用的端口范围<br>&#160;&#160;&#160; 第二个问题是客户端有的支持被动模式，有的不支持被动模式，必须考虑如何能支持这些客户端，以及为他们提供解决办法。例如，Solaris提供的FTP命令行工具就不支持被动模式，需要第三方的FTP客户端，比如ncftp。</p>
+<p>总结 </p>
+<p>下面的图表会帮助管理员们记住每种FTP方式是怎样工作的：</p>
+<p>主动FTP：<br>命令连接：客户端 &gt;1024端口 -&gt; 服务器 21端口<br>数据连接：客户端 &gt;1024端口 &lt;- 服务器 20端口</p>
+<p>被动FTP：<br>命令连接：客户端 &gt;1024端口 -&gt; 服务器 21端口<br>数据连接：客户端 &gt;1024端口 -&gt; 服务器 &gt;1024端口</p>
+<p>下面是主动与被动FTP优缺点的简要总结：</p>
+<p>主动FTP对FTP服务器的管理有利，但对客户端的管理不利。因为FTP服务器企图与客户端的高位随机端口建立连接，而这个端口很有可能被客户端的防火墙阻塞掉。被动FTP对FTP客户端的管理有利，但对服务器端的管理不利。因为客户端要与服务器端建立两个连接，其中一个连到一个高位随机端口，而这个端口很有可能被服务器端的防火墙阻塞掉。</p>
+<p>幸运的是，有折衷的办法。既然FTP服务器的管理员需要他们的服务器有最多的客户连接，那么必须得支持被动FTP。我们可以通过为FTP服务器指定一个有限的端口范围来减小服务器高位端口的暴露。这样，不在这个范围的任何端口会被服务器的防火墙阻塞。虽然这没有消除所有针对服务器的危险，但它大大减少了危险。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e4bfaee694b9-e8b0b7e6ad8ce59cb0e79083google-earthge-e4b8ade69687e78988e7958ce99da2e9bb98e8aea4e5ad97e4bd93" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/10/07/e4bfaee694b9-e8b0b7e6ad8ce59cb0e79083google-earthge-e4b8ade69687e78988e7958ce99da2e9bb98e8aea4e5ad97e4bd93/" class="article-date">
+  <time datetime="2010-10-07T14:01:12.000Z" itemprop="datePublished">Oct 7 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/10/07/e4bfaee694b9-e8b0b7e6ad8ce59cb0e79083google-earthge-e4b8ade69687e78988e7958ce99da2e9bb98e8aea4e5ad97e4bd93/">修改 谷歌地球(google earth/GE) 中文版界面默认字体</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/google-earth/">google earth</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原文作者：玛瑙河 原文链接：<a href="http://www.cnblogs.com/agateriver/archive/2010/05/16/1736626.html" target="_blank" rel="external">http://www.cnblogs.com/agateriver/archive/2010/05/16/1736626.html</a></p>
+<p>相信有很多朋友都是GE的Fans，但是中文版的GE的界面字体(比如菜单字体等)却很丑陋而且字体大小也不和谐，更不爽的是，GE并没有提供对界面字体风格调整的选项。 </p>
+<p> 那么如何将GE主界面字体显示风格设置成我们自己喜欢的呢？ </p>
+<p> 首先我们要知道的是，GE的GUI是通过Qt实现的,Qt是一个跨平台的C++库。Qt应用程序的界面风格可以通过样式表来控制。然后我来说说更改GE字体的方法： </p>
+<p> 1.linux下可以通过用qt-config命令设置Qt程序的默认字体来解决。也可用2中提到的通过指定命令行参数的方法解决。 </p>
+<p> 2.windows下似乎不能通过qt-config来解决，但是我们可以通过样式表来控制GE的字体风格。Qt程序员们对通过样式表控制GUI风格都是再熟悉不过了。不过我们这里也不用去修改GE的源码，况且google也不会给呀！欣喜是，所有的Qt应用程序都可以通过在命令行传递一个参数-stylesheet来指定样式表。下面我们先创建一个样式表文件gestylesheet.qtss(文本文件，文件名可以任意取)，并将其和googleearth.exe放在同一目录下(GE如果默认安装目录应当是C:\Program Files\Google\Google Earth\client)。</p>
+<p> gestylesheet.qtss内容如下：</p>
+<p>*{font-family: SimSun ;font-size:9pt}</p>
+<p>&#160; 上面将字体设为宋体，字体大小9点。您也可以设为其它字体，比如将 SimSun&#160; 改为：微软雅黑&#160; </p>
+<p> 然后我们在开始菜单中修改启动GE的快捷方式，在“Google 地球”上点右键，在“快捷方式”页面将“目标”由：<br>&quot;C:\Program Files\Google\Google Earth\client\googleearth.exe&quot;<br>改为：<br>&quot;C:\Program Files\Google\Google Earth\client\googleearth.exe&quot; -stylesheet=gestylesheet.qtss</p>
+<p> 最后从开始菜单启动GE，你就会发现GE字体已经变成你所需要的字体了。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-blackboard-8-0-e69fa5e689becontent-collectione58685e4bdbfe794a8e4b8aae4babae8b584e6ba90e79a84e794a8e688b7e58897e8a1a8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/08/30/blackboard-8-0-e69fa5e689becontent-collectione58685e4bdbfe794a8e4b8aae4babae8b584e6ba90e79a84e794a8e688b7e58897e8a1a8/" class="article-date">
+  <time datetime="2010-08-30T10:51:31.000Z" itemprop="datePublished">Aug 30 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/08/30/blackboard-8-0-e69fa5e689becontent-collectione58685e4bdbfe794a8e4b8aae4babae8b584e6ba90e79a84e794a8e688b7e58897e8a1a8/">Blackboard 8.0 查找Content Collection内使用个人资源的用户列表</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blackboard/">blackboard</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>由于P大的bb系统用户帐号进行过一次有规律的升级，当时采取的策略是，按照规律批量新建帐号，从bb系统中批量导出用户和课程的注册关系，并修改用户id后重新导入系统，这基本解决了问题，不过也留下后遗症，Content Collection与用户之间的所属关系并未完全复制还原，如果删除升级前的帐号，部分老师在课程里引用了bb Content Collection的个人资源，那么课程内部分引用自旧账号个人资源的内容就会出现死链。为了既能清理旧帐号腾出宝贵的帐号空间，又丢失现有课程的部分资源，可以这么做：在Content Collection搜索/users/目录下的文件夹，如果大于1024字节，那么表示这个文件夹内有内容，不能直接删除该帐号，获得这样的一个列表容量大于1k的文件夹列表，删除重复的内容，再做一些处理就可以得到在Content Collection个人资源里有内容的用户列表，针对这个列表单独处理，备份复制资源，然后就可以按照规则删除旧有帐号了。</p>
+<p>具体使用的工具是后台的管理员搜索，<strong>管理员面板</strong> &gt; <strong>管理员搜索</strong> &gt; <strong>搜索，</strong>设定一下搜索类型为文件夹，搜索范围为/users，大小为大于1024字节，即可。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-windows-7-e682a8e6b2a1e69c89e69d83e99990e4bfaee694b9e8afa5e7bd91e7bb9ce4bd8de7bdaee79a84e69687e4bbb6efbc8ce8afb7e4b88ee7aea1e79086" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/07/26/windows-7-e682a8e6b2a1e69c89e69d83e99990e4bfaee694b9e8afa5e7bd91e7bb9ce4bd8de7bdaee79a84e69687e4bbb6efbc8ce8afb7e4b88ee7aea1e79086/" class="article-date">
+  <time datetime="2010-07-26T08:17:09.000Z" itemprop="datePublished">Jul 26 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/07/26/windows-7-e682a8e6b2a1e69c89e69d83e99990e4bfaee694b9e8afa5e7bd91e7bb9ce4bd8de7bdaee79a84e69687e4bbb6efbc8ce8afb7e4b88ee7aea1e79086/">Windows 7 :“您没有权限修改该网络位置的文件，请与管理员联系以获得修改权限”</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nod32/">nod32</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>遇到这个问题很久很久了，一直没在意，今天搜了一下，发现原来是nod32搞的鬼，修改一下就好了：</p>
+<p><strong>设置</strong> - <strong>高级模式</strong> - <strong>打开所有高级设置</strong> - <strong>文件系统实时防护</strong> - <strong>文件创建时</strong></p>
+<p>取消打钩</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-limesurvey-1-85-e983a8e58886e6a8a1e69dbfe68993e58db0e997aee58db7e4b88de5ae8ce695b4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/07/01/limesurvey-1-85-e983a8e58886e6a8a1e69dbfe68993e58db0e997aee58db7e4b88de5ae8ce695b4/" class="article-date">
+  <time datetime="2010-07-01T08:18:03.000Z" itemprop="datePublished">Jul 1 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/07/01/limesurvey-1-85-e983a8e58886e6a8a1e69dbfe68993e58db0e997aee58db7e4b88de5ae8ce695b4/">Limesurvey 1.85+ 部分模板打印问卷不完整</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/limesurvey/">limesurvey</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原来用的1.5版的limesurvey，后来升级到了1.85版。1.85版的模板系统跟1.5版相比多了几个文件。1.5版下订制了很多模板，迁移时漏掉了print_group.pstpl这个文件，结果就出现了在用这些模板的问卷，打印时只有头部，问卷的主体部分就没有了，查看源码才得知少了打印问题组这个模板，自然获取不到问题组的信息。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-google-buzze9ab98e7baa7e4bdbfe794a8e68a80e5b7a7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/03/10/google-buzze9ab98e7baa7e4bdbfe794a8e68a80e5b7a7/" class="article-date">
+  <time datetime="2010-03-10T08:10:52.000Z" itemprop="datePublished">Mar 10 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/03/10/google-buzze9ab98e7baa7e4bdbfe794a8e68a80e5b7a7/">Google Buzz高级使用技巧</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/buzz/">buzz</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><a href="http://www.williamlong.info/archives/2084.html" target="_blank" rel="external">Google Buzz</a>和<a href="http://www.williamlong.info/archives/1173.html" target="_blank" rel="external">Google Profiles</a>的关联非常紧密，从而让很多不熟悉Google产品的用户对于某些操作并不熟悉，这里就介绍几个较不常用的Buzz技巧，供大家参考。</p>
+<p><strong>添加自定义网站连接</strong></p>
+<p> 当用户在Google Profiles中创建个人资料以后，Google会自动提供一些建议的链接，用户可以选择在自己的公开个人资料中显示其中的一个或多个链接。除了Google自己的产品之外，其他网站或博客的链接都可以通过<a href="https://www.google.com/webmasters/tools/" target="_blank" rel="external">Google Webmasters</a>来实现验证。</p>
+<p> 比如用户想要在Google Buzz中添加自己博客的连接，使得Buzz可以自动发布自己的博客的文章，那么就可以先在Google Webmasters中验证自己的博客地址，验证的方法有meta法和上传指定html文件法，当用户验证网站成功之后，Google就会认为这个网站属于该用户管理，之后Buzz的连接网站界面就会出现该网站链接，用户就可以把Buzz连接到这个网站上了。</p>
+<p><strong>删除Google Profiles中的链接</strong></p>
+<p> 对于企业网站来说，一个网站的管理员通常需要多个用户来管理，Google Webmasters支持一个网站的多个用户管理，即几个不同的用户可以分别通过验证并管理这个网站，但这也带来一个问题，如果已验证了网站所有权的员工离开了公司，那就存在一个非法管理网站的问题，需要将该用户的权限删除。</p>
+<p> Google Webmasters提供了用户删除自己的验证，也可以删除其他人的验证，在Google Webmasters删除一个用户操作，被Google隐藏的非常好，删除的方法是，在主页上，该网站的后面，点“已验证”链接，在“已通过验证的用户”中的操作里，点“删除验证记录”即可删除自己或其他人对该网站的验证。</p>
+<p><strong>全文邮件发布</strong></p>
+<p> 我们知道，在自己的Gmail中发一个邮件到 buzz@gmail.com 中，就可以通过邮件更新自己的buzz，但是，这个方法只是将邮件的标题更新到buzz中，邮件内容并不更新，因此并不适合较长文字的全文更新。</p>
+<p> 我这里想到一个方法可以实现全文邮件发布，先在 Google Blogger 上申请一个博客，然后在“设置”-“电子邮件和移动博客”-“电子邮件发布地址”中设置一个邮件发布信箱，接着在 Google Webmaster 中验证此博客，并在Buzz中连接此Blogspot，这样，就可以通过发送电子邮件到指定的信箱，而发布全文方式的Buzz了。</p>
+<p>原创文章如转载，请注明：转载自<a href="http://www.williamlong.info/" target="_blank" rel="external">月光博客</a> [ <a href="http://www.williamlong.info/" target="_blank" rel="external">http://www.williamlong.info/</a> ]</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e588a9e794a8hdderase-e693a6e58699e9878de7bdaeintel-ssdefbc8ce8a7a3e586b3e995bfe69c9fe4bdbfe794a8e680a7e883bde4b88be9998de997aee9a298" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/02/10/e588a9e794a8hdderase-e693a6e58699e9878de7bdaeintel-ssdefbc8ce8a7a3e586b3e995bfe69c9fe4bdbfe794a8e680a7e883bde4b88be9998de997aee9a298/" class="article-date">
+  <time datetime="2010-02-10T09:35:10.000Z" itemprop="datePublished">Feb 10 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验/">经验</a>►<a class="article-category-link" href="/categories/经验/评测/">评测</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/02/10/e588a9e794a8hdderase-e693a6e58699e9878de7bdaeintel-ssdefbc8ce8a7a3e586b3e995bfe69c9fe4bdbfe794a8e680a7e883bde4b88be9998de997aee9a298/">利用HDDErase 擦写重置Intel SSD，解决长期使用性能下降问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/G1/">G1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Intel/">Intel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSD/">SSD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hdderase/">hdderase</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/x25-m/">x25-m</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>有报道称Intel SSD长期使用后，会出现性能下降的<a href="http://www.beareyes.com.cn/2/lib/200902/23/20090223247.htm" target="_blank" rel="external">问题</a>。Intel声称没遇到此类问题，并把问题归咎于硬盘装得太满，并发布新版固件声称已解决此问题。Intel发布的新固件对于34nm的G2 SSD有效，但对于已经发生性能下降的G1 SSD来说，刷了最新的8820版固件问题依旧，需要reset(重置)一下，以恢复性能。</p>
+<p>重置 Intel SSD一般使用HDDErase这个软件。根据国外一篇<a href="http://www.iishacks.com/index.php/2009/06/30/how-to-secure-erase-reset-an-intel-solid-state-drive-ssd/" target="_blank" rel="external">报道</a>，HDDErase这个软件最新的4.0版存在兼容问题，推荐选择<a href="http://www.iishacks.com/wp-content/uploads/2009/06/hdderase_33.zip" target="_blank" rel="external">3.3版</a>来操作；对于运行环境也有要求，这个软件需要在DOS 6.22环境下运行。</p>
+<p>简单的说需要准备的环境&amp;软件包括：DOS 6.22和HDDErase 3.3版。从网上找到了一个DOS 6.22版的ISO光盘镜像，并将HDDErase 3.3放进此镜像中，需要的朋友可以从网盘下载：<a href="http://cid-bcb9865e3bb19426.skydrive.live.com/self.aspx/%e9%95%9c%e5%83%8f/MSDOS^_622.iso" target="_blank" rel="external">下载地址</a></p>
+<p>具体操作：</p>
+<p>1.下载内含HDDErase的DOS 6.22镜像，刻盘，插入光盘，重启从光驱启动<br>2.选择 Install DOS 6.22，接下来按两次esc，进入提示界面：Z:\MSDOS<br>3.运行HDDERASE.EXE 如下操作：</p>
+<p><img src="http://public.bay.livefilestore.com/y1pHgrS9IKGS8EWF-E6wV7mKHK5XV3xCae9BzO8g6GOsLJppt4Fu5rq1TtrW_Me0o-JUpkqwJvLbFq2IX8OjMzOOw/sec-erase-2.jpg" alt=""><br><img src="http://public.bay.livefilestore.com/y1pYncYFjI3JkJS61HoREdIjG77XM8jbd8l9QShVbwaan2O3frLJJVyevzAY0Feyv89-JRhvQ4qiNiRRiSbfGLgbQ/sec-erase-3.jpg" alt=""><br><img src="http://public.bay.livefilestore.com/y1pYncYFjI3JkL3kdOiU-_MWD0e--Cnu1cm-Tgr3eg4Lp9ORPlsZ78juL9yPVs2ZC5trzb-_qYcPxXOpVsOEk4XyQ/sec-erase-4.jpg" alt=""> </p>
+<p>然后就大功告成了   </p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/categories/经验/">&laquo; Prev</a><a class="page-number" href="/categories/经验/">1</a><span class="page-number current">2</span><a class="page-number" href="/categories/经验/page/3/">3</a><a class="extend next" rel="next" href="/categories/经验/page/3/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

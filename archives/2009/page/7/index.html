@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2009 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/2009/page/7/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-e5a682e4bd95e59ca8e8bf9ce7a88be6a18ce99da2e4b8ade58887e68da2e4bc9ae8af9d" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/04/30/e5a682e4bd95e59ca8e8bf9ce7a88be6a18ce99da2e4b8ade58887e68da2e4bc9ae8af9d/" class="article-date">
+  <time datetime="2009-04-30T05:48:19.000Z" itemprop="datePublished">Apr 30 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/04/30/e5a682e4bd95e59ca8e8bf9ce7a88be6a18ce99da2e4b8ade58887e68da2e4bc9ae8af9d/">如何在远程桌面中切换会话</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/会话，windows/">会话，windows</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/远程桌面/">远程桌面</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>Windows远程桌面应该是大家经常用的工具，他和其它远程控制软件一样，可以远程操控其它的机器。相比PCAnywhere，VNC，QQ等其它远程控制软件，它的特点是支持多会话同时操作，性能应该算是最好的（因为它不是基于图片传输的）。但是在使用过程中经常会遇到要求切换会话的问题。如：</p>
+<p>1、有多个人打开了不同的远程桌面，要想切换到另一个人的桌面会话。</p>
+<p>2、由于某些软件只能在控制台会话（主会话）下进行，所以需要切换到主会话桌面。</p>
+<p>1、 如何切换会话</p>
+<p>登录到远程机器后，你可以在【任务管理器】中切换到【用户】选项卡，然后选择你要切换到的会话记录，右键打开快捷菜单，选择【连接】，这样就可以切换到那个会话了。如下图所示：</p>
+<p><img src="http://ymdg.net/article/UploadPic/2008-12/2008124141420216.jpg" alt=""></p>
+<p>2、 登录时如何指定登录到控制台会话</p>
+<p>你可以在【运行】对话框中输入mstsc命令，带上/console参数来指定登录到控制台会话。</p>
+<p>例：mstsc /v:192.168.0.126 /console</p>
+<p><img src="http://ymdg.net/article/UploadPic/2008-12/2008124141420644.jpg" alt=""></p>
+<p>mstsc命令的语法说明如下：</p>
+<p><img src="http://ymdg.net/article/UploadPic/2008-12/2008124141420168.jpg" alt=""></p>
+<p>以上内容是本人根据网友ClearWind提供的内容进行整理，现做成文档并截图与大家分享，在Windows2003上测试通过。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e8a7a3e586b3pure-ftpde5aea2e688b7e7abafe4b8ade69687e4b9b1e7a081" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/04/27/e8a7a3e586b3pure-ftpde5aea2e688b7e7abafe4b8ade69687e4b9b1e7a081/" class="article-date">
+  <time datetime="2009-04-26T16:47:09.000Z" itemprop="datePublished">Apr 27 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/04/27/e8a7a3e586b3pure-ftpde5aea2e688b7e7abafe4b8ade69687e4b9b1e7a081/">解决Pure-ftpd客户端中文乱码</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pure-ftpd/">pure-ftpd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/乱码/">乱码</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>增加配置选项，ClientCharset，内容为gbk</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e59ca8ubuntu-810e4b88ae8bf9ee68ea5e588b0microsoft-vpne69c8de58aa1e599a8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/04/25/e59ca8ubuntu-810e4b88ae8bf9ee68ea5e588b0microsoft-vpne69c8de58aa1e599a8/" class="article-date">
+  <time datetime="2009-04-24T19:13:09.000Z" itemprop="datePublished">Apr 25 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/04/25/e59ca8ubuntu-810e4b88ae8bf9ee68ea5e588b0microsoft-vpne69c8de58aa1e599a8/">在Ubuntu 8.10上连接到Microsoft VPN服务器</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><span style="color: black;"> 公司使用VPN连接，才能使用公司的东西, 在家的Ubuntu上一直不能连接，到今天好不容易搞定.过程记录一下.翻译老外的一个文章，呵呵.</span><span style="color: black;"> 其实从linux连接微软的vpn是很容易的，不过Ubuntu本身的设置方面有些问题。需要用到下面的方法来修改这个问题.在开始安装之前,你必须安装pptp的图形软件(我只给Ubuntu当xp用,少用命令，呵呵)</span><br><span style="display: none;">1 {‘ \, {7 T&amp; {$ Y6 H; b( m) q/ w</span><span style="color: black;"> # sudo apt-get install network-manager-gnome network-manager-pptp</span><br><span style="display: none;">, H5 m# v) {  y+ G</span><span style="color: black;"> #  sudo NetworkManager restart</span><br><span style="display: none;">( t/ x6 E! b0 }2 u8 i</span><span style="color: black;"> 开始配置网络管理器</span><br><span style="display: none;">; D: @8 q3 h6 S: E&amp; \</span><span style="color: black;"> 网络管理器,在你的右上角的网络图标,单击选择“VPN连接”-&gt;”配置VPN”,然后它会问你用户密码,网关地址之类的信息，记的，一定要安装前面的network-manager-pptp才行.</span><span style="font-size: 0px;">, Q! k/ V% b” n+ p7 O+ ?2 B. ?2 I</span><br><span style="color: black;"> 现在你要知道你的VPN网络的一些基本信息…如果不知道。。不要问我哦….</span><br><span style="display: none;">2 O! ( j- G/ }4 a4 d  D! ?- v</span><span style="color: black;"> ●连接的名字: 这个可以任意，你写个好用的就行了，这个基本不会影响你的连接过程<span style="font-size: 0px;">4 Z’ M! x5 \1 {$ d” R5 g</span><br>●网关: 你们公司的vpn服务器的ip和域名都行<br><span style="display: none;">“ S/ `<em> h! ~’ p4 j&amp; N: @1 |</em></span> ●用户名: 象公司是domain的话,基本输入就是,域名\用户,如 EXAMPLE\usernamel. 在域的环境好象这个是一定要的<br><span style="display: none;">/ ^7 V y/ x* [/ F( p9 J</span> ●Password:先不用输入，过一会会提示你的.<br><span style="display: none;">. b  ~+ L0 I( R</span> 如下</span><span style="font-size: 0px;">) P0 C’ P4 p9 b/ j&amp; o8 s( v” A</span><br><span style="color: black;"> </span><span style="font-size: 0px;">) C8 r- K4 j2 L&amp; \</span></p>
+<p><span style="color: black;"><img src="http://linux.chinaitlab.com/UploadFiles_7565/200812/20081225104949337.png" alt=""></span></p>
+<p><span style="color: black;">点” Advanced”按钮 .在出来的介面中选择 Use Point-to-Point encryption (MPPE). 不要修改其它的选项</span><span style="color: black;"> </span><span style="font-size: 0px;">5 D0 ?8 P0 r. E+ o7 X&amp; k  j</span></p>
+<p><span style="color: black;"><img src="http://linux.chinaitlab.com/UploadFiles_7565/200812/20081225104954491.png" alt=""></span></p>
+<p><span style="color: black;"> 现在点”OK”按钮，设置完这个在vpn的介面中保存设置后,就可以关掉这个设置的介面了.</span></p>
+<p><span style="color: black;"> <strong>修复ubuntu中一个bug</strong></span><span style="font-size: 0px;">; ~) G) j7 }&amp; c( T; t</span><br><span style="color: black;"> 如果上面的设置完,还是失败(象我就是). 因为这个默认会使用EAP来做认证,但在NetworkManager不能 disable EAP的认证，需要使用gconf-edit才行,在你的终端中输入gconf-editor.</span><br><span style="display: none;">6 x1 D- t( _- H; R</span><span style="color: black;"> #gconf-editor</span><span style="font-size: 0px;">% W6 A’ n9 c7 R/ m3 e  L</span><br><span style="color: black;"> 进入这个中的”System” -&gt;”Networking”-&gt; “Connections”. 在连接的这个文件夹,找到有vpn信息的那个数字的文件夹.你必须修改其中的配置,进入后,选择vpn,点右键，选择新建。</span><span style="font-size: 0px;">1 q% s5 e7 B  j+ ?1 T</span><br><span style="color: black;"> </span><br><span style="display: none;">$ e. X, i2 ~7 Z  P4 |6 s8 i: U6 x</span></p>
+<p><span style="color: black;"><img src="http://linux.chinaitlab.com/UploadFiles_7565/200812/20081225104955237.png" alt=""></span></p>
+<p><span style="color: black;"> 这个的名字为 “refuse-eap”,  设置它为”String” 和它的值为” yes”.点OK退出</span><br><span style="display: none;">: C* U5 d7 B7 f  e” B$ e</span><span style="color: black;"> </span><span style="font-size: 0px;">, ^: v! Z# r$ `7 d1 w9 K</span></p>
+<p><span style="color: black;"><img src="http://linux.chinaitlab.com/UploadFiles_7565/200812/20081225104958232.png" alt=""></span></p>
+<p><span style="color: black;"> 最后，连接到你的VPN吧。。</span><br><span style="display: none;">8 D. _! S( I! @( ?. x</span><span style="color: black;"> 你现在可以连接到你的VPN服务器了. 点network连接的图标,选择” VPN Connections”-&gt;”上面设置的连接名”. 然后输入你的密码就行了.</span><span style="font-size: 0px;">9 g4 H# I&amp; M% s) e9 v</span></p>
+<p><span style="color: black;"><img src="http://linux.chinaitlab.com/UploadFiles_7565/200812/20081225104959863.png" alt=""></span></p>
+<p><span style="color: black;"> 好了完了，希望你好运………….</span><span style="font-size: 0px;">7 E) B3 X: f# z4 O7 r; C</span></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-openfire-e4bfaee694b9e69c8de58aa1e599a8e5908d-e8a7a3e586b3e696b9e6b395" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/04/23/openfire-e4bfaee694b9e69c8de58aa1e599a8e5908d-e8a7a3e586b3e696b9e6b395/" class="article-date">
+  <time datetime="2009-04-22T17:46:19.000Z" itemprop="datePublished">Apr 23 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/04/23/openfire-e4bfaee694b9e69c8de58aa1e599a8e5908d-e8a7a3e586b3e696b9e6b395/">Openfire 修改服务器名 解决方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openfire/">openfire</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xmpp/">xmpp</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>OpenFire在安装第一次设置了服务器名后<br>虽然可以通过管理界面修改<br>但是修改后的Openfire却无法正常工作<br>而服务器名前也会有个惊叹号<br>其实查看openfire的警告记录我们可以发现<br>在修改了服务器名后重启<br>会有两条关于证书的警告消息<br>由于openfire在设置好之后<br>会用服务器名来作为证书的一部分<br>所以只是单纯的修改服务器名<br>会导致证书和服务器不一致<br>导致无法正常使用</p>
+<p>解决方法:<br>服务器设置 -&gt; 服务器证书<br>将原来的两个密钥删除<br>然后会提示重启http服务<br>点击重启并重新登陆管理界面<br>回到删除密钥的地方<br>会提示现在没有密钥,需要添加密钥<br>点添加.OK了.按照新的服务器名的密钥已经生成并且添加了<br>这时候再回去看服务器状态,服务器名前面的惊叹号已经没有了<br>我们也可以正常使用jabber服务了<br> 原文链接：<a href="http://www.hiadmin.com/openfire-%e4%bf%ae%e6%94%b9%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%90%8d-%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95/" title="http://www.hiadmin.com/openfire-%e4%bf%ae%e6%94%b9%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%90%8d-%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95/" target="_blank" rel="external">http://www.hiadmin.com/openfire-%e4%bf%ae%e6%94%b9%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%90%8d-%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95/</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e5ae89e8a385-e588a0e999a4-e58db8e8bdbd-deb-e58c85e69687e4bbb6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/04/23/e5ae89e8a385-e588a0e999a4-e58db8e8bdbd-deb-e58c85e69687e4bbb6/" class="article-date">
+  <time datetime="2009-04-22T16:25:13.000Z" itemprop="datePublished">Apr 23 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ubuntu/">ubuntu</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/04/23/e5ae89e8a385-e588a0e999a4-e58db8e8bdbd-deb-e58c85e69687e4bbb6/">安装 删除 卸载 Deb 包文件</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deb/">deb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dpkg/">dpkg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>图形界面   </p>
+<ul>
+<li><p>安装deb</p>
+<pre><code><span class="keyword">*</span>   直接双击图标，输入密码后就可自动安装.<span class="keyword">*</span>   卸载deb
+<span class="keyword">*</span>   菜单－系统－&amp;gt;系统管理－&amp;gt;新立得软件包管理器 或 Alt+F2(运行窗口)输入<span class="keyword">*</span>   点击 [来源] 在左侧的选择框中选择 [本地/main] 再在右侧的选择框中查找需要卸载的deb包; 如果知道deb包名，直接点击 ［搜索］输入包名<span class="keyword">*</span>   选择要删的包,右击,选择［标记以便删除］<span class="keyword">*</span>   选择完后，单击［应用］ 命令：   
+</code></pre></li>
+<li><p>要安装 .deb 套件包时  <pre>sudo dpkg -i package_file.deb</pre></p>
+</li>
+<li><p>要反安装 .deb 套件包时</p>
+</li>
+</ul>
+<pre>sudo dpkg -r package_name</pre>
+
+<p>原文地址：<a href="http://wiki.ubuntu.org.cn/" target="_blank" rel="external">http://wiki.ubuntu.org.cn/安装Deb包文件</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e9858de7bdaejabbere69c8de58aa1e599a8-openfire" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/04/22/e9858de7bdaejabbere69c8de58aa1e599a8-openfire/" class="article-date">
+  <time datetime="2009-04-22T09:59:50.000Z" itemprop="datePublished">Apr 22 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/04/22/e9858de7bdaejabbere69c8de58aa1e599a8-openfire/">配置jabber服务器-Openfire</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jabber/">jabber</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openfire/">openfire</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/opensource/">opensource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spark/">spark</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xmpp/">xmpp</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><strong><font color="#ff0000">第一步：配置jabber服务器<br></font></strong></p>
+<p>Openfire（Wildfire）支持完全的web安装，如果你在本地按安装只需要在浏览器中输入<a href="http://localhost:9090/" target="_blank" rel="external">http://localhost:9090</a>（远程服务器为<a href="http://你的服务器地址:9090）即可开始即时通讯服务器配置。" target="_blank" rel="external">http://你的服务器地址:9090）即可开始即时通讯服务器配置。</a><br>（1）语言选择：中文简体<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/expendable/step1.gif" alt=""><br>（2）服务期设置：选择域及端口，建议默认<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/expendable/step2.gif" alt=""><br>（3）数据库设置：根据需要，这里选“标准数据库”<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/expendable/step3.jpg" alt=""><br>（4）标准数据库设置：选择MySQL，数据库URL填入你的数据库地址，端口和数据库名称（请自行创建），用户名密码填入你的mysql的帐号密码，其他更具需要选择填写。继续之后会在你的mysql中创建表并初始化。<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/expendable/step4.gif" alt=""><br>（5）特性设置：如果你不打算用LDAP，保留默认<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/expendable/step5.gif" alt=""><br>（6）管理员帐户设置：填入系统管理员信息<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/expendable/step6.gif" alt=""><br>（7）安装完成<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/expendable/step7.gif" alt=""><br>至此，Openfire安装完毕。你可以继续登录到管理控制台，进行更为详细的设置。<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/expendable/step8.gif" alt=""></p>
+<p><strong><font color="#ff0000">第二步：Jabber客户端安装配置</font>      
+</strong>支持Jabber有很多很好的客户端软件，官方推荐的有：</p>
+<p><strong>平台</strong></p>
+<p><strong>建议客户端</strong></p>
+<p>Windows</p>
+<p><a href="http://exodus.jabberstudio.org/" target="_blank" rel="external">Exodus</a>, <a href="http://www.pandion.be/" target="_blank" rel="external">Pandion</a>, <a href="http://www.psi-im.org/" target="_blank" rel="external">Psi</a>, <a href="http://www.igniterealtime.org/projects/spark/" target="_blank" rel="external">Spark</a></p>
+<p>Linux</p>
+<p><a href="http://www.gajim.org/" target="_blank" rel="external">Gajim</a>, <a href="http://www.imendio.com/projects/gossip/" target="_blank" rel="external">Gossip</a>, <a href="http://kopete.kde.org/" target="_blank" rel="external">Kopete</a>, <a href="http://www.pidgin.im/" target="_blank" rel="external">Pidgin</a>, <a href="http://www.psi-im.org/" target="_blank" rel="external">Psi</a>, <a href="http://www.igniterealtime.org/projects/spark/" target="_blank" rel="external">Spark</a>, <a href="http://tkabber.jabber.ru/en/" target="_blank" rel="external">Tkabber</a></p>
+<p>Macintosh</p>
+<p><a href="http://www.adiumx.com/" target="_blank" rel="external">Adium</a>, <a href="http://www.apple.com/macosx/features/ichat/" target="_blank" rel="external">iChat</a>, <a href="http://www.psi-im.org/" target="_blank" rel="external">Psi</a>, <a href="http://www.igniterealtime.org/projects/spark/" target="_blank" rel="external">Spark</a></p>
+<p>更多的列表请参考：<a href="http://www.jabber.org/software/clients.shtml" target="_blank" rel="external">http://www.jabber.org/software/clients.shtml</a><br>这里我们建议使用Spark，因为Spark和Openfire能够很好的相互支持，可说黄金组合。软件下载地址：<a href="http://www.igniterealtime.org/downloads/index.jsp#spark" target="_blank" rel="external">http://www.igniterealtime.org/downloads/index.jsp#spark</a><br>目前最新的版本为：2.5.4（6月22日发版）</p>
+<p>（1）下载for windows的版本，安装比较简单。<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/expendable/login1.gif" alt=""><br>（2）选择高级选项：服务器填入你的服务器地址，端口为5222<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/expendable/login2.gif" alt=""><br>（3）注册一个新帐号：服务器参照前文填写<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/expendable/login3.gif" alt=""><br>（4）注册成功后，开始登录。<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/expendable/login4.gif" alt=""><br>（5）登陆后界面<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/expendable/login5.gif" alt=""><br>现在你就可以和局域网内其拥有jabber帐号的用户通讯了<br>注：Spark官方并没有中文汉化版本，关于Spark的汉化，请参考松鼠的blog，地址：<a href="http://blog.csdn.net/squirrelme" target="_blank" rel="external">http://blog.csdn.net/squirrelme</a><br><u><a href="http://blog.csdn.net/squirrelme/archive/2007/06/25/1666302.aspx" target="_blank" rel="external">基于jabber/xmpp即时通讯服务器OpenFire的客户端Spark的中文汉化包</a></u></p>
+<p><strong><font color="#ff0000">第三步：Jabber连接与MSN、ICQ等IM通讯</font>      
+</strong>Jabber最有优势的就是其通信协议，可以和多种即时通讯对接。比如有第三方插件，能让jabber用户和MSN 、Yahoo Messager、ICQ等IM用户相互通讯。因为Google遵从jabber协议，并且Google已经将Gtalk的服务器开放给了其它的Jabber服务器。所以PSI、Giam等Jabber客户端软件支持GTalk用户登陆。</p>
+<p>使用Openfire+Spark的组合也可以实现这个功能，下面具体介绍<br>（1）下载Openfire网关插件IM Gateway，下载地址：<br><a href="http://www.igniterealtime.org/forum/servlet/JiveServlet/download/59-27104-149490-2743/gateway.jar" target="_blank" rel="external">http://www.igniterealtime.org/forum/servlet/JiveServlet/download/59-27104-149490-2743/gateway.jar</a><br>下载一个名为gateway.jar的文件，该文件为Openfire的插件，Openfire通过这个插件实现与其他IM的通讯。<br>（2）安装gateway<br>Gateway的安装非常简单，你只需要把gateway.ja拷贝到openfire/plugins目录下，重启Openfire服务，即可安装成功。<br>（3）配置gatway<br>安装成功后，打开Openfire的后台管理（例如：<a href="http://localhost:9090/" target="_blank" rel="external">http://localhost:9090</a>），即可看到gateway的安装选项（目前没有中文版），如图：<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/expendable/gateway.gif" alt=""><br>在你需要激活的服务上打勾即可。<br>（4）重新用Spark登录Openfire，你会发现你的Spark多了一些选项。填入你的msn帐号和密码，就可登录MSN了。<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/expendable/msn.gif" alt=""></p>
+<p>原文地址：<a href="http://www.blog-dragon.com/2007/10/jabber-xmpp-openfire-spark/" title="http://www.blog-dragon.com/2007/10/jabber-xmpp-openfire-spark/" target="_blank" rel="external">http://www.blog-dragon.com/2007/10/jabber-xmpp-openfire-spark/</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-ubuntue5ae89e8a385openfire" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/04/22/ubuntue5ae89e8a385openfire/" class="article-date">
+  <time datetime="2009-04-22T09:30:00.000Z" itemprop="datePublished">Apr 22 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jabber/">jabber</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/04/22/ubuntue5ae89e8a385openfire/">UBUNTU安装OPENFIRE</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deb/">deb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jabber/">jabber</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openfire/">openfire</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sudo/">sudo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xmpp/">xmpp</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>1、安装phpmyadmin，可以直接在新立得软件包里面选择完成安装</p>
+<p>2、设置mysql root帐户密码：<br>              $ mysql -u root<br>              mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO root@localhost IDENTIFIED BY “123456”;</p>
+<p>3、用phpmyadmin建立一个名为“openfire”的数据库，整理格式选择”utf-8_unicode_ci”</p>
+<p>4、下载openfire，ubuntu下面当然是下载deb格式的，当前最新版本为3.4.3，<a href="http://www.igniterealtime.org/downloads/download-landing.jsp?file=openfire/openfire_3.4.3_all.deb" target="_blank" rel="external">下载地址1</a>  <a href="http://www.zhanggy.com/autoindex/index.php?dir=Web%20Building/&amp;file=openfire_3.4.3_all.deb" target="_blank" rel="external">下载地址2</a></p>
+<p>5、安装JAVA<br>              sudo apt-get install sun-java6-bin<br>              sudo update-alternatives —config java<br>              选择 java6 为默认的java环境<br>              /usr/lib/jvm/java-6-sun/jre/bin/java</p>
+<p>6、安装openfire_3.4.3_all.deb</p>
+<p>7、安装完成后访问 <a href="http://localhost:9090/，进行设置，设置过程比较简单，这里有详细的[图文教程](http://jingyan.info/uncategorized/376)，" target="_blank" rel="external">http://localhost:9090/，进行设置，设置过程比较简单，这里有详细的[图文教程](http://jingyan.info/uncategorized/376)，</a><br>注意在选择数据库的时候将<br>              jdbc:mysql://[host-name]:3306/[database-name]</p>
+<p>改为：<br>              jdbc:mysql://localhost:3306/openfire?useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8</p>
+<p>实际填写应该是：<br>             jdbc:mysql://localhost:3306/openfire?useUnicode=true&amp;amp;characterEncoding=UTF-8&amp;amp;characterSetResults=UTF-8</p>
+<p>原文地址：<a href="http://www.zhanggy.com/blog/install-openfire-on-ubuntu" title="http://www.zhanggy.com/blog/install-openfire-on-ubuntu" target="_blank" rel="external">http://www.zhanggy.com/blog/install-openfire-on-ubuntu</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-access-connectionse697a0e6b395e59ca8e8afa5e5b9b3e58fb0e4b88ae8bf90e8a18ce79a84e8a7a3e586b3e696b9e6a188" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/04/18/access-connectionse697a0e6b395e59ca8e8afa5e5b9b3e58fb0e4b88ae8bf90e8a18ce79a84e8a7a3e586b3e696b9e6a188/" class="article-date">
+  <time datetime="2009-04-18T13:58:12.000Z" itemprop="datePublished">Apr 18 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/04/18/access-connectionse697a0e6b395e59ca8e8afa5e5b9b3e58fb0e4b88ae8bf90e8a18ce79a84e8a7a3e586b3e696b9e6a188/">Access Connections无法在该平台上运行的解决方案</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Thinkpad/">Thinkpad</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/access-connections/">access connections</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>进入注册表，\HKEY_LOCAL_MACHINE\SOFTWARE\LENOVO\Access Connections\Intall在此键值右边，新建DWORD(32-位)值（D）,然后改名称为：TPCHK,就可以正常运行Access Connections了</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-wordpresse4b8ade5a682e4bd95e9ab98e4baaee4bd9ce88085e8af84e8aeba" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/04/16/wordpresse4b8ade5a682e4bd95e9ab98e4baaee4bd9ce88085e8af84e8aeba/" class="article-date">
+  <time datetime="2009-04-16T15:54:55.000Z" itemprop="datePublished">Apr 16 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/04/16/wordpresse4b8ade5a682e4bd95e9ab98e4baaee4bd9ce88085e8af84e8aeba/">Wordpress中如何高亮作者评论</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress，评论/">wordpress，评论</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><strong>1. 改变所用的主题，增加“authcomment”样式</strong></p>
+<p>编辑样式表文件 style.css，在接近底部的位置添加以下代码：</p>
+<blockquote>
+<p>.authcomment {<br>background-color: #B3FFCC !important;<br>}  </p>
+</blockquote>
+<p><strong>2. 编辑主题中的comments.php文件，添加一小段代码</strong></p>
+<p>找到comments.php文件中类似下面的这部分代码：</p>
+<blockquote>
+<p>&lt;li class=&quot;&lt;?php echo $oddcomment; ?&gt;&quot; id=&quot;comment…  </p>
+</blockquote>
+<p>把这段代码改成以下的样子（注意全角和半角引号）</p>
+<blockquote>
+<p>&lt;li class=”&lt;?php<br>/<em> Only use the authcomment class from style.css if the user_id is 1 (admin) </em>/<br>if (1 == $comment-&gt;user_id)<br>$oddcomment = “authcomment”;<br>echo $oddcomment;<br>?&gt;” id=”comment…  </p>
+</blockquote>
+<p>现在作者的评论和其他评论可以明显的区分开来</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e8aebee7bdaegvime9bb98e8aea4e5ad97e4bd93e58f8ae4b8bbe9a298" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/04/14/e8aebee7bdaegvime9bb98e8aea4e5ad97e4bd93e58f8ae4b8bbe9a298/" class="article-date">
+  <time datetime="2009-04-13T18:36:08.000Z" itemprop="datePublished">Apr 14 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/vim/">vim</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/04/14/e8aebee7bdaegvime9bb98e8aea4e5ad97e4bd93e58f8ae4b8bbe9a298/">设置gVim默认字体及主题</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fonts/">fonts</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gvim/">gvim</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/themes/">themes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>修改.vimrc或者_vimrc，增加：</p>
+<p>set guifont=字体名称:h字号<br>colorscheme 颜色主题</p>
+<p><span style="widows: 2; text-transform: none; text-indent: 0px; border-collapse: separate; font: 16px arial; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(71,57,48); word-spacing: 0px; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0" class="Apple-style-span">比如我的设置就是：</span></p>
+<p>set guifont=Monaco:h16<br>colorscheme torte</p>
+<p>注意：guifont设置是的英文字体，要注意的是空格和连字符要加上&quot;&quot;。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2009/page/6/">&laquo; Prev</a><a class="page-number" href="/archives/2009/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2009/page/5/">5</a><a class="page-number" href="/archives/2009/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/2009/page/8/">8</a><a class="page-number" href="/archives/2009/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2009/page/11/">11</a><a class="extend next" rel="next" href="/archives/2009/page/8/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

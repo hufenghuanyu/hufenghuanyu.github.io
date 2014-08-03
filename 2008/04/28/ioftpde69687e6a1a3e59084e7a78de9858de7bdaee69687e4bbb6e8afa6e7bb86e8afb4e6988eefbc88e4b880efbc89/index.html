@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ioFTPD文档:各种配置文件详细说明（一） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ioFTPD文档:各种配置文件详细说明
+1. 目录结构————————————————————————————————————————————————————-ioFTPD主目录包括以下文件：Changelog, TODO, README.1ST更新记录文件包含了ioFTPD的最新更新内容，可使您及时了解软件的bug修正及新增特征等。TODO文档列出了ioFTPD未来版本中要添加的内容。READM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ioFTPD文档:各种配置文件详细说明（一）">
+<meta property="og:url" content="http://yoursite.com/2008/04/28/ioftpde69687e6a1a3e59084e7a78de9858de7bdaee69687e4bbb6e8afa6e7bb86e8afb4e6988eefbc88e4b880efbc89/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ioFTPD文档:各种配置文件详细说明
+1. 目录结构————————————————————————————————————————————————————-ioFTPD主目录包括以下文件：Changelog, TODO, README.1ST更新记录文件包含了ioFTPD的最新更新内容，可使您及时了解软件的bug修正及新增特征等。TODO文档列出了ioFTPD未来版本中要添加的内容。READM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ioFTPD文档:各种配置文件详细说明（一）">
+<meta name="twitter:description" content="ioFTPD文档:各种配置文件详细说明
+1. 目录结构————————————————————————————————————————————————————-ioFTPD主目录包括以下文件：Changelog, TODO, README.1ST更新记录文件包含了ioFTPD的最新更新内容，可使您及时了解软件的bug修正及新增特征等。TODO文档列出了ioFTPD未来版本中要添加的内容。READM">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main"><article id="post-ioftpde69687e6a1a3e59084e7a78de9858de7bdaee69687e4bbb6e8afa6e7bb86e8afb4e6988eefbc88e4b880efbc89" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/04/28/ioftpde69687e6a1a3e59084e7a78de9858de7bdaee69687e4bbb6e8afa6e7bb86e8afb4e6988eefbc88e4b880efbc89/" class="article-date">
+  <time datetime="2008-04-28T10:59:00.000Z" itemprop="datePublished">Apr 28 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ioFTPD文档:各种配置文件详细说明（一）
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+		<a data-url="http://yoursite.com/2008/04/28/ioftpde69687e6a1a3e59084e7a78de9858de7bdaee69687e4bbb6e8afa6e7bb86e8afb4e6988eefbc88e4b880efbc89/" data-title="ioFTPD文档:各种配置文件详细说明（一）" data-id="k45f1rrmdaw63xcr" class="article-share-link">Share</a>
+	  
+      
+        <a href="http://yoursite.com/2008/04/28/ioftpde69687e6a1a3e59084e7a78de9858de7bdaee69687e4bbb6e8afa6e7bb86e8afb4e6988eefbc88e4b880efbc89/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">Contents</strong>
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#ioFTPD文档:各种配置文件详细说明"><span class="toc-number">1.</span> <span class="toc-text">ioFTPD文档:各种配置文件详细说明</span></a></li></ol>
+			</div>
+		
+		<!-- 文章目录结束 -->
+		
+        <h4 id="ioFTPD文档:各种配置文件详细说明">ioFTPD文档:各种配置文件详细说明</h4>
+<div class="bvMsg"><br><div><br><div><br><br><strong><font color="#0000ff">1. 目录结构<br><br>————————————————————————————————————————————————————-</font></strong><br><br>ioFTPD主目录包括以下文件：Changelog, TODO, README.1ST<br><br>更新记录文件包含了ioFTPD的最新更新内容，可使您及时了解软件的bug修正及新增特征等。<br><br>TODO文档列出了ioFTPD未来版本中要添加的内容。<br><br>README.1ST文件为一些必要的法律公告。<br><br>————————————————————————————————————————<br><br>ioFTPD下的目录包括：<br><br>/cache 包括缓存文件，您不能改动此目录下的任何文件。<br><br>/etc 目录内文件包括<br><br>UserIdTable -用户及其UID(用户ID)列表<br><br>GroupIdTable - 组及其GID（组ID）列表<br><br>default.vfs和admin.vfs - VFS示例文件<br><br>ioftpd.env - 定义环境变量<br><br>/groups 组数据文件。文件名即为GID（组ID）<br><br>/help 帮助文件。<br><br>/lib TCL库<br><br>/logs 服务器运行记录文件如Error.log及Sysop.log等.<br><br>/scripts ioFTPD的第三方脚本。<br><br>/site 您的site的缺省根目录。<br><br>/source 可能对脚本编写有用的源代码。<br><br>/system ioFTPD.exe, ioFTPD.ini, tcl84.dll<br><br>/text 用户登陆时显示的信息文件，以及运行命令时显示的状态信息等文件。<br><br>/users 用户数据文件。文件名为UID(用户ID）。<br><br><strong><font color="#0000ff">2. 安装指南<br><br>—————————————————————————————————————————————-</font></strong><br><br>此文档可让您在几分钟内最快速成功配置ioFTPD！<br><br>1. 解压ioFTPD文件包。<br><br>2. 编辑 ..\etc\default.vfs. 注意根目录必须加载为：&quot;;/&quot;;.<br><br>如：:<br><br>&quot;d:\ftp&quot; / &lt;— 用已有的空目录作根目录。<br><br>&quot;e:\mp3&quot; /mp3 &lt;— 在根目录加载为/mp3<br><br>注意组ioftpd(缺省用户ioFTPD所在的组）的虚拟目录文件缺省为admin.vfs。要让ioftpd组使用default.vfs，可用命令： site change ioftpd groupvfsfile ..\etc\default.vfs 或将..\groups目录下0文件内的VFSFILE行删除即可。<br><br>3. 打开..\system\ioFTPD.ini.<br><br>在ioFTPD.ini中，注释行用&ldquo;#&rdquo;，取消选项/设置用分号&quot;;&quot;。<br><br># Comment<br><br>;Disabled = True<br><br>3a. 设置DEVICES。.<br><br>在多数情况下可用缺省设置。<br><br>缺省device名为&quot;;Any&quot;;.<br><br>[Any]<br><br>Host = 0.0.0.0 &lt;— 未定义IP，则允许在任何IP上连接。<br><br>Ports = 1024-2048 &lt;— 数据传输端口。<br><br>Random = True &lt;— 使用随机端口。<br><br>3b. 设置SERVICES（示例仅用于FTP_Service)<br><br>[FTP_Service]<br><br>Type = FTP<br><br>Device_Name = Any &lt;— 使用的Device。缺省为&quot;;Any&quot;;<br><br>Port = 9999 &lt;— 连接端口<br><br>Description = My FTP Service<br><br>User_Limit = 10 &lt;— 最大连接用户数。<br><br>Allowed_Users = <em><br><br>Messages = ..\text\ftp<br><br>Require_Encrypted_Auth = !</em> &lt;— 无用户使用加密请求。<br><br>Require_Encrypted_Data = !<em><br><br>;Certificate_Name = 192.168.1.11 &lt;— SLL认证名（CN）:若不使用认证，请注释此行，否则你的ftpd不会运行！<br><br>Explicit_Encryption = True<br><br>Encryption_Protocol = SSL3<br><br>Min_Cipher_Strength = 128<br><br>Max_Cipher_Strength = 384<br><br>;Get_External_Ident = False &lt;— True/False. 保护支持<br><br>;Data_Devices = &lt;— 流量平衡设备<br><br>;Random_Devices = False &lt;— True/False. Data_Devices使用随机次序。<br><br>需要更高级的devices及services，如NAT及流量平衡等设置样例文件，请参见ioFTPD-Advanced.ini。<br><br>4. 用缺省的管理员（Master）帐号登陆，注意在ioFTPD下，用户名、密码、组名、标识名及其他名称均区分大小写！<br><br>用户名：ioFTPD<br><br>密码：ioFTPD<br><br>5. 使用SITE PASSWD &lt;新密码&gt; 更改缺省的ioFTPD密码。<br><br>6. 打开并编辑 ..\etc\Hosts.Rules，使其可由外部IP连接。 在最新的未注册版本中，缺省规则为禁止（DENY）. 注释此缺省行，并去掉POLICY ACCEPT 2行的注释。若ioFTPD.exe正在运行，则需重启（修改Hosts.Rules需要完全重启)。<br><br>完成！现在请阅读此文档其余部分，提高您的配置技巧。<br><br>问：什么是Master帐号？<br><br>答：Master权限帐号登陆后可做几乎任何事。可浏览所有目录，传输任何文件，即使其被别的用户限制。可以更改别的用户或组（但不能更改别的Master帐号）的设置。Master的旗标是&quot;M&quot;。<br><br>注意，组ID1保留给NoGroup组，不可删除/更改此组！<br><br>其他FAQ，请见ioFTPD主页的知识基地.<br><br>———————————————————————————————————-<br><br>提示#1: 好的脚本、sfv校验、sitebot、已知bug及其他ioFTPD信息，请查看论坛.<br><br>提示 #2: 在登陆服务器时出现错误，请检查..\logs\Error.log文件。<br><br>提示 #3: 要学会如何用site命令控制ioFTPD。<br><br>提示#4: 请阅读此文档的其他部分，更多了解ioFTPD。<br><br>———————————————————————————————————-<br><br><strong><font color="#0000ff">3. 虚拟文件系统(VFS)<br><br>——————————————————————————————————————————-</font></strong><br><br>VFS文件用来创建服务器的文件目录结构，用户登陆后即可见。示例的VFS文件为default.vfs和admin.vfs，均位于..\etc目录下。<br><br>基本VFS设置<br><br>子目录加载<br><br>用于存档的Raid目录加载<br><br>不同用户和/或不同组的VFS文件<br><br>私有目录<br><br>符号链接<br><br>目录权限设置<br><br>————————————————————————————————————————<br><br>基本VFS设置<br><br>最快的VFS文件设置法是将一空目录设置为根目录，这样必须在你的VFS文件中将此目录加载为：&quot;;/&quot;; 如下：<br><br>&quot;c:\ioFTPD\site&quot; /<br><br>在..\site目录下有些示例目录，你可以删除它们。<br><br>然后你可指定VFS根目录下要显示的目录。<br><br>如：<br><br>&quot;c:\ioFTPD\site&quot; /<br><br>&quot;d:\games&quot; /games<br><br>&quot;e:\mp3&quot; /mp3<br><br>也支持驱动器盘符的直接加载，但不推荐此设置，因为不能隐藏象系统卷标信息之类的系统目录。<br><br>如：<br><br>&quot;f:\&quot; /f-drive<br><br>&quot;g:\&quot; /g-drive<br><br>要设置这些目录的权限（这样用户就可上传等），请用SITE CHMOD.<br><br>这些是ioftpd新手需要了解的基本设置，高级VFS设置请参见下面内容……<br><br>————————————————————————————————————————<br><br>加载子目录<br><br>ioFTPD’s VFS十分灵活，你可指定某些目录作为子目录。<br><br>但要确保你的上级目录存在（此处为/mnt）。<br><br>如：<br><br>&quot;c:\ioFTPD\site&quot; /<br><br>&quot;c:\ioFTPD\mnt&quot; /mnt<br><br>&quot;c:\&quot; /mnt/c-drive<br><br>&quot;d:\&quot; /mnt/d-drive<br><br>&quot;e:\&quot; /mnt/cdrom<br><br>————————————————————————————————————————<br><br>用于文件存储目的的Raid目录加载<br><br>可合并两个或更多目录内容，如下：<br><br>注意：对于只读目的！尽管可写，但上传的文件（在Raided VFS目录下）会被存储在最后一个指定的设备下，此处为e:\dir2。<br><br>如：<br><br>&quot;d:\目录1&quot; /存档文件<br><br>&quot;e:\目录2&quot; /存档文件<br><br>————————————————————————————————————————<br><br>不用用户和/或组的VFS文件<br><br>要为用户指定不同的VFS文件，仅需新建一VFS文件，并使用此命令来更改用户的VFS文件<br><br>site change &lt;用户&gt; vfsfile ..\etc\custom.vfs<br><br>你也可改变某个组的VFS，该组下所有用户均自动使用此组VFS文件<br><br>如：<br><br>site change &lt;组&gt; groupvfsfile ..\etc\group1.vfs<br><br>重要！用户VFS文件会覆盖组VFS文件。你已用一指定的组VFS文件更改了组内某用户的VFS文件，且你想让此用户使用此组VFS文件，可清除..\users目录下的用户 user文件中的VFSFILE行，或者用命令更改此用户的VFS文件至此组VFS文件：site change vfsfile ..\etc\group1.vfs<br><br>记住若将用户的VFS文件改变为与组VFS文件的文件，且然后又将此组VFS文件改变为另一个文件，你需要再一次改变用户的VFS文件。<br><br>————————————————————————————————————————<br><br>私有目录<br><br>另一种不同目录的权限设置（包括不同的VFS）方法为私有路径。私有路径对其他用户隐藏，即使这些目录也存在于他们的VFS中。这样便很容易地设置VFS，而不必设置多重VFS文件（使某些用户使用某些目录）。除了Master,其他用户无权进入私有目录。私有目录不对Master隐藏。<br><br>SITE命令&quot;site chattr&quot;用于设置私有目录，此命令也可将目录转换为符号链接。<br><br>用法： site chattr +h &quot;&lt;目录&gt;&quot; &quot;&lt;权限列表&gt;&quot;<br><br>示例： site chattr +h &quot;私有目录&quot; &quot;-用户2 -用户5 =组11&quot;<br><br>若目录名包含空格，或你指定多个用户和/或组权限时，则需要用引号(&quot;; &quot;;) 引用。旗标也可在权限列表中使用。<br><br>使用以下命令查看当前私有目录的权限：<br><br>site chattr +h &quot;目录&quot;<br><br>联想到+h是指&quot;;hidden&quot;;， 很容易便可记住+h是指私有目录，+l指目录链接。<br><br>————————————————————————————————————————<br><br>符号链接<br><br>符号链接是一个快捷目录，可指向你的虚拟文件系统中的任何指定位置。<br><br>使用SITE命令&quot;site chattr&quot;将目录转换成符号链接。<br><br>用法： site chattr +l &quot;&lt;目录&gt;&quot; &quot;&quot;<br><br>示例： site chattr +l &quot;mp3-today&quot; &quot;/mp3/0525&quot;<br><br>使用以下命令查看当前路径的链接指向：<br><br>site chattr +l &quot;符号链接名&quot;<br><br>符号链接也可设置为私有路径。<br><br>————————————————————————————————————————<br><br>目录权限的详细设置<br><br>如果你想禁止某些目录的上传，那么VFS的此部分设置是很有用的。权限前缀&quot;;!&quot;; 表示禁止，如!-user !=group !F。也可指定多个用户和/或组，如!-user1 -user2 =group1，此处仅user1被禁止。<br><br>以下是ioFTPD.ini里的缺省设置：<br><br>[VFS]<br><br>…<br><br>###<br><br># 目录权限的详细设置<br><br>#<br><br># priviledge = &lt;virtual path&gt; &lt;rights&gt;<br><br>#<br><br>Upload = </em> <em><br><br>Resume = </em> <em><br><br>Download = </em> <em><br><br>MakeDir = </em> <em><br><br>RemoveDir = </em> <em><br><br>RemoveOwnDir = </em> <em><br><br>Rename = </em> 1VM<br><br>RenameOwn = <em> </em><br><br>Overwrite = <em> VM<br><br>Delete = </em> 1VM<br><br>DeleteOwn = <em> </em><br><br>NoStats = <em> !</em><br><br>虚拟路径用此格式：/目录/<em><br><br>———————————————————————————————————-<br><br>规则为首个匹配即生效。<br><br>在虚拟目录和权限间，仅可使用空格，不要用tab键空格。<br><br>最后的&quot;</em>&quot;是必须的，表示允许其他所有人。<br><br>———————————————————————————————————-<br><br>示例：<br><br># 所有GuestGroup组的用户不可创建目录<br><br># 也不可在mp3目录内上传文件，但其他用户被允许此二项。<br><br>#<br><br>MakeDir = /mp3/<em> !=GuestGroup </em><br><br>MakeDir = <em> </em><br><br>Upload = /mp3/<em> !=GuestGroup </em><br><br>Upload = <em> </em><br><br>ioFTPD 4.9.0（包含RemoviOwnDir）后的版本有一个新功能&quot;NoStats&quot;，NoStats取消指定用户和/或组的状态统计。NoStats是路径相关的。记住，在这些指定目录下，这些用户和/或组的活动不被计入统计。<br><br>总将NoStats = <em> !</em>放在最底部，否则活动统计对其他用户也会失效。可在此行上方加入你自己的NoStats行。<br><br><strong><br><br><font color="#0000ff">4. 设备<br><br>—————————————————————————————————————</font></strong><br><br>在设备区，你将指定ioFTPD使用哪些IP和数据端口。<br><br>会在配置ioFTPD的services区时使用设备名（Device Name).<br><br>配置相当简单：<br><br>[DeviceName]<br><br>Host = &lt;IP&gt;<br><br>Ports = &lt;Data transfer ports&gt;<br><br>Random = &lt;True/False&gt;<br><br>Bind = &lt;IP&gt;<br><br># 以下摘自示例ioFTPD.ini<br><br>[Any]<br><br>Host = 0.0.0.0<br><br>Ports = 1024-2048<br><br>Random = True<br><br>[Any] —&gt; 设备名（此处为Any）<br><br>Host —&gt; 外部主机，此地址会显示给用户。<br><br>Host = 0.0.0.0使用sockets连接的那个IP，取决于你主机的IP及你的用户连接的IP。<br><br>表示允许在任何IP上连接，如127.0.0.1，你的内部LAN IP如192.168.0.1及你的外部IP等。<br><br>Ports —&gt; 用于数据传输的端口，可包括逗号将端口范围列表分开。<br><br>如： Ports = 1024-2048, 3355, 5000-5999, 25001-26000, 31337<br><br>Random —&gt; True/False. 数据传输使用随机次序端口<br><br>Bind —&gt; 内部主机。若指定，则连接绑定于此地址，而不是HOST。若你在路由后方则使用BIND，BIND是你的内部IP。<br><br>#ioFTPD-Advanced.ini中使用绑定设置的例子<br><br>[Nat]<br><br>Host = 212.146.42.251 &lt;— 奜晹IP/楬桼婍IP<br><br>Ports = 25001-26000<br><br>Random = True<br><br>Bind = 192.168.1.10 &lt;— 你运行ioFTD所用电脑的网络IP<br><br><strong><font color="#0000ff">5. 服务<br><br>——————————————————————————————————————————————-</font></strong><br><br>无论是否使用加密，在上限范围之内的用户可以同时通过你所指定的服务端口登录。<br><br>ioFTPD的默认端口<br><br>服务规划<br><br>详细服务<br><br>禁用服务<br><br>自定义设备及服务<br><br>通过HTTP及TELNET连接<br><br>————————————————————————————————————————<br><br>ioFTPD的默认端口<br><br>FTP 9999<br><br>HTTP 10000<br><br>TELNET 10001<br><br>————————————————————————————————————————<br><br>服务框架<br><br>注意ioFTPD 4.9.0版本的ioFTPD.ini文件中一些名称作了改变，例如Listen_Device -&gt; Device_Name、MaxUsers -&gt; User_Limit、Req_Encrypted_Auth -&gt; Require_Encrypted_Auth 等等<br><br>[FTP_Service]<br><br>Type = FTP<br><br>Device_Name = Any<br><br>Port = 9999<br><br>Description = My FTP Service<br><br>User_Limit = 10<br><br>Allowed_Users = <em><br><br>;Messages = ..\text\ftp<br><br>### 加密 ###<br><br>#<br><br>Require_Encrypted_Auth = !</em><br><br>Require_Encrypted_Data = !<em><br><br>Certificate_Name = 192.168.1.11<br><br>Explicit_Encryption = True<br><br>Encryption_Protocol = SSL3<br><br>Min_Cipher_Strength = 128<br><br>Max_Cipher_Strength = 384<br><br>### IDNT 命令处理 ###<br><br>#<br><br>;Get_External_Ident = False<br><br>### 负载均衡 ###<br><br>#<br><br>;Data_Devices =<br><br>;Random_Devices = False<br><br>————————————————————————————————————————<br><br>服务细节<br><br>[FTP_Service] &lt;— 服务名称<br><br>Type = FTP &lt;— 键入FTP，HTTP或者TELNET<br><br>Device_Name = Any &lt;— 所使用设备名称<br><br>Port = 9999 &lt;— 连接端口！<br><br>Description = My FTP Service &lt;— 描述<br><br>User_Limit = 10 &lt;— 最大用户连接数<br><br>Allowed_Users = </em> &lt;— 拥有这些标记的用户有登录权限. <em> = 所有人<br><br>;Messages = ..\text\ftp &lt;— 使用其他信息替代默认信息？<br><br>Require_Encrypted_Auth = !</em> &lt;— 强制这些用户使用安全登录.!<em> 表示无人<br><br>Require_Encrypted_Data = !</em> &lt;— 强制安全数据传输。<br><br>Certificate_Name = 192.168.1.11 &lt;— SSL 证书名(CN).<br><br>Explicit_Encryption = True<br><br>Encryption_Protocol = SSL3 &lt;— TLS/SSL3/SSL2/SSL1/SSL<br><br>Min_Cipher_Strength = 128 &lt;— 128-bit<br><br>Max_Cipher_Strength = 384 &lt;— 384-bit<br><br>;Get_External_Ident = False &lt;— True/False. IDN命令处理.保镖支持.(?)<br><br>;Data_Devices = &lt;— 负载均衡设备<br><br>;Random_Devices = False &lt;— True/False. 随机次序使用负载均衡设备.<br><br>Certificate_Name指&quot;;CN&quot;以及当你开始SSL认证时所输入的 (hostname)(?) 例如：Example: Certificate_Name = myl33tioftpd.no-ip.com<br><br>记住ioFTPD不再采用OpenSLL认证，ioFTPD v4.9.0以后版本的使用了Microsoft的SChannel。旧的OpenSSL认证在4.9.0版本中无效，所以必须重新生成新的SChannel下的认证文件。更多信息请见：Generating.SSL.Key.For.ioFTPD.txt in ioFTPD\help.=<br><br>————————————————————————————————————————<br><br>取消服务<br><br>ioFTPD仅启动列在&quot;Active_Services&quot;中的服务项目。<br><br>[Network]<br><br>Active_Services = FTP_Service Telnet_Service HTTP_Service<br><br>要取消Telnet和HTTP：<br><br>[Network]<br><br>Active_Services = FTP_Service<br><br>更新&quot;Active_Services&quot;后需重启ioFTPD服务。<br><br>————————————————————————————————————————<br><br>定制设备和服务<br><br>可指定自己的设备（Device)名和服务（Service)名。但要确保服务名称已经列在ioFTPD.ini文件中，且服务使用了你指定的设备。<br><br>[Network]<br><br>Active_Services = MyFTP_Service Telnet_Service HTTP_Service<br><br>[我的设备]<br><br>Host = 192.168.0.1<br><br>Ports = 25000-26000<br><br>[我的FTP服务]<br><br>Type = FTP<br><br>..<br><br>Device_Name = 我的设备<br><br>..<br><br>————————————————————————————————————————<br><br>通过HTTP和TELNET连接<br><br>使用你的Internet浏览器连接HTTP服务 <a href="http://127.0.0.1:10000" target="_blank" rel="external">http://127.0.0.1:10000</a> nbsp;为常规http连接或者 <a href="https://127.0.0.1:10000" target="_blank" rel="external">https://127.0.0.1:10000</a> 为SSL加密连接<br><br>如何用telnet.exe连接TELNET服务。<br><br>C:\&gt; telnet.exe 127.0.0.1 10001<br><br>注意：如果你使用telnet.exe，你必须使用CTRL-ENTER来提交你的密码或者命令，而不是仅仅用ENTER键<br><br>如果你感到麻烦可以使用其它Telnet客户端（例如SecureCRT, PuTTY等）<br><br></div><br></div><br></div>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+    <footer class="article-footer">
+		
+	<a align="left" href="/2008/04/28/ioftpde69687e6a1a3e59084e7a78de9858de7bdaee69687e4bbb6e8afa6e7bb86e8afb4e6988eefbc88e4ba8cefbc89/" id="article-nav-older" class="article-nav-link-wrap">
+	  <div align="left" class="article-nav-title">上一篇 ioFTPD文档:各种配置文件详细说明（二）</div>
+	</a>
+
+
+	<a align="right" href="/2008/05/01/phpmotion-e78eafe5a283e690ade5bbbaffmpeg-ffmpeg-php-mplayer-mencoder-flv2tool-lame-mp3-encoder-libog/" id="article-nav-newer" class="article-nav-link-wrap">
+	  <div align="right" class="article-nav-title">下一篇 PHPmotion 环境搭建(FFmpeg + FFmpeg-PHP + Mplayer + Mencoder + flv2tool + LAME MP3 Encoder + Libog)</div>
+	</a>
+
+
+    </footer>
+	
+  </div>
+</article>
+
+<section id="comments">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="ioFTPD文档:各种配置文件详细说明（一）" data-title="ioFTPD文档:各种配置文件详细说明（一）" data-url="http://yoursite.com/2008/04/28/ioftpde69687e6a1a3e59084e7a78de9858de7bdaee69687e4bbb6e8afa6e7bb86e8afb4e6988eefbc88e4b880efbc89/"></div>
+	<!-- 多说评论框 end -->
+</section>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

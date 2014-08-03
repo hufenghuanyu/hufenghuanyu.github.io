@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>8G大U盘制作启动型USB-CDROM的体会 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="http://blog.sina.com.cn/s/blog_4c1664920100a64v.html
+宇瞻**AH320微笑碟8G制作USB-CDROM**
+
+(**群联量产工具试用体会专题**)
+
+优盘可以通过量产，在优盘空间里虚拟出一个USB-CDROM来，当接入电脑的时候，会自动识别为USB-CDROM。USB-CDROM的兼容性很强，安全性又好，启动时可以快速直接引导系统，是安装和维护">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8G大U盘制作启动型USB-CDROM的体会">
+<meta property="og:url" content="http://yoursite.com/2008/08/27/8ge5a4a7ue79b98e588b6e4bd9ce590afe58aa8e59e8busb-cdrome79a84e4bd93e4bc9a/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="http://blog.sina.com.cn/s/blog_4c1664920100a64v.html
+宇瞻**AH320微笑碟8G制作USB-CDROM**
+
+(**群联量产工具试用体会专题**)
+
+优盘可以通过量产，在优盘空间里虚拟出一个USB-CDROM来，当接入电脑的时候，会自动识别为USB-CDROM。USB-CDROM的兼容性很强，安全性又好，启动时可以快速直接引导系统，是安装和维护">
+<meta property="og:image" content="http://static10.photo.sina.com.cn/bmiddle/4c166492451808b94f349">
+<meta property="og:image" content="http://static9.photo.sina.com.cn/bmiddle/4c16649245243c01c14a8">
+<meta property="og:image" content="http://static14.photo.sina.com.cn/bmiddle/4c16649245243c3a1d1cd">
+<meta property="og:image" content="http://static10.photo.sina.com.cn/bmiddle/4c16649245243c69cdf49">
+<meta property="og:image" content="http://static3.photo.sina.com.cn/bmiddle/4c16649245243c9a577a2">
+<meta property="og:image" content="http://static11.photo.sina.com.cn/bmiddle/4c16649245243cce50dba">
+<meta property="og:image" content="http://static1.photo.sina.com.cn/bmiddle/4c16649245180a552d060">
+<meta property="og:image" content="http://static15.photo.sina.com.cn/bmiddle/4c16649245180ab93e0ae">
+<meta property="og:image" content="http://static7.photo.sina.com.cn/bmiddle/4c16649245180ad3094e6">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="8G大U盘制作启动型USB-CDROM的体会">
+<meta name="twitter:description" content="http://blog.sina.com.cn/s/blog_4c1664920100a64v.html
+宇瞻**AH320微笑碟8G制作USB-CDROM**
+
+(**群联量产工具试用体会专题**)
+
+优盘可以通过量产，在优盘空间里虚拟出一个USB-CDROM来，当接入电脑的时候，会自动识别为USB-CDROM。USB-CDROM的兼容性很强，安全性又好，启动时可以快速直接引导系统，是安装和维护">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main"><article id="post-8ge5a4a7ue79b98e588b6e4bd9ce590afe58aa8e59e8busb-cdrome79a84e4bd93e4bc9a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/08/27/8ge5a4a7ue79b98e588b6e4bd9ce590afe58aa8e59e8busb-cdrome79a84e4bd93e4bc9a/" class="article-date">
+  <time datetime="2008-08-26T18:26:00.000Z" itemprop="datePublished">Aug 27 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      8G大U盘制作启动型USB-CDROM的体会
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+		<a data-url="http://yoursite.com/2008/08/27/8ge5a4a7ue79b98e588b6e4bd9ce590afe58aa8e59e8busb-cdrome79a84e4bd93e4bc9a/" data-title="8G大U盘制作启动型USB-CDROM的体会" data-id="mjr0cdj8e4y76mqp" class="article-share-link">Share</a>
+	  
+      
+        <a href="http://yoursite.com/2008/08/27/8ge5a4a7ue79b98e588b6e4bd9ce590afe58aa8e59e8busb-cdrome79a84e4bd93e4bc9a/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">Contents</strong>
+			
+			</div>
+		
+		<!-- 文章目录结束 -->
+		
+        <p><a href="http://blog.sina.com.cn/s/blog_4c1664920100a64v.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_4c1664920100a64v.html</a></p>
+<font style="font-size: 18px"><strong>宇瞻**</strong>AH320<strong><strong>微笑碟</strong></strong>8G<strong><strong>制作</strong></strong>USB-CDROM**</font>
+
+<font style="font-size: 18px"><strong>(**</strong>群联量产工具试用体会专题<strong>**)</strong></font>
+
+<font style="font-size: 16px">优盘可以通过量产，在优盘空间里虚拟出一个USB-CDROM来，当接入电脑的时候，会自动识别为USB-CDROM。USB-CDROM的兼容性很强，安全性又好，启动时可以快速直接引导系统，是安装和维护系统不可多得的工具和帮手。</font>
+
+<font style="font-size: 16px"><strong>所需软件：</strong></font>
+
+<font style="font-size: 16px">1、 <wbr> 群联(Phison)量产工具V1.81.00，其实已经有了V1.89.00、V1.96.00。但V1.81.00是For up10的，经测试，我的宇瞻微笑盘是up11，比较接近，所以选用了它，实践证明，操作成功率很高，熟练后可达100％。</font>
+
+<font style="font-size: 16px">2、 <wbr> ChipGenius。主要作用是看优盘的芯片组，从而确定参数。</font>
+
+<font style="font-size: 16px">3、 <wbr> ISO镜像一个。可以是安装版的镜像，也可以是GHOST版的镜像。GHOST版，推荐用deepin ghostxp 7.0 量产特别封装版。已经集成了USB-CDROM驱动，克服了USB光驱不能GHOST的毛病（为节约U盘容量，本人选用去除XP.GHO后的深度镜像，只有60多M）。</font>
+
+<font style="font-size: 16px"><strong>步骤：</strong></font>
+
+<font style="font-size: 16px">一，把优盘插上，用ChipGenius读出优盘的控制芯片。如图1：</font>
+
+<font style="font-size: 16px"> <wbr><a href="http://blog.photo.sina.com.cn/showpic.html#url=http://static10.photo.sina.com.cn/orignal/4c166492451808b94f349" target="_blank" rel="external"><img src="http://static10.photo.sina.com.cn/bmiddle/4c166492451808b94f349" alt=""></a></font>
+
+<font size="3">图1</font>
+
+<p> <wbr></p>
+<font style="font-size: 16px"><font color="#0000ff"><strong>本人**</strong>U<strong><strong>盘信息</strong></strong>:**</font></font>
+
+<font style="font-size: 16px">设备名称: [K:]USB Mass Storage Device(USB FLASH DRIVE USB Device)</font>
+
+<font style="font-size: 16px">PNP设备ID: <font color="#000000">VID = 1005 PID = B113</font></font>
+
+<font style="font-size: 16px">设备序列号: 198315940548(原) <wbr> 90851D000000(量产恢复后) 设备序列号: 90861A000003(第二次量产恢复后)。</font>
+
+<font style="font-size: 16px">设备版本: PMAP</font>
+
+<font style="font-size: 16px">设备类型: 标准USB设备 - USB2.0高速</font>
+
+<font style="font-size: 16px">芯片制造商: phison(群联)</font>
+
+<font style="font-size: 16px">芯片型号: UP11</font>
+
+<font style="font-size: 16px">产品制造商: Apacer(宇瞻)</font>
+
+<font style="font-size: 16px">产品型号: FLASH DRIVE</font>
+
+<font style="font-size: 16px">从上可以看到。这块优盘是Phison 群联芯片组的。<font color="#0000ff">VID 1005， PID B113，记录这两个数字，在量产过程中需要用。</font></font>
+
+<font style="font-size: 16px">二，打开量产工具。Phison 1.81.00 (我用的这个软件，据说新版1.96.00的固件高，能提高优盘速度，但我的U盘芯片不支持，所以没有试)。打开这个软件，里面有四个EXE文件，打开ParamEdt-F1-v1.0.10.2 这个。选择F1-1选项卡。出现图2的界面（其中含&ldquo;F2&rdquo;的两个文件可以添加更多厂家信息，OEM用的，我没有用，为了避免混淆，在量产前就把它们删除了）。见图2：</font>
+
+<font style="font-size: 16px"> <wbr></font>
+
+<p><a href="http://blog.photo.sina.com.cn/showpic.html#url=http://static9.photo.sina.com.cn/orignal/4c16649245243c01c14a8" target="_blank" rel="external"><img src="http://static9.photo.sina.com.cn/bmiddle/4c16649245243c01c14a8" alt=""></a></p>
+<font size="3">图2</font>
+
+<font style="font-size: 16px">开始填写客户资料。一般都勾选Load Default ，但VID PID必须用0x????的格式，比如我的U盘<font color="#0000ff">VID</font>是1005 就填写<font color="#0000ff"><strong>0x1005</strong></font> <wbr> ，<font color="#0000ff">PID</font>，填写<font color="#0000ff"><strong>0xB113（注：X 符号用英文字母 X，没问题的）</strong></font>。厂商，填写你的U盘厂商，我是从ChipGenius里照搬过来的，填写Apacer <wbr> 产品就写USB FLASH DRIVE. <wbr> 勾选&ldquo;Auto detect&rdquo;。因为你手动填写的不一定正确。下面的模式，选择<font color="#0000ff"><strong>21</strong></font>（含义：把U盘做成一个CD-ROM和一个可移动磁盘）。见图3。</font>
+
+<p><strong><font style="font-size: 16px"> <wbr></font></strong></p>
+<p><a href="http://blog.photo.sina.com.cn/showpic.html#url=http://static14.photo.sina.com.cn/orignal/4c16649245243c3a1d1cd" target="_blank" rel="external"><img src="http://static14.photo.sina.com.cn/bmiddle/4c16649245243c3a1d1cd" alt=""></a></p>
+<font size="3">图3</font>
+
+<p> <wbr></p>
+<font style="font-size: 16px"><font color="#0000ff"><strong><em>*</em></strong>注<strong>**:</strong> <strong>实际上，除了模式一栏是必填项外，其他都可不填。</strong></font></font>
+
+<p> <wbr></p>
+<font style="font-size: 16px">客户资料：建议填一下，万一以后需要这个数据可以读取。注意，PID和VID一定要遵循0x????格式，否则丢弃。</font>
+
+<font style="font-size: 16px">修订版本：PMAP （如果软件识别，会自动填写）</font>
+
+<font style="font-size: 16px">配置：强烈建议勾选&ldquo;Auto detect&rdquo;。你手动填不能保证容量正确，因为你看到的容量未必是真实容量。</font>
+
+<font style="font-size: 16px">卷标：可填可不填。提示：可隐藏区域（私有区域）是可以隐藏的区域，不是隐藏区域，<br><br>Serial number：不要填。如果填写错误，你可能需要完整格式化才能使用U盘<br><br> <wbr> <wbr> <wbr> Preformat：不要选。除非你怀疑你的U盘有坏区，或者上次量产失败。不勾选一样会进行格式化。勾选类似于硬盘的低级格式化。勾选后，在后续操作中会出现一次手动插拔U盘的操作。<br><br> <wbr> <wbr> <wbr> Hidden size：隐藏U盘部分容量。隐藏的大小是你填写的数字。注意，隐藏可不是分区隐藏，实际上是关闭了。除非重新执行量产操作，这部分容量是不会出现的。<br><br> <wbr> <wbr> <wbr> <font color="#0000ff"><strong>模式的定义：重点</strong></font></font>
+
+<font style="font-size: 16px">3 <wbr>  <wbr> 把U盘做成一个可移动磁盘。如果你想恢复U盘成刚买回来的状态，用此模式（修复U盘常用）</font>
+
+<font style="font-size: 16px">4 <wbr>  <wbr> 把U盘做成一个私有（可隐藏）移动磁盘和一个软盘。需要在标签&ldquo;F1-2&rdquo;中指定软盘映像文件。</font>
+
+<font style="font-size: 16px">7 <wbr>  <wbr> 把U盘做成一个私有移动磁盘和一个公共可移动磁盘。私有可移动磁盘可以执行加密操作，加密后私有磁盘隐藏。</font>
+
+<font style="font-size: 16px">8 <wbr>  <wbr> 把U盘做成一个可移动磁盘，可隐藏，可开放。</font>
+
+<font style="font-size: 16px">14 <wbr>  <wbr> 把U盘做成一个光盘或者硬盘（注意是硬盘，不是可移动磁盘）和一个可移动磁盘</font>
+
+<font style="font-size: 16px">21 <wbr>  <wbr> 把U盘做成一个CD-ROM和一个可移动磁盘。需要在标签&ldquo;F1-2&rdquo;中指定光盘映像文件。</font>
+
+<font style="font-size: 16px" color="#0000ff">我选21模式。</font>
+
+<font style="font-size: 16px">以上模式可不要以为只是进行了分区操作，全部要重新刷写固件的。比如CD-ROM，要在U盘固件中写入光盘设备信息，这样操作系统才会安装光盘驱动。</font>
+
+<font style="font-size: 16px">分区容量：</font>
+
+<font style="font-size: 16px">某些模式下才会出现这个项目，你可以指定分区容量。建议用默认&ldquo;Max&rdquo;。</font>
+
+<font style="font-size: 16px">你想填的内容都填完以后，保存一下，指定一个文件名，必须是在当前目录。</font>
+
+<font style="font-size: 16px">三，填好F1-1后，就在F1-2中填写你需要引入的光盘ISO，只要是标准的可启动的<em>.iso或者</em>.bin格式就行，量产后的U盘也是可启动，和使用CDROM时一模一样，ISO为dvd或cd的镜像都可。如图4所示：</font>
+
+<font style="font-size: 16px"> <wbr> <wbr> <wbr> <wbr></font>
+
+<p><a href="http://blog.photo.sina.com.cn/showpic.html#url=http://static10.photo.sina.com.cn/orignal/4c16649245243c69cdf49" target="_blank" rel="external"><img src="http://static10.photo.sina.com.cn/bmiddle/4c16649245243c69cdf49" alt=""></a></p>
+<font size="3">图4</font>
+
+<p> <wbr></p>
+<font style="font-size: 16px">把填的内容都填完后，保存(或另存为)一下，指定一个文件名（如001.INI）。<font color="#0000ff"><strong>但是必须是和</strong>F1_90_v181.exe <strong>在同一个文件夹内。</strong></font></font>
+
+<font style="font-size: 16px">设置好你的光盘镜像之后，保存设置。关闭ParamEdt-F1-v1.0.10.2</font>
+
+<font style="font-size: 16px">第四．插上U盘。打开F1_90_v181.exe 文件。如图5</font>
+
+<font style="font-size: 16px"> <wbr> <wbr> <wbr> <wbr> <wbr> <wbr> <wbr> <wbr> <wbr> <wbr> <wbr> <wbr> <wbr> <wbr> <wbr> <wbr> <wbr> <wbr></font>
+
+<p><a href="http://blog.photo.sina.com.cn/showpic.html#url=http://static3.photo.sina.com.cn/orignal/4c16649245243c9a577a2" target="_blank" rel="external"><img src="http://static3.photo.sina.com.cn/bmiddle/4c16649245243c9a577a2" alt=""></a></p>
+<font size="3">图5</font>
+
+<font style="font-size: 16px"> <wbr>  <wbr></font>
+
+<font style="font-size: 16px"><u>点击</u> <u>取得信息</u>。看左侧是否能够取得你的U盘信息。如果无法取得，则是你的优盘无法进行量产，这也是为什么推荐用Apacer微笑盘的原因。然后选择配置文件。就是刚刚大家写的那个配置文件。位置在开始结果取得信息这三个按钮下面的下拉菜单，里面有你刚写好保存的那个配置文件，勾上LOCK。</font>
+
+<font style="font-size: 16px"><font style="font-size: 16px">第五，这时候一切都已经设定完毕了。U盘已经插好，点击开始按钮。这时候下面的16个长方形方块中，第一个方格就变成黄色，<font color="#0000ff"><strong>过一会，提示你**</strong>插拔U**盘</font>一次，（有一次我未插拔，结果量产失败）</font><font style="font-size: 16px">，然后所用时间大概就是往U盘里写入你的ISO的时间，时间要好几分钟，此时U盘灯一直在闪烁，时间长短取决于所选的 ISO 文件大小和U盘速度。 正常完成后黄色会变成绿色，在&ldquo;测试报告&rdquo;栏中会显示&ldquo; 坏的：0，好的：1&rdquo; ，<font color="#0000ff">&ldquo;好的&rdquo;说明量产成功</font>。<font color="#0000ff">这时可关闭F1_90_v181.exe，直接拔出U盘，别去管U盘的指示灯在闪烁，没事的。</font>至此，量产过程全部结束。当再次插入优盘，此时就会自动识别出一个USB CDROM和一个新的U盘（空间为去掉光盘占用空间后，剩余的空间是U盘。我8G总量是7.67G）。见图6：</font></font>
+
+<p> <wbr></p>
+<p><a href="http://blog.photo.sina.com.cn/showpic.html#url=http://static11.photo.sina.com.cn/orignal/4c16649245243cce50dba" target="_blank" rel="external"><img src="http://static11.photo.sina.com.cn/bmiddle/4c16649245243cce50dba" alt=""></a></p>
+<p> <wbr></p>
+<font size="3">图6</font>
+
+<p> <wbr></p>
+<font style="font-size: 16px">此时，已经有了CD-ROM和剩余空间做成的U盘。在我的电脑里的图是这样的，见图7：</font>
+
+<p> <wbr></p>
+<font style="font-size: 16px"><a href="http://blog.photo.sina.com.cn/showpic.html#url=http://static1.photo.sina.com.cn/orignal/4c16649245180a552d060" target="_blank" rel="external"><img src="http://static1.photo.sina.com.cn/bmiddle/4c16649245180a552d060" alt=""></a> <wbr> <wbr></font>
+
+<font size="3">图7</font> <wbr><br><br><font style="font-size: 16px">结束。U盘版的快速恢复盘做好了。速度真的飞快，整个GHOST过程只需要1分02秒。GHOST结束后直接可以用了。大家可能需要装点驱动。但是系统已经在这1分02秒里搞定了。</font>
+
+<font style="font-size: 16px">最后，至于<font color="#0000ff"><strong>失败后的恢复</strong></font>，只要重新量产一遍就行了，<font color="#0000ff"><strong>模式选择**</strong>3<strong>**，勾选格式化</strong> &ldquo;Preformat&rdquo;。</font></font>
+
+<font style="font-size: 16px">我用v1.81.00成功恢复原厂参数（因一次用低格工具preformat格式化后，原厂参数全部改变：VID改为13FE，PID为1D00，产品名为DISK 30x，生产厂家为Intel，只有芯片名仍为phison，恢复性量产时，<font color="#0000ff"><strong>把**</strong>U<strong>**盘信息改回原来</strong></font>），完成后，一切复原！所以该低格工具preformat应慎用！</font>
+
+<p> <wbr></p>
+<font style="font-size: 16px"><font color="#0000ff"><strong>恢复**</strong>.ini<strong>**设置如下：</strong></font></font>
+
+<font style="font-size: 16px">[Customize Info]</font>
+
+<font style="font-size: 16px">USB VID=0x1005<font color="#0000ff">（改为原来的）</font></font>
+
+<font style="font-size: 16px">USB PID=0xb113<font color="#0000ff">（复原）</font></font>
+
+<font style="font-size: 16px">String Product Name=USB FLASH DRIVE<font color="#0000ff">（复原）</font></font>
+
+<font style="font-size: 16px">String Manufacturer Name=Apacer<font color="#0000ff">（复原）</font></font>
+
+<font style="font-size: 16px">Inquiry Version=PMAP</font>
+
+<font style="font-size: 16px">[Configuration]</font>
+
+<font style="font-size: 16px">Reset Serial Number=0</font>
+
+<font style="font-size: 16px">[Extra]</font>
+
+<font style="font-size: 16px">Mode=3</font>
+
+<font style="font-size: 16px">[Misc]</font>
+
+<font style="font-size: 16px">Volume Label=USB DISK<font color="#0000ff">（复原）</font></font>
+
+<font style="font-size: 16px"> <wbr></font>
+
+<font style="font-size: 16px">[Firmware]</font>
+
+<font style="font-size: 16px">Burner File=D:\temp\BN205.BIN</font>
+
+<font style="font-size: 16px">Firmware Name=D:\temp\FF01109.BIN</font>
+
+<font style="font-size: 16px">Verified Firmware Name=D:\temp\FF01109.BIN</font>
+
+<font style="font-size: 16px"> <wbr></font>
+
+<font style="font-size: 16px"><strong><font color="#0000ff">重要提示</font></strong>:用V1.81 的话需要修改生成的信息文件。</font>
+
+<font style="font-size: 16px">在ParamEdt-F1-v1.0.14.3.exe生成的XXX.ini中添加如下内容：</font>
+
+<font style="font-size: 16px"><font color="#0000ff">[Firmware</font><font color="#0000ff">]</font></font>
+
+<font style="font-size: 16px" color="#0000ff">Burner File=X:\temp\BN205.BIN</font>
+
+<font style="font-size: 16px" color="#0000ff">Firmware Name= X:\temp\FF01109.BIN</font>
+
+<font style="font-size: 16px" color="#0000ff">Verified Firmware Name= X:\temp\FF01109.BIN</font>
+
+<font style="font-size: 16px" color="#0000ff">（注：X：为BN205.BIN、FF01109.BIN二个烧录文件的位置）。</font>
+
+<font style="font-size: 16px">上面蓝色部分的增加很关键，关键意义是要手动指定量产文件的几个关联文件的具体路径，就是指明目前在你电脑中1.81版本中Burner File和Firmware文件的具体所在位置，要不然量产会不成功！</font><font style="font-size: 16px"> <wbr></font>
+
+<font style="font-size: 16px"><strong>附加说明：</strong></font>
+
+<font style="font-size: 16px">1、其中VID和PID并不重要，因为我有一次量产后，VID和PID都变成另一个值了，说明这个值并不影响产品性能，也不影响量产的成败，只要量产工具能读出产品信息，这两个值不管怎么变都没问题（后面我的多次操作也证实了我的想法是正确的）。如果一定要修改这个值，请保留&ldquo;0x&rdquo;字样。</font>
+
+<font style="font-size: 16px">2、<strong><u>比较重要的是</u>**</strong><u>&ldquo;</u><strong><strong><u>厂商</u></strong></strong><u>&rdquo;</u><strong><strong><u>和</u></strong></strong><u>&ldquo;</u><strong><strong><u>产品</u></strong></strong><u>&rdquo;</u><strong>**<u>这两个空</u></strong>，最好就填英文的，而且长度不能超过软件的规定，超过了填不进去。我有一次在这里填了中文，<u>结果量产工具就不认盘了</u>，无法再次量产了。好在后来在坛子上找到一个低格工具，强制格式化后竟然清除了中文的产品信息，量产工具也认盘了。</font><font style="font-size: 16px"> <wbr></font>
+
+<font style="font-size: 16px">3、<strong>修复中文产品信息</strong></font>
+
+<font style="font-size: 16px">修复用到的格式化软件是Low Level Format Utility。低格文件只支持显示出来的一系列芯片，不适合的会报错的。我下了一个低格文件preformat v1.30 （forUP10），适合宇瞻8GU盘，宇瞻官网上下的反而不行。</font>
+
+<p> <wbr><a href="http://blog.photo.sina.com.cn/showpic.html#url=http://static15.photo.sina.com.cn/orignal/4c16649245180ab93e0ae" target="_blank" rel="external"><img src="http://static15.photo.sina.com.cn/bmiddle/4c16649245180ab93e0ae" alt=""></a></p>
+<font style="font-size: 16px">用法：插上U盘，看到格式化界面，选第三个选项，快速低格，大约1分钟后格完了，电脑里可以显示盘符，但无法访问（和恢复量产后一样）。通常低格后的东西都要在电脑里格式化一遍后才能用。</font>
+
+<p><a href="http://blog.photo.sina.com.cn/showpic.html#url=http://static7.photo.sina.com.cn/orignal/4c16649245180ad3094e6" target="_blank" rel="external"><font style="font-size: 16px"><img src="http://static7.photo.sina.com.cn/bmiddle/4c16649245180ad3094e6" alt=""></font></a></p>
+<p></p><p style="text-indent: 2em" align="left">&lt;font style=”font-size: 1 …</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+    <footer class="article-footer">
+		
+	<a align="left" href="/2008/08/26/winntsife58f82e695b0e8afa6e8a7a3-e697a0e4babae580bce5ae88e5ae89e8a385xpe887aae58aa8e5ba94e7ad94e69687e4bbb6/" id="article-nav-older" class="article-nav-link-wrap">
+	  <div align="left" class="article-nav-title">上一篇 WINNT.SIF参数详解 (无人值守安装XP自动应答文件)</div>
+	</a>
+
+
+	<a align="right" href="/2008/08/27/e38090e8bdace8bdbde38091virtualboxe585b1e4baabe69687e4bbb6e5a4b9e8aebee7bdae/" id="article-nav-newer" class="article-nav-link-wrap">
+	  <div align="right" class="article-nav-title">下一篇 【转载】Virtualbox共享文件夹设置</div>
+	</a>
+
+
+    </footer>
+	
+  </div>
+</article>
+
+<section id="comments">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="8G大U盘制作启动型USB-CDROM的体会" data-title="8G大U盘制作启动型USB-CDROM的体会" data-url="http://yoursite.com/2008/08/27/8ge5a4a7ue79b98e588b6e4bd9ce590afe58aa8e59e8busb-cdrome79a84e4bd93e4bc9a/"></div>
+	<!-- 多说评论框 end -->
+</section>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

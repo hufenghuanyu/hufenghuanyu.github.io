@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2008 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/2008/page/3/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-idse585a5e4beb5e6a380e6b58b" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/11/22/idse585a5e4beb5e6a380e6b58b/" class="article-date">
+  <time datetime="2008-11-22T13:16:00.000Z" itemprop="datePublished">Nov 22 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/11/22/idse585a5e4beb5e6a380e6b58b/">IDS入侵检测</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><span style="font-size: 14px; line-height: 150%"><a href="http://www.cbinews.com/inc/search.jsp?search=IDS&amp;searchType=keyWord" target="_blank" rel="external"><font color="#0000ff">IDS</font></a>是英文&ldquo;Intrusion Detection Systems&rdquo;的缩写，中文意思是&ldquo;入侵检测系统&rdquo;。专业上讲就是依照一定的安全策略，对网络、系统的运行状况进行监视，尽可能发现各种攻击企图、攻击行为或者攻击结果，以保证网络系统资源的机密性、完整性和可用性。</span></p>
+<p>我们做一个形象的比喻：假如<a href="http://www.cbinews.com/inc/search.jsp?search=防火墙&amp;searchType=keyWord" target="_blank" rel="external"><font color="#0000ff">防火墙</font></a>是一幢大楼的门锁，那么IDS就是这幢大楼里的监视系统。一旦小偷爬窗进入大楼，或内部人员有越界行为，只有实时监视系统才能发现情况并发出警告。 </p>
+<p>在本质上，入侵检测系统是一个典型的&quot;窥探设备&quot;。它不跨接多个物理网段（通常只有一个监听端口），无须转发任何流量，而只需要在网络上被动的、无声息的收集它所关心的报文即可。对收集来的报文，入侵检测系统提取相应的流量统计特征值，并利用内置的入侵知识库，与这些流量特征进行智能分析比较匹配。根据预设的阀值，匹配耦合度较高的报文流量将被认为是进攻，入侵检测系统将根据相应的配置进行报警或进行有限度的反击。入侵检测系统的原理模型如图所示。 </p>
+<p><img src="http://www.cbinews.com/uploadimage/2005-12/upload_20051213_090644.jpg" alt=""></p>
+<p>入侵检测系统的工作流程大致分为以下几个步骤：</p>
+<p><strong>（1）信息收集</strong> 入侵检测的第一步是信息收集，内容包括网络流量的内容、用户连接活动的状态和行为。</p>
+<p><strong>（2）信号分析</strong> 对上述收集到的信息，一般通过三种技术手段进行分析：模式匹配，统计分析和完整性分析。其中前两种方法用于实时的入侵检测，而完整性分析则用于事后分析。</p>
+<p>具体的技术形式如下所述：</p>
+<font color="#0000ff">模式匹配 </font>
+
+<p>模式匹配就是将收集到的信息与已知的网络入侵和系统误用模式数据库进行比较，从而发现违背安全策略的行为。该过程可以很简单（如通过字符串匹配以寻找一个简单的条目或指令），也可以很复杂（如利用正规的数学表达式来表示安全状态的变化）。一般来讲，一种进攻模式可以用一个过程（如执行一条指令）或一个输出（如获得权限）来表示。该方法的一大优点是只需收集相关的数据集合，显著减少系统负担，且技术已相当成熟。它与病毒防火墙采用的方法一样，检测准确率和效率都相当高。但是，该方法存在的弱点是需要不断的升级以对付不断出现的黑客攻击手法，不能检测到从未出现过的黑客攻击手段。 </p>
+<font color="#0000ff">统计分析</font>
+
+<p>分析方法首先给信息对象（如用户、连接、文件、目录和设备等）创建一个统计描述，统计正常使用时的一些测量属性（如访问次数、操作失败次数和延时等）。测量属性的平均值将被用来与网络、系统的行为进行比较，任何观察值在正常偏差之外时，就认为有入侵发生。例如，统计分析可能标识一个不正常行为，因为它发现一个在晚八点至早六点不登录的帐户却在凌晨两点试图登录。其优点是可检测到未知的入侵和更为复杂的入侵，缺点是误报、漏报率高，且不适应用户正常行为的突然改变。具体的统计分析方法如基于专家系统的、基于模型推理的和基于神经网络的分析方法，目前正处于研究热点和迅速发展之中。</p>
+<font color="#0000ff">完整性分析</font>
+
+<p>完整性分析主要关注某个文件或对象是否被更改，包括文件和目录的内容及属性，它在发现被更改的、被特络伊化的应用程序方面特别有效。完整性分析利用强有力的加密机制，称为消息摘要函数（例如MD5），能识别及其微小的变化。其优点是不管模式匹配方法和统计分析方法能否发现入侵，只要是成功的攻击导致了文件或其它对象的任何改变，它都能够发现。缺点是一般以批处理方式实现，不用于实时响应。这种方式主要应用于基于主机的入侵检测系统（HIDS）。 </p>
+<p><strong>（3）实时记录、报警或有限度反击</strong></p>
+<p>IDS根本的任务是要对入侵行为做出适当的反应，这些反应包括详细日志记录、实时报警和有限度的反击攻击源。</p>
+<p>经典的入侵检测系统的部署方式如图所示：</p>
+<p><img src="http://www.cbinews.com/uploadimage/2005-12/upload_20051213_090842.jpg" alt=""> <font face="宋体" size="3">&nbsp;&nbsp;</font></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-ids" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/11/22/ids/" class="article-date">
+  <time datetime="2008-11-22T13:15:00.000Z" itemprop="datePublished">Nov 22 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/11/22/ids/">IDS</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>&nbsp;&nbsp;&nbsp;  **IDS是英文&ldquo;Intrusion Detection Systems&rdquo;的缩写，中文意思是&ldquo;入侵检测系统&rdquo;。专业上讲就是依照一定的安全策略，对网络、系统的运行状况进行监视，尽可能发现各种攻击企图、攻击行为或者攻击结果，以保证网络系统资源的机密性、完整性和可用性。</p>
+<p>**</p>
+<p>&nbsp;&nbsp;&nbsp;  我们做一个形象的比喻：假如<a href="http://product.it168.com/files/0418search.shtml" target="_blank" rel="external">防火墙</a>是一幢大楼的门锁，那么IDS就是这幢大楼里的监视系统。一旦小偷爬窗进入大楼，或内部人员有越界行为，只有实时监视系统才能发现情况并发出警告。 </p>
+<p>&nbsp;&nbsp;&nbsp;  不同于防火墙，IDS入侵检测系统是一个监听设备，没有跨接在任何链路上，无须网络流量流经它便可以工作。因此，对IDS的部署，唯一的要求是：IDS应当挂接在所有所关注流量都必须流经的链路上。在这里，&quot;所关注流量&quot;指的是来自高危网络区域的访问流量和需要进行统计、监视的网络报文。在如今的网络拓扑中，已经很难找到以前的HUB式的共享介质冲突域的网络，绝大部分的网络区域都已经全面升级到交换式的网络结构。因此，IDS在交换式网络中的位置一般选择在：</p>
+<p>&nbsp;&nbsp;&nbsp;  （1）尽可能靠近攻击源</p>
+<p>&nbsp;&nbsp;&nbsp;  （2）尽可能靠近受保护资源</p>
+<p>&nbsp;&nbsp;&nbsp;  这些位置通常是：</p>
+<p>&nbsp;&nbsp;&nbsp;  ·服务器区域的<a href="http://product.it168.com/files/0412search.shtml" target="_blank" rel="external">交换机</a>上</p>
+<p>&nbsp;&nbsp;&nbsp;  ·Internet接入<a href="http://product.it168.com/files/0409search.shtml" target="_blank" rel="external">路由器</a>之后的第一台交换机上</p>
+<p>&nbsp;&nbsp;&nbsp;  ·重点保护网段的局域网交换机上</p>
+<p>&nbsp;&nbsp;&nbsp;  经典的入侵检测系统的部署方式如图所示。</p>
+<p><img src="http://publish.it168.com/cWord/images/137927.jpg" alt=""></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-apachee794a8e688b7e8aea4e8af81e696b9e6b395e6b187e680bb" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/11/22/apachee794a8e688b7e8aea4e8af81e696b9e6b395e6b187e680bb/" class="article-date">
+  <time datetime="2008-11-22T13:11:00.000Z" itemprop="datePublished">Nov 22 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/11/22/apachee794a8e688b7e8aea4e8af81e696b9e6b395e6b187e680bb/">Apache用户认证方法汇总</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <font face="宋体" color="#000000" size="3">一.基本的Apache用户认证方法：　<br><br>若对某一目录下的文件如/home/ftp/pub需要做到用户认证，则在httpd.conf　<br><br>中加入下面的行　<br><br>&lt;&gt;　<br><br>options　indexes　followsymlinks　<br><br>allowoverride　authconfig　<br><br>order　allow,deny　<br><br>allow　from　all　<br><br>&lt;&gt;　<br><br>用在目录/home/ftp/pub下放文件.htaccess，内容如下：　<br><br>authname　&quot;shared　files&quot;　<br><br>authtype　basic　<br><br>authuserfile　/etc/.passwd　<br><br>require　valid-user　<br><br>用随Apache来的程序htpasswd　生成文件/etc/.passwd,每行一个用户名：密码　<br><br>只要能提供正确的用户名和密码对，就允许登录访问，这是针对任何地址来的　<br><br>请求都要求提供用户名和密码认证。　<br><br>二.针对部分网段或地址要求认证。　<br><br>若公司LAN所在网段为192.168.0.0/24，且有一防火墙专线接入Internet,　<br><br>内部网卡的地址为192.168.0.1/32,则现在希望所有通过拨本地163通过　<br><br>防火墙上的apache反向代理向LAN上的另一WWW服务器访问时需要认证，而本地　<br><br>LAN上的用户不需认证。可以在httpd.conf中放入：　<br><br>〈Directory　/home/ftp/pub&gt;　<br><br>Options　Indexes　FollowSymLinks　<br><br>AllowOverride　AuthConfig　<br><br>order　deny,allow　<br><br>deny　from　192.168.0.1　<br><br>〈/Directory&gt;　<br><br>且在/home/ftp/pub/.htaccess中放入：　<br><br>AuthName　&quot;shared　files&quot;　<br><br>AuthType　Basic　<br><br>AuthUserFile　/etc/.passwd　<br><br>require　valid-user　<br><br>satisfy　any　<br><br>三.对同一目录及其下的子目录有不同的权限，仅某些人可以存取一目录下的　<br><br>子目录。　<br><br>如有一目录/home/ftp/pub/sales,有三个用户user1,user2,user3都需要用户名　<br><br>和密码进入/home/ftp/pub，但仅user1,user2能进入/home/ftp/pub/sales.则　<br><br>放下面的行到httpd.conf　<br><br>〈Directory　/home/ftp/pub&gt;　<br><br>Options　Indexes　<br><br>AllowOverride　AuthConfig　<br><br>order　allow,deny　<br><br>allow　from　all　<br><br>〈/Directory&gt;　<br><br>〈Directory　/home/ftp/pub/sales&gt;　<br><br>Options　Indexes　<br><br>AllowOverride　AuthConfig　<br><br>order　allow,deny　<br><br>allow　from　all　<br><br>〈/Directory&gt;　<br><br>且看/home/ftp/pub/.htaccess为：　<br><br>AuthName　&quot;shared　files&quot;　<br><br>AuthType　Basic　<br><br>AuthUserFile　/etc/.passwd　<br><br>require　valid-user　<br><br>且看/home/ftp/pub/sales/.htaccess　<br><br>AuthName　&quot;shared　files&quot;　<br><br>AuthType　Basic　<br><br>AuthUserFile　/etc/.passwd　<br><br>AuthGroupFile　/etc/.salesgroup　<br><br>require　group　manager　<br><br>且文件/etc/.passwd内容为：　<br><br>user1:passwd1　<br><br>user2:passwd2　<br><br>user3:passwd3　<br><br>且文件/etc/.salesgroup内容为：　<br><br>manager:　user1　user2　 </font>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e59ca8e591bde4bba4-history-e4b8ade698bee7a4bae697b6e997b4e688b3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/11/22/e59ca8e591bde4bba4-history-e4b8ade698bee7a4bae697b6e997b4e688b3/" class="article-date">
+  <time datetime="2008-11-22T13:07:00.000Z" itemprop="datePublished">Nov 22 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/11/22/e59ca8e591bde4bba4-history-e4b8ade698bee7a4bae697b6e997b4e688b3/">在命令 history 中显示时间戳</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <div><br><br>转自： <a href="http://linux.byexamples.com/archives/467/list-command-line-history-with-timestamp/" target="_blank" rel="external">http://linux.byexamples.com/archives/467/list-command-line-history-with-timestamp/</a><br><br>history 是一条非常实用的 shell 命令，可以显示出之前在 shell 中运行的命令，配合 last 显示之前登录的用户，就可以追溯是哪个用户执行了某些命令。<br><br><div class="hl_result"><br><div class="bash" style="border-right: rgb(170,170,170) 1px dotted; padding-right: 2px; border-top: rgb(170,170,170) 1px dotted; padding-left: 2px; padding-bottom: 2px; margin: 8px; border-left: rgb(170,170,170) 1px dotted; color: rgb(85,85,85); padding-top: 2px; border-bottom: rgb(170,170,170) 1px dotted">last<br><br>…<br><br>mysurface    tty7         :<span style="color: rgb(204,102,204)">0</span>               Mon Oct  <span style="color: rgb(204,102,204)">6</span> <span style="color: rgb(204,102,204)">20</span>:<span style="color: rgb(204,102,204)">07</span> - down   <span style="color: rgb(102,204,102)">(</span><span style="color: rgb(204,102,204)">00</span>:<span style="color: rgb(204,102,204)">00</span><span style="color: rgb(102,204,102)">)</span><br><br>reboot   system boot  <span style="color: rgb(204,102,204)">2.6</span><span style="color: rgb(204,102,204)">.24</span><span style="color: rgb(204,102,204)">.4</span><span style="color: rgb(204,102,204)">-64</span>.fc8  Mon Oct  <span style="color: rgb(204,102,204)">6</span> <span style="color: rgb(204,102,204)">20</span>:<span style="color: rgb(204,102,204)">06</span>          <span style="color: rgb(102,204,102)">(</span><span style="color: rgb(204,102,204)">00</span>:<span style="color: rgb(204,102,204)">00</span><span style="color: rgb(102,204,102)">)</span><br><br>mysurface    pts/<span style="color: rgb(204,102,204)">8</span>        <span style="color: rgb(204,102,204)">10.168</span><span style="color: rgb(204,102,204)">.28</span><span style="color: rgb(204,102,204)">.44</span>     Mon Oct  <span style="color: rgb(204,102,204)">6</span> <span style="color: rgb(204,102,204)">17</span>:<span style="color: rgb(204,102,204)">42</span> - down   <span style="color: rgb(102,204,102)">(</span><span style="color: rgb(204,102,204)">01</span>:<span style="color: rgb(204,102,204)">58</span><span style="color: rgb(102,204,102)">)</span><br><br>mysurface    pts/<span style="color: rgb(204,102,204)">7</span>        :<span style="color: rgb(204,102,204)">0.0</span>             Mon Oct  <span style="color: rgb(204,102,204)">6</span> <span style="color: rgb(204,102,204)">17</span>:<span style="color: rgb(204,102,204)">41</span> - <span style="color: rgb(204,102,204)">19</span>:<span style="color: rgb(204,102,204)">40</span>  <span style="color: rgb(102,204,102)">(</span><span style="color: rgb(204,102,204)">01</span>:<span style="color: rgb(204,102,204)">59</span><span style="color: rgb(102,204,102)">)</span><br><br>mysurface    pts/<span style="color: rgb(204,102,204)">6</span>        :<span style="color: rgb(204,102,204)">0.0</span>             Mon Oct  <span style="color: rgb(204,102,204)">6</span> <span style="color: rgb(204,102,204)">17</span>:<span style="color: rgb(204,102,204)">27</span> - <span style="color: rgb(204,102,204)">19</span>:<span style="color: rgb(204,102,204)">40</span>  <span style="color: rgb(102,204,102)">(</span><span style="color: rgb(204,102,204)">02</span>:<span style="color: rgb(204,102,204)">13</span><span style="color: rgb(102,204,102)">)</span><br><br>mysurface    pts/<span style="color: rgb(204,102,204)">5</span>        :<span style="color: rgb(204,102,204)">0.0</span>             Mon Oct  <span style="color: rgb(204,102,204)">6</span> <span style="color: rgb(204,102,204)">17</span>:<span style="color: rgb(204,102,204)">27</span> - <span style="color: rgb(204,102,204)">19</span>:<span style="color: rgb(204,102,204)">40</span>  <span style="color: rgb(102,204,102)">(</span><span style="color: rgb(204,102,204)">02</span>:<span style="color: rgb(204,102,204)">13</span><span style="color: rgb(102,204,102)">)</span><br><br>mysurface    pts/<span style="color: rgb(204,102,204)">5</span>        :<span style="color: rgb(204,102,204)">0.0</span>             Mon Oct  <span style="color: rgb(204,102,204)">6</span> <span style="color: rgb(204,102,204)">15</span>:<span style="color: rgb(204,102,204)">52</span> - <span style="color: rgb(204,102,204)">15</span>:<span style="color: rgb(204,102,204)">59</span>  <span style="color: rgb(102,204,102)">(</span><span style="color: rgb(204,102,204)">00</span>:<span style="color: rgb(204,102,204)">07</span><span style="color: rgb(102,204,102)">)</span><br><br>…</div><br></div>
+
+<p>不过默认下，history 并不记录命令的执行时间，分析起来很困难。这时候可以配置<span style="font-weight: bold"> </span><strong>HISTTIMEFORMAT</strong> 环境变量，给 history 记录添加上时间戳：</p>
+<div class="hl_result"><br><div class="bash" style="border-right: rgb(170,170,170) 1px dotted; padding-right: 2px; border-top: rgb(170,170,170) 1px dotted; padding-left: 2px; padding-bottom: 2px; margin: 8px; border-left: rgb(170,170,170) 1px dotted; color: rgb(85,85,85); padding-top: 2px; border-bottom: rgb(170,170,170) 1px dotted"><span style="color: rgb(0,0,102)">export</span> <span style="color: rgb(0,0,255)">HISTTIMEFORMAT=</span><span style="color: rgb(255,0,0)">&quot;%F %T &quot;</span></div><br></div>
+
+<p>效果：</p>
+<div class="hl_result"><br><div class="bash" style="border-right: rgb(170,170,170) 1px dotted; padding-right: 2px; border-top: rgb(170,170,170) 1px dotted; padding-left: 2px; padding-bottom: 2px; margin: 8px; border-left: rgb(170,170,170) 1px dotted; color: rgb(85,85,85); padding-top: 2px; border-bottom: rgb(170,170,170) 1px dotted">…<br><br>  <span style="color: rgb(204,102,204)">994</span>  <span style="color: rgb(204,102,204)">2008</span><span style="color: rgb(204,102,204)">-10</span><span style="color: rgb(204,102,204)">-16</span> <span style="color: rgb(204,102,204)">02</span>:<span style="color: rgb(204,102,204)">27</span>:<span style="color: rgb(204,102,204)">40</span> <span style="color: rgb(0,0,102)">exit</span><br><br>  <span style="color: rgb(204,102,204)">995</span>  <span style="color: rgb(204,102,204)">2008</span><span style="color: rgb(204,102,204)">-10</span><span style="color: rgb(204,102,204)">-16</span> <span style="color: rgb(204,102,204)">01</span>:<span style="color: rgb(204,102,204)">12</span>:<span style="color: rgb(204,102,204)">20</span> iptables -nL<br><br>  <span style="color: rgb(204,102,204)">996</span>  <span style="color: rgb(204,102,204)">2008</span><span style="color: rgb(204,102,204)">-10</span><span style="color: rgb(204,102,204)">-16</span> <span style="color: rgb(204,102,204)">01</span>:<span style="color: rgb(204,102,204)">47</span>:<span style="color: rgb(204,102,204)">46</span> vi .bash_profile<br><br>  <span style="color: rgb(204,102,204)">997</span>  <span style="color: rgb(204,102,204)">2008</span><span style="color: rgb(204,102,204)">-10</span><span style="color: rgb(204,102,204)">-16</span> <span style="color: rgb(204,102,204)">01</span>:<span style="color: rgb(204,102,204)">47</span>:<span style="color: rgb(204,102,204)">55</span> <span style="color: rgb(0,0,102)">history</span><br><br>  <span style="color: rgb(204,102,204)">998</span>  <span style="color: rgb(204,102,204)">2008</span><span style="color: rgb(204,102,204)">-10</span><span style="color: rgb(204,102,204)">-16</span> <span style="color: rgb(204,102,204)">01</span>:<span style="color: rgb(204,102,204)">48</span>:<span style="color: rgb(204,102,204)">03</span> . .bash_profile<br><br>  <span style="color: rgb(204,102,204)">999</span>  <span style="color: rgb(204,102,204)">2008</span><span style="color: rgb(204,102,204)">-10</span><span style="color: rgb(204,102,204)">-16</span> <span style="color: rgb(204,102,204)">01</span>:<span style="color: rgb(204,102,204)">48</span>:<span style="color: rgb(204,102,204)">04</span> <span style="color: rgb(0,0,102)">history</span><br><br> <span style="color: rgb(204,102,204)">1000</span>  <span style="color: rgb(204,102,204)">2008</span><span style="color: rgb(204,102,204)">-10</span><span style="color: rgb(204,102,204)">-16</span> <span style="color: rgb(204,102,204)">01</span>:<span style="color: rgb(204,102,204)">48</span>:<span style="color: rgb(204,102,204)">09</span> <span style="color: rgb(0,0,102)">exit</span><br><br> <span style="color: rgb(204,102,204)">1001</span>  <span style="color: rgb(204,102,204)">2008</span><span style="color: rgb(204,102,204)">-10</span><span style="color: rgb(204,102,204)">-16</span> <span style="color: rgb(204,102,204)">02</span>:<span style="color: rgb(204,102,204)">27</span>:<span style="color: rgb(204,102,204)">43</span> <span style="color: rgb(0,0,102)">history</span><br><br>…</div><br></div>
+
+<p>把上面的 export 命令加入到  ~/.bashrc 或者 ~/.bash_profile  中即可在登录后自动开启 history 时间戳了～</p>
+<p>其实 HISTTIMEFORMAT 的格式就是 strftime 函数的格式，比如上面的  &quot;%F %T&quot;，%F 表示显示出  Y-M-D 格式的日期，%T 表示显示出  H-M-S 这样格式的时间。更多的格式，可以参考 <strong>man strftime</strong>。</p>
+<p></p></div><p></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-tcpdump-no-suitable-device-found" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/11/22/tcpdump-no-suitable-device-found/" class="article-date">
+  <time datetime="2008-11-22T13:05:00.000Z" itemprop="datePublished">Nov 22 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/11/22/tcpdump-no-suitable-device-found/">tcpdump: no suitable device found</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><a href="mailto:hao@tigerrr:~$" target="_blank" rel="external">hao@tigerrr:~$</a> tcpdump&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </p>
+<p>tcpdump: no suitable device found</p>
+<p>问题分析及解决：</p>
+<p>2种原因：</p>
+<p>1.权限不够，一般不经过处理，只用root用户能使用tcpdump</p>
+<p>2.缺省只能同时使用4个tcpdump，如用完，则报此类错。需要停掉多余的tcpdump</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e8bdace8bdbde6b7b1e585a5e58996e69e90arpe59cb0e59d80e6acbae9aa97e79785e6af92e58e9fe79086e58f8ae6acbae9aa97e8bf87e7a88b" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/11/21/e8bdace8bdbde6b7b1e585a5e58996e69e90arpe59cb0e59d80e6acbae9aa97e79785e6af92e58e9fe79086e58f8ae6acbae9aa97e8bf87e7a88b/" class="article-date">
+  <time datetime="2008-11-21T08:11:00.000Z" itemprop="datePublished">Nov 21 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/11/21/e8bdace8bdbde6b7b1e585a5e58996e69e90arpe59cb0e59d80e6acbae9aa97e79785e6af92e58e9fe79086e58f8ae6acbae9aa97e8bf87e7a88b/">[转载]深入剖析ARP地址欺骗病毒原理及欺骗过程</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><span class="Apple-style-span" style="word-spacing: 0px; font: 14px/26px 宋体; text-transform: none; color: rgb(0,0,0); text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: separate; orphans: 2; widows: 2; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0"></span></p>
+<p>**一、ARP病毒</p>
+<p>**ARP地址欺骗类病毒（以下简称ARP病毒）是一类特殊的病毒，该病毒一般属于木马(Trojan)病毒，不具备主动传播的特性，不会自我复制。但是由于其发作的时候会向全网发送伪造的ARP数据包，干扰全网的运行，因此它的危害比一些蠕虫还要严重得多。</p>
+<p><strong>二、ARP病毒发作时的现象</strong></p>
+<p>网络掉线，但网络连接正常，内网的部分PC机不能上网，或者所有电脑不能上网，无法打开网页或打开网页慢，局域网时断时续并且网速较慢等。</p>
+<p>**三、ARP病毒原理</p>
+<p>3.1  网络模型简介**</p>
+<p>众所周知，按照OSI (Open Systems Interconnection Reference Model 开放系统互联参考模型) 的观点，可将网络系统划分为7层结构，每一个层次上运行着不同的协议和服务，并且上下层之间互相配合，完成网络数据交换的功能，如图1：</p>
+<p><a href="http://new.51cto.com/files/uploadimg/20070717/1302210.gif" target="_blank" rel="external"><img src="http://new.51cto.com/files/uploadimg/20070717/1302210.gif" alt=""></a></p>
+<p>然而，OSI的模型仅仅是一个参考模型，并不是实际网络中应用的模型。实际上应用最广泛的商用网络模型即TCP/IP体系模型，将网络划分为四层，每一个层次上也运行着不同的协议和服务，如图2：</p>
+<p><a href="http://new.51cto.com/files/uploadimg/20070717/1302211.gif" target="_blank" rel="external"><img src="http://new.51cto.com/files/uploadimg/20070717/1302211.gif" alt=""></a></p>
+<p>上图中，蓝色字体表示该层的名称，绿色字表示运行在该层上的协议。由图2可见，我们即将要讨论的ARP协议，就是工作在网际层上的协议。</p>
+<p><strong>3.2  ARP协议简介</strong></p>
+<p>我们大家都知道，在局域网中，一台主机要和另一台主机进行通信，必须要知道目标主机的IP地址，但是最终负责在局域网中传送数据的网卡等物理设备是不识别IP地址的，只能识别其硬件地址即MAC地址。MAC地址是48位的，通常表示为12个16进制数，每2个16进制数之间用&ldquo;-&rdquo;或者冒号隔开，如：00-0B-2F-13-1A-11就是一个MAC地址。每一块网卡都有其全球唯一的MAC地址，网卡之间发送数据，只能根据对方网卡的MAC地址进行发送，这时就需要一个将高层数据包中的IP地址转换成低层MAC地址的协议，而这个重要的任务将由ARP协议完成。</p>
+<p>ARP全称为Address Resolution Protocol，地址解析协议。所谓&ldquo;地址解析&rdquo;就是主机在发送数据包前将目标主机IP地址转换成目标主机MAC地址的过程。ARP协议的基本功能就是通过目标设备的IP地址，查询目标设备的MAC地址，以保证通信的顺利进行。 这时就涉及到一个问题，一个局域网中的电脑少则几台，多则上百台，这么多的电脑之间，如何能准确的记住对方电脑网卡的MAC地址，以便数据的发送呢？这就涉及到了另外一个概念，ARP缓存表。在局域网的任何一台主机中，都有一个ARP缓存表，该表中保存这网络中各个电脑的IP地址和MAC地址的对照关系。当这台主机向同局域网中另外的主机发送数据的时候，会根据ARP缓存表里的对应关系进行发送。</p>
+<p>下面，我们用一个模拟的局域网环境，来说明ARP欺骗的过程。</p>
+<p><strong>3.3  ARP欺骗过程</strong></p>
+<p>假设一个只有三台电脑组成的局域网，该局域网由交换机(Switch)连接。其中一个电脑名叫A，代表攻击方；一台电脑叫S，代表源主机，即发送数据的电脑；令一台电脑名叫D，代表目的主机，即接收数据的电脑。这三台电脑的IP地址分别为192.168.0.2，192.168.0.3，192.168.0.4。MAC地址分别为<span style="border-top-width: 0px; padding-right: 0px; padding-left: 0px; border-left-width: 0px; font-size: 12pt; border-bottom-width: 0px; padding-bottom: 0px; margin: 0px; padding-top: 0px;  border-right-width: 0px"><span style="border-top-width: 0px; padding-right: 0px; padding-left: 0px; border-left-width: 0px; border-bottom-width: 0px; padding-bottom: 0px; margin: 0px; padding-top: 0px; position: relative; top: 5pt; border-right-width: 0px"> </span></span>MAC_A，MAC_S，MAC_D。其网络拓扑环境如图3：</p>
+<p><a href="http://new.51cto.com/files/uploadimg/20070717/123003349.gif" target="_blank" rel="external"><img src="http://new.51cto.com/files/uploadimg/20070717/123003349.gif" alt=""></a></p>
+<p>现在，S电脑要给D电脑发送数据了，在S电脑内部，上层的TCP和UDP的数据包已经传送到了最底层的网络接口层，数据包即将要发送出去，但这时还不知道目的主机D电脑的MAC地址MAC_D。这时候，S电脑要先查询自身的ARP缓存表，查看里面是否有192.168.0.4这台电脑的MAC地址，如果有，那很好办，就将MAC_D封装在数据包的外面。直接发送出去即可。如果没有，这时S电脑要向全网络发送一个ARP广播包，大声询问：&ldquo;我的IP是192.168.0.3，硬件地址是MAC_S，我想知道IP地址为192.168.0.4的主机的硬件地址是多少？&rdquo; 这时，全网络的电脑都收到该ARP广播包了，包括A电脑和D电脑。A电脑一看其要查询的IP地址不是自己的，就将该数据包丢弃不予理会。而D电脑一看IP地址是自己的，则回答S电脑：&ldquo;我的IP地址是192.168.0.4，我的硬件地址是MAC_S&rdquo;需要注意的是，这条信息是单独回答的，即D电脑单独向S电脑发送的，并非刚才的广播。现在S电脑已经知道目的电脑D的MAC地址了，它可以将要发送的数据包上贴上目的地址MAC_D，发送出去了。同时它还会动态更新自身的ARP缓存表，将192.168.0.4－MAC_D这一条记录添加进去，这样，等S电脑下次再给D电脑发送数据的时候，就不用大声询问发送ARP广播包了。这就是正常情况下的数据包发送过程。</p>
+<p>这样的机制看上去很完美，似乎整个局域网也天下太平，相安无事。但是，上述数据发送机制有一个致命的缺陷，即它是建立在对局域网中电脑全部信任的基础上的，也就是说它的假设前提是：无论局域网中那台电脑，其发送的ARP数据包都是正确的。那么这样就很危险了！因为局域网中并非所有的电脑都安分守己，往往有非法者的存在。比如在上述数据发送中，当S电脑向全网询问&ldquo;我想知道IP地址为192.168.0.4的主机的硬件地址是多少？&rdquo;后，D电脑也回应了自己的正确MAC地址。但是当此时，一向沉默寡言的A电脑也回话了：&ldquo;我的IP地址是192.168.0.4，我的硬件地址是MAC_A&rdquo; ，注意，此时它竟然冒充自己是D电脑的IP地址，而MAC地址竟然写成自己的！由于A电脑不停地发送这样的应答数据包，本来S电脑的ARP缓存表中已经保存了正确的记录：192.168.0.4－MAC_D，但是由于A电脑的不停应答，这时S电脑并不知道A电脑发送的数据包是伪造的，导致S电脑又重新动态更新自身的ARP缓存表，这回记录成：192.168.0.4－MAC_A，很显然，这是一个错误的记录（这步也叫ARP缓存表中毒），这样就导致以后凡是S电脑要发送给D电脑，也就是IP地址为192.168.0.4这台主机的数据，都将会发送给MAC地址为MAC_A的主机，这样，在光天化日之下，A电脑竟然劫持了由S电脑发送给D电脑的数据！这就是ARP欺骗的过程。</p>
+<p>如果A这台电脑再做的&ldquo;过分&rdquo;一些，它不冒充D电脑，而是冒充网关，那后果会怎么样呢？我们大家都知道，如果一个局域网中的电脑要连接外网，也就是登陆互联网的时候，都要经过局域网中的网关转发一下，所有收发的数据都要先经过网关，再由网关发向互联网。在局域网中，网关的IP地址一般为192.168.0.1。如果A这台电脑向全网不停的发送ARP欺骗广播，大声说：&ldquo;我的IP地址是192.168.0.1，我的硬件地址是MAC_A&rdquo;这时局域网中的其它电脑并没有察觉到什么，因为局域网通信的前提条件是信任任何电脑发送的ARP广播包。这样局域网中的其它电脑都会更新自身的ARP缓存表，记录下192.168.0.1－MAC_A这样的记录，这样，当它们发送给网关，也就是IP地址为192.168.0.1这台电脑的数据，结果都会发送到MAC_A这台电脑中！这样，A电脑就将会监听整个局域网发送给互联网的数据包！</p>
+<p>实际上，这种病毒早就出现过，这就是ARP地址欺骗类病毒。一些传奇木马（Trojan/PSW.LMir）具有这样的特性，该木马一般通过传奇外挂、网页木马等方式使局域网中的某台电脑中毒，这样中毒电脑便可嗅探到整个局域网发送的所有数据包，该木马破解了《传奇》游戏的数据包加密算法，通过截获局域网中的数据包，分析数据包中的用户隐私信息，盗取用户的游戏帐号和密码。在解析这些封包之后，再将它们发送到真正的网关。这样的病毒有一个令网吧游戏玩家闻之色变的名字：&ldquo;传奇网吧杀手&rdquo; ！</p>
+<p>**四、ARP病毒新的表现形式</p>
+<p>**由于现在的网络游戏数据包在发送过程中，均已采用了强悍的加密算法，因此这类ARP病毒在解密数据包的时候遇到了很大的难度。现在又新出现了一种ARP病毒，与以前的一样的是，该类ARP病毒也是向全网发送伪造的ARP欺骗广播，自身伪装成网关。但区别是，它着重的不是对网络游戏数据包的解密，而是对于HTTP请求访问的修改。</p>
+<p>HTTP是应用层的协议，主要是用于WEB网页访问。还是以上面的局域网环境举例，如果局域网中一台电脑S要请求某个网站页面，如想请求<a href="http://www.sina.com.cn/" target="_blank" rel="external">www.sina.com.cn</a>这个网页，这台电脑会先向网关发送HTTP请求，说：&ldquo;我想登陆<a href="http://www.sina.com.cn/" target="_blank" rel="external">www.sina.com.cn</a>网页，请你将这个网页下载下来，并发送给我。&rdquo;这样，网关就会将<a href="http://www.sina.com.cn/" target="_blank" rel="external">www.sina.com.cn</a>页面下载下来，并发送给S电脑。这时，如果A这台电脑通过向全网发送伪造的ARP欺骗广播，自身伪装成网关，成为一台ARP中毒电脑的话，这样当S电脑请求WEB网页时，A电脑先是&ldquo;好心好意&rdquo;地将这个页面下载下来，然后发送给S电脑，但是它在返回给S电脑时，会向其中插入恶意网址连接！该恶意网址连接会利用MS06-014和MS07-017等多种系统漏洞，向S电脑种植木马病毒！同样，如果D电脑也是请求WEB页面访问，A电脑同样也会给D电脑返回带毒的网页，这样，如果一个局域网中存在这样的ARP病毒电脑的话，顷刻间，整个网段的电脑将会全部中毒！沦为黑客手中的僵尸电脑！</p>
+<p><strong>案例：</strong></p>
+<p>某企业用户反映，其内部局域网用户无论访问那个网站，在经过对该局域网分析之后，发现该局域网中有ARP病毒电脑导致其它电脑访问网页时，返回的网页带毒，并且该带毒网页通过MS06-014和MS07-017漏洞给电脑植入一个木马下载器，而该木马下载器又会下载10多个恶性网游木马，可以盗取包括魔兽世界，传奇世界，征途，梦幻西游，边锋游戏在内的多款网络游戏的帐号和密码，对网络游戏玩家的游戏装备造成了极大的损失。被ARP病毒电脑篡改的网页如图4：</p>
+<p><a href="http://new.51cto.com/files/uploadimg/20070717/1302213.gif" target="_blank" rel="external"><img src="http://new.51cto.com/files/uploadimg/20070717/1302213.gif" alt=""></a></p>
+<p> 图4 被ARP病毒插入的恶意网址连接</p>
+<p>从图4中可以看出，局域网中存在这样的ARP病毒电脑之后，其它客户机无论访问什么网页，当返回该网页时，都会被插入一条恶意网址连接，如果用户没有打过相应的系统补丁，就会感染木马病毒。</p>
+<p></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e8aeb0e5bd95e4b880e4b88be68f90e4be9be4b880e4b8aae58fafe4bba5e69bbfe4bba3ghsgooglecome79a84e59cb0e59d80" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/11/17/e8aeb0e5bd95e4b880e4b88be68f90e4be9be4b880e4b8aae58fafe4bba5e69bbfe4bba3ghsgooglecome79a84e59cb0e59d80/" class="article-date">
+  <time datetime="2008-11-16T18:56:00.000Z" itemprop="datePublished">Nov 17 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/11/17/e8aeb0e5bd95e4b880e4b88be68f90e4be9be4b880e4b8aae58fafe4bba5e69bbfe4bba3ghsgooglecome79a84e59cb0e59d80/">记录一下:提供一个可以替代ghs.google.com的地址</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原文地址：<a href="http://zhouguangjie.cn/2008/06/02/304" target="_blank" rel="external">http://zhouguangjie.cn/2008/06/02/304</a></p>
+<p><span class="Apple-style-span" style="word-spacing: 0px; font: 13px/17px Verdana; text-transform: none; color: rgb(68,70,64); text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: separate; orphans: 2; widows: 2; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0"></span></p>
+<p>利用Yahoo注册的域名&ldquo;伪装&rdquo;了一个ghs.google.com，地址是ghs.sinoestate.com，目前可以用于替代被GFWed的ghs.google.com，应该可以实现在GFW底下用Blogger的自定义域名和Google Apps里的自定义域名，比如Apps里的邮局服务。只要把 用到ghs.google.com的地方全部替换成ghs.sinoestate.com就行了。</p>
+<p>我只做了一个mail的地址，大家测试一下<a href="http://mail.bhclub.net/" target="_blank" rel="external">http://mail.bhclub.net</a>，看看能不能访问。</p>
+<p>原理:<span class="Apple-style-span" style="word-spacing: 0px; font: 13px/15px Verdana; text-transform: none; color: rgb(72,76,79); text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: separate; orphans: 2; widows: 2; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0">利用dns在国外的域名服务商，比如yahoo，然后切换不同国家或地区的代理来tracerout出相对应的ghs的ip地址，找到未被墙的ip地址，然后去yahoo做一个到此ip的A记录，然后把这个A记录对应的域名作为ghs用</span></p>
+<p><span class="Apple-style-span" style="word-spacing: 0px; font: 13px/15px Verdana; text-transform: none; color: rgb(72,76,79); text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: separate; orphans: 2; widows: 2; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0">或者<span class="Apple-style-span" style="word-spacing: 0px; font: 12px/21px Tahoma; text-transform: none; color: rgb(51,51,51); text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: separate; orphans: 2; widows: 2; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0">解析a记录到下面四个中的任意一个：(by <a href="http://www.zack.cn/google-apps-a-record/" target="_blank" rel="external">Zack.cn</a>)</span></span></p>
+<p>216.239.32.21</p>
+<p>216.239.34.21</p>
+<p>216.239.36.21</p>
+<p>216.239.38.21</p>
+<p>可以用在企业应用套件上。</p>
+<p></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-msne697a0e6b395e799bbe99986e997aee9a298e8a7a3e586b3e696b9e6b395e4b880e8a788" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/11/06/msne697a0e6b395e799bbe99986e997aee9a298e8a7a3e586b3e696b9e6b395e4b880e8a788/" class="article-date">
+  <time datetime="2008-11-06T15:28:00.000Z" itemprop="datePublished">Nov 6 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/11/06/msne697a0e6b395e799bbe99986e997aee9a298e8a7a3e586b3e696b9e6b395e4b880e8a788/">msn无法登陆问题解决方法一览</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>1.用直通车或是代理，有些情况登录过一次之后就可以了</p>
+<p>2.添加host，具体是在C:\Windows\System32\drivers\etc的hosts里添加这么一行：</p>
+<p>  127.0.0.1&nbsp;&nbsp;&nbsp;&nbsp;  crl.microsoft.com 加在最后就行（非常有效，能登陆全靠这一招，将</p>
+<p>那个文件用文本文档打开）</p>
+<p>3.改ie属性，在ie选项-高级里取消 检查服务器证书吊销 在ie7里这个选项是默认选上的</p>
+<p>4.系统时间不对，调整一下就可以了（没试）</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e6b885e79086msne585b1e4baabe69687e4bbb6e5a4b9" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/11/01/e6b885e79086msne585b1e4baabe69687e4bbb6e5a4b9/" class="article-date">
+  <time datetime="2008-10-31T16:38:00.000Z" itemprop="datePublished">Nov 1 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/11/01/e6b885e79086msne585b1e4baabe69687e4bbb6e5a4b9/">清理MSN共享文件夹</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><span style="border-collapse: separate; color: rgb(0, 0, 0);  font-size: 15px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 18px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;" class="Apple-style-span">1、临时解决方案</span></p>
+<p>命令如下：</p>
+<p>regsvr32 /u &ldquo;C:＼Program Files＼MSN Messenger＼fsshext.8.0.0792.00.dll</p>
+<p>下次启动之后，msn会重新自动注册dll，共享文件夹又会出现。</p>
+<p>2、彻底消灭文件夹</p>
+<p>需要删除下面的键值(注意，每台电脑不一样)</p>
+<p>HKEY_LOCAL_MACHINE＼SOFTWARE＼Microsoft＼Windows＼CurrentVersion＼Explorer＼MyComputer＼NameSpace＼{FC9FB64A-1EB2-4CCF-AF5E-1A497A9B5C2D} </p>
+<p></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e4bdbfe794a8sbackupe5a487e4bbbde5928ce681a2e5a48dubuntu-linux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/10/15/e4bdbfe794a8sbackupe5a487e4bbbde5928ce681a2e5a48dubuntu-linux/" class="article-date">
+  <time datetime="2008-10-15T12:07:00.000Z" itemprop="datePublished">Oct 15 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/10/15/e4bdbfe794a8sbackupe5a487e4bbbde5928ce681a2e5a48dubuntu-linux/">使用Sbackup备份和恢复Ubuntu Linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <div><br><div class="article_c"><br><br>　　Data can be lost in different ways some of them are because of hardware failures,you accidentally delete or overwrite a file. Some data loss occurs as a result of natural disasters and other circumstances beyond your control.<br><br>　　Now we will see a easy backup and restore tool called &quot;sbackup&quot;<br><br>SBackup is a simple backup solution intended for desktop use. It can backup any subset of files and directories. Exclusions can be defined by regular expressions. A maximum individual file size limit can be defined. Backups may be saved to any local and remote directories that are supported by gnome-vfs. There is a Gnome GUI interface for configuration and restore.<br><br>　　<strong>Installing sbackup in ubuntu</strong><br><br>sudo apt-get install sbackup<br><br>　　You can use synaptic also for this if you want to know how to search this software and install check<a href="http://www.debianadmin.com/simple-package-management-with-synaptic-package-manager-in-ubuntu.html" target="_blank" rel="external"> here</a><br><br><strong>Backup Your Data Using Sbackup</strong><br><br>　　Once you completed the installation you can access sbackup using System—-&gt;Administration—-&gt;Simple Backup Config you can see this in the following screen<br><br><img src="http://img.ddvip.com/2007_03/1173502543_ddvip_6773.png" alt=""><br><br>　　Next screen is asking for root password enter password and click ok<br><br><img src="http://img.ddvip.com/2007_03/1173502594_ddvip_2564.png" alt=""><br><br>　　Once it opens the sbackup application you can see the following screen where you can configure your backup settings first tab is general options in this example i am choosing &quot;Use custom backup settings&quot;<br><br><img src="http://img.ddvip.com/2007_03/1173502601_ddvip_4730.png" alt=""><br><br>　　Sbackup can be operated in 3 different modes<br><br><strong>Recommended Backup</strong><br><br>　　If you are new Ubuntu user or aren’t sure what you should backup.This will perform a daily backup of your /home,system data held in /etc,/usr/local and /var.This will deliberately exclude any files over 100MB.By default this backup will be stored /var/backup<br><br><strong>Custom Backup</strong><br><br>　　This is same as the recommended backup and in this you can change the settings include,exclude files,you can change the schedule time.<br><br><strong>Manual Backup</strong><br><br>　　If you want to backup some files from time to time this option is for you and you can click backup now button to manually perform a backup according to the settings on the other backup properties dialog box tabs.<br><br>Next you click on &quot;Include&quot; tab here you can include any file or directory you want to backup<br><br><img src="http://img.ddvip.com/2007_03/1173502608_ddvip_8599.png" alt="">If you click on &quot;Add file&quot; button you should see the following screen where you can select your files<br><br><img src="http://img.ddvip.com/2007_03/1173502615_ddvip_5800.png" alt=""><br><br>If you click on &quot;Add Directory&quot; button you should see the following screen where you can select your Directory for backup<br><br><div><br><div class="article_c"><img src="http://img.ddvip.com/2007_03/1173502621_ddvip_5636.png" alt="">Next option is &quot;Exclude&quot; here you can exclude files and folders you don’t want to backup.Here you can exclude Paths,File Types,Regular Expressions,Max file,folder size<br><br><img src="http://img.ddvip.com/2007_03/1173502627_ddvip_2056.png" alt="">Next option is &quot;Destination&quot; here i am leaving the default location i.e /var/backup if you want to chnage the backup store location you can select the &quot;Use Custom local Backup directory&quot; and enter the location<br><br><img src="http://img.ddvip.com/2007_03/1173502639_ddvip_943.png" alt="">Now you can select &quot;Time&quot; option here you can schedule when do you want to run your backup.<br><br><img src="http://img.ddvip.com/2007_03/1173502649_ddvip_2041.png" alt="">Available options for backups you can see in the following screen you can select hourly,daily,weekly,monthly,custom options<br><br><img src="http://img.ddvip.com/2007_03/1173502652_ddvip_8579.png" alt=""><br><br>　　Next option is &quot;Purging&quot; here you can select old and incomplete backups and you set the no.of days you want to purge after completing all the settings you need to click on &quot;Save&quot; button to save your settings.<br><br><img src="http://img.ddvip.com/2007_03/1173502655_ddvip_8959.png" alt=""><br><br>　　Now if you want to take backup just click on &quot;Backup Now&quot; or leave the schedule backup in this example i just clicked on &quot;Backup Now&quot; this is started a background process with process id you can see this in the following screen<br><br><div class="article_c"><img src="http://img.ddvip.com/2007_03/1173502657_ddvip_8422.png" alt=""><br><br>　　<strong>Restore Your Data Using Sbackup</strong><br><br>If you want to restore backups or any files,folders go to System—-&gt;Administration—-&gt;Simple Backup Restore you can see this in the following screen<br><br><img src="http://img.ddvip.com/2007_03/1173502659_ddvip_3879.png" alt="">Once it opens you should see the following screen here you can select the restore source folder and available backups from drop-down menu here you can choose files and folders you want to restore and click on &quot;Restore&quot; button<br><br><img src="http://img.ddvip.com/2007_03/1173502665_ddvip_235.png" alt="">In this example i have choosen to restore one .iso file and once you select your file and click on &quot;Restore&quot; it will ask for your confirmation click on yes this will restore the file in orginal location if you want to restore in different location you need to select &quot;Restore As&quot; option<br><br><img src="http://img.ddvip.com/2007_03/1173502668_ddvip_8180.png" alt=""><strong>Note:-</strong> By default Restored Files and Directories are owned by root this is because of sbackup will runs with root.You need to chnage these files or folder permissions using chmod or just right click and select properties of the file or folder.<br><br>　　<strong>Backup Destination on Remote machine</strong><br><br>One more beauty about sbackup is you can store your backup on a remotemachine for this it will give the option of using SSH or FTP for this go to System—-&gt; Administration—-&gt; Simple Backup Config once it opens the application you need to click on destination tab here you can select &quot;Use a remote Directory&quot; option type ssh:// or ftp:// followed by the username:password, then @, then the remote host to connect to and the remote directory.<br><br><img src="http://img.ddvip.com/2007_03/1173502669_ddvip_3772.png" alt=""><strong>Final Tip:-</strong><br><br>　　Sbackup doesn’t create a new backup file each time it runs and it creates an incremental backup.Which means that it updates the last backup with files that you changed or been created any files that haven’t been updated since the last backup are unchanged<br><br><strong>Sbackup Configuration from command line</strong><br><br>　　If you want to configure sbackup you need to Edit /etc/sbackup.conf file<br><br>Restore Backup from command line<br><br>　　Run &quot;sudo srestore.py /var/backup/2006-11-18_03 /home/myuser /home/myuser/old&quot;. You can omit the last parameter to restore to the same directory.<br><br></div><br></div><br></div><br></div><br></div>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2008/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/2008/">1</a><a class="page-number" href="/archives/2008/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2008/page/4/">4</a><a class="page-number" href="/archives/2008/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2008/page/14/">14</a><a class="extend next" rel="next" href="/archives/2008/page/4/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

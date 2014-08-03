@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Tag: php | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/tags/php/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-e8a7a3e586b3ubuntu-e697a0e6b395e8bdbde585a5-mcrypt-e689a9e5b195e8afb7e6a380e69fa5-php-e9858de7bdaee997aee9a298" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02/08/e8a7a3e586b3ubuntu-e697a0e6b395e8bdbde585a5-mcrypt-e689a9e5b195e8afb7e6a380e69fa5-php-e9858de7bdaee997aee9a298/" class="article-date">
+  <time datetime="2014-02-08T09:07:20.000Z" itemprop="datePublished">Feb 8 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>►<a class="article-category-link" href="/categories/php/ubuntu/">ubuntu</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02/08/e8a7a3e586b3ubuntu-e697a0e6b395e8bdbde585a5-mcrypt-e689a9e5b195e8afb7e6a380e69fa5-php-e9858de7bdaee997aee9a298/">解决Ubuntu “无法载入 mcrypt 扩展,请检查 PHP 配置”问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mcrypt/">mcrypt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php5-mcrypt/">php5-mcrypt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phpmyadmin/">phpmyadmin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>在Ubuntu上安装phpmyadmin之后，经常会出现“无法载入 mcrypt 扩展,请检查 PHP 配置”的问题，原因是系统未安装php的mcrypt支持，执行一下命令安装php的mycrypt支持即可：</p>
+<pre class="brush:bash;toolbar:false;">sudo&nbsp;apt-get&nbsp;install&nbsp;php5-mcrypt</pre>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-ubuntue4b88be9858de7bdaephpe79a84dbasee694afe68c81" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/06/16/ubuntue4b88be9858de7bdaephpe79a84dbasee694afe68c81/" class="article-date">
+  <time datetime="2013-06-16T06:40:54.000Z" itemprop="datePublished">Jun 16 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ubuntu/">ubuntu</a>►<a class="article-category-link" href="/categories/ubuntu/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/06/16/ubuntue4b88be9858de7bdaephpe79a84dbasee694afe68c81/">Ubuntu下配置PHP的dbase支持</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dbase/">dbase</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>可以通过pecl install dbase来安装dbase支持，不过在我的环境下总是出错（Ubuntu 8.04 PHP5.25），提示以下错误：</p>
+<p>Cannot find config.m4.<br>Make sure that you run ‘/usr/bin/phpize’ in the top level source directory of the module<br>意思是找不到config.m4，需要在dbase源码目录运行phpize才行</p>
+<p>懒得找pecl具体下载源码下到哪里了，就直接进到当前用户主目录，下载dbase源码：<br>cd ~<br>wget <a href="http://pecl.php.net/get/dbase-5.1.0.tgz" target="_blank" rel="external">http://pecl.php.net/get/dbase-5.1.0.tgz</a></p>
+<p>解压：<br>tar xzvf dbase-5.1.0.tgz</p>
+<p>然后编译安装重启web服务器刷新即可：<br>phpize<br>./configure<br>make<br>sudo make install<br>sudo /etc/init.d/apache2 restart </p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-limesurvey-1-85fatal-error-allowed-memory-size-of-33554432-bytes-exhausted-tried-to-allocate-5831574-bytes-in" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/06/07/limesurvey-1-85fatal-error-allowed-memory-size-of-33554432-bytes-exhausted-tried-to-allocate-5831574-bytes-in/" class="article-date">
+  <time datetime="2012-06-07T15:48:37.000Z" itemprop="datePublished">Jun 7 2012</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php开源程序/">php开源程序</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/06/07/limesurvey-1-85fatal-error-allowed-memory-size-of-33554432-bytes-exhausted-tried-to-allocate-5831574-bytes-in/">Limesurvey 1.85:Fatal error: Allowed memory size of 33554432 bytes exhausted (tried to allocate 5831574 bytes) in ……</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/limesurvey/">limesurvey</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phpini/">php.ini</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>使用1.85版Limesurvey时，问卷数量很大，备份数据时出现以下提示：<br>  <div>Fatal error: Allowed memory size of 33554432 bytes exhausted (tried to allocate 5831574 bytes) in /home/www-program/limesurvey/admin/dumpdb.php on line 126</div>  <div>&#160;</div>  <div>问题很简单，分配给PHP脚本执行的内存少了，需要的内存超出了分配的内存。</div>  <div>&#160;</div>  <div>先检查了下系统的PHP内存限制，发现已经修改过了，目前是1024M，原没到限制，猜测基本就是PHP脚本本身设置了内存限制的全局变量，检查了一下，在config-default.php文件找到了这个限制：</div>  &gt; <div>$memorylimit = ‘32M’;</div>  <div>把32改到足够大之后就没问题了。</div></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-limesurveye5afbce587bae79a84spsse8afade6b395e69687e4bbb6e4b8ade69687e4b9b1e7a081e8a7a3e586b3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/10/28/limesurveye5afbce587bae79a84spsse8afade6b395e69687e4bbb6e4b8ade69687e4b9b1e7a081e8a7a3e586b3/" class="article-date">
+  <time datetime="2011-10-28T07:14:18.000Z" itemprop="datePublished">Oct 28 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>►<a class="article-category-link" href="/categories/php/php开源程序/">php开源程序</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/10/28/limesurveye5afbce587bae79a84spsse8afade6b395e69687e4bbb6e4b8ade69687e4b9b1e7a081e8a7a3e586b3/">Limesurvey导出的SPSS语法文件中文乱码解决</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/limesurvey/">limesurvey</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mb_substr/">mb_substr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spss/">spss</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><strong>问题</strong><br>一直在用的Limesurvey系统运行稳定，近日有同事发现一个问题：将limesurvey搜集到的问卷结果反馈导出为SPSS格式时，中文出现乱码。</p>
+<p><strong>分析解决</strong><br>处理导出SPSS语法文件的链接是admin.php?action=exportspss&amp;sid={问卷id}&amp;subaction=dlstructure，查看admin/admin.php源码，找到exprortspss对应的export_data_spss.php，然后查看export_data_spss.php源码，dlstructure对应的函数在最后面，定位到乱码位置（乱码在Variable Properties），主要是这个函数出了问题：addslashes(strip_tags_full(mb_substr($field[‘VariableLabel’],0,$length_varlabel)))，检查了数据库编码、mb的配置，都没问题，因为是中文于是就试了网上提供的一些mb_substr中文乱码的解决方案，声明编码为GB2312格式，还是乱码；想到数据都是utf-8的，为什么硬要声明成gb2312呢，将上述代码改成addslashes(strip_tags_full(mb_substr($field[‘VariableLabel’],0,$length_varlabel,<strong>‘utf-8’</strong>)))，问题解决。</p>
+<p><strong>原因</strong><br>用函数mb_detect_encoding检测$field[‘VariableLabel’]元素的编码类型，前几个变量，比如手机号、email等是ASCII编码，之后的中文是UTF-8编码，不手动声明的话mb_substr对字符串默认编码判断不准导致中文乱码？</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-301e9878de5ae9ae59091phpe4bba3e7a081-phpe79a84301e887aae58aa8e8b7b3e8bdace4bba3e7a081" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/10/28/301e9878de5ae9ae59091phpe4bba3e7a081-phpe79a84301e887aae58aa8e8b7b3e8bdace4bba3e7a081/" class="article-date">
+  <time datetime="2011-10-28T03:11:19.000Z" itemprop="datePublished">Oct 28 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/html/">html</a>►<a class="article-category-link" href="/categories/html/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/10/28/301e9878de5ae9ae59091phpe4bba3e7a081-phpe79a84301e887aae58aa8e8b7b3e8bdace4bba3e7a081/">301重定向PHP代码 PHP的301自动跳转代码</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/301/">301</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>301重定向可促进搜索引擎优化效果</p>
+<p>从搜索引擎优化角度出发，301重定向是网址重定向最为可行的一种办法。当网站的域名发生变更后，搜索引擎只对新网址进行索引，同时又会把旧地址下原有的外部链接如数转移到新地址下，从而不会让网站的排名因为网址变更而收到丝毫影响。同样，在使用301永久性重定向命令让多个域名指向网站主域时，亦不会对网站的排名产生任何负面影响。</p>
+<p>302重定向可影响搜索引擎优化效果</p>
+<p>迄今为止，能够对302重定向具备优异处理能力的只有Google。也就是说，在网站使用302重定向命令将其它域名指向主域时，只有Google会把其它域名的链接成绩计入主域，而其它搜索引擎只会把链接成绩向多个域名分摊，从而削弱主站的链接总量。既然作为网站排名关键因素之一的外链数量受到了影响，网站排名降低也是很自然的事情了。</p>
+<p>综上所述，在众多重定向技术中，301永久性重定向是最为安全的一种途径，也是极为理想的一款解决方案。</p>
+<p>对于正确实施301重定向，有这样几个方法可供大家参考：</p>
+<p>1.在.htaccess文件中增加301重定向指令</p>
+<p>采用“mod_rewrite”技术，形如：</p>
+<p>RewriteEngine on<br>RewriteRule ^(.*)$ <a href="http://www.williamlong.info/$1" target="_blank" rel="external">http://www.williamlong.info/$1</a> [R=301,L]</p>
+<p>2.适用于使用Unix网络服务器的用户</p>
+<p>通过此指令通知搜索引擎的spider你的站点文件不在此地址下。这是较为常用的办法。</p>
+<p>形如：Redirect 301 / <a href="http://www.williamlong.info/" target="_blank" rel="external">http://www.williamlong.info/</a></p>
+<p>3.在服务器软件的系统管理员配置区完成301重定向</p>
+<p>适用于使用Window网络服务器的用户</p>
+<p>4.用PHP实现301重定向：</p>
+<p>PHP：<br>header(&quot;HTTP/1.1 301 Moved Permanently&quot;);<br>header(&quot;Location:<a href="http://bdwm.info/" target="_blank" rel="external">http://bdwm.info/</a>&quot;);<br>exit();</p>
+<p>用PHP做301重定向还有一个好处，就是可以针对来自不同域名的访问者针对性的进行301跳转：   </p><p>&lt;?php<br>$the_host = $_SERVER[‘HTTP_HOST’];//取得进入所输入的域名<br>$the_url = isset($_SERVER[‘REQUEST_URI’]) ? $_SERVER[‘REQUEST_URI’] : ‘’;//判断地址后面部分<br>if($the_host !== ‘tigerrr.cn’)//如果域名不是带www的网址那么进行下面的301跳转<br>{<br>header(‘HTTP/1.1 301 Moved Permanently’);//发出301头部<br>header(‘Location:<a href="http://www.tigerrr.cn&#39;.$the_url);//跳转到带www的网址" target="_blank" rel="external">http://www.tigerrr.cn&#39;.$the_url);//跳转到带www的网址</a><br>}<br>?&gt;</p>
+<p>其中if($the_host !== ‘www.tigerrr.cn’)中的“!==”是不完全等于的意思，也可以用“!=”不等于，这样，除了可以将icoa.cn跳转到带www的网址，还可以把所有绑定到这个空间的域名跳转的<a href="http://tigerrr.cn" target="_blank" rel="external">tigerrr.cn</a>。<br></p><p></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-debianubuntue7b3bblinux-e7b3bbe7bb9f-imagecreatee587bde695b0e697a0e6b395e4bdbfe794a8efbc9ae58d87e7baa7gde5ba93e887b3e5ae8ce695b4e78988e69cac" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/07/06/debianubuntue7b3bblinux-e7b3bbe7bb9f-imagecreatee587bde695b0e697a0e6b395e4bdbfe794a8efbc9ae58d87e7baa7gde5ba93e887b3e5ae8ce695b4e78988e69cac/" class="article-date">
+  <time datetime="2011-07-05T19:24:55.000Z" itemprop="datePublished">Jul 6 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/07/06/debianubuntue7b3bblinux-e7b3bbe7bb9f-imagecreatee587bde695b0e697a0e6b395e4bdbfe794a8efbc9ae58d87e7baa7gde5ba93e887b3e5ae8ce695b4e78988e69cac/">Debian/Ubuntu系Linux 系统 imagecreate()函数无法使用：升级GD库至完整版本</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gd/">gd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/imagecreate/">imagecreate</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>在Debian/Ubuntu系统中，通过apt-get方式安装的php5-gd库，不是完整版本，函数imagecreate()无法使用，为了解决这个问题，可以有三种方法来解决：</p>
+<ol>
+<li>不用apt-get方式安装Apache、MySQL和PHP，自己下载源码设定需要的参数自己编译2.  添加特定的源，安装完整gd库<pre><code><span class="number">1.</span>  在源里添加两行 deb <span class="keyword">http</span>://packages.dotdeb.org stable all deb-src <span class="keyword">http</span>://packages.dotdeb.org stable all2.  更新源: apt-<span class="built_in">get</span> update3.  并安装php5-gd库: apt-<span class="built_in">get</span> install php5-gd3.  重新编译完整版本的GD库
+<span class="number">1.</span>  下载源码包 apt-<span class="built_in">get</span> source php52.  修改部分代码
+</code></pre>debian/rules 文件中的—with-gd=shared,/usr —enable-gd-native-ttf .修改成：—with-gd=shared —enable-gd-native-ttf .<ol>
+<li>编译 dpkg-buildpackage4.  安装生成的gd包</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-phpe7a7bbe999a4e695b0e7bb84e9878de5a48de58583e7b4a0e5b9b6e9878de696b0e7b4a2e5bc95-array_unique-e5928c-array_values" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/05/09/phpe7a7bbe999a4e695b0e7bb84e9878de5a48de58583e7b4a0e5b9b6e9878de696b0e7b4a2e5bc95-array_unique-e5928c-array_values/" class="article-date">
+  <time datetime="2011-05-09T14:44:12.000Z" itemprop="datePublished">May 9 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/05/09/phpe7a7bbe999a4e695b0e7bb84e9878de5a48de58583e7b4a0e5b9b6e9878de696b0e7b4a2e5bc95-array_unique-e5928c-array_values/">PHP移除数组重复元素并重新索引: array_unique 和 array_values</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/array_unique/">array_unique</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/array_values/">array_values</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>问题：<br> PHP中移除数组重复元素用的函数是array_unique。该函数移除重复的元素，但是剩下来这些元素的索引没有变化，这样的话如果用for循环调用这个数组元素的时候就会发生错误了，因为for循环的时候是按照数字递增，而且大多数人用的是count($test_array_unique)来获得数组的大小，这样就会造成一些元素被遗漏</p>
+<p>解决办法：<br> 当然，这里解决办法太多了，我介绍的只是一种我觉得比较简单的方法，那就是函数array_values，array_values是返回数组的值，跟索引没有关系，这样处理后会形成一个新的数组，严格按照数字递增的索引，这样再使用for循环输出边一切OK了！</p>
+<p>转载自：<a href="http://www.fotree.com/tag/array-unique/" target="_blank" rel="external">http://www.fotree.com/tag/array-unique/</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-phpe587bde695b0fgetcsv-e694afe68c81e4b8ade69687" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/04/07/phpe587bde695b0fgetcsv-e694afe68c81e4b8ade69687/" class="article-date">
+  <time datetime="2011-04-07T06:09:34.000Z" itemprop="datePublished">Apr 7 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/04/07/phpe587bde695b0fgetcsv-e694afe68c81e4b8ade69687/">PHP函数fgetcsv 支持中文</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fgetcsv/">fgetcsv</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <ol>
+<li>PHP文件及页面编码为UTF-8</li>
+<li>csv文件编码为UTF-8</li>
+<li>使用<span style="widows: 2; text-transform: none; text-indent: 0px; letter-spacing: normal; border-collapse: separate; font: medium simsun; white-space: normal; orphans: 2; color: rgb(0,0,0); word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px" class="Apple-style-span"><span style="text-align: left; line-height: 22px; border-collapse: collapse; font-family: verdana, helvetica, arial, sans-serif; color: rgb(68,68,68); font-size: 14px" class="Apple-style-span">setlocale()</span></span>设置: setlocale(LC_ALL, ‘zh_CN.UTF-8’);</li>
+</ol>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e69eb6e69e84e4b880e4b8aa-iphone-e8818ae5a4a9e5ba94e794a8e7a88be5ba8f" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/03/14/e69eb6e69e84e4b880e4b8aa-iphone-e8818ae5a4a9e5ba94e794a8e7a88be5ba8f/" class="article-date">
+  <time datetime="2011-03-14T09:13:32.000Z" itemprop="datePublished">Mar 14 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/03/14/e69eb6e69e84e4b880e4b8aa-iphone-e8818ae5a4a9e5ba94e794a8e7a88be5ba8f/">架构一个 iPhone 聊天应用程序</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>目前已有 4000 万台 iPhones 在用，您无疑对编写 iOS 应用程序感兴趣。但是从何着手呢？大多数应用程序都会连接网络，那么一个跨越两端的项目（比如说聊天应用程序）又是如何呢？本文将向您介绍如何利用服务器 和客户端组件构建一个聊天应用程序。从本文可以学到编写 iOS 应用程序的整个流程。学完本文之后，我保证您会想要编写一个这样的应用程序。</p>
+<p>构建应用程序从架构解决方案开始。<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#f1" target="_blank" rel="external">图 1</a> 中的架构展示了 iOS 设备（这里是 iPhone）如何通过两个 PHP 页面连接到服务器。</p>
+<p><a><strong>图 1. Chat App 客户端/服务器架构</strong></a><br><a href="http://www.oschina.net/uploads/img/201102/15091613_nRKE.gif" target="_blank" rel="external"><img src="http://www.oschina.net/uploads/img/201102/15091613_nRKE.gif" alt="iPhone 客户端图，带有两个连接到数据库的页面 add.php 和 messages.php"></a></p>
+<p>这两个 PHP 页面（add.php 和 messages.php）都连接到数据库，分别用于发布和检索消息。在我提供的代码中，数据库是 MySQL，但是您可以使用 DB2 或者您喜欢的任何其他数据库。</p>
+<p>我使用的协议是 XML。add.php 页面返回一个 XML 消息，指出消息发布是否成功。messages.php 页面返回发布到服务器的最新消息。</p>
+<p>在您开始之前，我想要介绍一下您将从本文学到的内容。</p>
+<ul>
+<li><strong>数据库访问</strong>。我将向您介绍如何使用 PHP 向数据库添加行和检索行。<em>   <strong>XML 编码</strong>。服务器代码演示如何将消息打包成 XML。</em>   <strong>构建 iOS 界面</strong>。我将详细介绍如何为应用程序构建用户界面。<em>   <strong>查询服务器</strong>。Objective-C 代码向 messages.php 页面发出 GET 请求，以得到最新的聊天消息。</em>   <strong>解析 XML</strong>。使用对 iOS 开发人员可用的 XML 解析器，您可以解析从 messages.php 返回的 XML。<em>   <strong>显示消息</strong>。应用程序使用一个定制列表项显示聊天消息；这一方法可以让您了解到如何定制自己的 iOS 应用程序的外观。</em>   <strong>发布消息</strong>。应用程序通过 add.php 将数据发布到服务器，add.php 将指导您完成发布过程。<em>   <em>*定时器</em></em>。定时器任务用于周期性地轮询 messages.php，看何时来了新的聊天项目。  </li>
+</ul>
+<p>对于一个例子来说，这些内容太多了，应该为您开发您想要构建的任何类型的客户端/服务器 iOS 应用程序提供一组适当的工具。</p>
+<p><a>构建服务器脚本</a></p>
+<p>从创建数据库开始。我将我的数据库叫做 &quot;chat&quot;，您可以给您的数据库随便取个您喜欢的名字。您只需要确保在 PHP 中更改连接字符串，以匹配数据库的名称。用来为应用程序构建单个表的 SQL 脚本在<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#l1" target="_blank" rel="external">清单 1 中</a>。</p>
+<p><a><strong>清单 1. chat.sql</strong></a><br>  <pre><br>DROP TABLE IF EXISTS chatitems;<br>CREATE TABLE chatitems (<br>    id BIGINT NOT NULL PRIMARY KEY auto_increment,<br>    added TIMESTAMP NOT NULL,<br>    user VARCHAR(64) NOT NULL,<br>    message VARCHAR(255) NOT NULL<br>);</pre></p>
+<p>这个简单的单表数据库只有 4 个字段：</p>
+<ul>
+<li>行的 id，这是一个自动递增的整数<em>   添加消息的日期</em>   添加消息的用户*   消息本身的文本</li>
+</ul>
+<p>您可以更改这些字段的大小，以适应您的内容。</p>
+<p>在生产系统中，您很可能还想要有一个带有姓名和密码字段的用户表，还有一个用户登录界面。对于本例来说，我想要让数据库尽量简单，所以数据库中只有一个表。</p>
+<p>您想要构建的第一部分代码是<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#l2" target="_blank" rel="external">清单 2</a> 中的 add.php 脚本。</p>
+<p><a><strong>清单 2. add.php</strong></a></p>
+<pre>&lt;?php
+header( 'Content-type: text/xml' );
+mysql_connect( 'localhost:/tmp/mysql.sock', 'root', '' );
+mysql_select_db( 'chat' );
+mysql_query( &quot;INSERT INTO chatitems VALUES ( null, null, '&quot;.
+    mysql_real_escape_string( $_REQUEST['user'] ).
+    &quot;', '&quot;.
+    mysql_real_escape_string( $_REQUEST['message'] ).
+    &quot;')&quot; );
+?&gt;
+&lt;success /&gt;</pre>
+
+<p>该脚本连接到数据库，并使用已发布的 <code>user</code> 和 <code>message</code> 字段存储消息。就是在简单的 INSERT 语句中，两个值被转义，以解决任何含义不确定的字符，比如说可能会扰乱 SQL 语法的单引号。</p>
+<p>为了测试 add 脚本，您创建一个 test.html 页面，如<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#l3" target="_blank" rel="external">清单 3</a> 所示，它只是将字段张贴到 add.php 脚本。</p>
+<p><a><strong>清单 3. test.html</strong></a></p>
+<pre>                
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Chat Message Test Form&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form action=&quot;add.php&quot; method=&quot;POST&quot;&gt;
+        User: &lt;input name=&quot;user&quot; /&gt;&lt;br /&gt;
+        Message: &lt;input name=&quot;message&quot; /&gt;&lt;br /&gt;
+        &lt;input type=&quot;submit&quot; /&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>这个简单的页面只有一个表单（指向 add.php）和两个文本字段（分别用于用户和消息）。然后还有一个 Submit 按钮，用于执行张贴。</p>
+<p>test.html 页面安装好之后，您就可以测试 add.php 脚本了。在浏览器中打开测试页面，结果类似于 <a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#f2" target="_blank" rel="external">图 2</a>，User 字段中显示有值 &quot;jack&quot;，Message 字段中有值 &quot;This is a test&quot;，下面是一个 Submit Query 按钮。</p>
+<p><a><strong>图 2. 消息发布测试页面</strong></a></p>
+<p><a href="http://www.oschina.net/uploads/img/201102/15091613_12Fx.jpg" target="_blank" rel="external"><img src="http://www.oschina.net/uploads/img/201102/15091613_12Fx.jpg" alt="带有 User 和 Message 字段及 Submit Query 按钮的页面的屏幕截图"></a></p>
+<p>从这里，您添加一些值并单击 Submit Query 按钮。如果一切正常，您会看到类似于<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#f3" target="_blank" rel="external">图 3</a> 的画面。</p>
+<p><a><strong>图 3. 成功的消息发布</strong></a></p>
+<p><a href="http://www.oschina.net/uploads/img/201102/15091614_hjTk.jpg" target="_blank" rel="external"><img src="http://www.oschina.net/uploads/img/201102/15091614_hjTk.jpg" alt="在浏览器中查看的 XML 文件的屏幕截图，带有一个 &lt;success/&gt; 元素"></a></p>
+<p>否则，您可能会得到一个 PHP 堆栈跟踪，告诉您数据库连接失败或者 INSERT 语句不工作。</p>
+<p>消息添加脚本能够工作，下面应该构建 messages.php 脚本了，它返回消息列表。该脚本展示在<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#l4" target="_blank" rel="external">清单 4</a> 中。</p>
+<p><a><strong>清单 4. messages.php</strong></a></p>
+<pre>                
+&lt;?php
+header( 'Content-type: text/xml' );
+mysql_connect( 'localhost:/tmp/mysql.sock', 'root', '' );
+mysql_select_db( 'chat' );
+if ( $_REQUEST['past'] ) {
+    $result = mysql_query('SELECT * FROM chatitems WHERE id &gt; '.
+        mysql_real_escape_string( $_REQUEST['past'] ).
+        ' ORDER BY added LIMIT 50');
+} else {
+    $result = mysql_query('SELECT * FROM chatitems ORDER BY added LIMIT 50' );    
+}
+?&gt;
+&lt;chat&gt;
+&lt;?php
+while ($row = mysql_fetch_assoc($result)) {
+?&gt;
+&lt;message added=&quot;&lt;?php echo( $row['added'] ) ?&gt;&quot; id=&quot;&lt;?php echo( $row['id'] ) ?&gt;&quot;&gt;
+    &lt;user&gt;&lt;?php echo( htmlentities( $row['user'] ) ) ?&gt;&lt;/user&gt;
+    &lt;text&gt;&lt;?php echo( htmlentities( $row['message'] ) ) ?&gt;&lt;/text&gt;
+&lt;/message&gt;
+&lt;?php
+}
+mysql_free_result($result);
+?&gt;
+&lt;/chat&gt;</pre>
+
+<p>这个脚本稍微有点复杂。它做的第一件事是完成查询。这里有两种可能：</p>
+<ul>
+<li>如果提供了 <code>past</code> 参数，那么脚本只返回超过指定 ID 的消息。*   如果没有指定 <code>past</code> 参数，那么返回所有消息。</li>
+</ul>
+<p>使用 <code>past</code> 参数的原因是，您想要客户端是智能的。您想要客户端记住它已经看到过的消息，只寻找那些超过它已经具有的消息。客户端逻辑足够简单，它只保留它找到的最高值 ID，并作为 <code>past</code> 参数发送它。在开始时，它可以发送 0 作为值，相当于根本就不指定任何内容。</p>
+<p>脚本的第二部分从查询结果集中检索记录，并将它们编码成 XML。如果这一部分脚本能够工作，那么您在浏览器中打开这一页面时，会看到类似<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#f4" target="_blank" rel="external">图 4</a> 的效果。</p>
+<p><a><strong>图 4. 聊天消息列表</strong></a></p>
+<p><a href="http://www.oschina.net/uploads/img/201102/15091615_YAtr.jpg" target="_blank" rel="external"><img src="http://www.oschina.net/uploads/img/201102/15091615_YAtr.jpg" alt="编码为 XML 的简短聊天消息的屏幕截图，包含时间戳、ID、用户和消息文本"></a></p>
+<p>服务器脚本就算完成了。当然，您可以添加您想要的任何逻辑，额外的通道、用户验证和登录，等等。对于这个实验性的聊天应用程序，这个脚本已经工作得很好了。现在您可以构建将会使用这个服务器脚本的 iOS 应用程序了。</p>
+<p><a>构建客户端代码</a></p>
+<p>iOS IDE 叫做 XCode。如果您还没有这个 IDE，那么需要从 Apple Developer Site（参见 <a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#resources" target="_blank" rel="external">参考资料</a>）下载它。最新生产版本是 XCode 3，我这里的屏幕截图使用的就是这个版本。现在已经有了一个更新的版本，叫做 XCode 4，它在 IDE 中集成了 User Interface 编辑器，但是该版本目前还处于预览模式。</p>
+<p>XCode 安装好之后，现在就该使用<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#f5" target="_blank" rel="external">图 5</a> 所示的 New Project 向导构建应用程序了。</p>
+<p><a><strong>图 5. 构建一个基于视图的 iPhone 应用程序</strong></a></p>
+<p><a href="http://www.oschina.net/uploads/img/201102/15091617_X5xG.jpg" target="_blank" rel="external"><img src="http://www.oschina.net/uploads/img/201102/15091617_X5xG.jpg" alt="选择的模板选项的屏幕截图：iPhone OS &gt; Application and Product &gt; iPhone &gt; View-based Application"></a></p>
+<p>开始最容易的应用程序类型是基于视图的应用程序。这种应用程序允许您在您选择的地方放置控件，并为您完成大多数 UI 设计。选择控件之后，再选择 iPhone 或 iPad。这一选择关系到您将在什么样的设备上进行模拟。您可以编写代码，以便在 iPhone 或 iPad 或者 Apple 即将推出的任何其他 i-设备上运行。</p>
+<p>单击 <strong>Choose</strong> 之后，您会被要求给应用程序命名。我将我的应用程序取名为 “iOSChatClient”，但是您可以随便给自己的应用程序取一个您喜欢的名字。您给应用程序命名之后，XCode IDE 会构建核心应用程序文件。然后，编译并启动它，确保一切正常。</p>
+<p><a>创建用户界面</a></p>
+<p>创建应用程序之后，您就可以开发界面了。从视图控制器 XIB 文件开始，该文件位于 Resources 文件夹中。通过双击该文件夹，可以打开 Interface Builder，这是 UI 工具箱。</p>
+<p><a><strong>图 6. 界面布局</strong></a></p>
+<p><a href="http://www.oschina.net/uploads/img/201102/15091618_JCaA.jpg" target="_blank" rel="external"><img src="http://www.oschina.net/uploads/img/201102/15091618_JCaA.jpg" alt="UI 的屏幕截图，带有一个消息文本框、Send 按钮和聊天记录列表"></a></p>
+<p><a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#f6" target="_blank" rel="external">图 6 </a>展示了我如何布局三个控件。顶部是文本框，用于输入您想要发送的消息。文本框的右边是 Send 按钮。下面是 UITableView 对象，其中展示了所有聊天记录。</p>
+<p>我会详细介绍如何在 Interface Builder 中完成这一切，但是我建议您下载项目代码，自己试验一下。尽管放心将该项目用作您自己的应用程序的模板。</p>
+<p><a>创建视图控制器</a></p>
+<p>用户界面这就完成了。下一个任务是回到 XCode IDE，向视图控制器类定义添加一些成员变量、属性和方法，如<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#l5" target="_blank" rel="external">清单 5</a> 所示。</p>
+<p><a><strong>清单 5. iOSChatClientViewController.h</strong></a></p>
+<pre>                
+#import &lt;UIKit/UIKit.h&gt;
+
+@interface iOSChatClientViewController : UIViewController 
+                             &lt;UITableViewDataSource,UITableViewDelegate&gt;    {
+    IBOutlet UITextField *messageText;
+    IBOutlet UIButton *sendButton;
+    IBOutlet UITableView *messageList;
+
+    NSMutableData *receivedData;
+    NSMutableArray *messages;
+    int lastId;
+
+    NSTimer *timer;
+
+    NSXMLParser *chatParser;
+    NSString *msgAdded;
+    NSMutableString *msgUser;
+    NSMutableString *msgText;
+    int msgId;
+    Boolean inText;
+    Boolean inUser;
+}
+
+@property (nonatomic,retain) UITextField *messageText;
+@property (nonatomic,retain) UIButton *sendButton;
+@property (nonatomic,retain) UITableView *messageList;
+
+- (IBAction)sendClicked:(id)sender;
+
+@end</pre>
+
+<p>从顶部开始，我向类定义添加了 UITableViewDataSource 和 UITableViewDelegate。该代码用于驱动消息显示。类中有一些方法可以被回调，以便向表视图提供数据和布局信息。</p>
+<p>实例变量分为五组。顶部是对各种 UI 元素的对象引用、要发送的消息的文本字段、发送按钮和消息列表。</p>
+<p>下面是一些缓冲区，用于存储返回的 XML、消息列表和看到的最新 ID。lastID 从 0 开始，但是被设置为您看到的任何消息的最大 ID 值。它然后作为 <code>past</code> 参数的值被发送回服务器。</p>
+<p>定时器每几秒钟触发一次，以查找来自服务器的新消息。最后一部分代码包含解析 XML 所需的所有成员变量。存在很多成员变量，这是因为 XML 解析器是一个基于回调的解析器，这表示它在类中保留有很多状态。</p>
+<p>成员变量下面是属性和单击处理程序。它们由 Interface Builder 用来将界面元素连接到这个控制器类。事实上，视图控制器中有了这些元素之后，就可以回到 Interface Builder，使用连接器控件将消息文本、发送按钮和消息列表连接到它们对应的属性，将 <code>Touch Inside</code> 事件连接到 <code>sendClicked</code> 方法。</p>
+<p><a>构建视图控制器代码</a></p>
+<p>在这一节，可以开始深入项目正题，实现视图控制器。虽然代码都在一个文件中，但是我把它们分成好几个清单，以便解释每一部分时更简单一点。</p>
+<p>第一部分，<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#l6" target="_blank" rel="external">清单 6</a>，介绍应用程序开始部分和视图控制器的初始化。</p>
+<p><a><strong>清单 6. iOSChatClientViewController.m – 开始</strong></a></p>
+<pre>                
+#import &quot;iOSChatClientViewController.h&quot;
+
+@implementation iOSChatClientViewController
+
+@synthesize messageText, sendButton, messageList;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+        lastId = 0;
+        chatParser = NULL;
+    }
+    return self;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:
+                                       (UIInterfaceOrientation)interfaceOrientation {
+    return YES;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+- (void)viewDidUnload {
+}
+
+- (void)dealloc {
+    [super dealloc];
+}</pre>
+
+<p>这是标准的 iOS 代码。代码中有一些对可变的系统事件（比如说内存警告和存储单元分配）的回调。在生产应用程序中，您想要完美地处理这些事件，但是对于这个示例应用程序来说，我不想让事情过于复杂。</p>
+<p>第一个真正的任务是对 <code>messages.php</code> 脚本发出 <code>GET</code> 请求。<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#l7" target="_blank" rel="external">清单 7</a> 展示了此任务的代码。</p>
+<p><a><strong>清单 7. iOSChatClientViewController.m – 得到消息</strong></a></p>
+<pre>                
+- (void)getNewMessages {
+    NSString *url = [NSString stringWithFormat:
+        @&quot;http://localhost/chat/messages.php?past=%ld&amp;t=%ld&quot;,
+        lastId, time(0) ];
+
+    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    [request setURL:[NSURL URLWithString:url]];
+    [request setHTTPMethod:@&quot;GET&quot;];
+
+    NSURLConnection *conn=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if (conn)
+    {
+        receivedData = [[NSMutableData data] retain];
+    }
+    else
+    {
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection
+  didReceiveResponse:(NSURLResponse *)response
+{  
+    [receivedData setLength:0];
+}  
+
+- (void)connection:(NSURLConnection *)connection 
+  didReceiveData:(NSData *)data  
+{  
+    [receivedData appendData:data];
+}  
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{  
+    if (chatParser)
+        [chatParser release];
+
+    if ( messages == nil )
+        messages = [[NSMutableArray alloc] init];
+
+    chatParser = [[NSXMLParser alloc] initWithData:receivedData];
+    [chatParser setDelegate:self];
+    [chatParser parse];
+
+    [receivedData release];
+
+    [messageList reloadData];
+
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:
+    [self methodSignatureForSelector: @selector(timerCallback)]];
+    [invocation setTarget:self];
+    [invocation setSelector:@selector(timerCallback)];
+    timer = [NSTimer scheduledTimerWithTimeInterval:5.0 
+        invocation:invocation repeats:NO];
+}
+
+- (void)timerCallback {
+    [timer release];
+    [self getNewMessages];
+}</pre>
+
+<p>代码开始是 <code>getNewMessages</code> 方法。该方法创建请求，并通过构建一个 <code>NSURLConnection</code> 而开始这个请求。它还创建了用于存储响应数据的数据缓冲区。三个事件处理程序 <code>didReceieveResponse</code>、<code>didReceiveData</code> 和 <code>connectionDidFinishLoading</code> 都处理加载数据的各个阶段。</p>
+<p><code>connectionDidFinishLoading</code> 方法是最重要的，因为它启动读取数据并挑出消息的 XML 解析器。</p>
+<p>这里的最后一个方法是 <code>timerCallback</code>，由定时器用来启动新消息请求。当定时器超时时，<code>getNewMessages</code> 方法被调用，这将再次启动定时过程，最后将创建一个新的定时器，这个定时器超时时，会再次启动消息检索过程，等等。</p>
+<p>下一部分，<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#l8" target="_blank" rel="external">清单 8</a>，处理 XML 的解析。</p>
+<p><a><strong>清单 8. iOSChatClientViewController.m – 解析消息</strong></a></p>
+<pre>                
+- (void)parser:(NSXMLParser *)parser 
+didStartElement:(NSString *)elementName 
+namespaceURI:(NSString *)namespaceURI 
+qualifiedName:(NSString *)qName 
+attributes:(NSDictionary *)attributeDict {
+    if ( [elementName isEqualToString:@&quot;message&quot;] ) {
+        msgAdded = [[attributeDict objectForKey:@&quot;added&quot;] retain];
+        msgId = [[attributeDict objectForKey:@&quot;id&quot;] intValue];
+        msgUser = [[NSMutableString alloc] init];
+        msgText = [[NSMutableString alloc] init];
+        inUser = NO;
+        inText = NO;
+    }
+    if ( [elementName isEqualToString:@&quot;user&quot;] ) {
+        inUser = YES;
+    }
+    if ( [elementName isEqualToString:@&quot;text&quot;] ) {
+        inText = YES;
+    }
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    if ( inUser ) {
+        [msgUser appendString:string];
+    }
+    if ( inText ) {
+        [msgText appendString:string];
+    }
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName 
+   namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    if ( [elementName isEqualToString:@&quot;message&quot;] ) {
+        [messages addObject:[NSDictionary dictionaryWithObjectsAndKeys:msgAdded,
+            @&quot;added&quot;,msgUser,@&quot;user&quot;,msgText,@&quot;text&quot;,nil]];
+
+        lastId = msgId;
+
+        [msgAdded release];
+        [msgUser release];
+        [msgText release];
+    }
+    if ( [elementName isEqualToString:@&quot;user&quot;] ) {
+        inUser = NO;
+    }
+    if ( [elementName isEqualToString:@&quot;text&quot;] ) {
+        inText = NO;
+    }
+}</pre>
+
+<p>了解 SAX 解析的人应该都熟悉这个 XML 解析器。您给它一些 XML，当标签打开或关闭时，当找到文本时，它都会向您的代码发送事件。它是一个基于事件的解析器，而不是基于 DOM 的解析器。事件解析器的优点是，内存占用少。但是缺点是比较难以使用，因为在解析期间，所有的状态都需要存储在主机对象中。</p>
+<p>过程开始时，所有成员变量（比如 <code>msgAdded</code>、<code>msgUser</code>、<code>inUser</code> 和 <code>inText</code>）都被初始化为一个空字符串或 false。然后，随着每个标签在<code>didStartElement</code> 方法中完成初始处理，代码查看标签名，并设置适当的 <code>inUser</code> 或 <code>inText</code> Boolean 值。这里，<code>foundCharacters</code> 方法处理向适当的字符串添加文本数据。<code>didEndElement</code> 方法然后处理标签的结束，即在发现 <code>&amp;lt;message&amp;gt;</code> 结束标签时将已解析的消息添加到消息列表。</p>
+<p>现在您需要编写代码来显示消息。代码展示在<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#l9" target="_blank" rel="external">清单 9</a> 中。</p>
+<p><a><strong>清单 9. iOSChatClientViewController.m – 显示消息</strong></a></p>
+<pre>                
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)myTableView numberOfRowsInSection:
+                                       (NSInteger)section {
+    return ( messages == nil ) ? 0 : [messages count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:
+                                       (NSIndexPath *)indexPath {
+    return 75;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)myTableView 
+   cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = (UITableViewCell *)[self.messageList 
+        dequeueReusableCellWithIdentifier:@&quot;ChatListItem&quot;];
+    if (cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@&quot;ChatListItem&quot; 
+            owner:self options:nil];
+        cell = (UITableViewCell *)[nib objectAtIndex:0];
+    }
+
+    NSDictionary *itemAtIndex = (NSDictionary *)[messages objectAtIndex:indexPath.row];
+    UILabel *textLabel = (UILabel *)[cell viewWithTag:1];
+    textLabel.text = [itemAtIndex objectForKey:@&quot;text&quot;];
+    UILabel *userLabel = (UILabel *)[cell viewWithTag:2];
+    userLabel.text = [itemAtIndex objectForKey:@&quot;user&quot;];
+
+    return cell;
+}</pre>
+
+<p>这些就是 <code>UITableViewDataSource</code> 和 <code>UITableViewDelegate</code> 接口定义的所有方法。最重要的一个是 <code>cellForRowAtIndexPath</code> 方法，它为列表项创建一个定制的 UI，并将它的文本字段设置为这个消息的适当文本。</p>
+<p>这个定制的列表项定义在新的 <code>ChatListItem.xib</code> 文件中，您需要将这个文件创建在 Resources 文件夹中。在这个文件中，您创建一个新的 <code>UITableViewCell</code> 条目，其中有两个标签，分别标注为 1 和 2。这个文件以及所有其他代码都可从可下载的项目中得到（参见 <a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#download" target="_blank" rel="external">下载</a>）。</p>
+<p><code>cellForRowAtIndexPath</code> 方法中的代码分配这些 <code>ChatListItem</code> 单元格中的一个，然后将标签的文本字段设置为我们看到的这个消息的文本和用户值。</p>
+<p>我知道要考虑的事项太多，但是已经快结束了。您已经完成了启动视图、获得消息 XML、解析消息和显示消息的代码。惟一剩下要做的事情是编写发送消息的代码。</p>
+<p>构建此代码的第一件事是为用户名创建一个设置。iOS 应用程序可以定义进入 Settings 控制面板的定制设置。要创建一个设置，您需要使用 New File 向导在 Resources 文件夹中创建一个设置包。然后您使用<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#f7" target="_blank" rel="external">图 7</a> 中的 settings 编辑器，将它删除成单个设置。</p>
+<p><a><strong>图 7. 设置 settings</strong></a></p>
+<p><a href="http://www.oschina.net/uploads/img/201102/15091618_MNSd.jpg" target="_blank" rel="external"><img src="http://www.oschina.net/uploads/img/201102/15091618_MNSd.jpg" alt="settings 编辑器的屏幕截图"></a></p>
+<p>然后您确定，您想要此设置的标题为 <code>User</code>，并具有键 <code>user_preference</code>。然后，您就可以为<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#l10" target="_blank" rel="external">清单 10</a> 中的消息发送代码使用这个首选项来得到用户名了。</p>
+<p><a><strong>清单 10. iOSChatClientViewController.m – 发送消息</strong></a></p>
+<pre>                
+- (IBAction)sendClicked:(id)sender {
+    [messageText resignFirstResponder];
+    if ( [messageText.text length] &gt; 0 ) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+        NSString *url = [NSString stringWithFormat:
+            @&quot;http://localhost/chat/add.php&quot;];
+
+        NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] 
+            init] autorelease];
+        [request setURL:[NSURL URLWithString:url]];
+        [request setHTTPMethod:@&quot;POST&quot;];
+
+        NSMutableData *body = [NSMutableData data];
+        [body appendData:[[NSString stringWithFormat:@&quot;user=%@&amp;message=%@&quot;, 
+             [defaults stringForKey:@&quot;user_preference&quot;], 
+             messageText.text] dataUsingEncoding:NSUTF8StringEncoding]];
+        [request setHTTPBody:body];
+
+        NSHTTPURLResponse *response = nil;
+        NSError *error = [[[NSError alloc] init] autorelease];
+        [NSURLConnection sendSynchronousRequest:request 
+            returningResponse:&amp;response error:&amp;error];
+
+        [self getNewMessages];
+    }
+
+    messageText.text = @&quot;&quot;;
+}
+
+- (void)viewDidLoad {
+        [super viewDidLoad];
+
+    messageList.dataSource = self;
+    messageList.delegate = self;
+
+    [self getNewMessages];
+}
+
+@end</pre>
+
+<p>这是 Send Message 按钮的单击处理程序代码。它创建一个 <code>NSMutableURLRequest</code>，该请求具有 <code>add.php</code> 脚本的 URL。它然后将消息主体设置为一个字符串，该字符串的用户和消息数据被编码为 POST 格式。它然后使用一个 <code>NSURLConnection</code> 同步地向服务器发送消息数据，并使用 <code>getNewMessages</code> 启动一次消息检索。</p>
+<p>该文件底部的 <code>viewDidLoad</code> 方法是视图加载时调用的方法。它开始消息检索过程，并将消息列表与该对象连接，以便消息列表知道从哪里得到数据。</p>
+<p>所有这些都编写好之后，现在就该测试应用程序了。首先是在<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#f8" target="_blank" rel="external">图 8</a> 所示的 Settings 页面中设置用户名。</p>
+<p><a><strong>图 8. Settings 页面</strong></a></p>
+<p><a href="http://www.oschina.net/uploads/img/201102/15091620_gqY4.jpg" target="_blank" rel="external"><img src="http://www.oschina.net/uploads/img/201102/15091620_gqY4.jpg" alt="Settings 页面的屏幕截图，带有 General、Safari、Photos 和 iOSChatClient 选项"></a></p>
+<p>单击 iOSChatClient 应用程序，会显示<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#f9" target="_blank" rel="external">图 9</a> 所示的 settings 页面。</p>
+<p><a><strong>图 9. 设置用户名</strong></a></p>
+<p><a href="http://www.oschina.net/uploads/img/201102/15091620_Ruyy.jpg" target="_blank" rel="external"><img src="http://www.oschina.net/uploads/img/201102/15091620_Ruyy.jpg" alt="iOSChatClient 设置页面的屏幕截图，User 字段中的值是 &#39;Megan&#39;"></a></p>
+<p>然后就像使用手机一样回到应用程序，并像<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#f10" target="_blank" rel="external">图 10</a> 中一样使用键盘输入一条消息。</p>
+<p><a><strong>图 10. 输入新消息</strong></a></p>
+<p><a href="http://www.oschina.net/uploads/img/201102/15091621_TQgO.jpg" target="_blank" rel="external"><img src="http://www.oschina.net/uploads/img/201102/15091621_TQgO.jpg" alt="QWERTY 键盘、消息文本框、Send 按钮和用户 jack 的测试消息的屏幕截图"></a></p>
+<p>然后按下 send 按钮，我们看到消息被发送并发布到服务器，并从 <code>messages.php</code> 返回，就像您可以从<a href="http://www.ibm.com/developerworks/cn/xml/x-ioschat/index.html?ca=drs-#f11" target="_blank" rel="external">图 11</a> 中看到的一样。</p>
+<p><a><strong>图 11. 完成的聊天应用程序</strong></a></p>
+<p><a href="http://www.oschina.net/uploads/img/201102/15091621_zWE4.jpg" target="_blank" rel="external"><img src="http://www.oschina.net/uploads/img/201102/15091621_zWE4.jpg" alt="消息文本框、Send 按钮和用户 jack 及 megan 的两条测试消息的屏幕截图"></a></p>
+<p>您会从代码中看到，send 按钮和消息列表之间没有直接连接。所以消息进入消息列表的惟一方式是，通过服务器成功地将数据插入到数据库中。然后 <code>message.php</code> 代码成功地返回消息列表中的消息用于显示。</p>
+<p><a>结束语</a></p>
+<p>这篇文章无疑让您受益匪浅。您在后台对 XML 数据完成了一些数据库操作。构建了一个带有定制用户界面的 iOS 应用程序，它向服务器发送数据，从服务器检索数据。您使用 XML 解析器解析从服务器返回的响应 XML。您还构建了一个定制列表 UI，以便消息看起来更为美观。</p>
+<p>下一步该怎么走完全取决于您自己。Apple 已经为您在 iPhone 或 iPad 上实现您的愿景提供了工具。本文给您构建自己的支持网络的应用程序提供了路线图。我鼓励您亲自动手试一试。如果您确实构建了比较酷的应用程序，请告诉我， 我会帮助您将它提交到 App Store。</p>
+<p><a href="http://www.ibm.com/developerworks/apps/download/index.jsp?contentid=626679&amp;filename=ChatProject.zip&amp;method=http&amp;locale=zh_CN" target="_blank" rel="external">下载本文源代码</a></p>
+<p>更多关于<a href="http://www.oschina.net/p/php" target="_blank" rel="external">PHP</a>的详细信息，或者下载地址请点<a href="http://www.oschina.net/action/project/go?id=967&amp;p=download" target="_blank" rel="external">这里</a></p>
+<p>转载自 IBM Developers</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e4bdbfe794a8zendcoree4b880e994aee5ae89e8a385iisphpzend" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/03/13/e4bdbfe794a8zendcoree4b880e994aee5ae89e8a385iisphpzend/" class="article-date">
+  <time datetime="2011-03-12T16:03:01.000Z" itemprop="datePublished">Mar 13 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>►<a class="article-category-link" href="/categories/php/Windows-7/">Windows 7</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/03/13/e4bdbfe794a8zendcoree4b880e994aee5ae89e8a385iisphpzend/">使用ZendCore一键安装IIS+PHP+ZEND</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zend/">zend</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zendcore/">zendcore</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>这个工具的优势在于：</p>
+<font color="#0000ff">1.简单 一路点击下来就安装好了</font><br><font color="#0000ff">2.提供不逊于Linux平台的性能 稳定</font>
+
+<p>Zend官方出了一个免费一键配置的软件－Zendcore，让你的IIS一键安装PHP环境。ZEND官方说，可以让你的PHP运行在WIN环境下，像LINUX环境一样的稳定。</p>
+<p>ZendCore让IIS一键安装PHP环境，PHP运行在WIN环境下，像LINUX环境一样稳定。有用户对比了两种配置方式：一台手工配置选择 isapi模式，一台使用zend core 配置的服务器。发现使用zend core 效果有显著的提高，并且php.ini采用全web管理模式，不用重启IIS就生效，可以直接升级。</p>
+<p>Zend Core其实主要支持：IBM服务器，Oracle数据库，有相应的不同平台下版本。</p>
+<p>让IIS支持PHP+ZEND一直是让菜鸟们头疼的一件事，不过现在不用这么麻烦了。</p>
+<p>不管怎么说，有了这个东西，安装PHP方便多了。</p>
+<p>Zendcore下载地址：</p>
+<p>ZendCore-2.5.0</p>
+<p><a href="http://downloads.zend.com/core-new/2.5.0/ZendCore-2.5.0-Windows-x86.exe" target="_blank" rel="external">http://downloads.zend.com/core-new/2.5.0/ZendCore-2.5.0-Windows-x86.exe</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/tags/php/page/2/">2</a><a class="page-number" href="/tags/php/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/tags/php/page/5/">5</a><a class="extend next" rel="next" href="/tags/php/page/2/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

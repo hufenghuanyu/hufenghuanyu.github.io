@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/page/19/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-windows-7e983a8e7bdb2e5b7a5e585b7disme5ae9ee4be8be8a7a3e69e90" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/08/05/windows-7e983a8e7bdb2e5b7a5e585b7disme5ae9ee4be8be8a7a3e69e90/" class="article-date">
+  <time datetime="2009-08-05T13:31:38.000Z" itemprop="datePublished">Aug 5 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Windows-7/">Windows 7</a>►<a class="article-category-link" href="/categories/Windows-7/启动/">启动</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/08/05/windows-7e983a8e7bdb2e5b7a5e585b7disme5ae9ee4be8be8a7a3e69e90/">Windows 7部署工具Dism实例解析</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dism/">dism</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/waik/">waik</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wim/">wim</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/‌windows-7/">‌windows 7</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><strong>1、获取Dism命令参数</strong></p>
+<p>Dism有很多命令参数，适用于不同的应用需求。在Windows 7的命令行下执行“dism /?”可获取其命令参数，为了便于查看我们可在命令后添加通道符号即“dism /? | more”以分页显示其命令参数。其中我们最常用的参数是“/Mount-Wim”、“/Unmount-Wim”、“/Remount-Wim”，其作用分别是挂接映像、卸载映像、移除映像目录。另外，“/Get-MountedWimInfo”和“/Get-WimInfo”分别是获取被加载的映像的信息和映像文件的信息，这两个参数在进行映像部署是非常重要。当然，Dism还有其它更复杂的参数大家可通过其后的描述了解其作用，笔者就不一一列举了，我们开始实例演示。(图1)</p>
+<p><img src="http://ce.sysu.edu.cn/hope/Education/UploadFiles_5303/200904/20090423175005926.jpg" alt=""><br>&#160;&#160;&#160; 图1 Dism命令参数</p>
+<p><strong>2、获取Dism映像信息</strong></p>
+<p>我们知道Windows 7(Windows Vista也是)的映像中封装了当前系统的所有版本，在进行系统部署前首先要确定安装那一个版本，因为你购买的密钥只能适用于某个版本，所以获取映像的封装信息是必要的。在命令行下执行“dism /get-wininfo /wimfile:c:\test\images\install.wim”即可。需要说明的是：上面的命令/get-wiminfo是关键参数，其作用是获取映像的封装信息;参数/wimfile:的后面是映像文件的路径。命令执行后，我们可以看到该系统映像中封装了4个系统版本，分别是HOMEBASIC(家庭普通版)、HOMEPREMIVE(家庭高级版)、BUSINESS(商业版版)、ULTIMATE(旗舰版)。同时，我们也可以看到每一个版本的大小。(图2)</p>
+<p><img src="http://ce.sysu.edu.cn/hope/Education/UploadFiles_5303/200904/20090423175009781.jpg" alt=""><br>&#160; 图2 获取Dism映像信息     </p>
+<p><strong>3、装载Dism映像</strong></p>
+<p>获取了映像的封装信息后，我们就可以将映像中封装的某个系统版本装载到磁盘目录中了。比如我们将映像包中封装的ULTIMATE版装载到c:\test\servicing中可以执行这样的命令即可“dism /mount-wim /wimfile:c:\test\images\install.wim /index:4 /mountdir:c:\test\servicing”。其中/mount-wim是关键参数，表示映像的装载;/wimfile:后面是映像文件路径;/index:4参数表示装载的封装包中的第四包即ULTIMATE;/mountdir:后面是系统映像装载的目录。命令执行过程中，会以百分比的形式显示映像装载的进程。(图3)</p>
+<p><img src="http://ce.sysu.edu.cn/hope/Education/UploadFiles_5303/200904/20090423175012169.jpg" alt=""><br>图3 装载Dism映像</p>
+<p><strong>4、获取装载Dism映像信息</strong></p>
+<p>在系统映像装载完成后以进行验证，或者我们需要查询系统中装载了哪些映像，可以执行命令“dism /get-mountedwiminfo”进行获取。如图所示，命令执行结果显示：系统映像的装载目录为c:\test\servicing，映像文件为c:\test\images\install.wim，映像序列为4，映像目录读写权限为可读可写，状态为ok即正常。这些信息表明，我们刚才的映像装载成功了，并且当前磁盘中只装载了一个系统映像。同时我们可以进入c:\test\servicing目录进行查看刚才装载的系统，在命令行下执行命令“dir c:\test\servicing”可列出该目录中装载的系统映像信息。如图所示，包括所有的系统文件和系统目录。如果我们想引导该系统，可通过修改系统引导文件添加相应的项目即可。(图4)</p>
+<p><img src="http://ce.sysu.edu.cn/hope/Education/UploadFiles_5303/200904/20090423175012185.jpg" alt=""><br>&#160;&#160; 图4 获取装载Dism映像信息     </p>
+<p><strong>5、对Dism装载系统映像的操作</strong></p>
+<p>通过上面的操作我们在磁盘中部署了一个系统映像，那如何对系统映像进行操作呢?Dism提供了/image和/online参数，这两个参数后面跟其他的参数完成相应的操作。要获取/image参数的操作可在命令行下执行“dism /image:c:\test\servicing /? | more”即可，这样会分页显示相关的参数。比如我们执行命令“dism /image:c:\test\servicing /get-drivers”可获取目标系统映像的驱动器信息。执行命令“dism /image:c:\test\servicing /add-driver /driver:c:\test\drivers\UX6000\vx60000.inf”为目标系统映像添加新的驱动器。安装完成后我们可以再次执行命令“dism /image:c:\test\servicing /get-drivers”查看驱动信息，可以看到刚才添加的驱动器信息。(图5)</p>
+<p><img src="http://ce.sysu.edu.cn/hope/Education/UploadFiles_5303/200904/20090423175017129.jpg" alt=""><br>&#160;&#160;&#160; 图5 对Dism装载系统映像的操作</p>
+<p><strong>6、卸载Dism映像</strong></p>
+<p>dism除了可以装载映像，当然也可以卸载系统映像。我们以卸载上面安装的系统映像为例，在命令行下执行“dism /unmount-wim /mountdir:c:\test\servicing /discard”即可。其中/unmount-wim是关键参数，/mountdir:c:\test\servicing的目标系统映像，/discard参数表示丢弃映像。命令执行后，刚才创建的系统映像就卸载掉了。</p>
+<p><strong>7、Dism其他应用操作</strong></p>
+<p>上面列举的是dism最常用的应用实例，除此之外，还有一些比较实用的操作大家也有必要了解。我们还是以上面创建的系统映像(c:\test\servicing)为例，在命令行下执行命令“dism /image:c:\test\servicing /get-intl”可以获取当前映像所属的语言信息。对于安装了英文版的用户，我们也可以通过dism工具来添加中文语言包。比如我们<a href="http://download.chinaitlab.com/" target="_blank" rel="external">下载</a>的中文语言包路径为C:\langpacks\zh.cab，要安装该语言包可执行命令“dism /image:c:\test\servicing /add-package /packagepath:C:\langpacks\zh.cab /packagepath:C:\langpacks\zh.cab…”，命令执行中会开启两个进程。此外，“dism /image:c:\test\servicing /set-uilang:zh-cn”是设置系统语言为中文，“dism /image:c:\test\servicing /set-timezone:&quot;China Standard Time&quot;”是设置系统时间为中国标准时间等。设置完成后，我们可执行命令“dism /commit-wim /mountdir:c:\test\servicing”来保存一下更新。</p>
+<p>总结：Dism是一个强大的系统映像部署工具，其功能和可操作性与ImageX相比有了很大的提高。掌握和灵活应用Dism，对系统管理员来说必然会在很大程度上提升系统部署的效率。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e588a9e794a8easyboote588b6e4bd9cwindows-e58f8a-linuxe5a49ae59088e4b880e5bc95e5afbce58589e79b98e4b98blinuxe5bc95e5afbc" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/08/01/e588a9e794a8easyboote588b6e4bd9cwindows-e58f8a-linuxe5a49ae59088e4b880e5bc95e5afbce58589e79b98e4b98blinuxe5bc95e5afbc/" class="article-date">
+  <time datetime="2009-08-01T08:32:56.000Z" itemprop="datePublished">Aug 1 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>►<a class="article-category-link" href="/categories/linux/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/08/01/e588a9e794a8easyboote588b6e4bd9cwindows-e58f8a-linuxe5a49ae59088e4b880e5bc95e5afbce58589e79b98e4b98blinuxe5bc95e5afbc/">利用Easyboot制作Windows 及 Linux多合一引导光盘之Linux引导</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/allinone/">allinone</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easyboot/">easyboot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>利用Easyboot制作包含Linux、Windows XP、Vista&amp;Windows7在内的多合一引导光盘，集成Windows系统网上教程很多；利用Easyboot引导linux资料比较少，经过虚拟机测试，用以下方法制作的linux引导可以正常引导并安装完成系统：</p>
+<ol>
+<li>利用UltraISO打开linux光盘镜像，打开 启动光盘，选择保存引导文件，另存为Linux.bif(名字换成其他的也行)，并放到多合一光盘中的EZBoot目录；</li>
+<li>将Linux光盘镜像内的所有文件复制到多合一启动光盘根目录里；</li>
+<li>编辑多合一启动光盘的menu启动文件，在Easyboot中新建启动菜单，名称随意，运行命令中输入：<strong><font color="#0000ff">bootinfotable;run linux.bif</font></strong> 说明：bootinfotable防止光盘校验</li>
+</ol>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e5a49ae794a8e688b7e58d9ae5aea2e4b88ee59f9fe794a8e688b7e8aea4e8af81e8a7a3e586b3e696b9e6a188wpmuldap-authentication" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/07/31/e5a49ae794a8e688b7e58d9ae5aea2e4b88ee59f9fe794a8e688b7e8aea4e8af81e8a7a3e586b3e696b9e6a188wpmuldap-authentication/" class="article-date">
+  <time datetime="2009-07-31T11:56:19.000Z" itemprop="datePublished">Jul 31 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress/">wordpress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/07/31/e5a49ae794a8e688b7e58d9ae5aea2e4b88ee59f9fe794a8e688b7e8aea4e8af81e8a7a3e586b3e696b9e6a188wpmuldap-authentication/">多用户博客与域用户认证解决方案——WPMU+LDAP Authentication</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress-mu/">wordpress mu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/统一认证/">统一认证</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>WordPress是互联网使用最多的免费开源博客系统，其功能强大、扩展插件应用丰富。WPMU(WordPress for Multiuser)是一个专为多用户而增强修改的WordPress扩展版本，其自身一直跟随最新版的WordPress不断更新，国外许多大学都采用 此系统建立了Staff Weblogs系统。经过多方面的搜寻阅读资料，Nottingham宁波校区的系统也得以实现，并使用LDAP插件实现了与既有Active Directory完美集成。这里做一个简要安装笔记： </p>
+<p>服务器：两路AMD双核CPU＋4G内存，CentOS 5.2 x86_64 内核更新至2.6.18-92.1.18.el5<br>支持组件：<br>httpd-2.2.3-11.el5_2.centos.4<br>mysql-server-5.0.45-7.el5<br>php-5.1.6-20.el5_2.1<br>php-ldap-5.1.6-20.el5_2.1<br>ioncube_loaders_lin_x86-64<br>ZendOptimizer-3.3.0a-linux-glibc23-x86_64 </p>
+<p>手动安装php加速组件ioncube_loaders, ZendOptimizer：<br>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:57F11A72-B0E5-49c7-9094-E3A15BD5B5E6:49baefb5-7c6f-4711-8ec3-6587e7d40e06" class="wlWriterEditableSmartContent"><pre style="background-color:#FFFFFF;overflow: auto;"><span style="color: #000000;">[root@gus ~]</span><span style="color: #000000;">#</span><span style="color: #000000;"> tar -xvf ioncube_loaders_lin_x86-</span><span style="color: #000000;">64</span><span style="color: #000000;">.</span><span style="color: #000000;">tar</span><span style="color: #000000;">.</span><span style="color: #000000;">gz<br>[root@gus ~]</span><span style="color: #000000;">#</span><span style="color: #000000;"> </span><span style="color: #0000FF;">mkdir</span><span style="color: #000000;"> -pv </span><span style="color: #000000;">/</span><span style="color: #000000;">usr</span><span style="color: #000000;">/</span><span style="color: #000000;">local</span><span style="color: #000000;">/</span><span style="color: #000000;">lib</span><span style="color: #000000;">/</span><span style="color: #000000;">ioncube<br>[root@gus ~]</span><span style="color: #000000;">#</span><span style="color: #000000;"> mv ioncube</span><span style="color: #000000;">/</span><span style="color: #000000;">ioncube_loader_lin_5</span><span style="color: #000000;">.</span><span style="color: #000000;">1</span><span style="color: #000000;">.</span><span style="color: #000000;">so </span><span style="color: #000000;">/</span><span style="color: #000000;">usr</span><span style="color: #000000;">/</span><span style="color: #000000;">local</span><span style="color: #000000;">/</span><span style="color: #000000;">lib</span><span style="color: #000000;">/</span><span style="color: #000000;">ioncube</span><span style="color: #000000;">/</span><span style="color: #000000;"><br>[root@gus ~]</span><span style="color: #000000;">#</span><span style="color: #000000;"> </span><span style="color: #0000FF;">mkdir</span><span style="color: #000000;"> </span><span style="color: #000000;">/</span><span style="color: #000000;">usr</span><span style="color: #000000;">/</span><span style="color: #000000;">local</span><span style="color: #000000;">/</span><span style="color: #000000;">lib</span><span style="color: #000000;">/</span><span style="color: #000000;">zend<br>[root@gus ~]</span><span style="color: #000000;">#</span><span style="color: #000000;"> tar -xvf ZendOptimizer-</span><span style="color: #000000;">3.3</span><span style="color: #000000;">.</span><span style="color: #000000;">0a-linux-glibc23-x86_64</span><span style="color: #000000;">.</span><span style="color: #000000;">tar</span><span style="color: #000000;">.</span><span style="color: #000000;">gz<br>[root@gus ~]</span><span style="color: #000000;">#</span><span style="color: #000000;"> </span><span style="color: #0000FF;">mkdir</span><span style="color: #000000;"> -pv </span><span style="color: #000000;">/</span><span style="color: #000000;">usr</span><span style="color: #000000;">/</span><span style="color: #000000;">local</span><span style="color: #000000;">/</span><span style="color: #000000;">lib</span><span style="color: #000000;">/</span><span style="color: #000000;">zend<br>[root@gus ~]</span><span style="color: #000000;">#</span><span style="color: #000000;"> </span><span style="color: #0000FF;">cd</span><span style="color: #000000;"> ZendOptimizer</span><span style="color: #000000;">…/</span><span style="color: #000000;">data</span><span style="color: #000000;">/</span><span style="color: #000000;">5_1_x_comp<br>[root@gus ~]</span><span style="color: #000000;">#</span><span style="color: #000000;"> mv -v ZendOptimizer</span><span style="color: #000000;">.</span><span style="color: #000000;">so </span><span style="color: #000000;">/</span><span style="color: #000000;">usr</span><span style="color: #000000;">/</span><span style="color: #000000;">local</span><span style="color: #000000;">/</span><span style="color: #000000;">lib</span><span style="color: #000000;">/</span><span style="color: #000000;">zend </span></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div></p>
+<p>编辑/etc/php.ini，WPMU流畅运行需要较高的内存，这里将memory_limit值更改为128M。添加ioncube_loader, ZendOptimizer加载项： </p>
+<p>;;;;;;;;;;;;;;;;;;;;; </p>
+<p>; IonCube Loader&#160;&#160;&#160; ; </p>
+<p>;;;;;;;;;;;;;;;;;;;;; </p>
+<p>zend_extension=/usr/local/lib/ioncube/ioncube_loader_lin_5.1.so </p>
+<p>;;;;;;;;;;;;;;;;;;;;; </p>
+<p>; Zend optimizer&#160;&#160;&#160; ; </p>
+<p>;;;;;;;;;;;;;;;;;;;;; </p>
+<p>zend_extension=/usr/local/lib/Zend/ZendOptimizer.so </p>
+<p>zend_optimizer.optimization_level=15&#160; </p>
+<p>创建MySQL数据库： </p>
+<p>create database weblogs; </p>
+<p>grant ALL ON weblogs.* TO wpuser@localhost identified by ‘Password’; </p>
+<p>安装WP_MU，这个步骤很简单，只需要将官方提供的下载包解压，在浏览器上访问index.php，按照提示即可。WPMU官方还提供一段安装教学视频。 </p>
+<p>LDAP认证： 启用Active Directory 用户使用既有的账户信息登录WP_MU，并自动创建对应用户名，但是用户不可以在WP_MU中更改密码。Admin在控制面板中对已经成功登录的用户建立个人blog。 </p>
+<p>将下载的LDAP-AUTH插件解压至blogs/wp-content/mu-plugins，在浏览器中转至WP_MU控制面板，启用plugin功能，这时点击site admin就可以看到LDAP Options，填入相对应的AD服务器信息即可。 </p>
+<p>User DN for Searches 字段可以使用电子邮件的格式，例如：ldap@nottingham.edu.cn </p>
+<p>LDAP Type 一定要选择Windows，否则认证会失败。 </p>
+<p>如果在安装LDAP AUTH插件后，浏览器访问时出现一片空白，大多数原因是没有安装php-ldap </p>
+<p>很多大学使用php-CAS插件与CAS server实现集中统一身份验证，由于本人使用php-CAS, CAS server 3.0实验未成功，还待进一步研究。</p>
+<p>原文地址：<a href="http://doc.linuxpk.com/58052.html" title="http://doc.linuxpk.com/58052.html" target="_blank" rel="external">http://doc.linuxpk.com/58052.html</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e8b685e8b68ax301t400s-e58e9fe5889be8af84e6b58b" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/07/25/e8b685e8b68ax301t400s-e58e9fe5889be8af84e6b58b/" class="article-date">
+  <time datetime="2009-07-24T18:06:36.000Z" itemprop="datePublished">Jul 25 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/评测/">评测</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/07/25/e8b685e8b68ax301t400s-e58e9fe5889be8af84e6b58b/">超越X301——T400s 原创评测</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Thinkpad/">Thinkpad</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/t400s/">t400s</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><a href="http://hnunsa.bay.livefilestore.com/y1pyBxBcGBotmC1N4pr6Ba1KcUiULPB7FO3GZqcHOZgpcqC0jNtacPzIhnLZyMxUQpDuBPf0b_LKXDAauOLB8QblrEjsYjZppGy/DSCF1175_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1p5ivTwfim1-uIOxsD0k33SceXJ9LUrRz_mU0HVagJyvcEeyMvr_OIDZhRtwD_pqXH27d_CQsPDTfWvMFF6VRnLuBbdBo6zppd/DSCF1175_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a> </p>
+<p><strong>外观及重量：</strong><br>可能由于习惯了T60，第一感觉就是这个机器好宽，屏框还是很宽，不过已经对称了<br>厚度比T400要薄不少，这里对比的是T60 T400s已经明显比T60要薄，T400又比T60要厚，所以跟T400相比明显轻薄；重量上来讲，比x200稍重一点，单手拿基本还比较轻松；符合其s的定位</p>
+<p><a href="http://hnunsa.bay.livefilestore.com/y1pg7nx73zY3p8vOw6ETjuw04r-VKagT6FW7ldM9nZdO5Zf6NprF770bGmqNupQk1FvPnPom8_AN0cgCwHo8hmi_g/DSCF1173_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1ppyamPe9lkU7vH2y0Uad0n7yrbCulZqsxZhb4FgOPSZTanvMXlZNFtE17Q6VTWwzgeQtdCEg3Tj4VzYl-M-FmoQ/DSCF1173_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a> <a href="http://hnunsa.bay.livefilestore.com/y1pwa8wCLLgmeEY0kMV0b32AfpDNMroPwYBp3y8I_AEccLgelj2oq6f7nw98o847yobdO6fQE1iWn_5KBovuhGvDQ/DSCF1169_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1pFPO855m8x1SoBl03WplTEGBsGi9hATwxCY8TmOpqo-567xiQg1XgMXlipr0M6r2bobCpriBxPUCQCFOH2AmXWw/DSCF1169_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a></p>
+<p><strong>电池：</strong><br>6cell电池，有一个支架脚在电池上，所以不放电池机器放不稳；由于集成显卡，散热模块没有刻意做的比较大，底部很平坦<br> <a href="http://hnunsa.bay.livefilestore.com/y1pFGI3TJhF7_7vNItdlQ9KRh468N5fVkOpaC9SLvE_0Yl1y3OUW_kZeyMxMh-1sMkqjd9wLv80CG_gMjUpb9XV2w/DSCF1206_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1pFGI3TJhF7_7vNItdlQ9KRi1_Fk-q7mdYfq4jAafK2if8RemyM7ULqu9c4MJGUlR-0DnInmmpkG-7EiHGz-XvDg/DSCF1206_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a> <a href="http://hnunsa.bay.livefilestore.com/y1pulYjWewCdh7g-HdNMFprsFb8ppYyvdldCTPbc3vLbeDyPqvcVrvbJwDFNLFkKS_s3FRCa_5rm015yTBDmPmbaQ/DSCF1203_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1pulYjWewCdh7g-HdNMFprsGVToh3op3QlhKpxEg0XvZ7WSsyORu58GgkYRln0-iKgfoLIcFNOWJCJNdexDC4u6w/DSCF1203_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a>   </p>
+<p><strong>屏幕：</strong><br>与以往机型不同的是，屏扣在机器上而不是屏上；屏框还是很宽，跟x200s、x300、x301以及t400等类似，屏幕高分WXGA+分辨率led背光屏幕，亮度比较高<br> <a href="http://hnunsa.bay.livefilestore.com/y1pg7nx73zY3p8vOw6ETjuw04r-VKagT6FW7ldM9nZdO5Zf6NprF770bGmqNupQk1FvPnPom8_AN0cgCwHo8hmi_g/DSCF1173_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1ppyamPe9lkU7vH2y0Uad0n7yrbCulZqsxZhb4FgOPSZTanvMXlZNFtE17Q6VTWwzgeQtdCEg3Tj4VzYl-M-FmoQ/DSCF1173_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a> <a href="http://hnunsa.bay.livefilestore.com/y1pb4jgU2rt9CbdpTLe9jr2HR2JJQ6HxE92aDI4uFuLYtCWsvnH1J0qfAPy8Om3hiZVR0Hpk91kjqFWclokwQD6Bw/DSCF1204_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1pcZ7gmqa56Td8WIxU49lgaGboiBHz9m2uoM90MDBWO_9iKcsT2gK9drVKsmUZ7pw1J_TUqF7oHnfCJPBTkVbzuQ/DSCF1204_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a>   </p>
+<p><strong>灯条：</strong><br>灯条与之前机型有了较大差别，只有三个指示灯：Wireless LAN、Wireless WAN以及硬盘；部分指示灯以键盘led背景灯的方式存在，如带led指示灯的电源按钮以及numlock键（取代大写字母锁定指示灯）<br> <a href="http://hnunsa.bay.livefilestore.com/y1pM7unlQtmc0DorbiIEe2J2SYPVKydk7Z1OKs8qxa4ku3J7RgzqugEL6KP0YKL4IVWU_L4miwuSsN04D_P0feDyg/DSCF1183_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1pM7unlQtmc0DorbiIEe2J2ZvTJl3x-GfK5EikKMnD_VIeCbmSCG3h0C809y4ZX7OTdvxGmGaxYBAlTvIhSdzi5Q/DSCF1183_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a>   </p>
+<p><strong>无线开关：</strong>挪到了机身右侧<br> <a href="http://hnunsa.bay.livefilestore.com/y1pMYInq-JO1WCSeNNVTeRYUJKTwPvCTjp6rIl14YMJ_BotPQDtkSm_xUC4rF8G-up1hkbJosyeCK5wAJz1ahsKnQ/DSCF1201_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1pMYInq-JO1WCSeNNVTeRYUO5ZWFe5x4lv3q4xPKaN6HaEo-eFq5Ejti4LGfeze7CLksyz4t3DGNsrruGUktF3QQ/DSCF1201_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a>   </p>
+<p><strong>接口：</strong><br>3个USB，左侧一个，机身后侧有俩：可关机为USB设备充电的USB接口一个，以及与esata合二为一的USB接口；<br>网线接口后边去了；<br>视频输出方面，除了传统的VGA接口外，提供了displayport，都是位于机身后侧； <a href="http://hnunsa.bay.livefilestore.com/y1po3im_z3i40iU5ElHi2L3HunpK8eva5M-62qMddro2vWH9WLyd4NxEMO4NxcohLccv89llasyM82HIWThgsXTxA/DSCF1200_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1pbPrBExLi9njRRRbnCiOj_yLDEgc_1nPSnz8zyzzudnTaY5iy1Yr2tzdngfVvW1p6ANwBF69aFWSjO4RS5ompfA/DSCF1200_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a><br>耳机麦克变成一个口； </p>
+<p><a href="http://hnunsa.bay.livefilestore.com/y1pdKjeVI9fXUka8zo2iJsAnZG2BKpGGCIjKKOWaVjWO3MJnyYyJIttB-RgTXhejqQ238EGqVhjPyF7XQKU-KhxRg/DSCF1202_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1pdKjeVI9fXUka8zo2iJsAnc2OpyOdlp-26vzbN1_EVbEmbmt1Finw5f600T8cxo0Sa9jELU_c-JIsTNyddI0IEw/DSCF1202_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a><br>一个多合一读卡器； </p>
+<p><strong>键盘：</strong><br>键盘变化比较明显：首先是盛传的大esc del键盘变成了现实；其次音量调节键样子变成了与机身结合更为紧密的样式，比较cute，并且提供了专门的麦克静音按钮；再次部分灯条指示灯变成了键盘对应按键的背景灯，numlock按下时指示灯亮，电源按钮也变成这样了。 </p>
+<p><a href="http://hnunsa.bay.livefilestore.com/y1peXatRyK8GoyhHnu_XJCCmPUR3fXB_NaFZZDbiDC2RupUfYd6iKAmLapnblU-nmLc4p-npfxlzfhCcOHwnHRnjg/DSCF1178_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1peXatRyK8GoyhHnu_XJCCmBiNnVNPwghnr2arOZkaxwXQdxK1awKJMrhdIvVyWLEUkv56htbK8P14TSSMm766Cg/DSCF1178_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a> </p>
+<p><a href="http://hnunsa.bay.livefilestore.com/y1ptQB-ZfVyZvxaDDdNYHJkS4_46Kwbhd_1pbH1g1ynFvLCTFWEgs7g-euM2WgsJRwaTBzJTJ4pxZBiJ59uBTQj7g/DSCF1181_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1ptQB-ZfVyZvxaDDdNYHJkS3kTGpQ6j5BcTsnqXuOveuM5nuEriB4thV6DhZRI8N6ejsApvrT_e69-AIZHYsRsJw/DSCF1181_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a> </p>
+<p><a href="http://hnunsa.bay.livefilestore.com/y1pi1VOwG0EcQgc7AxbrtU3-kH8pQzoFw9E8yyw2jry9Qq5SFzXk8-OWAzdDVZWijAbzW7slVGni6yAFIKgPm0Okw/DSCF1180_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1pwKJGxOuDH0xCJMxka91qbz372vpdPrzmKNucwcPjePOA1rtkeMb-EAWNdUm98g70xm_L_vyeOLXZ6FZzhGcCIA/DSCF1180_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a> </p>
+<p><a href="http://hnunsa.bay.livefilestore.com/y1ppp7LdxCTqCnOhoEpkkFTrp6PMW81h3b4Xnk8SsaveNbyNRZwzBxcc4_GPTS4CVOa4Jka_In_32GgvGZXkD-i3Q/DSCF1188_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1ppp7LdxCTqCnOhoEpkkFTrj_2mAz3pV66HlzRvdfk9qPSt2b-DUc5GTuu1iwZGHyX0k6YnaYc7UXQhQlTbI6QxA/DSCF1188_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a> </p>
+<p><strong>小红点及触摸板：</strong><br>小红点非常灵活，一时不是非常适应；触摸板据说支持多点触控，外观也变了，由原来的平整的一块变成很多很多小点组合而成的一块 </p>
+<p><a href="http://hnunsa.bay.livefilestore.com/y1pdjlyVyWy4JPVBAKMMmCnUCwX6bvRTVO5SB_R5BUOoyukei-Oem6VFyrusooXrPrCpaG6wyoqxtR0ObN6lw6Wxg/DSCF1185_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1pzaywKhMZHdctsN-IiZ_6HJQHjqOsc1HYRJlGNnw5bVYSS0W1tPR4KVzptuCxAZEbBZrbiFeignOu9XsNmQDMoQ/DSCF1185_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a> </p>
+<p><strong>指纹识别：</strong>略有差别，首先更小，其次颜色更深 </p>
+<p><a href="http://hnunsa.bay.livefilestore.com/y1pCxQdLDM9zvfUG4W7rDLN6bNAooj2I3NKuZBcPaJgxi0dacvP8RljPdDN3iQ9q3n6oRlABPas-LPlT17-LXMvUA/DSCF1186_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1pZMKLVaPs0E6HEIJbIBIJJPPnxxhJRSsfl6c0jhBgGytH5n0oN6AEhsRtkTEKQHcTUxSux81U0sziiKIcsylpng/DSCF1186_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a> </p>
+<p><strong>硬盘：</strong> </p>
+<p>手头这款机器是T400s低配，标配1.8寸 250G SATA硬盘<br>与2.5寸硬盘不同，这块1.8寸硬盘位置在电池附近，而且非常小 </p>
+<p><a href="http://hnunsa.bay.livefilestore.com/y1pNWAStwShyF0RmZzROl16SVjrMRgoEMYnJy4zI7stifnF0-wWsVTfQFBJj7zuCEMsJceQs6zsnOx_5cJwMNC0dg/DSCF1211_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1pNWAStwShyF0RmZzROl16Sfu-UvbSFAHFIVXCgG16H-FHxyDa9VUXpoYC4k05-6gtaKZq-E02u-CooGF7giLP6A/DSCF1211_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a> </p>
+<p><a href="http://hnunsa.bay.livefilestore.com/y1p3RLZ63wPTXHsFgXXkdCB1bCZ4b1PGpW4PqobuCT892f1v2qZ-HtjxZHDYtyXCvQkmh0wr6bZMzzWVxZ6DuZ0Ig/DSCF1208_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1p3RLZ63wPTXHsFgXXkdCB1UONEDBmk6C219LhTA5zg846mIBjhk645inxsdWzEVvLLix3vZlglTrBQfatn6G7Xw/DSCF1208_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a><br>性能并没有想象的那么不堪 配合2G迅盘，在原装的Windows Vista Business系统下，系统反应速度相当迅速 Vista评分也有5.0 </p>
+<p><a href="http://hnunsa.bay.livefilestore.com/y1plyHDl25tHxYknsCG2HLqgMgKG8o-HypnXu4IpPI1CDf9VoHZBvcUV1dBdjmSG2YiSkNBJ180bgFQL74kNgoe7Q/HD-Tune.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1ppuwpX4NRBvRgRpYIrvozxGkCmmEfOJV51671_nmLJXyxTi6vJjPjBBR7HOEjj4Vv1PFGcGbJOCd3F6HUW22Lhw/HD-Tune.jpg" alt=""></a> </p>
+<p><strong>光驱：</strong><br>处于轻薄的考虑，必须双手才能拆下来，无法单手拆卸； </p>
+<p><a href="http://hnunsa.bay.livefilestore.com/y1pI_oNzX6q2xAc_lwDUNUCiz-J-hGeH02mDcSVQvHkoVzcMACo90s5oqyteSP0-P5yJ4zZXi6tW-PgBYFuA5iyZA/DSCF1196_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1pI_oNzX6q2xAc_lwDUNUCiylu16RxS_iAI3EDZA_ixKZKzdllPKMhjZy7ntfg_xpYBU89ABBlEDVFmAOD9yDFUQ/DSCF1196_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a>     </p>
+<font color="#ff0000"><strong>令人振奋的发现：</strong>T400s光驱与T400完全兼容 之前的评测都是说T400光驱比T400s的长一些 无法兼容；实际不是这样的，经过试验 T400光驱可以完美插到T400s光驱位上去</font> 
+
+<p><a href="http://hnunsa.bay.livefilestore.com/y1pjgWwAWhTENx5Yr9CERFeAdv3mtxfvfY6-W_bAl_AZHUa7mbC6TWWtuVERzmMMhOp1_2u5PdfSc_ZITxxEcKi1g/DSCF1195_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1pjgWwAWhTENx5Yr9CERFeAXlcyHvpWTpv_4JCUxSaZO37p4ozwXeM4bT8UH9I5lWdvCe53PclVLn3THYjva3nXw/DSCF1195_%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F.jpg" alt=""></a><br>这样t400s扩展性相对于X系列（不管是x200、x200s还是x300/x301）就大大增加:在T400s上可以很容易实现主硬盘位1.8寸SSD,光驱位大容量的HDD硬盘的目前完美方案 </p>
+<p><strong>CPU：</strong>采用的是SP9400，2.4G 6M L2，默认电压只有1.1v多，Super PI测了两遍都是27s、28s，不过测试环境可能哪里有问题，2.4G 6M L2不至于这么慢 </p>
+<p><a href="http://hnunsa.bay.livefilestore.com/y1pfY0IotfPXbHHDx9XhUvr2FASXT_1Max-IIZSjl5ryk_LV-9bptxQGtRVu77bV0Q1j5tR82boB_Qp44fAi8hwdQ/pi.jpg" target="_blank" rel="external"><img src="http://hnunsa.bay.livefilestore.com/y1pMDGiReHk1KcGSfPqHQykzl_fM1TkYNT6trxNyVFMx1-e2CJzm02g0pVr3-_4vLXzlcPp1g9GsN_UjAL64lNIEg/pi.jpg" alt=""></a> </p>
+<p>显卡：Intel GMA 4500MHD，也是本机的性能瓶颈，对于对显卡性能没有要求的用户来说则没有关系，Vista得分也反映出来，显卡3.8/3.9 </p>
+<p><strong>总结：</strong>     </p>
+<font color="#0000ff">T400s是联想新推出来的一款轻薄型的T系列型号，采用了诸如大esc、del键等大量的创新，改进了T400的一些公认的不足；从定位上来说，和之前推出的X300/X301系列似乎有重叠和冲突，然而相对于X300/X301系列,T400s的优点显而易见：小尺寸封装的常规电压CPU，提供了X300/X301所望尘莫及的CPU性能；兼容主流T400的9.5mm光驱，提供了极大的扩展性；极大提升性能以及扩展性，更大尺寸的显示屏幕，而重量仅仅多了300g，保持轻盈体态。正因为如此，联想在未来产品路线中也没有了x300/x301的后续机型，而以T400s/T401s取代。</font>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e4b880e4b8aamysqle695b0e68daee5ba93e5ae89e8a385e5a49ae4b8aawordpresse79a84e696b9e6b395" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/07/23/e4b880e4b8aamysqle695b0e68daee5ba93e5ae89e8a385e5a49ae4b8aawordpresse79a84e696b9e6b395/" class="article-date">
+  <time datetime="2009-07-23T14:57:34.000Z" itemprop="datePublished">Jul 23 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress/">wordpress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/07/23/e4b880e4b8aamysqle695b0e68daee5ba93e5ae89e8a385e5a49ae4b8aawordpresse79a84e696b9e6b395/">一个MySQL数据库安装多个wordpress的方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/prefix/">prefix</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>直接修改wp-config.php里的$table<em>prefix&#160; = ‘wp</em>‘;选项，将wp<em>修改为wp2</em>或wp3<em>都可以，只要不与wp</em>相同就行；</p>
+<p>或者安装的时候不要事先修改好wp-config.php，在提示你设置wordpress数据库表前缀时写一个非wp_的</p>
+<p>数据库是由表table组成的，而表又有表前缀之类，所以只用修改wp-config.php中的$table_prefix的参数就可以区分数据库中的表，就可以在一个MySQL中正常安装第二个或第三个WordPress了。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e8bdace8bdbdeasyboote588b6e4bd9c4ge4bba5e4b88aisoe697a0e6b395e590afe58aa8e79a84e8a7a3e586b3e58a9ee6b395e6b187e680bb" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/07/23/e8bdace8bdbdeasyboote588b6e4bd9c4ge4bba5e4b88aisoe697a0e6b395e590afe58aa8e79a84e8a7a3e586b3e58a9ee6b395e6b187e680bb/" class="article-date">
+  <time datetime="2009-07-23T14:08:58.000Z" itemprop="datePublished">Jul 23 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/07/23/e8bdace8bdbdeasyboote588b6e4bd9c4ge4bba5e4b88aisoe697a0e6b395e590afe58aa8e79a84e8a7a3e586b3e58a9ee6b395e6b187e680bb/">[转载]Easyboot制作4G以上ISO无法启动的解决办法汇总</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/4G/">4G</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easyboot/">easyboot</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>近来，总收到反馈，说PE在4G以上的DVD上合盘无法顺利启动，虽然我已极力调整PE，但无赖，这本来就不该是PE的问题，所以，我的办法只能解决部分4G的DVD合盘问题，要真正从根本解决4G的DVD合盘问题，只有等制作ISO的软件自己更新了。在现有工具版本的情况下，我们的合盘可以有以下三种办法来解决这个问题，下文的办法均转自网络，感谢各位得出方法的探索者！<br>第一种解决办法：<br>近日我在制作集成PE的DVD启动光盘时，遇到PE无法引导的问题。<br>光盘的目录如下<br>\EZBOOT&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 一些软盘镜像和PE引导文件winpe.bif等，共20.3MB<br>\MINIPE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 里面只有一个PE镜像WINPE.IS_ ，共37MB<br>\PROG&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; PE用的外置程序，共179MB<br>\WXPE<br>\WXPE\NTDETECT.COM&#160;&#160;&#160;&#160;&#160;&#160;&#160; 共47KB<br>\WXPE\SERUPLDR.BIN&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; PE载入文件，共291KB<br>ghost.exe&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 共1,403KB<br>winnt.sif&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 共140KB<br>XP3V03.GHO&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 系统镜像，共1.36GB<br>XP3V07.GHO&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 系统镜像，共2.51GB<br>&#160;&#160;&#160;&#160; 用UltraISO9.3制成ISO镜像大小是4.16G。用虚拟机测试发现PE不能正常引导，出现黑屏，而其他的软盘镜像能正常引导。把XP3V03.GHO删掉后，又可以正常引导PE了。试了几次都会这样，发现ISO镜像小于4G就可以正常引导PE。<br>&#160;&#160;&#160;&#160; 开始是百思不得其解，经过细心的对比后发现一个奇怪的现象，就是用UltraISO制作的ISO镜像，它的文件和目录保存的方法很特别。我们制作的镜像里，每个文件夹和文件都有一个LBA值，它们的排列顺序是按文件名字母的先后顺序排的，而且是目录靠前，文件靠后，一级目录下的文件要比二级目录下的文件靠前。<br>&#160;&#160;&#160;&#160; 因此，要是按照上面的方法放置文件，则两个GHO文件要比\WXPE\SERUPLDR.BIN（PE的载入文件）排在前面，XP3V07.GHO的LBA值是719195，而\WXPE\SERUPLDR.BIN的LBA值是2156531，这时PE无法引导，可能是PE引导文件winpe.bif找不到SERUPLDR.BIN。如果把XP3V03.GHO删掉，ISO镜像小于4G，则\WXPE\SERUPLDR.BIN的LBA值是1438212&#160; 这样PE能正常引导了。本人用其它文件代替XP3V03.GHO进行测试，发现\WXPE\SERUPLDR.BIN的LBA值大于2000000时，PE无法引导。<br>&#160;&#160;&#160;&#160; 但是在制作启动盘时我不想删掉其中任何一个GHO镜像，因为4.3G的DVD是完全可以装的下的。根据\WXPE\SERUPLDR.BIN的LBA值大于2000000时，PE无法引导的条件，以及UltraISO存放文件的规则，我们可以做一个细小的更改，就是把两个GHO镜像放到二级目录下，并且文件名的首字母比SERUPLDR.BIN的靠后，问题就迎刃而解了。<br>&#160;&#160;&#160;&#160; 方法是在光盘的根目录下建一个文件夹XP 把XP3V03.GHO和XP3V07.GHO放到\XP下，同时相应修改GHOST引导镜像的路径。修改后的光盘目录结构如下：<br>\EZBOOT&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<br>\MINIPE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<br>\PROG&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<br>\WXPE<br>\WXPE\NTDETECT.COM&#160;&#160;&#160;&#160;&#160;<br>\WXPE\SERUPLDR.BIN<br>\XP<br>\XP\XP3V03.GHO<br>\XP\XP3V07.GHO&#160;&#160;&#160;<br>ghost.exe&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<br>winnt.sif<br>第二种解决办法<br>在UltraISO中调整PE的启动文件夹的优先级为最高9 （即：WXPE文件夹，注意：这样做就不能优化文件！）<br>第三种解决办法：<br>非常时期用非常方法解决非常问题：4G限制的一种解决方法初到这个论坛，看到很多高手，让我这个闭门造车的井底之蛙不敢造次，昨日发现使用UltraISO中遇到一个4G限制问题，百思不得其解，去百度及各论坛似乎均不见让人满意的答案，幸得martinx指点，加上自己不甘心修改文件夹，终于发现一个可以解决4G限制的投机取巧的方法，不敢独享，把它献给各位。。。<br>&#160;&#160;&#160; 起因：这段时间在制作一张98/ME/2000/XP/2003的多语言光盘，先用EasyBoot做好框架（包含各个启动软盘组及引导必须的文件，不包含各系统文件），优化之后有80多M，在VPC 2007上测试通过，再用Ultraiso添加各个系统文件，总大小在17G，优化之后的光盘大小有4.35G，问题是添加之前是正常的，添加之后再保存却有大部分启动文件无法启动，具体表现为一个DOS下的光标不停的闪，却死在那里不再动，按CTRL+ALT+DEL键无效。可以肯定的是文件及路径都不存在问题。<br>&#160;&#160;&#160; 分析：经分析发现只要是引导启动文件（启动软盘组）的实际位置在4G左右，就会无法启动，即使仅仅只是一个文件也不例外，而在4G之前的启动文件就能正常启动，发现EasyBoot和UltraISO都是用A-Z的顺序排列的，想控制文件的顺序，怎么保存都不行（优先级在优化文件下无效），这样的话最好是改变各启动软盘组文件夹的名字使其靠前，或是将各系统文件夹改名靠后才行，改启动软盘组文件的话，太多文件要修改了，改系统文件夹的话，太不直观，有没有两全其美的方法？<br>&#160;&#160;&#160; 解决：用EasyBoot做好的框架加上martinx提供的自然排序方式添加各系统文件做就OK了。<br>&#160;&#160;&#160; 具体步骤：用UltraISO打开做好的框架文件，添加各系统文件前按 Shift+F12 功能键，进入自然排序方式，再把各个系统文件添加好，优化文件并保存，测试成功。<br>&#160;&#160;&#160; 建议：UltraISO一直存在的问题，选择某个文件夹编辑操作，对其子文件夹及文件却无效，建议可添加一个“应用到子文件夹”的选项，建议设置日期时间增加一个可选项，因为别人设置优先级不一定要设置日期时间，使用起来会更得心应手。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-wordpress-blog-e79a84e58886e7b1bbe4b88ee6a087e7adbee7a094e7a9b6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/06/23/wordpress-blog-e79a84e58886e7b1bbe4b88ee6a087e7adbee7a094e7a9b6/" class="article-date">
+  <time datetime="2009-06-23T09:04:54.000Z" itemprop="datePublished">Jun 23 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/06/23/wordpress-blog-e79a84e58886e7b1bbe4b88ee6a087e7adbee7a094e7a9b6/">WordPress Blog 的分类与标签研究</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原文地址：<a href="http://qzone.qq.com/blog/54335020-1243501946" target="_blank" rel="external">http://qzone.qq.com/blog/54335020-1243501946</a></p>
+<table id="blogContentTable" border="0" cellspacing="0" cellpadding="0"><br><tbody><br><tr><br><td valign="top"><br><div id="blogContainer"><br><div id="paperTitleArea"></div><br><div id="blogDetailDiv">前段时间偶而发现blog的分类与标签乱了，好多标签本来都是C#的，发现全都变成C++了，而且点击C++之后，也没有找到一条数据，郁闷啊。网上搜索了一段时间，最后自己又搞了好长时间才解决，整理如下。<br>WordPress blog对分类与标签的设计，总共使用了四张表：<br>wp_posts：文章/页面数据表（所有的页面、文章以及自动保存的数据都保存在这里）<br>wp_terms：分类/标签表（所有的分类、标签都保存在这）<br>wp_term_relationships：文章&lt;—-&gt;分类/标签关系表（每个文章与分类的对应关系，以及与标签的对应关系都保存在这里）<br>wp_term_taxonomy：分类/标签标识表（该表保存 wp_terms 表中的数据是分类还是标签）<br>对应关系：<br>wp_posts表的ID对应wp_term_relationships表中的object_id<br>wp_terms表的term_id对应wp_term_taxonomy表中的term_id<br>wp_term_relationships表中的term_taxonomy_id对应wp_term_taxonomy表中的term_taxonomy_id<br>对于经常设计数据库的人来说，现在已经一目了然了，这样描述一下：<br>wp_posts &lt;-&gt; wp_term_relationships &lt;-&gt; wp_term_taxonomy &lt;-&gt; wp_terms<br>就是这样，wp_posts保存页面/文章，wp_terms保存分类/标签，而wp_term_relationships 仅仅保存的是wp_posts与wp_terms多对多的关系，真正区分分类与标签的保存在wp_term_taxonomy 表中。<br>后来，我先找wp_terms表中的C++和C#这两条记录（term_id分别为21、13），然后找wp_term_taxonomy 表中term_id为21的那条记录（此时term_taxonomy_id 为22），这里我把wp_term_taxonomy 中这条记录的term_id修改为13(C#的term_id)。这样重新回到页面，就完全可以了。<br>最后我发现，对分类和标签的命名，尽量不要使用英文标点符号，比如：#、++，如果非要这样，那我建议你使用中文状态下的＃、＋＋。</div><br></div></td><br></tr><br></tbody></table>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-phpe4b8ade58f98e9878fe79a84e4bca0e98092e5b08fe7bb93" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/06/23/phpe4b8ade58f98e9878fe79a84e4bca0e98092e5b08fe7bb93/" class="article-date">
+  <time datetime="2009-06-23T05:47:35.000Z" itemprop="datePublished">Jun 23 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/06/23/phpe4b8ade58f98e9878fe79a84e4bca0e98092e5b08fe7bb93/">PHP中变量的传递小结</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>一． 表单传递<br>当一个表单提交给 PHP 脚本时，表单中的信息会自动在脚本中可用。<br>例： 一个简单的 HTML 表单</p>
+<p>&lt;form action=”foo.php” method=”post”&gt;<br>Name: &lt;input type=”text” name=”username”&gt;&lt;br&gt;<br>Email: &lt;input type=”text” name=”email”&gt;&lt;br&gt;<br>&lt;input type=”submit” name=”submit” value=”Submit me!”&gt;<br>&lt;/form&gt;</p>
+<p>有很多种方法访问 HTML 表单中的数据。例如：<br>例：. 从一个简单的 POST HTML 表单访问数据</p>
+<p>&lt;?php<br>// 自 PHP 4.1.0 起可用<br>print $_POST[‘username’];<br>print $_REQUEST[‘username’];</p>
+<p>import<em>request_variables(‘p’, ‘p</em>‘);<br>print $p_username;</p>
+<p>// 自 PHP 3 起可用<br>print $HTTP_POST_VARS[‘username’];</p>
+<p>// 如果 PHP 指令 register_globals = on 时可用。不过自<br>// PHP 4.2.0 起默认值为 register_globals = off。<br>// 不提倡使用/依赖此种方法。<br>print $username;<br>?&gt;</p>
+<p>使用 GET 表单也类似，只不过要用适当的 GET 预定义变量。<br>当提交表单时，可以用一幅图像代替标准的提交按钮，用类似这样的标记：<br>&lt;input type=”image” src=”image.gif” name=”sub”&gt;<br>当用户点击到图像中的某处时，相应的表单会被传送到服务器，并加上两个变量 sub_x 和 sub_y。它们包含了用户点击图像的坐标。有经验的用户可能会注意到被浏览器发送的实际变量名包含的是一个点而不是下划线，但 PHP 自动将点转换成了下划线。</p>
+<p>二． 网址传递<br>&lt;a href=”test.php?id=3&amp;name=mike”&gt;next&lt;/a&gt;<br>可用 $_GET[‘id’] 和$_GET[‘name’]访问GET 的数据。<br>三． Cookie 传递<br>1、 设置Cookie<br>简单的：<br>SetCookie(“MyCookie”, “Value of MyCookie”);<br>　　带失效时间的：<br>SetCookie(“WithExpire”, “Expire in 1 hour”, time()+3600);//3600秒=1小时<br>　　什么都有的：<br>SetCookie(“FullCookie”, “Full cookie value”, time()+3600, “/forum”, “.phpuser.com”, 1);<br>　　如果要设置同名的多个Cookie，要用数组，方法是：<br>SetCookie(“CookieArray[0]”, “Value 1”);<br>SetCookie(“CookieArray[1]”, “Value 2”);<br>2、 接收和处理Cookie<br>echo $_COOKIE[‘MyCookie’];<br>echo $_COOKIE[‘CookieArray[0]’];<br>echo count($_COOKIE[‘CookieArray’]);<br>3、删除Cookie<br>要删除一个已经存在的Cookie，有两个办法：<br>一是调用只带有name参数的SetCookie，那么名为这个name的Cookie 将被从关系户机上删掉；另一个办法是设置Cookie的失效时间为time()或time()-1，那么这个Cookie在这个页面的浏览完之后就被删除了（其实是失效了）。<br>要注意的是，当一个Cookie被删除时，它的值在当前页在仍然有效的。<br>四． Session传递<br>test1.php</p>
+<p>&lt;?<br>session_start();<br>session_register(“count”);<br>echo $count=0;<br>?&gt;</p>
+<p>test2.php</p>
+<p>&lt;?<br>session_start();<br>echo $count++;<br>?&gt;</p>
+<p>经过实验发现，PHP4的session只对当前打开的浏览器窗口有效（至少在W2K下的<br>IE5和NS6中是这样）。下面的代码可以实现session的跨窗口执行。<br>test1.php</p>
+<p>&lt;?<br>session_start();<br>session_register(“count”);<br>setcookie(“PHPSESSID”,session_id(),time()+3600,”/“,”<a href="http://www.md.hl.cn" target="_blank" rel="external">www.md.hl.cn</a>“);<br>echo $count=0;<br>?&gt;</p>
+<p>五． javascript变量传递到PHP脚本中<br>方法一:<br>先用PHP生成js代码，然后通过浏览器的自动刷新，将javascript变量传递到PHP脚本中。</p>
+<p>&lt;?php<br>if (isset($_GET[‘width’]) AND isset($_GET[‘height’])) {<br>// output the geometry variables<br>echo “Screen width is: “. $_GET[‘width’] .”&lt;br /&gt;\n”;<br>echo “Screen height is: “. $_GET[‘height’] .”&lt;br /&gt;\n”;<br>} else {<br>// pass the geometry variables<br>// (preserve the original query string<br>// — post variables will need to handled differently)</p>
+<p>echo “&lt;script language=\”javascript\”&gt;\n”;<br>echo “ location.href=\”${_SERVER[‘SCRIPT_NAME’]}?${_SERVER[‘QUERY_STRING’]}”<br>. “&amp;width=\” + screen.width + \”&amp;height=\” + screen.height;\n”;<br>echo “&lt;/script&gt;\n”;<br>exit();<br>}<br>?&gt;</p>
+<p>方法二:<br>先用document.cookie方法把js变量写入cookie中，再用PHP取出。<br>这种方法适用于变量少的情况。<br>1. 在JAVASCRIPT中设置COOKIE：document.cookie=”cookiename=”+value+”;path=/“<br>2. 在PHP中用$HTTP_COOKIE_VARS[“cookiename”]的方式读取。</p>
+<p>&lt;script&gt;<br>var name=”myqq”,value=”66166457”;<br>document.cookie=”myqq”+”=”+value+”;”<br>&lt;/script&gt;<br>&lt;?php<br>echo “$_COOKIE[‘myqq’]\n”;<br>$my=”我的QQ是”.$_COOKIE[‘myqq’];<br>echo $my;<br>?&gt;</p>
+<p>方法三:<br>通过表单中的隐藏域的value属性将需要传递的变量通过提交表单传递给PHP。</p>
+<p>&lt;script langeuage=”javascript”&gt;<br>function logon_sub(){<br>if( pass_check() )<br>{<br>if(document.logon.f_over_clk.value==’0’)<br>{<br>document.logon.f_over_clk.value=’1’;<br>document.logon.submit();<br>}<br>}<br>}<br>&lt;/script&gt;<br>&lt;form name=”logon” action=”logon_do.php” method=”post”&gt;<br>&lt;a href=”javascript:logon_sub();”&gt;&lt;img name=”Logon” src=”../img/LogonBt_iu.gif”&gt;&lt;/a&gt;<br>&lt;input type=”hidden” name=”mullang” value=”0”&gt;<br>&lt;/form&gt;</p>
+<p>在logon_do.php页面就可以用$_POST[‘mullang’]取得这个变量了。<br>六．多个页面之间传递数组<br>可以把数组转化成字符串，作为一个参数来传递：</p>
+<ul>
+<li>file1.php</li>
+</ul>
+<p>&lt;?<br>…<br>$arg=implode(“;”, $parm);<br>$link=”file2.php?arg=$arg”;<br>?&gt;</p>
+<ul>
+<li>file2.php</li>
+</ul>
+<p>&lt;?<br>$parm=explode(“;”, $arg);<br>…<br>?&gt;</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-wordpresse5a682e4bd95e698bee7a4bae58d95e4b8aae58886e7b1bbe79a84rss" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/06/18/wordpresse5a682e4bd95e698bee7a4bae58d95e4b8aae58886e7b1bbe79a84rss/" class="article-date">
+  <time datetime="2009-06-18T08:36:05.000Z" itemprop="datePublished">Jun 18 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/06/18/wordpresse5a682e4bd95e698bee7a4bae58d95e4b8aae58886e7b1bbe79a84rss/">WordPress如何显示单个分类的rss</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rss/">rss</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>1、wp_list_cats函数现在有两个相关参数：feed 和 feed_image。feed_image 是用来做链接的图片的url；feed 是用来做链接的文字；如果两个参数都设置了，feed是图片alt里的文字。例子：</p>
+<p>wp_list_cats(’feed=XML’);<br>wp_list_cats(’feed_image=/wordpress/images/xml.png’);</p>
+<p>2、也可以直接写，比如分类1的rss 2.o的url：</p>
+<p><a href="http://www.yourwebsite.com/wp-rss2.php?cat=1" target="_blank" rel="external">http://www.yourwebsite.com/wp-rss2.php?cat=1</a></p>
+<p>如果你使用了 permalinks，在分类链接后面加 “feed/”就可以了，比如：</p>
+<p><a href="http://www.yourwebsite.com/archives/category/general/feed/" target="_blank" rel="external">http://www.yourwebsite.com/archives/category/general/feed/</a></p>
+<p>原文地址：<a href="http://yan.me/dia/392" target="_blank" rel="external">http://yan.me/dia/392</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e59ca8xp2003e4b88ae5ae89e8a385tablet-pce6898be58699e7bb84e4bbb6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/06/10/e59ca8xp2003e4b88ae5ae89e8a385tablet-pce6898be58699e7bb84e4bbb6/" class="article-date">
+  <time datetime="2009-06-09T16:17:23.000Z" itemprop="datePublished">Jun 10 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/06/10/e59ca8xp2003e4b88ae5ae89e8a385tablet-pce6898be58699e7bb84e4bbb6/">在XP/2003上安装Tablet PC手写组件</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tablet/">tablet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows-xp/">windows xp</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <ol>
+<li>安装好XP</li>
+<li>下载Tablet XP包：<a href="http://bbs.ihtpc.net/mcesoft/wbpluto/tabletpc.rar" title="http://bbs.ihtpc.net/mcesoft/wbpluto/tabletpc.rar" target="_blank" rel="external">http://bbs.ihtpc.net/mcesoft/wbpluto/tabletpc.rar</a> 并解压它到硬盘上，比如D:\Tablet</li>
+<li>安装Microsoft.NET Framework 1.0&#160;下载地址：<a href="http://www.microsoft.com/downloa" target="_blank" rel="external">http://www.microsoft.com/downloa … 1-B05A-009D06457787</a>&#160; Microsoft.NET Framework 1.0 Service Pack 3下载地址：<a href="http://www.microsoft.com/downloads/details.aspx?familyid=6978D761-4A92-4106-A9BC-83E78D4ABC5B" target="_blank" rel="external">http://www.microsoft.com/downloa … 6-A9BC-83E78D4ABC5B</a>&#160;注意不要安装.NET的1.1、2.0或3.0版本，只能用1.0的版本</li>
+<li>解压以下的附件，并将其中的Tabletpc.inf文件复制到Windows文件夹的inf文件夹中</li>
+<li>打开Windows文件夹的inf文件夹的sysoc.inf文件，找到其中的“[Global]”一行，在其中加上一行：&#160;TabletPC=ocgen.dll,OcEntry,Tabletpc.inf,7</li>
+<li>运行附件中的install.cmd文件，按要求将文件定位到D:\Tablet上，这个操作可能会出现多次，其实它就是在安装Tablet组件</li>
+<li>安装完成后，运行一次附件中的Tabletxp.reg，将系统变身为Tablet XP</li>
+<li>调整一下屏幕，另外“好像”不能删除微软拼音输入法，不然不能写中文字</li>
+<li>这时在“开始”菜单中也可以运行Tablet PC和Media Center相关的程序了。不过，如果你点击“开始”按钮旁边的“Tablet 输入面板”，可能会发现书写的文字虽然被识别，却不能正常输入，“屏幕键盘”也不能使用。如果出现这种情况也不用急，还有最后一步了，在以下网址下载Copy2gac.exe工具。放入C:\Windows\Microsoft.NET\Framework\v1.0.3705文件夹。再打开“命令提示符”，输入“C:\Windows\Microsoft.NET\Framework\v1.0.3705\Copy2Gac.exe /i /a /p:&quot;C:\Program Files\Common Files\Microsoft Shared\Ink\1.7\&quot;”并回车，显示“Installed 5 Assemblies into GAC.”表示操作成功。重新启动计算机，你可以体验拥有所有功能的Windows XP/2003“终极版”了！  </li>
+</ol>
+<p>原文地址：<a href="http://umpcfans.com/viewthread.php?tid=1250&amp;pid=6765&amp;page=2&amp;extra=page%3D1" target="_blank" rel="external">http://umpcfans.com/viewthread.php?tid=1250&amp;pid=6765&amp;page=2&amp;extra=page%3D1</a></p>
+<p>Tabletxp附件下载：<a href="http://tigerrr.cn/tools/Tabletxp.rar" target="_blank" rel="external">http://tigerrr.cn/tools/Tabletxp.rar</a></p>
+<p>Tablet PC组件下载地址：<a href="http://bbs.ihtpc.net/WindowsUlti.htm" target="_blank" rel="external">http://bbs.ihtpc.net/WindowsUlti.htm</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/page/18/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/17/">17</a><a class="page-number" href="/archives/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/archives/page/20/">20</a><a class="page-number" href="/archives/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/57/">57</a><a class="extend next" rel="next" href="/archives/page/20/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

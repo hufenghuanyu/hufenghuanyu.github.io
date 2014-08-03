@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/37/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-e8bdace8bdbdiplanet-messaging-server-52e4bdbfe794a8e5bf83e5be97" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/04/17/e8bdace8bdbdiplanet-messaging-server-52e4bdbfe794a8e5bf83e5be97/" class="article-date">
+  <time datetime="2008-04-17T04:16:00.000Z" itemprop="datePublished">Apr 17 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/04/17/e8bdace8bdbdiplanet-messaging-server-52e4bdbfe794a8e5bf83e5be97/">[转载]iplanet Messaging Server 5.2使用心得</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><a href="http://www.chinaunix.net/jh/6/903673.html" target="_blank" rel="external">http://www.chinaunix.net/jh/6/903673.html</a></p>
+<p>使用iplanet Messaging server 5.2三年有余了，把使用的一些心得以FAQ的形式列出来，也算是对自己过去工作的一些总结，也可以希望能够帮助到那些仍旧在用这个产品的兄弟 </p>
+<p><strong>问：如何将LDAP中的信息导出</strong> </p>
+<p>答：使用db2ldif命令，可将数据导成ldif文件。文件存放在db2ldif文件所在目录的ldif目录下，以日期为文件名 </p>
+<p><strong>问：如何将导出的ldif文件导回LDAP</strong>答：使用ldapmodify &ndash;a &ndash;c &ndash;h ldap-server-ip &ndash;h ldap-server-port &ndash;D &ldquo;cn=Directory Manager&rdquo; &ndash;w &ldquo;11111111&rdquo; &ndash;f xxx.ldif </p>
+<p>其中：ldap-server-ip为Directory Server的IP地址，ldap-server-port为服务端口，-w 参数跟的是密码，－D参数跟的是目录管理员，－a参数意为添加，－c参数意为遇到错误继续， </p>
+<p>－f参数为指定ldif文件位置 </p>
+<p>ldapmodify文件位置一般为ims安装目录下的shared/bin/下 </p>
+<p>具体使用方法见ldapmodify的帮助。 </p>
+<p><strong>问：如何修改LDAP中的一个属性值</strong> </p>
+<p>答：编写ldif文件，文件格式为： </p>
+<p>dn:uid=test,ou=people,o=test.com,o=isp(dn为唯一确定值) </p>
+<p>changetype:modify(意为修改，还可以是delete,add) </p>
+<p>replace:cn(属性名称) </p>
+<p>cn:测试帐户(属性新值) </p>
+<p>然后使用ldapmodify 导入这个ldif文件 </p>
+<p>ldapmodify &ndash;h ldap-server-ip &ndash;h ldap-server-port &ndash;D &ldquo;cn=directory manager&rdquo; &ndash;w &ldquo;111111111&rdquo; &ndash;f xxx.ldif </p>
+<p>参数说明同上 </p>
+<p><strong>问：如何限制一些人发信</strong> </p>
+<p>答：可以使用mappings映射表中的ORIG_MAIL_ACCESS映射值，按照src-channel|from-address|dst-channel|to-address $N添加需要限制的邮件地址 </p>
+<p>src-channel为来源通道 </p>
+<p>from-address为来源信件 </p>
+<p>dst-channel为目标通道 </p>
+<p>to-address为目标地址 </p>
+<p>注意目标地址应为重写过的地址 </p>
+<p>支持通配符* </p>
+<p>比如tcp_local|<em>|tcp_local|</em> $N </p>
+<p>限制所有来源于tcp_local通道的邮件地址发信到tcp_local通道中的所有地址，意思即为限制转发。 </p>
+<p>比如tcp_intarnet|[email]test@test.com.cn[/email]|tcp_local|* $N </p>
+<p>限制[email]test@test.com.cn[/email]这个帐号往intenet上发信 </p>
+<p>而如果不允许本地域发信给本地域时 </p>
+<p>应该： </p>
+<p>tcp_intarnet|<em>@test.com.cn|tcp_intarnet|</em>@ims-domans.test.com.cn </p>
+<p>目标地址是经重写规则后的地址 </p>
+<p><strong>问：为什么安装好HA环境下的邮件系统后,webmail就不能发信了？</strong> </p>
+<p>答：因为安装的时候是通过logic ip安装的，而webmail默认使用的ip地址仍然为提供邮件服务的物理地址。需要使用以下命令，指定发信ip。 </p>
+<p>./configutil &ndash;o service.http.smtphost &ndash;v logic_ip </p>
+<p><strong>问：为什么安装好HA环境下的邮件系统后，不能往外域发信</strong> </p>
+<p>答：因为对以用logic ip安装的邮件系统来说，其他ip都为不受信任用户(外域往外域发信是被禁止的)。需要在 </p>
+<p>/usr/iplanet/server5/msg-mail/imta/config/mappings文件中的INTERNAL_IP映射项中添加物理ip为受信任ip. </p>
+<p><strong>问：为什么新开的用户能发信而不能收信</strong> </p>
+<p>答：Message Server默认安装使用的是同步运行模式。在同步模式下，MTA缓存目录信息并通过访问缓存获得数据，而不是每处理一封邮件就查询目录服务 </p>
+<p>需要运行imsimta dirsync &ndash;F (带参数F表示为全同步，不带参数为增量同步)将LDAP中的数据同步到本地缓存当中。 </p>
+<p><strong>问：当我用ldifmodify添加objectclass时，为什么会出现object class violation的错误</strong> </p>
+<p>答：添加objectclass时，需要把objectclass下的attr也添加进去，例如以下ldif例子： </p>
+<p>dn: dc=wondertek,dc=com,o=internet </p>
+<p>changetype:modify </p>
+<p>add:objectclass </p>
+<p>objectclass:alias </p>
+<p>aliasedobjectname:dc=élan,dc=com,o=internet </p>
+<p>出错的时候可以在ldap的error 日志文件中找到一些提示 </p>
+<p><strong>问：为什么登录的时候会一直处于加载状态没有任何反应</strong> </p>
+<p>答：这是因为收件箱中有信件是乱码造成javascript错误，找出这封信件删除后，重建索引。 </p>
+<p>重建索引可以先删除用户信箱文件夹中的store.idx文件，然后用reconstruct &ndash;r user/lijiong/INBOX命令。</p>
+<p><strong>问：如何将nms3.x的信件升级到ims5.2</strong> </p>
+<p>答：数据迁移涉及到两个方面：一个是用户信息，一个是用户信件。由于用户信息和用户信件和ims5.2都不相符，必须经过格式转换才能使用。Nms3.5的用户信息可以保存在ldap中，也可以保存在本地数据文件中。将用户信息导成ldif文件后，根据ims5.2格式修改。用户信件不能3.x直接升级到5.2版本中去，4.x版本提供了一个信件升级工具:upgrade。使用这个工具就可以将信件转换成5.x认识的格式。安装nms4.x时会提示你是否需要从3.x升级，选择否。安装完成以后，将3.x中的用户导入到4.x的ldap中去，这里仍然需要将3.x的用户信息文件转换成4.x的格式。导入进去以后，运行upgrade &ndash;s给所有4.x用户建信箱 </p>
+<p>然后upgrade &ndash;m增量转换开始。可以使用upgrade &ndash;m &ndash;F 全部转换。 </p>
+<p><strong>问：如何在DS5.x中导出LDAP中的信息。</strong> </p>
+<p>答：使用./db2ldif&nbsp;&nbsp; -s o=isp 或者 ./db2ldif &ndash;s o=NetscapeRoot。参数-s后跟的是条目的suffix </p>
+<p><strong>问：已经建好的系统上修改IP该如何处理。</strong> </p>
+<p>答：Directory Server和Message Server是只认机器名，不认IP的，所以说直接修改IP是不会妨碍系统的。但是Administrator Server是要绑定IP的。而且Directory Server的Administrator Server是要被写入到LDAP中去的，这个时候只有修改LDAP中的值才行。 </p>
+<p>修改方法如下： </p>
+<p>使用./db2ldif &ndash;s o=NetscaptRoot导成ldif文件 </p>
+<p>查找nsserveraddress一行entry的dn </p>
+<p>撰写ldif如下： </p>
+<p>dn:xxxxxxxxxx(上面找到的) </p>
+<p>changetype:modify </p>
+<p>replace:nsserveraddress </p>
+<p>nsserveraddress:新的IP </p>
+<p>Message Server的Administrator Server的IP地址在admin-serv/config/local.conf文件中修改 </p>
+<p><strong>问：Ida中的timeoutsession在哪里可以设置？</strong> </p>
+<p>答：默认为15分钟To change the user session timeout, edit the servlet.properties file in </p>
+<p>the root_of_web_server/config directory. After the line: </p>
+<p>servlets.sessionmgr=com.netscape.server.http.session.SimpleSessionM </p>
+<p>anager </p>
+<p>add the following line: </p>
+<p>servlets.sessionmgr=com.netscape.server.http.session.SimpleSessionM </p>
+<p>anager, add servlets.sessionmgr.initArgs=timeOut=xx, where xx is the user </p>
+<p>session timeout in seconds after a session is accessed by the client before the </p>
+<p>session manager destroys it </p>
+<p><strong>问：如何找回已被删除的邮件</strong> </p>
+<p>答：将用户文件夹中的store.exp文件删除后，reconstruct &ndash;r user/xxxxx/INBOX </p>
+<p><strong>问：当邮件主机找不到MX记录发不出去信件的时候怎么处理？</strong> </p>
+<p>答：这样的情况往往发生在多层结构，邮件主机只有内网地址的时候。一些特殊信件要交到邮件主机由主机发信，比如自动回复信件。这个时候只要在imta.cnf的tcp_intranet,tcp_local通道定义加lastresort后面跟可以发信的机器的ip地址（比如前面的outbound） </p>
+<p><strong>问：如何实现域别名？</strong> </p>
+<p>答：域别名要在同步模式下才可完成。 </p>
+<p>比如要给test.com添加abc.com域别名 </p>
+<p>只要撰写ldif文件内容如下： </p>
+<p>dn:dc=abc.com,dc=com,o=internet </p>
+<p>object:alias </p>
+<p>objectclass:inetDomainAlias </p>
+<p>aliasedObjectName:dc=test,dc=com,o=internet </p>
+<p>dc:abc </p>
+<p>注意，你的同名域的dc一定存在，比如dc=com，如果不存在，则不可添加。如为test.com创建同名域test.net，可先创建dc=net,然后再实现同名域。 </p>
+<p><strong>问：不同的域可以使用不同的页面吗？</strong> </p>
+<p>答：可以。只要在html文件夹下创建一个域名文件夹，然后把所有的html文件拷贝至这个文件夹下即可。使用域名来进行访问不同的页面。注意：子域的登录主页的改写可能稍有不同。例如：在test.com域下创建abc.com域。则只需在html下创建abc.com文件夹,虚拟域的登录主页在html/abc.com/zh-CN/下，为default.html。而当访问虚拟域登录首页时，邮件会把这张default.html定位在html/下，所以改写页面时，图片的定位应该为abc.com/imx/xxx.jgp。 </p>
+<p><strong>问：使用ldapsearch搜索用户的时候为什么会出现Sizelimit exceeded的信息？</strong> </p>
+<p>答：在slapd.conf文件中，修改sizelimit项 </p>
+<p>在slapd.ldbm.conf文件中，修改lookthroughlimit项，修改后重起ldap就可放宽限制。 </p>
+<p><strong>问：如何使用webmail时也可显示外发邮件名？</strong> </p>
+<p>答：添加service.http.fullfromheader属性，属性值为yes </p>
+<p><strong>问：为何有的邮件系统会拒收我们的邮件，报错为need fully hostname？</strong> </p>
+<p>答：这个问题一般是由主机名的短文件名造成的，可以在tcp_local_option文件中添加 </p>
+<p>BANNER_HOST=hostname.domain </p>
+<p><strong>问：如何解决SMTP没有响应的问题？</strong> </p>
+<p>答：发信时长时间没有反应，通过telnet 连接到25端口后，对helo命令也没有反应，这个时候可以使用./imsimta recover-crash命令对db进行修复（只可使用在同步模式下），也可直接将访问模式改为ldap直接访问模式。 </p>
+<p><strong>问：如何防止一封信发给很多人</strong> </p>
+<p>答： </p>
+<p>在/server_root/msg-instance/imta/config下创建tcp_local_option文件 </p>
+<p>添加以下行 </p>
+<p>ALLOW_RECIPIENTS_PER_TRANSACTION=N </p>
+<p>N为具体限制数字 </p>
+<p>问：两台邮件服务器该如何安装邮件系统 </p>
+<p>答：一台服务器做mail store 和inbound,一台服务器做outbound。首先按正常方式安装mail store，然后安装outbound，有以下几点要注意 </p>
+<p>1：安装时机器名，主机名都应该为本机的主机名， </p>
+<p>2：安装选项应该多选一个MMP选项 </p>
+<p>3：安装完成后配置MMP的PopproxyAService.cfg文件，配置说明可参看管理员指南。 </p>
+<p>4：如果webmail也部署在outbound上（推荐），应该在outbound上启用webmail代理 </p>
+<p>configutil &ndash;o local.service.http.proxy &ndash;v 1 </p>
+<p><strong>问：如何使log记录IP</strong> </p>
+<p>答：在option.dat文件中添加LOG_CONNECTION=1 </p>
+<p><strong>问：如何阻止一个外部IP的连接</strong> </p>
+<p>答：在mappings文件的PORT_ACCESS映射项中添加 </p>
+<p><em>|</em>|<em>|192.168.0.176|</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $N$ not$ to$connection </p>
+<p><strong>问：如何为服务器添加SmatrHost</strong> </p>
+<p>答：在通道定义中添加关键字daemon ，后跟ip</p>
+<hr>
+<p><strong> <a href="http://bbs.chinaunix.net/viewpro.php?uid=100927" target="_blank" rel="external"><font color="#0000ff">lijiong</font></a> 回复于：2007-03-01 13:26:34</strong></p>
+<p><strong>问：ds5.1下的主从配置</strong> </p>
+<p>答： </p>
+<p>一、首先配置从服务器(consumer) </p>
+<p>6. 在directory server console端Configuration标签页右键单击Data项，点击New Root Suffix菜单，新建需同步的节点。比如o=internet,database名为internet </p>
+<p>7. 新建好后，展开Replication项，下面会自动生成一个同步的节点，选中。 </p>
+<p>8. 在Replica Settings中，选中Enable Replica，Replica Role项选Dedicated Consumer </p>
+<p>9. update Settings中，Enter a new Supplier DN：写入cn=directory manager ,然后 add </p>
+<p>10. Enter a new URL:写入主ldap服务器名字、端口（或者用Construct….），然后add </p>
+<p>11. 保存 </p>
+<p>二、配置主服务器 </p>
+<p>2. 在directory serer console端Configuration标签页下选择Replication,选中Enable Changelog </p>
+<p>3. Legacy Consumer Settings标签页下填入Supplier DN: cn=directory manager, </p>
+<p>4. 选中Replication下需同步的节点 </p>
+<p>5. 在Replica Settings中选中Enable Replica </p>
+<p>6. Replica Role选中Single Master </p>
+<p>7. Common Settings中，Replica ID，填入1～65535任意数字，但是必须唯一于其他同步项 </p>
+<p>8. save后邮件单击同步节点，New Replication Agreement… </p>
+<p>9. 填入Name,Description </p>
+<p>10. Consumer 中点击other ，填入从服务器的名字、端口 </p>
+<p>11. Connection下，Simple authentication 填入Supplier Dn：&nbsp;&nbsp; Bind as： cn=directory manager, </p>
+<p>12. 余下步骤Next </p>
+<p>13. 完成后会出现一个同步的job，邮件先Initialize Consumer后，Send Updates Now </p>
+<p>14. 如果同步成功，可以在Status标签页中看到同步的状态 </p>
+<p><strong>问：如何改变网页中可发送邮件附件大小</strong> </p>
+<p>答：修改maxmessagesize,maxpostsize属性值 </p>
+<p><strong>问：如何限制使用outlook等客户端发信的大小？</strong> </p>
+<p>答：可以参考使用maxblocks这个关键字。 </p>
+<p><strong>问：如何删除多值属性中的某一个值</strong> </p>
+<p>答：已mailSieveRuleSource举例 </p>
+<p>dn:uid=user29,ou=people,o=test.com,o=eem </p>
+<p>changetype:modify </p>
+<p>delete:mailSieveRuleSource </p>
+<p>mailSieveRuleSource:/usr/iplanet/server5/shared/bin/sieve.txt </p>
+<p>只要把属性值也加上，就会删除对应的值了。 </p>
+<p><strong>问：在Solaris10上安装Messaging Server 6.x版本时，为什么会出现主机名问题</strong> </p>
+<p>答：在 Solaris 10 平台上，您不仅必须将全限定域名 (FQDN) 添加至 /etc/hosts 文件， </p>
+<p>而且还必须将其添加至 /etc/inet/ipnodes 文件。否则，您将接收到错误，指示您的 </p>
+<p>主机名不是全限定域名。 </p>
+<p><strong>问：如何手工添加转发地址</strong> </p>
+<p>答：1、添加mailDeliveryOption=forward </p>
+<p>2、添加mailForwardingAddress=mail地址 </p>
+<p><strong>问：LDAP被设置为read-only后不可修改怎么办？</strong> </p>
+<p>答：在5.2之前的版本中，用console都可以去修改每个suffix的database的readonly属性，在5.2中不会有。如果在为suffix做索引的时候突然中断，suffix的database就会被设置成readonly，这个时候就可以在dse.ldif文件中修改将该suffix的nsslapd-readonly的属性值由on改为off即可。 </p>
+<p><strong>问：多条件搜索如何写filter?</strong>答：例：(&amp;(!(createtimestamp=200507<em>))(mail=</em>)) </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (&amp;(mail=<em>)(createtimestamp=200507</em>))</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e982aee4bbb6e69c8de58aa1e599a8e7aea1e79086e5b08fe5b08fe8bf9be5b195" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/04/10/e982aee4bbb6e69c8de58aa1e599a8e7aea1e79086e5b08fe5b08fe8bf9be5b195/" class="article-date">
+  <time datetime="2008-04-10T12:35:00.000Z" itemprop="datePublished">Apr 10 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/04/10/e982aee4bbb6e69c8de58aa1e599a8e7aea1e79086e5b08fe5b08fe8bf9be5b195/">邮件服务器管理小小进展</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>手头管理的某Unix下的邮件服务器采用的是Solaris+<a href="http://docs.sun.com/source/816-6022-10/mmp.htm" target="_blank" rel="external"><font color="#7a7636">iPlanet</font></a>的解决方案，虽然这套邮件解决方案稳定高效，不过是Unix平台，而且版本比较老，默认没有ssh的管理。由于PKU教育技术系的非技术非技术倾向愈发明显，技术力量一直匮乏，懂Unix的更是少之又少；每次管理于是只能依靠每任管理员个人摸索，这种方式之下的个人经验的积累又做得很不够。我刚进来管理组的时候，就让我做这个，那个时候也开始学习linux，比较感兴趣，不过Unix和Linux毕竟不太一样，在详细阅读帮助的情况下，整个系统框架弄明白了，具体操作上还是存在一些问题。</p>
+<p>扯多了，进入正题：对于一些有效的管理，<a href="http://docs.sun.com/source/816-6022-10/mmp.htm" target="_blank" rel="external"><font color="#7a7636">iPlanet Messaging Server</font></a>提供了一些<a href="http://docs.sun.com/source/816-6022-10/monitor.htm#904116" target="_blank" rel="external"><font color="#7a7636">实用工具</font></a>，最初以root用户直接运行这些程序，结果提示用户不对，应该用邮件服务所在的用户来运行；于是重置了邮件用户的密码，用邮件用户登录，又出问题了：</p>
+<blockquote>
+<font face="Monaco" color="#0000ff">General Critical: func=configmsg_init; error=cannot find config file; file=msg.conf; msg=make sure you set CONFIGROOT environment variable to the directory containing config file ERROR: Configuration database initialization failed - see default logfile</font>
+
+</blockquote>
+<p>有关该邮件系统的配置文件的一个环境变量没设，于是系统找不到配置文件msg.conf。进入邮件系统目录，找到配置文件msg.conf所在，在网上找了一下，通过以下方式添加环境变量： </p>
+<p>切换到邮件用户，在主目录下建立文件.profile,内容如下：</p>
+<blockquote>
+<font face="Monaco" color="#0000ff">CONFIGROOT=/mail/iplanet/server5/msg-v480/config/<br><br>export CONFIGROOT</font>
+
+</blockquote>
+<p>保存，退出，重启</p>
+<p>然后再去运行之前的<a href="http://docs.sun.com/source/816-6022-10/monitor.htm#904116" target="_blank" rel="external"><font color="#7a7636">实用工具</font></a>，就没有错误提示了。<a href="http://docs.sun.com/source/816-6022-10/mmp.htm" target="_blank" rel="external"><font color="#7a7636">iPlanet Messaging Server</font></a> 虽然也提供了图形化的Console，不过功能受到限制，依托于<a href="http://docs.sun.com/source/816-6022-10/mmp.htm" target="_blank" rel="external"><font color="#7a7636">iPanet Messaging Server</font></a>和有关该<a href="http://docs.sun.com/source/816-6022-10/monitor.htm#904116" target="_blank" rel="external"><font color="#7a7636">实用工具</font></a>的具体的说明文档<a href="http://docs.sun.com/app/docs/coll/S1_MsgServer_52zh?l=zh&amp;q=cluster+3.X" target="_blank" rel="external"><font color="#7a7636">iPlanet Messaging Server Reference Manual</font></a>，就可以进行大部分的维护操作了。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-solarise79a84gcce5ae89e8a385" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/04/03/solarise79a84gcce5ae89e8a385/" class="article-date">
+  <time datetime="2008-04-03T12:34:00.000Z" itemprop="datePublished">Apr 3 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/04/03/solarise79a84gcce5ae89e8a385/">Solaris的gcc安装</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>1 查看sun os版本</p>
+<p>uname -a的命令查看系统版本。得知是SunOS 5.8。</p>
+<p>SunOS 5.8 叫做Solaris 8</p>
+<p>SunOS 5.9 叫做Solaris 9,以后就没有5.x的说法了，到Solaris 10了。。。</p>
+<p>2 安装gcc</p>
+<p>1. 到<a href="http://www.sunfreeware.com/" target="_blank" rel="external">www.sunfreeware.com</a>下载gcc-3.4.6-sol8-sparc-local.gz</p>
+<p>2. gunzip gcc-3.4.6-sol8-sparc-local.gz</p>
+<p>3. pkgadd &ndash;d gunzip gcc-3.4.6-sol8-sparc-local</p>
+<p>4. 手工设置root环境变量，添加PATH 、LD_LIBRARY_PAT</p>
+<p>export PATH=$PATH: /usr/local/bin</p>
+<p>export LD_LIBRARY_PATH=$ LD_LIBRARY_PATH: /usr/local/lib</p>
+<p>完毕后发现gcc -v报错：ld.so.1: gcc: fatal: <a name="baidusnap0"></a>libintl.so.3: open failed: No such file or directory,那么要安装libintl库</p>
+<p>3 安装libintl库</p>
+<p>1. 从<a href="http://www.sunfreeware.com/" target="_blank" rel="external">www.sunfreeware.com</a>下载libintl-3.4.0-sol8-sparc-local.gz</p>
+<p>2. gunzip libintl-3.4.0-sol8-sparc-local.gz</p>
+<p>3. pkgadd &ndash;d libintl-3.4.0-sol8-sparc-local.gz</p>
+<p>完毕后发现gcc -v报错：ld.so.1: gcc: fatal: libiconv.so.2: open failed: No such file or directory,那么要安装libiconv库</p>
+<p>4 安装libiconv库</p>
+<p>1. 从<a href="http://www.sunfreeware.com/" target="_blank" rel="external">http://www.sunfreeware.com</a>下载libiconv-1.11-sol8-sparc-local.gz</p>
+<p>2. gunzip libiconv-1.11-sol8-sparc-local.gz</p>
+<p>3. pkgadd &ndash;d libiconv-1.11-sol8-sparc-local.gz</p>
+<p>安装后gcc -v终于不再报错</p>
+<p><a href="http://www.linuxdiyf.com/viewarticle.php?id=63299" target="_blank" rel="external">http://www.linuxdiyf.com/viewarticle.php?id=63299</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e59ca8solarise4b8ade8aebee7bdaepath" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/04/03/e59ca8solarise4b8ade8aebee7bdaepath/" class="article-date">
+  <time datetime="2008-04-03T12:33:00.000Z" itemprop="datePublished">Apr 3 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/04/03/e59ca8solarise4b8ade8aebee7bdaepath/">在Solaris中设置PATH</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>如果你是Bourne Shell</p>
+<p>PATH=$PATH:/usr/bin; export PATH </p>
+<p>环境文件为.profile</p>
+<p>如果你是 C shell </p>
+<p>变量设置 </p>
+<p>路径变量：set path=($path /usr/bin) </p>
+<p>?环境文件 </p>
+<p>.login .cshrc</p>
+<p>这里有个问题是我如何能够知道我自己用的是那种类型的shell呢？</p>
+<p>有办法 使用cat /etc/passwd</p>
+<p><img src="http://www.blogjava.net/images/blogjava_net/jetgeng/solaris/solaris-path.jpg" alt="solaris-path.jpg"></p>
+<p><span>你会得到如上图所示的内容，看看你自己的那一行。在上面的文件中，我是有下划线的那一行。后面的</span><span>/bin/sh</span><span>就表示我使用的是</span><span>Bourne Shell</span><span>。我只需要按照那个来设置就好了。</span></p>
+<p><span>&lt;!—[if !supportEmptyParas]—&gt;?&lt;!—[endif]—&gt;</span></p>
+<p><span>有一点就是如果</span><span>PATH</span><span>已经被</span><span>export</span><span>过了，那么你就可以把&ldquo;</span><span>export?PATH?</span><span>&rdquo;这一段省略调了。</span></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-ftpe5b8b8e794a8e591bde4bba4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/04/03/ftpe5b8b8e794a8e591bde4bba4/" class="article-date">
+  <time datetime="2008-04-03T10:26:00.000Z" itemprop="datePublished">Apr 3 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/04/03/ftpe5b8b8e794a8e591bde4bba4/">ftp常用命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>　ls 列出远程机的当前目录</p>
+<p>　cd 在远程机上改变工作目录</p>
+<p>　lcd 在本地机上改变工作目录</p>
+<p>　ascii 设置文件传输方式为ASCII模式</p>
+<p>　binary 设置文件传输方式为<a name="baidusnap1"></a>二进制模式</p>
+<p>　close终止当前的ftp会话</p>
+<p>　hash 每次传输完数据缓冲区中的数据后就显示一个#号</p>
+<p>　get（mget） 从远程机传送指定文件到本地机</p>
+<p>　put（mput） 从本地机传送指定文件到远程机</p>
+<p>　open 连接远程ftp站点</p>
+<p>　quit断开与远程机的连接并退出ftp</p>
+<p>　? 显示本地帮助信息</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-ubuntu-hardy-804-lts-e6ba90sourceslist" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/04/01/ubuntu-hardy-804-lts-e6ba90sourceslist/" class="article-date">
+  <time datetime="2008-04-01T08:46:00.000Z" itemprop="datePublished">Apr 1 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/04/01/ubuntu-hardy-804-lts-e6ba90sourceslist/">Ubuntu hardy 8.04 LTS 源(sources.list)</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <h1 id="传说中的中国科技大学_5M/s">传说中的中国科技大学 5M/s</h1>
+<p>deb <a href="http://debian.ustc.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://debian.ustc.edu.cn/ubuntu/</font></a> hardy main restricted universe multiverse </p>
+<p>deb <a href="http://debian.ustc.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://debian.ustc.edu.cn/ubuntu/</font></a> hardy-backports restricted universe multiverse </p>
+<p>deb <a href="http://debian.ustc.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://debian.ustc.edu.cn/ubuntu/</font></a> hardy-proposed main restricted universe multiverse </p>
+<p>deb <a href="http://debian.ustc.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://debian.ustc.edu.cn/ubuntu/</font></a> hardy-security main restricted universe multiverse </p>
+<p>deb <a href="http://debian.ustc.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://debian.ustc.edu.cn/ubuntu/</font></a> hardy-updates main restricted universe multiverse </p>
+<p>deb-src <a href="http://debian.ustc.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://debian.ustc.edu.cn/ubuntu/</font></a> hardy main restricted universe multiverse </p>
+<p>deb-src <a href="http://debian.ustc.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://debian.ustc.edu.cn/ubuntu/</font></a> hardy-backports main restricted universe multiverse </p>
+<p>deb-src <a href="http://debian.ustc.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://debian.ustc.edu.cn/ubuntu/</font></a> hardy-proposed main restricted universe multiverse </p>
+<p>deb-src <a href="http://debian.ustc.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://debian.ustc.edu.cn/ubuntu/</font></a> hardy-security main restricted universe multiverse </p>
+<p>deb-src <a href="http://debian.ustc.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://debian.ustc.edu.cn/ubuntu/</font></a> hardy-updates main restricted universe multiverse </p>
+<h1 id="传说中的北京交大_速度_2M/s">传说中的北京交大 速度 2M/s</h1>
+<p>deb <a href="http://mirror.bjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror.bjtu.edu.cn/ubuntu/</font></a> hardy main restricted universe multiverse </p>
+<p>deb <a href="http://mirror.bjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror.bjtu.edu.cn/ubuntu/</font></a> hardy-backports restricted universe multiverse </p>
+<p>deb <a href="http://mirror.bjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror.bjtu.edu.cn/ubuntu/</font></a> hardy-proposed main restricted universe multiverse </p>
+<p>deb <a href="http://mirror.bjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror.bjtu.edu.cn/ubuntu/</font></a> hardy-security main restricted universe multiverse </p>
+<p>deb <a href="http://mirror.bjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror.bjtu.edu.cn/ubuntu/</font></a> hardy-updates main restricted universe multiverse </p>
+<p>deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror.bjtu.edu.cn/ubuntu/</font></a> hardy main restricted universe multiverse </p>
+<p>deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror.bjtu.edu.cn/ubuntu/</font></a> hardy-backports main restricted universe multiverse </p>
+<p>deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror.bjtu.edu.cn/ubuntu/</font></a> hardy-proposed main restricted universe multiverse </p>
+<p>deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror.bjtu.edu.cn/ubuntu/</font></a> hardy-security main restricted universe multiverse </p>
+<p>deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror.bjtu.edu.cn/ubuntu/</font></a> hardy-updates main restricted universe multiverse </p>
+<h1 id="传说中的上海交通大学，最热门的源之一">传说中的上海交通大学，最热门的源之一</h1>
+<p>deb <a href="http://ftp.sjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ftp.sjtu.edu.cn/ubuntu/</font></a> hardy main multiverse restricted universe </p>
+<p>deb <a href="http://ftp.sjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ftp.sjtu.edu.cn/ubuntu/</font></a> hardy-backports main multiverse restricted universe </p>
+<p>deb <a href="http://ftp.sjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ftp.sjtu.edu.cn/ubuntu/</font></a> hardy-proposed main multiverse restricted universe </p>
+<p>deb <a href="http://ftp.sjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ftp.sjtu.edu.cn/ubuntu/</font></a> hardy-security main multiverse restricted universe </p>
+<p>deb <a href="http://ftp.sjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ftp.sjtu.edu.cn/ubuntu/</font></a> hardy-updates main multiverse restricted universe </p>
+<p>deb <a href="http://ftp.sjtu.edu.cn/ubuntu-cn/" target="_blank" rel="external"><font color="#e8d60d">http://ftp.sjtu.edu.cn/ubuntu-cn/</font></a> hardy main multiverse restricted universe </p>
+<p>deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ftp.sjtu.edu.cn/ubuntu/</font></a> hardy main multiverse restricted universe </p>
+<p>deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ftp.sjtu.edu.cn/ubuntu/</font></a> hardy-backports main multiverse restricted universe </p>
+<p>deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ftp.sjtu.edu.cn/ubuntu/</font></a> hardy-proposed main multiverse restricted universe </p>
+<p>deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ftp.sjtu.edu.cn/ubuntu/</font></a> hardy-security main multiverse restricted universe </p>
+<p>deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ftp.sjtu.edu.cn/ubuntu/</font></a> hardy-updates main multiverse restricted universe </p>
+<h1 id="传说中的清华大学ubuntu源_300k/s">传说中的清华大学ubuntu源 300k/s</h1>
+<p>deb <a href="ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/</font></a> hardy main restricted universe multiverse </p>
+<p>deb <a href="ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/</font></a> hardy-backports restricted universe multiverse </p>
+<p>deb <a href="ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/</font></a> hardy-proposed main restricted universe multiverse </p>
+<p>deb <a href="ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/</font></a> hardy-security main restricted universe multiverse </p>
+<p>deb <a href="ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/</font></a> hardy-updates main restricted universe multiverse </p>
+<p>deb-src <a href="ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/</font></a> hardy main restricted universe multiverse </p>
+<p>deb-src <a href="ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/</font></a> hardy-backports main restricted universe multiverse </p>
+<p>deb-src <a href="ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/</font></a> hardy-proposed main restricted universe multiverse </p>
+<p>deb-src <a href="ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/</font></a> hardy-security main restricted universe multiverse </p>
+<p>deb-src <a href="ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp3.tsinghua.edu.cn/mirror/ubuntu/ubuntu/</font></a> hardy-updates main restricted universe multiverse </p>
+<h1 id="传说中的兰州大学_260k/s">传说中的兰州大学 260k/s</h1>
+<p>deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://mirror.lzu.edu.cn/ubuntu/</font></a> hardy main restricted universe multiverse </p>
+<p>deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://mirror.lzu.edu.cn/ubuntu/</font></a> hardy-backports restricted universe multiverse </p>
+<p>deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://mirror.lzu.edu.cn/ubuntu/</font></a> hardy-proposed main restricted universe multiverse </p>
+<p>deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://mirror.lzu.edu.cn/ubuntu/</font></a> hardy-security main restricted universe multiverse </p>
+<p>deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://mirror.lzu.edu.cn/ubuntu/</font></a> hardy-updates main restricted universe multiverse </p>
+<p>deb-src <a href="ftp://mirror.lzu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://mirror.lzu.edu.cn/ubuntu/</font></a> hardy main restricted universe multiverse </p>
+<p>deb-src <a href="ftp://mirror.lzu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://mirror.lzu.edu.cn/ubuntu/</font></a> hardy-backports main restricted universe multiverse </p>
+<p>deb-src <a href="ftp://mirror.lzu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://mirror.lzu.edu.cn/ubuntu/</font></a> hardy-proposed main restricted universe multiverse </p>
+<p>deb-src <a href="ftp://mirror.lzu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://mirror.lzu.edu.cn/ubuntu/</font></a> hardy-security main restricted universe multiverse </p>
+<p>deb-src <a href="ftp://mirror.lzu.edu.cn/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://mirror.lzu.edu.cn/ubuntu/</font></a> hardy-updates main restricted universe multiverse </p>
+<h1 id="传说中的台湾大学_中国电信adsl_150k/s">传说中的台湾大学 中国电信adsl 150k/s</h1>
+<p>deb <a href="http://ubuntu.csie.ntu.edu.tw/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.csie.ntu.edu.tw/ubuntu/</font></a> hardy main restricted universe multiverse </p>
+<p>deb <a href="http://ubuntu.csie.ntu.edu.tw/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.csie.ntu.edu.tw/ubuntu/</font></a> hardy-backports restricted universe multiverse </p>
+<p>deb <a href="http://ubuntu.csie.ntu.edu.tw/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.csie.ntu.edu.tw/ubuntu/</font></a> hardy-proposed main restricted universe multiverse </p>
+<p>deb <a href="http://ubuntu.csie.ntu.edu.tw/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.csie.ntu.edu.tw/ubuntu/</font></a> hardy-security main restricted universe multiverse </p>
+<p>deb <a href="http://ubuntu.csie.ntu.edu.tw/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.csie.ntu.edu.tw/ubuntu/</font></a> hardy-updates main restricted universe multiverse </p>
+<p>deb-src <a href="http://ubuntu.csie.ntu.edu.tw/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.csie.ntu.edu.tw/ubuntu/</font></a> hardy main restricted universe multiverse </p>
+<p>deb-src <a href="http://ubuntu.csie.ntu.edu.tw/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.csie.ntu.edu.tw/ubuntu/</font></a> hardy-backports main restricted universe multiverse </p>
+<p>deb-src <a href="http://ubuntu.csie.ntu.edu.tw/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.csie.ntu.edu.tw/ubuntu/</font></a> hardy-proposed main restricted universe multiverse </p>
+<p>deb-src <a href="http://ubuntu.csie.ntu.edu.tw/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.csie.ntu.edu.tw/ubuntu/</font></a> hardy-security main restricted universe multiverse </p>
+<p>deb-src <a href="http://ubuntu.csie.ntu.edu.tw/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.csie.ntu.edu.tw/ubuntu/</font></a> hardy-updates main restricted universe multiverse </p>
+<h1 id="传说中的电子科大">传说中的电子科大</h1>
+<p>deb <a href="http://ubuntu.uestc.edu.cn/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.uestc.edu.cn/ubuntu</font></a> hardy main restricted universe multiverse </p>
+<p>deb <a href="http://ubuntu.uestc.edu.cn/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.uestc.edu.cn/ubuntu</font></a> hardy-backports main restricted universe multiverse </p>
+<p>deb <a href="http://ubuntu.uestc.edu.cn/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.uestc.edu.cn/ubuntu</font></a> hardy-proposed main restricted universe multiverse </p>
+<p>deb <a href="http://ubuntu.uestc.edu.cn/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.uestc.edu.cn/ubuntu</font></a> hardy-security main restricted universe multiverse </p>
+<p>deb <a href="http://ubuntu.uestc.edu.cn/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.uestc.edu.cn/ubuntu</font></a> hardy-updates main restricted universe multiverse </p>
+<p>deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.uestc.edu.cn/ubuntu</font></a> hardy main restricted universe multiverse </p>
+<p>deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.uestc.edu.cn/ubuntu</font></a> hardy-backports main restricted universe multiverse </p>
+<p>deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.uestc.edu.cn/ubuntu</font></a> hardy-proposed main restricted universe multiverse </p>
+<p>deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.uestc.edu.cn/ubuntu</font></a> hardy-security main restricted universe multiverse </p>
+<p>deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.uestc.edu.cn/ubuntu</font></a> hardy-updates main restricted universe multiverse </p>
+<p>deb <a href="http://ubuntu.uestc.edu.cn/ubuntu-cn" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.uestc.edu.cn/ubuntu-cn</font></a> hardy main restricted universe multiverse </p>
+<p>deb <a href="http://ubuntu.uestc.edu.cn/ubuntustudio" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.uestc.edu.cn/ubuntustudio</font></a> hardy main </p>
+<h1 id="传说中的清华，,但不是清华大学的官方域名">传说中的清华，,但不是清华大学的官方域名</h1>
+<p>deb <a href="http://mirror9.net9.org/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror9.net9.org/ubuntu/</font></a> hardy main multiverse restricted universe </p>
+<p>deb <a href="http://mirror9.net9.org/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror9.net9.org/ubuntu/</font></a> hardy-backports main multiverse restricted universe </p>
+<p>deb <a href="http://mirror9.net9.org/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror9.net9.org/ubuntu/</font></a> hardy-proposed main multiverse restricted universe </p>
+<p>deb <a href="http://mirror9.net9.org/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror9.net9.org/ubuntu/</font></a> hardy-security main multiverse restricted universe </p>
+<p>deb <a href="http://mirror9.net9.org/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror9.net9.org/ubuntu/</font></a> hardy-updates main multiverse restricted universe </p>
+<p>deb-src <a href="http://mirror9.net9.org/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror9.net9.org/ubuntu/</font></a> hardy main multiverse restricted universe </p>
+<p>deb-src <a href="http://mirror9.net9.org/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror9.net9.org/ubuntu/</font></a> hardy-backports main multiverse restricted universe </p>
+<p>deb-src <a href="http://mirror9.net9.org/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror9.net9.org/ubuntu/</font></a> hardy-proposed main multiverse restricted universe </p>
+<p>deb-src <a href="http://mirror9.net9.org/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror9.net9.org/ubuntu/</font></a> hardy-security main multiverse restricted universe </p>
+<p>deb-src <a href="http://mirror9.net9.org/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">http://mirror9.net9.org/ubuntu/</font></a> hardy-updates main multiverse restricted universe </p>
+<p>deb <a href="http://mirror9.net9.org/ubuntu-cn/" target="_blank" rel="external"><font color="#e8d60d">http://mirror9.net9.org/ubuntu-cn/</font></a> hardy main multiverse restricted universe </p>
+<h1 id="传说中的电子科大,但不是uestc的官方域名">传说中的电子科大,但不是uestc的官方域名</h1>
+<p>deb <a href="http://ubuntu.dormforce.net/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.dormforce.net/ubuntu</font></a> hardy main restricted universe multiverse </p>
+<p>deb <a href="http://ubuntu.dormforce.net/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.dormforce.net/ubuntu</font></a> hardy-backports main restricted universe multiverse </p>
+<p>deb <a href="http://ubuntu.dormforce.net/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.dormforce.net/ubuntu</font></a> hardy-proposed main restricted universe multiverse </p>
+<p>deb <a href="http://ubuntu.dormforce.net/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.dormforce.net/ubuntu</font></a> hardy-security main restricted universe multiverse </p>
+<p>deb <a href="http://ubuntu.dormforce.net/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.dormforce.net/ubuntu</font></a> hardy-updates main restricted universe multiverse </p>
+<p>deb-src <a href="http://ubuntu.dormforce.net/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.dormforce.net/ubuntu</font></a> hardy main restricted universe multiverse </p>
+<p>deb-src <a href="http://ubuntu.dormforce.net/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.dormforce.net/ubuntu</font></a> hardy-backports main restricted universe multiverse </p>
+<p>deb-src <a href="http://ubuntu.dormforce.net/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.dormforce.net/ubuntu</font></a> hardy-proposed main restricted universe multiverse </p>
+<p>deb-src <a href="http://ubuntu.dormforce.net/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.dormforce.net/ubuntu</font></a> hardy-security main restricted universe multiverse </p>
+<p>deb-src <a href="http://ubuntu.dormforce.net/ubuntu" target="_blank" rel="external"><font color="#e8d60d">http://ubuntu.dormforce.net/ubuntu</font></a> hardy-updates main restricted universe multiverse </p>
+<h1 id="传说中的东北大学更新服务器：">传说中的东北大学更新服务器：</h1>
+<p>deb <a href="ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/</font></a> hardy main multiverse restricted universe </p>
+<p>deb <a href="ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/</font></a> hardy-backports main multiverse restricted universe </p>
+<p>deb <a href="ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/</font></a> hardy-proposed main multiverse restricted universe </p>
+<p>deb <a href="ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/</font></a> hardy-security main multiverse restricted universe </p>
+<p>deb <a href="ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/</font></a> hardy-updates main multiverse restricted universe </p>
+<p>deb-src <a href="ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/</font></a> hardy main multiverse restricted universe </p>
+<p>deb-src <a href="ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/</font></a> hardy-backports main multiverse restricted universe </p>
+<p>deb-src <a href="ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/" target="_blank" rel="external"><font color="#e8d60d">ftp://ftp.neu.edu.cn/mirror/archive.ubuntu.com/ubuntu/</font></a> hardy-proposed main multiverse restricted universe </p>
+<p>deb-src &lt;a href=”ft …</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e9ab98e5b3b0e4bd93e9aa8c" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/03/31/e9ab98e5b3b0e4bd93e9aa8c/" class="article-date">
+  <time datetime="2008-03-31T10:06:00.000Z" itemprop="datePublished">Mar 31 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/03/31/e9ab98e5b3b0e4bd93e9aa8c/">高峰体验</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <div class="titord"><br><br><span class="t1"><strong>转自:<a href="http://baike.baidu.com/view/36539.htm#1" target="_blank" rel="external">http://baike.baidu.com/view/36539.htm#1</a></strong></span><br><br><span class="t1"><strong>何谓高峰体验</strong></span><br><br>美国的心理学家<a href="http://baike.baidu.com/view/17446.htm" target="_blank" rel="external">马斯洛</a>在调查一批有相当成就的人士时，发现他们常常提到生命中曾有过的一种特殊经历，&quot;感受到一种发至心灵深处的<a href="http://baike.baidu.com/view/598455.htm" target="_blank" rel="external">颤栗</a>、欣快、满足、超然的情绪体验，&quot;由此获得的人性解放，心灵自由，照亮了他们的一生。马斯洛把这种感受称之为高峰体验。一种从未体验过的兴奋与欢愉的感觉，那种感觉犹如站在高山之颠，那种愉悦虽然短暂，但却可能尤其深刻，那种感觉是语言无法表达的，心理学家称之为&ldquo;高峰体验&rdquo;。<br><br></div><br><div class="titord"><span class="t1"><strong>高峰体验中的人</strong></span></div><br>马斯洛认为，处于高峰体验的人具有最高程度的认同，最接近自我，最接近其真正的自我，达到了自己独一无二的人格或特质的顶点，潜能发挥到最大程度。高峰体验者被认为是更具有创造性、更果断、更富有幻想、更加独立，同时他们很少有教条和官僚。他们更少关注物质财富和地位，他们更可能去寻找生命的意义。<br><br><div class="titord"><span class="t1"><strong>什么人容易拥有高峰体验</strong></span></div><br>马斯洛认为，<a href="http://baike.baidu.com/view/4346.htm" target="_blank" rel="external">自我实现</a>的人，即处于需要金字塔的顶层的人，更可能发生高峰体验，因为达到这个阶段的人有一种个人发展的需要，他们不会象我们大多数人受焦虑的折磨，对现实进行曲解，这使得他们能更清楚地评判他人和环境。他们可以用很高的心理能力在很多领域，如科学、艺术甚至是社会服务行业表现优秀。自我实现的人并非完美无缺，只是他们没有许多人阻碍自己实现潜能的障碍。当然，如果你从来没有过高峰体验，这并不一定意味着你的心理没有达到高水平。记住，连马斯洛也说并非所有自我实现的人都会有那样的体验。<br><br><div class="titord"><span class="t1"><strong>发生的可能性</strong></span></div><br>虽然自我实现的人更容易有高峰体验，马斯洛也承认有些还没达到自我实现阶段的人也有可能有这种体验。高峰体验不能通过个人的意愿而发生，但却有可能通过安排自己周围的环境提高它发生的可能性，例如安排自己独处可能是一个有益的影响因素。<br><br><div class="titord"><span class="t1"><strong>高峰体验的情绪分析</strong></span></div><br>那种&quot;颤栗、欣快、满足、超然&quot;的情绪体验又是如何发生的？这种体验真能改变人对生命的感觉吗？如果这种体验真的如此神奇，人们又如何捕获它呢？让我们共同来解析这种情绪现象。<br><br>我们来设想，你是一个徒步登山者，费尽千辛万苦，克服许多的艰难险阻，每一步都挣扎在生死边缘。开始的时候，你还有很好的现实感，知道山知道水，攀登中还会有幽默和笑语。慢慢的，躯体的痛苦，情绪的沉抑，心身的耗竭让你忘却了行为的意义，甚至怀疑攀登的价值和现实性，你的内心挤满了渴望与逃避，冒险与胆怯、放弃与坚持的双向冲突，知觉变得凝重而迟缓，现实感消隐，意识逐步的缩窄。再后来，你的思想似乎停滞，感觉麻木，忘了自己是谁，在做什么和为什么要做，只是机械地向上走。你的意识界沉静而虚无，只有心灵那一丝光亮，仍在坚持和闪耀着。终于，你到达了那高耸卓绝的山顶，按理说积压太长的期待会给你带来像爆炸一般的狂喜，但却没有发生。你似乎忘却了自我，忘却了存在，时间和空间消融在一起，没有边界，四周只有一片纯净的虚空，深邃而神秘。你甚至会有一瞬的迷茫，不知道你接下来要做什么？这时，一种像海潮般的愉悦和满足感从遥远的心灵深处释放、溢出、扩展，伴随着高峰上的洁净、安祥，和谐席卷了你，你似乎听见了心灵的笑声，品尝到生命融入那种永恒与无限的感觉。慢慢的海潮过去，你的内心仍充满着充沛的活力和美妙无比的欣喜，灵感激荡，思想饱满而充实。在以后很长的日子里，你对自我的态度和对世界的感觉已经完全的不同。每当遇到困难的时候，回忆那不平凡的一刻，你的内心依然会荡漾出坚毅、活力和创造力，成为你自由、自信、自强不息的精神源泉，这就是高峰体验。<br><br><div class="titord"><span class="t1"><strong>不一样的高峰体验</strong></span></div><br>报载：美国的登月者米歇尔，在阿波罗登月仓中，从宇宙中遥望美丽的地球而获得高峰体验，刹那间他知道了&quot;宇宙自有它的意义及方向，在那有形的造化之后有一种层次，人类的追求必须提升到全球的资源共享，世界才会是可持续的&quot;，米歇尔重返地球后，放弃了太空生涯，投身于环境与生态的运动。 几年前，几个北京的心理学家在一次聚会中讨论与分享高峰体验。<a href="http://baike.baidu.com/view/732664.htm" target="_blank" rel="external">精神分析学派</a>的贾晓明说：&quot;有一段时间，我特别地忙碌，生活像乱了套似的，一切都不顺，心身憔悴。丈夫和孩子拉我去风景区游玩，我去了。当他们兴致勃勃地爬山的时候，我就坐在山脚下一片树林中等待。我放松自己，躺在草地上，初秋的阳光从林间叶缝里洒下来，我长久的凝视着身边的一草一木，突然我有了一种很不一样的感觉，身体变得很轻，像浮在空气中，内心深处有一种涌动，我开始分不清它是一种喜悦还是一种痛苦，但后来，我有了一种很强的满足感，内心似乎听到一种召唤，有了一种使命感，生命的意义一下变得清晰可见，疲惫和烦恼一刹间蒸发了，我又变得生气勃勃。在以后的生活与事业中，我充满了灵性，直觉和献身精神。&quot;华东师大心理博士朱建军说：&quot;我在做自我分析中也曾有过高峰体验，那种体验到来的时候，原本像毛玻璃一样的自我意识，突然变得清晰透明，我的感官功能变得非常敏锐，我似乎可以看见很远，听到很细微的声音，有一种东西进入了我的意识，那是一种博爱、豁达、乐于自我牺牲的高尚感觉，从此我的个性变得宽容。&quot;我对大家说我的高峰体验发生在野外，当我独自对星空的凝视的时候，&quot;刚开始，我对宇宙的博大、深邃和神秘有一种不详的恐惧感，我不知道我在怕什么，内心有些颤抖，但我坚持着。突然，我有点感觉不到自己，现实的藩篱融解了，宇空似乎触手可及，接下来是一种久久的平和、静宓、愉悦的感觉淹没了我。&quot;<br><br><div class="titord"><span class="t1"><strong>快乐层次与不同的高峰体验</strong></span></div>
+
+<p>人每一种需求的满足都会对应一种快乐的体验，需求的层次不同，得到的快感也不同。人类有多少需求层次呢？现代心理学认为有四个层次：生理需求，情绪需求，理性需求和超越需求，对应着四种动力：本能的动力，情感的动力，心智的动力和心灵的动力。超越的需求，一直是东方文化中的精髓，佛学中的&quot;无我&quot;，道家中的&quot;空&quot;，即是一种超越境界。 生活中，人们可能把高峰体验当作一种时尚的标签，一些人把事业的成功、物欲的满足等同于&quot;高峰体验&quot;，也有的人朴素的把登山，竞技运动中的快乐称为&quot;高峰体验&quot;。读过韩萱的小说《何谓高峰体验》，你一定能共感主人翁在长久的寻觅中，随着理查德 克莱德曼的浪漫钢琴旋律那一刹间的心灵共舞。我不知道韩萱失去&quot;自我感&quot;算不算一种高峰体验，但电话里女孩的&quot;高峰体验&quot;显然不在同一个精神层面。&quot;想融入的那个男人的身体&quot;的她能激发多少心灵的超越呢！情爱的忘我有时是一种孩子与母亲粘结的亲密再现，渴望被爱人&quot;身体化&quot;的心理趋向等同于婴儿渴望回到母亲的子宫。<a href="http://baike.baidu.com/view/40339.htm" target="_blank" rel="external">毕淑敏</a>长篇小说《<a href="http://baike.baidu.com/view/1145552.htm" target="_blank" rel="external">红处方</a>》中，描述人吸毒后的&quot;高峰体验&quot;，它的欣快感和高峰体验有很大的相似性，却源于一种意识朦胧中的现实解体和自我解体，对现实的逃避是真正的动机。他是自我封闭的，听不到心灵的欢笑，快感过后是一种精神的苍白，以及高度的易受暗示性，良知与道德的坠落。很多学者认为&quot;禅&quot;的境界是一种&quot;高峰体验&quot;，但&quot;禅&quot;的境界是不能被描述的，说得出来的东西就不是&quot;禅&quot;。宗教体验算不算&quot;高峰体验&quot;？人的信仰的确超越了理性层面，它是靠心灵的力量维持的，宗教体验中的&quot;献身、博爱、无私&quot;如果能超越狭隘的教派原则，指向全人类或所有的生命物质，那么应该算是一种高峰体验。巫术文化中的&quot;神入&quot;，&quot;神灵附体&quot;，让一个平凡的人转变为&quot;神&quot;，获得预言的功能（传言印第安民族的部落长老都是能听见&quot;神&quot;召唤的人），这种神秘体验有时也会被人当作&quot;高峰体验&quot;。我个人认为：每种文化下对高峰体验的释义可能是不同的，但它绝不是瞬间即逝的欣快感，而是一种持久引导人们朝向积极，健康，博爱发展的精神动力。马斯洛晚年对滥用高峰体验概念和不择手段的寻求高峰体验给人们带来的危害非常苦恼，他觉得自己的观念遭到了严重误解。他描述了另一种超越体验：&quot;不再是一种突发的，刹那间，感性，高潮式的体验，而是一种通过时间、努力、修炼、奉献达到的一种心灵境界，能从现实或永恒两种角度看待生命，从平凡中体会超越&quot;他称这种体验叫&quot;高原体验&quot;。 </p>
+<p><div class="titord"><span class="t1"><strong>如何提升心灵创造高峰体验</strong></span></div><br>高峰体验的确存在一种精神顿悟的色彩。顿悟需要两个条件：一是强烈的精神灌注，意识长久的指向某个目标；二是心智的压抑，心灵积攒了太多的能量。当两者到了某一个阈值（因人不同）的时候，就会造就这灵光一闪。我相信，更多成功人士的高峰体验是逐步形成的，随着学识的渊博，意识的扩展，精神的完满，像修炼一样，随着心灵的成长、提升、净化，人变得公平、开朗、豁达、宽容、博爱与慈悲，这样的内心境界谁能说不是一种生命的高峰！高峰体验的核心是让人们的心灵得以从现实中解放，他们接受现实，却保持着高度的心灵自由与超越。有一句经典的东方名言：&quot;世界的所知，眼睛是知者；眼睛的所知，心智是知者；心智的所知，心灵是知者。&quot;那么心灵又是什么？我们该如何提升我们的心灵？我个人觉得，心灵不是机体的感知觉，不是渴求与满足，不是情绪的舒张，不是逻辑推理，但它却潜藏在理性、思想、欲望、情绪和身体里，我们可能看不到它，甚至感觉不到它，但它却滋养着我们。像地平线下的水，在人性的深处打一口井，我们会看到心灵像洁净甘甜的水慢慢的渗出，聚积，形成。你会明白，生命的常青，思想的灿烂，情感的美丽是因为它的存在和它的滋润。一口井可以因为日月变化，风侵雨蚀，被沙石添埋，但灵性还在那里，只要你愿意清理、挖掘与更新，它还会沽沽流淌出来，生命之水依然甘甜，依然清澈。那么，我们如何寻迹心灵：生命潜能、创造力、智慧、灵感、道德、坦诚、良知、博爱、慈悲、无私、使命感与信仰，对所有生命的珍爱、保护和敬畏，这些都是人类心灵美的标识。在某种意义上，心灵并不属于个人，也不属于一个群体，一个种族，它属于整个人类。在更高的层面，心灵力量可能是所有生命现象的内核，是生命现象的原动力，象征着宇宙中生命的朴实、坚韧与恒久。心灵不美丽的人是不可能真正得到生命中那种&quot;高峰体验&quot;的快乐，心灵美丽的人却可以时时刻刻顺手拈来。物欲或情欲的满足，权利和征服得到的快乐，只是戏剧性的&quot;情绪高潮&quot;，而吸毒、酗酒、麻醉品、致幻剂给人的只是空虚、成瘾、沉溺与道德沦落，这样的&quot;高峰体验&quot;得不偿失。 </p>
+<p><div class="titord"><span class="t1"><strong>按部就班获得高峰体验</strong></span></div><br>据统计，世界上大约有十分之三的人有过高峰体验。那么，我们是不是要把高峰体验看作是人类的一种普遍经验呢？美国的Richard Bennett在《寻求你的高峰体验》中说：&quot;在任何情景下，你有过一种短暂的、突发的、奇妙惊喜的、敬畏的情绪体验，感觉自我，空间在消失或扩展，那就是一种高峰体验。&quot; </p>
+<p>以下步骤可能帮助你去寻求生命中的&quot;奇妙体验&quot;：</p>
+<p>一， 开始精神灌注：你用一个不短的时间来思索生命的意义，价值，目的，思索有限与无限、自由与约束、现实与永恒之间的关系。你需要积攒一定情绪压力，感觉到自我的无助、无能和渺小。</p>
+<p>二， 选择一个非常自然的地方：山水、林间，旷野，海岸、峰顶，把心智长久的集中凝视眼前的一花一木、一沙一石、草地、星空、流水、海潮、山峦、地平线上……。 </p>
+<p>三， 感觉自然的力量：然后闭上眼睛，让风吹拂着你、水流冲刷着你、山林的气味、虫鸟的声音、宇空的深邃包裹着你。感受自然神奇的力量、活力，感受生命中你理解的或不理解的一切。</p>
+<p>四， 缓慢地思索：让无意识去思索我是谁？我存在那里？一百年后，或者一千年后如果我存在，会是什么？如果我只有一天的生命，什么对我是最重要的？但不要立即给出答案。 </p>
+<p>五， 放弃自己：然后，深深缓慢的呼吸，放弃那些难以回答的问题，放弃自己，忘却自己，让自己完全融入自然之中，意识无意识都随风而去，随浪而流，思维停滞，情绪凝结，物我两忘。 </p>
+<p>六， 寻找心灵：用内视的方法，探索心灵深处那一丝光亮，在它的指引下，你游走在宇宙的深处，感觉自然的博大，广阔，神圣，恒久，感受人性的温暖，和谐，博爱与一体……。 </p>
+<p>七， 体验高峰：体验这一时刻内心的宁静，畅然，平和，舒缓，由此而引发一种缓慢的喜悦、涌动和心灵振荡，听凭这样的感觉席卷而来，听凭心身轻轻的颤栗，激动和欣喜。</p>
+<p>八， 检视自己：这种体验过后，重新来思索生命的意义，价值，目的，思索有限与无限、现实与永恒之间的关系。在很长的一段时间里，你有了对自我的满足，积极的心态，丰富的灵感和创造力，以及充沛的精力和饱满的热情。 对高峰体验的追求应该是人们追求心灵超越的体操。所以，不管你是第一次或第N次，是否获得那种超然的感觉，你都要牢牢记住，当这种心灵的提升训练到了某一个境界，高峰体验便会突如其来，并终身伴随和照耀着你。 </p>
+<p><div class="titord"><span class="t1"><strong>结语</strong></span></div><br>普陀经中有个故事：十个头脑简单的人跨过一条宽阔湍急的河流，他们费了好大的功夫，精疲力竭地到了对岸。领头的人开始数人数，发现只有九个，另一个人也来数，还是九个。他们难过极了，花了好多时间来搜寻河道，但一无所获。这引起了路过的人好奇，听了他们的原由，路过的人看了看说：&quot;你们不正好是十个人吗！&quot;数数的人都忘了数自己。高峰体验也一样，有时，你已经拥有了它，但却不知道，在你寻找它的时候，它还在帮着你数着数。&nbsp;&nbsp;</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-olde4b99fe8bdacefbc81e38090google-e58f91e78eb0e79a84e58d81e5a4a7e79c9fe79086e38091" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/03/24/olde4b99fe8bdacefbc81e38090google-e58f91e78eb0e79a84e58d81e5a4a7e79c9fe79086e38091/" class="article-date">
+  <time datetime="2008-03-24T06:57:00.000Z" itemprop="datePublished">Mar 24 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/03/24/olde4b99fe8bdacefbc81e38090google-e58f91e78eb0e79a84e58d81e5a4a7e79c9fe79086e38091/">old也转！【Google 发现的十大真理】</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><span><font face="Calibri">Google </font></span><span style=" mso-ascii- mso-hansi-">发现的十大真理</span><font face="Calibri"> </font><span style=" mso-ascii- mso-hansi-">&mdash;&mdash;</span><span><font face="Calibri">google</font></span><span style=" mso-ascii- mso-hansi-">把这些真理付诸行动，从而创造了信息搜索的帝国！</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><span style="mso-spacerun: yes"><font face="Calibri"> </font></span></span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri">1. </font></span><span style=" mso-ascii- mso-hansi-">以用户为中心，其他一切纷至沓来。（用户第一真理）</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span style=" mso-ascii- mso-hansi-">其实没有哪家公司不这样认为，问题在于能坚持这样做的并不多，人们很容易犯想当然的</span></p>
+<p><span style=" mso-ascii- mso-hansi-">毛病，也对自己设计的东西太过自负。做到后来常常开发出让人晕头转向的产品。应该学</span></p>
+<p><span style=" mso-ascii- mso-hansi-">习</span><span><font face="Calibri">google</font></span><span style=" mso-ascii- mso-hansi-">的态度：如果所做的更改不会给网站访问者带来任何优势，则将坚定不移地予以</span></p>
+<p><span style=" mso-ascii- mso-hansi-">拒绝：</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>o </font></span><span style=" mso-ascii- mso-hansi-">界面清晰易用；</span></p>
+<p><span><font face="Calibri"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>o </font></span><span style=" mso-ascii- mso-hansi-">网页加载迅速；</span></p>
+<p><span><font face="Calibri"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>o </font></span><span style=" mso-ascii- mso-hansi-">绝对不出售搜索结果中的排名位置。</span></p>
+<p><span><font face="Calibri"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span>o </font></span><span style=" mso-ascii- mso-hansi-">在网站上刊登的广告应提供相关的内容，且不会影响用户的体验。</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri">2. </font></span><span style=" mso-ascii- mso-hansi-">最好的方式是将一件事情做到极致。（专注真理）</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span style=" mso-ascii- mso-hansi-">如果我告诉你</span><span><font face="Calibri">Google</font></span><span style=" mso-ascii- mso-hansi-">只做搜索，你相信吗？我们发现的是他在一棵&ldquo;苹果树&rdquo;上嫁接了更</span></p>
+<p><span style=" mso-ascii- mso-hansi-">多种类的果实，他们把应用纯熟的知识应用于相关产品的开发，其中包括</span><span><font face="Calibri"> Gmail</font></span><span style=" mso-ascii- mso-hansi-">、</span><span><font face="Calibri">Googl</font></span></p>
+<p><span><font face="Calibri">e </font></span><span style=" mso-ascii- mso-hansi-">桌面和</span><span><font face="Calibri"> Google Maps</font></span><span style=" mso-ascii- mso-hansi-">。这是不是就不专一了呢？当多年以后</span><span><font face="Calibri">google</font></span><span style=" mso-ascii- mso-hansi-">能感受到你的思维的</span></p>
+<p><span style=" mso-ascii- mso-hansi-">时候，你会发现，技术的可爱和可怕吧。</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri">3. </font></span><span style=" mso-ascii- mso-hansi-">快比慢好。（最佳体验真理）</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span style=" mso-ascii- mso-hansi-">搜索的最佳体验是在搜索结果的第一条就是我们想要的答案。这也许是</span><span><font face="Calibri">google</font></span><span style=" mso-ascii- mso-hansi-">把</span><span><font face="Calibri">yahoo</font></span><span style=" mso-ascii- mso-hansi-">比</span></p>
+<p><span style=" mso-ascii- mso-hansi-">下去的缘故。正如</span><span><font face="Calibri">google</font></span><span style=" mso-ascii- mso-hansi-">说的：</span><span><font face="Calibri"> Google </font></span><span style=" mso-ascii- mso-hansi-">可能是世界上唯一一个努力让其用户尽快离开自</span></p>
+<p><span style=" mso-ascii- mso-hansi-">己网站的公司。</span><span><font face="Calibri">Google </font></span><span style=" mso-ascii- mso-hansi-">执着地消减自己网页上的每一个多余的比特和字节，不断地提高</span></p>
+<p><span style=" mso-ascii- mso-hansi-">服务环境的效率，并一次次地打破自己创造的速度记录。我相信</span><span><font face="Calibri">Google </font></span><span style=" mso-ascii- mso-hansi-">一直在不断地努</span></p>
+<p><span style=" mso-ascii- mso-hansi-">力，让速度再快一点。</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri">4. </font></span><span style=" mso-ascii- mso-hansi-">网络需要民主的作风。（民主真理，我倒是希望现在更多</span><span><font face="Calibri">SNS</font></span><span style=" mso-ascii- mso-hansi-">能做到这一点）</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span style=" mso-ascii- mso-hansi-">关于</span><span><font face="Calibri">PageRank&amp;#8482;</font></span><span style=" mso-ascii- mso-hansi-">的技术，大家讨论得太多，又经过两三次的调整，大家对</span><span><font face="Calibri">PR</font></span><span style=" mso-ascii- mso-hansi-">值都有</span></p>
+<p><span style=" mso-ascii- mso-hansi-">点感冒了，如果</span><span><font face="Calibri">google</font></span><span style=" mso-ascii- mso-hansi-">蜘蛛人是按照网站</span><span><font face="Calibri">PR</font></span><span style=" mso-ascii- mso-hansi-">值来搜索排名的话，那就很有意思了，不知他</span></p>
+<p><span style=" mso-ascii- mso-hansi-">们是怎么体现网络民主的？</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri">5. </font></span><span style=" mso-ascii- mso-hansi-">您不必坐在台式机前也能获得所需的答案。（应用灵活真理）</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri">Google Number Search</font></span><span style=" mso-ascii- mso-hansi-">，这个没有试用过，不评话，按照</span><span><font face="Calibri">google</font></span><span style=" mso-ascii- mso-hansi-">的说法是：通过这一技术</span></p>
+<p><span style=" mso-ascii- mso-hansi-">，人们从具有上网功能的手机以及即时转换系统（将以</span><span><font face="Calibri"> HTML </font></span><span style=" mso-ascii- mso-hansi-">格式编写的网页转换为手机</span></p>
+<p><span style=" mso-ascii- mso-hansi-">浏览器可以读取的格式）上查找数据时，可以大大减少键击次数。</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri">6. </font></span><span style=" mso-ascii- mso-hansi-">您可以通过正当途径赚钱。（这是三赢的真理）</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri">Google </font></span><span style=" mso-ascii- mso-hansi-">是一个企业。您可能从未在</span><span><font face="Calibri"> Google </font></span><span style=" mso-ascii- mso-hansi-">上看到过广告。这是因为，除非广告与所显</span></p>
+<p><span style=" mso-ascii- mso-hansi-">示的搜索结果页内容相关，否则</span><span><font face="Calibri"> Google </font></span><span style=" mso-ascii- mso-hansi-">不允许在我们的搜索结果页上展示任何广告。因</span></p>
+<p><span style=" mso-ascii- mso-hansi-">此，只有某些搜索才会在搜索结果的上方或右侧显示赞助商链接。</span><span><font face="Calibri">Google </font></span><span style=" mso-ascii- mso-hansi-">坚信，仅当广</span></p>
+<p><span style=" mso-ascii- mso-hansi-">告与您要查找的内容相关时，才会为您提供有用的信息。这一点比其它任何的搜索引擎做</span></p>
+<p><span style=" mso-ascii- mso-hansi-">得都好。</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span style=" mso-ascii- mso-hansi-">所以有成千上万的广告客户使用</span><span><font face="Calibri">Google AdWords </font></span><span style=" mso-ascii- mso-hansi-">计划来推广他们的产品，加上成千上万</span></p>
+<p><span style=" mso-ascii- mso-hansi-">的网站管理人员利用我们的</span><span><font face="Calibri"> Google AdSense </font></span><span style=" mso-ascii- mso-hansi-">计划，刊登与其网站内容相关的广告，以增</span></p>
+<p><span style=" mso-ascii- mso-hansi-">加收入和改善用户的体验。几乎每个站长都可以申请到</span><span><font face="Calibri">Google </font></span><span style=" mso-ascii- mso-hansi-">的广告账号。</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri">7. </font></span><span style=" mso-ascii- mso-hansi-">信息始终在不断地累加。（信息再加工真理）</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span style=" mso-ascii- mso-hansi-">我想，</span><span><font face="Calibri">google</font></span><span style=" mso-ascii- mso-hansi-">是对网络信息加工最用心的公司，他们对信息的搜索整合能力、源源挖掘能</span></p>
+<p><span style=" mso-ascii- mso-hansi-">力是一流的。就凭着我们在搜索过程中可以直接下载到</span><span><font face="Calibri">PDF</font></span><span style=" mso-ascii- mso-hansi-">格式的文件、</span><span><font face="Calibri">office</font></span><span style=" mso-ascii- mso-hansi-">文档等，</span></p>
+<p><span style=" mso-ascii- mso-hansi-">我们真的应该说声谢谢。</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri">8. </font></span><span style=" mso-ascii- mso-hansi-">对信息的需求超越了国界。（跨越区域真理）</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span style=" mso-ascii- mso-hansi-">大家知道</span><span><font face="Calibri">Google </font></span><span style=" mso-ascii- mso-hansi-">的总部在加利福尼亚州吧。可惜的是</span><span><font face="Calibri">Google.cn</font></span><span style=" mso-ascii- mso-hansi-">在中国只占</span><span><font face="Calibri">20%</font></span><span style=" mso-ascii- mso-hansi-">的搜索份</span></p>
+<p><span style=" mso-ascii- mso-hansi-">额。中国不是纯技术论的国家，中国用户更多的承载着孔夫子的儒家精神，所以让百度占</span></p>
+<p><span style=" mso-ascii- mso-hansi-">了先锋。</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri">9. </font></span><span style=" mso-ascii- mso-hansi-">没有西装革履也一样严肃认真。（自由创新真理）</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri">Google</font></span><span style=" mso-ascii- mso-hansi-">吸引人和地方还在于他们的工作方式和公司的企业文化&mdash;&mdash;自由的创新精神，是那</span></p>
+<p><span style=" mso-ascii- mso-hansi-">种融入骨子里的贴心服务。也难怪他们能创造出世界最出色的产品。</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri">10. </font></span><span style=" mso-ascii- mso-hansi-">只是优秀还不够。（归零真理）</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri">Google </font></span><span style=" mso-ascii- mso-hansi-">不会将最好视为终点，而是看作一个新的起点。谁做得到？</span></p>
+<p><span><font face="Calibri"> </font></span></p>
+<p><span><font face="Calibri">* Google</font></span><span style=" mso-ascii- mso-hansi-">改变了很多，他不再是四年前的小</span><span><font face="Calibri">G</font></span><span style=" mso-ascii- mso-hansi-">了，他在很多方面已经开枝散叶。</span></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e5a682e4bd95e8aea9e7bd91e6b091e788b1e4b88ae4bda0e79a84e7bd91e7ab99e28094e28094e799bee5baa6e794a8e688b7e4bd93e9aa8ce680bbe79b91e8b088-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/03/06/e5a682e4bd95e8aea9e7bd91e6b091e788b1e4b88ae4bda0e79a84e7bd91e7ab99e28094e28094e799bee5baa6e794a8e688b7e4bd93e9aa8ce680bbe79b91e8b088-2/" class="article-date">
+  <time datetime="2008-03-06T05:11:00.000Z" itemprop="datePublished">Mar 6 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/03/06/e5a682e4bd95e8aea9e7bd91e6b091e788b1e4b88ae4bda0e79a84e7bd91e7ab99e28094e28094e799bee5baa6e794a8e688b7e4bd93e9aa8ce680bbe79b91e8b088-2/">如何让网民爱上你的网站——百度用户体验总监谈用户体验设计（1）</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><strong><font color="#ff0000">一、被忽视的用户体验设计本质</font></strong></p>
+<p><strong>设计师不等于美工</strong></p>
+<p>设计无所不在，但大多数企业不知道如何使用它。现代设计进入中国大概是二十多年的时间，而在国外，尤其在美国在欧洲，大概有一百年的历史。二十多年 前中国是没有人讲用户体验这个词的。那个时代讲究技术和美术的结合，叫技术美学。一个产品，只要功能好，样式好看，就OK。二十多年后，这个概念在大多数 企业还没有发生改变，大多企业的高层也不理解什么叫设计，认为设计师就是一个美工。设计师本身也没有去提标准，自身的思维也只是停留在美工这个角度上。设 计的潜力，远远没有发挥出来。</p>
+<p>设计师的本质并不光是把PPT做得很漂亮。在企业中，设计师应该拥有独特解决问题的能力，可以去模拟未来发展的事情。</p>
+<p>比如，在50年代的时候，在美国问任何一个人，家电设计应是什么样子？所有人都会说，家电必须放在一个柜子里面，必须跟家具是一样的。而日本人却发 现，其实家电应该有它自己独特的一个东西，它有金属的外观，很轻巧，很好用。日本人的设计理念，使他们一举占领了市场。这说明，设计师要做一些创新的东 西，用户的一些潜在的思维慢慢会被引导。</p>
+<p>设计师比较特别并经常使用的三种作法：观察、模拟和讲故事。</p>
+<p>通过观察用户的行为，发现用户有一些什么困难，有什么潜在的机会，去发生改变，发现灵感，灵感变成产品，最终给用户去用。而不是传统的市场调研的方法，去问卷调查，把猜想可能是A和B的做法，只是让用户选择，然后确认一下。</p>
+<p>模拟就是把潜在的、新的产品模拟出来，用户在使用过程中，设计师进一步观察，发现问题，触发灵感，去改造概念。这样做出来的产品上线之后，会更好、更接近于用户的需求。</p>
+<p>设计师还可以讲很好的故事，去说服公司高层去做一些新的产品。</p>
+<p>设计思维是一种以人为本的创新。从人的体验的角度去考虑，怎么去创造人的价值。设计本应首先考虑用户，其次是商业，而大多数企业恰恰相反。先考虑怎么赚钱，怎么去增加流量，而真正没有从用户的角度去思考。</p>
+<p><strong>用户体验&mdash;&mdash;创新三动力之一</strong></p>
+<p>商业创新通常有三大动力：商业模式、技术、用户体验。</p>
+<p>戴尔实现一种商业模式的创新。他把电脑完全用直销的模式去卖，所以价格可以做得很低，成为世界上第一大电脑销售商。</p>
+<p>Intel完成了技术的创新，每8个月可以让CPU速度增加一倍，价格减一半，所以他统治着电脑领域几十年。</p>
+<p>用户体验则是第三种创新，这种创新可以给企业带来巨大的发展。苹果五年前推出IPOD时，市场上已经有很多MP3播放器产品。IPOD本身没有什么 特殊的功能，也就是播放，倒歌，但是苹果在用户体验方面做了很好的创新，东西非常好用，很简单。IPOD要加功能，可以加得很多比如说要删除一个歌，比如 可以买歌买电影。但当时苹果要节约成本，用户也不需要。IPOD满足了用户简易、简单的体验。视觉上，IP0D白色的透明材料，在那个年代已经把用户体验 做到了极致，也因此吸引了大批顾客。</p>
+<p><strong><font color="#ff0000">二、 如何管理用户体验设计</font></strong></p>
+<p><strong>前馈与反馈</strong></p>
+<font size="2">上线之前百度要做调研，去发现用户自己没有说出来的一种需求，这就叫前馈。有一家公司叫OXO，他们发现当时所有的 人家，厨房用具的把手抓起来都很不舒服，不是很圆滑，是金属的，抓起来手感不好，于是OXO把所有的厨房用具的手柄都做得很大，塑胶的，螺纹的，抓着很舒 服。OXO的这种&ldquo;把手&rdquo;申请了专利，别人卖20美分刮苹果刀这类的小东西，他们就可以卖五美金。</font>
+
+<font size="2">出一个产品给用户用，用户发邮件给你，或者他点击，或者他告诉你这个产品好不好用。这是反馈。有一个酒店，他们发现 很多商务人员去酒店的时候，经常要在大堂里开一个小会议，因为房间里不够大。大堂并不是给他们开这种小会用的，酒店就去专门调查这些人的需求，做一些模拟 的环境，让大堂迅速可以变成几个小会议中心，所有的商务人士，都往里面挤，这家酒店就把这个市场抓住了。</font>
+
+<font size="2"><strong>先做减法再做加法</strong></font>
+
+<font size="2">国外的东西百度不会照搬过来，百度空间就三个基本需求，写文章，放照片，交友。其他的功能如留言版、视频什么的以后慢慢加上去，加一个看一个的效果，看点击量，看用户反馈，喜欢就再往上加。稳定性，速度，是非常最关键的。别的根据用户需求加减。</font>
+
+<font size="2"><strong>结构化地整合信息</strong></font>
+
+<font size="2">为什么做MP3搜索？因为百度发现搜索TOP，前十位，永远都有MP3。做这样一个搜索很自然。就像EBAY当年卖 汽车一样，发现很多人已经在其他网站里面卖汽车的，我做肯定会成功的，因为已有庞大的用户基础。互联网其实是信息的整合，我们就是在把不同类别的信息整合 起来，这也就是一种垂直搜索的模式。</font>
+
+<font size="2"><strong>维护用户真实选择的结果</strong></font>
+
+<font size="2">MP3 页面中&ldquo;MP3榜单家庭&rdquo;榜单不放在首页。如果把榜单放在首页，用户自然去点击，点击越多越不真实。百度把它隐藏起来，完全是真实数据做出来的。所以很多唱片公司以百度的榜单来作为他们专辑或者选歌手的一个量化标准，这成了他们市场的一个标杆。</font>
+
+<font size="2"><strong>弥补缺省，创造资源</strong></font>
+
+<font size="2">&ldquo;百度知道&rdquo;推出来一年多时间，已经解决了一千多万个问题。为什么做&ldquo;知道&rdquo;呢？第一，很多信息在网络中是没有的。 第二，很多人喜欢用智能语言来提问，比如说鸡蛋不应该跟什么放在一起。用户想用关键词搜索的时候，往往并不知道用什么关键词来查找想要的信息。第三，很多 关键词搜索结果往往大相径庭，比如说搜索&ldquo;苹果&rdquo;，出来的结果可能是水果也可能是电脑。搜索引擎没法判断用户的真实意图是什么，所以正确答案埋没在几千万 个答案里面，用户不知道真正的答案。</font>
+
+<font size="2">&ldquo;百度知道&rdquo;推出后，一切变得非常简单。只要提出任何一个问题，五分钟之内，一定会有人给你回答。每天知道可以解决 将近五万个问题，可以想像，两天就可以看到一本《十万个为什么》。而每一个答案，通过投票，最佳答案就沉淀在里面，成为网络上搜索的结果。所以百度知道是 搜索的一个非常好的补充。</font>
+
+<font size="2" color="#ff0000">创造工具，更要创造规则</font>
+
+<font size="2"><strong>如果要建立一个搜索社区，不仅仅是设计工具，还要设计规则。</strong></font>
+
+<font size="2">比如积分制度、专家团。如百度知道，有人会问，用户为什么要给你回答问题，能得到什么好处呢？而社区的用户讲究的不 是达到多少现实利益，更多的是成就感。给用户奖励积分，评选最佳答案，用户回答问题分数提高，成就感很好，晚上不睡觉也必须要回答几十个问题。这种感觉就 是一种规则，就是我们创造一种社区的规则。所以规则和工具很重要，能够让社区有良性的发展。</font>
+
+<font size="2"><strong>不去干扰、阻挡交流</strong></font>
+
+<font size="2">百度贴吧之所以能够发展壮大，关键是不用注册，不用找分类。你只要输入任何一个词，一点搜索，你就可以到目标区里面讨论，没有门槛的设计非常重要。贴吧的目的是让用户去交流，注册用户不重要，分类也不重要，不要去干扰，去阻挡他们进入这个讨论区。</font>
+
+<font size="2"><strong>关注用户需求，量多成产品</strong></font>
+
+<font size="2">为什么要做音乐掌门人？因为很多人已经在贴吧都讨论，不管是摇滚歌曲还是歌手都有。这些信息跟用户的行为有关，积到 一定的量，用户需求明显，产品自然诞生。百度百科也是一样，很多人在知道里面去讨论，说某个词不懂，类似情况达到一定量，百度就关注到了用户这个需求，百 科诞生。&ldquo;某个词&rdquo;发展到现在，估计已经有六七十万词条，不断地积累。这是开放的辞典，就是任何字，任何词条都可以不断去改，总是有几十个人在一起去编同 一类词，所以用户可以更方便的找到准确的信息。</font>
+
+<font size="2"><strong>适应用户，而不是去改变用户</strong></font>
+
+<font size="2">&ldquo;百度空间，稳定快速，先减后加。这是去适应用户的过程，而不是说要去改变用户，用户的习惯是没有办法改变的。</font>
+
+<font size="2">2006年百度交给华尔街的年报上，封面是一针一线，封底是《清明上河图》。专注一针一线的细节，就是一副宏伟的《清明上河图》&mdash;&mdash;这就是提升用户体验设计的真正力量。</font>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e5a682e4bd95e8aea9e7bd91e6b091e788b1e4b88ae4bda0e79a84e7bd91e7ab99e28094e28094e799bee5baa6e794a8e688b7e4bd93e9aa8ce680bbe79b91e8b088" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/03/06/e5a682e4bd95e8aea9e7bd91e6b091e788b1e4b88ae4bda0e79a84e7bd91e7ab99e28094e28094e799bee5baa6e794a8e688b7e4bd93e9aa8ce680bbe79b91e8b088/" class="article-date">
+  <time datetime="2008-03-06T05:11:00.000Z" itemprop="datePublished">Mar 6 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/03/06/e5a682e4bd95e8aea9e7bd91e6b091e788b1e4b88ae4bda0e79a84e7bd91e7ab99e28094e28094e799bee5baa6e794a8e688b7e4bd93e9aa8ce680bbe79b91e8b088/">如何让网民爱上你的网站——百度用户体验总监谈用户体验设计（2）</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <font size="2"><strong><font color="#ff0000">三、怎样在细节中改善用户体验</font></strong><br><br><strong>关注用户体验的细节</strong></font>
+
+<font size="2">用户体验调研远不应只是简单的你问我答。细节往往藏于用户说、做、想、感觉等各个具体行为之中&mdash;&mdash;</font>
+
+<font size="2">说：传统的市场调研方式，设计一个问卷，问用户喜不喜欢这个产品，或者给用户几种案，问用户喜欢哪一种，这就是说。</font>
+
+<font size="2">做：这是比说更好的数据。看用户做什么。甚至不要说，从他的行为已经发现了很多问题。人类学，设计学，心理学都是做 这件事。人类学家费晓东，专门在中国的一个农村观察了60年。60年的变化，解放前，解放后，观察某个人的行为过程，他就得到这个人行为演变的规律。这种 调研方式最近十年来已经被引进到设计里面去&mdash;&mdash;设计一些场景，让用户去用，然后去看他做些什么。</font>
+
+<font size="2">想：用户到底在想什么？他看到一个产品，上面可能功能很多，他可能脑瓜去想我不会用，我不知道怎么用，但是这只是他 的想法，没有表达出来。怎么能够了解这种想法呢？让他一边想一边去说。激发他去说。比如为一个网页做调研的时候，就让用户想这个链接认为会到什么地方去。 用户认为的地方可能跟网页点过去的初级设计页面是不一样的，这就形成一个用户的数据。</font>
+
+<font size="2">感觉：一个网站是很土还是很酷还是很贴心？这种感觉有一百种形容词，怎么能够把它真正发掘出来？这是细分人视觉的很重要的一个调研方式。</font>
+
+<font size="2">脚：用户是用他的脚来投票的，非常简单的道理，你的产品不好，他就走掉了。</font>
+
+<p><strong><font size="2">从细节中洞察</font></strong></p>
+<font size="2">很多人做了很多调研，形成很多数据。但是问题在于没有形成洞察。就是你不知道从这个数据里面去挖出一些信息形成设计标准。</font>
+
+<font size="2">怎么从数据中得到一种洞察？这也不是一件很容易的事情。比如说在厨房里做调研，可能有两种，一种是看主人怎么去用电 饭煲，这个过程，可能得到的结果是一个更好的电饭煲。这是针对产品的调研。另外一种是花两个小时，观察主人从切菜到洗菜，到煮菜，到吃完饭，怎么去洗这些 碗，这整个过程，发现各种各样存在的问题，也得到一个结论，这个结果是一个更好的，新一代的厨房用品，而这个跟电饭煲可能没有关系。</font>
+
+<p><strong><font size="2">跨国公司为什么在中国容易做不好</font></strong></p>
+<font size="2">很多大型跨国公司在海外市场都会遇上挫折，也是细节所决定。</font>
+
+<font size="2">NBA非常重视中国市场。他们把所有NBA的页面、新闻、各种各样的数据全部翻译成中文给中国用户去用，他们也请一些球星来，在中国办各种活动。</font>
+
+<font size="2">但是他们忽略了什么？比如说用户要看一场球赛，自然需要一个赛程表，NBA给的是：第一，美国的电视台，对中国的用 户，美国电视台没有任何意义；第二，美国的时间，中国时间是半夜。所以仅仅把所有东西翻译过来是不够的，要针对中国需求，很实在的去发现一些他们需要的东 西，让他真正去用。NBA可用性上面有问题，更不要说易用性的问题。很多跨国公司，只是把外面产品汉化过来，而没有去考虑细节问题。这跟技术没有关系，跟 很有钱也没有关系。就是这些细节做不好，用户用脚投票，走掉了，不会再来了。<br><br><strong><font color="#ff0000">四、百度对于用户体验是如何实践的？</font></strong></font>
+
+<font size="2"><strong>用户体验设计管理金字塔</strong>： </font>
+
+<font size="2"><img src="http://www.blueidea.com/articleimg/2007/03/4526/01.gif" alt=""></font>
+
+<font size="2">用户体验设计目标是什么？最重要的是要让产品有用，这个有用是指用户的需求。苹果90年代出来第一款PDA手机，叫牛顿，是非常失败的一个案例。在那个年代，其实很多人并没有PDA的需求，苹果把90％以上的投资放到他1％的市场份额上，所以失败势在必然。</font>
+
+<font size="2">其次是易用，这非常关键。不容易使用的产品，也是没用的。市场上手机有一百五十多种品牌，每一个手机有一两百种功 能，当用户买到这个手机的时候，他不知道怎么去用，一百多个功能他真的可能用的就五、六个功能。当他不理解这个产品对他有什么用，他可能就不会花钱去买这 个手机。产品要让用户一看就知道怎么去用，而不要去读说明书。这也是设计的一个方向。</font>
+
+<font size="2">设计的下一个方向就是友好。最早的时候，加入百度联盟，百度批准后，发这样一个邮件：百度已经批准你加入百度的联盟。批准，这个语调让人非常非常难受。所以现在说：祝贺你成为百度联盟的会员。文字上的这种感觉也是用户体验的一个细节。</font>
+
+<font size="2">视觉设计的目的其实是要传递一种信息，是让产品产生一种吸引力。是这种吸引力让用户觉得这个产品可爱。&ldquo;苹果&rdquo;这个产品其实就有这样一个概念，就是能够让用户在视觉上受到吸引，爱上这个产品。视觉能创造出用户黏度。</font>
+
+<font size="2">前四者做好，就融会贯通上升到品牌。这个时候去做市场推广，可以做很好的事情。前四个基础没做好，推广越多，用户用得不好，他会马上走，而且永远不会再来。他还会告诉另外一个人说这个东西很难用。</font>
+
+<font size="2">用户体验设计经常犯的错误是，直接开发直接上线。很多人说，互联网作为一个实验室，我一上线就可以知道结 恕Ｕ獾比灰彩且桓稣 返睦砟睢５ 窃谏舷咧 坝刑 嗟拇砦螅 敲淳突岽蟠蟮赜跋焓绿 峋帧Ｒ豢 嫉氖焙蚓湍芎茏既返刈鞒鲆恍┡卸希 鞒鲆恍┤∩幔 诨チ 飧鍪笛槭依铮 拍芄蛔龅酶 谩?lt;/p&gt; </font>
+
+<p><strong><font size="2">用户需求是根本，但用户需求不一定是功能</font></strong></p>
+<font size="2">百度在半年前推出空间，从功能上来说它比较其他同类产品没有什么特别大的变化，就是三个最基本的功能：上传文章，上 传图片，交友。这三个功能，所有博客都有做，而且有更多的功能。但是那个时候，大部分的博客，不管是CSP还是门户网站，都不能解决一个问题：速度。性能 很不稳定，文章上传了，可能登录就进不去了，可能上传的东西没了。其实用户最基本的需求，就是速度和稳定性。百度虽然才做博客，但百度有很大的平台，有很 多的服务器，有很大的流量，完全可以从稳定性和速度上把这两个用户体验做好，其次再做一些功能。很难用的产品注定会失败的，这个是非常关键的。</font>
+
+<font size="2">百度的搜索，可以用五个字归纳：快准全新稳。每一个字可以分解成很多小项，跟所有的搜索引擎PK，每一个字后面都代 表着一种用户体验。一个博客一推出来就有几百个链接，几十种功能，很多网站说我可以这样做，国外都是这样做的，像MYSPACE做得很成功，我就把它照搬 过来。但是很多中国用户其实跟美国用户是不一样的，中国70％的人是30岁以下的，以娱乐为主，而不是信息搜索为主。而美国是70％是30岁以上的，非常 成熟和理性的这一类。很多功能拿到中国，中国人是不会用的。这就是你增加越多的功能，你就越增加产品的复杂性。</font>
+
+<p><strong><font size="2">怎么完成易用性这个任务</font></strong></p>
+<font size="2">百度就有一个专门做易用性这样的团队，每天请各种用户来做各种各样的调研。</font>
+
+<font size="2">特别提出，不要忽视文字的力量。当年的EBAY，注册一个EBAY的帐户，第一步第二步第三步。第三步，原来是这样 说的：&ldquo;你只要在你的邮件确认一下你就成功了&rdquo;。这样一句话，很长。但是用户不是一个一个字去读，他是扫描，他一眼扫过去，他的意向可能就是成功了。把成 功两个字记住他就走掉了，不会再去确认这个邮件了。EBAY后来改成五个大字，叫&ldquo;快要成功了&rdquo;。五个大字，非常大。用户一看，我没有成功，我要做什么 事，下面写邮件。所以几个字就让EBAY提升了10％到20％的注册率，相当于每天给他带来一百万的最终价值。</font>
+
+<p><strong><font size="2">怎么能让用户爱上你的产品</font></strong></p>
+<font size="2">可以通过视觉去改善，去提供一种感觉。这就是为什么百度和Google要做节日LOGO的原因，因为搜索这个产品也是太普通了。节日的时候做做LOGO，用户产生一种感觉、情感，黏度会更好。这一类的东西我们都可以从视觉上去提高。</font>
+
+<font size="2">百度节日LOGO：</font>
+
+<font size="2"><img src="http://www.blueidea.com/articleimg/2007/03/4526/logo_bf.gif" alt=""></font>
+
+<p><strong><font size="2">用户体验是一个多背景的梯形团队</font></strong></p>
+<font size="2">为什么多背景呢？首先你要了解用户的需求，这不是很容易的事情。先要从社会学，人类学，心理学角度大量研究。然后需 要技术人员去模拟UI的技术或者是后台的技术。视觉体验，又要从工业设计这个角度去看。这些事都要不同背景不同类型的人去做。同时还要分工程师，产品经 理。甚至一些公司高层、市场部的人都要在一起工作。为什么说是梯型呢？因为第一要了解各个专业的人，他们知道些什么东西，你怎么跟他们合作；第二就是更专 业。两方面都要去共同发展。这样整个联系在一起，就变成一个完整团队。</font>
+
+<font size="2">另外一点很重要，UE设计并非由用户体验部来设计。百度成立用户体验部，是因为用户体验部可以协助其他部门更专业、更系统地去做用户体验这件事。</font>
+
+<font size="2">百度每天几亿的流量，稍微做一点改变，就可以得到很大的提升。比如说百度搜索结果的摘要，你加两个字或者是减两个字 可能就影响到一百万的收入。百度首页上之前的一句话叫&ldquo;把百度设为首页&rdquo;，最早是&ldquo;设百度为首页&rdquo;，就改一个字，每天会增加几千个以上的点击量。用户体验 部要做的是指挥，而不是独自做专业的事，要让所有的人一起来思考问题，是跟其他部门在一起工作，提供给其他部门更专业更系统的用户体验信息，协助所有的人 员来做这个事情。<br><br></font>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/36/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/page/38/">38</a><a class="page-number" href="/page/39/">39</a><span class="space">&hellip;</span><a class="page-number" href="/page/57/">57</a><a class="extend next" rel="next" href="/page/38/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>WordPress条件标签 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="条件标签
+简介
+在模板文件中，我们可以根据能与某页面相匹配的条件，利用条件标签更改该页面上将要显示的内容以及内容的显示方式。例如，如果希望在博客首页文章列表的上方显示一段文字，可以利用 is_home()条件标签轻松实现这一效果。
+注意：条件标签与WordPress模板层级密切相关。
+条件
+所有条件标签都会检查是否有条件可符合相应页面，之后返回TRUE或者FALSE。下面列出能够使各个条件标签返回">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WordPress条件标签">
+<meta property="og:url" content="http://yoursite.com/2010/07/24/wordpresse69da1e4bbb6e6a087e7adbe/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="条件标签
+简介
+在模板文件中，我们可以根据能与某页面相匹配的条件，利用条件标签更改该页面上将要显示的内容以及内容的显示方式。例如，如果希望在博客首页文章列表的上方显示一段文字，可以利用 is_home()条件标签轻松实现这一效果。
+注意：条件标签与WordPress模板层级密切相关。
+条件
+所有条件标签都会检查是否有条件可符合相应页面，之后返回TRUE或者FALSE。下面列出能够使各个条件标签返回">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WordPress条件标签">
+<meta name="twitter:description" content="条件标签
+简介
+在模板文件中，我们可以根据能与某页面相匹配的条件，利用条件标签更改该页面上将要显示的内容以及内容的显示方式。例如，如果希望在博客首页文章列表的上方显示一段文字，可以利用 is_home()条件标签轻松实现这一效果。
+注意：条件标签与WordPress模板层级密切相关。
+条件
+所有条件标签都会检查是否有条件可符合相应页面，之后返回TRUE或者FALSE。下面列出能够使各个条件标签返回">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main"><article id="post-wordpresse69da1e4bbb6e6a087e7adbe" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/07/24/wordpresse69da1e4bbb6e6a087e7adbe/" class="article-date">
+  <time datetime="2010-07-23T18:08:46.000Z" itemprop="datePublished">Jul 24 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress开发/">wordpress开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      WordPress条件标签
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+		<a data-url="http://yoursite.com/2010/07/24/wordpresse69da1e4bbb6e6a087e7adbe/" data-title="WordPress条件标签" data-id="mlw08j5iib9aobtk" class="article-share-link">Share</a>
+	  
+      
+        <a href="http://yoursite.com/2010/07/24/wordpresse69da1e4bbb6e6a087e7adbe/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/templates/">templates</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">Contents</strong>
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#条件标签"><span class="toc-number">1.</span> <span class="toc-text">条件标签</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#简介"><span class="toc-number">1.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#条件"><span class="toc-number">1.2.</span> <span class="toc-text">条件</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#主页"><span class="toc-number">1.2.1.</span> <span class="toc-text">主页</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#标题页"><span class="toc-number">1.2.2.</span> <span class="toc-text">标题页</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#管理栏"><span class="toc-number">1.2.3.</span> <span class="toc-text">管理栏</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#单篇日志页面"><span class="toc-number">1.2.4.</span> <span class="toc-text">单篇日志页面</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#置顶日志"><span class="toc-number">1.2.5.</span> <span class="toc-text">置顶日志</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#评论弹出式窗口"><span class="toc-number">1.2.6.</span> <span class="toc-text">评论弹出式窗口</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#任何包含日志的页面"><span class="toc-number">1.2.7.</span> <span class="toc-text">任何包含日志的页面</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#PAGE页面"><span class="toc-number">1.2.8.</span> <span class="toc-text">PAGE页面</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#子页面"><span class="toc-number">1.2.9.</span> <span class="toc-text">子页面</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Is_a_Page模板"><span class="toc-number">1.2.10.</span> <span class="toc-text">Is a Page模板</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#类别页面"><span class="toc-number">1.2.11.</span> <span class="toc-text">类别页面</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#标签页面"><span class="toc-number">1.2.12.</span> <span class="toc-text">标签页面</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分类法页面"><span class="toc-number">1.3.</span> <span class="toc-text">分类法页面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#注册过的分类法"><span class="toc-number">1.4.</span> <span class="toc-text">注册过的分类法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#作者页面"><span class="toc-number">1.4.1.</span> <span class="toc-text">作者页面</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#日期页面"><span class="toc-number">1.4.2.</span> <span class="toc-text">日期页面</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#存档页面"><span class="toc-number">1.4.3.</span> <span class="toc-text">存档页面</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#搜索结果页面"><span class="toc-number">1.4.4.</span> <span class="toc-text">搜索结果页面</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#404_Not_Found页面"><span class="toc-number">1.4.5.</span> <span class="toc-text">404 Not Found页面</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#分页型页面"><span class="toc-number">1.4.6.</span> <span class="toc-text">分页型页面</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#附件"><span class="toc-number">1.4.7.</span> <span class="toc-text">附件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#独立页面、单篇日志或附件"><span class="toc-number">1.4.8.</span> <span class="toc-text">独立页面、单篇日志或附件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#新闻聚合器"><span class="toc-number">1.4.9.</span> <span class="toc-text">新闻聚合器</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#引用通告（Trackback）"><span class="toc-number">1.4.10.</span> <span class="toc-text">引用通告（Trackback）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#预览"><span class="toc-number">1.4.11.</span> <span class="toc-text">预览</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Has_An_Excerpt_（摘要）"><span class="toc-number">1.4.12.</span> <span class="toc-text">Has An Excerpt （摘要）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Inside_The_Loop_（在WordPress主循环中）"><span class="toc-number">1.4.13.</span> <span class="toc-text">Inside The Loop （在WordPress主循环中）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Is_Sidebar_Active（侧边栏是否被激活）"><span class="toc-number">1.4.14.</span> <span class="toc-text">Is Sidebar Active（侧边栏是否被激活）</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#实例"><span class="toc-number">1.5.</span> <span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#单篇日志"><span class="toc-number">1.5.1.</span> <span class="toc-text">单篇日志</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#区分基于日期的页面"><span class="toc-number">1.5.2.</span> <span class="toc-text">区分基于日期的页面</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#可视化的侧边栏内容"><span class="toc-number">1.5.3.</span> <span class="toc-text">可视化的侧边栏内容</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#404页面"><span class="toc-number">1.5.4.</span> <span class="toc-text">404页面</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#动态菜单高亮"><span class="toc-number">1.5.5.</span> <span class="toc-text">动态菜单高亮</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#在主题的footer-php文件中"><span class="toc-number">1.5.6.</span> <span class="toc-text">在主题的footer.php文件中</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#条件标签索引"><span class="toc-number">1.6.</span> <span class="toc-text">条件标签索引</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#常用函数"><span class="toc-number">1.7.</span> <span class="toc-text">常用函数</span></a></li></ol></li></ol>
+			</div>
+		
+		<!-- 文章目录结束 -->
+		
+        <h4 id="条件标签">条件标签</h4>
+<h5 id="简介">简介</h5>
+<p>在模板文件中，我们可以根据能与某页面相匹配的条件，利用条件标签更改该页面上将要显示的内容以及内容的显示方式。例如，如果希望在博客首页文章列表的上方显示一段文字，可以利用 <a href="http://www.wordpress.la/codex-%E6%9D%A1%E4%BB%B6%E6%A0%87%E7%AD%BE.html#is_home" target="_blank" rel="external">is_home()</a>条件标签轻松实现这一效果。</p>
+<p>注意：条件标签与WordPress<a href="http://www.wordpress.la/codex-%E6%A8%A1%E6%9D%BF%E5%B1%82%E7%BA%A7.html" target="_blank" rel="external">模板层级</a>密切相关。</p>
+<h5 id="条件">条件</h5>
+<p>所有条件标签都会检查是否有条件可符合相应页面，之后返回TRUE或者FALSE。下面列出能够使各个条件标签返回TRUE的条件：</p>
+<h6 id="主页"><a name="is_home">主页</a></h6>
+<p><strong>is_home()</strong></p>
+<p>显示博客主页时，该条件标签返回TRUE。</p>
+<p><strong>注意</strong>：如果将静态页面作为博客主页，该标签会在显示日志页面时返回TRUE。</p>
+<h6 id="标题页"><a name="is_front_page">标题页</a></h6>
+<p><strong>is_front_page()</strong></p>
+<p>显示博客头版消息（无论是日志或是页面）。当系统显示博客主页且管理面板的<strong>设置</strong>&gt;<strong>阅读</strong>菜单下“<strong>主页显示为</strong>”选项设为最近发表的文章”，或者’<strong>设置</strong>&gt;<strong>阅读</strong>菜单下“<strong>主页显示为</strong>”选项设为且&quot;主页&quot;是当前被显示的页面时，is_front_page()标签返回TRUE。注意：该标签在WordPress 2.5版本中首次亮相。</p>
+<h6 id="管理栏"><a name="is_admin">管理栏</a></h6>
+<p><strong>is_admin()</strong></p>
+<p>显示控制板或管理栏时，is_admin()标签返回TRUE。</p>
+<h6 id="单篇日志页面"><a name="is_single">单篇日志页面</a></h6>
+<p><strong>is_single()</strong></p>
+<p>显示任何单独一篇日志时，is_single()标签返回TRUE。</p>
+<p><strong>is_single(‘17’)</strong></p>
+<p>显示编号为17的单篇日志时，该标签返回TRUE。</p>
+<p><strong>is_single(‘Irish Stew’)</strong></p>
+<p>显示标题为&quot;Irish Stew&quot;的单篇日志时，该标签返回TRUE。</p>
+<p><strong>is_single(‘beef-stew’)</strong></p>
+<p>显示别名为&quot;beef-stew&quot;的单篇日志时，该标签返回TRUE。</p>
+<p><strong>is_single(array(17,’beef-stew’,’Irish Stew’))</strong></p>
+<p>当所显示的单篇日志编号为17，或post_name为&quot;beef-stew&quot;，或post_title为&quot;Irish Stew&quot;时，is_single(array(17,’beef-stew’,’Irish Stew’))标签返回TRUE。注意：数组功能首次出现于WordPress 2.5。</p>
+<h6 id="置顶日志"><a href="http://www.wordpress.la/" target="_blank" rel="external">置顶日志</a></h6>
+<p><strong>is_sticky()</strong></p>
+<p>若当前日志的&quot;Stick this post to the front page（将该日志在首页置顶）&quot;复选框被选中，is_sticky()返回TRUE。此时标签没有提供日志的编号变量，因此系统会用到<a href="http://www.wordpress.la/codex-WordPress%E4%B8%BB%E5%BE%AA%E7%8E%AF.html" target="_blank" rel="external">WordPress主循环the Loop</a>的日志编号。注意：该标签首次出现于WordPress 2.7。</p>
+<p><strong>is_sticky(‘17’)</strong></p>
+<p>若编号为17的日志被置顶，该标签返回TRUE。</p>
+<h6 id="评论弹出式窗口">评论弹出式窗口</h6>
+<p><strong>is_comments_popup()</strong></p>
+<p>显示的内容在评论弹出式窗口中时，该标签返回TRUE。</p>
+<h6 id="任何包含日志的页面">任何包含日志的页面</h6>
+<p><strong>comments_open()</strong></p>
+<p>若评论允许当前日志在<a href="http://www.wordpress.la/codex-WordPress%E4%B8%BB%E5%BE%AA%E7%8E%AF.html" target="_blank" rel="external">WordPress主循环</a>中运行，该标签返回TRUE。</p>
+<p><strong>pings_open()</strong></p>
+<p>若引用通告ping允许当前日志在<a href="http://www.wordpress.la/codex-WordPress%E4%B8%BB%E5%BE%AA%E7%8E%AF.html" target="_blank" rel="external">WordPress主循环</a>中运行，该标签返回TRUE。</p>
+<h6 id="PAGE页面"><a name="is_page">PAGE页面</a></h6>
+<p>这里的PAGE指的是WordPress的“<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>”功能，而不是博客生成的网页。</p>
+<p><strong>is_page()</strong></p>
+<p>显示任何一篇<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>时，该标签返回TRUE。</p>
+<p><strong>is_page(‘42’)</strong></p>
+<p>显示编号为42的<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>时，该标签返回TRUE。</p>
+<p><strong>is_page(‘About Me And Joe’)</strong></p>
+<p>若显示的<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>的post_name为&quot;About Me And Joe&quot;，该标签返回TRUE。</p>
+<p><strong>is_page(‘about-me’)</strong></p>
+<p>若显示的<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>的post_name（别名）为&quot;about-me&quot;，该标签返回TRUE。</p>
+<p><strong>is_page(array(42,’about-me’,’About Me And Joe’))</strong></p>
+<p>当所显示的<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>编号为42，或post_name为&quot;about-me&quot;，或post_title为&quot;About Me And Joe&quot;时，is_page(array(42,’about-me’,’About Me And Joe’))标签返回TRUE。注意：数组功能首次出现于WordPress 2.5。</p>
+<h6 id="子页面">子页面</h6>
+<p>目前is_subpage()函数尚未出现，但我们可以用以下代码来判断某页面是否子页面：<br>  <pre>&lt;?php<br>// Get $post if you’re inside a function<br>global $post;</pre></p>
+<p>if ( is_page() &amp;&amp; $post-&gt;post_parent ) {<br>    // This is a subpage</p>
+<p>} else {<br>    // This is not a subpage<br>}<br>?&gt;</p>
+<p>也可以将这一功能添加到functions.php文件中：</p>
+<pre>function is_tree($pid) {    // $pid = The page we're looking for pages underneath
+    global $post;       // We load this as we're outside of the post
+    if(is_page()&amp;&amp;($post-&gt;post_parent==$pid||is_page($pid))) return true; // Yes, it's in the tree
+    else return false;  // No, it's outside
+};</pre>
+
+<p>然后调用is_tree(‘id’)来判断页面是否在目录树中。在下面的代码示例中，我们可以用is_tree(‘2’)来代替第一个if标签中的&quot;is_page(‘about’) || $post-&gt;post_parent == ‘2’&quot;。注意，如果有两层以上页面，父页面指的是子页面的上一级页面而不是顶级页面。</p>
+<p>如果要判断当前页面是否是某个特定页面或者是否是某一页面的子页面（例如在一个基于页面的网站的不同版块上显示不同banner广告），可以先从后台获取父页面的ID，然后按以下方式进行编码：</p>
+<pre>&lt;?php
+
+if ( is_page('about') || $post-&gt;post_parent == '2' ) { 
+    $bannerimg = 'home.jpg';
+
+} elseif ( is_page('learning') || $post-&gt;post_parent == '56' ) {    
+    $bannerimg = 'teaching.jpg';
+
+} elseif ( is_page('admissions') || $post-&gt;post_parent == '15' ) { 
+    $bannerimg = 'admissions.jpg';
+
+} else { 
+    $bannerimg = 'home.jpg'; // Fall-through  
+}    
+
+?&gt;</pre>
+
+<p>如果希望进行多次页面判断，最好创建一个长期函数（is_cpage()）。例如，如果将is_subpage()引入wp，用户就可以在functions.php文件中修改函数而不必做其它多余改动了。</p>
+<h6 id="Is_a_Page模板">Is a Page模板</h6>
+<p>自WordPress 2.5版起，用户可以通过Is a Page模板来判断目前是否位于页面模板中，或是否在使用某个特定的页面模板。</p>
+<p><strong>is_page_template() </strong></p>
+<p>目前是否使用了页面模板</p>
+<p><strong>is_page_template(‘about.php’) </strong></p>
+<p>是否使用页面模板’about’？注意：页面模板与其它条件标签有所不同，用户需要使用文件名（如 about.php 或my_page_template.php）来指定某个页面模板。</p>
+<h6 id="类别页面"><a name="is_category">类别页面</a></h6>
+<p><strong>is_category()</strong></p>
+<p>显示类别存档页面页面时，is_category()标签返回TRUE。</p>
+<p><strong>is_category(‘9’)</strong></p>
+<p>显示类别ID为9的存档页面时，is_category(‘9’)标签返回TRUE。</p>
+<p><strong>is_category(‘Stinky Cheeses’) </strong></p>
+<p>显示雷冰名称为“Stinky Cheeses”的存档页面时，is_category(‘Stinky Cheeses’)标签返回TRUE。</p>
+<p><strong>is_category(‘blue-cheese’) </strong></p>
+<p>显示类别别名为&quot;blue-cheese&quot;的存档页面时，is_category(‘blue-cheese’) 标签返回TRUE。</p>
+<p><strong>is_category(array(9,’blue-cheese’,’Stinky Cheeses’)) </strong></p>
+<p>当所显示的类别存档term_ID为9，或别名为&quot;blue-cheese&quot;，或类别名称为&quot;Stinky Cheeses&quot;时，is_category(array(9,’blue-cheese’,’Stinky Cheeses’)) 标签返回TRUE。注意：数组功能首次出现于WordPress 2.5。</p>
+<p><strong>in_category(‘5’) </strong></p>
+<p>若当前日志属于某个指定ID的类别，in_category(‘5’) 标签返回TRUE。</p>
+<p>注意：判断条件是否符合时，请不要将“in”写作“is”，两者有很大区别。</p>
+<h6 id="标签页面"><a name="is_tag">标签页面</a></h6>
+<p><strong>is_tag()</strong></p>
+<p>显示标签存档页面时，is_tag() 会返回TRUE。</p>
+<p><strong>is_tag(‘mild’) </strong></p>
+<p>显示别名为“mild”的标签的存档页面时，is_tag(‘mild’) 返回TRUE。</p>
+<p><strong>is_tag(array(‘sharp’,’mild’,’extreme’))</strong></p>
+<p>若显示的标签别名为&quot;sharp&quot;、 &quot;mild&quot;或&quot;extreme&quot;，is_tag(array(‘sharp’,’mild’,’extreme’)) 返回TRUE。注意：数组功能首次出现于WordPress 2.5。</p>
+<p><strong>has_tag()</strong></p>
+<p>若当前日志有标签，has_tag()返回TRUE。该标签必须用在<a href="http://www.wordpress.la/codex-WordPress%E4%B8%BB%E5%BE%AA%E7%8E%AF.html" target="_blank" rel="external">WordPress主循环</a>中。注意：has_tag标签首次出现在WordPress 2.6版中。</p>
+<p><strong>has_tag(‘mild’) </strong></p>
+<p>若当前日志标签为“mild”，as_tag(‘mild’) 返回TRUE。</p>
+<p><strong>has_tag(array(‘sharp’,’mild’,’extreme’)) </strong></p>
+<p>若当前日志标签为数组中任一个标签，has_tag(array(‘sharp’,’mild’,’extreme’)) 返回TRUE。</p>
+<h5 id="分类法页面">分类法页面</h5>
+<dl><dt><tt>is_tax()</tt></dt><dd>显示任何分类法归档页面时，is_tax()会返回TRUE。 </dd><dt><tt>is_tax(‘mild’)</tt></dt><dd>显示分类法归档页面别名为“mild”时，<tt>is_tax(‘mild’)返回TRUE。</tt> </dd><dt><tt>is_tax(array(‘sharp’,’mild’,’extreme’))</tt></dt><dd>当前分类法归档别名为数组中的任一个&quot;sharp&quot;, &quot;mild&quot;, 或 &quot;extreme&quot;时，<tt>is_tax(array(‘sharp’,’mild’,’extreme’))</tt> 返回TRUE。</dd></dl>
+
+<p><a name="A_Registered_Taxonomy"></a></p>
+<h5 id="注册过的分类法">注册过的分类法</h5>
+<dl><dt><tt>is_taxonomy()</tt></dt><dd>当某一种分类法通过<a href="http://codex.wordpress.org/Function_Reference/register_taxonomy" target="_blank" rel="external">register_taxonomy()</a>注册， <tt>is_taxonomy()</tt> 返回TRUE。</dd></dl>
+
+<h6 id="作者页面"><a name="is_author">作者页面</a></h6>
+<p><strong>is_author() </strong></p>
+<p>显示作者页面时，is_author()返回TRUE。</p>
+<p><strong>is_author(‘4’) </strong></p>
+<p>若显示的是ID为4的作者的存档页面，is_author(‘4’) 返回TRUE。</p>
+<p><strong>is_author(‘Vivian’) </strong></p>
+<p>若显示的是用户名为“Vivian”的作者的存档页面，is_author(‘Vivian’) 返回TRUE。</p>
+<p><strong>is_author(‘john-jones’) </strong></p>
+<p>若显示的是用户名为“john-jones”的作者的存档页面，is_author(‘john-jones’) 返回TRUE。</p>
+<p><strong>is_author(array(4,’john-jones’,’Vivian’)) </strong></p>
+<p>若页面的用户名ID为4，或user_nicename为“john-jones”，或用户名为“Vivian”，is_author(array(4,’john-jones’,’Vivian’)) 返回TRUE。注意：数组功能首次出现于WordPress 2.5。</p>
+<h6 id="日期页面"><a name="is_date">日期页面</a></h6>
+<p><strong>is_date()</strong></p>
+<p>显示日期相关的存档页面（如月存档，年存档，日存档等基于时间的存档页面）时，is_date() 返回TRUE。</p>
+<p><strong>is_year() </strong></p>
+<p>显示年存档信息时，is_year() 返回TRUE。</p>
+<p><strong>is_month()</strong></p>
+<p>显示月存档信息时，is_month() 返回TRUE。</p>
+<p><strong>is_day() </strong></p>
+<p>显示日存档信息时，is_day() 返回TRUE。</p>
+<p><strong>is_time() </strong></p>
+<p>显示某时、某分或某秒的存档信息时，is_time() 返回TRUE。</p>
+<h6 id="存档页面"><a name="is_archive">存档页面</a></h6>
+<p><strong>is_archive() </strong></p>
+<p>无论显示何种存档页面时，is_archive() 都会返回TRUE。类别存档、标签存档、作者存档以及日期存档页面都属于存档页面。</p>
+<h6 id="搜索结果页面">搜索结果页面</h6>
+<p><strong>is_search() </strong></p>
+<p>显示搜索结果页面时，is_search() 返回TRUE。</p>
+<h6 id="404_Not_Found页面"><a name="is_404">404 Not Found页面</a></h6>
+<p><strong>is_404() </strong></p>
+<p>出现&quot;HTTP 404: Not Found&quot;错误后所显示的页面。</p>
+<h6 id="分页型页面"><a name="is_paged">分页型页面</a></h6>
+<p><strong>is_paged()</strong></p>
+<p>当前页面需要分页显示时，is_paged()返回TRUE。分页型页面是指某个存档页面或需要分成若干页显示的主页，显示第二页以及之后页面时，is_paged()返回TRUE。有些日志或<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>使用&lt;!—nextpage—&gt;快速标签分页显示其内容，这些日志和<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>都不属于分页型页面。</p>
+<h6 id="附件"><a name="is_attachment">附件</a></h6>
+<p><strong>is_attachment() </strong></p>
+<p>显示某篇日志或<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>的附件文件时，is_attachment() 会返回TRUE。附件可以是一张图片，也可以是用户所上传的其它文件。附件能够显示在“页面”或模板上。更多信息请参阅“<a href="http://wordpress.la/codex-%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">图片和附件的使用</a>”。</p>
+<h6 id="独立页面、单篇日志或附件">独立页面、单篇日志或附件</h6>
+<p><strong>is_singular()</strong></p>
+<p>当is_single(), is_page() 或is_attachment()返回TRUE时，is_singular() 也返回TRUE。</p>
+<h6 id="新闻聚合器">新闻聚合器</h6>
+<p><strong>is_feed()</strong></p>
+<p>网站需要使用RSS订阅时，is_feed()返回TRUE。一般情况下会用到is_feed()标签的是WordPress系统和插件开发人员，普通WordPress用户很少用到is_feed()标签。</p>
+<h6 id="引用通告（Trackback）">引用通告（Trackback）</h6>
+<p><strong>is_trackback() </strong></p>
+<p>网站需要将WordPress钩子勾入Trackback。一般情况下会用到这个标签的是WordPress系统和插件开发人员，普通WordPress用户很少用到is_feed()标签。</p>
+<h6 id="预览">预览</h6>
+<p><strong>is_preview() </strong></p>
+<p>若目前页面是在草稿状态下显示的（即预览），is_preview() 返回TRUE。</p>
+<h6 id="Has_An_Excerpt_（摘要）">Has An Excerpt （摘要）</h6>
+<p><strong>as_excerpt() </strong></p>
+<p>当前日志要显示摘要时，as_excerpt() 返回TRUE。</p>
+<p><strong>has_excerpt(‘42’) </strong></p>
+<p>若ID为42的日志要显示摘要时，has_excerpt(‘42’) 返回TRUE。</p>
+<pre>&lt;?php
+// Get $post if you're inside a function
+global $post;
+
+if ( empty($post-&gt;post_excerpt) ) {
+    // This post has no excerpt
+} else {
+    // This post has excerpt
+}
+?&gt;</pre>
+
+<h6 id="Inside_The_Loop_（在WordPress主循环中）">Inside The Loop （在WordPress主循环中）</h6>
+<p><strong>in_the_loop() </strong></p>
+<p>判断目前是否在WordPress主循环中。该标签适用于插件开发人员，若目前在WordPress主循环中，该标签返回TRUE。</p>
+<h6 id="Is_Sidebar_Active（侧边栏是否被激活）">Is Sidebar Active（侧边栏是否被激活）</h6>
+<p><strong>is_active_sidebar() </strong></p>
+<p>检查现有侧边栏是否被激活（是否启用）。若侧边栏被启用，is_active_sidebar() 返回TRUE，否则返回FALSE。该条件函数引入于WordPress 2.8版。</p>
+<h5 id="实例">实例</h5>
+<p>下面是一些对条件标签的实际应用。</p>
+<h6 id="单篇日志">单篇日志</h6>
+<p>下面这个例子向我们展示了怎样用is_single()为某个单独日志页面显示独特内容：</p>
+<pre>if (is_single())
+{
+     echo 'This is just one of many fabulous entries in the ' . single_cat_title() . ' 
+category!';
+}</pre>
+
+<h6 id="区分基于日期的页面">区分基于日期的页面</h6>
+<p>如果访问者按日期浏览网站，我们可以用不同颜色标注不同年份的日志或其它信息：</p>
+<pre>&lt;?php
+// this starts The Loop
+if ( have_posts() ) : while ( have_posts() ) : the_post(); ?&gt;
+&lt;h2 id=&quot;post-&lt;?php the_ID(); ?&gt;&quot;&gt;
+&lt;a href=&quot;&lt;?php the_permalink() ?&gt;&quot; rel=&quot;bookmark&quot; title=&quot;Permanent Link to &lt;?php 
+the_title(); ?&gt;&quot;&gt;
+&lt;?php the_title(); ?&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;small&gt;&lt;?php the_time('F jS, Y') ?&gt; &lt;!-- by &lt;?php the_author() ?&gt; --&gt;&lt;/small&gt;
+
+&lt;?php
+// are we showing a date-based archive?
+if (is_date())
+
+{
+     if (date('Y') != get_the_date('Y'))
+     {
+          // this post was written in a previous year
+          // so let's style the content using the &quot;oldentry&quot; class
+          echo '&lt;div class=&quot;oldentry&quot;&gt;';
+     } else {
+          echo '&lt;div class=&quot;entry&quot;&gt;';
+     }
+} else {
+     echo '&lt;div class=&quot;entry&quot;&gt;';
+}
+the_content('Read the rest of this entry »'); 
+?&gt;
+&lt;/div&gt;</pre>
+
+<h6 id="可视化的侧边栏内容">可视化的侧边栏内容</h6>
+<p>本例根据访问者当前浏览的界面，在侧边栏上显示不同内容。</p>
+<pre>&lt;!-- begin sidebar --&gt;
+&lt;div id=&quot;sidebar&quot;&gt;
+&lt;?php
+// let's generate info appropriate to the page being displayed
+if (is_home()) {
+        // we're on the home page, so let's show a list of all top-level categories
+        echo &quot;&lt;ul&gt;&quot;;
+        wp_list_cats('optionall=0&amp;sort_column=name&amp;list=1&amp;children=0');
+        echo &quot;&lt;/ul&gt;&quot;;
+} elseif (is_category()) {
+        // we're looking at a single category view, so let's show _all_ the categories
+         echo &quot;&lt;ul&gt;&quot;;
+        wp_list_cats('optionall=1&amp;sort_column=name&amp;list=1&amp;children=1&amp;hierarchical=1');
+        echo &quot;&lt;/ul&gt;&quot;;
+} elseif (is_single()) {
+        // we're looking at a single page, so let's not show anything in the sidebar
+} elseif (is_page()) {
+        // we're looking at a static page.  Which one?
+        if (is_page('About')) {
+             // our about page.
+             echo &quot;&lt;p&gt;This is my about page!&lt;/p&gt;&quot;;
+        } elseif (is_page('Colophon')) {
+             echo &quot;&lt;p&gt;This is my colophon page, running on WordPress &quot; . bloginfo('version') . &quot;&lt;/p&gt;&quot;;
+        } else {
+              // catch-all for other pages
+              echo &quot;&lt;p&gt;Vote for Pedro!&lt;/p&gt;&quot;;
+        }
+} else {
+        // catch-all for everything else (archives, searches, 404s, etc)
+        echo &quot;&lt;p&gt;Pedro offers you his protection.&lt;/p&gt;&quot;;
+} // That's all, folks!
+?&gt;
+&lt;form id=&quot;searchform&quot; method=&quot;get&quot; action=&quot;&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;&quot;&gt;
+&lt;div&gt;
+&lt;input type=&quot;text&quot; name=&quot;s&quot; id=&quot;s&quot; size=&quot;15&quot; /&gt;
+&lt;input type=&quot;submit&quot; value=&quot;&lt;?php _e('Search'); ?&gt;&quot; /&gt;
+&lt;/div&gt;
+&lt;/form&gt;
+
+&lt;/div&gt;
+&lt;!-- end sidebar --&gt;</pre>
+
+<h6 id="404页面">404页面</h6>
+<p><a href="http://www.wordpress.la/codex-%E4%BC%98%E5%8C%96Error%20404%E9%A1%B5%E9%9D%A2.html" target="_blank" rel="external">设计Error 404页面</a>中的<a href="http://www.wordpress.la/codex-%E4%BC%98%E5%8C%96Error%20404%E9%A1%B5%E9%9D%A2.html#friendly" target="_blank" rel="external">编写友好的错误信息</a>部分有一个使用PHP条件函数isset()的示例。</p>
+<h6 id="动态菜单高亮">动态菜单高亮</h6>
+<p><a href="http://www.wordpress.la/codex-%E9%AB%98%E4%BA%AE%E6%98%BE%E7%A4%BA%E5%8A%A8%E6%80%81%E8%8F%9C%E5%8D%95.html" target="_blank" rel="external">动态菜单高亮</a>中介绍了如何用条件标签在菜单中激活当前页面的高亮显示部分。</p>
+<h6 id="在主题的footer-php文件中">在主题的footer.php文件中</h6>
+<p>有时在模板文件（如sidebar.php）中执行的查询可能破坏一些条件标签。例如，某个条件标签可以在header.php文件中正常运行，但却不能适应主题的footer.php文件。这时可以在页脚中把wp_reset_query放条件检验前：</p>
+<pre>&lt;?php
+wp_reset_query();
+if (is_page('2') ) {
+echo 'this is page 2!';
+} 
+?&gt;</pre>
+
+<h5 id="条件标签索引">条件标签索引</h5>
+<p>按字母顺序排列：</p>
+<ul>
+<li>comments_open<em>   has_tag</em>   in_category<em>   is_404</em>   is_admin<em>   is_archive</em>   is_attachment<em>   is_author</em>   is_category<em>   is_comments_popup</em>   is_date<em>   is_day</em>   is_feed<em>   is_front_page</em>   is_home<em>   is_month</em>   is_page<em>   is_page_template</em>   is_paged<em>   is_preview</em>   is_search<em>   is_single</em>   is_singular<em>   is_sticky</em>   is_tag<em>   is_time</em>   is_trackback<em>   is_year</em>   pings_open</li>
+</ul>
+<h5 id="常用函数">常用函数</h5>
+<p>转载自：<a href="http://www.wordpress.la/codex-%E6%9D%A1%E4%BB%B6%E6%A0%87%E7%AD%BE.html" target="_blank" rel="external">WordPress啦</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+    <footer class="article-footer">
+		
+	<a align="left" href="/2010/07/24/wordpresse4b8bbe9a298e4b8ade79a84e588a4e696ade587bde695b0/" id="article-nav-older" class="article-nav-link-wrap">
+	  <div align="left" class="article-nav-title">上一篇 Wordpress主题中的判断函数</div>
+	</a>
+
+
+	<a align="right" href="/2010/07/24/wordpresse5b8b8e794a8e587bde695b0-get_option/" id="article-nav-newer" class="article-nav-link-wrap">
+	  <div align="right" class="article-nav-title">下一篇 WordPress常用函数-get_option()</div>
+	</a>
+
+
+    </footer>
+	
+  </div>
+</article>
+
+<section id="comments">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="WordPress条件标签" data-title="WordPress条件标签" data-url="http://yoursite.com/2010/07/24/wordpresse69da1e4bbb6e6a087e7adbe/"></div>
+	<!-- 多说评论框 end -->
+</section>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>跨站脚本攻击 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="目录跨站攻击跨站攻击有多种方式，典型的方式有两种XST与XSS的比较XSS和脚本注射的区别如何防范XSS跨站攻击
+&lt;/dd&gt;&lt;/dl&gt;&lt;/fieldset&gt;
+&lt;div style='font-size: 14px; margin-bottom: -20px; line-height: 24px;  letter-spacing: 0px; text-ali">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨站脚本攻击">
+<meta property="og:url" content="http://yoursite.com/2008/12/23/e8b7a8e7ab99e8849ae69cace694bbe587bb/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="目录跨站攻击跨站攻击有多种方式，典型的方式有两种XST与XSS的比较XSS和脚本注射的区别如何防范XSS跨站攻击
+&lt;/dd&gt;&lt;/dl&gt;&lt;/fieldset&gt;
+&lt;div style='font-size: 14px; margin-bottom: -20px; line-height: 24px;  letter-spacing: 0px; text-ali">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跨站脚本攻击">
+<meta name="twitter:description" content="目录跨站攻击跨站攻击有多种方式，典型的方式有两种XST与XSS的比较XSS和脚本注射的区别如何防范XSS跨站攻击
+&lt;/dd&gt;&lt;/dl&gt;&lt;/fieldset&gt;
+&lt;div style='font-size: 14px; margin-bottom: -20px; line-height: 24px;  letter-spacing: 0px; text-ali">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main"><article id="post-e8b7a8e7ab99e8849ae69cace694bbe587bb" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/12/23/e8b7a8e7ab99e8849ae69cace694bbe587bb/" class="article-date">
+  <time datetime="2008-12-22T17:22:00.000Z" itemprop="datePublished">Dec 23 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      跨站脚本攻击
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+		<a data-url="http://yoursite.com/2008/12/23/e8b7a8e7ab99e8849ae69cace694bbe587bb/" data-title="跨站脚本攻击" data-id="nct3mb4h1fq5g4yo" class="article-share-link">Share</a>
+	  
+      
+        <a href="http://yoursite.com/2008/12/23/e8b7a8e7ab99e8849ae69cace694bbe587bb/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">Contents</strong>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#跨站攻击"><span class="toc-number">1.</span> <span class="toc-text">跨站攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨站攻击有多种方式，典型的方式有两种"><span class="toc-number">2.</span> <span class="toc-text">跨站攻击有多种方式，典型的方式有两种</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XST与XSS的比较"><span class="toc-number">3.</span> <span class="toc-text">XST与XSS的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XSS和脚本注射的区别"><span class="toc-number">4.</span> <span class="toc-text">XSS和脚本注射的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何防范XSS跨站攻击"><span class="toc-number">5.</span> <span class="toc-text">如何防范XSS跨站攻击</span></a></li></ol>
+			</div>
+		
+		<!-- 文章目录结束 -->
+		
+        <p><span class="Apple-style-span" style="word-spacing: 0px; font: 14px/24px Arial; text-transform: none; color: rgb(0,0,0); text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: separate; text-align: left; orphans: 2; widows: 2; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0"><fieldset class="text_dir" style="border-right: rgb(204,204,204) 1px solid; padding-right: 0px; border-top: rgb(204,204,204) 1px solid; display: inline; padding-left: 0px; padding-bottom: 0px; margin: 5px 0px 0px; border-left: rgb(204,204,204) 1px solid; padding-top: 0px; border-bottom: rgb(204,204,204) 1px solid"><dl style="padding-right: 30px; padding-left: 15px; padding-bottom: 20px; margin: 0px; padding-top: 15px"><dt style="padding-right: 0px; padding-left: 0px; font-weight: bold; padding-bottom: 0px; margin: 0px 0px 8px; padding-top: 0px">目录</dt><dd style="padding-right: 0px; background-position: 2px -102px; padding-left: 12px; background-image: url(http://img.baidu.com/img/baike/bgs3.gif); padding-bottom: 0px; margin: 0px; line-height: 20px; padding-top: 0px; background-repeat: no-repeat; white-space: nowrap; -webkit-background-clip: initial; -webkit-background-origin: initial"><a href="http://hi.baidu.com/fc/editor/fckeditor.html?InstanceName=spBlogText&amp;v=2.9&amp;Toolbar=Default&amp;v=2.6.html#1" target="_blank" rel="external">跨站攻击</a></dd><dd style="padding-right: 0px; background-position: 2px -102px; padding-left: 12px; background-image: url(http://img.baidu.com/img/baike/bgs3.gif); padding-bottom: 0px; margin: 0px; line-height: 20px; padding-top: 0px; background-repeat: no-repeat; white-space: nowrap; -webkit-background-clip: initial; -webkit-background-origin: initial"><a href="http://hi.baidu.com/fc/editor/fckeditor.html?InstanceName=spBlogText&amp;v=2.9&amp;Toolbar=Default&amp;v=2.6.html#2" target="_blank" rel="external">跨站攻击有多种方式，典型的方式有两种</a></dd><dd style="padding-right: 0px; background-position: 2px -102px; padding-left: 12px; background-image: url(http://img.baidu.com/img/baike/bgs3.gif); padding-bottom: 0px; margin: 0px; line-height: 20px; padding-top: 0px; background-repeat: no-repeat; white-space: nowrap; -webkit-background-clip: initial; -webkit-background-origin: initial"><a href="http://hi.baidu.com/fc/editor/fckeditor.html?InstanceName=spBlogText&amp;v=2.9&amp;Toolbar=Default&amp;v=2.6.html#3" target="_blank" rel="external">XST与XSS的比较</a></dd><dd style="padding-right: 0px; background-position: 2px -102px; padding-left: 12px; background-image: url(http://img.baidu.com/img/baike/bgs3.gif); padding-bottom: 0px; margin: 0px; line-height: 20px; padding-top: 0px; background-repeat: no-repeat; white-space: nowrap; -webkit-background-clip: initial; -webkit-background-origin: initial"><a href="http://hi.baidu.com/fc/editor/fckeditor.html?InstanceName=spBlogText&amp;v=2.9&amp;Toolbar=Default&amp;v=2.6.html#4" target="_blank" rel="external">XSS和脚本注射的区别</a></dd><dd style="padding-right: 0px; background-position: 2px -102px; padding-left: 12px; background-image: url(http://img.baidu.com/img/baike/bgs3.gif); padding-bottom: 0px; margin: 0px; line-height: 20px; padding-top: 0px; background-repeat: no-repeat; white-space: nowrap; -webkit-background-clip: initial; -webkit-background-origin: initial"><a href="http://hi.baidu.com/fc/editor/fckeditor.html?InstanceName=spBlogText&amp;v=2.9&amp;Toolbar=Default&amp;v=2.6.html#5" target="_blank" rel="external">如何防范XSS跨站攻击</a></dd><dd class="temp" style="border-right: rgb(204,204,204) 1px solid; padding-right: 0px; overflow-y: hidden; padding-left: 0px; overflow-x: hidden; padding-bottom: 0px; margin: 0px 0px 0px -16px; border-left: rgb(204,204,204) 1px solid; line-height: 20px; padding-top: 0px; white-space: nowrap; position: absolute; height: 0px; background-color: rgb(255,255,255); -webkit-background-clip: initial; -webkit-background-origin: initial"></dd></dl></fieldset></span></p>
+<pre><code><span class="tag">&lt;/<span class="title">dd</span>&gt;</span><span class="tag">&lt;/<span class="title">dl</span>&gt;</span><span class="tag">&lt;/<span class="title">fieldset</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">"font-size: 14px; margin-bottom: -20px; line-height: 24px;  letter-spacing: 0px; text-align: left"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"bpctrl"</span> <span class="attribute">style</span>=<span class="value">"font-size: 14px; line-height: 35px;  height: 35px; text-align: left"</span>&gt;</span> <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><h2 id="跨站攻击"><a style="color: rgb(51,102,204); text-decoration: underline" name="1"></a>跨站攻击</h2>
+<pre><code>　　即Cross Site Script Execution(通常简写为XSS)是指攻击者利用网站程序对用户输入过滤不足，输入可以显示在页面上对其他用户造成影响的HTML代码，从而盗取用户资料、利用用户身份进行某种动作或者对访问者进行病毒侵害的一种攻击方式。
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　业界对跨站攻击的定义如下：&amp;ldquo;跨站攻击是指入侵者在远程WEB页面的HTML代码中插入具有恶意目的的数据，用户认为该页面是可信赖的，但是当浏览器下载该页面，嵌入其中的脚本将被解释执行。&amp;rdquo;由于HTML语言允许使用脚本进行简单交互，入侵者便通过技术手段在某个页面里插入一个恶意HTML代码，例如记录论坛保存的用户信息（Cookie），由于Cookie保存了完整的用户名和密码资料，用户就会遭受安全损失。如这句简单的Java脚本就能轻易获取用户信息：alert(document.cookie)，它会弹出一个包含用户信息的消息框。入侵者运用脚本就能把用户信息发送到他们自己的记录页面中，稍做分析便获取了用户的敏感信息。
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"bpctrl"</span> style=<span class="string">"font-size: 14px; line-height: 35px;  height: 35px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+</code></pre><h2 id="跨站攻击有多种方式，典型的方式有两种"><a style="color: rgb(51,102,204); text-decoration: underline" name="2"></a>跨站攻击有多种方式，典型的方式有两种</h2>
+<pre><code>　　其一，由于HTML语言允许使用脚本进行简单交互，入侵者便通过技术手段在某个页面里插入一个恶意HTML代码&amp;mdash;&amp;mdash;例如记录论坛保存的用户信息（Cookie），由于Cookie保存了完整的用户名和密码资料，用户就会遭受安全损失。
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　其二，XST攻击描述：攻击者将恶意代码嵌入一台已经被控制的主机上的web文件，当访问者浏览时恶意代码在浏览器中执行，然后访问者的cookie、http基本验证以及ntlm验证信息将被发送到已经被控制的主机，同时传送Trace请求给目标主机，导致cookie欺骗或者是中间人攻击。
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　XST攻击条件：
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　<span class="number">1</span>、需要目标web服务器允许Trace参数；
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　<span class="number">2</span>、需要一个用来插入XST代码的地方；
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　<span class="number">3</span>、目标站点存在跨域漏洞。
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"bpctrl"</span> style=<span class="string">"font-size: 14px; line-height: 35px;  height: 35px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+</code></pre><h2 id="XST与XSS的比较"><a style="color: rgb(51,102,204); text-decoration: underline" name="3"></a>XST与XSS的比较</h2>
+<pre><code>　　相同点：都具有很大的欺骗性，可以对受害主机产生危害，而且这种攻击是多平台多技术的，我们还可以利用Active控件、Flash、Java等来进行XST和XSS攻击。
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　优点：可以绕过一般的http验证以及NTLM验证
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　用apache+mysql+php在win2003架设web服务器，扫描服务器：
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　提示 www (<span class="number">80</span>/tcp)
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　http TRACE 跨站攻击
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　你的webserver支持TRACE 和/或 TRACK 方式。 TRACE和TRACK是用来调试web服务器连接的HTTP方式。
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　支持该方式的服务器存在跨站脚本漏洞，通常在描述各种浏览器缺陷的时候，把&amp;quot;Cross-Site-Tracing&amp;quot;简称为XST。
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　攻击者可以利用此漏洞欺骗合法用户并得到他们的私人信息。
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　解决方案: 禁用这些方式。
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　如果你使用的是Apache, 在各虚拟主机的配置文件里添加如下语句:
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　RewriteEngine <span class="function_start"><span class="keyword">on</span></span>
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　RewriteCond % ^(TRACE|TRACK)
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　RewriteRule .* - [F]
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"bpctrl"</span> style=<span class="string">"font-size: 14px; line-height: 35px;  height: 35px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+</code></pre><h2 id="XSS和脚本注射的区别"><a style="color: rgb(51,102,204); text-decoration: underline" name="4"></a>XSS和脚本注射的区别</h2>
+<pre><code>　　并非任何可利用脚本插入实现攻击的漏洞都被称为XSS，因为还有另一种攻击方式：&amp;ldquo;Injection&amp;rdquo;，即脚本注入或者是讲脚本注射，他们之间是有区别的，他们的区别在以下两点：
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　<span class="number">1</span>、( Injection)脚本插入攻击会把我们插入的脚本保存在被修改的远程WEB页面里，如：sql injection,XPath injection.这个很常见，好象前几个月很多安全网站被黑就是因为脚本里存在注入漏洞，而被一些人利用的。
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　<span class="number">2</span>、跨站脚本是临时的，执行后就消失了。这个就不同于我们现在讨论的XSS/CSS 了，今天讲的是在页面中插入脚本，这样谁来访问谁的浏览器就执行，如果不被删掉或者是修改编辑的话，就一直存在的。
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　什么类型的脚本可以被插入远程页面？
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　主流脚本包括以下几种：
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　HTML
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　Java
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　VB
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　ActiveX
+
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"spctrl"</span> style=<span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+　　Flash
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"bpctrl"</span> style=<span class="string">"font-size: 14px; line-height: 35px;  height: 35px; text-align: left"</span>&gt; &lt;/<span class="keyword">div</span>&gt;
+</code></pre><h2 id="如何防范XSS跨站攻击"><a style="color: rgb(51,102,204); text-decoration: underline" name="5"></a>如何防范XSS跨站攻击</h2>
+<pre><code>　　在你的WEB浏览器上禁用java脚本，具体方法，先打开你的IE的internet选项，切换到&amp;ldquo;安全&amp;rdquo;页，有个&amp;ldquo;自定义&amp;rdquo;级别，点他出现如下窗口，禁用就可以了。但是好象不太可能，因为一旦禁用，很多功能就丧失了，这个方法是下策。
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　还有不要访问包含〈〉字符的连接，当然一些官方的URL不会包括任何脚本元素。
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　如果你的站点程序含论坛，留言板，以及其他程序中含提交数据格式的，没有很好过滤机制，请马上下载升级程序或是停止使用ubb这样的功能，避免造成更多的问题。
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　跨站脚本执行漏洞的成因，形式，危害，利用方式，隐藏技巧
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　【漏洞成因】
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　原因很简单，就是因为CGI程序没有对用户提交的变量中的HTML代码进行过滤或转换。
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　【漏洞形式】
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　这里所说的形式，实际上是指CGI输入的形式，主要分为两种：
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　<span class="number">1</span>．显示输入
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　<span class="number">2</span>．隐式输入
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　其中显示输入明确要求用户输入数据，而隐式输入则本来并不要求用户输入数据，但是用户却可以通过输入数据来进行干涉。
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　显示输入又可以分为两种：
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　<span class="number">1</span>． 输入完成立刻输出结果
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　<span class="number">2</span>． 输入完成先存储在文本文件或数据库中，然后再输出结果
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　注意：后者可能会让你的网站面目全非！
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　而隐式输入除了一些正常的情况外，还可以利用服务器或CGI程序处理错误信息的方式来实施。
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　【漏洞危害】
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　大家最关心的大概就要算这个问题了，下面列举的可能并不全面，也不系统，但是我想应该是比较典型的吧。
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　<span class="number">1</span>． 获取其他用户Cookie中的敏感数据
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　<span class="number">2</span>． 屏蔽页面特定信息
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　<span class="number">3</span>． 伪造页面信息
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　<span class="number">4</span>． 拒绝服务攻击
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　<span class="number">5</span>． 突破外网内网不同安全设置
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　<span class="number">6</span>． 与其它漏洞结合，修改系统设置，查看系统文件，执行系统命令等
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　<span class="number">7</span>． 其它
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　一般来说，上面的危害还经常伴随着页面变形的情况。而所谓跨站脚本执行漏洞，也就是通过别人的网站达到攻击的效果，也就是说，这种攻击能在一定程度上隐藏身份。
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　【隐藏技巧】
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　出于时间的考虑，我在这里将主要讲一下理论了，相信不是很难懂，如果实在有问题，那么去找本书看吧。
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　<span class="number">1</span>． URL编码
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　比较一下：
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　http://www.<span class="number">5460</span>.net/txl/login/login.pl?<span class="variable">username=</span> &amp;amp;<span class="variable">passwd=</span>&amp;amp;ok.<span class="variable">x=</span><span class="number">28</span>&amp;amp;ok.<span class="variable">y=</span><span class="number">6</span>&lt;span <span class="variable">class=</span><span class="string">"Apple-converted-space"</span>&gt; &lt;/span&gt;
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　http://www.<span class="number">5460</span>.net/txl/login/login.pl?<span class="variable">username=</span>%<span class="number">3</span>C%<span class="number">68</span>%<span class="number">31</span>%<span class="number">3</span>E&amp;amp;<span class="variable">passwd=</span>&amp;amp;ok.<span class="variable">x=</span><span class="number">28</span>&amp;amp;ok.y＝<span class="number">6</span>
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　你觉得哪个更有隐蔽性？！
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　<span class="number">2</span>． 隐藏在其它对象之下
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　与直接给别人一个链接相比，你是否决定把该链接隐藏在按钮以下更好些呢？
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　<span class="number">3</span>． 嵌入页面中
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　让别人访问一个地址（注意这里的地址不同于上面提到的URL），是不是又要比让别人按一个按钮容易得多，借助于Iframe，你可以把这种攻击变得更隐蔽。
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　<span class="number">4</span>． 合理利用事件
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　合理使用事件，在某些情况上可以绕过CGI程序对输入的限制，比如说前些日子的SecurityFocus的跨站脚本执行漏洞。
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　【注意事项】
+
+&lt;div <span class="variable">class=</span><span class="string">"spctrl"</span> <span class="variable">style=</span><span class="string">"font-size: 14px; line-height: 10px;  height: 10px; text-align: left"</span>&gt; &lt;/div&gt;
+　　一般情况下直接进行类似alert(document.c ...
+</code></pre>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+    <footer class="article-footer">
+		
+	<a align="left" href="/2008/12/23/e8bdace8bdbde5ada6e4bc9ae6a380e69fa5-sql-e6b3a8e585a5e5bc8fe694bbe587bbe6bc8fe6b49e/" id="article-nav-older" class="article-nav-link-wrap">
+	  <div align="left" class="article-nav-title">上一篇 [转载]学会检查 SQL 注入式攻击漏洞</div>
+	</a>
+
+
+	<a align="right" href="/2008/12/23/tripwire/" id="article-nav-newer" class="article-nav-link-wrap">
+	  <div align="right" class="article-nav-title">下一篇 Tripwire</div>
+	</a>
+
+
+    </footer>
+	
+  </div>
+</article>
+
+<section id="comments">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="跨站脚本攻击" data-title="跨站脚本攻击" data-url="http://yoursite.com/2008/12/23/e8b7a8e7ab99e8849ae69cace694bbe587bb/"></div>
+	<!-- 多说评论框 end -->
+</section>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

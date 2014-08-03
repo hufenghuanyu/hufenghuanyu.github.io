@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Category: wordpress开发 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/categories/wordpress开发/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-wordpress-e588a9e794a8xmlrpce79a84metaweblog-newmediaobjecte696b9e6b395e4b88ae4bca0e59bbee78987" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/05/10/wordpress-e588a9e794a8xmlrpce79a84metaweblog-newmediaobjecte696b9e6b395e4b88ae4bca0e59bbee78987/" class="article-date">
+  <time datetime="2011-05-10T14:10:05.000Z" itemprop="datePublished">May 10 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress开发/">wordpress开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/05/10/wordpress-e588a9e794a8xmlrpce79a84metaweblog-newmediaobjecte696b9e6b395e4b88ae4bca0e59bbee78987/">WordPress: 利用xmlrpc的metaWeblog.newMediaObject方法上传图片</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/metaWeblog/">metaWeblog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/metaWeblognewMediaObject/">metaWeblog.newMediaObject</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xmlrpc/">xmlrpc</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>metaWeblog.newMediaObject (blogid, username, password, struct)<br>方法说明：<br>1.<strong>参数</strong>：blogid、username、password，blogid代表blog的id，在wordpress里一般是1；username、password分别是WordPress的用户名密码；struct是一种struct结构，必须包含name、type和bits三个元素，其中name就是数据名字，type之mime type，bits为经过base64编码的数据流，类型为string<br>2.<strong>返回值</strong>：如果调用成功，返回一个struct，至少包含一个url元素，代表数据的HTTP或者FTP URL<br> 关于参数：<br>1.参数struct，name不用多说，提供字符串名字即可<br>2.type可以利用mime_content_type()函数获取(限于PHP5.3以下，这个函数5.3不用了，可以用fileinfo()代替)<br>3.bits元素，需要将媒体（图片）等打开，利用xmlrpcval类来进行base64 编码操作，不能直接用php的base64_encode()来操作   </p>
+<p>提供两段代码：<br> 例子1：   [php]$filesrc=”../text.jpg”;<br>$name = “text.jpg”;<br>$type = mime_content_type($filesrc); //获取文件类型，php.ini需要启用pecl模块<br>$bits = new xmlrpcval(file_get_contents($filesrc),”base64″);<br>$data = array(<br>        ‘name’ =&amp;gt; $name,<br>        ‘type’ =&amp;gt; $type,<br>        ‘bits’ =&amp;gt; $bits<br>);<br> $x = new xmlrpcmsg(“metaWeblog.newMediaObject”,<br>                array(<br>                    php_xmlrpc_encode(“1″),<br>                    php_xmlrpc_encode($username),<br>                    php_xmlrpc_encode($userpass),<br>                    php_xmlrpc_encode($data),<br>                    php_xmlrpc_encode(“1″)<br>                )<br>);<br>$c-&amp;gt;return_type = ‘phpvals’;<br>$r =$c-&amp;gt;send($x);[/php]<br>例子2： </p>
+<p>[php]    include(&amp;quot;xmlrpc.php&amp;quot;);<br>    $GLOBALS[‘xmlrpc_internalencoding’] = ‘UTF-8’;<br>    define (‘DOMAIN’, ‘wp.mypku.net’); // 博客的域名<br>    define (‘BLOGID’, 1); // 博客ID，一般为1<br>    define (‘USER’, ‘admin’); // 博客登录的用户名<br>    define (‘PASSWORD’, ‘123456’); // 博客登录的密码</p>
+<pre><code><span class="variable">$cl</span> <span class="subst">=</span> <span class="literal">new</span> xmlrpc_client ( <span class="subst">&amp;</span>amp;quot;<span class="built_in">.</span>/xmlrpc<span class="built_in">.</span>php<span class="subst">&amp;</span>amp;quot;, DOMAIN, <span class="number">80</span>);
+<span class="comment">// 准备请求</span>
+<span class="variable">$req</span> <span class="subst">=</span> <span class="literal">new</span> xmlrpcmsg(<span class="string">'metaWeblog.newMediaObject'</span>);
+<span class="comment">// 逐个列出请求的参数:</span>
+<span class="variable">$req</span><span class="subst">-&amp;</span>amp;<span class="literal">gt</span>;addParam ( <span class="literal">new</span> xmlrpcval ( BLOGID, <span class="string">'int'</span>)); <span class="comment">// 博客ID</span>
+<span class="variable">$req</span><span class="subst">-&amp;</span>amp;<span class="literal">gt</span>;addParam ( <span class="literal">new</span> xmlrpcval ( USER, <span class="string">'string'</span> )); <span class="comment">// 用户名</span>
+<span class="variable">$req</span><span class="subst">-&amp;</span>amp;<span class="literal">gt</span>;addParam ( <span class="literal">new</span> xmlrpcval ( PASSWORD, <span class="string">'string'</span> )); <span class="comment">// 密码</span>
+<span class="variable">$type</span> <span class="subst">=</span> mime_content_type(<span class="string">'E8400.png'</span>);
+<span class="variable">$filesrc</span> <span class="subst">=</span><span class="string">'./E8400.png'</span>;<span class="comment">//文件路径</span>
+<span class="variable">$filename</span> <span class="subst">=</span> <span class="string">'E8400.png'</span>;<span class="comment">//文件名</span>
+<span class="variable">$bits</span> <span class="subst">=</span> file_get_contents(<span class="variable">$filesrc</span>);
+<span class="variable">$struct</span> <span class="subst">=</span> <span class="literal">new</span> xmlrpcval (
+    <span class="built_in">array</span> (
+        <span class="subst">&amp;</span>amp;quot;name<span class="subst">&amp;</span>amp;quot; <span class="subst">=&amp;</span>amp;<span class="literal">gt</span>; <span class="literal">new</span> xmlrpcval ( <span class="variable">$filename</span>, <span class="string">'string'</span> ), <span class="comment">// 名字</span>
+        <span class="subst">&amp;</span>amp;quot;<span class="keyword">type</span><span class="subst">&amp;</span>amp;quot; <span class="subst">=&amp;</span>amp;<span class="literal">gt</span>; <span class="literal">new</span> xmlrpcval ( <span class="variable">$type</span>, <span class="string">'string'</span>), <span class="comment">// MIME类型</span>
+        <span class="subst">&amp;</span>amp;quot;bits<span class="subst">&amp;</span>amp;quot; <span class="subst">=&amp;</span>amp;<span class="literal">gt</span>; <span class="literal">new</span> xmlrpcval ( <span class="variable">$bits</span>, <span class="string">'base64'</span>), <span class="comment">// 利用xmlrpcval类自带base64加密的数据流</span>
+    ), <span class="subst">&amp;</span>amp;quot;struct<span class="subst">&amp;</span>amp;quot;
+);
+<span class="variable">$req</span><span class="subst">-&amp;</span>amp;<span class="literal">gt</span>;addParam ( <span class="variable">$struct</span> );
+<span class="variable">$req</span><span class="subst">-&amp;</span>amp;<span class="literal">gt</span>;addParam ( <span class="literal">new</span> xmlrpcval (<span class="number">1</span>, <span class="string">'int'</span>)); <span class="comment">// 立即发布</span>
+
+<span class="comment">// 发送请求</span>
+<span class="variable">$ans</span> <span class="subst">=</span> <span class="variable">$cl</span><span class="subst">-&amp;</span>amp;<span class="literal">gt</span>;send(<span class="variable">$req</span>);
+<span class="preprocessor">[</span>/php<span class="preprocessor">]</span><span class="markup"></span>
+</code></pre>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-wordpress-e588a9e794a8xml-rpce58699e8bf9ce7a88be697a5e5bf97efbc8ce694afe68c81custom-fields" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/05/04/wordpress-e588a9e794a8xml-rpce58699e8bf9ce7a88be697a5e5bf97efbc8ce694afe68c81custom-fields/" class="article-date">
+  <time datetime="2011-05-04T14:57:21.000Z" itemprop="datePublished">May 4 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress开发/">wordpress开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/05/04/wordpress-e588a9e794a8xml-rpce58699e8bf9ce7a88be697a5e5bf97efbc8ce694afe68c81custom-fields/">WordPress 利用XML-RPC写远程日志，支持Custom Fields</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>采用metaWeblog.newPost而不是Weblog.newPost方法，支持添加Custom Fields字段</p>
+<pre lang="php">function post($result){
+        include("xmlrpc.inc");
+        $GLOBALS['xmlrpc_internalencoding'] = 'UTF-8';
+        $c = new xmlrpc_client("xmlrpc.php","example.com", 80);
+        $content['title']="title";
+        $content['description']="content";
+        $content['mt_keywords']="tag1,tag2";
+        $content['wp_password']="";
+        $content['categories'] = array("label");
+        $content['custom_fields'] = array(
+        array( 'key' => 'city', 'value' => 'Sacramento' )
+        );
+        $x = new xmlrpcmsg("metaWeblog.newPost",
+        array(php_xmlrpc_encode("1"),
+        php_xmlrpc_encode("admin"),
+        php_xmlrpc_encode('841321'),
+        php_xmlrpc_encode($content),
+        php_xmlrpc_encode("1")));
+
+        $c->return_type = 'phpvals';
+        $r =$c->send($x);
+        if ($r->errno=="0")
+        echo "success，ID：".$r->val;
+        else {
+            echo "fail";;
+            print_r($r);
+        }
+    }</pre>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-wordpress-e88eb7e58f96e58886e7b1bbe79a84e587bde695b0efbc9aget_the_category" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/12/05/wordpress-e88eb7e58f96e58886e7b1bbe79a84e587bde695b0efbc9aget_the_category/" class="article-date">
+  <time datetime="2010-12-04T19:56:30.000Z" itemprop="datePublished">Dec 5 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress开发/">wordpress开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/12/05/wordpress-e88eb7e58f96e58886e7b1bbe79a84e587bde695b0efbc9aget_the_category/">WordPress 获取分类的函数：get_the_category()</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>get_the_category() 是WordPress的一个系统函数，使用该函数可获取当前文章所属分类的数组集合（因为存在一个文章属于多个分类的情况），然后遍历该返回结果可以获取每个分类的对象，再使用对象成员就即可获取想要的分类ID及分类名和其它内容。</p>
+<p>默认接受的参数是post id，用法：&lt;?php get_the_category( $id ) ?&gt;</p>
+<p>由于一篇日志可能属于多个分类，所以这个函数提供的是日志所属的分类对象集合，也就是每一个分类对象作为一个数组元素，可以遍历该数组以获取该文章所属的所有分类：</p>
+<p>$category = get_the_category($post_ID);<br>$num = count($category);<br>for($i=1;$i&lt;=$num;$i++){&#160;<br> $category[$i-1]-&gt;cat_ID //可判断这篇文章是否属于特定分类，由此开展其他操作<br>}</p>
+<p>上面这个例子里的cat_ID就是每一个分类对象的成员，更多的成员包括：<br> <dt><strong>cat_ID</strong>&#160; </dt><dd>分类id </dd><dt><strong>cat_name&#160; </strong></dt><dd>分类名 </dd><dt><strong>category_nicename&#160; </strong></dt><dd>一个slug，也就是系统根据分类名生成的url友好的名字 </dd><dt><strong>category_description</strong>&#160; </dt><dd>分类描述 </dd><dt><strong>category_parent</strong>&#160; </dt><dd>父分类id </dd><dt><strong>category_count</strong>&#160; </dt><dd>该分类包含多少篇日志，或者该分类被使用了多少次&#160;  参考WordPress Function Reference: <a href="http://codex.wordpress.org/Function_Reference/get_the_category" target="_blank" rel="external">http://codex.wordpress.org/Function_Reference/get_the_category</a></dd></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-wordpresse5b8b8e794a8e587bde695b0-get_option" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/07/24/wordpresse5b8b8e794a8e587bde695b0-get_option/" class="article-date">
+  <time datetime="2010-07-23T18:12:40.000Z" itemprop="datePublished">Jul 24 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress开发/">wordpress开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/07/24/wordpresse5b8b8e794a8e587bde695b0-get_option/">WordPress常用函数-get_option()</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <h5 id="这个函数很好用哇，可以随便取数据库里的值了"><font color="#0000ff" size="3">这个函数很好用哇，可以随便取数据库里的值了</font></h5>
+<h5 id="说明">说明</h5>
+<p>这是一种从选项数据库表中获取有名称的选项的值的安全方法。如果所需选项不存在，或选项无相关值，函数返回<strong>FALSE</strong>。</p>
+<h5 id="用法">用法</h5>
+<p>&lt;?php echo get_option( $show ); ?&gt;</p>
+<h5 id="参数">参数</h5>
+<p><strong>$show</strong></p>
+<p>（字符串）（必需）需要检索的选项名称。</p>
+<p>默认值：None</p>
+<p><strong>$default</strong></p>
+<p>（混合）（可选）无值可返回时返回的默认值（如选项不在数据库中时）</p>
+<p>默认值：false</p>
+<h5 id="返回的值">返回的值</h5>
+<p>更多信息请见<a href="http://codex.wordpress.org/Option_Reference" target="_blank" rel="external">http://codex.wordpress.org/Option_Reference</a></p>
+<h5 id="示例">示例</h5>
+<p><strong>显示博客名称</strong></p>
+<p>在&lt;h1&gt;标签中显示博客名称</p>
+<p>&lt;h1&gt;&lt;?php echo get_option(‘blogname’); ?&gt;&lt;/h1&gt;</p>
+<p><strong>显示字符集</strong></p>
+<p>显示当前博客所用的字符集（假设为UTF-8）</p>
+<p>&lt;p&gt;Character set: &lt;?php echo get_option(‘blog_charset’); ?&gt; &lt;/p&gt; </p>
+<p><strong>查看网站管理员的E-mail</strong></p>
+<p>检索博客管理员的电子邮件地址并存储在变量中</p>
+<p>&lt;?php $admin_email = get_option(‘admin_email’); ?&gt; </p>
+<p>转载自：<a href="http://www.wordpress.la/codex-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-get_option%28%29.html" target="_blank" rel="external">WordPress啦</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-wordpresse69da1e4bbb6e6a087e7adbe" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/07/24/wordpresse69da1e4bbb6e6a087e7adbe/" class="article-date">
+  <time datetime="2010-07-23T18:08:46.000Z" itemprop="datePublished">Jul 24 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress开发/">wordpress开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/07/24/wordpresse69da1e4bbb6e6a087e7adbe/">WordPress条件标签</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/templates/">templates</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <h4 id="条件标签">条件标签</h4>
+<h5 id="简介">简介</h5>
+<p>在模板文件中，我们可以根据能与某页面相匹配的条件，利用条件标签更改该页面上将要显示的内容以及内容的显示方式。例如，如果希望在博客首页文章列表的上方显示一段文字，可以利用 <a href="http://www.wordpress.la/codex-%E6%9D%A1%E4%BB%B6%E6%A0%87%E7%AD%BE.html#is_home" target="_blank" rel="external">is_home()</a>条件标签轻松实现这一效果。</p>
+<p>注意：条件标签与WordPress<a href="http://www.wordpress.la/codex-%E6%A8%A1%E6%9D%BF%E5%B1%82%E7%BA%A7.html" target="_blank" rel="external">模板层级</a>密切相关。</p>
+<h5 id="条件">条件</h5>
+<p>所有条件标签都会检查是否有条件可符合相应页面，之后返回TRUE或者FALSE。下面列出能够使各个条件标签返回TRUE的条件：</p>
+<h6 id="主页"><a name="is_home">主页</a></h6>
+<p><strong>is_home()</strong></p>
+<p>显示博客主页时，该条件标签返回TRUE。</p>
+<p><strong>注意</strong>：如果将静态页面作为博客主页，该标签会在显示日志页面时返回TRUE。</p>
+<h6 id="标题页"><a name="is_front_page">标题页</a></h6>
+<p><strong>is_front_page()</strong></p>
+<p>显示博客头版消息（无论是日志或是页面）。当系统显示博客主页且管理面板的<strong>设置</strong>&gt;<strong>阅读</strong>菜单下“<strong>主页显示为</strong>”选项设为最近发表的文章”，或者’<strong>设置</strong>&gt;<strong>阅读</strong>菜单下“<strong>主页显示为</strong>”选项设为且&quot;主页&quot;是当前被显示的页面时，is_front_page()标签返回TRUE。注意：该标签在WordPress 2.5版本中首次亮相。</p>
+<h6 id="管理栏"><a name="is_admin">管理栏</a></h6>
+<p><strong>is_admin()</strong></p>
+<p>显示控制板或管理栏时，is_admin()标签返回TRUE。</p>
+<h6 id="单篇日志页面"><a name="is_single">单篇日志页面</a></h6>
+<p><strong>is_single()</strong></p>
+<p>显示任何单独一篇日志时，is_single()标签返回TRUE。</p>
+<p><strong>is_single(‘17’)</strong></p>
+<p>显示编号为17的单篇日志时，该标签返回TRUE。</p>
+<p><strong>is_single(‘Irish Stew’)</strong></p>
+<p>显示标题为&quot;Irish Stew&quot;的单篇日志时，该标签返回TRUE。</p>
+<p><strong>is_single(‘beef-stew’)</strong></p>
+<p>显示别名为&quot;beef-stew&quot;的单篇日志时，该标签返回TRUE。</p>
+<p><strong>is_single(array(17,’beef-stew’,’Irish Stew’))</strong></p>
+<p>当所显示的单篇日志编号为17，或post_name为&quot;beef-stew&quot;，或post_title为&quot;Irish Stew&quot;时，is_single(array(17,’beef-stew’,’Irish Stew’))标签返回TRUE。注意：数组功能首次出现于WordPress 2.5。</p>
+<h6 id="置顶日志"><a href="http://www.wordpress.la/" target="_blank" rel="external">置顶日志</a></h6>
+<p><strong>is_sticky()</strong></p>
+<p>若当前日志的&quot;Stick this post to the front page（将该日志在首页置顶）&quot;复选框被选中，is_sticky()返回TRUE。此时标签没有提供日志的编号变量，因此系统会用到<a href="http://www.wordpress.la/codex-WordPress%E4%B8%BB%E5%BE%AA%E7%8E%AF.html" target="_blank" rel="external">WordPress主循环the Loop</a>的日志编号。注意：该标签首次出现于WordPress 2.7。</p>
+<p><strong>is_sticky(‘17’)</strong></p>
+<p>若编号为17的日志被置顶，该标签返回TRUE。</p>
+<h6 id="评论弹出式窗口">评论弹出式窗口</h6>
+<p><strong>is_comments_popup()</strong></p>
+<p>显示的内容在评论弹出式窗口中时，该标签返回TRUE。</p>
+<h6 id="任何包含日志的页面">任何包含日志的页面</h6>
+<p><strong>comments_open()</strong></p>
+<p>若评论允许当前日志在<a href="http://www.wordpress.la/codex-WordPress%E4%B8%BB%E5%BE%AA%E7%8E%AF.html" target="_blank" rel="external">WordPress主循环</a>中运行，该标签返回TRUE。</p>
+<p><strong>pings_open()</strong></p>
+<p>若引用通告ping允许当前日志在<a href="http://www.wordpress.la/codex-WordPress%E4%B8%BB%E5%BE%AA%E7%8E%AF.html" target="_blank" rel="external">WordPress主循环</a>中运行，该标签返回TRUE。</p>
+<h6 id="PAGE页面"><a name="is_page">PAGE页面</a></h6>
+<p>这里的PAGE指的是WordPress的“<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>”功能，而不是博客生成的网页。</p>
+<p><strong>is_page()</strong></p>
+<p>显示任何一篇<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>时，该标签返回TRUE。</p>
+<p><strong>is_page(‘42’)</strong></p>
+<p>显示编号为42的<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>时，该标签返回TRUE。</p>
+<p><strong>is_page(‘About Me And Joe’)</strong></p>
+<p>若显示的<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>的post_name为&quot;About Me And Joe&quot;，该标签返回TRUE。</p>
+<p><strong>is_page(‘about-me’)</strong></p>
+<p>若显示的<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>的post_name（别名）为&quot;about-me&quot;，该标签返回TRUE。</p>
+<p><strong>is_page(array(42,’about-me’,’About Me And Joe’))</strong></p>
+<p>当所显示的<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>编号为42，或post_name为&quot;about-me&quot;，或post_title为&quot;About Me And Joe&quot;时，is_page(array(42,’about-me’,’About Me And Joe’))标签返回TRUE。注意：数组功能首次出现于WordPress 2.5。</p>
+<h6 id="子页面">子页面</h6>
+<p>目前is_subpage()函数尚未出现，但我们可以用以下代码来判断某页面是否子页面：<br>  <pre>&lt;?php<br>// Get $post if you’re inside a function<br>global $post;</pre></p>
+<p>if ( is_page() &amp;&amp; $post-&gt;post_parent ) {<br>    // This is a subpage</p>
+<p>} else {<br>    // This is not a subpage<br>}<br>?&gt;</p>
+<p>也可以将这一功能添加到functions.php文件中：</p>
+<pre>function is_tree($pid) {    // $pid = The page we're looking for pages underneath
+    global $post;       // We load this as we're outside of the post
+    if(is_page()&amp;&amp;($post-&gt;post_parent==$pid||is_page($pid))) return true; // Yes, it's in the tree
+    else return false;  // No, it's outside
+};</pre>
+
+<p>然后调用is_tree(‘id’)来判断页面是否在目录树中。在下面的代码示例中，我们可以用is_tree(‘2’)来代替第一个if标签中的&quot;is_page(‘about’) || $post-&gt;post_parent == ‘2’&quot;。注意，如果有两层以上页面，父页面指的是子页面的上一级页面而不是顶级页面。</p>
+<p>如果要判断当前页面是否是某个特定页面或者是否是某一页面的子页面（例如在一个基于页面的网站的不同版块上显示不同banner广告），可以先从后台获取父页面的ID，然后按以下方式进行编码：</p>
+<pre>&lt;?php
+
+if ( is_page('about') || $post-&gt;post_parent == '2' ) { 
+    $bannerimg = 'home.jpg';
+
+} elseif ( is_page('learning') || $post-&gt;post_parent == '56' ) {    
+    $bannerimg = 'teaching.jpg';
+
+} elseif ( is_page('admissions') || $post-&gt;post_parent == '15' ) { 
+    $bannerimg = 'admissions.jpg';
+
+} else { 
+    $bannerimg = 'home.jpg'; // Fall-through  
+}    
+
+?&gt;</pre>
+
+<p>如果希望进行多次页面判断，最好创建一个长期函数（is_cpage()）。例如，如果将is_subpage()引入wp，用户就可以在functions.php文件中修改函数而不必做其它多余改动了。</p>
+<h6 id="Is_a_Page模板">Is a Page模板</h6>
+<p>自WordPress 2.5版起，用户可以通过Is a Page模板来判断目前是否位于页面模板中，或是否在使用某个特定的页面模板。</p>
+<p><strong>is_page_template() </strong></p>
+<p>目前是否使用了页面模板</p>
+<p><strong>is_page_template(‘about.php’) </strong></p>
+<p>是否使用页面模板’about’？注意：页面模板与其它条件标签有所不同，用户需要使用文件名（如 about.php 或my_page_template.php）来指定某个页面模板。</p>
+<h6 id="类别页面"><a name="is_category">类别页面</a></h6>
+<p><strong>is_category()</strong></p>
+<p>显示类别存档页面页面时，is_category()标签返回TRUE。</p>
+<p><strong>is_category(‘9’)</strong></p>
+<p>显示类别ID为9的存档页面时，is_category(‘9’)标签返回TRUE。</p>
+<p><strong>is_category(‘Stinky Cheeses’) </strong></p>
+<p>显示雷冰名称为“Stinky Cheeses”的存档页面时，is_category(‘Stinky Cheeses’)标签返回TRUE。</p>
+<p><strong>is_category(‘blue-cheese’) </strong></p>
+<p>显示类别别名为&quot;blue-cheese&quot;的存档页面时，is_category(‘blue-cheese’) 标签返回TRUE。</p>
+<p><strong>is_category(array(9,’blue-cheese’,’Stinky Cheeses’)) </strong></p>
+<p>当所显示的类别存档term_ID为9，或别名为&quot;blue-cheese&quot;，或类别名称为&quot;Stinky Cheeses&quot;时，is_category(array(9,’blue-cheese’,’Stinky Cheeses’)) 标签返回TRUE。注意：数组功能首次出现于WordPress 2.5。</p>
+<p><strong>in_category(‘5’) </strong></p>
+<p>若当前日志属于某个指定ID的类别，in_category(‘5’) 标签返回TRUE。</p>
+<p>注意：判断条件是否符合时，请不要将“in”写作“is”，两者有很大区别。</p>
+<h6 id="标签页面"><a name="is_tag">标签页面</a></h6>
+<p><strong>is_tag()</strong></p>
+<p>显示标签存档页面时，is_tag() 会返回TRUE。</p>
+<p><strong>is_tag(‘mild’) </strong></p>
+<p>显示别名为“mild”的标签的存档页面时，is_tag(‘mild’) 返回TRUE。</p>
+<p><strong>is_tag(array(‘sharp’,’mild’,’extreme’))</strong></p>
+<p>若显示的标签别名为&quot;sharp&quot;、 &quot;mild&quot;或&quot;extreme&quot;，is_tag(array(‘sharp’,’mild’,’extreme’)) 返回TRUE。注意：数组功能首次出现于WordPress 2.5。</p>
+<p><strong>has_tag()</strong></p>
+<p>若当前日志有标签，has_tag()返回TRUE。该标签必须用在<a href="http://www.wordpress.la/codex-WordPress%E4%B8%BB%E5%BE%AA%E7%8E%AF.html" target="_blank" rel="external">WordPress主循环</a>中。注意：has_tag标签首次出现在WordPress 2.6版中。</p>
+<p><strong>has_tag(‘mild’) </strong></p>
+<p>若当前日志标签为“mild”，as_tag(‘mild’) 返回TRUE。</p>
+<p><strong>has_tag(array(‘sharp’,’mild’,’extreme’)) </strong></p>
+<p>若当前日志标签为数组中任一个标签，has_tag(array(‘sharp’,’mild’,’extreme’)) 返回TRUE。</p>
+<h5 id="分类法页面">分类法页面</h5>
+<dl><dt><tt>is_tax()</tt></dt><dd>显示任何分类法归档页面时，is_tax()会返回TRUE。 </dd><dt><tt>is_tax(‘mild’)</tt></dt><dd>显示分类法归档页面别名为“mild”时，<tt>is_tax(‘mild’)返回TRUE。</tt> </dd><dt><tt>is_tax(array(‘sharp’,’mild’,’extreme’))</tt></dt><dd>当前分类法归档别名为数组中的任一个&quot;sharp&quot;, &quot;mild&quot;, 或 &quot;extreme&quot;时，<tt>is_tax(array(‘sharp’,’mild’,’extreme’))</tt> 返回TRUE。</dd></dl>
+
+<p><a name="A_Registered_Taxonomy"></a></p>
+<h5 id="注册过的分类法">注册过的分类法</h5>
+<dl><dt><tt>is_taxonomy()</tt></dt><dd>当某一种分类法通过<a href="http://codex.wordpress.org/Function_Reference/register_taxonomy" target="_blank" rel="external">register_taxonomy()</a>注册， <tt>is_taxonomy()</tt> 返回TRUE。</dd></dl>
+
+<h6 id="作者页面"><a name="is_author">作者页面</a></h6>
+<p><strong>is_author() </strong></p>
+<p>显示作者页面时，is_author()返回TRUE。</p>
+<p><strong>is_author(‘4’) </strong></p>
+<p>若显示的是ID为4的作者的存档页面，is_author(‘4’) 返回TRUE。</p>
+<p><strong>is_author(‘Vivian’) </strong></p>
+<p>若显示的是用户名为“Vivian”的作者的存档页面，is_author(‘Vivian’) 返回TRUE。</p>
+<p><strong>is_author(‘john-jones’) </strong></p>
+<p>若显示的是用户名为“john-jones”的作者的存档页面，is_author(‘john-jones’) 返回TRUE。</p>
+<p><strong>is_author(array(4,’john-jones’,’Vivian’)) </strong></p>
+<p>若页面的用户名ID为4，或user_nicename为“john-jones”，或用户名为“Vivian”，is_author(array(4,’john-jones’,’Vivian’)) 返回TRUE。注意：数组功能首次出现于WordPress 2.5。</p>
+<h6 id="日期页面"><a name="is_date">日期页面</a></h6>
+<p><strong>is_date()</strong></p>
+<p>显示日期相关的存档页面（如月存档，年存档，日存档等基于时间的存档页面）时，is_date() 返回TRUE。</p>
+<p><strong>is_year() </strong></p>
+<p>显示年存档信息时，is_year() 返回TRUE。</p>
+<p><strong>is_month()</strong></p>
+<p>显示月存档信息时，is_month() 返回TRUE。</p>
+<p><strong>is_day() </strong></p>
+<p>显示日存档信息时，is_day() 返回TRUE。</p>
+<p><strong>is_time() </strong></p>
+<p>显示某时、某分或某秒的存档信息时，is_time() 返回TRUE。</p>
+<h6 id="存档页面"><a name="is_archive">存档页面</a></h6>
+<p><strong>is_archive() </strong></p>
+<p>无论显示何种存档页面时，is_archive() 都会返回TRUE。类别存档、标签存档、作者存档以及日期存档页面都属于存档页面。</p>
+<h6 id="搜索结果页面">搜索结果页面</h6>
+<p><strong>is_search() </strong></p>
+<p>显示搜索结果页面时，is_search() 返回TRUE。</p>
+<h6 id="404_Not_Found页面"><a name="is_404">404 Not Found页面</a></h6>
+<p><strong>is_404() </strong></p>
+<p>出现&quot;HTTP 404: Not Found&quot;错误后所显示的页面。</p>
+<h6 id="分页型页面"><a name="is_paged">分页型页面</a></h6>
+<p><strong>is_paged()</strong></p>
+<p>当前页面需要分页显示时，is_paged()返回TRUE。分页型页面是指某个存档页面或需要分成若干页显示的主页，显示第二页以及之后页面时，is_paged()返回TRUE。有些日志或<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>使用&lt;!—nextpage—&gt;快速标签分页显示其内容，这些日志和<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>都不属于分页型页面。</p>
+<h6 id="附件"><a name="is_attachment">附件</a></h6>
+<p><strong>is_attachment() </strong></p>
+<p>显示某篇日志或<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>的附件文件时，is_attachment() 会返回TRUE。附件可以是一张图片，也可以是用户所上传的其它文件。附件能够显示在“页面”或模板上。更多信息请参阅“<a href="http://wordpress.la/codex-%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">图片和附件的使用</a>”。</p>
+<h6 id="独立页面、单篇日志或附件">独立页面、单篇日志或附件</h6>
+<p><strong>is_singular()</strong></p>
+<p>当is_single(), is_page() 或is_attachment()返回TRUE时，is_singular() 也返回TRUE。</p>
+<h6 id="新闻聚合器">新闻聚合器</h6>
+<p><strong>is_feed()</strong></p>
+<p>网站需要使用RSS订阅时，is_feed()返回TRUE。一般情况下会用到is_feed()标签的是WordPress系统和插件开发人员，普通WordPress用户很少用到is_feed()标签。</p>
+<h6 id="引用通告（Trackback）">引用通告（Trackback）</h6>
+<p><strong>is_trackback() </strong></p>
+<p>网站需要将WordPress钩子勾入Trackback。一般情况下会用到这个标签的是WordPress系统和插件开发人员，普通WordPress用户很少用到is_feed()标签。</p>
+<h6 id="预览">预览</h6>
+<p><strong>is_preview() </strong></p>
+<p>若目前页面是在草稿状态下显示的（即预览），is_preview() 返回TRUE。</p>
+<h6 id="Has_An_Excerpt_（摘要）">Has An Excerpt （摘要）</h6>
+<p><strong>as_excerpt() </strong></p>
+<p>当前日志要显示摘要时，as_excerpt() 返回TRUE。</p>
+<p><strong>has_excerpt(‘42’) </strong></p>
+<p>若ID为42的日志要显示摘要时，has_excerpt(‘42’) 返回TRUE。</p>
+<pre>&lt;?php
+// Get $post if you're inside a function
+global $post;
+
+if ( empty($post-&gt;post_excerpt) ) {
+    // This post has no excerpt
+} else {
+    // This post has excerpt
+}
+?&gt;</pre>
+
+<h6 id="Inside_The_Loop_（在WordPress主循环中）">Inside The Loop （在WordPress主循环中）</h6>
+<p><strong>in_the_loop() </strong></p>
+<p>判断目前是否在WordPress主循环中。该标签适用于插件开发人员，若目前在WordPress主循环中，该标签返回TRUE。</p>
+<h6 id="Is_Sidebar_Active（侧边栏是否被激活）">Is Sidebar Active（侧边栏是否被激活）</h6>
+<p><strong>is_active_sidebar() </strong></p>
+<p>检查现有侧边栏是否被激活（是否启用）。若侧边栏被启用，is_active_sidebar() 返回TRUE，否则返回FALSE。该条件函数引入于WordPress 2.8版。</p>
+<h5 id="实例">实例</h5>
+<p>下面是一些对条件标签的实际应用。</p>
+<h6 id="单篇日志">单篇日志</h6>
+<p>下面这个例子向我们展示了怎样用is_single()为某个单独日志页面显示独特内容：</p>
+<pre>if (is_single())
+{
+     echo 'This is just one of many fabulous entries in the ' . single_cat_title() . ' 
+category!';
+}</pre>
+
+<h6 id="区分基于日期的页面">区分基于日期的页面</h6>
+<p>如果访问者按日期浏览网站，我们可以用不同颜色标注不同年份的日志或其它信息：</p>
+<pre>&lt;?php
+// this starts The Loop
+if ( have_posts() ) : while ( have_posts() ) : the_post(); ?&gt;
+&lt;h2 id=&quot;post-&lt;?php the_ID(); ?&gt;&quot;&gt;
+&lt;a href=&quot;&lt;?php the_permalink() ?&gt;&quot; rel=&quot;bookmark&quot; title=&quot;Permanent Link to &lt;?php 
+the_title(); ?&gt;&quot;&gt;
+&lt;?php the_title(); ?&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;small&gt;&lt;?php the_time('F jS, Y') ?&gt; &lt;!-- by &lt;?php the_author() ?&gt; --&gt;&lt;/small&gt;
+
+&lt;?php
+// are we showing a date-based archive?
+if (is_date())
+
+{
+     if (date('Y') != get_the_date('Y'))
+     {
+          // this post was written in a previous year
+          // so let's style the content using the &quot;oldentry&quot; class
+          echo '&lt;div class=&quot;oldentry&quot;&gt;';
+     } else {
+          echo '&lt;div class=&quot;entry&quot;&gt;';
+     }
+} else {
+     echo '&lt;div class=&quot;entry&quot;&gt;';
+}
+the_content('Read the rest of this entry »'); 
+?&gt;
+&lt;/div&gt;</pre>
+
+<h6 id="可视化的侧边栏内容">可视化的侧边栏内容</h6>
+<p>本例根据访问者当前浏览的界面，在侧边栏上显示不同内容。</p>
+<pre>&lt;!-- begin sidebar --&gt;
+&lt;div id=&quot;sidebar&quot;&gt;
+&lt;?php
+// let's generate info appropriate to the page being displayed
+if (is_home()) {
+        // we're on the home page, so let's show a list of all top-level categories
+        echo &quot;&lt;ul&gt;&quot;;
+        wp_list_cats('optionall=0&amp;sort_column=name&amp;list=1&amp;children=0');
+        echo &quot;&lt;/ul&gt;&quot;;
+} elseif (is_category()) {
+        // we're looking at a single category view, so let's show _all_ the categories
+         echo &quot;&lt;ul&gt;&quot;;
+        wp_list_cats('optionall=1&amp;sort_column=name&amp;list=1&amp;children=1&amp;hierarchical=1');
+        echo &quot;&lt;/ul&gt;&quot;;
+} elseif (is_single()) {
+        // we're looking at a single page, so let's not show anything in the sidebar
+} elseif (is_page()) {
+        // we're looking at a static page.  Which one?
+        if (is_page('About')) {
+             // our about page.
+             echo &quot;&lt;p&gt;This is my about page!&lt;/p&gt;&quot;;
+        } elseif (is_page('Colophon')) {
+             echo &quot;&lt;p&gt;This is my colophon page, running on WordPress &quot; . bloginfo('version') . &quot;&lt;/p&gt;&quot;;
+        } else {
+              // catch-all for other pages
+              echo &quot;&lt;p&gt;Vote for Pedro!&lt;/p&gt;&quot;;
+        }
+} else {
+        // catch-all for everything else (archives, searches, 404s, etc)
+        echo &quot;&lt;p&gt;Pedro offers you his protection.&lt;/p&gt;&quot;;
+} // That's all, folks!
+?&gt;
+&lt;form id=&quot;searchform&quot; method=&quot;get&quot; action=&quot;&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;&quot;&gt;
+&lt;div&gt;
+&lt;input type=&quot;text&quot; name=&quot;s&quot; id=&quot;s&quot; size=&quot;15&quot; /&gt;
+&lt;input type=&quot;submit&quot; value=&quot;&lt;?php _e('Search'); ?&gt;&quot; /&gt;
+&lt;/div&gt;
+&lt;/form&gt;
+
+&lt;/div&gt;
+&lt;!-- end sidebar --&gt;</pre>
+
+<h6 id="404页面">404页面</h6>
+<p><a href="http://www.wordpress.la/codex-%E4%BC%98%E5%8C%96Error%20404%E9%A1%B5%E9%9D%A2.html" target="_blank" rel="external">设计Error 404页面</a>中的<a href="http://www.wordpress.la/codex-%E4%BC%98%E5%8C%96Error%20404%E9%A1%B5%E9%9D%A2.html#friendly" target="_blank" rel="external">编写友好的错误信息</a>部分有一个使用PHP条件函数isset()的示例。</p>
+<h6 id="动态菜单高亮">动态菜单高亮</h6>
+<p><a href="http://www.wordpress.la/codex-%E9%AB%98%E4%BA%AE%E6%98%BE%E7%A4%BA%E5%8A%A8%E6%80%81%E8%8F%9C%E5%8D%95.html" target="_blank" rel="external">动态菜单高亮</a>中介绍了如何用条件标签在菜单中激活当前页面的高亮显示部分。</p>
+<h6 id="在主题的footer-php文件中">在主题的footer.php文件中</h6>
+<p>有时在模板文件（如sidebar.php）中执行的查询可能破坏一些条件标签。例如，某个条件标签可以在header.php文件中正常运行，但却不能适应主题的footer.php文件。这时可以在页脚中把wp_reset_query放条件检验前：</p>
+<pre>&lt;?php
+wp_reset_query();
+if (is_page('2') ) {
+echo 'this is page 2!';
+} 
+?&gt;</pre>
+
+<h5 id="条件标签索引">条件标签索引</h5>
+<p>按字母顺序排列：</p>
+<ul>
+<li>comments_open<em>   has_tag</em>   in_category<em>   is_404</em>   is_admin<em>   is_archive</em>   is_attachment<em>   is_author</em>   is_category<em>   is_comments_popup</em>   is_date<em>   is_day</em>   is_feed<em>   is_front_page</em>   is_home<em>   is_month</em>   is_page<em>   is_page_template</em>   is_paged<em>   is_preview</em>   is_search<em>   is_single</em>   is_singular<em>   is_sticky</em>   is_tag<em>   is_time</em>   is_trackback<em>   is_year</em>   pings_open</li>
+</ul>
+<h5 id="常用函数">常用函数</h5>
+<p>转载自：<a href="http://www.wordpress.la/codex-%E6%9D%A1%E4%BB%B6%E6%A0%87%E7%AD%BE.html" target="_blank" rel="external">WordPress啦</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-wordpresse4b8bbe9a298e4b8ade79a84e588a4e696ade587bde695b0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/07/24/wordpresse4b8bbe9a298e4b8ade79a84e588a4e696ade587bde695b0/" class="article-date">
+  <time datetime="2010-07-23T18:06:49.000Z" itemprop="datePublished">Jul 24 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress开发/">wordpress开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/07/24/wordpresse4b8bbe9a298e4b8ade79a84e588a4e696ade587bde695b0/">Wordpress主题中的判断函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>Wordpress有很多判断函数，显示出你想要的内容，在主题制作过程中，通过这些函数你可以定制出功能强大而又时尚的主题。<a name="entrymore"></a><br>文章显示判断函数<br>is_single()<br>判断是否是具体文章的页面<br>is_single(’2′)<br>判断是否是具体文章（id=2）的页面<br>is_single(’Beef Stew’)<br>判断是否是具体文章（标题判断）的页面<br>is_single(’beef-stew’)<br>判断是否是具体文章（slug判断）的页面<br>comments_open()<br>是否留言开启<br>pings_open()<br>是否开启ping<br>页面显示判断函数<br>is_page()<br>是否是页面<br>is_page(’42′)<br>id判断，即是否是id为42的页面<br>is_page(’About Me’)<br>判断标题<br>is_page(’about-me’)<br>slug判断<br>分类显示判断函数<br>is_category()<br>是否是分类<br>is_category(’6′)<br>id判断，即是否是id为6的分类<br>is_category(’Cheeses’)<br>分类title判断<br>is_category(’cheeses’)<br>分类 slug判断<br>in_category(’5′)<br>判断当前的文章是否属于分类5<br>作者归档显示判断函数<br>is_author()<br>将所有的作者的页面显示出来<br>is_author(’1337′)<br>显示author number为1337的页面<br>is_author(’Elite Hacker’)<br>通过昵称来显示当前作者的页面<br>is_author(’elite-hacker’)<br>下面是通过不同的判断实现以年、月、日、时间等方式来显示归档<br>时间归档显示判断函数<br>is_date()<br>is_year()<br>is_month()<br>is_day()<br>is_time()<br>判断当前是否是归档页面<br>is_archive()<br>判断是否是搜索<br>is_search()<br>判断页面是否404<br>is_404()<br>判断是否翻页<br>比如你当前的blog是<a href="http://domain.com" target="_blank" rel="external">http://domain.com</a> 显示<a href="http://domain.com?paged=2的时候，这个判断将返回真，通过这个函数可以配合is_home来控制某些只能在首页显示的界面，" target="_blank" rel="external">http://domain.com?paged=2的时候，这个判断将返回真，通过这个函数可以配合is_home来控制某些只能在首页显示的界面，</a><br>例如：if(is_home() &amp;&amp; !is_paged() )<br>is_paged()<br>其他显示判断函数<br>is_attachment()<br>is_feed()<br>is_trackback()</p>
+<p><a href="http://www.wucailiang.com/WordPress-hanshu/" target="_blank" rel="external">http://www.wucailiang.com/WordPress-hanshu/</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-wordpresse5b8b8e794a8e587bde695b0-wpdbe7b1bb" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/07/wordpresse5b8b8e794a8e587bde695b0-wpdbe7b1bb/" class="article-date">
+  <time datetime="2010-06-07T01:48:11.000Z" itemprop="datePublished">Jun 7 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress开发/">wordpress开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/07/wordpresse5b8b8e794a8e587bde695b0-wpdbe7b1bb/">WordPress常用函数-wpdb类</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>转载自：<a href="http://www.wordpress.la/codex-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-wpdb%E7%B1%BB.html" target="_blank" rel="external">http://www.wordpress.la/codex-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-wpdb%E7%B1%BB.html</a><br>WordPress啦基本是中文WordPress资源中最丰富的地方，接下来会转载很多那里的文章，在此表示感谢</p>
+<h5 id="与数据库建立接口">与数据库建立接口</h5>
+<p>WordPress为用户提供了一系列用于数据库操作的函数类——wpdb。Wpdb类建立在Justin Vincent编写并维护的<a href="http://www.woyano.com/jv/ezsql" target="_blank" rel="external">ezSQL</a>类的基础上。</p>
+<p><strong>使用须知</strong></p>
+<p>不可直接调用wpdb类中的方法，应使用全局变量$wpdb。$wpdb是WordPress提供的一个全局变量，该全局变量是负责与WordPress数据库交流的类的实例化。（在自定义函数中使用$wpdb前，请记住<a href="http://www.php.net/manual/en/language.variables.scope.php#language.variables.scope.global" target="_blank" rel="external">全局化</a>$wpdb。）</p>
+<p>可以用$wpdb对象从任何一个WordPress数据库表（而非仅仅标准数据库表）中读取数据。例如，如果你需要从一个名为“mytable”的自定义表中选定一些信息，可以使用以下代码：<br>  <pre>$myrows = $wpdb-&gt;<a href="http://codex.wordpress.org/Function_Reference/wpdb_Class#SELECT_Generic_Results" target="_blank" rel="external">get_results</a>( &quot;SELECT id, name FROM mytable&quot; );  </pre></p>
+<p>$wpdb对象可以与任何数量的数据库表交流，但这些数据库表只能来自一个数据库——WordPress数据库。如果你要连接到其它数据库（极少情况），那么你就需要用相应的连接细节信息从wpdb类中将你的对象实例化。如果需要设置多个数据库，可以考虑使用 <a href="http://wordpress.org/extend/plugins/hyperdb/" target="_blank" rel="external">hyperdb</a>。</p>
+<h5 id="执行数据库查询">执行数据库查询</h5>
+<p>你可以通过query函数在WordPress数据库中执行_任何_SQL查询。不过我们推荐为SELECT查询使用更为具体的函数。</p>
+<p>&lt;?php $wpdb-&gt;query(‘query’); ?&gt; </p>
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的SQL语句。</p>
+<p>函数返回一个与选定内容的行数相应的整数。如果发生MySQL错误，函数返回FALSE。（注意：0和FALSE都可能被返回，确保使用正确的比较运算符：equality == vs. identicality ===）。</p>
+<p>注意：使用wpdb类中所有可执行SQL查询的函数时，都需要将所有输入内容/inputs进行字符转义（如wpdb-&gt;escape($user_entered_data_string)）。见下文。</p>
+<p><strong>示例</strong></p>
+<p>删除ID为13的文章的“gargle”元关键字和值。</p>
+<p>$wpdb-&gt;query(&quot;</p>
+<p>DELETE FROM $wpdb-&gt;postmeta WHERE post_id = ‘13’</p>
+<p>AND meta_key = ‘gargle’&quot;);</p>
+<p>由<a href="http://www.wordpress.la/codex-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-delete_post_meta%28%29.html" target="_blank" rel="external">delete_post_meta</a>执行。</p>
+<p>将<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>7设为页面15的父级。</p>
+<p>$wpdb-&gt;query(&quot;</p>
+<p>UPDATE $wpdb-&gt;posts SET post_parent = 7</p>
+<p>WHERE ID = 15 AND post_status = ‘static’&quot;);</p>
+<h5 id="选择一个变量">选择一个变量</h5>
+<p>get_var函数返回一个来自数据库的变量。虽然只返回一个变量，但查询结果会被整体缓存，供后期使用。如果没有查询结果，返回NULL。</p>
+<p>&lt;?php $wpdb-&gt;get_var(‘query’,column_offset,row_offset); ?&gt; </p>
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的查询。将该参数设为null会使函数返回上一个查询缓存结果中的具体变量。</p>
+<p><strong>column_offset</strong></p>
+<p>（整数）预计的数据库表的列数（0为表中第一列）。默认值为0。</p>
+<p><strong>row_offset</strong></p>
+<p>（整数）预计的数据库表的行数（0为表中第一行）。默认值为0。</p>
+<p><strong>示例</strong></p>
+<p>检索并返回用户数量。</p>
+<p>&lt;?php</p>
+<p>$user_count = $wpdb-&gt;get_var($wpdb-&gt;prepare(&quot;SELECT COUNT(*) FROM $wpdb-&gt;users;&quot;));</p>
+<p>echo ‘&lt;p&gt;User count is ‘ . $user_count . ‘&lt;/p&gt;’;</p>
+<p>?&gt;</p>
+<p>检索并返回<a href="http://www.wordpress.la/codex-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5.html" target="_blank" rel="external">自定义字段</a>值的总数。</p>
+<p>&lt;?php</p>
+<p>$meta_key = ‘miles’;//set this to appropriate custom field meta key</p>
+<p>$allmiles=$wpdb-&gt;get_var($wpdb-&gt;prepare(&quot;SELECT sum(meta_value) FROM $wpdb-&gt;postmeta WHERE meta_key = %s&quot;, $meta_key));</p>
+<p>echo ‘&lt;p&gt;Total miles is ‘.$allmiles . ‘&lt;/p&gt;’;</p>
+<p>?&gt;</p>
+<h5 id="选择表行">选择表行</h5>
+<p>从某个查询中检索一整行内容，可使用get_row函数。该函数可将行作为对象、关联数组或数值索引数组返回。如果查询返回了多个行，函数只返回指定行，但所有返回的行都将被缓存以供日后使用。</p>
+<p>&lt;?php $wpdb-&gt;get_row(‘query’, output_type, row_offset); ?&gt; </p>
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的查询语句。</p>
+<p><strong>output_type</strong></p>
+<p>三个预定义的常量之一。默认值为OBJECT。</p>
+<ul>
+<li>OBJECT —— 返回的结果以对象形式输出<em>   ARRAY_A ——返回的结果以关联数组形式输出</em>   ARRAY_N —— 返回的结果以数值索引数组形式输出</li>
+</ul>
+<p><strong>row_offset</strong></p>
+<p>（整数）预计的数据库表的行数（0为表中第一行）。默认值为0。</p>
+<p><strong>示例</strong></p>
+<p>获取ID为10的链接的所有资料。</p>
+<pre>$mylink = $wpdb-&gt;get_row(&quot;SELECT * FROM $wpdb-&gt;links WHERE link_id = 10&quot;);  </pre>
+
+<p>$mylink对象的属性即SQL查询结果的行名称（在该例中，即 $wpdb-&gt;links表中的所有行）。</p>
+<pre>echo $mylink-&gt;link_id; // prints &quot;10&quot;  </pre>
+
+<p>使用</p>
+<pre>$mylink = $wpdb-&gt;get_row(&quot;SELECT * FROM $wpdb-&gt;links WHERE link_id = 10&quot;, ARRAY_A);  </pre>
+
+<p>则会生成一个关联数组：</p>
+<pre>echo $mylink['link_id']; // prints &quot;10&quot;  </pre>
+
+<p>而</p>
+<pre>$mylink = $wpdb-&gt;get_row(&quot;SELECT * FROM $wpdb-&gt;links WHERE link_id = 10&quot;, ARRAY_N);  </pre>
+
+<p>则会生成一个数值索引数组：</p>
+<pre>echo $mylink[1]; // prints &quot;10&quot;  </pre>
+
+<h5 id="选择表列">选择表列</h5>
+<p>要选择数据库表中的一列内容，可使用get_col函数。该函数输出一个空间数组，如果查询返回了多个列，函数只返回指定列，但所有返回的列都将被缓存以供日后使用。</p>
+<p>&lt;?php $wpdb-&gt;get_col(‘query’,column_offset); ?&gt; </p>
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的查询。将该参数设为null会使函数返回上一个查询的缓存结果中的执行表列。</p>
+<p><strong>column_offset</strong></p>
+<p>（整数）预计的数据库表的列数（0为表中第一列）。默认值为0。</p>
+<p><strong>示例</strong></p>
+<p>在这个例子中，我们假设有一个专注于发布汽车资讯的博客，博客中每篇文章都介绍了一辆特别的汽车（如1969 Ford Mustang）。此外我们将三个<a href="http://www.wordpress.la/codex-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5.html" target="_blank" rel="external">自定义字段</a>——manufacture、model和year指定给各篇文章。这里我们的目的是显示manufacturer（生产商）为Ford的所有文章的标题，各个标题按模型和年份排列。</p>
+<p>可以利用wpdb类的get_col形式返回一个符合要求、以正确顺序排列的文章ID数组。然后通过foreach构造函数重复该文章ID数组，显示每篇文章的标题。本示例的SQL查询由 <a href="http://stackoverflow.com/questions/1690762/complicated-mysql-query/1690808#1690808" target="_blank" rel="external">Andomar</a>编写。</p>
+<p>&lt;?php</p>
+<p>$meta_key1 = ‘model’;</p>
+<p>$meta_key2 = ‘year’;</p>
+<p>$meta_key3 = ‘manufacturer’;</p>
+<p>$meta_key3_value = ‘Ford’;</p>
+<p>$postids=$wpdb-&gt;get_col($wpdb-&gt;prepare(&quot;</p>
+<p>SELECT key3.post_id</p>
+<p>FROM $wpdb-&gt;postmeta key3</p>
+<p>INNER JOIN $wpdb-&gt;postmeta key1</p>
+<p>on key1.post_id = key3.post_id</p>
+<p>and key1.meta_key = %s</p>
+<p>INNER JOIN $wpdb-&gt;postmeta key2</p>
+<p>on key2.post_id = key3.post_id</p>
+<p>and key2.meta_key = %s</p>
+<p>WHERE key3.meta_key = %s</p>
+<p>and key3.meta_value = %s</p>
+<p>ORDER BY key1.meta_value, key2.meta_value&quot;,$meta_key1, $meta_key2, $meta_key3, $meta_key3_value));</p>
+<p>if ($postids) {</p>
+<p>echo ‘List of $meta_key3_value . ‘(s), sorted by ‘ . $meta_key1 . ‘, ‘ . $meta_key2;</p>
+<p>foreach ($postids as $id) {</p>
+<p>$post=get_post(intval($id));</p>
+<p>setup_postdata($post);?&gt;</p>
+<p>&lt;p&gt;&lt;a href=&quot;&lt;?php the_permalink() ?&gt;&quot; rel=&quot;bookmark&quot; title=&quot;Permanent Link to &lt;?php the_title_attribute(); ?&gt;&quot;&gt;&lt;?php the_title(); ?&gt;&lt;/a&gt;&lt;/p&gt;</p>
+<p>&lt;?php</p>
+<p>}</p>
+<p>}</p>
+<p>?&gt;</p>
+<h5 id="选择生成的结果">选择生成的结果</h5>
+<p>get_results可以从数据库中抽取函数生成的多行结果。Wpdb函数以数组形式返回整个查询结果。数组中每个元素都对应查询结果中的一行，如get_row既可以是对象，也可以是关联数组或数值型数组。</p>
+<p>&lt;?php $wpdb-&gt;get_results(‘query’, output_type); ?&gt; </p>
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的查询语句。将该参数设为null会使函数返回上一个查询的缓存结果中的信息。</p>
+<p><strong>output_type</strong></p>
+<p>三个预定义的常量之一。默认值为OBJECT。更多信息请见上文中的“<strong>选择表行</strong>”。</p>
+<ul>
+<li>OBJECT —— 以对象形式输出返回的结果<em>   ARRAY_A ——以关联数组形式输出返回的结果</em>   ARRAY_N —— 以数值索引数组形式输出返回的结果</li>
+</ul>
+<p><strong>示例</strong></p>
+<p>获取ID为5的用户的所有文章草稿的ID和标题并回应标题。</p>
+<p>$fivesdrafts = $wpdb-&gt;get_results(&quot;SELECT ID, post_title FROM $wpdb-&gt;posts</p>
+<p>WHERE post_status = ‘draft’ AND post_author = 5&quot;);</p>
+<p>foreach ($fivesdrafts as $fivesdraft) {</p>
+<p>echo $fivesdraft-&gt;post_title;</p>
+<p>}</p>
+<p>获取ID为5的用户的所有文章草稿信息。</p>
+<p>&lt;?php</p>
+<p>$fivesdrafts = $wpdb-&gt;get_results(&quot;SELECT * FROM $wpdb-&gt;posts</p>
+<p>WHERE post_status = ‘draft’ AND post_author = 5&quot;);</p>
+<p>if ($fivesdrafts) :</p>
+<p>foreach ($fivesdrafts as $post) :</p>
+<p>setup_postdata($post);</p>
+<p>?&gt;</p>
+<p>&lt;h2&gt;&lt;a href=&quot;&lt;?php the_permalink(); ?&gt;&quot; rel=&quot;bookmark&quot;</p>
+<p>title=&quot;Permanent Link to &lt;?php the_title(); ?&gt;&quot;&gt;&lt;?php the_title(); ?&gt;&lt;/a&gt;&lt;/h2&gt;</p>
+<p>&lt;?php</p>
+<p>endforeach;</p>
+<p>else :</p>
+<p>?&gt;</p>
+<p>&lt;h2&gt; Not Found&lt;/h2&gt;</p>
+<p>&lt;?php endif; ?&gt;</p>
+<h5 id="插入表行/列">插入表行/列</h5>
+<p>在数据库表中插入一行/列内容。</p>
+<p><strong>示例</strong></p>
+<p>在一行中插入两列内容，第一个列的值为字符串，第二列的值为数字：</p>
+<pre>$wpdb-&gt;insert( 'table', array( 'column1' =&gt; 'value1', 'column2' =&gt; 123 ), array( '%s', '%d' ) )  </pre>
+
+<p>可能的值：- %s 为字符串，- %d 为十进制数字，- %f 为浮点。</p>
+<h5 id="更新表行/列">更新表行/列</h5>
+<p>更新数据库表中某行/列的内容。</p>
+<p><strong>示例</strong></p>
+<p>要更新一个表行，其ID为1，该行第一列中的值是一个字符串，第二列中的值是一个数字：</p>
+<pre>$wpdb-&gt;update( 'table', array( 'column1' =&gt; 'value1', 'column2' =&gt; 'value2' ), array( 'ID' =&gt; 1 ), array( '%s', '%d' ), array( '%d' ) )  </pre>
+
+<h5 id="防止数据库查询遭到SQL注入式攻击">防止数据库查询遭到SQL注入式攻击</h5>
+<p>更多在WordPress中避免SQL攻击的信息，请看<a href="http://www.wordpress.la/codex-%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81.html" target="_blank" rel="external">数据验证</a>。这是WordPress代码编写者和插件开发者的必读文章。</p>
+<p>简单地说，执行SQL查询以阻止SQL注入式攻击前，SQL查询中的所有数据都需要经过SQL字符转义。可以通过prepare方法快速完成字符转义，该方法使用 <a href="http://php.net/sprintf" target="_blank" rel="external">sprintf()</a>-like语句。</p>
+<p>&lt;?php $sql = $wpdb-&gt;prepare( ‘query’[, value_parameter, value_parameter … ] ); ?&gt;</p>
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的SQL查询，以 %s 与%d作为占位符。</p>
+<p><strong>value_parameter</strong></p>
+<p>（字符串）提交到占位符中的值。该值此时必须没有被SQL转义。</p>
+<p><strong>示例</strong></p>
+<p>将Meta key =&gt; value pair &quot;Harriet’s Adages&quot; =&gt; &quot;WordPress’ database interface is like Sunday Morning: Easy.&quot;添加到ID为10的文章。</p>
+<p>$metakey = &quot;Harriet’s Adages&quot;;</p>
+<p>$metavalue = &quot;WordPress’ database interface is like Sunday Morning: Easy.&quot;;</p>
+<p>$wpdb-&gt;query( $wpdb-&gt;prepare( &quot;</p>
+<p>INSERT INTO $wpdb-&gt;postmeta</p>
+<p>( post_id, meta_key, meta_value )</p>
+<p>VALUES ( %d, %s, %s )&quot;,</p>
+<p>10, $metakey, $metavalue ) );</p>
+<p>由add_meta()执行。</p>
+<p>注意，这时你无须担心引用字符串。不要直接将变量传递给SQL查询，可将 %s作为字符串的占位符， %d作为整数的占位符。你可以传递任意个值，每一个都可以作为prepare()方法的新参数。</p>
+<h5 id="显示/隐藏SQL错误">显示/隐藏SQL错误</h5>
+<p>你可以用show_errors来显示SQL错误，也可以用hide_errors隐藏SQL错误。</p>
+<p> &lt;?php $wpdb-&gt;show_errors(); ?&gt;</p>
+<p>&lt;?php $wpdb-&gt;hide_errors(); ?&gt; </p>
+<p>同样也可以用print_error输出近期的查询所生成的错误。</p>
+<p>&lt;?php $wpdb-&gt;print_error(); ?&gt; </p>
+<h5 id="获取数据库表中某列信息">获取数据库表中某列信息</h5>
+<p>利用get_col_info可以检索到近期查询的表列信息。当你不了解某个函数返回的对象的属性时，就可以通过get_col_info函数获取信息。该函数从指定列中输出所需信息，如果没有指定某列，则函数输出一个以查询结果中所有列的信息为内容的数组。</p>
+<p>&lt;?php $wpdb-&gt;get_col_info(‘type’, offset); ?&gt; </p>
+<p><strong>type</strong></p>
+<p>（字符串）你希望检索的信息。可能为以下任何值之一（摘自 <a href="http://justinvincent.com/home/docs/ezsql/ez_sql_help.htm" target="_blank" rel="external">ezSQL</a>文档）。默认值为name。</p>
+<ul>
+<li>name ——表列的名称。默认值<em>   table ——列所属表格的表格名称</em>   max_length —— 表列的最大长度<em>   not_null —— 若表列不为Null则值为1</em>   primary_key —— 若表列是一个主键，值为1<em>   unique_key —— 若表列是唯一键，值为1</em>   multiple_key —— 若表列是非唯一键，值为1<em>   numeric —— 若表列是数值型，值为1</em>   blob —— 若表列为BLOB，值为1<em>   type —— 表列的类型</em>   unsigned —— 若表列无符号，值为1*   zerofill —— 若表列为zero-filled，值为1</li>
+</ul>
+<p><strong>offset</strong></p>
+<p>（整数）从某个检索信息的表中指定表列（0为表中第一列）。默认值为-1。</p>
+<ul>
+<li>-1 —— 从所有表列中检索信息。输出一个数组。默认值。*   非负整数 —— 从指定的表列中检索信息（0为表中第一列）。</li>
+</ul>
+<h5 id="清除缓存">清除缓存</h5>
+<p>用flush清除SQL结果缓存。</p>
+<p>&lt;?php $wpdb-&gt;flush(); ?&gt; </p>
+<p>这会清除$wpdb-&gt;last_result、$wpdb-&gt;last_query以及$wpdb-&gt;col_info信息。</p>
+<h5 id="类变量">类变量</h5>
+<p><strong>$show_errors</strong></p>
+<p>是否显示SQL错误信息。默认为TRUE。</p>
+<p><strong>$num_queries</strong></p>
+<p>已经被执行的查询次数</p>
+<p><strong>$last_query</strong></p>
+<p>最近一次已经被执行的查询</p>
+<p><strong>$queries</strong></p>
+<p>将SAVEQUERIES常量设为TRUE（该常量默认值为FALSE），可以保存所有数据库查询及其停止时间。如果SAVEQUERIES值为TRUE，你的查询会被作为数组保存在$queries变量中。</p>
+<p><strong>$last_result</strong></p>
+<p>最近一次查询结果。</p>
+<p><strong>$col_info</strong></p>
+<p>最近一次查询结果的表列信息。参见获取表列信息。</p>
+<p><strong>$insert_id</strong></p>
+<p>最近一次INSERT查询为AUTO_INCREMENT列生成的ID。</p>
+<p><strong>$num_rows</strong></p>
+<p>最近一次查询返回的行数。</p>
+<h5 id="表">表</h5>
+<p>在wpdb类中可以引用WordPress数据库表。</p>
+<p><strong>$posts </strong></p>
+<p>关于文章的数据库表</p>
+<p><strong>$users</strong></p>
+<p>关于用户的数据库表</p>
+<p><strong>$comments</strong></p>
+<p>评论表</p>
+<p><strong>$links</strong></p>
+<p>链接表</p>
+<p><strong>$options</strong></p>
+<p>选项表</p>
+<p><strong>$postmeta</strong></p>
+<p>元数据（<a href="http://www.wordpress.la/codex-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5.html" target="_blank" rel="external">自定义字段</a>）表</p>
+<p><strong>$usermate</strong></p>
+<p><a href="http://www.wordpress.la/codex-WordPress%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0.html" target="_blank" rel="external">usermeta</a>表中含有用户的其它信息，如昵称、个人说明与权限。</p>
+<p><strong>$terms</strong></p>
+<p><a href="http://www.wordpress.la/codex-WordPress%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0.html" target="_blank" rel="external">terms</a>表中包括对分类目录、链接分类、标签的“说明”（description）</p>
+<p><strong>$term_taxonomy</strong></p>
+<p><a href="http://www.wordpress.la/codex-WordPress%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0.html" target="_blank" rel="external">term_taxonomy</a>表介绍了WordPress的不同分类（taxonomy）。分类目录、链接分类、标签都是一种分类。</p>
+<p><strong>$term_relationships</strong></p>
+<p><a href="http://www.wordpress.la/codex-WordPress%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0.html" target="_blank" rel="external">term_relationships</a>表中含有术语以及使用术语的对象之间的链接，即该表可以指向日志所属的分类目录。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-wordpresse68f92e4bbb6apie6898be5868c" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/07/wordpresse68f92e4bbb6apie6898be5868c/" class="article-date">
+  <time datetime="2010-06-07T01:42:15.000Z" itemprop="datePublished">Jun 7 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress开发/">wordpress开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/07/wordpresse68f92e4bbb6apie6898be5868c/">WordPress插件API手册</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress，hook/">wordpress，hook</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>转载的，但找不到最初的地址了<br> <span style="widows: 2; text-transform: none; text-indent: 0px; border-collapse: separate; font: medium simsun; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(0,0,0); word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px" class="Apple-style-span"><span style="text-align: left; line-height: 21px; font-family: verdana, sans-serif; font-size: 14px" class="Apple-style-span">     </span></span></p>
+<h2 id="概述">概述</h2>
+<p>本文档介绍了在WordPress中对插件开发者有用的API（Application Programming Interface，应用编程接口）的使用方法。</p>
+<p>本文假设你已经阅读了简要介绍插件开发方法的文章：<a href="http://codex.wordpress.org/Writing_a_Plugin" title="Writing a Plugin" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Writing a Plugin</span></strong></a>，本文主要就介绍Hook API，比如Filters、Action，这使得WordPress可以加载你的插件。</p>
+<p>注意：本文所提到的信息针对WordPress1.2及以上版本，在1.2版之前，这些插件被称为“hacks”，他们主要是通过修改WordPress本身的源码来实现的。</p>
+<p>译者注：在本文中，为了便于对原文的准确翻译，一些程序设计的专有词汇没有进行翻译，你可以阅读如下单词表来参考：</p>
+<ul>
+<li>API，应用程序编程接口。</li>
+<li>Hook，钩子，意为在WordPress的处理中加入你自己的处理。</li>
+<li>Filter，过滤器。</li>
+<li>Action，动作。      </li>
+</ul>
+<h2 id="Hooks，Actions和Filters">Hooks，Actions和Filters</h2>
+<p>Hook是WordPress提供的，允许你的插件“勾入”WordPress的程序，或者说，可以在特定时候执行你插件中的函数，从而使得你的插件执行。这里提供了两种hook：</p>
+<ol>
+<li>Action：Action（动作）是WordPress程序核心在程序执行的特殊点（特定事件发生）加载的。使用Action API，你的插件可以在这些特殊点执行一个或者多个在插件中编写的PHP函数。</li>
+<li>Filter：Filter（过滤器）是WordPress加载的，当文本被存入数据库或发送到浏览器之前，Filter可用来对其进行多种类型的处理。使用Filter，你的插件可以使用定义在其中的PHP函数来对文本进行多种处理。      </li>
+</ol>
+<p>某 些时候，你可以用Action或者Filter实现同样的功能。举例来说，如果你编写了一个插件用来修改博客日志的文本，你可以加入一个Action函数 到publist_post的事件（这样日志就会在存入数据库时被修改），也可以加入一个Fliter函数到the_content（这时日志内会在显示 到浏览器之前被修改）。</p>
+<h2 id="Actions（动作）">Actions（动作）</h2>
+<p>Action（动作）在WordPress进行某些特殊事件处理时被触发，例如发布日志，修改主题，或者在管理员面板显示页面。你的插件可以通过执行PHP函数来发挥作用，他们可以用来做如下事情：</p>
+<ul>
+<li>修改数据库中的数据</li>
+<li>发送Email消息</li>
+<li>修改在浏览器中显示的信息（包括管理员看到的和访问者看到的）      </li>
+</ul>
+<p>实施Action的基本步骤是：</p>
+<ol>
+<li>在你的插件中编写当事件发生时执行的PHP函数。</li>
+<li>通过执行add_action函数将这些操作Hook（勾入）到WordPress中。</li>
+<li>将你的PHP函数放入插件文件，并且将其激活。      </li>
+</ol>
+<h3 id="编写Action函数">编写Action函数</h3>
+<p>在插件中创建Action的第一步是在插件中编写一个实现Action功能的PHP函数并且将其放入你的插件文件（插件文件必须放置在wp- content/plugins目录）中。比如，如果你希望当发表一篇日志后，发送Email通知给你的朋友，那么你可以定义如下函数：</p>
+<p><code>function email_friends($post_ID) {         
+&amp;#160;&amp;#160;&amp;#160; $friends = &#39;bob@example.org,susie@example.org&#39;;          
+&amp;#160;&amp;#160;&amp;#160; mail($friends, &amp;quot;sally&#39;s blog updated&amp;quot;,&lt;span class=&quot;Apple-converted-space&quot;&gt;&amp;#160;&lt;/span&gt;          
+&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; &#39;I just put something on my blog: http://blog.example.com&#39;);          
+&amp;#160;&amp;#160;&amp;#160; return $post_ID;          
+}</code></p>
+<p>在大多数Action中，你的函数应该接受一个参数（通常是日志或者帖子的编号，这取决于你要进行的操作）。某些Action可能有多余一个参数 —你可以通过查看Action的文档或者WordPress源代码来获得更多信息。除函数参数外，你还可以访问WordPress的全局变量以及执行 WordPress中定义的其他函数（或者在你的插件文件中定义的函数）。</p>
+<p><strong>注意</strong>：切记其他插件或者WordPress核心可能已经使用了你希望使用的函数名称，你可以浏览<a href="http://codex.wordpress.org//Writing_a_Plugin#Avoiding_Function_Name_Collisions" title="Writing a Plugin" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Avoiding Function Name Collisions</span></strong></a>（避免函数名称冲突—译者注）来获得更多信息。</p>
+<h3 id="Hook（勾入）到WordPress">Hook（勾入）到WordPress</h3>
+<p>完成你的函数的编写后，下一步就是将其hook（勾入）或者说注册到WordPress中，你可以通过执行全局空间中的add_action()函数来实现，如：</p>
+<p><code>add_action ( &#39;hook_name&#39;, &#39;your_function_name&#39;, [priority], [accepted_args] );</code></p>
+<p>此处</p>
+<ul>
+<li>hook_name参数是WordPress提供的Action Hook（动作钩子）名称，这决定了你的函数应当和哪个事件结合。</li>
+<li>your_function_name参数是你希望在特定事件（即hook_name参数指定的事件）后执行的函数名称。该函数可以是 标准的PHP函数，在WordPress核心中定义的函数或者你自己在插件文件中定义的函数（如刚才我们编写的emai_friends函数）。</li>
+<li>priority参数是一个可选的整型参数，他用来指明在结合特定事件的多个函数中，当前函数被执行的顺序（默认为10）。该参数指定的更小的数字会被更早的执行，priority参数相同的函数会依照他们被加入Action的顺序来执行。</li>
+<li>accepted_args参数是一个可选的整型参数，他定义了你的函数中可以接收多少个参数（默认为1）。该参数是非常有用的，因为某些Hook可以向你的函数中传入多个参数。该参数在1.5.1版本中被新加入。      </li>
+</ul>
+<p>在前面的例子中，我们可以在插件文件中加入如下代码：</p>
+<p><code>add_action(&#39;publish_post&#39;, &#39;email_friends&#39;);</code></p>
+<p>同样的，你也可以在Action Hook中移除Action，你可以参考<a href="http://www.yeeyan.com/#Removing_Actions_and_Filters" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Remove Actions</span></strong></a>来获得更多详情。</p>
+<h3 id="安装和激活">安装和激活</h3>
+<p>让你的Action Hook开始工作的最后一步是安装插件文件和激活插件。你必须将你编写的PHP函数和add_action函数存入同一个PHP文件，该PHP文件必须被 安装在wp-content/plugins目录，当该文件安装完毕，你需要浏览WordPress的管理面板，并且激活你的插件，你可以参考<a href="http://codex.wordpress.org/Managing_Plugins" title="Managing Plugins" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Managing Plugins</span></strong></a>文章来获得更多信息。</p>
+<h3 id="当前可用的Action_Hook">当前可用的Action Hook</h3>
+<p>请浏览<a href="http://codex.wordpress.org/Plugin_API/Action_Reference" title="Plugin API/Action Reference" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Plugin API/Action Reference</span></strong></a>（插件API/Action参考—译者注）来获得一份当前版本的WordPress中可用的Action Hook。</p>
+<h2 id="Filters（过滤器）">Filters（过滤器）</h2>
+<p>Filters（过滤器）是WordPress在执行中的特定点传递数据的函数，他发生在对数据进行操作（如将其加入数据库或发送到浏览器）之前。 Filter建立在数据库到浏览器之间的处理（当WordPress生成页面时），同时也建立在浏览器到数据库之间的处理（当WordPress新增日志 或者评论到数据库时）；多数WordPress中的输入输出都通过了至少一个filter。WordPress默认已经实现了一些过滤操作，你的插件也可 以加入你自己的过滤操作。</p>
+<p>将你的filter加入WordPress中的基本步骤如下：</p>
+<ol>
+<li>编写用于过滤数据的PHP函数。</li>
+<li>通过执行add_filter函数将filter Hook（勾入）到WordPress。</li>
+<li>将你的PHP函数放入插件文件，并且将其激活。      </li>
+</ol>
+<h3 id="编写Filter（过滤器）函数">编写Filter（过滤器）函数</h3>
+<p>Filter（过滤器）函数获得未经修改的数据，并返回修改后的数据（或者在某些情况下，返回null值来标识数据应当被删除或忽略）。如果你的filter不修改数据，那么应当返回原始数据，这样，如果必要，其余的插件可以继续修改数据。</p>
+<p>因此，在你的插件中创建filter的第一步是编写一个PHP函数来进行过滤处理，并且将其放在你的插件文件（插件文件必须放置在wp- content/plugins目录）当中。例如，如果你希望确保你的帖子和评论中不包含脏话，你可以定义一个存放禁止词汇的全局变量，然后编写如下的 PHP函数：</p>
+<p><code>function filter_profanity($content) {         
+&amp;#160;&amp;#160;&amp;#160; global $profanities;          
+&amp;#160;&amp;#160;&amp;#160; foreach($profanities as $profanity) {          
+&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; $content=str_ireplace($profanity,&#39;{censored}&#39;,$content);          
+&amp;#160;&amp;#160;&amp;#160; }          
+&amp;#160;&amp;#160;&amp;#160; return $content;          
+}</code></p>
+<p><strong>注意</strong>：切记其他插件或者WordPress核心可能已经使用了你希望使用的函数名称，你可以浏览<a href="http://codex.wordpress.org/Writing_a_Plugin#Avoiding_Function_Name_Collisions" title="Writing a Plugin" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Avoiding Function Name Collisions</span></strong></a>（避免函数名称冲突—译者注）来获得更多信息。</p>
+<h3 id="Hook（勾入）到WordPress-1">Hook（勾入）到WordPress</h3>
+<p>完成你的函数的编写后，下一步就是将其hook（勾入）或者说注册到WordPress中，你可以通过执行全局空间中的add_filter()函数来实现，如：</p>
+<p><code>add_filter(&#39;hook_name&#39;, &#39;your_filter&#39;, [priority], [accepted_args]);</code></p>
+<p>此处：</p>
+<ul>
+<li>hook_name参数是WordPress提供的Filter Hook（过滤器钩子）名称，这决定了你的函数在何时发挥作用。</li>
+<li>your_filter参数是你希望用来过滤的函数的名称。该函数可以是标准的PHP函数，在WordPress核心中定义的函数或者你自己在插件文件中定义的函数。</li>
+<li>priority参数是一个可选的整型参数，他用来指明在结合特定事件的多个函数中，当前函数被执行的顺序（默认为10）。该参数指定的更小的数字会被更早的执行，priority参数相同的函数会依照他们被加入Action的顺序来执行。</li>
+<li>accepted_args参数是一个可选的整型参数，他定义了你的函数中可以接收多少个参数（默认为1）。该参数是非常有用的，因为某些Hook可以向你的函数中传入多个参数。该参数在1.5.1版本中被新加入。      </li>
+</ul>
+<p>在前面的例子中，我们可以将下面的代码放入你的插件文件中的主要执行部分，来通知WordPress对评论中的脏话进行过滤处理：</p>
+<p>add_filter(‘comment_text’,’filter_profanity’);</p>
+<p>你也可以使用WordPress函数remove_filter()来移除filter hook中的filter。你可以参考<a href="http://www.yeeyan.com/#Removing_Actions_and_Filters" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Removing Actions and Filters</span></strong></a>。</p>
+<h3 id="安装和激活-1">安装和激活</h3>
+<p>让你的Filter Hook开始工作的最后一步是安装插件文件和激活插件。你必须将你编写的PHP函数和add_filter函数存入同一个PHP文件，该PHP文件必须被 安装在wp-content/plugins目录，当该文件安装完毕，你需要浏览WordPress的管理面板，并且激活你的插件，你可以参考<a href="http://codex.wordpress.org/Managing_Plugins" title="Managing Plugins" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Managing Plugins</span></strong></a>文章来获得更多信息。</p>
+<h3 id="当前可用的Filter_Hook">当前可用的Filter Hook</h3>
+<p>请浏览<a href="http://codex.wordpress.org/Plugin_API/Filter_Reference" title="Plugin API/Filter Reference" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Plugin API/Filter Reference</span></strong></a><span class="Apple-converted-space">&#160;</span>（插件API/Filter参考—译者注）来获得一份当前版本的WordPress中可用的Filter Hook。</p>
+<h2 id="删除Action和Filter">删除Action和Filter</h2>
+<p>在某些情况下，你会发现你希望你的插件屏蔽WordPress内建或者其他插件加入的Action或Filter。你可以通过执行<code>remove_filter(&#39;filter_hook&#39;,&#39;filter_function&#39;)函数或者remove_action(&#39;action_hook&#39;,&#39;action_function&#39;)函数来实现。</code></p>
+<p>举例来说，remove_action(‘publish_post’,’generic_ping’);会使得你在发表新日志时不发送日志引用（ping）。</p>
+<p>注意如果某个hook在注册时使用了除默认值10意外的priority参数，则你必须修改在remove_action()函数中的 priority参数。同时也请注意，通常来讲除非你知道这样做的原因和后果，你不应当移除任何东西—请检查WordPress或者其他插件的源代码来 保证这一点。</p>
+<h2 id="默认应用的Filter和Action">默认应用的Filter和Action</h2>
+<p>找出WordPress默认启用的filter和Action的最可靠方法是在WordPress核心文件中搜索 add_filter和add_action。</p>
+<h3 id="WordPress_2-1">WordPress 2.1</h3>
+<p>在WordPress 2.1中，大多数默认filter和action是通过文件wp-includes/default-filters.php来加入的，少数其他的在如下文件中被加入：</p>
+<ul>
+<li>wp-admin/admin-ajax.php</li>
+<li>wp-admin/admin-functions.php</li>
+<li>wp-admin/custom-header.php</li>
+<li>wp-admin/edit.php</li>
+<li>wp-admin/index.php</li>
+<li>wp-admin/options-permalink.php</li>
+<li>wp-admin/upload-functions.php</li>
+<li>wp-admin/upload.php</li>
+<li>wp-includes/bookmark.php</li>
+<li>wp-includes/general-template.php</li>
+<li>wp-includes/kses.php</li>
+<li>wp-includes/plugin.php</li>
+<li>wp-includes/rewrite.php</li>
+<li>wp-includes/template-loader.php</li>
+<li>wp-includes/theme.php      </li>
+</ul>
+<h3 id="WordPress_1-5">WordPress 1.5</h3>
+<p>大多数默认的filter和action在WordPress 1.5的文件wp-includes/default-filters.php中被加入。</p>
+<h2 id="你可以覆盖的函数">你可以覆盖的函数</h2>
+<p>除了前面描述的hook（包括action和filter）之外，另一个修改WordPress行为的插件编写方法是覆盖WordPress函数。 事实上，WordPress设计了一些让插件重新定义的函数。WordPress通过仅当所有插件都加载之后才加载这些函数的方式来使得这个方式变得容 易。</p>
+<p>这些函数均定义在文件wp-includes/pluggable.php中，如下是其清单（在2.1版本中）；这些函数中的部分文档可以在<a href="http://codex.wordpress.org/Function_Reference" title="Function Reference" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Function Reference</span></strong></a>（函数参考-译者注）中找到。</p>
+<ul>
+<li><tt>set_current_user</tt></li>
+<li><tt>wp_set_current_user</tt></li>
+<li><tt>wp_get_current_user</tt>   </li>
+</ul>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

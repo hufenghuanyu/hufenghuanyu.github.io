@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/page/44/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-e38090e8bdace8bdbde38091e9a5ade590a6e7bd91e7ab99msne69cbae599a8e4babae5ae9ee78eb0e58e9fe79086e58f8ae4bba3e7a081" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/09/18/e38090e8bdace8bdbde38091e9a5ade590a6e7bd91e7ab99msne69cbae599a8e4babae5ae9ee78eb0e58e9fe79086e58f8ae4bba3e7a081/" class="article-date">
+  <time datetime="2007-09-17T19:02:00.000Z" itemprop="datePublished">Sep 18 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/09/18/e38090e8bdace8bdbde38091e9a5ade590a6e7bd91e7ab99msne69cbae599a8e4babae5ae9ee78eb0e58e9fe79086e58f8ae4bba3e7a081/">【转载】饭否网站MSN机器人实现原理及代码</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>饭否，唧歪们MSN、QQ、GTalk机器人实现原理及代码</p>
+<p>——饭否，唧歪MSN机器人实现原理（DotMSN2.0解析篇，以下代码作者全部测试通过）</p>
+<p>腾讯滔滔近期发布，各大IT网站争相报道</p>
+<p>最后的结论是滔滔不会做MSN、GTalk机器人，所以饭否、唧歪类网站在腾讯入侵后仍然有生存的余地。</p>
+<p>twitter模式，即迷你博客网站的兴起、流行主要是因为接入方法多样</p>
+<p>我们打开这些网站，可以发现迷你博客内容的发布多数不是来自网页，超过半数是来自IM</p>
+<p>因为IM是互联网发展到现在非常成功的一个产品，其中QQ、MSN、GTalk占有绝对优势</p>
+<p>我们的网民每天上网都会使用IM，而饭否、唧歪类网站是第一批开始借助IM运作的互联网产品</p>
+<p>饭否是目前国内模仿twitter模式较为成功的，我们以饭否为例，IM我们以MSN为例</p>
+<p>我们可以通过MSN接入饭否做以下事情，首先加饭否的MSN机器人为好友，记我的MSN帐号为A，饭否机器人MSN帐号为B，我在饭否加了一个好友为C：</p>
+<p>1.A打开B，输入&ldquo;H&rdquo;，即A发送消息&ldquo;H&rdquo;给B，B马上把使用帮助信息发送给A</p>
+<p>2.A打开B，输入其他字符串，马上饭否网站A的迷你博客有了一条新的，内容是这个字符串</p>
+<p>3.C在饭否通过一种方式发布了一个迷你博客，A这时在用MSN，B为主动发送一个消息给A，消息内容是：C发布了迷你博客&ldquo;迷你博客内容&rdquo;</p>
+<p>具体到技术层面，这些功能是怎么实现的呢？</p>
+<p>微软公司的MSN，现在叫做Live Messager，提供了开发接口，通过更容易做二次开发的当推DotMSN2.0</p>
+<p>开发平台为Visual Studio 2005，基于.net 2.0</p>
+<p>我们对DotMSN2.0源代码进行了分析、改造，现总结如下：</p>
+<p>先通过改造后的程序功能介绍让列位看官有一个感性的认识</p>
+<p>整个应用程序有2个主体类</p>
+<p>public partial class Robot : Form</p>
+<p>//界面，实现机器人MSN帐号的登录，以及定时读取数据库</p>
+<p>class MyConversation</p>
+<p>//实现机器人与好友对话的功能</p>
+<p>//Robot的实现：</p>
+<p>// Create a Messenger object to use DotMSN.</p>
+<p>private XihSolutions.DotMSN.Messenger messenger = new Messenger();</p>
+<p>//构造函数</p>
+<p>public Robot()</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  InitializeComponent();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // by default this example will emulate the official microsoft windows messenger client</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  messenger.Credentials.ClientID = &quot;msmsgs@msnmsgr.com&quot;;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  messenger.Credentials.ClientCode = &quot;Q1P7W2E4J9R8U3S5&quot;;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  //登录成功之后触发事件</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  messenger.NameserverProcessor.ConnectionEstablished += new EventHandler(NameserverProcessor_ConnectionEstablished);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  messenger.Nameserver.SignedIn += new EventHandler(Nameserver_SignedIn);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  messenger.ConversationCreated += new ConversationCreatedEventHandler(messenger_ConversationCreated);</p>
+<p>}</p>
+<p>//MSN机器人登录函数</p>
+<p>private void login_Click(object sender, EventArgs e)</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  if (messenger.Connected)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  SetStatus(&quot;Disconnecting from server&quot;);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  messenger.Disconnect();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // set the credentials, this is ofcourse something every DotMSN program will need to</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // implement.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  messenger.Credentials.Account = account.Text;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  messenger.Credentials.Password = password.Text;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // inform the user what is happening and try to connecto to the messenger network.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  SetStatus(&quot;Connecting to server&quot;);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  messenger.Connect();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // note that Messenger.Connect() will run in a seperate thread and return immediately.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // it will fire events that informs you about the status of the connection attempt. </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // these events are registered in the constructor.</p>
+<p>}</p>
+<p>//Robot Form定时器执行函数</p>
+<p>private void Timer_Tick(object sender, EventArgs e)</p>
+<p>{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  //遍历MSN机器人的所有好友</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  foreach (Contact contact in messenger.ContactList.All)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  if (contact != null &amp;&amp; contact.Online == true)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  //实例化一个机器人与好友的对话</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Conversation conversation = messenger.CreateConversation();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  conversation.Invite(contact);//邀请好友参与对话</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  MyConversation agent = CreateMyConversation(conversation);//实例化一个对话处理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }</p>
+<p>}</p>
+<p>//对话处理的实例化（这个很关键）</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  /// &lt;summary&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /// A delegate passed to Invoke in order to create the conversation form in the thread of the main form.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /// &lt;/summary&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  private delegate MyConversation CreateConversationDelegate(Conversation conversation);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  private MyConversation CreateMyConversation(Conversation conversation)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // create a new conversation. However do not show the window untill a message is received.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // for example, a conversation will be created when the remote client sends wants to send</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // you a file. You don’t want to show the conversation form in that case.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  MyConversation agent = new MyConversation(conversation);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // do this to create the window handle. Otherwise we are not able to call Invoke() on the</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // conversation form later.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  //agent.Handle.ToInt32();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  return agent;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }</p>
+<p>//如果是第一次好友主动向MSN机器人发送消息，则调用</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  private void messenger_ConversationCreated(object sender, ConversationCreatedEventArgs e)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // check if the request is initiated remote or by this object</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // if it is initiated remote then we have to create a conversation form. Otherwise the </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // form is already created and we don’t need to create another one.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  if (e.Initiator == null)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // use the invoke method to create the form in the main thread</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  this.Invoke(new CreateConversationDelegate(CreateMyConversation), new object[] { e.Conversation });</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }</p>
+<p>//再来看看class MyConversation</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  private Conversation _conversation;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /// &lt;summary&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /// The conversation object which is associated with the form.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /// &lt;/summary&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  public Conversation Conversation</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  get { return _conversation; }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  public MyConversation(Conversation conversation)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  _conversation = conversation;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  //绑定事件，处理好友发送消息给MSN机器人</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Conversation.Switchboard.TextMessageReceived += new TextMessageReceivedEventHandler(Switchboard_TextMessageReceived);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Conversation.Switchboard.SessionClosed += new SBChangedEventHandler(Switchboard_SessionClosed);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Conversation.Switchboard.ContactJoined += new ContactChangedEventHandler(Switchboard_ContactJoined);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Conversation.Switchboard.ContactLeft += new ContactChangedEventHandler(Switchboard_ContactLeft);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  //MSN机器人给好友发送消息</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  public void SendInput(String inputMessage)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // check whether there is input</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  if (inputMessage.Length == 0) return;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // if there is no switchboard available, request a new switchboard session</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  if (Conversation.SwitchboardProcessor.Connected == false)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Conversation.Messenger.Nameserver.RequestSwitchboard(Conversation.Switchboard, this);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // note: you can add some code here to catch the event where the remote contact lefts due to being idle too long</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  // in that case Conversation.Switchboard.Contacts.Count equals 0.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  TextMessage message = new TextMessage(inputMessage);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  /* You can optionally change the message’s font, charset, color here.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  * For example:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  * message.Color = Color.Red;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  * message.Decorations = TextDecorations.Bold;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  */</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Conversation.Switchboard.SendTextMessage(message);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  private void Switchboard_ContactJoined(object sender, ContactEventArgs e)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  SendInput(&quot;定时发送的消息&quot;);//实现MSN机器人向好友主动推送消息</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  private void PrintText(string name, string text)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  if (text.ToLower().Equals(&quot;h&quot;))</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  SendInput(&quot;帮助命令如下：\r输入&ldquo;on&rdquo;接收朋友信息\r输入&ldquo;off&rdquo;停止接收朋友信息\r输入&ldquo;@用户名+空格+内容&rdquo;给某人发送信息 \r输入&ldquo;*用户名+空格+内容&rdquo;给某人发送悄悄话\r输入&ldquo;find+空格+关键字&rdquo;查询用户\r输入&ldquo;add+空格+用户名&rdquo;添加某人为好友\r输入 其他信息则发送到有趣吧。&quot;);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  //MSN机器人接收消息</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  private void Switchboard_TextMessageReceived(object sender, TextMessageEventArgs e)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  PrintText(e.Sender.Name, e.Message.Text);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }</p>
+<p>通过以上程序，即对dotmsn2.0实例代码的改造，初步实现了类似饭否、唧歪这些仿twitter的MSN机器人</p>
+<p>我们结合上面的程序，再来看看饭否的MSN机器人</p>
+<p>1.我们的MSN输入h给机器人，机器人可以把一个固定的字符串发过来，这就对应上面代码的Switchboard_TextMessageReceived模块；</p>
+<p>2.我们输入其他信息给机器人，还是这个模块，只不过继续改装把这个消息数据写入到饭否的数据库；</p>
+<p>3.我们的好友在饭否发布了消息，MSN机器人会马上主动把这个消息推送给我，这个怎么实现呢？</p>
+<p>上面我给出的代码，Timer时间间隔设置为2秒，然后 Timer_Tick继续改造</p>
+<p>先读取数据库，看有没有新的消息，如果有，则把这个消息发送者的关注者（并且绑定了MSN）形成一个MSN用户列表</p>
+<p>这些用户肯定是MSN机器人的好友，于是下面可以把这个消息主动推送给这些用户，其他功能类似。</p>
+<p>遗憾的是，在DotMSN2.0中还没有找到MSN用户个性签名变化引发的消息，希望列位看官有知道的给予补充。</p>
+<p>这篇博文介绍了饭否类网站MSN机器人的实现</p>
+<p>而GTalk机器人实现更为简单，因为Google公布了GTalk的协议以及开发文档，后面的文章会进行介绍</p>
+<p>那么QQ机器人是怎么做的呢？我们研究了linux平台下的lumaqq源代码，并进行改造，后面的文章也会介绍QQ机器人是怎么实现，敬请关注。</p>
+<p>另外MSN机器人会在我们的网站有趣吧（<a href="http://www.youqubar.com）使用，只要你添加我们的MSN机器人为好友" target="_blank" rel="external">http://www.youqubar.com）使用，只要你添加我们的MSN机器人为好友</a></p>
+<p>这个机器人会主动推送网站上新的趣图给您，敬请关注。</p>
+<p>Trackback: <a href="http://tb.blog.csdn.net/TrackBack.aspx?PostId=1749348" target="_blank" rel="external">http://tb.blog.csdn.net/TrackBack.aspx?PostId=1749348</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e8bdace8bdbde38091vista-home-basic-e78988e5bc80e590af-aeroe9808fe6988ee789b9e69588" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/09/18/e38090e8bdace8bdbde38091vista-home-basic-e78988e5bc80e590af-aeroe9808fe6988ee789b9e69588/" class="article-date">
+  <time datetime="2007-09-17T18:27:00.000Z" itemprop="datePublished">Sep 18 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/09/18/e38090e8bdace8bdbde38091vista-home-basic-e78988e5bc80e590af-aeroe9808fe6988ee789b9e69588/">【转载】Vista Home Basic 版开启 Aero透明特效</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>装个HB版，替换两个B版文件，用KMS激活，好像运行比B版爽一些！</p>
+<p>方法： 1：把两个文件分别替换相应文件。<font color="Magenta"><strong>（替换系统文件需要获取文件权限，具体方法请搜索论坛）</strong></font></p>
+<font color="Red">\Windows\System32\licensing\pkeyconfig\pkeyconfig.xrm-ms</font>
+
+<font color="Blue">\Windows\ServiceProfiles\NetworkService\AppData\Roaming\Microsoft\SoftwareLicensing\tokens.dat</font>
+
+<p>2：重启动，就会出现序列号输入框，你只需要输入B版密匙</p>
+<p><font color="Blue">YFKBB-PQJJV-G996G-VWGXY-2V3X8</font> ，使用KMS激活。</p>
+<p><a href="http://www.bhclub.net/attachment.php?aid=749" target="_blank" rel="external">需要替换的文件</a></p>
+<div forimg="1">[<br><div align="center" forimg="1"><img src="http://www.bhclub.net/attachments/20070918_fd3cda84e92962cd56f8Bj8KBYSOPCBv.jpg" alt=""></div>
+
+<div class="tmpDiv"><a> ](<a href="http://www.bhclub.net/attachments/20070918_fd3cda84e92962cd56f8Bj8KBYSOPCBv.jpg" target="_blank" rel="external">http://www.bhclub.net/attachments/20070918_fd3cda84e92962cd56f8Bj8KBYSOPCBv.jpg</a>)</a></div><br></div><br><div class="tmpDiv"> </div>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e794a8vsftpe5bbbae7ab8be4b8aae4babaftpe7ab99e782b9" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/09/10/e794a8vsftpe5bbbae7ab8be4b8aae4babaftpe7ab99e782b9/" class="article-date">
+  <time datetime="2007-09-09T19:42:00.000Z" itemprop="datePublished">Sep 10 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/09/10/e794a8vsftpe5bbbae7ab8be4b8aae4babaftpe7ab99e782b9/">用vsftp建立个人ftp站点</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><font color="#000099"><strong>原文地址</strong></font> <a href="http://forum.ubuntu.org.cn/viewtopic.php?t=1900" target="_blank" rel="external">http://forum.ubuntu.org.cn/viewtopic.php?t=1900</a></p>
+<p><span class="postbody"></span></p>
+<p>用vsftp建立个人ftp站点 </p>
+<p>首先是最基本的配置,请看我的/etc/vsftpd/vsftpd.conf </p>
+<h6 id="#">#</h6>
+<h1 id="接受匿名用户">接受匿名用户</h1>
+<p>anonymous_enable=YES </p>
+<h1 id="匿名用户login时不询问口令">匿名用户login时不询问口令</h1>
+<p>no_anon_password=YES </p>
+<h1 id="接受本地用户">接受本地用户</h1>
+<p>local_enable=YES </p>
+<h1 id="可以上传(全局控制)-若想要匿名用户也可上传则需要设置anon_upload_enable=YES,若想要匿名用户可以建立目录则需要设置anon_mkdir_write_enable=YES-这里禁止匿名用户上传,所以不设置这两项-">可以上传(全局控制).若想要匿名用户也可上传则需要设置anon_upload_enable=YES,若想要匿名用户可以建立目录则需要设置anon_mkdir_write_enable=YES.这里禁止匿名用户上传,所以不设置这两项.</h1>
+<p>write_enable=YES </p>
+<h1 id="本地用户上传文件的umask">本地用户上传文件的umask</h1>
+<p>local_umask=022 </p>
+<h1 id="使用上传/下载日志,日志文件默认为/var/log/vsftpd-log,可以通过xferlog_file选项修改">使用上传/下载日志,日志文件默认为/var/log/vsftpd.log,可以通过xferlog_file选项修改</h1>
+<p>xferlog_enable=YES </p>
+<h1 id="日志使用标准xferlog格式">日志使用标准xferlog格式</h1>
+<p>xferlog_std_format=YES </p>
+<h1 id="login时的欢迎信息">login时的欢迎信息</h1>
+<p>ftpd_banner=Welcome to KingArthur’s FTP service. </p>
+<h1 id="设置的话将覆盖上面的ftpd_banner设置,用户login时将显示/etc/vsftpd/banner中的内容">设置的话将覆盖上面的ftpd_banner设置,用户login时将显示/etc/vsftpd/banner中的内容</h1>
+<p>banner_file=/etc/vsftpd/banner </p>
+<h1 id="为YES则进入目录时显示此目录下由message_file选项指定的文本文件(,默认为-message)的内容">为YES则进入目录时显示此目录下由message_file选项指定的文本文件(,默认为.message)的内容</h1>
+<p>dirmessage_enable=YES </p>
+<h1 id="本地用户login后所在目录,若没有设置此项,则本地用户login后将在他的home目录(/etc/passwd的第六个字段)中-匿名用户的对应选项是anon_root">本地用户login后所在目录,若没有设置此项,则本地用户login后将在他的home目录(/etc/passwd的第六个字段)中.匿名用户的对应选项是anon_root</h1>
+<p>local_root=/var/ftp </p>
+<h1 id="设置为YES则下面的控制有效">设置为YES则下面的控制有效</h1>
+<p>chroot_list_enable=YES </p>
+<h1 id="若为NO,则记录在chroot_list_file选项所指定的文件(默认是/etc/vsftpd-chroot_list)中的用户将被chroot在登录后所在目录中,无法离开-如果为YES,则所记录的用户将不被chroot-这里选择YES-">若为NO,则记录在chroot_list_file选项所指定的文件(默认是/etc/vsftpd.chroot_list)中的用户将被chroot在登录后所在目录中,无法离开.如果为YES,则所记录的用户将不被chroot.这里选择YES.</h1>
+<p>chroot_local_user=YES </p>
+<h1 id="若设置为YES则记录在userlist_file选项指定文件(默认是/etc/vsftpd-user_list)中的用户将无法login,并且将检察下面的userlist_deny选项">若设置为YES则记录在userlist_file选项指定文件(默认是/etc/vsftpd.user_list)中的用户将无法login,并且将检察下面的userlist_deny选项</h1>
+<p>userlist_enable=YES </p>
+<h1 id="若为NO,则仅接受记录在userlist_file选项指定文件(默认是/etc/vsftpd-user_list)中的用户的login请求-若为YES则不接受这些用户的请求-">若为NO,则仅接受记录在userlist_file选项指定文件(默认是/etc/vsftpd.user_list)中的用户的login请求.若为YES则不接受这些用户的请求.</h1>
+<p>userlist_deny=NO </p>
+<h1 id="注意!!!vsftpd还要检察/etc/vsftpd-ftpusers文件,记录在这个文件中的用户将无法login!!">注意!!!vsftpd还要检察/etc/vsftpd.ftpusers文件,记录在这个文件中的用户将无法login!!</h1>
+<h1 id="服务器以standalong模式运行,这样可以进行下面的控制">服务器以standalong模式运行,这样可以进行下面的控制</h1>
+<p>listen=YES </p>
+<h1 id="匿名用户的传输比率(b/s)">匿名用户的传输比率(b/s)</h1>
+<p>anon_max_rate=51200 </p>
+<h1 id="本地用户的传输比率(b/s)">本地用户的传输比率(b/s)</h1>
+<p>local_max_rate=512000 </p>
+<h1 id="可接受的最大client数目">可接受的最大client数目</h1>
+<p>max_clients=100 </p>
+<h1 id="每个ip的最大client数目">每个ip的最大client数目</h1>
+<p>max_per_ip=5 </p>
+<p>connect_from_port_20=YES </p>
+<p>tcp_wrappers=YES </p>
+<p>pam_service_name=vsftpd </p>
+<h6 id="#-1">#</h6>
+<p>下面是我的/etc/vsftpd.user_list </p>
+<h6 id="#-2">#</h6>
+<p>ftpuser </p>
+<p>anonymous </p>
+<h6 id="#-3">#</h6>
+<p>/etc/vsftpd.ftpusers可以使用系统自带的文件 </p>
+<p>/etc/vsftpd.chroot_list内容为空 </p>
+<p>接着建立系统用户ftpuser,将他加入ftp组并将/etc/passwd中他的记录的最后一个字段改成/sbin/nologin(禁止本地登录). </p>
+<p>设置/var/ftp的所有者和所有组为root,权限为755 </p>
+<p>设置/var/ftp/pub的所有者为root,所有组为ftp,权限为775 </p>
+<p>至 此vsftpd的基本配置就完成了.这里我们接受匿名用户anonymous和本地用户ftpuser的请求.anonymous只能下载, ftpuser可以下载和上传.他们登录后均在/var/ftp目录下且无法离开这个目录(被chroot了).ftpuser可以在 /var/ftp/pub目录中建立目录和上传文件,上传文件的权限为755(设置了local_umask=022).匿名用户的传输比率为 50kb/s,ftpuser的传输比率为500kb/s.可联接的最多客户数为100,每ip可联接的最多客户数为5. </p>
+<p>如果需要使本地用户ftpput可以login,只需要将他加入/etc/vsftpd.user_list,要使他可以上传,只需将他加入ftp组. </p>
+<p>接 着我们可以在/var/ftp下的各个目录(包括/var/ftp)下建立.message文件,这样用户进入这个目录时vsftpd将显示. message的内容,你可以在这里面写上欢迎信息或者注意事项等等.另外可以编辑/etc/vsftpd/banner,建立login时的欢迎信息, 让你的ftp更加个性化. </p>
+<p>下面我们使用quota为ftpuser加入磁盘限额,避免恶意用户用垃圾数据塞满你的硬盘. </p>
+<p>假设/var/ftp在根分区/(/dev/hda5)中,则将/etc/fstab中根分区的记录的第4个字段改成defaults,usrquota,这样这条记录看起来类似这样: </p>
+<p>LABEL=/ / ext3 defaults,usrquota 1 1 </p>
+<p>接着重启系统后输入下列命令: </p>
+<p>quotacheck -acu #检查启用了配额的文件系统，并为每个文件系统建立一个当前磁盘用来的表 </p>
+<p>quotacheck -avu #生成每个启用了配额的文件系统的当前磁盘用量表 </p>
+<p>edquota ftpuser #为用户ftpuser设置磁盘配额 </p>
+<p>这时系统会在默认文本编辑器(vi)中打开配额文件,显示类似这样: </p>
+<p>Disk quotas for user ftpuser (uid 501): </p>
+<p>Filesystem blocks soft hard inodes soft hard </p>
+<p>/dev/hda5 0 0 0 0 0 0 </p>
+<p>第 一列是启用了配额的文件系统的名称。第二列显示了用户当前使用的块数。随后的两列用来设置用户在该文件系统上的软硬块限度。inodes 列显示了用户当前使用的i节点数量。最后两列用来设置用户在该文件系统上的软硬i节点限度.硬限是用户或组群可以使用的磁盘空间的绝对最大值。达到了该限 度后，磁盘空间就不能再被用户或组群使用了。软限定义可被使用的最大磁盘空间量。和硬限不同的是，软限可以在一段时期内被超过。这段时期被称为过渡期 （grace period）。过渡期可以用秒钟、分钟、小时、天数、周数、或月数表示。如果以上值中的任何一个被设置为 0，那个限度就不会被设置.按你的需要修改后存盘推出. </p>
+<p>要校验用户的配额是否被设置，使用以下命令： </p>
+<p>quota testuser </p>
+<p>接着使用edquota -t来设置过渡期（grace period） </p>
+<p>和另一个 edquota 命令相似，这个命令也会在文本编辑器中打开当前的文件系统配额： </p>
+<p>Grace period before enforcing soft limits for users: </p>
+<p>Time units may be: days, hours, minutes, or seconds </p>
+<p>Filesystem Block grace period Inode grace period </p>
+<p>/dev/hda5 7days 7days </p>
+<p>按你的需要修改后存盘退出 </p>
+<p>这样我们就成功的为ftpuser增添了磁盘配额.而一个比较完整的FTP站点也配置完成了</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-mounte68c82e8bdbde7ae80e4bb8b" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/09/10/mounte68c82e8bdbde7ae80e4bb8b/" class="article-date">
+  <time datetime="2007-09-09T18:02:00.000Z" itemprop="datePublished">Sep 10 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/09/10/mounte68c82e8bdbde7ae80e4bb8b/">mount挂载简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>‘fstab’的用处</p>
+<p>‘/etc/fstab’是‘mount’命令重要的配置文件。您可以‘root’身份通过‘diskdrake’（Mandrake Linux 控制中心 - 载入点），或用编辑器修改这个文件。</p>
+<p>‘/etc/fstab’有几个用处：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; *</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 决定开机时自动挂载哪些介质；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; *</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 指定每个介质挂载时的可选项、载入点；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; *</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 系统用来挂载几个虚拟文件系统。</p>
+<p>开机时挂载介质</p>
+<p>默认下，开机时‘fstab’中列出的所有介质都将被挂载。如果其中某个介质出了问题，‘mount’会显示出错信息，然后继续下一条目。请注意，这对于网络介质，比如 NFS 或 SMB 共享，也有效。如果想取消开机时的自动挂载，您得在‘/etc/fstab’给相应条目提供‘noauto’可选项。</p>
+<p>指定挂载的可选项和载入点</p>
+<p>如果阅读了上一篇，您就已经知道‘mount’命令有两种可选项：常规可选项、文件系统的特殊可选项。</p>
+<p>特殊可选项针对特定的文件系统。如果您在‘fstab’中给某个条目提供了特殊可选项（比如用于 Windows FAT 文件系统的 umask=0），只有相应文件系统的介质才可以通过该条目被挂载。如果您想挂载其他文件系统的介质，要么再设置那个可选项，要么创建单独的条目。</p>
+<p>指定载入点有个好处，以后可以省略挂载／卸载时的设备文件名。</p>
+<p>mount mount_point</p>
+<p>就将在‘/etc/fstab’寻找相应载入点的条目，并按照预先设定完成挂载。</p>
+<p>虚拟文件系统</p>
+<p>根据系统配置，‘fstab’含有一些虚拟文件系统的条目，这些条目没有列出相应的设备文件。不管如何，请不要动这些条目！</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; *</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‘proc’挂载的是“进程树”(process tree) ，提供一些系统的信息；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; *</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‘pts’启用“伪终端支持”(pseudo terminal support)，这是 Unix 的兼容功能；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; *</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‘shm’开启“POSIX shared memory”，仅有一小部分程序会用到，不会有负面影响。</p>
+<ul>
+<li><p>section index * top</p>
+</li>
+<li><p>‘fstab’中条目的介绍</p>
+</li>
+</ul>
+<p>本地的固定系统分区</p>
+<p>您看到，‘/etc/fstab’中已有几个系统分区（如‘/’）的条目。 就拿这个为例：</p>
+<p>/dev/hda3 / ext2 defaults 1 1</p>
+<p>语法为：</p>
+<p>/dev/hda3 / ext2 defaults 1 1</p>
+<p>device_name mount_point file_system options ‘’dumpe2fs’’ ‘’fsck’’</p>
+<p>这儿有介质（硬盘的分区）的设备名、载入点（/）、文件系统（ext2）。</p>
+<p>defaults 包括若干‘mount’的可选项：rw 可读写、 suid 允许设置用户标识符(set-user-identifier)、exec 允许运行程序、auto 开机时自动挂载、nouser 只有‘root’有权卸载、async 允许磁盘延迟存取(caching) 。</p>
+<p>最后两个可选项是文件系统工具‘dumpe2fs’、‘fsck’用到的标志。</p>
+<p>‘dump’域可设成‘1’（启用）和‘0’（禁用）。由于备份 ext2/ext3 文件系统的程序要用到‘dump’，因此文件系统为 ext2/ext3 的条目要设成‘1’，所有其他条目都为‘0’。</p>
+<p>‘fsck’域可设成‘0’（不检查文件系统）、‘1’（先检查）、‘2’（检查）。所有非 Linux 文件系统、可移动的和网络介质、虚拟文件系统都要设成‘0’；由于根分区要先被挂载（接着检查），‘/’条目要设成‘1’；而所有其他不可移动的及 Linux 文件系统的本地介质都要设成‘2’。</p>
+<p>可移动介质</p>
+<p>可移动的数据存储体，比如光盘，需要不同的可选项（如果您没有用‘supermount’）：</p>
+<p>/dev/cdrom /mnt/cdrom auto user,noauto,exec,ro 0 0</p>
+<p>user 允许用户进行挂载、卸载，否则只有‘root’有此权利。请注意，这个可选项会关闭 exec ，您得在 user 可选项后指定 exec ，以使在用户可在挂载的介质中运行程序，这些和上例是一致的。noauto 指开机时不挂载该介质，一些可移动介质就需要这个可选项。 ro 挂载的介质“只读”(read-only) 。‘dump’、‘fsck’都被关闭了。</p>
+<p>虽然光盘没有设成自动挂载，但由于‘/etc/fstab’中的这一条目，使得接下来的挂载变得很简单：放入光盘，然后输入：</p>
+<p>mount /mnt/cdrom</p>
+<p>‘mount’将在‘/etc/fstab’查找和这个载入点联系的那个条目，并采用列出的可选项，因此，这样您就可以省些输入。在 KDE 中，放入光盘后，您只要用鼠标点击那个光盘图标，就能自动运行‘mount’命令。</p>
+<p>挂载后的光盘将锁住光驱，要弹出光盘的话，您得先卸载：umount /mnt/cdrom 。</p>
+<p>要配置其他可移动介质，您要知道他们的设备文件名，可以看一下 devices.txt 或阅读 有关可移动存储设备的文章 。</p>
+<p>本地的固定非系统分区</p>
+<p>MS-Windows 分区的条目看起来是什么样呢？假设是在第一块 IDE 硬盘的第二个分区，而且您想要自动挂载：</p>
+<p>/dev/hda2 /mnt/win_d vfat umask=0,quiet 0 0</p>
+<p>如果是 Windows NT 的 NTFS 分区，就要把‘vfat’换成‘ntfs’。请注意，目前在 Linux 下，只能对 NTFS 的文件系统读，而不能写。</p>
+<p>‘umask’可选项将关闭权限监查，没有这项的话，就只有‘root’能存取该设备上的文件。当向这个介质移动文件时，由于无法设置权限，会显示恼人的出错信息，用‘quiet’就可以不显示这些无关紧要的信息。</p>
+<p>如果 Windows 分区中的文件名看起来很奇怪，那您就得再添两个可选项：‘iocharset’和‘codepage’。默认下，‘mount’用‘iso8859-1’字符集和 codepage 437 。修改后，可以实现字符转换。man charsets 列出了可用的字符集，将 codepage 设成 850 （codepage=850）就可以解决一些问题。</p>
+<p>（注：要显示简体中文的话，得添上 charsets=gb2312,codepage=936）</p>
+<p>一个分区挂载在一个已存在的目录上，这个目录可以不为空，但挂载后这个目录下以前的内容将不可用。</p>
+<p>对于其他操作系统建立的文件系统的挂载也是这样。但是需要理解的是：光盘、软盘、其他操作系统使用的文件系统的格式与linux使用的文件系统格式是不一样的。光盘是ISO9660；软盘是fat16或ext2；windows NT是fat16、NTFS；windows98是fat16、fat32；windows2000和windowsXP是fat16、fat32、 NTFS。挂载前要了解linux是否支持所要挂载的文件系统格式。</p>
+<p>挂载时使用mount命令：</p>
+<p>格式：mount [-参数] [设备名称] [挂载点]</p>
+<p>其中常用的参数有</p>
+<p>-t&lt;文件系统类型&gt; 指定设备的文件系统类型，常见的有：</p>
+<p>minix linux最早使用的文件系统</p>
+<p>ext2 linux目前常用的文件系统</p>
+<p>msdos MS-DOS的fat，就是fat16</p>
+<p>vfat windows98常用的fat32</p>
+<p>nfs 网络文件系统</p>
+<p>iso9660 CD-ROM光盘标准文件系统</p>
+<p>ntfs windows NT 2000的文件系统</p>
+<p>hpfs OS/2文件系统</p>
+<p>auto 自动检测文件系统</p>
+<p>-o&lt;选项&gt; 指定挂载文件系统时的选项。有些也可用在/etc/fstab中。常用的有</p>
+<p>codepage=XXX 代码页</p>
+<p>iocharset=XXX 字符集</p>
+<p>ro 以只读方式挂载</p>
+<p>rw 以读写方式挂载</p>
+<p>nouser 使一般用户无法挂载</p>
+<p>user 可以让一般用户挂载设备</p>
+<p>提醒一下，mount命令没有建立挂载点的功能，因此你应该确保执行mount命令时，挂载点已经存在。（不懂？说白了点就是你要把文件系统挂载到哪，首先要先建上个目录。这样OK？）</p>
+<p>例子：windows98装在hda1分区，同时计算机上还有软盘和光盘需要挂载。</p>
+<h1 id="mk_/mnt/winc">mk /mnt/winc</h1>
+<h1 id="mk_/mnt/floppy">mk /mnt/floppy</h1>
+<h1 id="mk_/mnt/cdrom">mk /mnt/cdrom</h1>
+<h1 id="mount_-t_vfat_/dev/hda1_/mnt/winc">mount -t vfat /dev/hda1 /mnt/winc</h1>
+<h1 id="mount_-t_msdos_/dev/fd0_/mnt/floppy">mount -t msdos /dev/fd0 /mnt/floppy</h1>
+<h1 id="mount_-t_iso9660_/dev/cdrom_/mnt/cdrom">mount -t iso9660 /dev/cdrom /mnt/cdrom</h1>
+<p>现在就可以进入/mnt/winc等目录读写这些文件系统了。</p>
+<p>要保证最后两行的命令不出错，要确保软驱和光驱里有盘。（要是硬盘的磁盘片也可以经常随时更换的话，我想就不会犯这样的错误了 :-&gt; ）</p>
+<p>如果你的windows98目录里有中文文件名，使用上面的命令挂载后，显示的是一堆乱码。这就要用到 -o 参数里的codepage iocharset选项。codepage指定文件系统的代码页，简体中文中文代码是936；iocharset指定字符集，简体中文一般用cp936或 gb2312。</p>
+<p>当挂载的文件系统linux不支持时，mount一定报错，如windows2000的ntfs文件系统。可以重新编译linux内核以获得对该文件系统的支持。关于重新编译linux内核，就不在这里说了。</p>
+<p>自动挂载</p>
+<p>每次开机访问windows分区都要运行mount命令显然太烦琐，为什么访问其他的linux分区不用使用mount命令呢？</p>
+<p>其实，每次开机时，linux自动将需要挂载的linux分区挂载上了。那么我们是不是可以设定让linux在启动的时候也挂载我们希望挂载的分区，如windows分区，以实现文件系统的自动挂载呢？</p>
+<p>这是完全可以的。在/etc目录下有个fstab文件，它里面列出了linux开机时自动挂载的文件系统的列表。我的/etc/fstab文件如下：</p>
+<p>/dev/hda2 / ext3 defaults 1 1</p>
+<p>/dev/hda1 /boot ext3 defaults 1 2</p>
+<p>none /dev/pts devpts gid=5,mode=620 0 0</p>
+<p>none /proc proc defaults 0 0</p>
+<p>none /dev/shm tmpfs defaults 0 0</p>
+<p>/dev/hda3 swap swap defaults 0 0</p>
+<p>/dev/cdrom /mnt/cdrom iso9660 noauto,codepage=936,iocharset=gb2312 0 0</p>
+<p>/dev/fd0 /mnt/floppy auto noauto,owner,kudzu 0 0</p>
+<p>/dev/hdb1 /mnt/winc vfat defaults,codepage=936,iocharset=cp936 0 0</p>
+<p>/dev/hda5 /mnt/wind vfat defaults,codepage=936,iocharset=cp936 0 0</p>
+<p>在/etc/fstab文件里，第一列是挂载的文件系统的设备名，第二列是挂载点，第三列是挂载的文件系统类型，第四列是挂载的选项，选项间用逗号分隔。第五六列不知道是什么意思，还望高手指点。</p>
+<p>在最后两行是我手工添加的windows下的C；D盘，加了codepage=936和iocharset=cp936参数以支持中文文件名。参数defaults实际上包含了一组默认参数：</p>
+<p>rw 以可读写模式挂载</p>
+<p>suid 开启用户ID和群组ID设置位</p>
+<p>dev 可解读文件系统上的字符或区块设备</p>
+<p>exec 可执行二进制文件</p>
+<p>auto 自动挂载</p>
+<p>nouser 使一般用户无法挂载</p>
+<p>async 以非同步方式执行文件系统的输入输出操作</p>
+<p>大家可以看到在这个列表里，光驱和软驱是不自动挂载的，参数设置为noauto。（如果你非要设成自动挂载，你要确保每次开机时你的光驱和软驱里都要有盘，呵呵。）</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-umask" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/30/umask/" class="article-date">
+  <time datetime="2007-08-30T14:52:00.000Z" itemprop="datePublished">Aug 30 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/30/umask/">umask</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>功能说明：指定在建立文件时预设的权限掩码。 </p>
+<p>语　　法：umask [-S][权限掩码] </p>
+<p>补充说明：umask可用来设定[权限掩码]。[权限掩码]是由3个八进制的数字所组成，将现有的存取权限减掉权限掩码后，即可产生建立文件时预设的权限。 </p>
+<p>参　　数： </p>
+<p>-S 　以文字的方式来表示权限掩码。 </p>
+<p>文件：用八进制基数666，即无x位（可执行位）rw- rw- rw-.执行位需由用户自行加入。</p>
+<p>例一：设要生成的文件以rw- r— r—这样的权限字出现，即真实权限用八进制表示为644，则被666基数减得022，022即掩码。使用umask 022。</p>
+<p>注：033效果与022一样，假设使用033掩码进行设置，则真实权限应为633即rw- r-x r-x ，但前提规定文件不生成x位，所以文件的权限最终将以rw-r—r—出现。</p>
+<p>目录：用八进制基数777</p>
+<p>例二：设要生成的目录权限以rwxr-xr-x这样的权限字出现，即真实权限用八进制表示为755，则被基数为777的权限字相减后，得掩码022。则使用umask 022进行设置。</p>
+<p>总结：</p>
+<p>掌握二个要点，一、文件基数为666，目录为777，即文件无设x位，目录可设x位。二、chmod是设哪个位，哪么哪个位就有权限，而umask是设哪个位，则哪个位上就没权限。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e58e9fe5889be380916233e9809ae8af9de5a3b0e99fb3e5b08fe8a7a3e586b3e696b9e6b395e4b880e58899" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/28/e38090e58e9fe5889be380916233e9809ae8af9de5a3b0e99fb3e5b08fe8a7a3e586b3e696b9e6b395e4b880e58899/" class="article-date">
+  <time datetime="2007-08-27T19:07:00.000Z" itemprop="datePublished">Aug 28 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/28/e38090e58e9fe5889be380916233e9809ae8af9de5a3b0e99fb3e5b08fe8a7a3e586b3e696b9e6b395e4b880e58899/">【原创】6233通话声音小解决方法一则</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  印象中，我的6233刷了5.43R之后突然发现通话声音小了起来，很多时候稍微嘈杂一点根本听不清楚，怀疑是系统问题，不过手头暂时没有装Windows XP的机器，在网上搜也基本发现是听筒问题，和软件无关；郁闷中想拆机清理灰尘，没有螺丝刀没办法拆，于是只好用笔清理在听筒前面的小孔清理了一下，结果声音突然大了起来</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  很大很大 </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  相当满意</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e5a4a7e4bc97e782b9e8af84e7bd91e5bca0e6b69befbc9aweb20e585b3e994aee698afe590b8e5bc95e6a0b8e5bf83e794a8e688b7efbc88e98089e69198efbc89" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/25/e5a4a7e4bc97e782b9e8af84e7bd91e5bca0e6b69befbc9aweb20e585b3e994aee698afe590b8e5bc95e6a0b8e5bf83e794a8e688b7efbc88e98089e69198efbc89/" class="article-date">
+  <time datetime="2007-08-24T16:59:00.000Z" itemprop="datePublished">Aug 25 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/25/e5a4a7e4bc97e782b9e8af84e7bd91e5bca0e6b69befbc9aweb20e585b3e994aee698afe590b8e5bc95e6a0b8e5bf83e794a8e688b7efbc88e98089e69198efbc89/">大众点评网张涛：Web2.0关键是吸引核心用户（选摘）</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>全文地址:<a href="http://tech.sina.com.cn/i/2007-08-24/14271697298.shtml" target="_blank" rel="external">http://tech.sina.com.cn/i/2007-08-24/14271697298.shtml</a></p>
+<p>　　8月24日上午，<a href="http://corp.iresearch.cn/0409/16024.shtml" target="_blank" rel="external">大众点评网</a>CEO<a href="http://people.iresearch.cn/0410/16025.shtml" target="_blank" rel="external">张涛</a>做客白银时代，聊城市消费指南网站，IDC中国跨产品研究部高级分析师黄涌涛（BLOG）参与此次聊天。</p>
+<p><strong>　　张涛表示像大众点评网这样的Web2.0网站的关键是吸引核心用户，大众点评网目前经常发表评论的用户占总数的1%，但这些用户的内容对绝大多数用户形成黏性，这种黏性也是Web2.0最高的门槛。</strong></p>
+<p><strong>　　张涛认为，用户在消费时最大的参考是朋友的口碑，大众点评网就是通过网络把这个口碑成百倍、成千倍地放大，引爆口碑营销，这是大众点评网最大的市场价值。张涛也表示，大众点评网绝不会通过排名收费，而是与<a href="http://corp.iresearch.cn/0409/5470.shtml" target="_blank" rel="external">Google</a>类似将搜索内容与赞助商广告分开。</strong>　　</p>
+<font size="3" color="#0000ff"><strong>因解决遇到的实际问题而产生想法创建网站，这个和Youtube等产生的最初动机一致</strong></font>
+
+<p>张涛：2003年初，当时我刚从美国回上海，因为本人也比较爱好美食，到上海找食很困难，当时也没有书、网上告诉我哪个餐馆比较好，比较沮丧，我的朋友知道的也不多。因为当时在美国有一本书叫查氏，欧洲有本叫米其林，我在欧洲经常用。美国也有2.0一些雏形的网站出来，像现在大家比较知道的维基百科，还有不是纯是2.0的网站，但是有2.0的影子在里边比如亚马逊书评，像ebay用户的评级，某种意义上也是一个互动点评的功能。感觉到我回国创业的设想，做一些互联网的事情，就想本人也比较爱吃，也缺少这方面的信息，也想做一个互联网。结合查氏的运作模式和亚马逊书评、危急的群众参与、互动点评的方式，觉得在互联网上做起来，感觉是挺有意思的一件事，那时就开始做了。</p>
+<p>　　主持人：一开始实际上是为了解决自己遇到的一些问题才开始做这样一个网站？</p>
+<p>　　张涛：没错，刚开始这个网站一个人，我也不是非常懂编程，在上海福州路买了一本《网页设计三剑客》，回去啃了两天，做了一个非常非常简单、非常丑陋的一个网页，然后就上去了，初创的时候，也不完全说创业，感觉是闹着玩的，挺好玩，因为回国挺新鲜，就这样做起来。</p>
+<font size="3" color="#0000ff"><strong>有想法要坚持下去哈:)</strong></font>
+
+<p>黄涌涛：我刚才听张总突然谈到了一个跟我特别相似的经历。其实张总回来的时候买过网页三剑客，我也买过，而且也做过两个比较简陋的网页，但是可能我拿那个网页跟新浪一比，立刻自己就感觉非常羞愧，没有做下去。张总因为是从海外归来，能看到未来的发展前景，就一直往前做，就做成中国一个很好的点评网站了。就体现了分析师和创业家的区别，我们很多时候想去做这个事情但是没有胆量，或者是尝试了一下就退回来了。张总能一直往前冲，最后就把这个做得比较好了。</p>
+<p>　　其实关于大众点评网我听到两种评论，一种是说大众点评网其实门槛很低，大家都很承认大众点评网的成功，但是门槛很低。因为它无论是在整个思路上，还是一个构架上，门槛很低。另外一种，大众点评网这种看自简单的方式，其实保持住了用户最高的黏性，一旦保持住了，就无法超越。张总能不能客观地评价一下这两种看法？</p>
+<p>　　张涛：门槛低，你前面说了一句非常精辟的话，门槛低是对的，也是错的。刚开始的时候做这样一个网站，实现这些功能，里边一些技术含量，应该不是非常非常困难的事情。但是越到后面，门槛就会越高。像大众点评网一旦形成了一个非常忠实的用户群，他们在里边不断地参与，提供点评，提供我们的内容。因为我们本身是一个消费指南型的网站，过了一段时间形成一个品牌，就类似于像查氏、<a href="http://corp.iresearch.cn/0409/5794.shtml" target="_blank" rel="external">携程</a>、米其林，到后面更多是<font color="#ff0000"><strong>核心用户群黏性的一个壁垒还有品牌的壁垒</strong></font>。</p>
+<font size="3" color="#0000ff"><strong>成功的Web2.0网站共同的发展轨迹</strong></font>
+
+<p>张涛：我的理解大众点评网可能从广泛意义上来讲，web2.0需要用户参与的这些网站，刚开始的时候，能够吸引一批比较核心的用户群，这是非常非常关键。往往刚开始半年、一年，发展可能相对比较缓慢，从一般的衡量标准，浏览量、使用量并不会一下子有一个爆发式的发展，这时你其实更多是在积累一批核心的用户，而这批核心用户的文化、写作风格，他们的一些生活习惯决定了这个网站将来的发展情况。大众点评网也是这样，刚开始几年是发展一些核心用户，一旦有了核心用户，源源不断提供类似，之后是更多人会过来浏览、欣赏这些内容。 </p>
+<font size="3" color="#0000ff"><strong>如何发展第一批用户</strong></font>
+
+<p>主持人：你们一开始怎么吸引这些用户到上面发表评论？可能之前有些BBS的人在里面聊天，但是你怎么让一些普通用户上去对餐馆发表评论，之前都没有人做过。</p>
+<p>　　张涛：说老实话，2003年初，我们只在上海做一个上海站，这是我们的一个体会。我们刚开始可能做的比较小，只从上海、餐饮做起，这可能也奠定了我们以后发展的基础，因为很多网站一下子想全面铺开，全国城市都覆盖，餐饮、分类信息都做一遍，感觉难度会一大点。刚开始，一开始我是抱着玩的心态，感觉是一个个人的爱好，就在上海。因为我以前也没做过互联网，刚开始推广渠道，现在看上去可以说非常幼稚或者是简单。其实我的朋友在国内也不多，因为也离开十年了，我找了一下还在联系的高中同学，我家里的人也比较爱吃，就把十几个爱吃的人联络起来，发电子邮件给他们，这是我做的一个网页，你们一定要过来点评。甚至我鼓动我的爸爸，我的爸爸当时60多岁了，也爱吃，也在上面点评，他从来没上过网（笑）。</p>
+<p>　　就这样发展起来。之后可能在一些相关的网站里做一些推广，比如当时携程，跟我们的用户群感觉定位比较类似，新浪的一些美食论坛，我也记得做过一些推手，注册一个马甲，推广我们的网站，在当地的媒体做一些小小的广告，上海正好有两个媒体，白领关注度还是挺高的，在上面做了非常豆腐干的一个广告，几百块钱。效果还不错，因为刚开始不需要很大的用户量，需要很多人过来点评。<font color="#ff0000"><strong>当时注册和点评的人的比例非常高，可能有30%到40%左右。我们现在可能更多是1%.</strong></font></p>
+<p>　　张涛：<strong><font color="#ff0000">大部分人只是在看，真正创造内容是1%.可能再过一年就不一定能超过1%.非常原始、非常幼稚，回想起来觉得也是非常非常有效，是非常非常有效的一个方式</font></strong>，就这样发展起来。前3、4年几乎没有做过任何广告的投入，我们也做过尝试，但是感觉效果不是很好，因为在内容没有起来之前，你投平面的广告，我们也投过新浪的网站，效果不是很好。<font color="#ff0000"><strong>刚开始可能需要草根的一些做法，需要口碑的传播，前3、4年绝大多数用户都是通过口碑过来的。</strong></font></p>
+<p>　　黄涌涛：但后来我看到大众点评网的时候，给我特别震惊的一个东西是什么呢？可能您这个一下子就掐中了餐饮业的脉，一下子把住了这个脉。因为这种<strong><font color="#ff0000">口碑营销</font></strong>的威力，通过大众点评网的方式就一下子释放出来了。今天我在想大众点评网的时候仍然想有两个问题：第一个问题你怎么面对那么多做模仿你们的网站，甚至做很大的网站。这种模仿和复制的风气愈演愈烈的时候，你觉得这种竞争会不会损害你最终的一个商业目标的达成？第二，我们今天已经看到大众点评网用户体验上面形成了一个很好的社区、一个联系，你怎么去逐步把它的商业价值逐步地挖掘出来，现在是不是应该更深度挖掘其中的商业价值？</p>
+<p>　　张涛：关于模仿我们的网站，特别是记得国外2.0概念出来，国内很短的时间就开始媒体宣传非常多，无穷无尽的2.0的网站都出来，那时模仿的网站确实特别多，各个层次、大的、小的，有的跟我们做得一模一样，甚至连内容都一模一样，完全是拷贝过去。但是这类网站可能也跟我们之前谈的类似，我们倒不是非常担心，其实你拿了内容，就算做得一模一样，把我们原代码拿去，其实没有用。<strong><font color="#ff0000">真正有用的是用户</font></strong>，你能够哪一天，如果一个网站在上海、北京，我们这些食神都要对网站进行点评，在里边做互动，那时我对这个竞争将非常非常担心，这是我们的核心竞争力。</p>
+<p>　　还有就是<font color="#ff0000"><strong>品牌</strong></font>，现在可能在上海、北京，说到吃饭，可能你们脑子里想的第一反应之一是到大众点评网去查一下，这就是品牌的威力。如果哪一天，某某网站吃饭，想到是那个网站，这也是我担心的时候。到目前为止，这一类网站没有出现。从这个意义上来讲，就算是非常非常大的网站，包括新浪，其实我们跟新浪有一个合作。包括像<a href="http://corp.iresearch.cn/0409/5581.shtml" target="_blank" rel="external">百度</a>，如果完全跟我们做得一样去做，我也不觉得是一个非常大的威胁，这个东西需要花很多东西去培植社区，品牌也不是一天两天能够培植出来的。</p>
+<p>　　第二，关于商业价值。当时说老实话我没有非常非常细想具体怎么赚钱，可能我们现在已经有一些具体概念了，当时总的思路，我觉得到现在还是成立的。怎么样的思路？一方面<strong><font color="#ff0000">作为一个用户习惯，有没有互联网业好，特别是在中国吃饭，最大的一个参考是口碑，最大的参考是他的朋友。</font></strong>我们做这件事情其实就是通过网络把这个口碑成百倍、成千倍地放大了。</p>
+<p>　　这是这个网站存在的一个最基本的原因，也是受欢迎的一个最基本的原因。</p>
+<p>　　因为有这么多的内容在里边，而且因为通过用户参与的形式，用户是源源不断地在更新的。这样的话，你会有成百万、上千万的最终用户去看。而且这些用户非常显著的特点就是都是我们所谓的<font color="#ff0000"><strong>意见领袖</strong></font>，出去吃饭看到一桌人十几个人，如果这里边有一两个人是我们的会员，我可以担保这一两个人不是定餐的就是在里边点菜的，就是意见领袖。其实他们真正掌握的消费能力又是十倍、百倍的扩散。我们有百万的用户，有影响到千万的人，这是一个方面。这些人决定了钱包到哪里花钱，他们影响下线的一个行业，就是餐饮业。餐饮业的特点又是非常中小型的企业居多，不像媒体，像新浪，一个餐馆做得再大，也不可能占据北京多大的市场，就是一个城市有几万家参观，高度分散的一个市场。这样我们当中做一个平台，有非常高度分散的用户群，都是意见领袖。非常高度分散的参观，而且竞争非常白热化，这个平台就有价值，从某种意义上，<font color="#ff0000"><strong>这个平台的价值其实非常类似于Google和百度的平台价值</strong></font>，<strong>一方面很多消费者在搜索，找他们想要找的东西，另外有成百万中小型的企业，他们想用非常精准的方式能够到达他们想达到的用户群，而且这些中小型商户跟我们餐馆一样，在传统的宣传渠道里他们没有渠道来宣传。做电视广告、报纸广告其实投入非常大，效果非常差。</strong>如果我3、4年前在想，这就是这个平台的价值。</p>
+<font size="3" color="#0000ff"><strong>这种做法相当明智，赚钱完全没必要太急功近利而损害了持续发展赚钱的能力</strong></font>
+
+<p>张涛：我们绝对不会通过排名来做。我们有一个口味的评分、环境的评分，像这类评分，我们是绝对不会作为一个商业来收费的，其实这跟Google的做法非常类似，<strong>Google有一个自然的排序，自然排序的结果是任何人不可能做商业修改，因为这是它的生存之本。但是它会做很多赞助商链接，比如你搜索洗衣店，按照它的搜索结果出来一个结果，你在旁边也可以做一些赞助商链接，这两个其实是不矛盾的。既保持了你的公正性、用户体验；同时，你表明这是一个赞助商链接，这会是我们的一个做法。</strong></p>
+<p>　　我们其实有一个非常严格的系统，任何的点评我们不做任何商业化的介入，商户做任何评分，我们不做任何商业化的介入，我们永远不会做这方面的尝试。因为一旦我们开始做了，我们的品牌也削弱了，公司走下坡路也是一个迟早的事情。</p>
+<font size="3" color="#0000ff"><strong>所谓新媒体</strong></font>
+
+<p>黄涌涛：是不是说来自于商家或者是你们商业利润会相对于你们网站的发展有一个滞后的阶段？</p>
+<p>　　张涛：肯定会。因为从某种意义上我们是一个媒体，像百度是一个媒体，新浪是一个媒体，肯定有一个滞后。</p>
+<p>　　黄涌涛：你们是餐饮用户口碑的一个媒体。</p>
+<p>　　张涛：技术没有门槛，对用户的黏性才是门槛</p>
+<p>　　张涛：对，对。其实绝大部分互联网站是一个媒体，很多网站是一个电子商务，还有的网站是一个社区。我们是一个媒体类加一些社区因素的网站。所以，我同意你的说法，盈利肯定是滞后的。因为你一定要有比较大的用户群，才能产生这个媒体的价值，任何一个广告商才会感兴趣。</p>
+<font size="3" color="#0000ff"><strong>中国大的互联网环境成熟是此类网站能够发展起来的重要原因；以是否&ldquo;小资&rdquo;为标准对市场以及用户进行划分，相当巧妙</strong></font>
+
+<p>　　主持人：大众点评网在一线城市的影响力还是蛮不错的，现在大众点评网向二线、三线或者更小的城市的渗透、发展是一个什么样的状况？</p>
+<p>　　张涛：我们开始在上海大概做了一年就开始做北京、杭州，没多久就开始做广州、深圳，很多城市做的时间也不到两年。确实像你说的，我们刚开始城市扩展策略也是从一线城市到二线城市，而且一般是从相对比较小资的城市。我们像长三角、沿海城市扩张一般比较早一点，现在逐步进行内容扩张。总的来讲我们现在差不多有40多个城市站，一共信息有200多个，中小城市都有我们的信息，建站有40多个城市。感觉除了少数几个城市之外，我们在当地都应该是排名第一的餐饮类的指南网站。很多要跟当地的经济发展水平相关，说老实话这个网站如果我早回来十年，这个网站是没生命力的，没多少人会用。如果当时1999年在上海，人对吃的要求还属于半温饱的感觉，能够出去吃顿饭就可以了。当时上海出去吃饭，想到就是小南国、美林阁，在北京就是全聚德，不需要指南。</p>
+<p>　　到了2003年，明显感觉到2003年到现在，因为可能我对上海比较熟悉一点，餐饮业的发展非常迅速。以前都是一些做餐饮的人在做餐饮，现在可以看到越来越多做媒体、公关、房地产的人去做餐饮，这些人使得餐饮的竞争更加职业化，更加注重营销。这样的话，消费者也越来越知道，原来吃顿饭不单单是吃顿饭，口味好是重要的，但是也不单单是注重口味，其实越来越注重环境、服务，而且要不同的环境。这时我们这类网站就越来越有生命里，因为出去选择的越来越多了，需要人家来指引你一下。二线城市迟早会像上海和北京一样，可能也就是这几年的时间。</p>
+<p>　　黄涌涛：您预计像这种西北、东北或者是西南，西南还好一些，有成都，或者咱们说不够小资的城市，大众点评网会什么时候当地拥有一个很好的发展？</p>
+<p>　　张涛：我们有时内部也开玩笑，<strong>看我们点评网里面的会员活跃度可以看出这个城市的小资程度</strong>，算是一个<font color="#ff0000"><strong>小资指数</strong></font>。最近我们感觉天津发展不错，我们是明显感觉到天津的活跃度很好，跟报纸一对应，天津确实发展很好。你说西南，其实成都非常小资，成都上面明显感觉到活跃量不错。</p>
+<p>　　我挺惊讶的是一些北方城市，像沈阳，沈阳的活跃度也非常好。所以，不一定单单就是纯粹传统意义上的沿海，感觉中国整个每个城市的发展还是非常健康。</p>
+<font size="3" color="#0000ff"><strong>用户创造内容，Web2.0的核心价值之一</strong></font>
+
+<p>张涛：讨巧的方式是因为很多内容是用户产生的，像新浪最强的队伍也是编辑，我的编辑就是我的网友。一旦他们编辑自发地在里边贡献内容，我不需要管他们，他们很努力，每天晚上凌晨都在写，而我又不用付他工资，这是一个讨巧的方式，而且不用管他，他也很开心。我觉得这真是做社区一个讨巧的方式。</p>
+<font color="#0000ff"><strong>如何引爆口碑营销是成功的关键</strong></font>
+
+<p>黄涌涛：我理解张总说的讨巧，他找到了餐饮行业的<strong>引爆点</strong>，成功地把<strong>口碑营销</strong>给<strong>引爆</strong>了，这其实是很多创业者一直在苦苦寻求的一个东西，但是其实是很难找到的。但是一旦找到了，你就能发现它非常大的威力。</p>
+<font size="3" color="#0000ff"><strong>伴随着整个宏观经济水平以及居民生活水平和消费水平的上升，个性化需求的持续发展（所谓挑剔），这将会带来无限商机</strong></font>
+
+<p>黄涌涛：我理解张总所说的这种小资，其实我觉得他是代表了每个城市的居民，随着生活物质的丰富，对饮食越来越<font color="#ff0000"><strong>挑剔</strong></font>的一种态度。其实从长远来看，我们去餐馆的次数都是逐渐增多的，但是每个城市又都是不一样的。所以，你说的小资可能是希望大家更多走出去到餐馆吃饭，回来再想我今天去的是哪个餐馆，性价比如何，口碑如何。</p>
+<p>　　张涛：没错，接下来可能不单单是餐馆了。上海我们有其它频道，有休闲、娱乐、购物，最近明显感觉近期来休闲娱乐这块参与度越来越高。举个简单的例子，现在出去吃的多了，会对餐馆要求越来越高，但是过一段时间，不单单满足吃的，还有其它方面的需求，吃喝玩乐嘛，接下来要考虑。我这人可能也比较小资，刚到上海喜欢吃饭、按摩，我开始在上海找盲人按摩，开始更加注重按的好坏。现在发觉，现在到上海，当时那种按摩环境很差，就拿一个木桶，然后就是两个盲人，感觉就是去按摩去的。但是现在上海的按摩，不知道在北京怎么样，进去之后真的是感觉，不能叫它按摩了，叫它按摩感觉有点低了，叫SPA，真的是叫SPA，进去环境非常好，里面都是等离子的电视机，进去真是一种享受。</p>
+<p>　　这是随着生活水准的提高，每一个人的钱包越来越大，对生活质量要求越来越高，这类东西将来也越来越多具有点评的价值。国外很大点评的一块是牙医会有很大一块，医生会有很大一块，现在逐步逐步这也需求多了，以前的牙医就是牙防组。这也是一种趋势。</p>
+<font size="3" color="#0000ff"><strong>互联网成了商家宣传的重要渠道，大众点评网提供了类似百度Google以及淘宝等的作用：平台</strong></font>
+
+<p>张涛：没错，因为从我们的利益来讲我们绝对不希望出现商家点评，因为一旦出现其实是在降低我们的品牌。但是道高一尺，魔高一丈，现在有些开餐馆的本身就是媒体，有些可能是互联网的媒体，成天泡网，下面编辑跟我反映，他们对我们的规则比我们公司内部员工的规则还熟，比如我们有点评的信誉度，并不是你今天第一天上大众点评网点评一下，并显示不了，我们会根据登录数、点评数决定你这个评论显示还是不显示，有些参观老板已经知道我们怎么显示，会注册马甲，我们有一个IP判断，他可能换几台电脑去写。这是我们挺头疼的事情，我们今后会加大力度，杜绝这方面的情况。</p>
+<p>　　黄涌涛：看来懂互联网的老板比不懂互联网的老板有优势。</p>
+<p>　　张涛：有优势，我们还有部落，有些餐馆老板还到上面开部落，就变成他们宣传的，有些部落还非常火，在部落里邀一些朋友吃饭，给他们小的折扣，就在上面混着。懂互联网肯定对他非常有帮助，那是肯定。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e8bdace8bdbde38091e7ae80e58d95e59586e4b89ae6a8a1e5bc8fe4b98be7be8e" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/23/e38090e8bdace8bdbde38091e7ae80e58d95e59586e4b89ae6a8a1e5bc8fe4b98be7be8e/" class="article-date">
+  <time datetime="2007-08-22T21:03:00.000Z" itemprop="datePublished">Aug 23 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/23/e38090e8bdace8bdbde38091e7ae80e58d95e59586e4b89ae6a8a1e5bc8fe4b98be7be8e/">【转载】简单商业模式之美</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <font size="3" color="#ff0000"><strong>作者说出了实在而又容易被忽视的道理</strong></font>
+
+<p>原文链接:<a href="http://ubikr.com/archives/59" target="_blank" rel="external">http://ubikr.com/archives/59</a></p>
+<p>昨天，<a href="http://ubikr.com/" target="_blank" rel="external">优比客</a>跟一位朋友吃饭时，又一次体会到了简单商业模式的力量。这位朋友，几 年前回国创业，用了三年时间，把公司从1百万人民币，做到3千万美元的规模，并成功融资上千万美元。他的公司究竟在做什么呢？用这位朋友的话说，就是&ldquo;收 银机旁边放台打印机&rdquo;。这句话，是不是一下把大家的好奇心调动起来了？没错，这就是简单的商业模式具有的力量。</p>
+<p>原 来，这位朋友的公司主要业务是根据消费者在超市内的实际购买行为，在收银处向目标消费者实时打印、发放和处理个性化的优惠、促销和广告内容，以影响和改变 他们的下一次购买行为。比如，一位消费者买了尿布，就向她发放下次购买奶粉的优惠券。不难发现，通过这种目标营销，可以实现品牌厂商、零售商和消费者的 &ldquo;三方共赢&rdquo;。现在，他们的营销网络已经覆盖了全国300家零售大卖场，并且与一大批知名品牌建立了合作关系。</p>
+<p>在国外生活过的朋友，可能会很快联想到美国、欧洲的大超市也有类似的收银处优惠券打印服务。其实，这跟&ldquo;啤酒和尿布&rdquo;的案例一样，是数据挖掘技术在 零售领域的又一个应用。但这位朋友的创新之处，在于提供了一个第三方的大规模目标营销媒介，降低了品牌与零售机构、消费者三者之间的沟通成本。这种商业模 式，类似于分众的广告媒介服务，但能更好的为消费者创造价值，因此生命力会更长久。而商业模式上的创新和先发优势，确保了他们目前在国内零售市场上的成 功。</p>
+<p>好的商业模式，简单、优美，而又隐藏在日常生活之中。本客这位朋友，绝对不是第一个在国外超市看到优惠券打印服务的人，但却是第一个把这种模式搬到国内，并实现价值突破的人。从这个角度看，他完全符合一个创业家&ldquo;<a href="http://ubikr.com/archives/54" target="_blank" rel="external">见人所皆见，想人之未想，并使之发生</a>&rdquo;的标准。而本案例带给大家的另外一个启示，就是简单商业模式之美。</p>
+<p>对军事感兴趣的朋友，都知道在战斗机的气动外形设计中，有一个简单的原则，就是看上去优美、协调，让人感到舒服的战斗机外形，往往也是符合空气动力 学规律的最优设计。这是因为，无论自然界还是人类世界，美好、有效率的东西，从来都不是复杂扭曲，而是简单明了。这个规律自上而下，演绎到企业具体的商业 模式，也同样有效。正如投资人对创业者常说的，如果你在30秒的电梯演讲里，无法解释清楚你的商业模式，那就说明这个模式有问题，因为它不够直接明了。</p>
+<p>而从创业家的角度看，简单的商业模式大概有这么几个好处。首先，在创业初期，简单的商业模式，让投资人更容易理解，判断其可行性和市场价值。毕竟投 资人不是行业专家，对于不清晰，难以理解的商业模式，他们一般不愿轻易解囊。其次，复杂的商业模式，跟市场（包括消费和资本市场）沟通的成本高昂。百度在 纳斯达克上市取得历史性的成功，其中一个因素就是其商业模式可用&ldquo;中国的Google&rdquo;几个字解释，这是低成本资本市场沟通的一个范例。而<a href="http://mayi.com/" target="_blank" rel="external">蚂蚁网</a>，不知道可不可以作为高成本消费市场沟通的一个例子。再次，复杂的商业模式，千头万绪，运作起来往往困难的多。且不说创业家本身在执行过程中可能产生的幻觉，就算是没犯任何错误的完美执行，也不能保证没有意外出现。<a href="http://baike.baidu.com/view/40544.htm" target="_blank" rel="external">墨菲定律</a>说，&ldquo;凡是可能出错的都会出错&rdquo;。而<a href="http://baike.baidu.com/view/499546.htm" target="_blank" rel="external">崔西定律</a>则认为，&ldquo;任何工作的困难度与其执行步骤的数目平方成正比&rdquo;。不幸的是，这些规律，在各种创业活动中无一例外的反复被验证。</p>
+<p>与自然界和人类的任何活动一样，简单商业模式的发现，也有规律可循。比如，从&ldquo;卖水&rdquo;这个模式（pattern，不同于商业模式中的model）出 发，我们能构建出无数简单有效的商业模式。大家有时间，可以分析一下目前各种成功的简单商业模式具有的共性。如果有人能整理出一批商业模式 （business model，其实应译为&ldquo;商业模型&rdquo;）的设计模式（design patterns），也许能减少将来的创业家绕弯路的机会。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e8bdace8bdbde38091facebooke5a682e4bd95e587bbe6ba83myspaceefbc8cyahooefbc81e5928cgoogleefbc9f" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/23/e38090e8bdace8bdbde38091facebooke5a682e4bd95e587bbe6ba83myspaceefbc8cyahooefbc81e5928cgoogleefbc9f/" class="article-date">
+  <time datetime="2007-08-22T20:58:00.000Z" itemprop="datePublished">Aug 23 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/23/e38090e8bdace8bdbde38091facebooke5a682e4bd95e587bbe6ba83myspaceefbc8cyahooefbc81e5928cgoogleefbc9f/">【转载】Facebook如何击溃Myspace，Yahoo！和Google？</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>我的感觉:   <font size="3" color="#ff0000"><strong>基于类真实社会关系的内容聚合拥有无语伦比的竞争力</strong></font></p>
+<p>**转自 <a href="http://www.yeeyan.com" target="_blank" rel="external">译言</a></p>
+<p>原文链接:<a href="http://www.yeeyan.com/articles/view/ewine/1248#beginComment" target="_blank" rel="external">http://www.yeeyan.com/articles/view/ewine/1248#beginComment</a></p>
+<p>原文作者：<span>Christopher Beam </span>（<span>Slate.com</span>在线杂志专栏作家）**<span></span></p>
+<p>每个年轻人&mdash;&mdash;通常刚脱稚气&mdash;&mdash;必须作出一个重大的决定：选择<span>MySpace</span>或<span>Facebook</span>？一个人的选择也是品味问题。<span>MySpace</span>，如果你问我，那可是一个垃圾邮件满天飞的蛮荒之地。一般的使用者页面都带有大量的处于加载状态的诸如内嵌的音乐和视频播放器的废物，一些捡诱导壁纸，以及大量来自那些想要&ldquo;认识你&rdquo;的&ldquo;模特儿&ldquo;的好友请求。（其发生的频率是<span>Facebook</span>的近三倍。）<span>Facebook</span>，从另一方面来说，它少了许多定身量造，但是也变得更加安全可靠。它的界面适意，稳固，有吸引力同时少了许多浮华&mdash;&mdash;这种社会性网络你可以放心地介绍给家里的妈妈看。将它想像成像沃尔沃那样的社会性网络吧。</p>
+<p>但是几星期前，<span>Facebook</span>放弃了诸如<span>Myspace</span>那样的技术策略。这家网站推倒技术之墙，且对外围开发者开放页面源代码。一种新的称为&ldquo;<span>Facebook</span>平台&rdquo;的工具箱保被允许让任何程序员&mdash;&mdash;一位无聊的学生或数百万美元的法人&mdash;&mdash;剥开该网站的页面架构，并随意进行编辑，以及内部结构的重组。到目前为止近<span>900</span>多个被公开的程序中没有一个是能显著影响人们生活的&mdash;&mdash;在所有的附带软件中，<span>Graffiti</span>（涂鸦板）程序（根据其描述，有超过<span>330</span>万的人们下载）使得你能在其他人的页面上进行涂鸦，同时<span>Honesty Box</span>（真心话留言盒，<span>Facebook</span>的产品）能使你的朋友们化名发表他们对你的真实看法。<strong>如果<span>Facebook</span>能够想出一种轻便的方法以卸载这些迷你应用软件，它将更像一个社会性网络。<span>Facebook</span>将变为一个足以吞食整个互联网的全能站点。<span></span></strong></p>
+<p>对一切的有关<span><a href="http://www.secondlife.com/" target="_blank" rel="external">Second Life<img src="http://shots.snap.com/images/v2.18.1/t.gif" alt=""></a></span>（第二人生，一家著名的在线网游公司&mdash;&mdash;译注）的大肆宣传而言，在&ldquo;虚拟世界&rdquo;，只有<span>Facebook </span>和<span> MySpace</span>足以与之相提并论。当然，<span>Facebook</span>并没有那种大胸的<span>3D</span>形象，也没有自己的游戏业务和流通币。<strong>但是因特网的要义在于你并不需要涉足所有的领域</strong>。如果我要买东西，我会选择去<span>Amazon.com</span>，而不是一些至关重要的虚拟商店。甚至在<span>Facebook</span>允许外部应用程序之前，就已有成百万的用户基本知悉了页面的内部秘密。一个典型的<span>Facebook</span>人每天会花上数小时以发送信息，写日志或博客条目，还有上传照片，以及和那些同样喜欢<span>Decemberists</span>（一支<span>Indie</span>摇滚乐队&mdash;&mdash;译注）的菜鸟女孩进行有趣的交流。<span>Facebook</span>平台不过是扩展了这个交流世界。（据《华尔街时报》报道，从初创到现在，<span>Facebook</span>的主流用户人数已经跃升到了<span>2400</span>万到<span>2700</span>万的水平。）现在你可以查看本地的天气状况，或在线饲养一只虚拟宠物兔，也可以知晓你的朋友们都在听哪些音乐。除了少部分人也同时使用<span>Email</span>&mdash;&mdash;一种实时信息收发系统外，<span>RSS</span>（基于<span>XML</span>技术的在线共享内容的一种简易方式，也叫聚合内容&mdash;&mdash;译注）&mdash;&mdash;<span>Facebook</span>强制性捆绑使用的信息系统，其将创造一个庞大的用户群。<strong>用户们再也不必在网上到处漫游了，网络信息将主动送到我们面前来。<span></span></strong></p>
+<p>如果<span>Facebook</span>确信要变为一个多面的内容聚集平台，可能有些太迟。因为诸如<span><a href="http://www.my.yahoo.com/" target="_blank" rel="external">My Yahoo!<img src="http://shots.snap.com/images/v2.18.1/t.gif" alt=""></a></span>和<span><a href="http://www.google.com/ig" target="_blank" rel="external">iGoogle<img src="http://shots.snap.com/images/v2.18.1/t.gif" alt=""></a></span>这样的可自定制主页已经深入人心，也有一些新潮的个性化主页产品如<span><a href="http://www.netvibes.com/" target="_blank" rel="external">NetVibes<img src="http://shots.snap.com/images/v2.18.1/t.gif" alt=""></a></span>，<em><strong><span>Slate</span></strong></em>杂志的<span>Reihan Salam</span>称之为&ldquo;终极的内容聚合平台&rdquo;。但是<span>Facebook</span>的主页有一个巨大的内在优势：社会性网络已经建立。是的，另一种方式则是整合<span>Gmail</span>和<span>BBC</span>头条，<span>YouTube</span>视频搜索以及播客目录。<strong>若将社会关系与这些内容融合起来，不论如何，此举将使<span>Facebook</span>立即击败其主要竞争对手。</strong>通过<span>Facebook</span>的新闻订阅平台，它将能初步看出你的朋友们是何时开始使用一件新产品或服务的。这意味着最佳的附加软件将即刻变得至关重要起来&mdash;&mdash;到目前为止，<span>Platform</span>（加拿大第四大软件公司&mdash;&mdash;译注）的最大成功在于其提供了一个共享彼此偏好内容（<span>iLike</span>）的平台，这使其注册用户以每天<span>20</span>万人的速度递增。</p>
+<p>毫无疑问的是，<span>Facebook</span>的外围开发者们将进一步致力于为用户提供强大的内容聚合功能。<strong>这家网站日益增长的用户们，都是具有良好名誉以及干净社会形象的来自公司的精英们。<span></span></strong></p>
+<p>哪一种产品将被附带提供给<span>Facebook</span>的用户群呢？看起来每一家大公司都试图将社会性网络方式注入它们的核心服务域。例如，<span>Netflix</span>（著名的网络视频租赁公司&mdash;&mdash;译注）允许你得以时刻关注到你的朋友们正在观看什么。但是它更像是让你在一个巨大的预制网络上自卖自夸&mdash;&mdash;难怪<span>Netflix</span>的用户们现在都用<span>Facebook</span>来关注密友的情况呢。而且还不仅仅只是商业：正如<span>Barack Obama</span>（一位黑人帅哥，据传已正式宣布参选<span>2008</span>年美国总统&mdash;&mdash;译注）的竞选活动。自从五月底依赖，有成千上万的用户要在<span>Facebokk</span>上将<span>Barack Obama</span>加为好友，还有成百上千的人们加入以<span>Obama</span>为主题的群。与传统订制的社会性网络<span><a href="http://my.barackobama.com/" target="_blank" rel="external">My.BarackObama.com<img src="http://shots.snap.com/images/v2.18.1/t.gif" alt=""></a></span>（可能是<span>Barack Obama</span>的竞选官网&mdash;&mdash;译注）比起来，后者不过区区<span>7</span>万名注册用户。<span>Facebook</span>的社会性网络就像一种传输系统，与你自己创建的系统相比，它显得简便且高效。</p>
+<p>**</p>
+<p>在我看来，外部内容的注入极可能使<span>Facebook</span>变得更为强大。<span></span>**</p>
+<p>听到<span>Facebook</span>计划将增加用于在线支付的&ldquo;钱包&rdquo;服务，我就放心了。<strong>但是它要想真正转型，需要一个像<span>Google</span>那样简易的及时通讯系统，也可以将可嵌入收件箱与<span>Hotmail</span>，<span>Yahoo</span>！等电邮商对接。</strong>事实上<span>Facebook</span>并未引入许多的聚合新闻内容平台&mdash;&mdash;真正的新闻，而不是订制而来的新闻&mdash;&mdash;虽然不可避免会牵涉到它们。我不清楚为何<span>Facebook</span>不将这些表面上的潜在元素组合起来，不管是它的新闻办公室或是<span>CEO Mark Zuckerberg(</span>也许这家伙也为自己的页面大伤脑筋<span>)</span>都未能回应过我的建议。我感到烦恼和失望的是上述这些方案都还没能进入他们的决策议程，尤其是已有传言称<span>Yahoo</span>！将收购<span>Myspace</span>。<strong>如果<span>Facebook</span>增加了<span>email</span>，<span>IM</span>（<span>InstantMessaging</span>实时传讯&mdash;&mdash;译注），以及聚合内容平台服务，这将是其变得向<span>Yahoo</span>那样有综合性以及像<span>MySpace</span>那样流行的重要一步。这样，剩下的那些网站也将不战而胜。<span></span></strong></p>
+<p><strong><span> </span></strong></p>
+<p><strong>附：用户评论<span></span></strong></p>
+<p>（<span>Slate.com</span>选载的评论往往颇具价值&mdash;&mdash;译注）<strong><span style="font-weight: normal;"></span></strong></p>
+<p>更多门户网站么？我总会有一种似曾相识的感觉（<span>deja vu</span>，法语），因为这些大量的新型网站和那些门户网站是很相像的，而后者在十年前曾被认为是互联网的未来。公司们从未停止过寻找一种&ldquo;一站式商店&rdquo;的模式，以俘获眼球同时赚取收益。<strong>只有到了现在，与过去仅仅只为获知体育比分和天气预报不同，你可以走得更深并且发展为一种虚拟的个人门户。<span></span></strong></p>
+<p><strong><span>—dobbsfox</span></strong></p>
+<p><span></span></p>
+<p>Facebook可能只对学生和年轻人比较有用，但是那些学生将会是未来的职业人士。我不认为当那些学生创造了自己的社会性网络后，会轻易抛弃它。<strong>我坚信<span>Facebook</span>的这种社会性网络将会越来越深地和职业性网络关系融合起来。</strong></p>
+<p>我有一个潜在的雇主是我在<span>Facebook</span>上的朋友，几天前我现在的老板提了一个相当奇异的要求。他要我&ldquo;借&rdquo;我的帐号给他用<span>30</span>分钟，他要在我的网络上浏览那些好友的页面。我拒绝了他，但是我情不自禁地受到了深深地震颤&mdash;&mdash;<span>Facebook</span>已变成当今世界多么重要的一个部分啊。</p>
+<p><strong><span>—jinxyte</span></strong></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e5a682e4bd95e5bc80e590af-windows-2000-server-e4b88ae79a84e8bf9ce7a88be6a18ce99da2e58a9fe883bd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/21/e5a682e4bd95e5bc80e590af-windows-2000-server-e4b88ae79a84e8bf9ce7a88be6a18ce99da2e58a9fe883bd/" class="article-date">
+  <time datetime="2007-08-21T06:46:00.000Z" itemprop="datePublished">Aug 21 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/21/e5a682e4bd95e5bc80e590af-windows-2000-server-e4b88ae79a84e8bf9ce7a88be6a18ce99da2e58a9fe883bd/">如何开启 Windows 2000 Server 上的远程桌面功能</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Windows XP 和 Windows Server 2003 的远程桌面(Remote Desktop)相信早已为大家熟知，其实远程桌面源自于 Windows 2000 Server 家族的终端服务(Terminal Service)，所以 Windows 2000 Server 家族就已经提供了这个方便实用的功能，只是启用的方法有所不同：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  开始 -&gt; 设置 -&gt; 控制面板 -&gt; 添加/删除程序 -&gt; 添加/删除 Windows 组件 -&gt; 选中&ldquo;终端服务&rdquo; -&gt; 详细信息 -&gt; 勾选&ldquo;启用终端服务&rdquo;-&gt; 确定</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  完成后，即可使用 Windows XP 或者 Windows Server 2003 的远程桌面连接来访问了。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/page/43/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/42/">42</a><a class="page-number" href="/archives/page/43/">43</a><span class="page-number current">44</span><a class="page-number" href="/archives/page/45/">45</a><a class="page-number" href="/archives/page/46/">46</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/57/">57</a><a class="extend next" rel="next" href="/archives/page/45/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

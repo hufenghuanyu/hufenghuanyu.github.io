@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2010/7 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/2010/07/page/2/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-e59ca8phpe4b8ade4bdbfe794a8curl" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/07/02/e59ca8phpe4b8ade4bdbfe794a8curl/" class="article-date">
+  <time datetime="2010-07-02T08:39:43.000Z" itemprop="datePublished">Jul 2 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/07/02/e59ca8phpe4b8ade4bdbfe794a8curl/">在PHP中使用Curl</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/curl/">curl</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><strong>这篇讲解的比较透彻，我发现老外的文章一向喜欢循循善诱，适合自学者。</strong></p>
+<p>中文翻译：<a href="http://www.paitoubing.cn/blog/using-curl-php" target="_blank" rel="external">http://www.paitoubing.cn/blog/using-curl-php</a><br>原文（英文）地址： <a href="http://www.phpit.net/article/using-curl-php" target="_blank" rel="external">http://www.phpit.net/article/using-curl-php</a>&#160; 版权声明：<a href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.zh" target="_blank" rel="external">署名-非商业性使用-禁止演绎 2.0</a></p>
+<p><strong>摘要：</strong></p>
+<p>在这篇文章中主要讲解php_curl库的知识，并教你如何更好的使用php_curl。</p>
+<p>简介</p>
+<p>你可能在你的编写PHP脚本代码中会遇到这样的问题：怎么样才能从其他站点获取内容呢？这里有几个解决方式；最简单的就是在php中使用fopen()函数，但是fopen函数没有足够的参数来使用，比如当你想构建一个“网络爬虫”，想定义爬虫的客户端描述(IE,firefox),通过不同的请求方式来获取内容，比如POST,GET；等等这些需求是不可能用<a href="http://cn2.php.net/fopen" target="_blank" rel="external">fopen()</a>函数实现的。</p>
+<p>为了解决我们上面提出的问题，我们可以使用PHP的扩展库-Curl，这个扩展库通常是默认在安装包中的,你可以它来获取其他站点的内容，也可以来干别的。</p>
+<blockquote>
+<p>备注：这两段代码需要php_curl扩展库的支持，查看phpinfo()，如果curl support&#160; enabled则表示支持curl库。<br>1、Windows下的PHP开启curl库支持：<br>打开php.ini，将extension=php_curl.dll前的;号去掉。</p>
+<p>2、Linux下的PHP开启curl库支持：<br>编译PHP时在./configure后加上 –with-curl  </p>
+</blockquote>
+<p>在这篇文章中，我们一起来看看如何使用curl库，并看看它的其他用处，但是接下来，我们要从最基本的用法开始</p>
+<p>基本用法：</p>
+<p>第一步，我们通过函数curl_init()创建一个新的curl会话,代码如下：</p>
+<blockquote>
+<p>&lt;?php<br>// create a new curl resource<br>$ch = curl_init();<br>?&gt;  </p>
+</blockquote>
+<p>我们已经成功创建了一个curl会话，如果需要获取一个URL的内容，那么接下的一步，传递一个URL给curl_setopt()函数，代码：</p>
+<blockquote>
+<p>&lt;?php<br>// set URL and other appropriate options<br>curl_setopt($ch, CURLOPT_URL, “<a href="http://www.google.com/”" target="_blank" rel="external">http://www.google.com/”</a>);<br>?&gt;  </p>
+</blockquote>
+<p>做完上一步工作，curl的准备工作做完了，curl将会获取URL站点的内容，并打印出来。代码：</p>
+<blockquote>
+<p>&lt;?php<br>// grab URL and pass it to the browser<br>curl_exec($ch);<br>?&gt;  </p>
+</blockquote>
+<p>最后，关闭当前的curl会话</p>
+<blockquote>
+<p>&lt;?php<br>//close curl resource, and free up system resources<br>curl_close($ch);<br>?&gt;  </p>
+</blockquote>
+<p>下面我们来看看完成的实例代码：</p>
+<blockquote>
+<p>&lt;?php</p>
+<p>// create a new curl resource<br>$ch = curl_init();<br>// set URL and other appropriate options<br>curl_setopt($ch, CURLOPT_URL, “<a href="http://www.google.nl/”" target="_blank" rel="external">http://www.google.nl/”</a>);<br>// grab URL and pass it to the browser<br>curl_exec($ch);<br>// close curl resource, and free up system resources<br>curl_close($ch);<br>?&gt;  </p>
+</blockquote>
+<p>(<a href="http://www.phpit.net/demo/using%20c_url%20php/1.php" target="_blank" rel="external">查看在线demo</a>)<br>我们刚刚把另外一个站点的内容，获取过来以后自动输出到浏览器，我们有没有其他的方式组织获取的信息，然后控制其输出的内容呢？完全没有问题，在curl_setopt()函数的参数中，如果希望获得内容但不输出,使用<strong>CURLOPT_RETURNTRANSFER</strong>参数,并设为非0值/true!，完整代码请看：</p>
+<blockquote>
+<p>&lt;?php</p>
+<p>// create a new curl resource<br>$ch = curl_init();<br>// set URL and other appropriate options<br>curl_setopt($ch, CURLOPT_URL, “<a href="http://www.google.nl/”" target="_blank" rel="external">http://www.google.nl/”</a>);<br>curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);<br>// grab URL, and return output<br>$output = curl_exec($ch);<br>// close curl resource, and free up system resources<br>curl_close($ch);<br>// Replace ‘Google’ with ‘PHPit’<br>$output = str_replace(’Google’, ‘PHPit’, $output);<br>// Print output<br>echo $output;<br>?&gt;  </p>
+</blockquote>
+<p>(<a href="http://www.phpit.net/demo/using%20c_url%20php/1.php" target="_blank" rel="external">查看在线demo</a>)</p>
+<p>在上面的2个实例中，你可能注意到通过设置函数<a href="http://www.php.net/manual/en/function.curl-setopt.php" target="_blank" rel="external">curl_setopt()</a>的不同参数，可以获得不同结果，这正是curl强大的原因，下面我们来看看这些参数的含义。</p>
+<p><strong>CURL的相关选项：</strong></p>
+<p>如果你看过php手册中的curl_setopt()函数，你可以注意到了，它下面长长的参数列表，我们不可能一一介绍，更多的内容请查看PHP手册，这里只介绍常用的和有的一些参数。</p>
+<p>第一个很有意思的参数是<strong> CURLOPT_FOLLOWLOCATION</strong> ,当你把这个参数设置为true时，curl会根据任何重定向命令更深层次的获取转向路径，举个例子：当你尝试获取一个PHP的页面，然后这个PHP的页面中有一段跳转代码 &lt;?php header(”Location:<a href="http://new_url”);….?&gt;,curl将从http://new_url获取内容，而不是返回跳转代码。完整的代码如下：" target="_blank" rel="external">http://new_url”);….?&gt;,curl将从http://new_url获取内容，而不是返回跳转代码。完整的代码如下：</a></p>
+<blockquote>
+<p>&lt;?php</p>
+<p>// create a new curl resource<br>$ch = curl_init();<br>// set URL and other appropriate options<br>curl_setopt($ch, CURLOPT_URL, “<a href="http://www.google.com/”" target="_blank" rel="external">http://www.google.com/”</a>);<br>curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);<br>// grab URL, and print<br>curl_exec($ch);<br>?&gt;  </p>
+</blockquote>
+<p>(<a href="http://www.phpit.net/demo/using%20c_url%20php/3.php" target="_blank" rel="external">查看在线demo</a>)，<br>如果Google发送一个转向请求，上面的例子将根据跳转的网址继续获取内容，和这个参数有关的两个选项是<strong>CURLOPT_MAXREDIRS</strong>和<strong>CURLOPT_AUTOREFERER</strong> .<br>参数<strong>CURLOPT_MAXREDIRS</strong>选项允许你定义跳转请求的最大次数，超过了这个次数将不再获取其内容。如果<strong>CURLOPT_AUTOREFERER</strong> 设置为true时，curl会自动添加Referer header在每一个跳转链接，可能它不是很重要，但是在一定的案例中却非常的有用。</p>
+<p>下一步介绍的参数是<strong>CURLOPT_POST</strong>,这是一个非常有用的功能，因为它可以让您这样做POST请求，而不是GET请求，这实际上意味着你可以提交<br>其他形式的页面，无须其实在表单中填入。下面的例子表明我的意思：</p>
+<blockquote>
+<p>&lt;?php<br>// create a new curl resource<br>$ch = curl_init();<br>// set URL and other appropriate options<br>curl_setopt($ch, CURLOPT_URL,”<a href="http://projects/phpit/content/using%20curl%20php/demos/handle_form.php”" target="_blank" rel="external">http://projects/phpit/content/using%20curl%20php/demos/handle_form.php”</a>);<br>// Do a POST<br>$data = array(’name’ =&gt; ‘Dennis’, ’surname’ =&gt; ‘Pallett’);<br>curl_setopt($ch, CURLOPT_POST, true);<br>curl_setopt($ch, CURLOPT_POSTFIELDS, $data);<br>// grab URL, and print<br>curl_exec($ch);<br>?&gt;  </p>
+</blockquote>
+<p>(<a href="http://www.phpit.net/demo/using%20c_url%20php/4.php" target="_blank" rel="external">View Live Demo</a>)<br>And the handle_form.php file:</p>
+<blockquote>
+<p>&lt;?php<br>echo ‘&lt;h3&gt;Form variables I received: &lt;/h3&gt;’;<br>echo ‘&lt;pre&gt;’;<br>print_r ($_POST);<br>echo ‘&lt;/pre&gt;’;<br>?&gt;  </p>
+</blockquote>
+<p>正如你可以看到，这使得它真的很容易提交形式，这是一个伟大的方式来测试您的所有形式，而不以填补他们在所有的时间。<br>参数<strong>CURLOPT_CONNECTTIMEOUT</strong> 通常用来设置curl尝试请求链接的时间，这是一个非常重要的选项，如果你把这段时间设置的太短了，可能会导致curl请求失败。<br>但是如果你把它设置的时间太长了，可能PHP脚本将死掉。和这个参数相关的一个选项是<strong> CURLOPT_TIMEOUT</strong>，这是用来设置curl允许执行的时间需求。如果您设置这一个很小的值，它可能会导下载的网页上是不完整的，因为他们需要一段时间才能下载。<br>最后一个选项是 CURLOPT_USERAGENT，它允许你自定义请求是的客户端名称，比如webspilder或是IE6.0.示例代码如下：</p>
+<blockquote>
+<p>&lt;?php<br>// create a new curl resource<br>$ch = curl_init();<br>// set URL and other appropriate options<br>curl_setopt($ch, CURLOPT_URL, “<a href="http://www.useragent.org/”" target="_blank" rel="external">http://www.useragent.org/”</a>);<br>curl_setopt($ch, CURLOPT_USERAGENT, ‘My custom web spider/0.1′);<br>curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);<br>// grab URL, and print<br>curl_exec($ch);<br>?&gt;  </p>
+</blockquote>
+<p>(View Live Demo)</p>
+<p>现在我们把最有意思的一个参数都介绍过了，下面我们来介绍一个<a href="http://www.php.net/manual/en/function.curl-getinfo.php" target="_blank" rel="external">curl_getinfo()</a> 函数，看看它能为我们做些什么。</p>
+<p><strong>获取页面的信息：</strong></p>
+<p>函数curl_getinfo()可以使得我们获取接受页面各种信息，你能编辑这些信息通过设定选项的第二个参数，你也可以传递一个数组的形式。就像下面的例子：</p>
+<blockquote>
+<p>&lt;?php<br>// create a new curl resource<br>$ch = curl_init();<br>// set URL and other appropriate options<br>curl_setopt($ch, CURLOPT_URL, “<a href="http://www.google.com”" target="_blank" rel="external">http://www.google.com”</a>);<br>curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);<br>curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);<br>curl_setopt($ch, CURLOPT_FILETIME, true);<br>// grab URL<br>$output = curl_exec($ch);<br>// Print info<br>echo ‘&lt;pre&gt;’;<br>print_r (curl_getinfo($ch));<br>echo ‘&lt;/pre&gt;’;<br>?&gt;  </p>
+</blockquote>
+<p>(<a href="http://www.phpit.net/demo/using%20c_url%20php/5.php" target="_blank" rel="external">View Live Demo</a>)</p>
+<p>大部分返回的信息是请求本身的，像：这个请求花的时间，返回的头文件信息，当然也有一些页面的信息，像页面内容的大小，最后修改的时间。</p>
+<p>那些全是关于curl_getinfo（）函数的，现在让我们看看它的实际用途。</p>
+<p><strong>实际用途：</strong></p>
+<p>curl库的第一用途可以查看一个URL页面是否存在，我们可以通过查看这个URL的请求返回的代码来判断比如404代表这个页面不存在，我们来看一些例子：</p>
+<blockquote>
+<p>&lt;?php<br>// create a new curl resource<br>$ch = curl_init();<br>// set URL and other appropriate options<br>curl_setopt($ch, CURLOPT_URL, “<a href="http://www.google.com/does/not/exist”" target="_blank" rel="external">http://www.google.com/does/not/exist”</a>);<br>curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);<br>// grab URL<br>$output = curl_exec($ch);<br>// Get response code<br>$response_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);<br>// Not found?<br>if ($response_code == ‘404′) {<br>echo ‘Page doesn\’t exist’;<br>} else {<br>echo $output;<br>}<br>?&gt;  </p>
+</blockquote>
+<p>(<a href="http://www.phpit.net/demo/using%20c_url%20php/6.php" target="_blank" rel="external">View Live Demo</a>)</p>
+<p>其他的用户可能是创建一个自动检查器，验证每个请求的页面是否存在。<br>我们可以用curl库来写和google类似的网页蜘蛛(web spider)，或是其他的网页蜘蛛。这篇文章不是关于如何写一个网页蜘蛛的，因此所以我们没有讲任何关于网页蜘蛛的细节问题，但是以后在PHPit 将会介绍用 curl来构造一个web spider.</p>
+<p><strong>结论：</strong></p>
+<p>在这篇文章我已经表明，如何使用php中的curl库和其大部分的选项。</p>
+<p>为最基本的任务，只想获得一个网页，你可能不会需要CURL库，但是，一旦你想要做任何事情稍微先进的，您可能会想要使用curl库。</p>
+<p>在近未来，我会告诉您究竟如何建立自己的网络蜘蛛，类似Google的网络蜘蛛，敬请期待，以phpit。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-limesurvey-1-85-e983a8e58886e6a8a1e69dbfe68993e58db0e997aee58db7e4b88de5ae8ce695b4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/07/01/limesurvey-1-85-e983a8e58886e6a8a1e69dbfe68993e58db0e997aee58db7e4b88de5ae8ce695b4/" class="article-date">
+  <time datetime="2010-07-01T08:18:03.000Z" itemprop="datePublished">Jul 1 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/07/01/limesurvey-1-85-e983a8e58886e6a8a1e69dbfe68993e58db0e997aee58db7e4b88de5ae8ce695b4/">Limesurvey 1.85+ 部分模板打印问卷不完整</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/limesurvey/">limesurvey</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原来用的1.5版的limesurvey，后来升级到了1.85版。1.85版的模板系统跟1.5版相比多了几个文件。1.5版下订制了很多模板，迁移时漏掉了print_group.pstpl这个文件，结果就出现了在用这些模板的问卷，打印时只有头部，问卷的主体部分就没有了，查看源码才得知少了打印问题组这个模板，自然获取不到问题组的信息。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e5a682e4bd95e59ca8windows-7e4b88ae8bf90e8a18cvmware-vsphere-client" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/07/01/e5a682e4bd95e59ca8windows-7e4b88ae8bf90e8a18cvmware-vsphere-client/" class="article-date">
+  <time datetime="2010-07-01T05:12:21.000Z" itemprop="datePublished">Jul 1 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/虚拟化/">虚拟化</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/07/01/e5a682e4bd95e59ca8windows-7e4b88ae8bf90e8a18cvmware-vsphere-client/">如何在Windows 7上运行VMware vSphere Client</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/esx/">esx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vmware/">vmware</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>1. 介绍<br>VMware已有明确说明vSphere Client目前不能运行在Windows 7上，请看此KB:<a href="http://kb.vmware.com/kb/1011329" target="_blank" rel="external">http://kb.vmware.com/kb/1011329</a><br>那么如果你要尝鲜使用Windows 7，又要使用vSphere Client怎么办呢，ebanban studio将为你提供解决方法。</p>
+<p>2. 方法<br>(1)首先，你需要下载<a href="http://jingyan.info/wp-content/uploads/2010/07/system.zip" target="_blank" rel="external">system.dll</a></p>
+<p>(2)下载完成后需要将system.dll放在指定目录<br>32位Windows 7放在C:\Program Files\VMware\Infrastructure\Virtual Infrastructure Client\Launcher\Lib<br>64位Windows 7放在C:\Program Files (x86)\VMware\Infrastructure\Virtual Infrastructure Client\Launcher\Lib<br>注意：若Lib目录不存在，则在Launcher目录下创建Lib目录</p>
+<p>(3)修改Launcher目录下的VpxClient.exe.config，修改以下代码<br>&lt;runtime&gt;<br>&lt;developmentMode developerInstallation=&quot;true&quot;/&gt;<br>&lt;/runtime&gt;<br>注意：若系统提示你无法保存文件，则关闭所有VMware相关的程序再进行保存。</p>
+<p>(4)修改你的环境变量<br>添加变量名DEVPATH<br>32位Windows 7的键值为C:\Program Files\VMware\Infrastructure\Virtual Infrastructure Client\Launcher\Lib<br>64位Windows 7的键值为C:\Program Files (x86)\VMware\Infrastructure\Virtual Infrastructure Client\Launcher\Lib</p>
+<p>关于VMware ESX 4的安装配置可参照：<a href="http://wangchunhai.blog.51cto.com/225186/172048" target="_blank" rel="external">http://wangchunhai.blog.51cto.com/225186/172048</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2010/07/">&laquo; Prev</a><a class="page-number" href="/archives/2010/07/">1</a><span class="page-number current">2</span>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

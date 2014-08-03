@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Tag: rjava | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/tags/rjava/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-e4bb8ejavae9878ce8b083e794a8refbc9ae8aebee7bdaejri" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02/10/e4bb8ejavae9878ce8b083e794a8refbc9ae8aebee7bdaejri/" class="article-date">
+  <time datetime="2014-02-10T08:25:21.000Z" itemprop="datePublished">Feb 10 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>►<a class="article-category-link" href="/categories/java/R/">R</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02/10/e4bb8ejavae9878ce8b083e794a8refbc9ae8aebee7bdaejri/">从Java里调用R：设置JRI</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/r/">r</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rjava/">rjava</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <pre><code>JRI允许用户从Java里面调用R的功能，本文介绍Windows 64位环境下在Eclipse里设置JRI的方法。
+
+<span class="keyword">*</span><span class="keyword">*</span>环境<span class="keyword">*</span><span class="keyword">*</span>：
+
+&amp;nbsp; &amp;nbsp;Windows 7 64bit
+</code></pre><p> &nbsp; &nbsp;Eclipse 4.3.1</p>
+<p> &nbsp; &nbsp;R 3.0.2</p>
+<p> &nbsp; &nbsp;rJava 0.9-6</p>
+<ol>
+<li><p>在R里安装rJava扩展包。JRI已经被包含在rJava里了。命令是:install.packages(&quot;rJava&quot;) 。运行完成后rJava默认被安装在R的安装路径，如：C:\Program Files\R\R-3.0.2\library\rJava。</p>
+<pre><code>    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"background-color: rgb(248, 248, 248);"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+</code></pre></li>
+<li><p>打开JRI的安装目录，如：C:\Program Files\R\R-3.0.2\library\rJava\jri，即可看到从Java里调用时需要使用的文件和目录。其中: examples中包含示例Java源文件，可以用来测试你的设置是否正确。jri.dll是需要使用的动态链接库，运行Java程序时会被用到。JRI.jar以及另两个jar文件是Java类库，编译Java源文件时需要用到。</p>
+</li>
+<li><p>我们现在在Eclipse里新建一个Java项目，然后把examples目录里的.java文件复制到这个项目里。</p>
+</li>
+<li><p>下面要设置运行环境。</p>
+<pre><code>    4.1 首先使Java类能够编译。<span class="keyword">*</span><span class="keyword">*</span>需要把上面提到的三个jar文件加到项目的类路径里。<span class="keyword">*</span><span class="keyword">*</span>右键点击项目名，选择Properties，然后在左侧边栏中选择Java Build Path，然后在右侧tab里选择Libraries，然后选择Add External JARs…，在弹出的选择框里选择jri文件夹里的三个.jar文件，点确定。这时，这三个新文件应该会在界面上被列出来。点击OK退出项目属性界面后，Java类应该会被重新编译，所有文件应该能被编译通过了。
+
+    ![](http://ict.jingyan.info/wp-content/uploads/2014/02/54671392020677.png <span class="string">"额外jar"</span>)
+
+    4.2 配置运行时的动态链接库。主要是两步：首先，<span class="keyword">*</span><span class="keyword">*</span>包含jri.dll的文件夹必须在java.library.path里<span class="keyword">*</span><span class="keyword">*</span>；其次，<span class="keyword">*</span><span class="keyword">*</span>R.dll必须在运行路径下<span class="keyword">*</span><span class="keyword">*</span>。在Eclipse项目里，右键点击rtest.java，在弹出菜单里选择“<span class="keyword">*</span><span class="keyword">*</span>运行方式<span class="keyword">*</span><span class="keyword">*</span>”，然后选择“<span class="keyword">*</span><span class="keyword">*</span>运行配置<span class="keyword">*</span><span class="keyword">*</span>”，这时会出现对话框。在右边列出的tab中，选择<span class="keyword">*</span><span class="keyword">*</span>自变量<span class="keyword">*</span><span class="keyword">*</span>这个tab，在<span class="keyword">*</span><span class="keyword">*</span>VM 自变量<span class="keyword">*</span><span class="keyword">*</span>里加入一行：
+
+    -Djava.library.path=&amp;quot;C:\Program Files\R\R-3.0.2\library\rJava\jri\x64&amp;quot;。然后tab里选择环境，按新建添加新变量，变量名为PATH，值是C:\Program Files\R\R-3.0.2\bin\x64。
+
+    配置自变量的界面：
+
+    ![](http://ict.jingyan.info/wp-content/uploads/2014/02/8731392020677.png)
+
+    配置环境的界面：
+
+    ![](http://ict.jingyan.info/wp-content/uploads/2014/02/64451392020678.png)
+</code></pre></li>
+<li><p>完成上一步后，运行刚才新建的配置即可。运行时的界面如下:</p>
+<pre><code>    ![](http:<span class="comment">//ict.jingyan.info/wp-content/uploads/2014/02/46111392020678.png)</span>
+</code></pre><p>参考：<a href="http://blog.sina.com.cn/s/blog_9d3077790100yodv.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_9d3077790100yodv.html</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e8bdace8bdbde59ca8ubuntue58f8awindowse5b9b3e58fb0-e9809ae8bf87rjavae5ae9ee78eb0re4b88ejavae79bb8e4ba92e8b083e794a8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/01/22/e8bdace8bdbde59ca8ubuntue58f8awindowse5b9b3e58fb0-e9809ae8bf87rjavae5ae9ee78eb0re4b88ejavae79bb8e4ba92e8b083e794a8/" class="article-date">
+  <time datetime="2014-01-22T07:00:08.000Z" itemprop="datePublished">Jan 22 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>►<a class="article-category-link" href="/categories/java/R/">R</a>►<a class="article-category-link" href="/categories/java/R/ubuntu/">ubuntu</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/01/22/e8bdace8bdbde59ca8ubuntue58f8awindowse5b9b3e58fb0-e9809ae8bf87rjavae5ae9ee78eb0re4b88ejavae79bb8e4ba92e8b083e794a8/">[转载]在Ubuntu及Windows平台 通过rJava实现R与Java相互调用</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/r/">r</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rjava/">rjava</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><strong>前言
+</strong>Java语言在工业界长期处于霸主地位，Java语法、JVM、JDK、Java开源库，在近10年得到了爆发式的发展，几乎覆盖了应用开发的所有领域。伴随着Java的全领域发展，问题也随之而来了。语法越来越复杂，近似的项目越来越多，学好Java变得很难。对于没有IT背景的统计人员，学用Java更是难于上青天。</p>
+<p>R一直是统计圈内处于佼佼者的语言，语法简单，学习曲线不太长也不太陡。如果能结合Java的通用性和R的专业性，碰撞出的火花，将会缤纷绚烂。</p>
+<p>本文将介绍R与Java连接的高速通道，rJava通信方案。另外一篇文章介绍的Rserve通信方案，请参考： Rserve与Java的跨平台通信</p>
+<p><strong>目录</strong></p>
+<p><strong>1. rJava介绍</strong></p>
+<p>rJava是一个R语言和Java语言的通信接口，通过底层JNI实现调用，允许在R中直接调用Java的对象和方法。</p>
+<p>rJava还提供了Java调用R的功能，是通过JRI(Java/R Interface)实现的。JRI现在已经被嵌入到rJava的包中，我们也可以单独试用这个功能。现在rJava包，已经成为很多基于Java开发R包的基础功能组件。</p>
+<p>正式由于rJava是底层接口，并使用JNI作为接口调用，所以效率非常高。在JRI的方案中，JVM直接通过内存直接加载RVM，调用过程性能几乎无损耗，因此是非常高效连接通道，是R和Java通信的首选开发包。</p>
+<p><strong>2. rJava安装</strong></p>
+<p>系统环境：</p>
+<pre class="brush:bash;toolbar:false">Linux&nbsp;Ubuntu&nbsp;12.04.2&nbsp;LTS&nbsp;64bit&nbsp;serverR&nbsp;version&nbsp;3.0.1&nbsp;64bitJava&nbsp;(Oracle&nbsp;SUN)&nbsp;1.6.0_29&nbsp;64bit&nbsp;Server&nbsp;VM
+~&nbsp;uname&nbsp;-a
+Linux&nbsp;conan&nbsp;3.5.0-23-generic&nbsp;#35~precise1-Ubuntu&nbsp;SMP&nbsp;Fri&nbsp;Jan&nbsp;25&nbsp;17:13:26&nbsp;UTC&nbsp;2013&nbsp;x86_64&nbsp;x86_64&nbsp;x86_64&nbsp;GNU/Linux
+~&nbsp;cat&nbsp;/etc/issueUbuntu&nbsp;12.04.2&nbsp;LTS&nbsp;\n&nbsp;\l
+~&nbsp;R&nbsp;--version
+R&nbsp;version&nbsp;3.0.1&nbsp;(2013-05-16)&nbsp;--&nbsp;&quot;Good&nbsp;Sport&quot;Copyright&nbsp;(C)&nbsp;2013&nbsp;The&nbsp;R&nbsp;Foundation&nbsp;for&nbsp;Statistical&nbsp;ComputingPlatform:&nbsp;x86_64-pc-linux-gnu&nbsp;(64-bit)
+R&nbsp;is&nbsp;free&nbsp;software&nbsp;and&nbsp;comes&nbsp;with&nbsp;ABSOLUTELY&nbsp;NO&nbsp;WARRANTY.You&nbsp;are&nbsp;welcome&nbsp;to&nbsp;redistribute&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;theGNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;versions&nbsp;2&nbsp;or&nbsp;3.For&nbsp;more&nbsp;information&nbsp;about&nbsp;these&nbsp;matters&nbsp;see
+http://www.gnu.org/licenses/.
+~&nbsp;java&nbsp;-version
+java&nbsp;version&nbsp;&quot;1.6.0_29&quot;Java(TM)&nbsp;SE&nbsp;Runtime&nbsp;Environment&nbsp;(build&nbsp;1.6.0_29-b11)Java&nbsp;HotSpot(TM)&nbsp;64-Bit&nbsp;Server&nbsp;VM&nbsp;(build&nbsp;20.4-b02,&nbsp;mixed&nbsp;mode)</pre>
+
+<p>rJava安装</p>
+<h1 id="配置rJava环境">配置rJava环境</h1>
+<pre class="brush:bash;toolbar:false">~&nbsp;sudo&nbsp;R&nbsp;CMD&nbsp;javareconf</pre>
+
+<h1 id="启动R">启动R</h1>
+<pre class="brush:bash;toolbar:false">~&nbsp;sudo&nbsp;R&gt;&nbsp;
+install.packages(&quot;rJava&quot;)
+installing&nbsp;via&nbsp;&#39;install.libs.R&#39;&nbsp;to&nbsp;/usr/local/lib/R/site-library/rJava**&nbsp;R**&nbsp;inst**&nbsp;preparing&nbsp;package&nbsp;for&nbsp;lazy&nbsp;loading**&nbsp;help***&nbsp;installing&nbsp;help&nbsp;indices**&nbsp;building&nbsp;package&nbsp;indices**&nbsp;testing&nbsp;if&nbsp;installed&nbsp;package&nbsp;can&nbsp;be&nbsp;loaded*&nbsp;DONE&nbsp;(rJava)
+The&nbsp;downloaded&nbsp;source&nbsp;packages&nbsp;are&nbsp;in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;‘/tmp/RtmpiZyCE7/downloaded_packages’</pre>
+
+<p><strong>3. rJava实现R调用Java</strong></p>
+<p>在R环境中，使用rJava包编程</p>
+<h1 id="加载rJava包">加载rJava包</h1>
+<p>&gt; library(rJava)<br>&gt; search()<br>[1] &quot;.GlobalEnv&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;package:rJava&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;package:stats&quot;<br>[4] &quot;package:graphics&quot;&nbsp; &quot;package:grDevices&quot; &quot;package:utils&quot;<br>[7] &quot;package:datasets&quot;&nbsp; &quot;package:methods&quot;&nbsp;&nbsp; &quot;Autoloads&quot;<br>[10] &quot;package:base&quot;</p>
+<h1 id="启动JVM">启动JVM</h1>
+<p>&gt; .jinit()</p>
+<h1 id="声明并赋值到字符串">声明并赋值到字符串</h1>
+<p>&gt; s &lt;- .jnew(&quot;java/lang/String&quot;, &quot;Hello World!&quot;)<br>&gt; s<br>[1] &quot;Java-Object{Hello World!}&quot;</p>
+<h1 id="查看字符串长度">查看字符串长度</h1>
+<p>&gt; .jcall(s,&quot;I&quot;,&quot;length&quot;)<br>[1] 12</p>
+<h1 id="索引World的位置">索引World的位置</h1>
+<p>&gt; .jcall(s,&quot;I&quot;,&quot;indexOf&quot;,&quot;World&quot;)<br>[1] 6</p>
+<h1 id="查看concat的方法声明">查看concat的方法声明</h1>
+<p>&gt; .jmethods(s,&quot;concat&quot;)<br>[1] &quot;public java.lang.String java.lang.String.concat(java.lang.String)&quot;</p>
+<h1 id="使用concat方法连接字符串">使用concat方法连接字符串</h1>
+<p>&gt; .jcall(s,&quot;Ljava/lang/String;&quot;,&quot;concat&quot;,s)<br>[1] &quot;Hello World!Hello World!&quot;</p>
+<h1 id="打印字符串对象">打印字符串对象</h1>
+<p>&gt; print(s)<br>[1] &quot;Java-Object{Hello World!}&quot;</p>
+<h1 id="打印字符串值">打印字符串值</h1>
+<p>&gt; .jstrVal(s)<br>[1] &quot;Hello World!&quot;<br>rJava优化过的方法调用，用$来调用方法</p>
+<h1 id="同-jcall(s,&quot;I&quot;,&quot;length&quot;)">同.jcall(s,&quot;I&quot;,&quot;length&quot;)</h1>
+<p>&gt; s$length()<br>[1] 12</p>
+<h1 id="同-jcall(s,&quot;I&quot;,&quot;indexOf&quot;,&quot;World&quot;)">同.jcall(s,&quot;I&quot;,&quot;indexOf&quot;,&quot;World&quot;)</h1>
+<p>&gt; s$indexOf(&quot;World&quot;)<br>[1] 6<br><strong>4. rJava(JRI)实现Java调用R (win7)</strong></p>
+<p>在win7中安装rJava</p>
+<p>系统环境：</p>
+<p>win7 64bit 旗舰版<br>R 3.0.1<br>Java 1.6.0_45<br>设置环境变量</p>
+<p>PATH: C:\Program Files\R\R-3.0.1\bin\x64;D:\toolkit\java\jdk6\bin;;D:\toolkit\java\jdk6\jre\bin\server<br>JAVA_HOME: D:\toolkit\java\jdk6<br>CLASSPATH: C:\Program Files\R\R-3.0.1\library\rJava\jri<br>在R中安装rJava</p>
+<p>&gt; install.packages(&quot;rJava&quot;)</p>
+<h1 id="加载rJava">加载rJava</h1>
+<p>&gt; library(rJava)<br>&gt; .jinit()</p>
+<h1 id="R调用Java变量测试">R调用Java变量测试</h1>
+<p>&gt; s &lt;- .jnew(&quot;java/lang/String&quot;, &quot;Hello World!&quot;)<br>&gt; s<br>[1] &quot;Java-Object{Hello World!}&quot;<br>启动Eclipse编写程序<br>rjava2</p>
+<p>package org.conan.r.rjava;</p>
+<p>import org.rosuda.JRI.Rengine;</p>
+<p>public class DemoRJava {</p>
+<p>&nbsp;&nbsp;&nbsp; public static void main(String[] args) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DemoRJava demo = new DemoRJava();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; demo.callRJava();<br>&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp; public void callRJava() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rengine re = new Rengine(new String[] { &quot;—vanilla&quot; }, false, null);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!re.waitForR()) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println(&quot;Cannot load R&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //打印变量<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String version = re.eval(&quot;R.version.string&quot;).asString();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println(version);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //循环打印数组<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double[] arr = re.eval(&quot;rnorm(10)&quot;).asDoubleArray();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (double a : arr) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.print(a + &quot;,&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; re.end();<br>&nbsp;&nbsp;&nbsp; }<br>}<br>在Eclipse启动设置VM参数：</p>
+<p>-Djava.library.path=&quot;C:\Program Files\R\R-3.0.1\library\rJava\jri\x64&quot;<br>rjava</p>
+<p>运行结果：</p>
+<p>R version 3.0.1 (2013-05-16)<br>0.04051018703700011,-0.3321596519938258,0.45642459001166913,-1.1907153494936031,1.5872266854172385,1.3639721994863943,-0.6309712627586983,-1.5226698569087498,-1.0416402147174952,0.4864034017637044,<br>打包DemoRJava.jar<br>在Eclipse中完成打包，上传到linux环境，继续测试。</p>
+<p><strong>5. rJava(JRI)实现Java调用R (Ubuntu)</strong></p>
+<p>新建目录DemoRJava，上传DemoRJava.jar到DemoRJava</p>
+<p>~ mkdir /home/conan/R/DemoRJava<br>~ cd /home/conan/R/DemoRJava<br>~ ls -l<br>-rw-r—r— 1 conan conan 1328 Aug&nbsp; 8&nbsp; 2013 DemoRJava.jar<br>运行Jar包</p>
+<p>~ export R_HOME=/usr/lib/R<br>~ java -Djava.library.path=/usr/local/lib/R/site-library/rJava/jri -cp /usr/local/lib/R/site-library/rJava/jri/JRI.jar:/home/conan/R/DemoRJava/DemoRJava.jar org.conan.r.rjava.DemoRJava<br>运行结果</p>
+<p>R version 3.0.1 (2013-05-16)<br>0.6374494596732511,1.3413824702002808,0.04573045670001342,-0.6885617932810327,0.14970067632722675,-0.3989493870007832,-0.6148250252955993,0.40132038323714453,-0.5385260423222166,0.3459850956295771,<br>我们完成了，R和Java的互调。包括了R通过rJava调用Java，Java通过JRI调用R。并演示了win和linux中的使用方法。</p>
+<p>原文地址：<a href="http://blog.fens.me/r-rjava-java" title="http://blog.fens.me/r-rjava-java" target="_blank" rel="external">http://blog.fens.me/r-rjava-java</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

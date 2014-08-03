@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>WordPress插件API手册 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="转载的，但找不到最初的地址了      
+概述
+本文档介绍了在WordPress中对插件开发者有用的API（Application Programming Interface，应用编程接口）的使用方法。
+本文假设你已经阅读了简要介绍插件开发方法的文章：Writing a Plugin，本文主要就介绍Hook API，比如Filters、Action，这使得WordPress可以加载你的插件。
+注意">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WordPress插件API手册">
+<meta property="og:url" content="http://yoursite.com/2010/06/07/wordpresse68f92e4bbb6apie6898be5868c/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="转载的，但找不到最初的地址了      
+概述
+本文档介绍了在WordPress中对插件开发者有用的API（Application Programming Interface，应用编程接口）的使用方法。
+本文假设你已经阅读了简要介绍插件开发方法的文章：Writing a Plugin，本文主要就介绍Hook API，比如Filters、Action，这使得WordPress可以加载你的插件。
+注意">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WordPress插件API手册">
+<meta name="twitter:description" content="转载的，但找不到最初的地址了      
+概述
+本文档介绍了在WordPress中对插件开发者有用的API（Application Programming Interface，应用编程接口）的使用方法。
+本文假设你已经阅读了简要介绍插件开发方法的文章：Writing a Plugin，本文主要就介绍Hook API，比如Filters、Action，这使得WordPress可以加载你的插件。
+注意">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main"><article id="post-wordpresse68f92e4bbb6apie6898be5868c" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/07/wordpresse68f92e4bbb6apie6898be5868c/" class="article-date">
+  <time datetime="2010-06-07T01:42:15.000Z" itemprop="datePublished">Jun 7 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress开发/">wordpress开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      WordPress插件API手册
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+		<a data-url="http://yoursite.com/2010/06/07/wordpresse68f92e4bbb6apie6898be5868c/" data-title="WordPress插件API手册" data-id="8l6jmqgt59prkb7l" class="article-share-link">Share</a>
+	  
+      
+        <a href="http://yoursite.com/2010/06/07/wordpresse68f92e4bbb6apie6898be5868c/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress，hook/">wordpress，hook</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">Contents</strong>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hooks，Actions和Filters"><span class="toc-number">2.</span> <span class="toc-text">Hooks，Actions和Filters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Actions（动作）"><span class="toc-number">3.</span> <span class="toc-text">Actions（动作）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#编写Action函数"><span class="toc-number">3.1.</span> <span class="toc-text">编写Action函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hook（勾入）到WordPress"><span class="toc-number">3.2.</span> <span class="toc-text">Hook（勾入）到WordPress</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装和激活"><span class="toc-number">3.3.</span> <span class="toc-text">安装和激活</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当前可用的Action_Hook"><span class="toc-number">3.4.</span> <span class="toc-text">当前可用的Action Hook</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Filters（过滤器）"><span class="toc-number">4.</span> <span class="toc-text">Filters（过滤器）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#编写Filter（过滤器）函数"><span class="toc-number">4.1.</span> <span class="toc-text">编写Filter（过滤器）函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hook（勾入）到WordPress-1"><span class="toc-number">4.2.</span> <span class="toc-text">Hook（勾入）到WordPress</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装和激活-1"><span class="toc-number">4.3.</span> <span class="toc-text">安装和激活</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当前可用的Filter_Hook"><span class="toc-number">4.4.</span> <span class="toc-text">当前可用的Filter Hook</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除Action和Filter"><span class="toc-number">5.</span> <span class="toc-text">删除Action和Filter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#默认应用的Filter和Action"><span class="toc-number">6.</span> <span class="toc-text">默认应用的Filter和Action</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WordPress_2-1"><span class="toc-number">6.1.</span> <span class="toc-text">WordPress 2.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WordPress_1-5"><span class="toc-number">6.2.</span> <span class="toc-text">WordPress 1.5</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#你可以覆盖的函数"><span class="toc-number">7.</span> <span class="toc-text">你可以覆盖的函数</span></a></li></ol>
+			</div>
+		
+		<!-- 文章目录结束 -->
+		
+        <p>转载的，但找不到最初的地址了<br> <span style="widows: 2; text-transform: none; text-indent: 0px; border-collapse: separate; font: medium simsun; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(0,0,0); word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px" class="Apple-style-span"><span style="text-align: left; line-height: 21px; font-family: verdana, sans-serif; font-size: 14px" class="Apple-style-span">     </span></span></p>
+<h2 id="概述">概述</h2>
+<p>本文档介绍了在WordPress中对插件开发者有用的API（Application Programming Interface，应用编程接口）的使用方法。</p>
+<p>本文假设你已经阅读了简要介绍插件开发方法的文章：<a href="http://codex.wordpress.org/Writing_a_Plugin" title="Writing a Plugin" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Writing a Plugin</span></strong></a>，本文主要就介绍Hook API，比如Filters、Action，这使得WordPress可以加载你的插件。</p>
+<p>注意：本文所提到的信息针对WordPress1.2及以上版本，在1.2版之前，这些插件被称为“hacks”，他们主要是通过修改WordPress本身的源码来实现的。</p>
+<p>译者注：在本文中，为了便于对原文的准确翻译，一些程序设计的专有词汇没有进行翻译，你可以阅读如下单词表来参考：</p>
+<ul>
+<li>API，应用程序编程接口。</li>
+<li>Hook，钩子，意为在WordPress的处理中加入你自己的处理。</li>
+<li>Filter，过滤器。</li>
+<li>Action，动作。      </li>
+</ul>
+<h2 id="Hooks，Actions和Filters">Hooks，Actions和Filters</h2>
+<p>Hook是WordPress提供的，允许你的插件“勾入”WordPress的程序，或者说，可以在特定时候执行你插件中的函数，从而使得你的插件执行。这里提供了两种hook：</p>
+<ol>
+<li>Action：Action（动作）是WordPress程序核心在程序执行的特殊点（特定事件发生）加载的。使用Action API，你的插件可以在这些特殊点执行一个或者多个在插件中编写的PHP函数。</li>
+<li>Filter：Filter（过滤器）是WordPress加载的，当文本被存入数据库或发送到浏览器之前，Filter可用来对其进行多种类型的处理。使用Filter，你的插件可以使用定义在其中的PHP函数来对文本进行多种处理。      </li>
+</ol>
+<p>某 些时候，你可以用Action或者Filter实现同样的功能。举例来说，如果你编写了一个插件用来修改博客日志的文本，你可以加入一个Action函数 到publist_post的事件（这样日志就会在存入数据库时被修改），也可以加入一个Fliter函数到the_content（这时日志内会在显示 到浏览器之前被修改）。</p>
+<h2 id="Actions（动作）">Actions（动作）</h2>
+<p>Action（动作）在WordPress进行某些特殊事件处理时被触发，例如发布日志，修改主题，或者在管理员面板显示页面。你的插件可以通过执行PHP函数来发挥作用，他们可以用来做如下事情：</p>
+<ul>
+<li>修改数据库中的数据</li>
+<li>发送Email消息</li>
+<li>修改在浏览器中显示的信息（包括管理员看到的和访问者看到的）      </li>
+</ul>
+<p>实施Action的基本步骤是：</p>
+<ol>
+<li>在你的插件中编写当事件发生时执行的PHP函数。</li>
+<li>通过执行add_action函数将这些操作Hook（勾入）到WordPress中。</li>
+<li>将你的PHP函数放入插件文件，并且将其激活。      </li>
+</ol>
+<h3 id="编写Action函数">编写Action函数</h3>
+<p>在插件中创建Action的第一步是在插件中编写一个实现Action功能的PHP函数并且将其放入你的插件文件（插件文件必须放置在wp- content/plugins目录）中。比如，如果你希望当发表一篇日志后，发送Email通知给你的朋友，那么你可以定义如下函数：</p>
+<p><code>function email_friends($post_ID) {         
+&amp;#160;&amp;#160;&amp;#160; $friends = &#39;bob@example.org,susie@example.org&#39;;          
+&amp;#160;&amp;#160;&amp;#160; mail($friends, &amp;quot;sally&#39;s blog updated&amp;quot;,&lt;span class=&quot;Apple-converted-space&quot;&gt;&amp;#160;&lt;/span&gt;          
+&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; &#39;I just put something on my blog: http://blog.example.com&#39;);          
+&amp;#160;&amp;#160;&amp;#160; return $post_ID;          
+}</code></p>
+<p>在大多数Action中，你的函数应该接受一个参数（通常是日志或者帖子的编号，这取决于你要进行的操作）。某些Action可能有多余一个参数 —你可以通过查看Action的文档或者WordPress源代码来获得更多信息。除函数参数外，你还可以访问WordPress的全局变量以及执行 WordPress中定义的其他函数（或者在你的插件文件中定义的函数）。</p>
+<p><strong>注意</strong>：切记其他插件或者WordPress核心可能已经使用了你希望使用的函数名称，你可以浏览<a href="http://codex.wordpress.org//Writing_a_Plugin#Avoiding_Function_Name_Collisions" title="Writing a Plugin" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Avoiding Function Name Collisions</span></strong></a>（避免函数名称冲突—译者注）来获得更多信息。</p>
+<h3 id="Hook（勾入）到WordPress">Hook（勾入）到WordPress</h3>
+<p>完成你的函数的编写后，下一步就是将其hook（勾入）或者说注册到WordPress中，你可以通过执行全局空间中的add_action()函数来实现，如：</p>
+<p><code>add_action ( &#39;hook_name&#39;, &#39;your_function_name&#39;, [priority], [accepted_args] );</code></p>
+<p>此处</p>
+<ul>
+<li>hook_name参数是WordPress提供的Action Hook（动作钩子）名称，这决定了你的函数应当和哪个事件结合。</li>
+<li>your_function_name参数是你希望在特定事件（即hook_name参数指定的事件）后执行的函数名称。该函数可以是 标准的PHP函数，在WordPress核心中定义的函数或者你自己在插件文件中定义的函数（如刚才我们编写的emai_friends函数）。</li>
+<li>priority参数是一个可选的整型参数，他用来指明在结合特定事件的多个函数中，当前函数被执行的顺序（默认为10）。该参数指定的更小的数字会被更早的执行，priority参数相同的函数会依照他们被加入Action的顺序来执行。</li>
+<li>accepted_args参数是一个可选的整型参数，他定义了你的函数中可以接收多少个参数（默认为1）。该参数是非常有用的，因为某些Hook可以向你的函数中传入多个参数。该参数在1.5.1版本中被新加入。      </li>
+</ul>
+<p>在前面的例子中，我们可以在插件文件中加入如下代码：</p>
+<p><code>add_action(&#39;publish_post&#39;, &#39;email_friends&#39;);</code></p>
+<p>同样的，你也可以在Action Hook中移除Action，你可以参考<a href="http://www.yeeyan.com/#Removing_Actions_and_Filters" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Remove Actions</span></strong></a>来获得更多详情。</p>
+<h3 id="安装和激活">安装和激活</h3>
+<p>让你的Action Hook开始工作的最后一步是安装插件文件和激活插件。你必须将你编写的PHP函数和add_action函数存入同一个PHP文件，该PHP文件必须被 安装在wp-content/plugins目录，当该文件安装完毕，你需要浏览WordPress的管理面板，并且激活你的插件，你可以参考<a href="http://codex.wordpress.org/Managing_Plugins" title="Managing Plugins" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Managing Plugins</span></strong></a>文章来获得更多信息。</p>
+<h3 id="当前可用的Action_Hook">当前可用的Action Hook</h3>
+<p>请浏览<a href="http://codex.wordpress.org/Plugin_API/Action_Reference" title="Plugin API/Action Reference" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Plugin API/Action Reference</span></strong></a>（插件API/Action参考—译者注）来获得一份当前版本的WordPress中可用的Action Hook。</p>
+<h2 id="Filters（过滤器）">Filters（过滤器）</h2>
+<p>Filters（过滤器）是WordPress在执行中的特定点传递数据的函数，他发生在对数据进行操作（如将其加入数据库或发送到浏览器）之前。 Filter建立在数据库到浏览器之间的处理（当WordPress生成页面时），同时也建立在浏览器到数据库之间的处理（当WordPress新增日志 或者评论到数据库时）；多数WordPress中的输入输出都通过了至少一个filter。WordPress默认已经实现了一些过滤操作，你的插件也可 以加入你自己的过滤操作。</p>
+<p>将你的filter加入WordPress中的基本步骤如下：</p>
+<ol>
+<li>编写用于过滤数据的PHP函数。</li>
+<li>通过执行add_filter函数将filter Hook（勾入）到WordPress。</li>
+<li>将你的PHP函数放入插件文件，并且将其激活。      </li>
+</ol>
+<h3 id="编写Filter（过滤器）函数">编写Filter（过滤器）函数</h3>
+<p>Filter（过滤器）函数获得未经修改的数据，并返回修改后的数据（或者在某些情况下，返回null值来标识数据应当被删除或忽略）。如果你的filter不修改数据，那么应当返回原始数据，这样，如果必要，其余的插件可以继续修改数据。</p>
+<p>因此，在你的插件中创建filter的第一步是编写一个PHP函数来进行过滤处理，并且将其放在你的插件文件（插件文件必须放置在wp- content/plugins目录）当中。例如，如果你希望确保你的帖子和评论中不包含脏话，你可以定义一个存放禁止词汇的全局变量，然后编写如下的 PHP函数：</p>
+<p><code>function filter_profanity($content) {         
+&amp;#160;&amp;#160;&amp;#160; global $profanities;          
+&amp;#160;&amp;#160;&amp;#160; foreach($profanities as $profanity) {          
+&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; $content=str_ireplace($profanity,&#39;{censored}&#39;,$content);          
+&amp;#160;&amp;#160;&amp;#160; }          
+&amp;#160;&amp;#160;&amp;#160; return $content;          
+}</code></p>
+<p><strong>注意</strong>：切记其他插件或者WordPress核心可能已经使用了你希望使用的函数名称，你可以浏览<a href="http://codex.wordpress.org/Writing_a_Plugin#Avoiding_Function_Name_Collisions" title="Writing a Plugin" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Avoiding Function Name Collisions</span></strong></a>（避免函数名称冲突—译者注）来获得更多信息。</p>
+<h3 id="Hook（勾入）到WordPress-1">Hook（勾入）到WordPress</h3>
+<p>完成你的函数的编写后，下一步就是将其hook（勾入）或者说注册到WordPress中，你可以通过执行全局空间中的add_filter()函数来实现，如：</p>
+<p><code>add_filter(&#39;hook_name&#39;, &#39;your_filter&#39;, [priority], [accepted_args]);</code></p>
+<p>此处：</p>
+<ul>
+<li>hook_name参数是WordPress提供的Filter Hook（过滤器钩子）名称，这决定了你的函数在何时发挥作用。</li>
+<li>your_filter参数是你希望用来过滤的函数的名称。该函数可以是标准的PHP函数，在WordPress核心中定义的函数或者你自己在插件文件中定义的函数。</li>
+<li>priority参数是一个可选的整型参数，他用来指明在结合特定事件的多个函数中，当前函数被执行的顺序（默认为10）。该参数指定的更小的数字会被更早的执行，priority参数相同的函数会依照他们被加入Action的顺序来执行。</li>
+<li>accepted_args参数是一个可选的整型参数，他定义了你的函数中可以接收多少个参数（默认为1）。该参数是非常有用的，因为某些Hook可以向你的函数中传入多个参数。该参数在1.5.1版本中被新加入。      </li>
+</ul>
+<p>在前面的例子中，我们可以将下面的代码放入你的插件文件中的主要执行部分，来通知WordPress对评论中的脏话进行过滤处理：</p>
+<p>add_filter(‘comment_text’,’filter_profanity’);</p>
+<p>你也可以使用WordPress函数remove_filter()来移除filter hook中的filter。你可以参考<a href="http://www.yeeyan.com/#Removing_Actions_and_Filters" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Removing Actions and Filters</span></strong></a>。</p>
+<h3 id="安装和激活-1">安装和激活</h3>
+<p>让你的Filter Hook开始工作的最后一步是安装插件文件和激活插件。你必须将你编写的PHP函数和add_filter函数存入同一个PHP文件，该PHP文件必须被 安装在wp-content/plugins目录，当该文件安装完毕，你需要浏览WordPress的管理面板，并且激活你的插件，你可以参考<a href="http://codex.wordpress.org/Managing_Plugins" title="Managing Plugins" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Managing Plugins</span></strong></a>文章来获得更多信息。</p>
+<h3 id="当前可用的Filter_Hook">当前可用的Filter Hook</h3>
+<p>请浏览<a href="http://codex.wordpress.org/Plugin_API/Filter_Reference" title="Plugin API/Filter Reference" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Plugin API/Filter Reference</span></strong></a><span class="Apple-converted-space">&#160;</span>（插件API/Filter参考—译者注）来获得一份当前版本的WordPress中可用的Filter Hook。</p>
+<h2 id="删除Action和Filter">删除Action和Filter</h2>
+<p>在某些情况下，你会发现你希望你的插件屏蔽WordPress内建或者其他插件加入的Action或Filter。你可以通过执行<code>remove_filter(&#39;filter_hook&#39;,&#39;filter_function&#39;)函数或者remove_action(&#39;action_hook&#39;,&#39;action_function&#39;)函数来实现。</code></p>
+<p>举例来说，remove_action(‘publish_post’,’generic_ping’);会使得你在发表新日志时不发送日志引用（ping）。</p>
+<p>注意如果某个hook在注册时使用了除默认值10意外的priority参数，则你必须修改在remove_action()函数中的 priority参数。同时也请注意，通常来讲除非你知道这样做的原因和后果，你不应当移除任何东西—请检查WordPress或者其他插件的源代码来 保证这一点。</p>
+<h2 id="默认应用的Filter和Action">默认应用的Filter和Action</h2>
+<p>找出WordPress默认启用的filter和Action的最可靠方法是在WordPress核心文件中搜索 add_filter和add_action。</p>
+<h3 id="WordPress_2-1">WordPress 2.1</h3>
+<p>在WordPress 2.1中，大多数默认filter和action是通过文件wp-includes/default-filters.php来加入的，少数其他的在如下文件中被加入：</p>
+<ul>
+<li>wp-admin/admin-ajax.php</li>
+<li>wp-admin/admin-functions.php</li>
+<li>wp-admin/custom-header.php</li>
+<li>wp-admin/edit.php</li>
+<li>wp-admin/index.php</li>
+<li>wp-admin/options-permalink.php</li>
+<li>wp-admin/upload-functions.php</li>
+<li>wp-admin/upload.php</li>
+<li>wp-includes/bookmark.php</li>
+<li>wp-includes/general-template.php</li>
+<li>wp-includes/kses.php</li>
+<li>wp-includes/plugin.php</li>
+<li>wp-includes/rewrite.php</li>
+<li>wp-includes/template-loader.php</li>
+<li>wp-includes/theme.php      </li>
+</ul>
+<h3 id="WordPress_1-5">WordPress 1.5</h3>
+<p>大多数默认的filter和action在WordPress 1.5的文件wp-includes/default-filters.php中被加入。</p>
+<h2 id="你可以覆盖的函数">你可以覆盖的函数</h2>
+<p>除了前面描述的hook（包括action和filter）之外，另一个修改WordPress行为的插件编写方法是覆盖WordPress函数。 事实上，WordPress设计了一些让插件重新定义的函数。WordPress通过仅当所有插件都加载之后才加载这些函数的方式来使得这个方式变得容 易。</p>
+<p>这些函数均定义在文件wp-includes/pluggable.php中，如下是其清单（在2.1版本中）；这些函数中的部分文档可以在<a href="http://codex.wordpress.org/Function_Reference" title="Function Reference" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Function Reference</span></strong></a>（函数参考-译者注）中找到。</p>
+<ul>
+<li><tt>set_current_user</tt></li>
+<li><tt>wp_set_current_user</tt></li>
+<li><tt>wp_get_current_user</tt>   </li>
+</ul>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+    <footer class="article-footer">
+		
+	<a align="left" href="/2010/05/30/e799bee5baa6e8b083e69fa5e7b3bbe7bb9f/" id="article-nav-older" class="article-nav-link-wrap">
+	  <div align="left" class="article-nav-title">上一篇 百度调查系统</div>
+	</a>
+
+
+	<a align="right" href="/2010/06/07/wordpresse5b8b8e794a8e587bde695b0-wpdbe7b1bb/" id="article-nav-newer" class="article-nav-link-wrap">
+	  <div align="right" class="article-nav-title">下一篇 WordPress常用函数-wpdb类</div>
+	</a>
+
+
+    </footer>
+	
+  </div>
+</article>
+
+<section id="comments">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="WordPress插件API手册" data-title="WordPress插件API手册" data-url="http://yoursite.com/2010/06/07/wordpresse68f92e4bbb6apie6898be5868c/"></div>
+	<!-- 多说评论框 end -->
+</section>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

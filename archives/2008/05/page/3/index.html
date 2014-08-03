@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2008/5 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/2008/05/page/3/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-ubuntu-e7bc96e8af91e78eafe5a283e79a84e690ade5bbba" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/05/ubuntu-e7bc96e8af91e78eafe5a283e79a84e690ade5bbba/" class="article-date">
+  <time datetime="2008-05-05T08:36:00.000Z" itemprop="datePublished">May 5 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/05/ubuntu-e7bc96e8af91e78eafe5a283e79a84e690ade5bbba/">ubuntu 编译环境的搭建</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <font><font><font class="f14"><font color="#000000">一. 安裝基本的<span style="color: black; background-color: rgb(255, 255, 255);">編譯環境</span>和一些輔助工具，如文檔等。<span style="display: none;">mNWLinux联盟</span><br><br>sudo apt-get install manpages-dev<span style="display: none;">mNWLinux联盟</span><br><br>安裝C/C++的Man手冊，這樣你就可以隨時的查看一些你不太瞭解的函式的原型，具体參數說明等；還可以查看一些include檔案的具体說明。<span style="display: none;">mNWLinux联盟</span><br><br><span style="display: none;">mNWLinux联盟</span><br><br>sudo apt-get install build-essential<span style="display: none;">mNWLinux联盟</span><br><br>安裝gcc,g++,make等<span style="display: none;">mNWLinux联盟</span><br><br><span style="display: none;">mNWLinux联盟</span><br><br>sudo apt-get install libc6-dev libstdc++6-4.0-dev<span style="display: none;">mNWLinux联盟</span><br><br>安裝include&amp;lib<span style="display: none;">mNWLinux联盟</span><br><br><span style="display: none;">mNWLinux联盟</span><br><br>sudo apt-get install autoconf automake1.9<span style="display: none;">mNWLinux联盟</span><br><br>安裝autoconf automake1.9<span style="display: none;">mNWLinux联盟</span><br><br><span style="display: none;">mNWLinux联盟</span><br><br>sudo apt-get install binutils-doc cpp-doc gcc-4.0-doc gcc-doc glibc-doc libstdc++6-4.0-doc stl-manual cpp-4.0-doc<span style="display: none;">mNWLinux联盟</span><br><br>安裝文檔 <span style="display: none;">mNWLinux联盟</span><br><br><span style="display: none;">mNWLinux联盟</span><br><br>send a file with Zmodem under minicom, you should install a Y/Z modem.<span style="display: none;">mNWLinux联盟</span><br><br><span style="display: none;">mNWLinux联盟</span><br><br>apt-get install lrzsz</font></font></font></font>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e4bfaee694b9ubuntue79a84e697b6e997b4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/05/e4bfaee694b9ubuntue79a84e697b6e997b4/" class="article-date">
+  <time datetime="2008-05-05T08:35:00.000Z" itemprop="datePublished">May 5 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/05/e4bfaee694b9ubuntue79a84e697b6e997b4/">修改Ubuntu的时间</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>UTC是格林威治时间，CST是中国标准时间，很显然CST=UTC+8。基于此，如果你的CMOS是本地时间（也即CST时间），并且你想使用本地时间，那么你需要做如下修改：</p>
+<p>shell&gt;sudo vim /etc/default/rcS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  (找到关于utc的设置）</p>
+<h1 id="utc=yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_#注释掉，并改为no">utc=yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    #注释掉，并改为no</h1>
+<p>utc=no&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  #保存退出</p>
+<p>如果你本地时间还不准确的话，可以这样修改：</p>
+<p>shell&gt;sudo date -s MM/DD/YY</p>
+<p>shell&gt;sudo date -s hh:mm</p>
+<p>shell&gt;sudo /etc/init.d/hwclock.sh restart&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  #将修改后的正确时间写入cmos</p>
+<p>修改过程中，可能出现执行命令时，提示距将来时间太早，不用太在意这种提示，重起后在修改。&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e7bc96e8af91mysqle697b6configure-error-no-cursestermcap-library-found-e79a84e99499e8afafe8a7a3e586b3e696b9e6b395" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/02/e7bc96e8af91mysqle697b6configure-error-no-cursestermcap-library-found-e79a84e99499e8afafe8a7a3e586b3e696b9e6b395/" class="article-date">
+  <time datetime="2008-05-01T17:39:00.000Z" itemprop="datePublished">May 2 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/02/e7bc96e8af91mysqle697b6configure-error-no-cursestermcap-library-found-e79a84e99499e8afafe8a7a3e586b3e696b9e6b395/">编译Mysql时configure: error: No curses/termcap library found 的错误解决方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>在编译Mysql时</p>
+<p>./configure —prefix=DIR</p>
+<p>，如果出现了以下错误： </p>
+<p>……</p>
+<p>checking for tgetent in -ltermcap… no </p>
+<p>checking for termcap functions library… configure: error: No curses/termcap library found</p>
+<p>说明 curses/termcap 库没有安装 </p>
+<p>apt-cache search curses | grep lib</p>
+<p>安装 libncurses5-dev ，然后重新运行配置 </p>
+<p>apt-get install libncurses5-dev</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-phpmotion-e78eafe5a283e690ade5bbbaffmpeg-ffmpeg-php-mplayer-mencoder-flv2tool-lame-mp3-encoder-libog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/01/phpmotion-e78eafe5a283e690ade5bbbaffmpeg-ffmpeg-php-mplayer-mencoder-flv2tool-lame-mp3-encoder-libog/" class="article-date">
+  <time datetime="2008-05-01T15:51:00.000Z" itemprop="datePublished">May 1 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/01/phpmotion-e78eafe5a283e690ade5bbbaffmpeg-ffmpeg-php-mplayer-mencoder-flv2tool-lame-mp3-encoder-libog/">PHPmotion 环境搭建(FFmpeg + FFmpeg-PHP + Mplayer + Mencoder + flv2tool + LAME MP3 Encoder + Libog)</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原文地址:<a href="http://linux.chinaunix.net/bbs/viewthread.php?tid=917564" target="_blank" rel="external">http://linux.chinaunix.net/bbs/viewthread.php?tid=917564</a></p>
+<p>[PHPMOTION_PHP5,Video Share Enterprise]</p>
+<p>在网上的一个视频分享整站程序,需要上边的环境才能正常运行.最近我正好做了这个环境.所以记录了一个文档,方便大家参考.</p>
+<p>安装简介:</p>
+<p>请先准备及安装下列需要</p>
+<p>1.) MySQL (version 4 or higher)</p>
+<p>2.) PHP (version 4.2.3 or higher)</p>
+<p>3.) FFmpeg (<a href="http://ffmpeg.mplayerhq.hu/" target="_blank" rel="external">http://ffmpeg.mplayerhq.hu</a>)</p>
+<p>4.) FFmpeg-PHP (<a href="http://ffmpeg-php.sourceforge.net/" target="_blank" rel="external">http://ffmpeg-php.sourceforge.net</a>)</p>
+<p>5.) Mplayer + Mencoder (<a href="http://www.mplayerhq.hu/design7/dload.html" target="_blank" rel="external">http://www.mplayerhq.hu/design7/dload.html</a> )</p>
+<p>6.) flv2tool (<a href="http://inlet-media.de/flvtool2" target="_blank" rel="external">http://inlet-media.de/flvtool2</a>)</p>
+<p>7.) LAME MP3 Encoder</p>
+<p>8.) Libogg + Libvorbis (<a href="http://www.xiph.org/downloads" target="_blank" rel="external">http://www.xiph.org/downloads</a>)</p>
+<p>上传后运行<a href="http://***/install/" target="_blank" rel="external">http://***/install/</a></p>
+<p>安装完成后修改config.php里</p>
+<p>$config[‘ffmpeg’]  &nbsp;&nbsp;    =&nbsp;&nbsp; &quot;/usr/local/bin/ffmpeg&quot;; // FFmpeg path</p>
+<p>$config[‘mplayer’]  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; =   ‘/usr/local/bin/mplayer’; // Mplayer path</p>
+<p>$config[‘mencoder’]  &nbsp;&nbsp;    =   ‘/usr/local/bin/mencoder’; // Mencoder path</p>
+<p>$config[‘metainject’]  &nbsp;&nbsp;&nbsp; =   ‘/usr/local/bin/flvtool2’; // Path where the flvtool2 is installed</p>
+<p>改成你实际环境.</p>
+<hr>
+<p>Author : ecore</p>
+<p>Website: <a href="http://ecore.ishacker.org/" target="_blank" rel="external">http://ecore.ishacker.org</a></p>
+<p>Date   : 2007-12-24</p>
+<p>1.</p>
+<p>[root@fc8 ~]# wget <a href="http://apache.mirror.phpchina.com/httpd/httpd-2.2.6.tar.gz" target="_blank" rel="external">http://apache.mirror.phpchina.com/httpd/httpd-2.2.6.tar.gz</a></p>
+<p>2.</p>
+<p>[root@fc8 ~]# wget <a href="http://cn2.php.net/distributions/php-5.2.5.tar.gz" target="_blank" rel="external">http://cn2.php.net/distributions/php-5.2.5.tar.gz</a></p>
+<p>3.</p>
+<p>[root@fc8 ~]# wget <a href="http://ftp.plusline.de/mysql/Downloads/MySQL-5.0/mysql-5.0.51.tar.gz" target="_blank" rel="external">http://ftp.plusline.de/mysql/Dow … mysql-5.0.51.tar.gz</a></p>
+<p>4.</p>
+<p>[root@fc8 ~]# svn checkout svn://svn.mplayerhq.hu/ffmpeg/trunk ffmpeg</p>
+<p>5.</p>
+<p>[root@fc8 ~]# wget <a href="http://jaist.dl.sourceforge.net/sourceforge/ffmpeg-php/ffmpeg-php-0.5.1.tbz2" target="_blank" rel="external">http://jaist.dl.sourceforge.net/ … mpeg-php-0.5.1.tbz2</a></p>
+<p>6.</p>
+<p>[root@fc8 ~]# wget <a href="http://rubyforge.org/frs/download.php/9225/flvtool2_1.0.5_rc6.tgz" target="_blank" rel="external">http://rubyforge.org/frs/download.php/9225/flvtool2_1.0.5_rc6.tgz</a></p>
+<p>7.</p>
+<p>[root@fc8 ~]# wget <a href="http://nchc.dl.sourceforge.net/sourceforge/lame/lame-3.97.tar.gz" target="_blank" rel="external">http://nchc.dl.sourceforge.net/sourceforge/lame/lame-3.97.tar.gz</a></p>
+<p>8.</p>
+<p>[root@fc8 ~]# wget <a href="http://downloads.xiph.org/releases/vorbis/libvorbis-1.2.0.tar.gz" target="_blank" rel="external">http://downloads.xiph.org/releases/vorbis/libvorbis-1.2.0.tar.gz</a></p>
+<p>9.</p>
+<p>[root@fc8 ~]# wget <a href="http://www1.mplayerhq.hu/MPlayer/releases/MPlayer-1.0rc2.tar.bz2" target="_blank" rel="external">http://www1.mplayerhq.hu/MPlayer/releases/MPlayer-1.0rc2.tar.bz2</a></p>
+<p>10.</p>
+<p>[root@fc8 ~]# wget <a href="http://www1.mplayerhq.hu/MPlayer/releases/codecs/essential-20071007.tar.bz2" target="_blank" rel="external">http://www1.mplayerhq.hu/MPlayer … al-20071007.tar.bz2</a></p>
+<p>11.</p>
+<p>[root@fc8 ~]# wget <a href="http://www.mplayerhq.hu/MPlayer/releases/codecs/win32codecs-20040703.tar.bz2" target="_blank" rel="external">http://www.mplayerhq.hu/MPlayer/ … cs-20040703.tar.bz2</a></p>
+<p>12.</p>
+<p>[root@fc8 ~]# wget <a href="http://downloads.xiph.org/releases/ogg/libogg-1.1.3.tar.gz" target="_blank" rel="external">http://downloads.xiph.org/releases/ogg/libogg-1.1.3.tar.gz</a></p>
+<p>下载了所有要用到的包.接着我们来编绎安装.</p>
+<hr>
+<p>第一步安装,mysql</p>
+<p>[root@fc8 ~]# groupadd mysql</p>
+<p>[root@fc8 ~]# useradd -g mysql mysql</p>
+<p>[root@fc8 ~]# tar -zxvf mysql-5.0.51.tar.gz</p>
+<p>[root@fc8 ~]# cd mysql-5.0.51</p>
+<p>[root@fc8 mysql-5.0.51]# ./configure —prefix=/usr/local/mysql</p>
+<p>[root@fc8 mysql-5.0.51]# make;make install</p>
+<p>[root@fc8 ~]# cp support-files/my-medium.cnf /etc/my.cnf</p>
+<p>[root@fc8 ~]# cd /usr/local/mysql</p>
+<p>[root@fc8 ~]# bin/mysql_install_db —user=mysql</p>
+<p>[root@fc8 ~]# chown -R root&nbsp;&nbsp; .</p>
+<p>[root@fc8 ~]# chown -R mysql var</p>
+<p>[root@fc8 ~]# chgrp -R mysql .</p>
+<p>[root@fc8 ~]# bin/mysqld_safe —user=mysql &amp;</p>
+<p>[root@fc8 ~]# mysql -u root -p</p>
+<p>Enter password: </p>
+<p>Welcome to the MySQL monitor.&nbsp;&nbsp; Commands end with ; or \g.</p>
+<p>Your MySQL connection id is 1</p>
+<p>Server version: 5.0.51-log Source distribution</p>
+<p>Type ‘help;’ or ‘\h’ for help. Type ‘\c’ to clear the buffer.</p>
+<p>mysql&gt; show datebase;</p>
+<p>ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ‘datebase’ at line 1</p>
+<p>mysql&gt; show databases;</p>
+<p>+——————————+</p>
+<p>| Database  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; |</p>
+<p>+——————————+</p>
+<p>| information_schema | </p>
+<p>| mysql  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; | </p>
+<p>| test  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;   | </p>
+<p>+——————————+</p>
+<p>3 rows in set (0.00 sec)</p>
+<p>mysql&gt; exit</p>
+<p>Bye</p>
+<p>mysql到此安坟完毕.</p>
+<hr>
+<p>第二步安装apache.</p>
+<p>[root@fc8 ~]# tar -zxvf httpd-2.2.6.tar.gz</p>
+<p>[root@fc8 ~]# cd httpd-2.2.6</p>
+<p>[root@fc8 httpd-2.2.6]# ./configure —prefix=/usr/local/apache2 —enable-so —enable-rewrite</p>
+<p>[root@fc8 httpd-2.2.6]# make;make install</p>
+<p>[root@fc8 apache2]# /usr/local/apache2/bin/apachectl start</p>
+<p>[root@fc8 apache2]# netstat -anp|grep httpd</p>
+<p>tcp  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; 0  &nbsp;&nbsp;   0 :::80  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; :::*  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;   LISTEN  &nbsp;&nbsp;   19294/httpd  &nbsp;&nbsp;  &nbsp;&nbsp;   </p>
+<p>[root@fc8 apache2]# </p>
+<p>apache完装完毕.</p>
+<hr>
+<p>安装flvtool</p>
+<p>[root@fc8 flvtool2_1.0.5_rc6]# yum install ruby</p>
+<p>[root@fc8 flvtool2_1.0.5_rc6]# ruby setup.rb config</p>
+<p>[root@fc8 flvtool2_1.0.5_rc6]# ruby setup.rb setup</p>
+<p>[root@fc8 flvtool2_1.0.5_rc6]# ruby setup.rb install</p>
+<p>安装lame</p>
+<p>[root@fc8 ~]# tar -zxvf lame-3.97.tar.gz</p>
+<p>[root@fc8 ~]# cd lame-3.97 </p>
+<p>[root@fc8 lame-3.97]# ./configure </p>
+<p>[root@fc8 lame-3.97]#make;make install</p>
+<p>安装libogg</p>
+<p>[root@fc8 software]# tar -zxvf libogg-1.1.3.tar.gz </p>
+<p>[root@fc8 software]# cd libogg-1.1.3</p>
+<p>[root@fc8 software]# ./configure;make;make install</p>
+<p>安装libvorbis</p>
+<p>[root@fc8 ~]# tar -zxvf libvorbis-1.2.0.tar.gz </p>
+<p>[root@fc8 ~]# cd libvorbis-1.2.0</p>
+<p>[root@fc8 libvorbis-1.2.0]#./configure;make;make install</p>
+<p>安装ffmpeg</p>
+<p>[root@fc8 software]# cd ffmpeg</p>
+<p>[root@fc8 ffmpeg]# ./configure —enable-shared</p>
+<p>[root@fc8 ffmpeg]# make;make install</p>
+<p>安装mplayer</p>
+<p>[root@fc8 ~]# mkdir -p /usr/local/lib/codes</p>
+<p>[root@fc8 ~]# mkdir -p /usr/local/lib/win32codcs</p>
+<p>[root@fc8 ~]# tar -jxvf essential-20071007.tar.bz2</p>
+<p>[root@fc8 ~]# cp -rf essential-20071007/* /usr/local/lib/codes/</p>
+<p>[root@fc8 ~]# tar -jxvf win32codecs-20040703.tar.bz2 </p>
+<p>[root@fc8 software]# cp -rf win32codecs-20040703/* /usr/local/lib/win32codcs/</p>
+<p>[root@fc8 ~]# tar -jxvf MPlayer-1.0rc2.tar.bz2 </p>
+<p>[root@fc8 MPlayer-1.0rc2]# ./configure —prefix=/usr/local/mplayer —enable-gui —enable-freetype —codecsdir=/usr/local/lib/codes —win32codecsdir=/usr/local/lib/win32codcs</p>
+<p>[root@fc8 MPlayer-1.0rc2]# make;make install</p>
+<p>安装ffmpeg-php.X.XX.tar.gz</p>
+<p>1. Unpack the archive</p>
+<p>  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; tar -xjf ffmpeg-php.X.XX.tar.gz</p>
+<p>2. cd into the ffmpeg extension directory</p>
+<p>  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; cd ffmpeg-php.X.XX/</p>
+<p>3. Run phpize (included with your php install) to build configuration files</p>
+<p>  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; phpize</p>
+<p>//这里要用到phpize程序，机子里可能没有，没关系先编绎一个出来，然后用完再删除．</p>
+<p>4. Configure and build</p>
+<p>  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; ./configure &amp;&amp; make</p>
+<p>5. Install the shared extension </p>
+<p>  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; make install (as root)</p>
+<p>6. Unpack the archive and copy the ffmpeg extension directory into your the php </p>
+<p>   sources extensions directory</p>
+<h1 id="&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;_cp_/usr/local/bin/ffmpeg_/path/to/php_sources/ext">&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; cp /usr/local/bin/ffmpeg /path/to/php_sources/ext</h1>
+<p>  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; cp /usr/local/php5/lib/php/extensions/no-debug-non-zts-20060613/ffmpeg.so /path/to/php_sources/ext</p>
+<p>7. Run autoconf to rebuild the php configure script and add the —with-ffmpeg </p>
+<p>   option</p>
+<p>  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; cd /path/to/php_sources</p>
+<p>  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; autoconf</p>
+<p>  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;</p>
+<p>8. 第三步安装php.(使用最新版apache+php整合时，有可能会出现问题，这个时候换低版本的测试.)</p>
+<p>[root@fc8 ~]# tar -zxvf php-5.2.4.tar.gz </p>
+<p>[root@fc8 php-5.2.4]# cd php-5.2.4</p>
+<p>[root@fc8 php-5.2.4]# ./configure —prefix=/usr/local/php5 —with-apxs2=/usr/local/apache2/bin/apxs —with-mysql=/usr/local/mysql \</p>
+<p>—with-config-file-path=/usr/local/php5/etc —with-ffmpeg=yes</p>
+<p>[root@fc8 php-5.2.4]# make;make test;make install</p>
+<p>[root@fc8 php-5.2.4]# cp php.ini-dist /usr/local/php5/etc/php.ini</p>
+<p>安装完毕后，会在apache2的moudle目录下生成一个php*.so文件.</p>
+<p>检查httpd.conf文件是否自动加入php相关配置。如果没有手工加入.</p>
+<p>LoadModule php5_module  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; modules/libphp5.so</p>
+<pre><code>AddType application/<span class="keyword">x</span>-httpd-php .php .php4 .php5
+
+AddType applicatoin/<span class="keyword">x</span>-httpd-php-<span class="keyword">source</span> .phps
+</code></pre><p>然后在apache的htdocs目录下，写一个test.php文件内容如下:</p>
+<p>&lt;?</p>
+<p>phpinfo();</p>
+<p>?&gt;</p>
+<p>重启apache.然后访问<a href="http://ip/test.php" target="_blank" rel="external">http://ip/test.php</a> </p>
+<hr>
+<p>extension = /usr/local/php5/lib/php/extensions/no-debug-non-zts-20060613/ffmpeg.so</p>
+<p>把这面这一句加入php.ini</p>
+<p>把ffmpeg-php-0.5.1目录下的</p>
+<p>test_ffmpeg.php</p>
+<p>tests目录都cp到apache的htdocs下边.重启apache测试.</p>
+<p><a href="http://192.168.0.2/test_ffmpeg.php" target="_blank" rel="external">http://192.168.0.2/test_ffmpeg.php</a></p>
+<hr>
+<p>将论论上传，然后运行安装程序.</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2008/05/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/2008/05/">1</a><a class="page-number" href="/archives/2008/05/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

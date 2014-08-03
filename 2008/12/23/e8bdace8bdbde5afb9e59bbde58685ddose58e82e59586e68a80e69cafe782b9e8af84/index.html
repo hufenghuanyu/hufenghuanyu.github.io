@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[转载]对国内ddos厂商技术点评 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="http://bbs.chinaunix.net/thread-732960-1-1.html
+看了《问绿盟黑洞》的文章好几天了，有点想法不吐不快。前两天正忙，现在闲下来了，说说我的想法。文章中会提到一些厂商的技术，有正有反，大家不要对号入座，主要是希望对你们的技术提高有帮助。我以原始的ddos的先行者syn flood来举例说明，cc我不打算评价，因为我认为syn flood的效果远远好于cc，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[转载]对国内ddos厂商技术点评">
+<meta property="og:url" content="http://yoursite.com/2008/12/23/e8bdace8bdbde5afb9e59bbde58685ddose58e82e59586e68a80e69cafe782b9e8af84/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="http://bbs.chinaunix.net/thread-732960-1-1.html
+看了《问绿盟黑洞》的文章好几天了，有点想法不吐不快。前两天正忙，现在闲下来了，说说我的想法。文章中会提到一些厂商的技术，有正有反，大家不要对号入座，主要是希望对你们的技术提高有帮助。我以原始的ddos的先行者syn flood来举例说明，cc我不打算评价，因为我认为syn flood的效果远远好于cc，">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[转载]对国内ddos厂商技术点评">
+<meta name="twitter:description" content="http://bbs.chinaunix.net/thread-732960-1-1.html
+看了《问绿盟黑洞》的文章好几天了，有点想法不吐不快。前两天正忙，现在闲下来了，说说我的想法。文章中会提到一些厂商的技术，有正有反，大家不要对号入座，主要是希望对你们的技术提高有帮助。我以原始的ddos的先行者syn flood来举例说明，cc我不打算评价，因为我认为syn flood的效果远远好于cc，">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main"><article id="post-e8bdace8bdbde5afb9e59bbde58685ddose58e82e59586e68a80e69cafe782b9e8af84" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/12/23/e8bdace8bdbde5afb9e59bbde58685ddose58e82e59586e68a80e69cafe782b9e8af84/" class="article-date">
+  <time datetime="2008-12-22T16:54:00.000Z" itemprop="datePublished">Dec 23 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      [转载]对国内ddos厂商技术点评
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+		<a data-url="http://yoursite.com/2008/12/23/e8bdace8bdbde5afb9e59bbde58685ddose58e82e59586e68a80e69cafe782b9e8af84/" data-title="[转载]对国内ddos厂商技术点评" data-id="jiyvaro0483nx6w3" class="article-share-link">Share</a>
+	  
+      
+        <a href="http://yoursite.com/2008/12/23/e8bdace8bdbde5afb9e59bbde58685ddose58e82e59586e68a80e69cafe782b9e8af84/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">Contents</strong>
+			
+			</div>
+		
+		<!-- 文章目录结束 -->
+		
+        <p><span class="Apple-style-span" style="word-spacing: 0px; font: 13px song; text-transform: none; color: rgb(0,0,0); text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: collapse; orphans: 2; widows: 2; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0"><a href="http://bbs.chinaunix.net/thread-732960-1-1.html" target="_blank" rel="external">http://bbs.chinaunix.net/thread-732960-1-1.html</a></span></p>
+<p><span class="Apple-style-span" style="word-spacing: 0px; font: 13px song; text-transform: none; color: rgb(0,0,0); text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: collapse; orphans: 2; widows: 2; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0">看了《问绿盟黑洞》的文章好几天了，有点想法不吐不快。前两天正忙，现在闲下来了，说说我的想法。文章中会提到一些厂商的技术，有正有反，大家不要对号入座，主要是希望对你们的技术提高有帮助。我以原始的ddos的先行者syn flood来举例说明，cc我不打算评价，因为我认为syn flood的效果远远好于cc，而隐蔽性是cc远远达不到的。先点评一下关于DDoS话题方面的一些网友的错误认识和厂商的技术弱点。以下如果没有特殊指明，ddos我指的就是syn flood这种最原始、最有效、最简单、最可爱的东西。</span></p>
+<p><strong>1.只要一谈论ddos想到的就是大流量，就是无边无际、无际无边的带宽消耗战。</strong></p>
+<p>错了，syn flood可不是带宽消耗战，drdos才是！那是因为syn flood的使用者使用不当，才会有今天大家的错误认识。</p>
+<p><strong>2.天，我CPU都满跑了，为什么目标机一点事都没有？我用的可以Linux下开源的、大家都害怕的、网评第1的攻击软件呀。</strong></p>
+<p>检查一下你的网关是不是有NAT，如果有。不是你的包没出去，就是你的网关快阵亡了，您赶快住手吧。</p>
+<p>去掉你前面的防火墙，因为防火墙在你发起攻击时，最先受到损害，更重要的是它是你财产的一部分。</p>
+<p>你极有可能拿一款ether下的攻击程序在pppoe网络中使用了，为了提高效率攻击数据包都是自己填充的，所以程序本身可能把数据包进行了ether_type的二层封装，如果你在pppoe环境中攻击，请自己修改源代码改为PPPOE封装。否则的话，你攻击的不是目标机，而是在自己的房间里大小便。要学会分析协议，下面才是二层PPPOE封装的正确格式：</p>
+<p>88 64 11 00 0B D0 00 56 00 21</p>
+<p><strong>3.这个ddos设备没什么了不起，用的就是syn cookie和syn proxy。</strong></p>
+<p>我认为这两种方法是当前最有效的解决方法，就像攻击者必须联网才能发起攻击一样，这两种措施是必做的。如果您没用这两种方法就实现了ddos防御，以下的内容您就不用看了。因为您是我见过的第一牛人，我在您面前绝对是个晚辈的。在此就不浪费您的宝贵时间了。如果您感觉我还可救，给我留点面子传张纸条教侮我一番吧。</p>
+<p><strong>4.drdos比ddos时髦多了，可以四两拨千斤</strong></p>
+<p>真不好意思，syn ack这个数据包应该从内网口收到才对，从外网口收到时直接丢掉就可以了。它浪费的是你的宽带而不是内存或者大量的cpu。</p>
+<p>你可能会说我后面的服务器是ftp并工作在主动模式，所以有时syn ack也是不能丢的。嗯…解决方案你自己已经说出来了，自己想个办法吧。</p>
+<p><strong>5.DDoS是最没有水准的攻击类型，菜鸟才用。</strong></p>
+<p>这只能说明你只是使用ddos工具的人，而不是一个编写ddos攻击类程序的人。大家知道一款好的ddos攻击软件，所发的包在各协议首部字段的合法范围内越随机越好。只要有一个字段该变但你没变的，特证过滤一下子就把你干掉了。如果攻击包是以多播、回环为源ip发送，我只能说攻击者在和你开玩笑，看看日历确认今天不是愚人节。</p>
+<p>但满足随机就是好的攻击软件吗？喵～喵～俺家的小花猫都知道，远远不是滴，单纯发syn攻击包就不是好的攻击方式。浪费ddos设备资源的是握手的第三个ack包。但第三个包构造上又很有讲究，举个例子：国内某某ddos厂商的主页，我小流量正常访问时抓包，可以发现他没有做syn proxy，但当我1000pps时，通过抓包就可以看出，他启用syn proxy了，并且syn cookie也随之打开了，你问我怎么知道的？看看它回复的syn ack包的tcp选项部分的变化你就明白了。这时是他启用防护的时机，也是它最脆弱的时候，细心的构造一个syn包，一个ack包，算准了它的cookie，喂给它。喵～小花猫都知道5000pps足够了。我不是有意这么做的，是它在CU里叫大家帮忙做测试，我简单的分析了一下，是这个原理。没叫劲，睡觉了，第二天具说有3000台肉机参与了，不知是真是假，如果没有了解原理，你就算动用8000台也没用啊！</p>
+<p>这里真正的技术是推算cookie，但我在市面上找不到一款ddos攻击软件有这个方面的功能，你可能会说这不就是cookie攻击吗，我不这么认为，我不会发大量的ack来消耗它的cpu资源，我只是想钻它算法的空子。因为一种cookie的算法就好比是一类ddos设备的指纹，推出这个cookie的参数与运算法则，以后遇到它的时候，它就死定了。当然厂商也不傻，算cookie的参数是个很大的数并且还是在不断变化，但不会经常变，每次启动的时候变一次就算很智能了。因为每天小花猫吃饭的时候，我都会便顺发送一个相同的syn包给它，它返给我的syn ack中的cookie一直都是一样的。哈哈…如果我有耐心，终有一天我会推出来的，注意：这个syn包源IP是真实的，所以我能观察到它的返回数据包，并且他根本就发现不了偶。一天才一个syn包嘛。</p>
+<p>顺便问问版主，绿盟在测试黑洞的时候，肯定有一种攻击软件是他们自己写的，针对自己的产品的弱点、软肋、命门、死穴、扪门发送5000pps应该就可以挂了。喵～喵～喵～小花猫咽到了。</p>
+<p><strong>6.这个百兆ddos设备真牛呀，百兆的线路我都D满了，还可以正常访问保护的服务器</strong></p>
+<p>你的感叹用错对像了，你应该感叹于这条网线的质量很好，一条质量优秀的网线，百兆千兆的确都可以跑起来呀。另外一个设备适用于百兆还是千兆环境的瓶颈，你没有弄清楚。我用82559网卡，我的算法再好也不可能你把百兆线路D满了，后面的服务器你还可以访问。你的这种情况，我可以很负责任的告诉你，这个外表百兆ddos设备实际采用了千兆平台和千兆网卡，而流量的瓶颈在你测试中的其它结点上。仅此而己。</p>
+<p><strong>7.我们的算法不对syn包做回追处理，所以你的下行带宽没有被浪费。</strong></p>
+<p>这话也说的出口，真汗！小花猫甩甩尾巴跑去喝水了。你把10kpps的发包器真接插在百兆ddos设备上面试一下，看看是回复syn ack时CPU使用率高，还是只接受syn包不回复时CPU占用率高。告诉你，后者的cpu占用率更高一些。为什么呢？因为我回复syn ack时也是一种另类的保护策略，在局域网中，攻击者发的数据包也必须依照冲突检测载波监听的方式来发送攻击包，如果你回复等量的syn ack也就是在堵攻击者的嘴，他发包的速度会成倍的减下来。这意味这什么？意味着你用你的下行带宽换来了上行带宽，这么好的机会你为什么要放弃？这就好像一群人在用砖头拍你，拍的你上串下蹦，左躲右闪，累的你呼吃带喘，你心里还在想我TM怎么这么聪明呀，没有回拍他们，节约了不少力气，所以现在身行才能如此敏捷。</p>
+<p><strong>8.你看我们的设备连IP地址都没有，可以实现网络隐身，所以很安全</strong></p>
+<p>幸好小花猫不在身边，否则还不得被呛个半死呀。这个因果关系也说的出来？那我是不是可以说工作在桥模式下的设备都很安全？这是我见过的最大的拿缺点当优点忽忧人的说词。你把IP地址给我设上，我为什么要网络隐身啊，我光明正大！你不是防ddos攻击吗？你自己的ip为什么不敢暴露在公网上提供http管理控制？厂商会找出各种的手段来忽忧你，以下是最常见的托词：设置管理IP地址当然可以了，但要从另外的一个网口专门引出来，并且我们不对管理网口做防护，因为这样会增加我们系统的负载呀。呀～～呀～～呀～～，回想起测试性能的时候他们好像说自己的算法很牛，什么国际领先啦，什么可以抵御所有未知的ddos攻击啦，什么算法CPU零负载啦，什么指纹啦，什么单向数据包一次检测啦，什么身份证啦、什么syn包实名制啦、什么暂住证啦….什么这个，什么那个了，你都这么强了，暴露一下嘛。</p>
+<p>不想做过多技术分析，主机型syn proxy syn cookie和网关型syn proxy syn cookie的难度不是一个数量级，原因是厂家为了效率把syn proxy syn cookie都在驱动层实现了，你叫他们把数据包上送到系统的TCP/IP协议栈给系统自身，真的是很难为他们。但你实现不了可以直说，忽忧我家小花猫就不厚道了。</p>
+<p><strong>9.我们的设备是透明接入，不会修改你的拓扑</strong></p>
+<p>嗯…这要看你对透明接入的了解程度了，我翻了翻所有ddos厂商的手册，吃惊的发现，都是一个模子，不知是谁抄谁的。上画三张用户常用拓扑，一个保护服务器、一个保护防火墙，一个保护网络，就认为自己可以全透明接入了？下面这张图你能透明接入吗？内网为三个VLAN网段，服务器放在VLAN2中，每个网段互相访问都必须通过防火墙内网口的三个对应VLAN网卡（各网段默认网关），防火墙通过DNAT后对外映射VLAN2网段服务器。我的要求是即要求你防外网的ddos还要你防止内网对VLAN2的ddos，敢问您，您打算怎么个透明进入法？</p>
+<p>1) 透明接入在防火墙外网口？</p>
+<p>2) 透明接入在防火墙内网口？</p>
+<p>你八成会修改我的拓扑，把VLAN2转到DMZ，然后透明接入在防火墙DMZ网口上</p>
+<p>&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  外网</p>
+<p>&nbsp;&nbsp;  &nbsp;&nbsp;  |</p>
+<p>&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;  防火墙</p>
+<p>&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;  |</p>
+<p>&nbsp;&nbsp;  | 交换机trunk口</p>
+<p>&nbsp;&nbsp;  |</p>
+<p>&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  switch</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;  | &nbsp;&nbsp;  | &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  |</p>
+<p>&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;  VLAN 1 &nbsp;&nbsp;  VLAN2 &nbsp;&nbsp;  VLAN3</p>
+<p><strong>10.利用超时重传来判断syn包是否合法</strong></p>
+<p>这种方法是相当的有效啊，远处传来小花猫的声音：&ldquo;给它在三秒钟之内发第二个syn包&rdquo;</p>
+<p><strong>11.可能您感觉本文写的不错，但要转载的时候，请注明原作者是skipjack，仅些而己，谢谢了</strong></p>
+<p>很不幸，年初时给国家某某一级刊物投稿，先开始写了8000字，后来叫我一删再删，删了再删，图是左减一个，右减一个，上减一个，下减一个，前减一个，后减一个。本来是一个从浅入深的分析过程，后来成了个半调子，没几个人可以读懂了。稿费汇给我时，我都快哭了，4000多字才给俺103元，从邮局走出来的时候，手里握着这103元钱，心里想：&ldquo;今儿中午我是请老婆吃饭呢，还是请小花猫吃饭呢？&rdquo;。</p>
+<p>2006-4-6</p>
+<p>23:33 skipjack</p>
+<p>&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;</p>
+<p>备注:<span class="Apple-converted-space"> </span></p>
+<p>2006-4-9 22:02<span class="Apple-converted-space"> </span></p>
+<p>1)修改原文,去掉笔误(一处)与错别字(两处) xiyang网友说我文章中有&quot;愤青&quot;言语和人身攻击词汇,我把我认为是的去掉了.在此表示谦意.</p>
+<p>2)我不是做ddos产品的,所以我写文章这么大胆,否则我不是自己砸自己饭碗嘛?</p>
+<p>3)我的身份大家不要猜了,我不是绿盟 天融信 金盾 神州盾 dosnipe的人(排名不分先后)</p>
+<p>2006-4-29 21:29</p>
+<p>zeroflag网友对第七点进行了debug。</p>
+<p>&gt;&gt;没做过测试，不知道你说不回追CPU占有率高是不是正确，但是你的解释有问题。</p>
+<p>&gt;&gt;全双工模式下，收发不相干，回复数据包怎么可能降低对方发包速度呢？望明鉴！</p>
+<p>答复: 观点七: 想说明那些被动的等待重传来判断syn包合法性的作法是多么的不可取.与其被堵死,不如搏一下.</p>
+<p>对,这点在同铀电缆环境下是正确的.在双绞线下这么说的确不太严谨.</p>
+<p>双绞线的上/下行带宽是完全分开的.收对发,发对收.</p>
+<p>我上面提的发包器,因为源MAC没有伪造,只是伪造了源IP,所以当我回复syn ack时,攻击者也必须处理收包工作.这样它的CPU负载就加大了,发包就会慢下来.</p>
+<p>你可能会说,没有伪造源MAC的攻击包就是~傻~包呀,</p>
+<p>但你不要丢记,在单一网关出口时,网关就是这种情况下的发包器,</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+    <footer class="article-footer">
+		
+	<a align="left" href="/2008/12/23/e8bdace8bdbdlinuxe680a7e883bde58886e69e90e5b7a5e585b7vmstatiostatsar/" id="article-nav-older" class="article-nav-link-wrap">
+	  <div align="left" class="article-nav-title">上一篇 [转载]Linux性能分析工具(vmstat,iostat,sar)</div>
+	</a>
+
+
+	<a align="right" href="/2008/12/23/e8bdace8bdbde998b2e88c83e9bb91e5aea2e69da5e887aae7bd91e4b88ae79a84e694bbe587bbe79a84e587a0e7a78de696b9e6b395/" id="article-nav-newer" class="article-nav-link-wrap">
+	  <div align="right" class="article-nav-title">下一篇 [转载]防范黑客来自网上的攻击的几种方法</div>
+	</a>
+
+
+    </footer>
+	
+  </div>
+</article>
+
+<section id="comments">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="[转载]对国内ddos厂商技术点评" data-title="[转载]对国内ddos厂商技术点评" data-url="http://yoursite.com/2008/12/23/e8bdace8bdbde5afb9e59bbde58685ddose58e82e59586e68a80e69cafe782b9e8af84/"></div>
+	<!-- 多说评论框 end -->
+</section>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

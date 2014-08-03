@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Tag: php | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/tags/php/page/4/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-hooke79a84e58f91e5b195" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/12/10/hooke79a84e58f91e5b195/" class="article-date">
+  <time datetime="2009-12-09T16:27:50.000Z" itemprop="datePublished">Dec 10 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/12/10/hooke79a84e58f91e5b195/">HOOK的发展</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hook/">hook</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>非常遗憾，HOOK的发展史不是那么清晰可见。事实上，HOOK到底是什么，很多人的说法都不一样。</p>
+<p>最早是在操作系统中出现的HOOK概念。在Unix/Linux/Windows中都有类似概念。当时提出的目的在于，允许用户在系统调用过程中，插入自己的代码处理特殊事情。典型的HOOK就是用自己的功能替换原有的函数点，在处理完成之后，又恢复原有的函数点。（这里“点”就是表示一个可以使用HOOK勾住的位置）。</p>
+<p>下面是《关于钩子》中，描述的Windows是中的钩子：</p>
+<hr>
+<p>在Windows中，钩子(Hook)，是Windows消息处理机制的一个平台，应用程序可以在上面设置子程以监视指定窗口的某种消息，而且所监视的窗口可以是其他进程所创建的。当消息到达后，在目标窗口处理函数之前处理它。钩子机制允许应用程序截获处理window消息或特定事件。</p>
+<p>钩子实际上是一个处理消息的程序段，通过系统调用，把它挂入系统。每当特定的消息发出，在没有到达目的窗口前，钩子程序就先捕获该消息，亦即钩子函数先得到控制权。这时钩子函数即可以加工处理（改变）该消息，也可以不作处理而继续传递该消息，还可以强制结束消息的传递。</p>
+<hr>
+<p>其实从中可以看出，这些钩子应该和回调函数（CALLBACK FUNCTION）是一种技术。只不过，Windows专门将此类系统消息处理机制叫HOOK。</p>
+<p>Falls先生曾经提醒我，在UNIX中的HOOK更纯粹。是的，UNIX中LD_PRELOAD环境变量（Soloris系统为例）针对所有系统调用做了一个类似代理功能，如果你想改变某个系统调用，就可以在这个代理中注册，动态调用的时候，会先从代理里寻找自定义代码，然后再找系统预定义代码。</p>
+<p>我愿意使用图来表示这里面的差别。第一种Windows中的HOOK概念，其实是说系统已经在可以扩展的地方，预先放好了一些钩子在那里，你可以在需要的时候，挂上自己想要的东西。</p>
+<p><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/xiammy/Windows.gif" alt="windows的HOOK模型"></p>
+<p>相对于Windows来说，UNIX中，基本思想是一致的，细微的差距在于，扩展点的提供上。UNIX几乎提供了所有可能的扩展点。由于太多了，所以换句话说，也可以说成UNIX没有提供扩展点。这些扩展点，是用户在使用的过程中自己去发现，自己去勾住的。</p>
+<p><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/xiammy/UNIX.GIF" alt="UNIX的HOOK模式"></p>
+<p>这些就是其中的差距。而HOOK思想的发展也正是依照UNIX这类路线走下去的。在Windows中，大家还在使用的HOOK，除了定义好消息钩子，最典型的就是dll的导出表钩子。可以改变系统dll的函数的导出函数的地址，来勾住某些特定操作。必然监控文件创建等等操作，就可以勾住CreateFile这个API函数。</p>
+<p>事实上，在初期，很多钩子都是发展用来修改别人的系统的行为的。后来钩子也用来修改本系统的行为。这主要源于软件系统的长足发展及框架系统的复杂度不断提升。现在的软件系统对我们来说，已经不大可能了解所有的部分，而且基类框架的稳定性不允许我们去修改它们。在这种情况下，HOOK思想带入到解题思路中。可以使用钩子来解决一些扩展或修复一些系统设计缺陷。AOP的思想和这类应用很相似。</p>
+<p>整个HOOK的发展，从开始的回调函数模式，到扩展系统行为，再到扩展本系统行为。这个过程，有一点大家认识越来越清晰。HOOK是在合适的位置插入自己的代码而扩展或改变原有系统的（外系统或本系统）的行为的。HOOK技术也越来越主动的寻找扩展点，而不仅仅是使用原有系统提供的扩展点。甚至已经派生中一种系统开发方式AOSD。</p>
+<p>HOOK的未来在哪里？随着.NET和JAVA对AOP的支持，HOOK技术越来越被框架直接支持。相信不远的未来，HOOK会直接作为一种解题思想而推广，并且框架会提供一系列HOOK模式来解决类似问题。</p>
+<p>本文来自CSDN博客，转载请标明出处：<a href="http://blog.csdn.net/xiammy/archive/2006/11/21/1400453.aspx" target="_blank" rel="external">http://blog.csdn.net/xiammy/archive/2006/11/21/1400453.aspx</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-limesurvey-1-85-e7bb9fe8aea1e6a8a1e59d97pcharte4b8ade69687e4b9b1e7a081e997aee9a298e8a7a3e586b3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/12/08/limesurvey-1-85-e7bb9fe8aea1e6a8a1e59d97pcharte4b8ade69687e4b9b1e7a081e997aee9a298e8a7a3e586b3/" class="article-date">
+  <time datetime="2009-12-08T08:55:32.000Z" itemprop="datePublished">Dec 8 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/12/08/limesurvey-1-85-e7bb9fe8aea1e6a8a1e59d97pcharte4b8ade69687e4b9b1e7a081e997aee9a298e8a7a3e586b3/">Limesurvey 1.85+ 统计模块pChart中文乱码问题解决</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jpgraph/">jpgraph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pchart/">pchart</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>由于Jpgraph是收费的，并且需要自己安装，Limesurvey在1.8的某个小版本上抛弃了<a href="http://jingyan.info/tag/jpgraph/" target="_blank" rel="external">Jpgraph</a>，改用开源的<a href="http://pchart.sourceforge.net" target="_blank" rel="external">pChart</a>，并且内置在程序内。这类PHP画图的库默认对中文的支持都不完美，<a href="http://jingyan.info/tag/jpgraph/" target="_blank" rel="external">Jpgraph</a>默认中文也会乱码。</p>
+<p>针对pChart乱码问题，网上一般的解决方法就是说需要选择一个支持中文的字体,有一篇<a href="http://www.vpnall.com/2009/05/%e5%bc%80%e6%ba%90php%e5%9b%be%e8%a1%a8%e7%94%9f%e6%88%90%e5%87%bd%e6%95%b0pchart%e5%ba%94%e7%94%a8%e5%ae%9e%e4%be%8b/" target="_blank" rel="external">文章</a>提供了较多的经验：<br>另外需要注意的是中文支持<br>1.如果有中文需要配置一个ttf的中文字体,否则会乱码;<br>2.数据,php,显示页面编码都设置成统一的编码,否则也会乱码,我统一用UTF8.</p>
+<p>然后在/admin/statistics.php里设置字体，不起作用；按照编码的思路检查数据库编码、页面显示编码以及php编码，都是清一色的UTF-8 无奈了，突然想到既然pChart被集成进去，Limesurvey的设置文件是不是有关于pChart的设置，找了一下config.php，没有，原来在config-default.php里，在这里设置了字体，然后删除/tmp里的png图片缓存，刷新刷新刷新，不起作用 过了一会儿再试一下 好了。。。</p>
+<p>总结一下，设置好中文字体后，主要还是设置问题。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-phpe4b8ade6909ce99b86e4ba86e587a0e4b8aae5b8b8e794a8e587bde695b0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/12/08/phpe4b8ade6909ce99b86e4ba86e587a0e4b8aae5b8b8e794a8e587bde695b0/" class="article-date">
+  <time datetime="2009-12-08T06:15:07.000Z" itemprop="datePublished">Dec 8 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/12/08/phpe4b8ade6909ce99b86e4ba86e587a0e4b8aae5b8b8e794a8e587bde695b0/">php中搜集了几个常用函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><strong>文件读取函数</strong></p>
+<p>&#160;&#160; //文件读取函数<br>&#160;&#160; function PHP_Read($file_name) {<br>&#160;&#160; $fd=fopen($file_name,r);<br>&#160;&#160; while($bufline=fgets($fd, 4096)){<br>&#160;&#160; $buf.=$bufline;<br>&#160;&#160;&#160; }<br>&#160;&#160; fclose($fd);<br>&#160;&#160; return $buf;<br>&#160;&#160;&#160; }<br>&#160;&#160; ?&gt;</p>
+<p><strong>文件写入函数</strong></p>
+<p>&#160;&#160; //文件写入函数<br>&#160;&#160; function PHP_Write($file_name,$data,$method=&quot;w&quot;) {<br>&#160;&#160; $filenum=@fopen($file_name,$method);<br>&#160;&#160; flock($filenum,LOCK_EX);<br>&#160;&#160; $file_data=fwrite($filenum,$data);<br>&#160;&#160; fclose($filenum);<br>&#160;&#160; return $file_data;<br>&#160;&#160;&#160; }<br>&#160;&#160; ?&gt;</p>
+<p><strong>静态页面生成函数</strong></p>
+<p>&#160;&#160; //静态页面生成函数<br>&#160;&#160; function phptohtm($filefrom,$fileto,$u2u=1){<br>&#160;&#160; if($u2u==1){<br>&#160;&#160; $data=PHP_Read($filefrom);<br>&#160;&#160;&#160; }else{<br>&#160;&#160; $data=$filefrom;<br>&#160;&#160;&#160; }<br>&#160;&#160; PHP_Write($fileto,$data);<br>&#160;&#160; return true;<br>&#160;&#160;&#160; }<br>&#160;&#160; ?&gt;</p>
+<p><strong>指定条件信息数量检索函数</strong></p>
+<p>&#160;&#160;&#160; //指定条件信息数量检索函数<br>&#160;&#160; function rec_exist($table,$where){<br>&#160;&#160; $query=&quot;select count(*) as num from $table &quot;.$where;<br>&#160;&#160; $result=mysql_query($query) or die(nerror(1));<br>&#160;&#160; $rowcount=mysql_fetch_array($result);<br>&#160;&#160; $num=$rowcount[&quot;num&quot;];<br>&#160;&#160; if ($num==0){<br>&#160;&#160; return false;<br>&#160;&#160;&#160; }<br>&#160;&#160; return $num;<br>&#160;&#160;&#160; }<br>&#160;&#160; ?&gt;</p>
+<p><strong>目录删除函数</strong></p>
+<p>&#160;&#160; //目录删除函数<br>&#160;&#160; function del_DIR($directory){<br>&#160;&#160; $mydir=dir($directory);<br>&#160;&#160; while($file=$mydir-&gt;read()){<br>&#160;&#160; if((is_dir(&quot;$directory/$file&quot;)) AND ($file!=&quot;.&quot;) AND ($file!=&quot;..&quot;)){<br>&#160;&#160; del_DIR(&quot;$directory/$file&quot;);<br>&#160;&#160;&#160; }else{<br>&#160;&#160; if(($file!=&quot;.&quot;) AND ($file!=&quot;..&quot;)){<br>&#160;&#160; unlink(&quot;$directory/$file&quot;);<br>&#160;&#160; //echo &quot;unlink $directory/$file ok &quot;;<br>&#160;&#160;&#160; }<br>&#160;&#160;&#160; }<br>&#160;&#160;&#160; }<br>&#160;&#160; $mydir-&gt;close();<br>&#160;&#160; rmdir($directory);<br>&#160;&#160; //echo &quot;rmdir $directory ok &quot;;<br>&#160;&#160;&#160; }<br>&#160;&#160; ?&gt;</p>
+<p><strong>目录名称合法性检测函数</strong></p>
+<p>&#160;&#160; //目录名称合法性检测<br>&#160;&#160; function isen($str){<br>&#160;&#160; $ret=&quot;&quot;;<br>&#160;&#160; for($i=0;$i&#160;&#160; $p=ord(substr($str,$i,1));<br>&#160;&#160; if(($p&lt;48 &amp; $p!=45 &amp; $p!=46) || ($p&gt;57 &amp; $p&lt;65) || ($p&gt;90 &amp; $p&lt;97 &amp; $p!=95) || $p&gt;122){<br>&#160;&#160; nerror(&quot;不符合规范！&quot;);<br>&#160;&#160;&#160; }<br>&#160;&#160; $ret.=chr($p);<br>&#160;&#160;&#160; }<br>&#160;&#160; return $ret;<br>&#160;&#160;&#160; }<br>&#160;&#160; ?&gt;</p>
+<p><strong>分页函数</strong></p>
+<p>&#160;&#160; //分页函数<br>&#160;&#160; function splitlist($HALT,$LRLIST,$ECHOCNT,$paper,$table,$where,$page_id,$userid){<br>&#160;&#160; global $splitstr,$sumcnt;<br>&#160;&#160; if($paper==&quot;&quot; || $sumcnt==&quot;&quot;){<br>&#160;&#160; $query = &quot;select count(<em>) as num from $table $where&quot;;<br>&#160;&#160; $result = mysql_query($query);<br>&#160;&#160; $row = mysql_fetch_array($result);<br>&#160;&#160; $sumcnt=$row[&quot;num&quot;];<br>&#160;&#160; if($sumcnt==0){<br>&#160;&#160; nerror(&quot;该版内还没有选择发布新闻 ！&quot;);<br>&#160;&#160;&#160; }<br>&#160;&#160; $paper=1;<br>&#160;&#160;&#160; }<br>&#160;&#160; $sumpaper=($sumcnt-$sumcnt%$ECHOCNT)/$ECHOCNT;<br>&#160;&#160; if(($sumcnt%$ECHOCNT)!=0) $sumpaper+=1;<br>&#160;&#160; if($sumpaper==1 &amp;&amp; $HALT==0) return($where);<br>&#160;&#160; $enwhere=base64_encode(base64_encode($where));<br>&#160;&#160; if(($LRLIST</em>2+1) &lt; $sumpaper){<br>&#160;&#160; if(($paper-$LRLIST) &lt; 2){<br>&#160;&#160; $tract=1;<br>&#160;&#160; $sub=$LRLIST<em>2+1;<br>&#160;&#160;&#160; }else if(($paper+$LRLIST) &gt;= $sumpaper){<br>&#160;&#160; $tract=$sumpaper-($LRLIST</em>2);<br>&#160;&#160; $sub=$sumpaper;<br>&#160;&#160;&#160; }else{<br>&#160;&#160; $tract=$paper-$LRLIST;<br>&#160;&#160; $sub=$paper+$LRLIST;<br>&#160;&#160;&#160; }<br>&#160;&#160;&#160; }else{<br>&#160;&#160; $tract=1;<br>&#160;&#160; $sub=$sumpaper;<br>&#160;&#160;&#160; }<br>&#160;&#160; $uppaper=$paper-1;<br>&#160;&#160; $downpaper=$paper+1;<br>&#160;&#160; $startcnt=($paper-1)*$ECHOCNT;<br>&#160;&#160; $where.=&quot; limit ${ startcnt },${ ECHOCNT }&quot;;<br>&#160;&#160; if($tract &gt; 1) { $splitstr=&quot;【 &lt;&lt; &quot;; }<br>&#160;&#160; else $splitstr=&quot;【 &lt;&lt; &quot;;<br>&#160;&#160; for($i=$tract;$i&lt;=$sub;$i++){<br>&#160;&#160; if ($i!=$paper) $splitstr.=&quot;&quot;.$i.&quot; &quot;;<br>&#160;&#160; else $splitstr.=&quot;&quot;.$i.&quot; &quot;;<br>&#160;&#160;&#160; }<br>&#160;&#160; if ($sub!=$sumpaper) $splitstr.=&quot;&gt;&gt; 】&quot;;<br>&#160;&#160; else $splitstr.=&quot;&gt;&gt; 】&quot;;<br>&#160;&#160; return($where);<br>&#160;&#160;&#160; }<br>&#160;&#160; ?&gt;</p>
+<p><strong>关于分页函数的使用说明</strong></p>
+<p>&#160;&#160;&#160; /<em><br>&#160;&#160; #### 检索分页函数 ####<br>&#160;&#160; Int $HALT - 检索结果仅分1页时是否(1/0)显示页码条<br>&#160;&#160; Int $LRLIST - (页码条显示页码数-1)/2<br>&#160;&#160; Int $ECHOCNT - 检索时每页显示记录的数量<br>&#160;&#160; Int $paper - 页数，预提取：$paper=$HTTP_GET_VARS[paper];<br>&#160;&#160; Varchar $table - 数据表名,预附值：$table=&quot;db.table&quot;;<br>&#160;&#160; Varchar $where - 检索条件，预附值：$where=&quot;where field=’value’&quot;;<br>&#160;&#160; Varchar $enwhere - 将原$where进行两次base64_encode()编码后以GET的方式提交<br>&#160;&#160; Varchar $splitstr - 页码条输出字串，执行函数后在相应的位置执行 echo $splitstr;<br>&#160;&#160; 函数调用前需获取变量 -<br>&#160;&#160; $paper=$HTTP_GET_VARS[paper];<br>&#160;&#160; $sumcnt=$HTTP_GET_VARS[sumcnt];<br>&#160;&#160; $enwhere=$HTTP_GET_VARS[enwhere];<br>&#160;&#160; Return (Varchar $where) - 分页后检索语句的检索条件<br>&#160;&#160; 注意：本函数需调用出错处理函数 nerror($error);<br>&#160;&#160; </em>/<br>&#160;&#160; ?&gt;</p>
+<p><strong>图片文件上传函数</strong></p>
+<p>&#160;&#160; //图片文件上传函数<br>&#160;&#160; function upload_img($UploadFile,$UploadFile_name,$UploadFile_size,$UploadPath,$max_size=64){<br>&#160;&#160; //$TimeLimit=60; //设置超时限制时间 缺省时间为 30秒 设置为0时为不限时<br>&#160;&#160; //set_time_limit($TimeLimit);<br>&#160;&#160; if(($UploadFile!= &quot;none&quot; )&amp;&amp;($UploadFile != &quot;&quot; )){<br>&#160;&#160; $FileName=$UploadPath.$UploadFile_name;<br>&#160;&#160; if($UploadFile_size &lt;1024){<br>&#160;&#160; $FileSize=&quot;(string)$UploadFile_size&quot; . &quot;字节&quot;;<br>&#160;&#160;&#160; }elseif($UploadFile_size &lt;(1024 <em> $max_size)){<br>&#160;&#160; $FileSize=number_format((double)($UploadFile_size / 1024), 1) . &quot; KB&quot;;<br>&#160;&#160;&#160; }else{<br>&#160;&#160; nerror(&quot;文件超过限制大小！&quot;);<br>&#160;&#160;&#160; }<br>&#160;&#160; //{<br>&#160;&#160; //$FileSize=&quot;number_format((double)($UploadFile_size&quot; / (1024 </em> 1024)), 1) . &quot; MB&quot;;<br>&#160;&#160; // }<br>&#160;&#160; if(!file_exists($FileName)){<br>&#160;&#160; if(copy($UploadFile,$FileName)){<br>&#160;&#160; return &quot;$UploadFile_name ($FileSize)&quot;;<br>&#160;&#160;&#160; }else{<br>&#160;&#160; nerror(&quot;文件 $UploadFile_name 上载失败！&quot;);<br>&#160;&#160;&#160; }<br>&#160;&#160; unlink($UploadFile);<br>&#160;&#160;&#160; }else{<br>&#160;&#160; nerror(&quot;文件 $UploadFile_name 已经存在！&quot;);<br>&#160;&#160;&#160; }<br>&#160;&#160; //set_time_limit(30); //恢复缺省超时设置<br>&#160;&#160;&#160; }<br>&#160;&#160;&#160; }<br>&#160;&#160; ?&gt;</p>
+<p><strong>set_magic_quotes_runtime</strong>是用来设置PHP 环境配置的变量 magic_quotes_runtime 值。<br>0-关闭 1-打开<br>程序中检测状态用get_magic_quotes_runtime,返回 0 表示关闭本功能；返回 1 表示本功能打开。若 magic_quotes_runtime 打开时，所有外部引入的数据库资料或者文件等等都会自动转为含有反斜线溢出字符的资料。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-extract-compacte587bde695b0efbd9e" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/12/08/extract-compacte587bde695b0efbd9e/" class="article-date">
+  <time datetime="2009-12-08T06:01:11.000Z" itemprop="datePublished">Dec 8 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/12/08/extract-compacte587bde695b0efbd9e/">extract compact函数～</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compact/">compact</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/extract/">extract</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><strong><font color="#004080">很好用的两个php函数，一个将数组元素解压出来，一个是将元素压缩到数组里，与WinRAR之类的压缩解压程序神似哈～</font></strong><br> compact() 函数创建一个由参数所带变量组成的数组。如果参数中存在数组，该数组中变量的值也会被获取。<br>本函数返回的数组是一个关联数组，键名为函数的参数，键值为参数中变量的值。<br>本函数执行的行为与 <a href="http://www.w3school.com.cn/php/func_array_extract.asp" target="_blank" rel="external">extract()</a> 正好相反。   </p>
+<p>&lt;?php<br>$firstname = &quot;Peter&quot;;<br>$lastname = &quot;Griffin&quot;;<br>$age = &quot;38&quot;;<br>$result = compact(&quot;firstname&quot;, &quot;lastname&quot;, &quot;age&quot;);<br>print_r($result);<br>?&gt;</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e59ca8linuxe69c8de58aa1e599a8-e4bdbfe794a8php-maile58f91e98081e982aee4bbb6e685a2-e8a7a3e586b3e696b9e6b395" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/11/23/e59ca8linuxe69c8de58aa1e599a8-e4bdbfe794a8php-maile58f91e98081e982aee4bbb6e685a2-e8a7a3e586b3e696b9e6b395/" class="article-date">
+  <time datetime="2009-11-23T06:11:24.000Z" itemprop="datePublished">Nov 23 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>►<a class="article-category-link" href="/categories/php/ubuntu/">ubuntu</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/11/23/e59ca8linuxe69c8de58aa1e599a8-e4bdbfe794a8php-maile58f91e98081e982aee4bbb6e685a2-e8a7a3e586b3e696b9e6b395/">在linux服务器 使用php mail发送邮件慢 解决方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sendmail/">sendmail</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>出现这样的状况的并发症还有，sendmail服务启动缓慢</p>
+<p>查看sendmail的日志</p>
+<pre class="brush:bash;toolbar:false">cat&nbsp;/var/log/maillog</pre>
+
+<p>大致看出是hostname有问题</p>
+<p>首先对比这两个文件</p>
+<pre class="brush:bash;toolbar:false">/etc/hosts
+/etc/mail/local-hosts-name</pre>
+
+<p>保持一致，并确认 hostname 无误</p>
+<p>查看和变更本机hostname方法是 hostname [newhostname:string]</p>
+<p>编辑/etc/mail/sendmail.cf</p>
+<p>查找到Dj$w一行，vi查找命令是/string</p>
+<p>可以看到出示状态是被注释掉的，在这里增加一行</p>
+<p>Dj$w.</p>
+<p>设置完毕</p>
+<pre class="brush:bash;toolbar:false">/etc/init.d/sendmail&nbsp;restart</pre>
+
+<p>飞快重启</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e6b585e69e90e5ad97e7aca6e99b86e4bba5e58f8aphpmysql4-1e79a84e4b9b1e7a081e997aee9a298" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/11/05/e6b585e69e90e5ad97e7aca6e99b86e4bba5e58f8aphpmysql4-1e79a84e4b9b1e7a081e997aee9a298/" class="article-date">
+  <time datetime="2009-11-05T08:06:39.000Z" itemprop="datePublished">Nov 5 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>►<a class="article-category-link" href="/categories/mysql/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/11/05/e6b585e69e90e5ad97e7aca6e99b86e4bba5e58f8aphpmysql4-1e79a84e4b9b1e7a081e997aee9a298/">浅析字符集以及PHP+MySQL4.1的乱码问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编码/">编码</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原文链接：<a href="http://www.cncms.com.cn/mysql/3557.htm" target="_blank" rel="external">http://www.cncms.com.cn/mysql/3557.htm</a></p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; MySQL自4.1以后，增加了对字符集的支持。笔者之前对MySQL比较了解，刚接触4.1时，感觉MySQL有点多此一举，但后来细想发现，对字符集的支持，虽然对开发者来说，会麻烦一些，但不可否认，是一种进步。对字符集的支持，不仅更加支持多语言，而且，也方便移植。</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; 刚开始使用MySQL4.1，你可能感觉有点不适，下面，简单阐述一下笔者对MySQL4.1字符集的理解，再讲述如何PHP如何适应MySQL的这种变化，希望大家看过这文章后，能够有所收获。<br>如果你对计算机基础知识不了解，请直接阅读“结论篇”<br>一．原理篇<br>MySQL的字符集里有两个概念，一个是“Character set（字符集）”，另一个是“Collations”。<br>1. Collations<br>Collations翻成中文是“校验”，在网页开发的过程中，这个词汇，只在MySQL里使用，主要作用是指导MySQL对字符的比较，比如， ASCII字符集里，Collations规定了a小于b，a等于a，以及a是否等于A之类的。通常，大家基本可以忽略Collations的存在，因为每个字符集都有一个默认的Collations，通常，使用默认的Collations就可以了。<br>2.字符集<br>与这对比的是，字符集是个更广的概念，即使是Windows下普通的文本文件，也渗及到字符集的问题。不同的字符集，规定了不同的字符的编码方式。一个 character set (字符集)是一组符号和编码，比如，ASCII字符集，包括的字符有：数字，大小写字母，分号、换行之类的符号，编码方式是用一个7bit表示一个字符（A的编码是65，b的编码是98）。ASCII只规定了英文字母的编码，非英文语言不能用ASCII编码表示，为此，不同的国家，都为自己的语言做了编码，比如，我们国家，就有GB2312编码。但每个国家之间的编码不同，也存在着一些跨平台的问题，为此，一些国际化标准组织，就制定了一些国际通用的编码，最常用的就是UTF8了。ASCII只对英文符号和英文字母做了编码，GB2312对英文符号，英文字母，汉字做了编码，UTF8对世界上所有的语言文字做了编码，所以，GB1212的字符包含了ASCII字符，UTF8包含了GB2312字符。由此可见，UTF8是所含最广字符的字符集，所以，在一些多语言的WEB系统中，一般用UTF8字符集（PHPMyAdmin使用UTF8编码）。<br>任何文本的存储，都渗及到字符集的概念。包括数据库，也包括普通的文本文件。<br>主要术语：<br>字符：汉字，英文字母，标点符号，拉丁文等等。<br>编码：将字符转换成计算机存储的格式，比如，A用65表示。<br>字符集：一组字符以及对应的编码方式。<br>a. MySQL的字符集<br>MySQL目前支持多字符集，并且，支持在不同的字符集之间转换（便于移植和支持多语言）。<br>MySQL可以设置服务器级字符集、数据库级字符集、数据表级字符集、表列的字符集，实际上，最终使用字符集的地方是存储字符的列，比如，你设置 table1中col1列是字符类型，col1才用到了字符集，如果table1表的col2列是int类型，col2不使用字符集的概念。<br>服务器级字符集、数据库级字符集、数据表级字符集都是为列的字符集做默认选项的。<br>MySQL一定有一个字符集，可以通过启动时加参数指定，也可以编译时指定，也可以在配置文件里指定。MySQL服务器字符集，只是做为数据库级的默认值。创建数据库时，你可以指定字符集，如果没指定，就使用服务器的字符集。同理，创建表时，你可以指定表级的字符集，如果没指定，使用数据库的字符集做为表的字符集。创建列时，你可以指定某列的字符集，如果没指定，就使用表的字符集。<br>通常情况下，您只需设置服务器级的字符集，其它的数据库级，表级，以及列级的字符集，都继承自服务器级字符集。<br>由于UTF8是最广的字符集，所以，一般情况下，我们设置MySQL服务器级的字符集为UTF8！<br>b. 普通文本的字符集问题<br>任何文本的存储，都存在着字符集的问题，普通文本文件也不例外。<br>Windows2000+的系统中，打开记事本，“保存为…”对话框，就有一个选项，可以让你选择存储文本的编码方式。<br>通常情况下，大家都使用Windows2000+的系统，都使用默认的编码，所以，不会碰到字符集的问题。<br>Windows下，保存文本文件时，可以选择编码方式，但打开文本文件时，都是自动判断编码方式的。网上有一个用Windows2000+的记事本玩移动，联通的笑话，大家可以搜搜，就是因为Windows在打开文本文件时，编码判断错误引起的问题。<br>因为自动判断编码有时会错误，所以，有的文本文件，规定了如何识别自身所使用的编码。HTML文件就是一个这样的例子。<br>HTML是文本文件。存储HTML文件的时候，需要使用一个编码，并且，在HTML文件里，也使用HTML语法，指定了该文件所使用的编码（比如&lt; meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;）。如果HTML文件没有指定编码，则浏览器自动识别文件的编码。如果HTML指定了编码，则浏览器使用HTML指定的编码。<br>通常情况下，HTML文件指定的charset和HTML文件自身的编码是一致的，但也有不一致的情况，如果不一致，就会导致网页乱码(此处乱码，只和文本文件有关，和数据库无关。)使用专门的网页编辑工具（比如Dreamwave），会自动根据网页中的charset值来编码文件。<br>c. php+MySQL的字符集问题<br>PHP最终生成的是文本文件，但他要取数据库里的文本，或将文本存进数据库。<br>由于MySQL支持多字符集，默认情况下，MySQL不知道PHP发给他的是什么编码的字符，所以，MySQL要求客户端（PHP）告诉他存取的字符集是什么。<br>PHP通过设置character_set_client，告诉MySQL，PHP存进数据库的是什么编码方式。<br>PHP通过设置character_set_results，告诉MySQL，PHP需要取什么样编码的数据。<br>PHP通过设置character_set_connection，告诉MySQL，PHP查询中的文本，使用什么编码。<br>MySQL使用设置的编码方式存储文本。<br>假设MySQL使用setserver来存储文本，PHP的character_set_client是setclient，PHP的 character_set_results是setresult。那么，MySQL将PHP发来的文本，从setclient编码方式，转换成 setserver编码方式，再存入数据库，如果PHP取文本，MySQL将文本从setserver转换成setresult，再发送给PHP。<br>PHP文件（最终生成的HTML文件）本身有个编码，如果MySQL传过来的编码，与PHP文件自身的编码不同，那么，整个网页，必然乱码。所以，PHP一般将自己的编码方式，告诉MySQL。<br>要保证不乱码，就必须将三个编码统一：一是网页自身的编码，二是HTML里指定的编码，三是PHP告诉MySQL的编码(包括character_set_client和character_set_results)。<br>第一和第二个编码，如果使用DW之类的编辑器写的网页，通常是一致的，但用记事本写的网页，有可能不一致。<br>第三个编码，需要手工通知MySQL。这步可以通过在PHP里使用MySQL_query(“set names characterX”)来实现。<br>d.字符集的转换问题<br>如果小字集转换成大字符集，不会丢失数据，但大字集，转换成小字集，可能会丢失数据。<br>比如，UTF8里有的字符，GB2312不一定有，所以，从UTF8转换到GB2312可能会丢失一些字符。<br>但有种情况例外，先从GB2312转成UTF8，再从UTF8转成GB2312，这种情况是不会丢数据的，因为，刚开始转换的文本，都是GB2312里的字符，所以，整个过程都是GB2312的字符在转换，不会丢失。<br>正因为UTF8能容纳世界上的所有字符，所以，数据库一般使用UTF8编码。这使得，任何字符都可以存进UTF8编码的数据库。<br>e. PHPMyAdmin乱码的问题<br>PHPMyAdmin支持多国语言，这就必定要求HTML页面使用UTF8编码。<br>HTML页面使用UTF8编码，这就必定要求PHPMyAdmin连接MySQL时，character_set_client和character_set_results使用UTF8编码。<br>当前情况下，PHP连接MySQL只能是使用set names(或其它几个语句)来通知MySQL的,编码方式，如果没有显式的声明编码方式，都将使用latin1编码。一般的程序，都没有显式声明 character_set_client变量，所以，都是将gb2312文本，按latin1编码方式存在数据库，PHPMyAdmin再用utf8格式读取，肯定是乱码的。<br>如果PHP程序按正确的编码存入数据库，肯定是没有问题的。所以，需要修改的不是PHPMyAdmin.（虽然有时修改PHPMyAdmin可以解决乱码问题，但这不是问题的根本）<br>二．总结篇<br>上面的讲得有点乱，总结一下：    </p>
+<font color="#000080">1.数据库尽量使用utf8存储（修改/etc/my.cnf，在[MySQLd]段加上default-character-set=utf8）<br>(已有的数据库，先转成UTF8格式)<br>2.PHP程序在查询数据库之前，执行MySQL_query(“set names xxxx”);其中xxxx是你网页的编码(charset=xxxx)，如果网页中charset=utf8，则xxxx=utf8，如果网页中 charset=gb2312，则xxxx=gb2312，如果网页中的charset=ipaddr，则xxxx=ipaddr (开个玩笑，没这编码)<br>几乎所有WEB程序，都有一段连接数据库的公共代码，放在一个文件里，在这文件里，加入MySQL_query(“set names”)就可以了。<br>3.PHPMyAdmin不需要做改动。<br>4.需要注意的是，为保证网页实际编码(Windows保存对话框里的编码)和他声明的编码(charset=?)是一致的，请用DW之类的工具做网页。</font>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e5bc80e6ba90e59bbee78987e7aea1e79086e7b3bbe7bb9f" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/10/12/e5bc80e6ba90e59bbee78987e7aea1e79086e7b3bbe7bb9f/" class="article-date">
+  <time datetime="2009-10-12T09:05:20.000Z" itemprop="datePublished">Oct 12 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>►<a class="article-category-link" href="/categories/php/php开源程序/">php开源程序</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/10/12/e5bc80e6ba90e59bbee78987e7aea1e79086e7b3bbe7bb9f/">开源图片管理系统</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图片管理/">图片管理</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <h4 id="Plogger_"><a href="http://www.php-open.com/open188317.htm" target="_blank" rel="external">Plogger </a></h4>
+<p>Plogger这个开源图片管理系统易于安装并易于与你的现有网站相集成。支持按设定尺寸自动生成缩略图，支持一些主流图片格式包括JPG、BMP、PNG、GIF。支持为图片添加评论。集成JavaScript幻灯片浏览器。</p>
+<h4 id="_SPGM_"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open187117.htm" target="_blank" rel="external">SPGM </a></h4>
+<p>SPGM(Simple Picture Gallery Manager)该基于Web的图片管理器支持为图片加说明，不限制图片分类目录，支持对每个目录进行配置(支持继承)，随机或固定缩略图，对新图片加亮显示，支持EXIF，提供幻灯片浏览模式，易于集成到网站中，可按自己的喜好来调整界面主题样式，多语言支持(当前提供34种)。</p>
+<h4 id="_yappa-ng"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open187217.htm" target="_blank" rel="external">yappa-ng</a></h4>
+<p>yappa-ng是一个非常强大但非常易于安装和使用的在线PHP相册。支持所有操作系统(Linux/UNIX,Windows,MAC, …),和所有Web服务器(Apache,IIS,…)并且不需要数据库支持。每一张图片都可以以多种不同的尺寸进行查看，并且缩略图和所有其它调整大小都将自动快速创建。yappa-ng支持为相册设置密码保护，统计图片点击，设置图片评论功能。</p>
+<h4 id="_Gallery_"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open187317.htm" target="_blank" rel="external">Gallery </a></h4>
+<p>Gallery是一个开源基于Web的相簿管理器。用户可以使用Web浏览器上传图片(缩略图也同时被创建)，评价图片，添加注释和发送电子贺卡。管理员可以批量添加已经上传到FTP服务器上的图片。</p>
+<h4 id="_Slooze_"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open187517.htm" target="_blank" rel="external">Slooze </a></h4>
+<p>Slooze安装与使用都非常简单，而且具有很好的结构。</p>
+<h4 id="_LinPHA_"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open187617.htm" target="_blank" rel="external">LinPHA </a></h4>
+<p>LinPHA是一个易于使用，支持多语言，灵活的相册。它使用SQL数据库((<a href="http://www.mysql.org/" target="_blank" rel="external">MySQL</a>/<a href="http://www.postgresql.org/" target="_blank" rel="external">PostgreSQL</a>/<a href="http://www.sqlite.org/" target="_blank" rel="external">SQLite</a>)来存储你图片的的相关信息。它自带一个基于HTML的Installer，所以你不需要有架设SQL DB的经验。LinPHA的特性：完善的用户管理，把相册压缩成zip文件下载，统计最受欢迎的图片，包含上传功能的Web文件管理器，为图片加入水印，打印图片等。</p>
+<h4 id="_Qdig_"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open187717.htm" target="_blank" rel="external">Qdig </a></h4>
+<p>Qdig是一个非常简易的图片管理器(只有一个PHP脚本文件)。</p>
+<h4 id="_Zoph"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open187817.htm" target="_blank" rel="external">Zoph</a></h4>
+<p>Zoph(Zoph Organizes Photos)一个基于web的照片展示与管理系统。</p>
+<h4 id="_Leafs-Photo_management_"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open187917.htm" target="_blank" rel="external">Leafs-Photo management </a></h4>
+<p>Leafs是一个基于web的照片管理软件.访问者可以上传图片和添加评论,所有页面都处理成静态页面.Leafs还为基于搜索引擎的图片搜索提供一些支持.</p>
+<h4 id="_Snipe_Gallery"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open187017.htm" target="_blank" rel="external">Snipe Gallery</a></h4>
+<p>Snipe Gallery是一个基于PHP+MySQL开发的图片管理器。它的特点：易于安装；提供跨平台剪切和缩略图片的工具；支持PNG,JPG和GIF格式；支持使用.zip上传来批量导入图片；按设置自动调整图片大小；支持通过标题，描述，摄影者，位置和关键字搜索图片；支持为图片加文本水印。</p>
+<h4 id="_My_Image_Gallery_"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open188217.htm" target="_blank" rel="external">My Image Gallery </a></h4>
+<p>Mig是一个相册管理系统。它提供的包括缩略图创建(调用<a href="http://www.imagemagick.org/" target="_blank" rel="external">ImageMagick</a>实现)，从JPEG文件抽取EXIF标题等功能。</p>
+<h4 id="_minishowcase_"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open207917.htm" target="_blank" rel="external">minishowcase </a></h4>
+<p>minishowcase一个漂亮的Ajax/PHP相册脚本。不需要复杂的数据库或编码。</p>
+<h4 id="_iFoto_"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open188517.htm" target="_blank" rel="external">iFoto </a></h4>
+<p>基于CSS，GD2，文件真正简单的PHP相册。不需要MySQL。</p>
+<h4 id="_phpAlbum-net_"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open188717.htm" target="_blank" rel="external">phpAlbum.net </a></h4>
+<p>易于安装和使用，不需要数据库。提供密码保存，缓存，自动缩略和图片大小调整等。</p>
+<h4 id="_singapore_"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open188817.htm" target="_blank" rel="external">singapore </a></h4>
+<p>singapore是一个开源，多语言支持，模板驱动的图片管理器。它不需要数据库，所有图片信息都存储在CSV文件中。</p>
+<h4 id="_phpGraphy"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open188917.htm" target="_blank" rel="external">phpGraphy</a></h4>
+<p>phpGraphy这个相册管理系统：支持实时生成缩略图/低分辩率的图片。提供用户评论/评价系统。显示最受欢迎/最近更新/修改的图片。支持幻灯片浏览方式。对图片和目录实行角色访问控制。支持操作EXIF/IPTC元数据。它还易于安装高度可配置(主题/模板)。</p>
+<h4 id="_PhpWebGallery_"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open189017.htm" target="_blank" rel="external">PhpWebGallery </a></h4>
+<p>PhpWebGallery是一个带有非常简单的安装界面和管理面板的图片管理系统。它的特点包括：可设置自由或限制图片访问，角色/用户管理，多服务器支持，支持用户评论，采用HTML模板控制界面外观，多语言支持，一个RSS通知Feed，EXIF和IPTC元数据管理，多目录支持(每一张图片可以同时属于多个目录)，所有Web页面都兼容W3C规范。</p>
+<h4 id="_Phormer"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open203417.htm" target="_blank" rel="external">Phormer</a></h4>
+<p>Phormer是一个轻量级，强大的PHP在线相册。不需要MySQL,易于安装。支持Ajax上传/评论/评价,主题/样式(CSS)更换,RSS输出，EXIF，对图片进行分类，加权限控制，集中上传(ZIP)，幻灯片的形式展示等等</p>
+<h4 id="_Pyxy-gallery"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open205317.htm" target="_blank" rel="external">Pyxy-gallery</a></h4>
+<p>基于Ajax技术的PHP相册。</p>
+<h4 id="_Cheesecake"><img src="http://www.php-open.com/image/item.gif" alt=""> <a href="http://www.php-open.com/open206217.htm" target="_blank" rel="external">Cheesecake</a></h4>
+<p>Cheesecake基于cakePHP框架开发。具有自动创建缩略图，幻灯片浏览方式，添加注释(自动屏蔽垃圾信息)，易于管理，Tag支持等特点。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-jpgraphe4b8ade69687e4b9b1e7a081e997aee9a298" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/09/24/jpgraphe4b8ade69687e4b9b1e7a081e997aee9a298/" class="article-date">
+  <time datetime="2009-09-24T06:41:53.000Z" itemprop="datePublished">Sep 24 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/09/24/jpgraphe4b8ade69687e4b9b1e7a081e997aee9a298/">JpGraph中文乱码问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jpgraph/">jpgraph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><a href="http://www.aditus.nu/jpgraph/" target="_blank" rel="external">JpGraph</a>是一个PHP的图形类库，可以方便地生成各种柱状图，饼图，折线图等等，而且还可以方便地加文字。但是，中文的情况就稍微麻烦了一点。在JpGraph中默认是要把字符串转成utf8的，但是如果你的文件本身就是utf8的，并且要用中文字体，它还会转一遍，结果多转了一次，就会出现乱码。</p>
+<p>除了编码问题，还有就是字体问题。为了试验中文显示，专门拷了一个simsun.ttc过来是，在代码里用FF_SIMSUN就可以正确显示中文，但是如果改用自己设置的FF_CHINESE，也就是uming.ttf，就又乱码了，而且和simsun.ttf乱码时的不一样。 后来发现FF_CHINESE和FF_BIG5是一样，是繁体字体，所以和用FF_SIMSUN的乱码还不一样。</p>
+<p>解决以上问题的方法也就是传递正确的中文字符串给JpGraph，所以可以把字符串先转成gb2312的，这样JpGraph就可以正确转换了。当然，这个方法比较麻烦，每次都需要，还可以直接修改jpgraph_ttf.inc.php，我用的是2.2版本的，大概在99到106行之间的：</p>
+<ol>
+<li>elseif( $aFF === FF_SIMSUN ) {</li>
+<li>// Do Chinese conversion</li>
+<li>if( $this-&gt;g2312 == null ) {</li>
+<li>include_once ‘jpgraph_gb2312.php’ ;</li>
+<li>$this-&gt;g2312 = new GB2312toUTF8();</li>
+<li>}</li>
+<li>return $this-&gt;g2312-&gt;gb2utf8($aTxt);</li>
+<li>}  </li>
+</ol>
+<p>注释掉已有代码，直接返回$aTxt：</p>
+<ol>
+<li>elseif( $aFF === FF_SIMSUN ) {</li>
+<li>// Do Chinese conversion</li>
+<li>//if( $this-&gt;g2312 == null ) {</li>
+<li>//&#160;&#160;&#160; include_once ‘jpgraph_gb2312.php’ ;</li>
+<li>//&#160;&#160;&#160; $this-&gt;g2312 = new GB2312toUTF8();</li>
+<li>//}</li>
+<li>//return $this-&gt;g2312-&gt;gb2utf8($aTxt);</li>
+<li>return $aTxt;</li>
+<li>}  </li>
+</ol>
+<p>这样就可以“一劳永逸”了。<br> <a href="http://blog.joypig.org/archives/179" target="_blank" rel="external">http://blog.joypig.org/archives/179</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-jpgraph-e4bb8be7bb8de58f8ae4b8ade69687e4b9b1e7a081e8a7a3e586b3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/09/24/jpgraph-e4bb8be7bb8de58f8ae4b8ade69687e4b9b1e7a081e8a7a3e586b3/" class="article-date">
+  <time datetime="2009-09-24T06:34:11.000Z" itemprop="datePublished">Sep 24 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/09/24/jpgraph-e4bb8be7bb8de58f8ae4b8ade69687e4b9b1e7a081e8a7a3e586b3/">JpGraph 介绍及中文乱码解决</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jpgraph/">jpgraph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>转自：<a href="http://hi.baidu.com/lwcandwo" target="_blank" rel="external">笑笑驿站</a></p>
+<p>PHP绘图类库jpgraph，<br>下载地址：<a href="http://www.aditus.nu/jpgraph/jpdownload.php" target="_blank" rel="external">http://www.aditus.nu/jpgraph/jpdownload.php</a><br>开始以为他不支持中文，所以先在网上找了教程，教程写着要设置字库路径等。结果我下的那个版本一点都不用设置人家就写好了。如果是WIN系统就是根据环境变量找到系统的要目录。在加上“/fonts/”从而自动就找到字体了。<br>当然如果是UNIX你可以把你WINDOWS/FONTS下的所有的TTF文件和一个simsun.ttc文件传入一个目录上。然后在jpgraph的src目录下找到jpgraph.php文件有一句<br>DEFINE(‘TTF_DIR’,’/usr/X11R6/lib/X11/fonts/truetype/‘);<br>改成你上传的那个字体目录就OK了。<br>在你运行时可能会遇到说错误说你的PHP少FREETYPE2.支持<br>你可以安装一下FREETYPE并编译进你的PHP。你只要在你的./configure选项加入一个 —with-freetype-dir=/usr/local/include/freetype2 我的freetype2是在这个下面的。你可以看看你安装在哪了。改成你的目录就可以了。<br>只不过要有写代码时加入一个$graph-&gt;xaxis-&gt;title-&gt;SetFont(FF_SIMSUN,FS_BOLD);<br>其中FF_SIMSUN就是中文，后面那个是字体的样试。<br>背景图是可以自己指定的。<br>这个其实没有什么难点中不过那个右上角的那些中文显示有点难度，因为那个类没有SetFont方法，也就是说那东西是不能显示中文的。所以我就改了基础类库<br>修改了jpgraph.php文件里的。<br>class Legend 类中有这样一句<br>&#160;&#160; private $font_family=FF_FONT1,$font_style=FS_NORMAL,$font_size=12;<br>我把他改为<br>private $font_family=FF_SIMSUN,$font_style=FS_NORMAL,$font_size=8;<br>就OK了。</p>
+<p>代码如下：</p>
+<p>&lt;?php<br>include (&quot;src/jpgraph.php&quot;);<br>include (&quot;src/jpgraph_bar.php&quot;);<br>// Some data&#160;&#160; 所有的数据也就是我们想要的数据<br>$datay1=array(140,110,50,270,78);<br>$datay2=array(35,90,190,190,56);<br>$datay3=array(20,60,70,140,34);<br>// Create the basic graph 设置图片属性<br>$graph = new Graph(450,250,’auto’); //图片大小<br>$graph-&gt;SetScale(&quot;textlin&quot;);&#160;&#160;&#160; //图片类型<br>$graph-&gt;img-&gt;SetMargin(40,90,30,40); //margin（填充）左、右、上、下<br>// Adjust the position of the legend box<br>$graph-&gt;legend-&gt;Pos(0.01,0.10);&#160;&#160;&#160; //显示右上角的注释的位置 X，Y<br>// Adjust the color for theshadow of the legend<br>$graph-&gt;legend-&gt;SetShadow(‘darkgray@0.5’);&#160;&#160;&#160; //是否有阴影 类型@程度值<br>$graph-&gt;legend-&gt;SetFillColor(‘lightblue@0.3’);&#160;&#160; //填充颜色<br>// Get localised version of the month names<br>//var_dump($gDateLocale-&gt;GetShortMonth());<br>$graph-&gt;xaxis-&gt;SetTickLabels(array(&quot;1月&quot;,&quot;2月&quot;,&quot;3月&quot;,&quot;4月&quot;,&quot;5月&quot;,&quot;6月&quot;,&quot;7月&quot;,&quot;8月&quot;,&quot;9月&quot;,&quot;10月&quot;,&quot;11月&quot;,&quot;12月&quot;));&#160;&#160; // X 轴数据<br>// Set a nice summer (in Stockholm) image //如果有背影图 可以指定<br>$graph-&gt;SetBackgroundImage(‘stship.jpg’,BGIMG_COPY);<br>// Set axis titles and fonts<br>$graph-&gt;xaxis-&gt;title-&gt;Set(‘Year 2006’);&#160;&#160;&#160;&#160;&#160; //图片最右下角的文字。一般为单位<br>$graph-&gt;xaxis-&gt;title-&gt;SetFont(FF_SIMSUN,FS_BOLD);&#160;&#160; //设置字体<br>//设置X轴的说明。与图片的距离<br>$graph-&gt;xaxis-&gt;title-&gt;SetMargin(8);<br>$graph-&gt;xaxis-&gt;title-&gt;SetColor(‘white’);<br>$graph-&gt;xaxis-&gt;SetFont(FF_SIMSUN,FS_BOLD);<br>$graph-&gt;xaxis-&gt;SetColor(‘white’);<br>//$graph-&gt;yaxis-&gt;SetFont(FF_FONT1,FS_BOLD);&#160;&#160;&#160;&#160; //设置 Y 轴<br>$graph-&gt;yaxis-&gt;title-&gt;SetFont(FF_SIMSUN,FS_BOLD);<br>$graph-&gt;yaxis-&gt;SetColor(‘white’);<br>//$graph-&gt;ygrid-&gt;Show(false);<br>$graph-&gt;ygrid-&gt;SetColor(‘white@0.5’);<br>// Setup graph title 设置标题<br>$graph-&gt;title-&gt;Set(‘会员域名注册量分析’);<br>// Some extra margin (from the top)<br>$graph-&gt;title-&gt;SetMargin(3);<br>$graph-&gt;title-&gt;SetFont(FF_SIMSUN,FS_BOLD,12);<br>//创建三个柱图 其中数组$datay1-3是数据<br>// Create the three var series we will combine<br>$bplot1 = new BarPlot($datay1);<br>$bplot2 = new BarPlot($datay2);<br>$bplot3 = new BarPlot($datay3);<br>//设置颜色并且有40%的透明度(alpha channel)<br>// Setup the colors with 40% transparency (alpha channel)<br>$bplot1-&gt;SetFillColor(‘orange@0.4’);<br>$bplot2-&gt;SetFillColor(‘brown@0.4’);<br>$bplot3-&gt;SetFillColor(‘darkgreen@0.4’);<br>//$bplot1-&gt;SetFont(FF_SIMSUN,FS_BOLD);<br>// Setup legendsSetWidth //设置显示右上角的注释 文字显示<br>$bplot1-&gt;SetLegend(‘北方区’);<br>$bplot2-&gt;SetLegend(‘华东区’);<br>$bplot3-&gt;SetLegend(‘华南区’);<br>//$bplot1-&gt;SetWidth(10);<br>//$bplot2-&gt;SetWidth(10);<br>//$bplot3-&gt;SetWidth(10);<br>// Setup each bar with a shadow of 50% transparency<br>$bplot1-&gt;SetShadow(‘black@0.4’);<br>$bplot2-&gt;SetShadow(‘black@0.4’);<br>$bplot3-&gt;SetShadow(‘black@0.4’);<br>//可以让每一个柱的真实数值显示是柱上<br>$bplot1-&gt;value-&gt;Show();<br>$bplot2-&gt;value-&gt;Show();<br>$bplot3-&gt;value-&gt;Show();<br>//<br>$gbarplot = new GroupBarPlot(array($bplot1,$bplot2,$bplot3));<br>//三个柱一个单元。设置这个单元的宽度<br>$gbarplot-&gt;SetWidth(0.6);<br>$graph-&gt;Add($gbarplot);<br>//显示<br>$graph-&gt;Stroke();<br>?&gt;</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-php-datee587bde695b0e58f82e695b0e8afa6e8a7a3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/08/24/php-datee587bde695b0e58f82e695b0e8afa6e8a7a3/" class="article-date">
+  <time datetime="2009-08-24T09:14:24.000Z" itemprop="datePublished">Aug 24 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2009/08/24/php-datee587bde695b0e58f82e695b0e8afa6e8a7a3/">PHP date()函数参数详解</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>time()函数在PHP中是得到一个数字，这个数字表示从1980-03-05到现在一共是多少秒，很奇怪，不过这样方便计算。<br>要找出前一天的时间就是 time()-60<em>60</em>24;<br>要找出前一年的时间就是 time()<em>60</em>60<em>24</em>365<br>那么如何把这个数字换成日期格式呢 ，就要用到date()函数了 </p>
+<p>$t=time();<br>echo date(&quot;Y-m-d H:i:s&quot; ，$t);</p>
+<p>每一个参数的格式分别表示:<br>a - &quot;am&quot; 或是 &quot;pm&quot;<br>A - &quot;AM&quot; 或是 &quot;PM&quot;<br>d - 几日，二位数字，若不足二位则前面补零; 如: &quot;01&quot; 至 &quot;31&quot;<br>D - 星期几，三个英文字母; 如: &quot;Fri&quot;<br>F - 月份，英文全名; 如: &quot;January&quot;<br>h - 12 小时制的小时; 如: &quot;01&quot; 至 &quot;12&quot;<br>H - 24 小时制的小时; 如: &quot;00&quot; 至 &quot;23&quot;<br>g - 12 小时制的小时，不足二位不补零; 如: &quot;1&quot; 至 12&quot;<br>G - 24 小时制的小时，不足二位不补零; 如: &quot;0&quot; 至 &quot;23&quot;<br>i - 分钟; 如: &quot;00&quot; 至 &quot;59&quot;<br>j - 几日，二位数字，若不足二位不补零; 如: &quot;1&quot; 至 &quot;31&quot;<br>l - 星期几，英文全名; 如: &quot;Friday&quot;<br>m - 月份，二位数字，若不足二位则在前面补零; 如: &quot;01&quot; 至 &quot;12&quot;<br>n - 月份，二位数字，若不足二位则不补零; 如: &quot;1&quot; 至 &quot;12&quot;<br>M - 月份，三个英文字母; 如: &quot;Jan&quot;<br>s - 秒; 如: &quot;00&quot; 至 &quot;59&quot;<br>S - 字尾加英文序数，二个英文字母; 如: &quot;th&quot;，&quot;nd&quot;<br>t - 指定月份的天数; 如: &quot;28&quot; 至 &quot;31&quot;<br>U - 总秒数<br>w - 数字型的星期几，如: &quot;0&quot; (星期日) 至 &quot;6&quot; (星期六)<br>Y - 年，四位数字; 如: &quot;1999&quot;<br>y - 年，二位数字; 如: &quot;99&quot;<br>z - 一年中的第几天; 如: &quot;0&quot; 至 &quot;365&quot;<br>其它不在上列的字符则直接列出该字符</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/tags/php/page/3/">&laquo; Prev</a><a class="page-number" href="/tags/php/">1</a><a class="page-number" href="/tags/php/page/2/">2</a><a class="page-number" href="/tags/php/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/tags/php/page/5/">5</a><a class="extend next" rel="next" href="/tags/php/page/5/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

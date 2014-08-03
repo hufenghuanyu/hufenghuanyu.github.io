@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2007/8 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/2007/08/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-umask" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/30/umask/" class="article-date">
+  <time datetime="2007-08-30T14:52:00.000Z" itemprop="datePublished">Aug 30 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/30/umask/">umask</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>功能说明：指定在建立文件时预设的权限掩码。 </p>
+<p>语　　法：umask [-S][权限掩码] </p>
+<p>补充说明：umask可用来设定[权限掩码]。[权限掩码]是由3个八进制的数字所组成，将现有的存取权限减掉权限掩码后，即可产生建立文件时预设的权限。 </p>
+<p>参　　数： </p>
+<p>-S 　以文字的方式来表示权限掩码。 </p>
+<p>文件：用八进制基数666，即无x位（可执行位）rw- rw- rw-.执行位需由用户自行加入。</p>
+<p>例一：设要生成的文件以rw- r— r—这样的权限字出现，即真实权限用八进制表示为644，则被666基数减得022，022即掩码。使用umask 022。</p>
+<p>注：033效果与022一样，假设使用033掩码进行设置，则真实权限应为633即rw- r-x r-x ，但前提规定文件不生成x位，所以文件的权限最终将以rw-r—r—出现。</p>
+<p>目录：用八进制基数777</p>
+<p>例二：设要生成的目录权限以rwxr-xr-x这样的权限字出现，即真实权限用八进制表示为755，则被基数为777的权限字相减后，得掩码022。则使用umask 022进行设置。</p>
+<p>总结：</p>
+<p>掌握二个要点，一、文件基数为666，目录为777，即文件无设x位，目录可设x位。二、chmod是设哪个位，哪么哪个位就有权限，而umask是设哪个位，则哪个位上就没权限。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e58e9fe5889be380916233e9809ae8af9de5a3b0e99fb3e5b08fe8a7a3e586b3e696b9e6b395e4b880e58899" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/28/e38090e58e9fe5889be380916233e9809ae8af9de5a3b0e99fb3e5b08fe8a7a3e586b3e696b9e6b395e4b880e58899/" class="article-date">
+  <time datetime="2007-08-27T19:07:00.000Z" itemprop="datePublished">Aug 28 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/28/e38090e58e9fe5889be380916233e9809ae8af9de5a3b0e99fb3e5b08fe8a7a3e586b3e696b9e6b395e4b880e58899/">【原创】6233通话声音小解决方法一则</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  印象中，我的6233刷了5.43R之后突然发现通话声音小了起来，很多时候稍微嘈杂一点根本听不清楚，怀疑是系统问题，不过手头暂时没有装Windows XP的机器，在网上搜也基本发现是听筒问题，和软件无关；郁闷中想拆机清理灰尘，没有螺丝刀没办法拆，于是只好用笔清理在听筒前面的小孔清理了一下，结果声音突然大了起来</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  很大很大 </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  相当满意</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e5a4a7e4bc97e782b9e8af84e7bd91e5bca0e6b69befbc9aweb20e585b3e994aee698afe590b8e5bc95e6a0b8e5bf83e794a8e688b7efbc88e98089e69198efbc89" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/25/e5a4a7e4bc97e782b9e8af84e7bd91e5bca0e6b69befbc9aweb20e585b3e994aee698afe590b8e5bc95e6a0b8e5bf83e794a8e688b7efbc88e98089e69198efbc89/" class="article-date">
+  <time datetime="2007-08-24T16:59:00.000Z" itemprop="datePublished">Aug 25 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/25/e5a4a7e4bc97e782b9e8af84e7bd91e5bca0e6b69befbc9aweb20e585b3e994aee698afe590b8e5bc95e6a0b8e5bf83e794a8e688b7efbc88e98089e69198efbc89/">大众点评网张涛：Web2.0关键是吸引核心用户（选摘）</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>全文地址:<a href="http://tech.sina.com.cn/i/2007-08-24/14271697298.shtml" target="_blank" rel="external">http://tech.sina.com.cn/i/2007-08-24/14271697298.shtml</a></p>
+<p>　　8月24日上午，<a href="http://corp.iresearch.cn/0409/16024.shtml" target="_blank" rel="external">大众点评网</a>CEO<a href="http://people.iresearch.cn/0410/16025.shtml" target="_blank" rel="external">张涛</a>做客白银时代，聊城市消费指南网站，IDC中国跨产品研究部高级分析师黄涌涛（BLOG）参与此次聊天。</p>
+<p><strong>　　张涛表示像大众点评网这样的Web2.0网站的关键是吸引核心用户，大众点评网目前经常发表评论的用户占总数的1%，但这些用户的内容对绝大多数用户形成黏性，这种黏性也是Web2.0最高的门槛。</strong></p>
+<p><strong>　　张涛认为，用户在消费时最大的参考是朋友的口碑，大众点评网就是通过网络把这个口碑成百倍、成千倍地放大，引爆口碑营销，这是大众点评网最大的市场价值。张涛也表示，大众点评网绝不会通过排名收费，而是与<a href="http://corp.iresearch.cn/0409/5470.shtml" target="_blank" rel="external">Google</a>类似将搜索内容与赞助商广告分开。</strong>　　</p>
+<font size="3" color="#0000ff"><strong>因解决遇到的实际问题而产生想法创建网站，这个和Youtube等产生的最初动机一致</strong></font>
+
+<p>张涛：2003年初，当时我刚从美国回上海，因为本人也比较爱好美食，到上海找食很困难，当时也没有书、网上告诉我哪个餐馆比较好，比较沮丧，我的朋友知道的也不多。因为当时在美国有一本书叫查氏，欧洲有本叫米其林，我在欧洲经常用。美国也有2.0一些雏形的网站出来，像现在大家比较知道的维基百科，还有不是纯是2.0的网站，但是有2.0的影子在里边比如亚马逊书评，像ebay用户的评级，某种意义上也是一个互动点评的功能。感觉到我回国创业的设想，做一些互联网的事情，就想本人也比较爱吃，也缺少这方面的信息，也想做一个互联网。结合查氏的运作模式和亚马逊书评、危急的群众参与、互动点评的方式，觉得在互联网上做起来，感觉是挺有意思的一件事，那时就开始做了。</p>
+<p>　　主持人：一开始实际上是为了解决自己遇到的一些问题才开始做这样一个网站？</p>
+<p>　　张涛：没错，刚开始这个网站一个人，我也不是非常懂编程，在上海福州路买了一本《网页设计三剑客》，回去啃了两天，做了一个非常非常简单、非常丑陋的一个网页，然后就上去了，初创的时候，也不完全说创业，感觉是闹着玩的，挺好玩，因为回国挺新鲜，就这样做起来。</p>
+<font size="3" color="#0000ff"><strong>有想法要坚持下去哈:)</strong></font>
+
+<p>黄涌涛：我刚才听张总突然谈到了一个跟我特别相似的经历。其实张总回来的时候买过网页三剑客，我也买过，而且也做过两个比较简陋的网页，但是可能我拿那个网页跟新浪一比，立刻自己就感觉非常羞愧，没有做下去。张总因为是从海外归来，能看到未来的发展前景，就一直往前做，就做成中国一个很好的点评网站了。就体现了分析师和创业家的区别，我们很多时候想去做这个事情但是没有胆量，或者是尝试了一下就退回来了。张总能一直往前冲，最后就把这个做得比较好了。</p>
+<p>　　其实关于大众点评网我听到两种评论，一种是说大众点评网其实门槛很低，大家都很承认大众点评网的成功，但是门槛很低。因为它无论是在整个思路上，还是一个构架上，门槛很低。另外一种，大众点评网这种看自简单的方式，其实保持住了用户最高的黏性，一旦保持住了，就无法超越。张总能不能客观地评价一下这两种看法？</p>
+<p>　　张涛：门槛低，你前面说了一句非常精辟的话，门槛低是对的，也是错的。刚开始的时候做这样一个网站，实现这些功能，里边一些技术含量，应该不是非常非常困难的事情。但是越到后面，门槛就会越高。像大众点评网一旦形成了一个非常忠实的用户群，他们在里边不断地参与，提供点评，提供我们的内容。因为我们本身是一个消费指南型的网站，过了一段时间形成一个品牌，就类似于像查氏、<a href="http://corp.iresearch.cn/0409/5794.shtml" target="_blank" rel="external">携程</a>、米其林，到后面更多是<font color="#ff0000"><strong>核心用户群黏性的一个壁垒还有品牌的壁垒</strong></font>。</p>
+<font size="3" color="#0000ff"><strong>成功的Web2.0网站共同的发展轨迹</strong></font>
+
+<p>张涛：我的理解大众点评网可能从广泛意义上来讲，web2.0需要用户参与的这些网站，刚开始的时候，能够吸引一批比较核心的用户群，这是非常非常关键。往往刚开始半年、一年，发展可能相对比较缓慢，从一般的衡量标准，浏览量、使用量并不会一下子有一个爆发式的发展，这时你其实更多是在积累一批核心的用户，而这批核心用户的文化、写作风格，他们的一些生活习惯决定了这个网站将来的发展情况。大众点评网也是这样，刚开始几年是发展一些核心用户，一旦有了核心用户，源源不断提供类似，之后是更多人会过来浏览、欣赏这些内容。 </p>
+<font size="3" color="#0000ff"><strong>如何发展第一批用户</strong></font>
+
+<p>主持人：你们一开始怎么吸引这些用户到上面发表评论？可能之前有些BBS的人在里面聊天，但是你怎么让一些普通用户上去对餐馆发表评论，之前都没有人做过。</p>
+<p>　　张涛：说老实话，2003年初，我们只在上海做一个上海站，这是我们的一个体会。我们刚开始可能做的比较小，只从上海、餐饮做起，这可能也奠定了我们以后发展的基础，因为很多网站一下子想全面铺开，全国城市都覆盖，餐饮、分类信息都做一遍，感觉难度会一大点。刚开始，一开始我是抱着玩的心态，感觉是一个个人的爱好，就在上海。因为我以前也没做过互联网，刚开始推广渠道，现在看上去可以说非常幼稚或者是简单。其实我的朋友在国内也不多，因为也离开十年了，我找了一下还在联系的高中同学，我家里的人也比较爱吃，就把十几个爱吃的人联络起来，发电子邮件给他们，这是我做的一个网页，你们一定要过来点评。甚至我鼓动我的爸爸，我的爸爸当时60多岁了，也爱吃，也在上面点评，他从来没上过网（笑）。</p>
+<p>　　就这样发展起来。之后可能在一些相关的网站里做一些推广，比如当时携程，跟我们的用户群感觉定位比较类似，新浪的一些美食论坛，我也记得做过一些推手，注册一个马甲，推广我们的网站，在当地的媒体做一些小小的广告，上海正好有两个媒体，白领关注度还是挺高的，在上面做了非常豆腐干的一个广告，几百块钱。效果还不错，因为刚开始不需要很大的用户量，需要很多人过来点评。<font color="#ff0000"><strong>当时注册和点评的人的比例非常高，可能有30%到40%左右。我们现在可能更多是1%.</strong></font></p>
+<p>　　张涛：<strong><font color="#ff0000">大部分人只是在看，真正创造内容是1%.可能再过一年就不一定能超过1%.非常原始、非常幼稚，回想起来觉得也是非常非常有效，是非常非常有效的一个方式</font></strong>，就这样发展起来。前3、4年几乎没有做过任何广告的投入，我们也做过尝试，但是感觉效果不是很好，因为在内容没有起来之前，你投平面的广告，我们也投过新浪的网站，效果不是很好。<font color="#ff0000"><strong>刚开始可能需要草根的一些做法，需要口碑的传播，前3、4年绝大多数用户都是通过口碑过来的。</strong></font></p>
+<p>　　黄涌涛：但后来我看到大众点评网的时候，给我特别震惊的一个东西是什么呢？可能您这个一下子就掐中了餐饮业的脉，一下子把住了这个脉。因为这种<strong><font color="#ff0000">口碑营销</font></strong>的威力，通过大众点评网的方式就一下子释放出来了。今天我在想大众点评网的时候仍然想有两个问题：第一个问题你怎么面对那么多做模仿你们的网站，甚至做很大的网站。这种模仿和复制的风气愈演愈烈的时候，你觉得这种竞争会不会损害你最终的一个商业目标的达成？第二，我们今天已经看到大众点评网用户体验上面形成了一个很好的社区、一个联系，你怎么去逐步把它的商业价值逐步地挖掘出来，现在是不是应该更深度挖掘其中的商业价值？</p>
+<p>　　张涛：关于模仿我们的网站，特别是记得国外2.0概念出来，国内很短的时间就开始媒体宣传非常多，无穷无尽的2.0的网站都出来，那时模仿的网站确实特别多，各个层次、大的、小的，有的跟我们做得一模一样，甚至连内容都一模一样，完全是拷贝过去。但是这类网站可能也跟我们之前谈的类似，我们倒不是非常担心，其实你拿了内容，就算做得一模一样，把我们原代码拿去，其实没有用。<strong><font color="#ff0000">真正有用的是用户</font></strong>，你能够哪一天，如果一个网站在上海、北京，我们这些食神都要对网站进行点评，在里边做互动，那时我对这个竞争将非常非常担心，这是我们的核心竞争力。</p>
+<p>　　还有就是<font color="#ff0000"><strong>品牌</strong></font>，现在可能在上海、北京，说到吃饭，可能你们脑子里想的第一反应之一是到大众点评网去查一下，这就是品牌的威力。如果哪一天，某某网站吃饭，想到是那个网站，这也是我担心的时候。到目前为止，这一类网站没有出现。从这个意义上来讲，就算是非常非常大的网站，包括新浪，其实我们跟新浪有一个合作。包括像<a href="http://corp.iresearch.cn/0409/5581.shtml" target="_blank" rel="external">百度</a>，如果完全跟我们做得一样去做，我也不觉得是一个非常大的威胁，这个东西需要花很多东西去培植社区，品牌也不是一天两天能够培植出来的。</p>
+<p>　　第二，关于商业价值。当时说老实话我没有非常非常细想具体怎么赚钱，可能我们现在已经有一些具体概念了，当时总的思路，我觉得到现在还是成立的。怎么样的思路？一方面<strong><font color="#ff0000">作为一个用户习惯，有没有互联网业好，特别是在中国吃饭，最大的一个参考是口碑，最大的参考是他的朋友。</font></strong>我们做这件事情其实就是通过网络把这个口碑成百倍、成千倍地放大了。</p>
+<p>　　这是这个网站存在的一个最基本的原因，也是受欢迎的一个最基本的原因。</p>
+<p>　　因为有这么多的内容在里边，而且因为通过用户参与的形式，用户是源源不断地在更新的。这样的话，你会有成百万、上千万的最终用户去看。而且这些用户非常显著的特点就是都是我们所谓的<font color="#ff0000"><strong>意见领袖</strong></font>，出去吃饭看到一桌人十几个人，如果这里边有一两个人是我们的会员，我可以担保这一两个人不是定餐的就是在里边点菜的，就是意见领袖。其实他们真正掌握的消费能力又是十倍、百倍的扩散。我们有百万的用户，有影响到千万的人，这是一个方面。这些人决定了钱包到哪里花钱，他们影响下线的一个行业，就是餐饮业。餐饮业的特点又是非常中小型的企业居多，不像媒体，像新浪，一个餐馆做得再大，也不可能占据北京多大的市场，就是一个城市有几万家参观，高度分散的一个市场。这样我们当中做一个平台，有非常高度分散的用户群，都是意见领袖。非常高度分散的参观，而且竞争非常白热化，这个平台就有价值，从某种意义上，<font color="#ff0000"><strong>这个平台的价值其实非常类似于Google和百度的平台价值</strong></font>，<strong>一方面很多消费者在搜索，找他们想要找的东西，另外有成百万中小型的企业，他们想用非常精准的方式能够到达他们想达到的用户群，而且这些中小型商户跟我们餐馆一样，在传统的宣传渠道里他们没有渠道来宣传。做电视广告、报纸广告其实投入非常大，效果非常差。</strong>如果我3、4年前在想，这就是这个平台的价值。</p>
+<font size="3" color="#0000ff"><strong>这种做法相当明智，赚钱完全没必要太急功近利而损害了持续发展赚钱的能力</strong></font>
+
+<p>张涛：我们绝对不会通过排名来做。我们有一个口味的评分、环境的评分，像这类评分，我们是绝对不会作为一个商业来收费的，其实这跟Google的做法非常类似，<strong>Google有一个自然的排序，自然排序的结果是任何人不可能做商业修改，因为这是它的生存之本。但是它会做很多赞助商链接，比如你搜索洗衣店，按照它的搜索结果出来一个结果，你在旁边也可以做一些赞助商链接，这两个其实是不矛盾的。既保持了你的公正性、用户体验；同时，你表明这是一个赞助商链接，这会是我们的一个做法。</strong></p>
+<p>　　我们其实有一个非常严格的系统，任何的点评我们不做任何商业化的介入，商户做任何评分，我们不做任何商业化的介入，我们永远不会做这方面的尝试。因为一旦我们开始做了，我们的品牌也削弱了，公司走下坡路也是一个迟早的事情。</p>
+<font size="3" color="#0000ff"><strong>所谓新媒体</strong></font>
+
+<p>黄涌涛：是不是说来自于商家或者是你们商业利润会相对于你们网站的发展有一个滞后的阶段？</p>
+<p>　　张涛：肯定会。因为从某种意义上我们是一个媒体，像百度是一个媒体，新浪是一个媒体，肯定有一个滞后。</p>
+<p>　　黄涌涛：你们是餐饮用户口碑的一个媒体。</p>
+<p>　　张涛：技术没有门槛，对用户的黏性才是门槛</p>
+<p>　　张涛：对，对。其实绝大部分互联网站是一个媒体，很多网站是一个电子商务，还有的网站是一个社区。我们是一个媒体类加一些社区因素的网站。所以，我同意你的说法，盈利肯定是滞后的。因为你一定要有比较大的用户群，才能产生这个媒体的价值，任何一个广告商才会感兴趣。</p>
+<font size="3" color="#0000ff"><strong>中国大的互联网环境成熟是此类网站能够发展起来的重要原因；以是否&ldquo;小资&rdquo;为标准对市场以及用户进行划分，相当巧妙</strong></font>
+
+<p>　　主持人：大众点评网在一线城市的影响力还是蛮不错的，现在大众点评网向二线、三线或者更小的城市的渗透、发展是一个什么样的状况？</p>
+<p>　　张涛：我们开始在上海大概做了一年就开始做北京、杭州，没多久就开始做广州、深圳，很多城市做的时间也不到两年。确实像你说的，我们刚开始城市扩展策略也是从一线城市到二线城市，而且一般是从相对比较小资的城市。我们像长三角、沿海城市扩张一般比较早一点，现在逐步进行内容扩张。总的来讲我们现在差不多有40多个城市站，一共信息有200多个，中小城市都有我们的信息，建站有40多个城市。感觉除了少数几个城市之外，我们在当地都应该是排名第一的餐饮类的指南网站。很多要跟当地的经济发展水平相关，说老实话这个网站如果我早回来十年，这个网站是没生命力的，没多少人会用。如果当时1999年在上海，人对吃的要求还属于半温饱的感觉，能够出去吃顿饭就可以了。当时上海出去吃饭，想到就是小南国、美林阁，在北京就是全聚德，不需要指南。</p>
+<p>　　到了2003年，明显感觉到2003年到现在，因为可能我对上海比较熟悉一点，餐饮业的发展非常迅速。以前都是一些做餐饮的人在做餐饮，现在可以看到越来越多做媒体、公关、房地产的人去做餐饮，这些人使得餐饮的竞争更加职业化，更加注重营销。这样的话，消费者也越来越知道，原来吃顿饭不单单是吃顿饭，口味好是重要的，但是也不单单是注重口味，其实越来越注重环境、服务，而且要不同的环境。这时我们这类网站就越来越有生命里，因为出去选择的越来越多了，需要人家来指引你一下。二线城市迟早会像上海和北京一样，可能也就是这几年的时间。</p>
+<p>　　黄涌涛：您预计像这种西北、东北或者是西南，西南还好一些，有成都，或者咱们说不够小资的城市，大众点评网会什么时候当地拥有一个很好的发展？</p>
+<p>　　张涛：我们有时内部也开玩笑，<strong>看我们点评网里面的会员活跃度可以看出这个城市的小资程度</strong>，算是一个<font color="#ff0000"><strong>小资指数</strong></font>。最近我们感觉天津发展不错，我们是明显感觉到天津的活跃度很好，跟报纸一对应，天津确实发展很好。你说西南，其实成都非常小资，成都上面明显感觉到活跃量不错。</p>
+<p>　　我挺惊讶的是一些北方城市，像沈阳，沈阳的活跃度也非常好。所以，不一定单单就是纯粹传统意义上的沿海，感觉中国整个每个城市的发展还是非常健康。</p>
+<font size="3" color="#0000ff"><strong>用户创造内容，Web2.0的核心价值之一</strong></font>
+
+<p>张涛：讨巧的方式是因为很多内容是用户产生的，像新浪最强的队伍也是编辑，我的编辑就是我的网友。一旦他们编辑自发地在里边贡献内容，我不需要管他们，他们很努力，每天晚上凌晨都在写，而我又不用付他工资，这是一个讨巧的方式，而且不用管他，他也很开心。我觉得这真是做社区一个讨巧的方式。</p>
+<font color="#0000ff"><strong>如何引爆口碑营销是成功的关键</strong></font>
+
+<p>黄涌涛：我理解张总说的讨巧，他找到了餐饮行业的<strong>引爆点</strong>，成功地把<strong>口碑营销</strong>给<strong>引爆</strong>了，这其实是很多创业者一直在苦苦寻求的一个东西，但是其实是很难找到的。但是一旦找到了，你就能发现它非常大的威力。</p>
+<font size="3" color="#0000ff"><strong>伴随着整个宏观经济水平以及居民生活水平和消费水平的上升，个性化需求的持续发展（所谓挑剔），这将会带来无限商机</strong></font>
+
+<p>黄涌涛：我理解张总所说的这种小资，其实我觉得他是代表了每个城市的居民，随着生活物质的丰富，对饮食越来越<font color="#ff0000"><strong>挑剔</strong></font>的一种态度。其实从长远来看，我们去餐馆的次数都是逐渐增多的，但是每个城市又都是不一样的。所以，你说的小资可能是希望大家更多走出去到餐馆吃饭，回来再想我今天去的是哪个餐馆，性价比如何，口碑如何。</p>
+<p>　　张涛：没错，接下来可能不单单是餐馆了。上海我们有其它频道，有休闲、娱乐、购物，最近明显感觉近期来休闲娱乐这块参与度越来越高。举个简单的例子，现在出去吃的多了，会对餐馆要求越来越高，但是过一段时间，不单单满足吃的，还有其它方面的需求，吃喝玩乐嘛，接下来要考虑。我这人可能也比较小资，刚到上海喜欢吃饭、按摩，我开始在上海找盲人按摩，开始更加注重按的好坏。现在发觉，现在到上海，当时那种按摩环境很差，就拿一个木桶，然后就是两个盲人，感觉就是去按摩去的。但是现在上海的按摩，不知道在北京怎么样，进去之后真的是感觉，不能叫它按摩了，叫它按摩感觉有点低了，叫SPA，真的是叫SPA，进去环境非常好，里面都是等离子的电视机，进去真是一种享受。</p>
+<p>　　这是随着生活水准的提高，每一个人的钱包越来越大，对生活质量要求越来越高，这类东西将来也越来越多具有点评的价值。国外很大点评的一块是牙医会有很大一块，医生会有很大一块，现在逐步逐步这也需求多了，以前的牙医就是牙防组。这也是一种趋势。</p>
+<font size="3" color="#0000ff"><strong>互联网成了商家宣传的重要渠道，大众点评网提供了类似百度Google以及淘宝等的作用：平台</strong></font>
+
+<p>张涛：没错，因为从我们的利益来讲我们绝对不希望出现商家点评，因为一旦出现其实是在降低我们的品牌。但是道高一尺，魔高一丈，现在有些开餐馆的本身就是媒体，有些可能是互联网的媒体，成天泡网，下面编辑跟我反映，他们对我们的规则比我们公司内部员工的规则还熟，比如我们有点评的信誉度，并不是你今天第一天上大众点评网点评一下，并显示不了，我们会根据登录数、点评数决定你这个评论显示还是不显示，有些参观老板已经知道我们怎么显示，会注册马甲，我们有一个IP判断，他可能换几台电脑去写。这是我们挺头疼的事情，我们今后会加大力度，杜绝这方面的情况。</p>
+<p>　　黄涌涛：看来懂互联网的老板比不懂互联网的老板有优势。</p>
+<p>　　张涛：有优势，我们还有部落，有些餐馆老板还到上面开部落，就变成他们宣传的，有些部落还非常火，在部落里邀一些朋友吃饭，给他们小的折扣，就在上面混着。懂互联网肯定对他非常有帮助，那是肯定。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e8bdace8bdbde38091e7ae80e58d95e59586e4b89ae6a8a1e5bc8fe4b98be7be8e" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/23/e38090e8bdace8bdbde38091e7ae80e58d95e59586e4b89ae6a8a1e5bc8fe4b98be7be8e/" class="article-date">
+  <time datetime="2007-08-22T21:03:00.000Z" itemprop="datePublished">Aug 23 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/23/e38090e8bdace8bdbde38091e7ae80e58d95e59586e4b89ae6a8a1e5bc8fe4b98be7be8e/">【转载】简单商业模式之美</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <font size="3" color="#ff0000"><strong>作者说出了实在而又容易被忽视的道理</strong></font>
+
+<p>原文链接:<a href="http://ubikr.com/archives/59" target="_blank" rel="external">http://ubikr.com/archives/59</a></p>
+<p>昨天，<a href="http://ubikr.com/" target="_blank" rel="external">优比客</a>跟一位朋友吃饭时，又一次体会到了简单商业模式的力量。这位朋友，几 年前回国创业，用了三年时间，把公司从1百万人民币，做到3千万美元的规模，并成功融资上千万美元。他的公司究竟在做什么呢？用这位朋友的话说，就是&ldquo;收 银机旁边放台打印机&rdquo;。这句话，是不是一下把大家的好奇心调动起来了？没错，这就是简单的商业模式具有的力量。</p>
+<p>原 来，这位朋友的公司主要业务是根据消费者在超市内的实际购买行为，在收银处向目标消费者实时打印、发放和处理个性化的优惠、促销和广告内容，以影响和改变 他们的下一次购买行为。比如，一位消费者买了尿布，就向她发放下次购买奶粉的优惠券。不难发现，通过这种目标营销，可以实现品牌厂商、零售商和消费者的 &ldquo;三方共赢&rdquo;。现在，他们的营销网络已经覆盖了全国300家零售大卖场，并且与一大批知名品牌建立了合作关系。</p>
+<p>在国外生活过的朋友，可能会很快联想到美国、欧洲的大超市也有类似的收银处优惠券打印服务。其实，这跟&ldquo;啤酒和尿布&rdquo;的案例一样，是数据挖掘技术在 零售领域的又一个应用。但这位朋友的创新之处，在于提供了一个第三方的大规模目标营销媒介，降低了品牌与零售机构、消费者三者之间的沟通成本。这种商业模 式，类似于分众的广告媒介服务，但能更好的为消费者创造价值，因此生命力会更长久。而商业模式上的创新和先发优势，确保了他们目前在国内零售市场上的成 功。</p>
+<p>好的商业模式，简单、优美，而又隐藏在日常生活之中。本客这位朋友，绝对不是第一个在国外超市看到优惠券打印服务的人，但却是第一个把这种模式搬到国内，并实现价值突破的人。从这个角度看，他完全符合一个创业家&ldquo;<a href="http://ubikr.com/archives/54" target="_blank" rel="external">见人所皆见，想人之未想，并使之发生</a>&rdquo;的标准。而本案例带给大家的另外一个启示，就是简单商业模式之美。</p>
+<p>对军事感兴趣的朋友，都知道在战斗机的气动外形设计中，有一个简单的原则，就是看上去优美、协调，让人感到舒服的战斗机外形，往往也是符合空气动力 学规律的最优设计。这是因为，无论自然界还是人类世界，美好、有效率的东西，从来都不是复杂扭曲，而是简单明了。这个规律自上而下，演绎到企业具体的商业 模式，也同样有效。正如投资人对创业者常说的，如果你在30秒的电梯演讲里，无法解释清楚你的商业模式，那就说明这个模式有问题，因为它不够直接明了。</p>
+<p>而从创业家的角度看，简单的商业模式大概有这么几个好处。首先，在创业初期，简单的商业模式，让投资人更容易理解，判断其可行性和市场价值。毕竟投 资人不是行业专家，对于不清晰，难以理解的商业模式，他们一般不愿轻易解囊。其次，复杂的商业模式，跟市场（包括消费和资本市场）沟通的成本高昂。百度在 纳斯达克上市取得历史性的成功，其中一个因素就是其商业模式可用&ldquo;中国的Google&rdquo;几个字解释，这是低成本资本市场沟通的一个范例。而<a href="http://mayi.com/" target="_blank" rel="external">蚂蚁网</a>，不知道可不可以作为高成本消费市场沟通的一个例子。再次，复杂的商业模式，千头万绪，运作起来往往困难的多。且不说创业家本身在执行过程中可能产生的幻觉，就算是没犯任何错误的完美执行，也不能保证没有意外出现。<a href="http://baike.baidu.com/view/40544.htm" target="_blank" rel="external">墨菲定律</a>说，&ldquo;凡是可能出错的都会出错&rdquo;。而<a href="http://baike.baidu.com/view/499546.htm" target="_blank" rel="external">崔西定律</a>则认为，&ldquo;任何工作的困难度与其执行步骤的数目平方成正比&rdquo;。不幸的是，这些规律，在各种创业活动中无一例外的反复被验证。</p>
+<p>与自然界和人类的任何活动一样，简单商业模式的发现，也有规律可循。比如，从&ldquo;卖水&rdquo;这个模式（pattern，不同于商业模式中的model）出 发，我们能构建出无数简单有效的商业模式。大家有时间，可以分析一下目前各种成功的简单商业模式具有的共性。如果有人能整理出一批商业模式 （business model，其实应译为&ldquo;商业模型&rdquo;）的设计模式（design patterns），也许能减少将来的创业家绕弯路的机会。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e8bdace8bdbde38091facebooke5a682e4bd95e587bbe6ba83myspaceefbc8cyahooefbc81e5928cgoogleefbc9f" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/23/e38090e8bdace8bdbde38091facebooke5a682e4bd95e587bbe6ba83myspaceefbc8cyahooefbc81e5928cgoogleefbc9f/" class="article-date">
+  <time datetime="2007-08-22T20:58:00.000Z" itemprop="datePublished">Aug 23 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/23/e38090e8bdace8bdbde38091facebooke5a682e4bd95e587bbe6ba83myspaceefbc8cyahooefbc81e5928cgoogleefbc9f/">【转载】Facebook如何击溃Myspace，Yahoo！和Google？</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>我的感觉:   <font size="3" color="#ff0000"><strong>基于类真实社会关系的内容聚合拥有无语伦比的竞争力</strong></font></p>
+<p>**转自 <a href="http://www.yeeyan.com" target="_blank" rel="external">译言</a></p>
+<p>原文链接:<a href="http://www.yeeyan.com/articles/view/ewine/1248#beginComment" target="_blank" rel="external">http://www.yeeyan.com/articles/view/ewine/1248#beginComment</a></p>
+<p>原文作者：<span>Christopher Beam </span>（<span>Slate.com</span>在线杂志专栏作家）**<span></span></p>
+<p>每个年轻人&mdash;&mdash;通常刚脱稚气&mdash;&mdash;必须作出一个重大的决定：选择<span>MySpace</span>或<span>Facebook</span>？一个人的选择也是品味问题。<span>MySpace</span>，如果你问我，那可是一个垃圾邮件满天飞的蛮荒之地。一般的使用者页面都带有大量的处于加载状态的诸如内嵌的音乐和视频播放器的废物，一些捡诱导壁纸，以及大量来自那些想要&ldquo;认识你&rdquo;的&ldquo;模特儿&ldquo;的好友请求。（其发生的频率是<span>Facebook</span>的近三倍。）<span>Facebook</span>，从另一方面来说，它少了许多定身量造，但是也变得更加安全可靠。它的界面适意，稳固，有吸引力同时少了许多浮华&mdash;&mdash;这种社会性网络你可以放心地介绍给家里的妈妈看。将它想像成像沃尔沃那样的社会性网络吧。</p>
+<p>但是几星期前，<span>Facebook</span>放弃了诸如<span>Myspace</span>那样的技术策略。这家网站推倒技术之墙，且对外围开发者开放页面源代码。一种新的称为&ldquo;<span>Facebook</span>平台&rdquo;的工具箱保被允许让任何程序员&mdash;&mdash;一位无聊的学生或数百万美元的法人&mdash;&mdash;剥开该网站的页面架构，并随意进行编辑，以及内部结构的重组。到目前为止近<span>900</span>多个被公开的程序中没有一个是能显著影响人们生活的&mdash;&mdash;在所有的附带软件中，<span>Graffiti</span>（涂鸦板）程序（根据其描述，有超过<span>330</span>万的人们下载）使得你能在其他人的页面上进行涂鸦，同时<span>Honesty Box</span>（真心话留言盒，<span>Facebook</span>的产品）能使你的朋友们化名发表他们对你的真实看法。<strong>如果<span>Facebook</span>能够想出一种轻便的方法以卸载这些迷你应用软件，它将更像一个社会性网络。<span>Facebook</span>将变为一个足以吞食整个互联网的全能站点。<span></span></strong></p>
+<p>对一切的有关<span><a href="http://www.secondlife.com/" target="_blank" rel="external">Second Life<img src="http://shots.snap.com/images/v2.18.1/t.gif" alt=""></a></span>（第二人生，一家著名的在线网游公司&mdash;&mdash;译注）的大肆宣传而言，在&ldquo;虚拟世界&rdquo;，只有<span>Facebook </span>和<span> MySpace</span>足以与之相提并论。当然，<span>Facebook</span>并没有那种大胸的<span>3D</span>形象，也没有自己的游戏业务和流通币。<strong>但是因特网的要义在于你并不需要涉足所有的领域</strong>。如果我要买东西，我会选择去<span>Amazon.com</span>，而不是一些至关重要的虚拟商店。甚至在<span>Facebook</span>允许外部应用程序之前，就已有成百万的用户基本知悉了页面的内部秘密。一个典型的<span>Facebook</span>人每天会花上数小时以发送信息，写日志或博客条目，还有上传照片，以及和那些同样喜欢<span>Decemberists</span>（一支<span>Indie</span>摇滚乐队&mdash;&mdash;译注）的菜鸟女孩进行有趣的交流。<span>Facebook</span>平台不过是扩展了这个交流世界。（据《华尔街时报》报道，从初创到现在，<span>Facebook</span>的主流用户人数已经跃升到了<span>2400</span>万到<span>2700</span>万的水平。）现在你可以查看本地的天气状况，或在线饲养一只虚拟宠物兔，也可以知晓你的朋友们都在听哪些音乐。除了少部分人也同时使用<span>Email</span>&mdash;&mdash;一种实时信息收发系统外，<span>RSS</span>（基于<span>XML</span>技术的在线共享内容的一种简易方式，也叫聚合内容&mdash;&mdash;译注）&mdash;&mdash;<span>Facebook</span>强制性捆绑使用的信息系统，其将创造一个庞大的用户群。<strong>用户们再也不必在网上到处漫游了，网络信息将主动送到我们面前来。<span></span></strong></p>
+<p>如果<span>Facebook</span>确信要变为一个多面的内容聚集平台，可能有些太迟。因为诸如<span><a href="http://www.my.yahoo.com/" target="_blank" rel="external">My Yahoo!<img src="http://shots.snap.com/images/v2.18.1/t.gif" alt=""></a></span>和<span><a href="http://www.google.com/ig" target="_blank" rel="external">iGoogle<img src="http://shots.snap.com/images/v2.18.1/t.gif" alt=""></a></span>这样的可自定制主页已经深入人心，也有一些新潮的个性化主页产品如<span><a href="http://www.netvibes.com/" target="_blank" rel="external">NetVibes<img src="http://shots.snap.com/images/v2.18.1/t.gif" alt=""></a></span>，<em><strong><span>Slate</span></strong></em>杂志的<span>Reihan Salam</span>称之为&ldquo;终极的内容聚合平台&rdquo;。但是<span>Facebook</span>的主页有一个巨大的内在优势：社会性网络已经建立。是的，另一种方式则是整合<span>Gmail</span>和<span>BBC</span>头条，<span>YouTube</span>视频搜索以及播客目录。<strong>若将社会关系与这些内容融合起来，不论如何，此举将使<span>Facebook</span>立即击败其主要竞争对手。</strong>通过<span>Facebook</span>的新闻订阅平台，它将能初步看出你的朋友们是何时开始使用一件新产品或服务的。这意味着最佳的附加软件将即刻变得至关重要起来&mdash;&mdash;到目前为止，<span>Platform</span>（加拿大第四大软件公司&mdash;&mdash;译注）的最大成功在于其提供了一个共享彼此偏好内容（<span>iLike</span>）的平台，这使其注册用户以每天<span>20</span>万人的速度递增。</p>
+<p>毫无疑问的是，<span>Facebook</span>的外围开发者们将进一步致力于为用户提供强大的内容聚合功能。<strong>这家网站日益增长的用户们，都是具有良好名誉以及干净社会形象的来自公司的精英们。<span></span></strong></p>
+<p>哪一种产品将被附带提供给<span>Facebook</span>的用户群呢？看起来每一家大公司都试图将社会性网络方式注入它们的核心服务域。例如，<span>Netflix</span>（著名的网络视频租赁公司&mdash;&mdash;译注）允许你得以时刻关注到你的朋友们正在观看什么。但是它更像是让你在一个巨大的预制网络上自卖自夸&mdash;&mdash;难怪<span>Netflix</span>的用户们现在都用<span>Facebook</span>来关注密友的情况呢。而且还不仅仅只是商业：正如<span>Barack Obama</span>（一位黑人帅哥，据传已正式宣布参选<span>2008</span>年美国总统&mdash;&mdash;译注）的竞选活动。自从五月底依赖，有成千上万的用户要在<span>Facebokk</span>上将<span>Barack Obama</span>加为好友，还有成百上千的人们加入以<span>Obama</span>为主题的群。与传统订制的社会性网络<span><a href="http://my.barackobama.com/" target="_blank" rel="external">My.BarackObama.com<img src="http://shots.snap.com/images/v2.18.1/t.gif" alt=""></a></span>（可能是<span>Barack Obama</span>的竞选官网&mdash;&mdash;译注）比起来，后者不过区区<span>7</span>万名注册用户。<span>Facebook</span>的社会性网络就像一种传输系统，与你自己创建的系统相比，它显得简便且高效。</p>
+<p>**</p>
+<p>在我看来，外部内容的注入极可能使<span>Facebook</span>变得更为强大。<span></span>**</p>
+<p>听到<span>Facebook</span>计划将增加用于在线支付的&ldquo;钱包&rdquo;服务，我就放心了。<strong>但是它要想真正转型，需要一个像<span>Google</span>那样简易的及时通讯系统，也可以将可嵌入收件箱与<span>Hotmail</span>，<span>Yahoo</span>！等电邮商对接。</strong>事实上<span>Facebook</span>并未引入许多的聚合新闻内容平台&mdash;&mdash;真正的新闻，而不是订制而来的新闻&mdash;&mdash;虽然不可避免会牵涉到它们。我不清楚为何<span>Facebook</span>不将这些表面上的潜在元素组合起来，不管是它的新闻办公室或是<span>CEO Mark Zuckerberg(</span>也许这家伙也为自己的页面大伤脑筋<span>)</span>都未能回应过我的建议。我感到烦恼和失望的是上述这些方案都还没能进入他们的决策议程，尤其是已有传言称<span>Yahoo</span>！将收购<span>Myspace</span>。<strong>如果<span>Facebook</span>增加了<span>email</span>，<span>IM</span>（<span>InstantMessaging</span>实时传讯&mdash;&mdash;译注），以及聚合内容平台服务，这将是其变得向<span>Yahoo</span>那样有综合性以及像<span>MySpace</span>那样流行的重要一步。这样，剩下的那些网站也将不战而胜。<span></span></strong></p>
+<p><strong><span> </span></strong></p>
+<p><strong>附：用户评论<span></span></strong></p>
+<p>（<span>Slate.com</span>选载的评论往往颇具价值&mdash;&mdash;译注）<strong><span style="font-weight: normal;"></span></strong></p>
+<p>更多门户网站么？我总会有一种似曾相识的感觉（<span>deja vu</span>，法语），因为这些大量的新型网站和那些门户网站是很相像的，而后者在十年前曾被认为是互联网的未来。公司们从未停止过寻找一种&ldquo;一站式商店&rdquo;的模式，以俘获眼球同时赚取收益。<strong>只有到了现在，与过去仅仅只为获知体育比分和天气预报不同，你可以走得更深并且发展为一种虚拟的个人门户。<span></span></strong></p>
+<p><strong><span>—dobbsfox</span></strong></p>
+<p><span></span></p>
+<p>Facebook可能只对学生和年轻人比较有用，但是那些学生将会是未来的职业人士。我不认为当那些学生创造了自己的社会性网络后，会轻易抛弃它。<strong>我坚信<span>Facebook</span>的这种社会性网络将会越来越深地和职业性网络关系融合起来。</strong></p>
+<p>我有一个潜在的雇主是我在<span>Facebook</span>上的朋友，几天前我现在的老板提了一个相当奇异的要求。他要我&ldquo;借&rdquo;我的帐号给他用<span>30</span>分钟，他要在我的网络上浏览那些好友的页面。我拒绝了他，但是我情不自禁地受到了深深地震颤&mdash;&mdash;<span>Facebook</span>已变成当今世界多么重要的一个部分啊。</p>
+<p><strong><span>—jinxyte</span></strong></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e5a682e4bd95e5bc80e590af-windows-2000-server-e4b88ae79a84e8bf9ce7a88be6a18ce99da2e58a9fe883bd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/21/e5a682e4bd95e5bc80e590af-windows-2000-server-e4b88ae79a84e8bf9ce7a88be6a18ce99da2e58a9fe883bd/" class="article-date">
+  <time datetime="2007-08-21T06:46:00.000Z" itemprop="datePublished">Aug 21 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/21/e5a682e4bd95e5bc80e590af-windows-2000-server-e4b88ae79a84e8bf9ce7a88be6a18ce99da2e58a9fe883bd/">如何开启 Windows 2000 Server 上的远程桌面功能</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Windows XP 和 Windows Server 2003 的远程桌面(Remote Desktop)相信早已为大家熟知，其实远程桌面源自于 Windows 2000 Server 家族的终端服务(Terminal Service)，所以 Windows 2000 Server 家族就已经提供了这个方便实用的功能，只是启用的方法有所不同：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  开始 -&gt; 设置 -&gt; 控制面板 -&gt; 添加/删除程序 -&gt; 添加/删除 Windows 组件 -&gt; 选中&ldquo;终端服务&rdquo; -&gt; 详细信息 -&gt; 勾选&ldquo;启用终端服务&rdquo;-&gt; 确定</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  完成后，即可使用 Windows XP 或者 Windows Server 2003 的远程桌面连接来访问了。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e8bdace8bdbde38091e69d8ee5bda6e5ae8fefbc9ae5889be696b0e79a84e79baee79a84e698afe6bba1e8b6b3e794a8e688b7e79a84e99c80e6b182" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/21/e38090e8bdace8bdbde38091e69d8ee5bda6e5ae8fefbc9ae5889be696b0e79a84e79baee79a84e698afe6bba1e8b6b3e794a8e688b7e79a84e99c80e6b182/" class="article-date">
+  <time datetime="2007-08-21T05:32:00.000Z" itemprop="datePublished">Aug 21 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/21/e38090e8bdace8bdbde38091e69d8ee5bda6e5ae8fefbc9ae5889be696b0e79a84e79baee79a84e698afe6bba1e8b6b3e794a8e688b7e79a84e99c80e6b182/">【转载】李彦宏：创新的目的是满足用户的需求</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><strong><font color="#800000" size="4">关于中国市场发展以及需求和创新的这部分说的非常好：）</font></strong></p>
+<p>　　8月18日，全国各地的著名民营科技企业家聚集北京，庆祝中国民营科技实业家协会</p>
+<p>成立二十周年。。以下为百度网络有限公司的总裁李彦宏演讲。</p>
+<p>　　李彦宏：大家好！很高兴有机会来这里跟大家进行交流，我刚才坐在台下的时候看到</p>
+<p>正好对的是中国民营科技实业家协会20周年的LOGO，1987到2007，我才突然发现1987年是</p>
+<p>我上大学的那一年，从1987年开始我进入了中关村地区，所以看到整个中国的变化，由于</p>
+<p>一代一代的民营企业家为我们做出的这些努力和贡献，自己觉得非常高兴也很荣幸，自己</p>
+<p>也是其中的一员。</p>
+<p>　　我因为现在在做一个具体的公司，所以我想今天这个话题我主要谈一谈前半部分，就</p>
+<p>是企业自主创新这方面的一些体会。我可能是跟很多人刚才讲的观点不太一致，我作为一</p>
+<p>个CEO很大工作的任务就是不停地会有人跟我讲，说我们有一个新的想法，我们有一个新</p>
+<p>的想法，我们准备尝试一种新的方法，我把大部分的精力都花在了说服他们，说这不行，</p>
+<p>我要做这个事情，这个东西不能做，等等，在这方面我做了很多的工作。我也注意到其实</p>
+<p>很多的创新者下场都不太好，我最近跟我们的首席科学家，他是今年1月份我们从美国硅</p>
+<p>谷请来的，实际上是我原来在美国公司的老板，应该说是在全球数得上的搜索引擎的专家</p>
+<p>，请他过来，也为我们技术人才做了很多工作。最近我们在谈论一个问题，百度要不要搞</p>
+<p>一个研究院，因为我们已经看到很多的全球顶级的IT企业都有非常象样，非常有规模的研</p>
+<p>究院，我们百度要不要做一个这样的东西？因为很简单的理论，你要想有创新，你要想在</p>
+<p>竞争当中长期立于不败之地，一定要进行投入。</p>
+<p>　　我的观点是我们不能建研究院，实际上去建研究院，用研究院的方法做创新的这些I</p>
+<p>T相关的企业，我见到的下场都不好。第一个例子是施乐公司，施乐公司有一个很著名的</p>
+<p>研究院，这个研究院在计算机领域其实有很多很多创新的，其中有一个是改变整个IT产业</p>
+<p>的发明，后来这个东西被苹果公司用去了，苹果公司后来做得还不错，但是真正的发明者</p>
+<p>，就是说施乐公司没有从中获得相应的收益。</p>
+<p>　　第二个例子是IBM，IBM应该说做的，就是我在美国那些年代，在IT的研究上投入是很</p>
+<p>大的，他也有几个研究院，有很多很著名的计算机科学家，他的PC后来大家知道被微软英</p>
+<p>特尔公司获得更大的收益。</p>
+<p>　　我们有一个公司在美国硅谷也在美国有研究院，这个研究院做了一个跟我们领域相关</p>
+<p>的事情，就是搜索引擎，这个搜索引擎当时是作为他的一个研究项目，为什么要做这个研</p>
+<p>究项目呢？因为这个公司是做小型机的，他当时的小型机实际上从技术上讲是非常领先的</p>
+<p>，尤其支持比较大的内存，他为了向世人证明他的小型机在性能上比其他的竞争对手更好</p>
+<p>更强，他说我就做一个应用，来证明我的性能更强，他做了一个搜索引擎，因为在九十年</p>
+<p>代中期的时候大家觉得，我想可能一直到现在都有这样的想法，搜索引擎是一个技术含量</p>
+<p>非常非常高，要求非常非常高，对于大数据量，大访问量，而且很多时候要迅速更新甚至</p>
+<p>时时更新，我原来做在的公司就是搜索引擎做时时的更新。这种要求对计算计的无论软件</p>
+<p>也好，硬件也好，要求都是很高的。讲了这么多，我觉得为什么从我的角度来讲，从搜索</p>
+<p>引擎这样一个产业，甚至是互联网产业在创新上面有这么多的，可以说是暗礁，很多东西</p>
+<p>在常人想来应该说是他做的最优秀的东西，他在技术上最先进，他应该获得最好的回报，</p>
+<p>事实上我刚才举个例子都是在美国或者在知识产权保护上最完善的一个体系里面的状况，</p>
+<p>我觉得有两点原因，一点，创新要基于市场的需求，很多大公司的研究院，因为我也在研</p>
+<p>究院里面待过，他们的科学家也好，或者研究人员也好，他的业绩的衡量主要是看主要一</p>
+<p>点就是你申请了多少专利，第二原因，我觉得还是跟需求有关的，很多的公司对于市场的</p>
+<p>把握或者说对于市场的变化不是那么敏感，所以我在公司里头不停地在跟大家讲，不要天</p>
+<p>天盯着创新，我们不同的部门，不同的人时不时会跟我讲，我们做一个创意大赛吧，我们</p>
+<p>鼓励大家给公司提一些新的主意我们可以给他们一些奖励，总会在某种状况下或者某种时</p>
+<p>候提出类似的建议，每次我都否决，我不鼓励大家做这样的创意。为什么呢？因为一旦你</p>
+<p>用一些比如说金钱上的回报，或者说其他什么机制鼓励大家想这些创新东西的话，他的出</p>
+<p>发点就变了，他不是依据市场的需求来提这些东西的，而是说为了做一些创新而进行创新</p>
+<p>。但是尽管这样，并不是说百度不是一个有创新能力的公司，事实上我认为这个公司是很</p>
+<p>有创新能力的。</p>
+<p>　　首先从公司文化上讲，大家穿着都是很随便的，上下班时间都是不固定的，我们也没</p>
+<p>有打卡的制度，上下级关系也非常不明显，很多这种公司文化层面的东西实际上是在无形</p>
+<p>当中鼓励创新，因为我觉得只有让这些有创新能力的人呆在一个他比较舒适的环境里他会</p>
+<p>比较自由，身体的自由才导致了他心理或者说他的头脑自由，他才能够真正想事情，去做</p>
+<p>一些新的东西。但是做这个新的东西的时候不是说闭门造车，不是说关在屋子里自己突发</p>
+<p>奇想，而是他们不断研究用户的需求。所以在百度我们经常说的一句话就是你的用户想要</p>
+<p>什么，你首先要搞清楚这一点，然后再去决定你要做什么。这一点我想是百度过去七年多</p>
+<p>的历史一直严格遵循的一个原则，也是很多百度产品能够推出来之后，大家半年、一年的</p>
+<p>时间就能够进入产业前两名，一般来说上了首页的服务都是推出一年之内业内的第一名，</p>
+<p>我想都是跟这些有关系的，他们很准确地能够把握用户的需求。</p>
+<p>　　说到这儿让我想起来一年多以前，我参加一个类似的论坛，其中有一个很著名的美国</p>
+<p>的VC问我，他说中国现在有很多成功的互联网公司，但是他们的业务都是仅限于中国本土</p>
+<p>的市场，你能不能告诉我什么时候中国会产生一个全球性的互联网公司？我告诉他大概需</p>
+<p>要中国互联网的人口数目超过美国，变成全世界第一之后是五年的时间。为什么有这样一</p>
+<p>个答案呢？我觉得任何创新，或者说你要是能够在市场上比别人做得好，做得先的话，你</p>
+<p>首先要有市场的需求，由于中国目前在世界上既不是第一大互联网市场，又不是互联网的</p>
+<p>基础设施最先进的市场，所以很多的时候这个市场需且不是发生在中国的，是先发生在韩</p>
+<p>国，先发生在美国，甚至先发生在日本，当人家先知道有需求的时候人家做东西，所以人</p>
+<p>家就领先于中国，所以中国的互联网公司现在到国际市场上去是有问题的，是不能够产生</p>
+<p>一个真正世界性的互联网公司的。那么中国有这么大的人口基数，很快，应该是一、两年</p>
+<p>之内，最快可能明年，中国就有可能变成是全世界最大的互联网市场，就是上网的人数，</p>
+<p>现在是1.4亿多，等我们超过了2亿的时候应该是世界上最大的一个互联网市场，当你的用</p>
+<p>户基数足够大，以前碰到的问题现在就会碰到了，你又要被迫解决，而这个过程就是一个</p>
+<p>创新的过程，这个时候创新就出来了。这种创新是在别的市场上，在别的国家里头没有的</p>
+<p>，如果我们能够在这个基础设施上，比如说上网速度，无线互联网的发展之类的，能够做</p>
+<p>得比现在更好一些，我们也不指望它做得像韩国、日本那么好，能够更好一些的话，我想</p>
+<p>中国的互联网市场有很多很多新的需求会出来，当这些新的需求出来，而我们又能够比较</p>
+<p>准确地把握这些需求的时候，我们就会有真正有意义的符合市场的，能够产生比较大影响</p>
+<p>的创新出来，也只有这样我想中国的互联网企业才有机会走向世界，在其他的国家，在其</p>
+<p>他的市场上产生相应的影响。</p>
+<p>　　与此相关的，我想解释一下为什么我们从去年年底开始提要进入其他的市场，我也觉</p>
+<p>得要想真正把一个企业做大，我最近看了一个文章，把中国企业家分第几代，第三代企业</p>
+<p>家他说还没有出现，第三代企业家是具备特点呢，要在主流市场，主流的产品，或者主流</p>
+<p>的产业获得主流地位的，我想搜索引擎或者说互联网可以说是一个主流市场，主流的产业</p>
+<p>，中国现在也还不能太算主流的市场，但如果能加上日本，或者加上一个跟我们类似的比</p>
+<p>较大的市场的话，那我们也可以叫做主流市场了，获得主流的地位，获得主导的地位，这</p>
+<p>样的企业家现在中国还没有，我们也希望随着中国市场越来越大，国力越来越强盛，我们</p>
+<p>这一代人有机会能够在世界上，在中欧以外，当然还是立足中国，在全球范围内产生我们</p>
+<p>应该有的影响力，所以我基本的观点还是说创新是需要根据市场需求的，是市场推动的。</p>
+<p>我就讲这么多，谢谢大家！ </p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e5ae89e8a385realplayer10" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/21/e5ae89e8a385realplayer10/" class="article-date">
+  <time datetime="2007-08-21T05:30:00.000Z" itemprop="datePublished">Aug 21 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/21/e5ae89e8a385realplayer10/">安装realplayer10</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>这个地址下载realplayer&nbsp;&nbsp;<a href="http://www.real.com/linux/" target="_blank" rel="external">http://www.real.com/linux/</a></p>
+<p>将文件RealPlayer10GOLD.bin保存到主文件夹中，即/home/[yourusername]文件夹下。</p>
+<p>然后打开终端，进行如下操作：</p>
+<p>$chmod +x RealPlayer10GOLD.bin</p>
+<p>$sudo ./RealPlayer10GOLD.bin</p>
+<p>当终端显示</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Welcome to the RealPlayer (10.0.8.805) Setup for UNIX</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Setup will help you get RealPlayer running on your computer.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Press [Enter] to continue…</p>
+<p>时按下回车键，进入下一步：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Enter the complete path to the directory where you want</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; RealPlayer to be installed. You must specify the full</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; pathname of the directory and have write privileges to</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; the chosen directory.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Directory: [/home/shixinyu/RealPlayer]: </p>
+<p>这里默认安装到用户的主文件夹下的RealPlayer目录下，如果你想要安装到别处，就在此</p>
+<p>处输入路径，否则直接回车即可。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; You have selected the following RealPlayer configuration:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Destination: /home/shixinyu/RealPlayer</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Enter [F]inish to begin copying files, or [P]revious to go</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; back to the previous prompts: [F]: F</p>
+<p>安装程序会提示最后确定信息，如果都确定了，按下F键后回车。</p>
+<p>当提示</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Copying RealPlayer files…configure system-wide symbolic links? [Y/n]: </p>
+<p>时按下Y键回车即可，后面基本上就没有需要用户操作的地方了，通常到这里基本上就安</p>
+<p>装好了，你可以到“应用程序，影音”下找到RealPlayer10来运行了，首次运行会有一段</p>
+<p>安装协议需要同意。</p>
+<p>注：如果在跟着上述步骤完成安装操作之后到应用程序菜单下的“影音”中单击RealPla</p>
+<p>yer无反应，并且你的Ubuntu安装的是SCIM输入法，那么很可能是SCIM与RealPlayer的冲</p>
+<p>突，你还需要进行下面操作：</p>
+<p>$sudo gedit /home/[yourid]/RealPlayer/realplay \[yourid]指你的主文件夹名</p>
+<p>在打开的文本编辑器的首行添加下面一行</p>
+<p>export GTK_IM_MODULE=xim</p>
+<p>之后保存文本编辑器，然后再次执行RealPlayer应该就正常了。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-linuxe4b88be99da2e794a8realplayere692ade694bee794b5e5bdb1e680bbe698afe6af94e8be83e58da1e79a84e8a7a3e586b3e58a9ee6b395" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/21/linuxe4b88be99da2e794a8realplayere692ade694bee794b5e5bdb1e680bbe698afe6af94e8be83e58da1e79a84e8a7a3e586b3e58a9ee6b395/" class="article-date">
+  <time datetime="2007-08-21T05:30:00.000Z" itemprop="datePublished">Aug 21 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/21/linuxe4b88be99da2e794a8realplayere692ade694bee794b5e5bdb1e680bbe698afe6af94e8be83e58da1e79a84e8a7a3e586b3e58a9ee6b395/">Linux下面用realplayer播放电影总是比较卡的解决办法</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>aoss realplay</p>
+<p>请用这个命令打开realplay</p>
+<p>如果没有aoss请安装alsa-oss这个软件包</p>
+<p>realpayer打开后有一个设置项,点启用视频高级缓存,默认是4M,把它改成64M以上就不会</p>
+<p>再卡了.</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e4bfaee694b9discuz5xe9a696e9a1b5e88194e79b9fe8aebae59d9blogoe79a84e68e92e58897e696b9e5bc8fe5928ce5a4a7e5b08f" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/19/e4bfaee694b9discuz5xe9a696e9a1b5e88194e79b9fe8aebae59d9blogoe79a84e68e92e58897e696b9e5bc8fe5928ce5a4a7e5b08f/" class="article-date">
+  <time datetime="2007-08-19T04:02:00.000Z" itemprop="datePublished">Aug 19 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/19/e4bfaee694b9discuz5xe9a696e9a1b5e88194e79b9fe8aebae59d9blogoe79a84e68e92e58897e696b9e5bc8fe5928ce5a4a7e5b08f/">修改Discuz!5.x首页联盟论坛LOGO的排列方式和大小</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>首先，编辑include/cache.func.php，在其中找到如下代码：</p>
+<p>CODE:</p>
+<font style="BACKGROUND-COLOR: #ffff99" color="#808080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if($flink[‘logo’]) {<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $tightlink_logo .= “&lt;a href=\”$flink[url]\” target=\”_blank\”&gt;&lt;img src=\”$flink[logo]\” border=\”0\” alt=\”$flink[name]\” /&gt;&lt;/a&gt; “;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else {<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $tightlink_text .= “&lt;a href=\”$flink[url]\” target=\”_blank\”&gt;[$flink[name]]&lt;/a&gt; “;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font>
+
+<p>然后，将其修改为如下这样（添加“ width=\”88\” height=\”31\””部分，宽度高度随意，这里是标准的88*31）：</p>
+<p>CODE:</p>
+<font color="#808080"> </font><font style="BACKGROUND-COLOR: #ffff99" color="#808080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if($flink[‘logo’]) {<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $tightlink_logo .= “&lt;a href=\”$flink[url]\” target=\”_blank\”&gt;&lt;img width=\”88\” height=\”31\” src=\”$flink[logo]\” border=\”0\” alt=\”$flink[name]\” /&gt;&lt;/a&gt; “;</font>
+
+<font style="BACKGROUND-COLOR: #ffff99" color="#808080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else {<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $tightlink_text .= “&lt;a href=\”$flink[url]\” target=\”_blank\”&gt;[$flink[name]]&lt;/a&gt; “;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</font>
+
+<p>最后，进入后台，打开联盟论坛编辑页面，什么也不用改，提交一下，就可以了。</p>
+<p>现在刷新首页看看，是不是已经整齐的按照统一大小排列在那里了。</p>
+<p>另外，提醒注意一点，如果你希望所有的联盟论坛都挨个排列，而不是每个联盟一行的话，就不要在联盟论坛编辑那里添加说明。凡是有文字说明的联盟论坛，都会独立一行显示的。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/archives/2007/08/page/2/">2</a><a class="extend next" rel="next" href="/archives/2007/08/page/2/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

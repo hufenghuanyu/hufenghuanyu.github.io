@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[转载]Lilina：RSS聚合器构建个人门户(Write once, publish anywhere) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="作者：车东 发表于：2004-12-11 00:12 最后更新于：2007-04-15 19:04
+版权声明：可以任意转载，转载时请务必以超链接形式标明文章原始出处和作者信息及本版权声明。
+
+
+
+最近搜集RSS解析工具中找到了MagPieRSS 和基于其设计的Lilina；Lilina的主要功能：
+1 基于WEB界面的RSS管理：添加，删除，OPML导出，RSS后台缓存机制（避免对数据源服务器产生">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[转载]Lilina：RSS聚合器构建个人门户(Write once, publish anywhere)">
+<meta property="og:url" content="http://yoursite.com/2009/03/16/e8bdace8bdbdlilinaefbc9arsse8819ae59088e599a8e69e84e5bbbae4b8aae4babae997a8e688b7write-once-publish-anywhere/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="作者：车东 发表于：2004-12-11 00:12 最后更新于：2007-04-15 19:04
+版权声明：可以任意转载，转载时请务必以超链接形式标明文章原始出处和作者信息及本版权声明。
+
+
+
+最近搜集RSS解析工具中找到了MagPieRSS 和基于其设计的Lilina；Lilina的主要功能：
+1 基于WEB界面的RSS管理：添加，删除，OPML导出，RSS后台缓存机制（避免对数据源服务器产生">
+<meta property="og:image" content="http://www.chedong.com/blog/archives/lilina.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[转载]Lilina：RSS聚合器构建个人门户(Write once, publish anywhere)">
+<meta name="twitter:description" content="作者：车东 发表于：2004-12-11 00:12 最后更新于：2007-04-15 19:04
+版权声明：可以任意转载，转载时请务必以超链接形式标明文章原始出处和作者信息及本版权声明。
+
+
+
+最近搜集RSS解析工具中找到了MagPieRSS 和基于其设计的Lilina；Lilina的主要功能：
+1 基于WEB界面的RSS管理：添加，删除，OPML导出，RSS后台缓存机制（避免对数据源服务器产生">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main"><article id="post-e8bdace8bdbdlilinaefbc9arsse8819ae59088e599a8e69e84e5bbbae4b8aae4babae997a8e688b7write-once-publish-anywhere" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2009/03/16/e8bdace8bdbdlilinaefbc9arsse8819ae59088e599a8e69e84e5bbbae4b8aae4babae997a8e688b7write-once-publish-anywhere/" class="article-date">
+  <time datetime="2009-03-15T19:35:00.000Z" itemprop="datePublished">Mar 16 2009</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      [转载]Lilina：RSS聚合器构建个人门户(Write once, publish anywhere)
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+		<a data-url="http://yoursite.com/2009/03/16/e8bdace8bdbdlilinaefbc9arsse8819ae59088e599a8e69e84e5bbbae4b8aae4babae997a8e688b7write-once-publish-anywhere/" data-title="[转载]Lilina：RSS聚合器构建个人门户(Write once, publish anywhere)" data-id="flo8zfskd8p2spsn" class="article-share-link">Share</a>
+	  
+      
+        <a href="http://yoursite.com/2009/03/16/e8bdace8bdbdlilinaefbc9arsse8819ae59088e599a8e69e84e5bbbae4b8aae4babae997a8e688b7write-once-publish-anywhere/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">Contents</strong>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#!/usr/bin/perl_-w"><span class="toc-number">1.</span> <span class="toc-text">!/usr/bin/perl -w</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#$Id$"><span class="toc-number">2.</span> <span class="toc-text">$Id$</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#XML::RSS::Parser::Lite_sample"><span class="toc-number">3.</span> <span class="toc-text">XML::RSS::Parser::Lite sample</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#print_blog_header"><span class="toc-number">4.</span> <span class="toc-text">print blog header</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#convert_item_to_<li>"><span class="toc-number">5.</span> <span class="toc-text">convert item to <li></span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#!/usr/bin/perl_-w-1"><span class="toc-number">6.</span> <span class="toc-text">!/usr/bin/perl -w</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#$Id$-1"><span class="toc-number">7.</span> <span class="toc-text">$Id$</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#XML::RSS::Parser_sample_with_Iconv_charset_convert"><span class="toc-number">8.</span> <span class="toc-text">XML::RSS::Parser sample with Iconv charset convert</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#output_some_values"><span class="toc-number">9.</span> <span class="toc-text">output some values</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#may_cause_error_this_line:_print_$feed->channel->children($title)->value-"\n";"><span class="toc-number">10.</span> <span class="toc-text">may cause error this line: print $feed->channel->children($title)->value."\n";</span></a></li></ol>
+			</div>
+		
+		<!-- 文章目录结束 -->
+		
+        <p><span class="Apple-style-span" style="word-spacing: 0px; font: 14px  trebuchet ms ; text-transform: none; color: rgb(51,51,51); text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: separate; text-align: left; widows: 2; orphans: 2; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0">作者：<a href="http://www.chedong.com/" target="_blank" rel="external">车东</a><span class="Apple-converted-space"> </span>发表于：2004-12-11 00:12 最后更新于：2007-04-15 19:04</span></p>
+<p><a href="http://creativecommons.org/licenses/by/3.0/deed.zh" target="_blank" rel="external">版权声明</a>：可以任意转载，转载时请务必以超链接形式标明文章<a href="http://www.chedong.com/blog/archives/000646.html" target="_blank" rel="external">原始出处</a>和作者信息及<a href="http://www.chedong.com/blog/archives/001249.html" target="_blank" rel="external">本版权声明</a>。</p>
+<p><span class="Apple-style-span" style="word-spacing: 0px; font: 14px  trebuchet ms ; text-transform: none; color: rgb(51,51,51); text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: separate; text-align: left; widows: 2; orphans: 2; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0"><span class="Apple-style-span" style="word-spacing: 0px; font: 14px/21px  trebuchet ms ; text-transform: none; color: rgb(51,51,51); text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: separate; text-align: left; widows: 2; orphans: 2; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0"></span></span></p>
+<div class="entry-body" style="clear: both">
+
+<p>最近搜集RSS解析工具中找到了<a href="http://magpierss.sourceforge.net/" target="_blank" rel="external">MagPieRSS</a><span class="Apple-converted-space"> </span>和基于其设计的<a href="http://lilina.sourceforge.net/" target="_blank" rel="external">Lilina</a>；Lilina的主要功能：</p>
+<p>1 基于WEB界面的RSS管理：添加，删除，OPML导出，RSS后台缓存机制（避免对数据源服务器产生过大压力），ScriptLet: 类似于Del.icio.us it的收藏夹即时订阅JS脚本；</p>
+<p>2 前台发布：将自己的首页改成了用Lilina发布我常看的几个朋友的网志，也省去了很多更新自己网页的工作，需要<strong>php 4.3 + mbstring iconv</strong></p>
+<p><img src="http://www.chedong.com/blog/archives/lilina.png" alt="lilina.png"></p>
+<p>开源软件对i18n的支持越来越好了，php 4.3.x，’—enable-mbstring’ ‘—with-iconv’后比较好的同时处理了UTF-8和其他中文字符集发布的RSS。</p>
+<p><a href="http://minutillo.com/steve/weblog/2004/6/17/php-xml-and-character-encodings-a-tale-of-sadness-rage-and-data-loss" target="_blank" rel="external">需要感谢Steve在PHP进行转码方面</a>对<a href="http://magpierss.sourceforge.net/" target="_blank" rel="external">MagPieRSS</a>进行和XML Hacking工作。至少目前为止：<a href="http://weblog.chedong.com/archives/000496.html" target="_blank" rel="external">Add to my yahoo还不能很好的处理utf-8字符集的RSS收藏</a>。</p>
+<p>记得年初<a href="http://blog.timetide.net/" target="_blank" rel="external">Wen Xin</a>在CNBlog的研讨会上介绍了<a href="http://www.wen-xin.net/document/blog-socialnetwork-personal-portal-wenxin.ppt" target="_blank" rel="external">个人门户</a>的概念，随着RSS在CMS技术中的成熟，越来越多的服务可以让个人用户根据自己需求构建门户，也算是符合了互联网的<a href="http://www.google.com/search?q=define%3Adecentralization" target="_blank" rel="external">非中心化</a>趋势吧，比如利用Add to My Yahoo!功能，用户可以轻松的实现自己从更多数据源进行新闻订阅。想象一下把你自己的del.icio.us书签收藏 / flickr图片收藏 / Yahoo!新闻都通过这样一个RSS聚合器聚合/发布起来。其传播效率将有多快。</p>
+<p>好比软件开发通过中间平台/虚拟机实现：一次写成，随处运行（Write once, run anywhere），通过RSS/XML这个中间层，信息发布也实现了：一次写成，随处发布（Write once, publish anywhere…）</p>
+<p></p></div><p></p>
+<div class="entry-more" style="clear: both">
+
+<p>安装Lilina需要PHP 4.3 以上，并带有iconv mbstring等函数的支持，请确认一下<a href="http://www.chedong.com/phpMan.php/phpinfo" target="_blank" rel="external">PHP模块的支持</a>：’—enable-mbstring’ ‘—with-iconv’</p>
+<p>另外就是一个需要能通过服务器端向外部服务器发送RPC请求，这点51.NET不支持。感觉<a href="http://signup.powweb.com/powweb-bin/referer.cgi?account_id=100811" target="_blank" rel="external">PowWeb的服务</a>很不错，很多缺省的包都安装好了：</p>
+<p>iconv</p>
+<p>iconv support enabled</p>
+<p>iconv implementation unknown</p>
+<p>iconv library version unknown</p>
+<p>Directive Local Value Master Value</p>
+<p>iconv.input_encoding ISO-8859-1 ISO-8859-1</p>
+<p>iconv.internal_encoding ISO-8859-1 ISO-8859-1</p>
+<p>iconv.output_encoding ISO-8859-1 ISO-8859-1</p>
+<p>mbstring</p>
+<p>Multibyte Support enabled</p>
+<p>Japanese support enabled</p>
+<p>Simplified chinese support enabled</p>
+<p>Traditional chinese support enabled</p>
+<p>Korean support enabled</p>
+<p>Russian support enabled</p>
+<p>Multibyte (japanese) regex support enabled</p>
+<p>将安装包解包（下载文件扩展名是.gz 其实是.tgz，需要重命名一下）：上传到服务器相应目录下，注意：相应cache目录和当前目录的可写入属性设置，然后配置一下conf.php中的参数即可开始使用。</p>
+<p>何东给我的建议：</p>
+<p>1）右边的一栏，第一项的sources最好跟hobby、友情链接一样，加个图片。</p>
+<p>2）一堆检索框在那儿，有些乱，建议只有一个，其它的放到一个二级页面上。</p>
+<p>3）把联系方式及cc,分别做成一条或一个图片，放在右边一栏中，具体的内容可以放到二级页面上，因为我觉得好象没有多少人会细读这些文字。</p>
+<p>4）如果可能，把lilina的头部链接汉化一下吧？</p>
+<p>一些改进计划：</p>
+<p>1 删除过长的摘要，可以通过寻找第2个&quot;</p>
+<p>&quot; 实现；</p>
+<p>2 分组功能：将RSS进行组输出；</p>
+<p>修改默认显示实现：Lilina缺省显示最近1天发表的文章，如果需要改成其他时间周期可以找到：</p>
+<p>$TIMERANGE = ( $_REQUEST[‘hours’] ? $_REQUEST[‘hours’]<em>3600 : 3600</em>24 ) ;</p>
+<p>进行改动。</p>
+<p>RSS是一个能将自己的所有资源：WIKI / BLOG / 邮件聚合起来的轻量级协议，以后无论你在何处书写，只要有RSS接口就都可以通过一定方式进行再次的汇聚和发布起来，从而大大提高了个人知识管理和发布/传播效率。</p>
+<p>以前对RSS理解非常浅：不就是一个DTD嘛，真了解起解析器来，才知道namespace的重要性，一个好的协议也应该是这样的：并非没有什么可加的，但肯定是没有什么可&ldquo;减&rdquo;的了，而真的要做到这个其实很难很难……。</p>
+<p>我会再尝试一下JAVA的相关解析器，将其扩展到<a href="http://sourceforge.net/projects/weblucene/" target="_blank" rel="external">WebLucene</a>项目中，更多<a href="http://java-source.net/open-source/rss-rdf-tools" target="_blank" rel="external">Java相关Open Source RSS解析器资源</a>。</p>
+<p>另外找到的2个使用Perl进行RSS解析的包：</p>
+<p>使用<a href="http://search.cpan.org/~ebosrup/RSS-Parser-Lite/" target="_blank" rel="external">XML::RSS::Parser::Lite</a>和<a href="http://search.cpan.org/~tima/XML-RSS-Parser-2.15/" target="_blank" rel="external">XML::RSS::Parser<span class="Apple-converted-space"> </span></a>解析RSS</p>
+<p>XML::RSS::Parser::Lite的代码样例如下：</p>
+<h1 id="!/usr/bin/perl_-w">!/usr/bin/perl -w</h1>
+<h1 id="$Id$">$Id$</h1>
+<h1 id="XML::RSS::Parser::Lite_sample">XML::RSS::Parser::Lite sample</h1>
+<p>use strict;</p>
+<p>use XML::RSS::Parser::Lite;</p>
+<p>use LWP::Simple;</p>
+<p>my $xml = get(&quot;<a href="http://www.klogs.org/index.xml&amp;quot" target="_blank" rel="external">http://www.klogs.org/index.xml&amp;quot</a>;);</p>
+<p>my $rp = new XML::RSS::Parser::Lite;</p>
+<p>$rp-&gt;parse($xml);</p>
+<h1 id="print_blog_header">print blog header</h1>
+<p>print &quot;&lt;a href=\&quot;&quot;.$rp-&gt;get(‘url’).&quot;\&quot;&gt;&quot; . $rp-&gt;get(‘title’) . &quot; - &quot; . $rp-&gt;get(‘description’) . &quot;&lt;/a&gt;\n&quot;;</p>
+<h1 id="convert_item_to_&lt;li&gt;">convert item to &lt;li&gt;</h1>
+<p>print &quot;&lt;ul&gt;&quot;;</p>
+<p>for (my $i = 0; $i &lt; $rp-&gt;count(); $i++) {</p>
+<p>my $it = $rp-&gt;get($i);</p>
+<p>print &quot;&lt;li&gt;&lt;a href=\&quot;&quot; . $it-&gt;get(‘url’) . &quot;\&quot;&gt;&quot; . $it-&gt;get(‘title’) . &quot;&lt;/a&gt;&lt;/li&gt;\n&quot;;</p>
+<p>}</p>
+<p>print &quot;&lt;/ul&gt;&quot;;</p>
+<p>安装：</p>
+<p>需要SOAP-Lite</p>
+<p>优点：</p>
+<p>方法简单，支持远程抓取；</p>
+<p>缺点：</p>
+<p>只支持title, url, description这3个字段，不支持时间字段，</p>
+<p>计划用于简单的抓取RSS同步服务设计：每个人都可以出版自己订阅的RSS。</p>
+<p>XML::RSS::Parser代码样例如下：</p>
+<h1 id="!/usr/bin/perl_-w-1">!/usr/bin/perl -w</h1>
+<h1 id="$Id$-1">$Id$</h1>
+<h1 id="XML::RSS::Parser_sample_with_Iconv_charset_convert">XML::RSS::Parser sample with Iconv charset convert</h1>
+<p>use strict;</p>
+<p>use XML::RSS::Parser;</p>
+<p>use Text::Iconv;</p>
+<p>my $converter = Text::Iconv-&gt;new(&quot;utf-8&quot;, &quot;gbk&quot;);</p>
+<p>my $p = new XML::RSS::Parser;</p>
+<p>my $feed = $p-&gt;parsefile(‘index.xml’);</p>
+<h1 id="output_some_values">output some values</h1>
+<p>my $title = XML::RSS::Parser-&gt;ns_qualify(‘title’,$feed-&gt;rss_namespace_uri);</p>
+<h1 id="may_cause_error_this_line:_print_$feed-&gt;channel-&gt;children($title)-&gt;value-&quot;\n&quot;;">may cause error this line: print $feed-&gt;channel-&gt;children($title)-&gt;value.&quot;\n&quot;;</h1>
+<p>print &quot;item count: &quot;.$feed-&gt;item_count().&quot;\n\n&quot;;</p>
+<p>foreach my $i ( $feed-&gt;items ) {</p>
+<p>map { print $<em>-&gt;name.&quot;: &quot;.$converter-&gt;convert($</em>-&gt;value).&quot;\n&quot; } $i-&gt;children;</p>
+<p>print &quot;\n&quot;;</p>
+<p>}</p>
+<p>优点：</p>
+<p>能够直接将数据按字段输出，提供更底层的界面；</p>
+<p>缺点：</p>
+<p>不能直接解析远程RSS，需要下载后再解析；</p>
+<p>2004-12-14:<span class="Apple-converted-space"> </span></p>
+<p>从cnblog的Trackback中了解到了<a href="http://planetplanet.org/" target="_blank" rel="external">Planet RSS聚合器</a></p>
+<p>Planet的安装：解包后，直接在目录下运行：python planet.py examples/config.ini 就可以在output目录中看到缺省样例FEED中的输出了index.html，另外还有opml.xml和rss.xml等输出（这点比较好）</p>
+<p>我用几个RSS试了一下，UTF-8的没有问题，但是GBK的全部都乱码了，planetlib.py中和XML字符集处理的只有以下代码：看来所有的非UTF-8都被当作iso8859_1处理了：</p>
+<p>try:</p>
+<p>data = unicode(data, &quot;utf8&quot;).encode(&quot;utf8&quot;)</p>
+<p>logging.debug(&quot;Encoding: UTF-8&quot;)</p>
+<p>except UnicodeError:</p>
+<p>try:</p>
+<p>data = unicode(data, &quot;iso8859_1&quot;).encode(&quot;utf8&quot;)</p>
+<p>logging.debug(&quot;Encoding: ISO-8859-1&quot;)</p>
+<p>except UnicodeError:</p>
+<p>data = unicode(data, &quot;ascii&quot;, &quot;replace&quot;).encode(&quot;utf8&quot;)</p>
+<p>logging.warn(&quot;Feed wasn’t in UTF-8 or ISO-8859-1, replaced &quot; +</p>
+<p>&quot;all non-ASCII characters.&quot;)</p>
+<p>近期学习一下Python的unicode处理，感觉是一个很简洁的语言，有比较好的try … catch 机制和logging</p>
+<p>关于MagPieRSS性能问题的疑虑：</p>
+<p>对于Planet和MagPieRSS性能的主要差异在是缓存机制上，关于使用缓存机制加速WEB服务可以参考：<a href="http://www.chedong.com/tech/cache.html" target="_blank" rel="external">可缓存的cms设计</a>。</p>
+<p>可以看到：Lilina的缓存机制是每次请求的时候遍历缓存目录下的RSS文件，如果缓存文件过期，还要动态向RSS数据源进行请求。因此不能支持后台太多的RSS订阅和前端大量的并发访问（会造成很多的I/O操作）。</p>
+<p>Planet是一个后台脚本，通过脚本将订阅的RSS定期汇聚成一个文件输出成静态文件。</p>
+<p>其实只要在MagPieRSS前端增加一个wget脚本定期将index.php的数据输出成index.html，然后要求每次访问先访问index.html缓存，这样不就和Planet的每小时生成index.html静态缓存一样了吗。</p>
+<p>所以在不允许自己配置服务器脚本的虚拟主机来说Planet根本是无法运行的。</p>
+<p>更多关于PHP中处理GBK的XML解析问题请参考：</p>
+<p><a href="http://weblog.chedong.com/archives/000598.html" target="_blank" rel="external">MagPieRSS中UTF-8和GBK的RSS解析分析</a></p>
+<p>2004-12-19<span class="Apple-converted-space"> </span></p>
+<p>正如在SocialBrain 2005年的讨论会中，Isaac Mao所说：<strong>Blog is a ‘Window’, also could be a ‘Bridge’</strong>，Blog是个人/组织对外的&ldquo;窗口&rdquo;，而RSS更方便你将这些窗口组合起来，成为其间的&ldquo;桥梁&rdquo;，有了这样的中间发布层，Blog不仅从单点发布，更到P2P自助传播，越来越看到了RSS在网络传播上的重要性。</p>
+<p></p></div><br><p></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+    <footer class="article-footer">
+		
+	<a align="left" href="/2009/03/12/e38090e8bdace8bdbde38091e5afb9pythone5ad97e7aca6e4b8b2e7bc96e7a081e79a84e79086e8a7a3/" id="article-nav-older" class="article-nav-link-wrap">
+	  <div align="left" class="article-nav-title">上一篇 【转载】对python字符串编码的理解</div>
+	</a>
+
+
+	<a align="right" href="/2009/03/16/e38090e8bdace8bdbde38091full-rss-feeds-for-plone/" id="article-nav-newer" class="article-nav-link-wrap">
+	  <div align="right" class="article-nav-title">下一篇 【转载】Full RSS-feeds for Plone</div>
+	</a>
+
+
+    </footer>
+	
+  </div>
+</article>
+
+<section id="comments">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="[转载]Lilina：RSS聚合器构建个人门户(Write once, publish anywhere)" data-title="[转载]Lilina：RSS聚合器构建个人门户(Write once, publish anywhere)" data-url="http://yoursite.com/2009/03/16/e8bdace8bdbdlilinaefbc9arsse8819ae59088e599a8e69e84e5bbbae4b8aae4babae997a8e688b7write-once-publish-anywhere/"></div>
+	<!-- 多说评论框 end -->
+</section>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

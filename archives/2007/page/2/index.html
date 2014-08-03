@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2007 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/2007/page/2/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-allowed-memory-size-of-8388608-bytes-exhausted" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/12/13/allowed-memory-size-of-8388608-bytes-exhausted/" class="article-date">
+  <time datetime="2007-12-12T17:01:00.000Z" itemprop="datePublished">Dec 13 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/12/13/allowed-memory-size-of-8388608-bytes-exhausted/">Allowed memory size of 8388608 bytes exhausted</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><strong>环&nbsp;&nbsp;&nbsp;&nbsp;  境</strong>：discuz 6.0</p>
+<p><strong>症&nbsp;&nbsp;&nbsp;&nbsp;  状</strong>：无法上传较大的图片附件，较大的其他附件以及较小的图片附件都没问题；中间偶尔出现一次</p>
+<p>Fatal error: Allowed memory size of 8388608 bytes exhausted (tried to allocate 5760 bytes) in&nbsp;&nbsp;  /www/users/bhclub.net/include/image.class.php on line 179</p>
+<p><strong>问题确定</strong>：网上搜索，基本确定是分配给图片上传的内存不够用了，于是只能上传较小的附件</p>
+<p><strong>解决办法</strong>：登陆ftp，修改文件image.class.php，增加语句：ini_set(‘memory_limit’, ‘-1’);</p>
+<p>参考文章：<a href="http://hi.baidu.com/us_hosting/blog/item/5e562d6d507e91f842169424.html" target="_blank" rel="external">hi.baidu.com/us_hosting/blog/item/5e562d6d507e91f842169424.html</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-windowsefbc88xp-vistaefbc89e5bc95e5afbclinux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/12/10/windowsefbc88xp-vistaefbc89e5bc95e5afbclinux/" class="article-date">
+  <time datetime="2007-12-10T09:23:00.000Z" itemprop="datePublished">Dec 10 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/12/10/windowsefbc88xp-vistaefbc89e5bc95e5afbclinux/">Windows（XP Vista）引导linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>用linux启动光盘的rescue功能在主引导分区重新安装GRUB。 </p>
+<h1 id="grub-install_/dev/hda">grub-install /dev/hda</h1>
+<p>然后重新启动进入linux，在你的Linux主分区安装GRUB，比如说你Linux安装在/dev/hda5，那就是 </p>
+<h1 id="grub-install_/dev/hda5">grub-install /dev/hda5</h1>
+<p>将Linux的启动块复制为文件： </p>
+<h1 id="dd_if=/dev/hda5_of=linux-bin_bs=512_count=1">dd if=/dev/hda5 of=linux.bin bs=512 count=1</h1>
+<p>然后将获得的linux.bin文件复制到Windows文件系统的C:\下</p>
+<p>下面分两种情况XP和Vista来具体操作：</p>
+<font color="#ff0000"><strong>XP</strong></font>
+
+<p>在C:\boot.ini最后添加下面一行： </p>
+<p>C:\linux.bin=&quot;Linux&quot; </p>
+<p>最后用Windows系统盘fdisk /mbr恢复MBR，此时就能够用Windows启动Linux了。</p>
+<font color="#ff0000"><strong>Vista</strong></font>
+
+<p>bcdedit /create /d &quot;Linux&quot; /application bootsector</p>
+<p>命令结果应该会返回一个GUID，后面的命令用到这个GUID</p>
+<p>运行以下命令设置Linux引导扇区备份所在的分区：</p>
+<p>bcdedit /set {GUID} device partition=C:</p>
+<p>然后指定引导扇区备份的路径：</p>
+<p>bcdedit /set {GUID} path linux.bs</p>
+<p>最后设置Linux菜单项在启动菜单的位置：</p>
+<p>bcdedit /displayorder {GUID} /addlast</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e6b0b8e4b88de694bee5bc83" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/12/02/e6b0b8e4b88de694bee5bc83/" class="article-date">
+  <time datetime="2007-12-02T06:41:00.000Z" itemprop="datePublished">Dec 2 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/12/02/e6b0b8e4b88de694bee5bc83/">永不放弃</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原作者: A Christian Science perspective      <img src="http://www.yeeyan.com/img/div.gif" alt="">      译者: <a href="http://www.yeeyan.com/space/show/11776" target="_blank" rel="external">译家之言</a>  (<a href="http://philoguy.blogbus.com/" target="_blank" rel="external">Blog</a>)      <img src="http://www.yeeyan.com/img/div.gif" alt="">  发表时间：14小时40分钟前      <img src="http://www.yeeyan.com/img/div.gif" alt="">   <a href="http://www.csmonitor.com/2007/1120/p18s01-hfcs.html" target="_blank" rel="external">       原文链接</a></p>
+<p>[</p>
+<p>](<a href="http://www.csmonitor.com/2007/1120/p18s01-hfcs.html" target="_blank" rel="external">http://www.csmonitor.com/2007/1120/p18s01-hfcs.html</a>)</p>
+<font color="#3333ff">在这惊险的一幕上演之前，一切看上去都很平静。一群非洲水牛，大约100只，安详地顺着河岸漫步。它 们没有为了安全而紧密地挤在一起；相反，它们四散开来，蜿蜒有数百米长。领头的公牛独自挑头，走在最前面。但是，它没有注意到，前方正潜伏着一群饥饿的狮 子。它仍然毫无知觉地带领群牛走向狮子的包围圈。狮子伏下身来，密切地注视着。突然，它们出击了！水牛群被突如其来的攻击吓得四散奔逃，仓皇逃窜。</font>
+
+<font color="#3333ff">刹那间，狮群收紧了包围，把目标锁定在一头掉队的幼年水牛上。不过几秒钟，狮子就将它扑倒在地，然后一同滚进河里。</font>
+
+<font color="#3333ff">狮子们试图将小水牛赶到河岸上。让人难以置信地，小牛居然进行了顽强的反击。就在此刻，一头在水面下 埋伏了许久的鳄鱼，也加入了这场战斗。当狮子试图将小牛拽向岸上的时候，鳄鱼紧紧地咬住了小牛的后腿。双方几经争夺，最后鳄鱼举手投降，眼睁睁地看着狮子 把到手的猎物夺了回去。</font>
+
+<font color="#3333ff">出人意料地，这时在岸上的水牛群重新集结起来，向狮子发动攻势。凭借有力的犄角，领头的公牛冲向一头狮子并将其挑到半空当中。狮群于是溃散开来，各自逃命。逃出狮口的小牛拖着跛脚，重新回到家族的怀抱。</font>
+
+<font color="#3333ff">这惊险的一幕，被一名业余摄影者用摄像机捕捉下来。现在该视频可以在YouTube上看到（</font><a href="http://www.youtube.com/watch?v=Vyqkzfznx6c" target="_blank" rel="external"><font color="#3333ff">http://www.youtube.com/watch?v=Vyqkzfznx6c</font></a><font color="#3333ff">）。</font>
+
+<font color="#3333ff">小水牛的奋争印证了一句话：<strong>永远不要放弃</strong>。哪怕是在最危急的时刻，小牛和它的家族也没有丝毫退让。</font>
+
+<font color="#3333ff">小牛的奋争和群牛的协助，让我联想到正在世界各地进行的数不清的战斗。许多的个体正在进行看似无望的 斗争，他们的目标，或是希望渺茫的顽疾、或是泛滥成灾的毒品、或是一贫如洗的匮乏、或是独裁暴虐的专制。而国家和地区之间的共同努力，则是针对饥荒、旱 灾、流行病、还有腐败统治。</font>
+
+<font color="#3333ff">&ldquo;永远不要放弃&rdquo;的普适性涵盖整个地球。同样的，它也适用于我们每一个人。</font>
+
+<font color="#3333ff">许多年以前，我认识的一位女士用平静无声的方式教会我，不论治愈的希望多么遥不可及，也不要放弃。我 碰到她的时候，她差不多95岁。近20年来，她都在一只眼睛的痛苦生活中煎熬。她试图依靠精神的方法来治愈她的疾病。虽然我并未开口，但是我猜想她为了治 病已经祈祷了无数次。</font>
+
+<font color="#3333ff">对于她的奢望，我敬佩有加，也甚至偷偷地怀疑，与她同样年龄的人，（面对如此情况）可能会想，&ldquo;一只 眼睛、两只眼睛到底有多大区别呢？反正都过得去&rdquo;。但是，她的理论不是这样的。她并未自暴自弃。她并未接受这样的说法，&ldquo;除了上帝、圣灵和真爱之外的一切 事物，都处于完全控制之下&rdquo;。她依然满怀信心地追求自然治愈和精神成长。经过若干时日，她的疾病居然因为念诵主祷文而痊愈了。</font>
+
+<font color="#3333ff">在她去世的时候，她已经安然度过了百岁生日。（关于她的疾病自然治愈的故事，请参阅1990年7月2日的《基督教科学看守人（Christian Science Sentinel）》，第17页）</font>
+
+<font color="#3333ff">来自本报创始人Mary Baker Eddy留下的一段话，尤其令人释怀：&ldquo;Remember, thou canst be brought into no condition, be it ever so severe, where Love has not been before thee and where its tender lesson is not awaiting thee. Therefore despair not nor murmur, for that which seeketh to save, to heal, and to deliver, will guide thee, if thou seekest this guidance&rdquo;（《The First Church of Christ, Scientist, and Miscellany》第149至150页）。</font>
+
+<font color="#3333ff">任何瞥见生命与真爱的时刻，都给我们以力量去面对治愈与自新，而不是放弃。每一次这样的瞬间都孕育了对个体与人性的希望。在未来的日子里，我希望自己依然记得这段视频。对于它所传递的信息，我希望能保留更长的时间。</font>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-yahooe79a84e9a1b9e79baee5b7a5e4bd9ce6b581e7a88b-zz" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/12/01/yahooe79a84e9a1b9e79baee5b7a5e4bd9ce6b581e7a88b-zz/" class="article-date">
+  <time datetime="2007-12-01T13:56:00.000Z" itemprop="datePublished">Dec 1 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/12/01/yahooe79a84e9a1b9e79baee5b7a5e4bd9ce6b581e7a88b-zz/">Yahoo!的项目工作流程 zz</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>找到一份重要参考资料，采访时间是2006年2月。</p>
+<blockquote>
+<p>王小丹：主要网络产品设计工作流程是这样的：</p>
+<p>网络产品设计：产品制作人写产品计划书，确定新产品或新功能的市场意义和经济效益，提交部门审批，同意后，确认需要设计的部分，和用户体验研究员(user researcher)，信息建构师(information architect)，视觉设计师(visual designer)、user interface designer，互动设计师(interaction designer)，web developer，工程师(engineer)一起讨论需要的支持，然后订出时间计划分工合作。一般是先由用户体验研究员作调查、分析后由信息建构师设计产品架构，然后由互动设计师作出互动流程，之后交给视觉设计师(visual designer)和user interface designer作出视觉设计。然后web developer把设计通过编写程序(html, dhtml, JavaScript)等等再现出来，最后交给工程师。做完后用户体验研究员需要做用户测试，QA(Quality assurance) 需要测验这一产品的每一步骤，确认产品的使用质量，如果有问题需要让工程师或相关人员解决。<a href="http://www.visionunion.com/article.jsp?code=200603100039" target="_blank" rel="external"><font color="#0066cc">雅虎欧洲设计师王小丹访谈</font></a></p>
+</blockquote>
+<p>总结起来就是：</p>
+<ol>
+<li>产品制作人，写产品计划书。</li>
+<li>用户体验研究员，作调查分析。</li>
+<li>信息建构师，设计产品结构。</li>
+<li>互动设计师，作出互动流程。</li>
+<li>视觉设计师和用户界面设计师，作出页面视觉设计。</li>
+<li>前台工程师，前台开发。</li>
+<li>后台工程师，后台开发。</li>
+<li>用户体验研究员，做用户测试确保质量。</li>
+</ol>
+<p>应该算是一个比较完善成熟的流程了，信息建构(IA)和互动设计(ID)明显处于很重要的位置。</p>
+<p>国内项目普遍流程就是&ldquo;策划＋设计＋制作＋开发&rdquo;，普遍忽略的是第2, 3, 4，或者说是其他某个流程附带完成，第6前台开发也是只存在于大型正规公司，或者说有普遍进一步完善的趋势。</p>
+<p>至于UE, IA, ID如何进行，我觉得没有绝对固定的模式，根据项目实际情况，关键在于团队的默契。不是说国内从业者不知道如何进行，而是根本没有这个习惯，把项目环节细分一下，就很清楚各自职能了。这些流程的核心目的就是逐步保证产品质量，减少&ldquo;前台开发&rdquo;和&ldquo;后台开发&rdquo;的重复劳动。</p>
+<p>就Yahoo这个流程来看，应该是针对大型的应用型产品项目。看看人家在&ldquo;确认设计需求&rdquo;时，就需要几乎所有项目环节参与者进行综合讨论，让人狂汗不已；定开发计划都是大家讨论进行，而不是单方面强制决定，多么人性化啊。</p>
+<p>视觉同盟 <a href="http://www.visionunion.com/article.jsp?code=200609050057" target="_blank" rel="external">http://www.visionunion.com/article.jsp?code=200609050057</a></p>
+<p>&copy; 一叶千鸟（转载请留原文链接） </p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-windowsxpe4b8ade79a84e69687e4bbb6e58aa0e5af86e58a9fe883bde58f8ae585b6e4bdbfe794a8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/11/28/windowsxpe4b8ade79a84e69687e4bbb6e58aa0e5af86e58a9fe883bde58f8ae585b6e4bdbfe794a8/" class="article-date">
+  <time datetime="2007-11-28T06:49:00.000Z" itemprop="datePublished">Nov 28 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/11/28/windowsxpe4b8ade79a84e69687e4bbb6e58aa0e5af86e58a9fe883bde58f8ae585b6e4bdbfe794a8/">WindowsXP中的文件加密功能及其使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>Windows XP文件加密功能强大并且简单易用，因而许多用户都使用它来保护自己的重要文件。但由于大部分用户对该功能了解不足，在使用过程中经常出现问题，在本刊&ldquo;电脑医院&rdquo;中我们也频繁地收到读者的求助信，为此，CHIP在这里将特意为您详细介绍有关该功能的使用技巧。</p>
+<p>微软在Windows2000中内建了文件加密功能，该功能后来被移植到WinXP中。使用该功能，我们只需简单地单击几下鼠标就可以将指定的文件或者文件夹进行加密，而且在加密后我们依然可以和没加密前一样方便地访问和使用它们，非常方便。而且加密后即使黑客侵入系统，完全掌握了文件的存取权，依然无法读取这些文件与文件夹。</p>
+<p>但简单强大的文件加密功能也给许多用户带来了困扰。由于使用简单，许多用户都乐于使用它来保护自己的重要文件，但大部分用户由于缺乏对该功能的真正了解，在使用时泄密、无法解密等问题频繁发生，恰恰被加密的文件往往是重要的文件，影响非常大。为此，笔者特意整理了有关该功能的一些相关知识和使用技巧与您分享。</p>
+<p>加密和解密文件与文件夹</p>
+<p>Windows2000系列和WinXP专业版及Windows2003的用户都可使用内建的文件加密功能，但前提是准备加密的文件与文件夹所在的磁盘必须采用NTFS文件系统。同时要注意，由于加密解密功能在启动时还不能够起作用，因此系统文件或在系统目录中的文件是不能被加密的，如果操作系统安装目录中的文件被加密了，系统就无法启动。另外，NTFS文件系统还提供一种压缩后用户可以和没压缩前一样方便访问文件与文件夹的文件压缩功能，但该功能不能与文件加密功能同时使用，使用ZIP、RAR等其他压缩软件压缩的文件不在此限。</p>
+<p>加密时，只需使用鼠标右键单击要加密的文件或者文件夹，然后选择&ldquo;属性&rdquo;，在&ldquo;属性&rdquo;对话框的&ldquo;常规&rdquo;选项卡上单击&ldquo;高级&rdquo;按钮，在&ldquo;高级属性&rdquo;对话框上选中&ldquo;加密内容以保护数据&rdquo;复选框并确认即可对文件进行加密，如果加密的是文件夹，系统将进一步弹出&ldquo;确认属性更改&rdquo;对话框要求您确认是加密选中的文件夹，还是加密选中的文件夹、子文件夹以及其中的文件。而解密的步骤与加密相反，您只需在&ldquo;高级属性&rdquo;对话框中清除&ldquo;加密内容以保护数据&rdquo;复选框上的选中标记即可，而在解密文件夹时将同样弹出&ldquo;确认属性更改&rdquo;对话框要求您确认解密操作应用的范围。</p>
+<p>加密后，用户可以像使用普通文件一样直接打开和编辑，又或者执行复制、粘贴等操作，而且用户在加密文件夹内创建的新文件或从其他文件夹拷贝过来的文件都将自动被加密。被加密的文件和文件夹的名称将默认显示为淡绿色，如您的电脑上被加密的文件和文件夹的名称不是彩色显示，您可以单击&ldquo;我的电脑|工具|文件夹选项&rdquo;，然后在&ldquo;文件夹选项&rdquo;对话框中单击&ldquo;查看&rdquo;选项卡，选中&ldquo;以彩色显示加密或压缩的NTFS文件&rdquo;复选框即可。</p>
+<p>赋予或撤销其他用户的权限</p>
+<p>如果需要，您可赋予其他用户对加密文件的完全访问权限，但要明白，Windows所采用的是基于密钥的加密方案，并且是在用户第一次使用该功能时才为用户创建用于加密的密钥，因此您准备赋予权限的用户也必须曾经使用过系统的加密功能，否则将无法成功赋予对方权限。Windows内建的文件加密功能只允许赋予其他用户访问加密文件的完全权限，而不允许将加密文件夹的权限赋予给其他用户。</p>
+<p>要赋予或撤销其他用户对加密文件的访问权限，可用鼠标右键单击已加密的文件，选择&ldquo;属性&rdquo;，在&ldquo;属性&rdquo;对话框的&ldquo;常规&rdquo;选项卡上单击&ldquo;高级&rdquo;按钮，在&ldquo;高级属性&rdquo;对话框中单击&ldquo;详细信息&rdquo;按钮，即可通过&ldquo;添加&rdquo;和&ldquo;删除&rdquo;按钮添加或删除其他可以访问该文件的用户。</p>
+<p>备份密钥</p>
+<p>有许多读者在系统发生故障或重新安装系统以后，无法再访问之前他们加密过的文件与文件夹而向本刊&ldquo;电脑医院&rdquo;求助。但此时为时已晚，Windows内建的加密功能与用户的账户关系非常密切，同时用于解密的用户密钥也存储在系统内，任何导致用户账户改变的操作和故障都有可能带来灾难，要避免这种情况的发生，您必须未雨绸缪，在使用加密功能后马上备份加密密钥。</p>
+<p>备份密钥的操作并不复杂，您只需单击&ldquo;开始|运行&rdquo;，键入&ldquo;certmgr.msc&rdquo;打开证书管理器，在左边窗口中依次单击控制台，打开&ldquo;证书-当前用户&rdquo;下的&ldquo;个人&rdquo;中的&ldquo;证书&rdquo;，然后在右边窗口中用鼠标右键单击&ldquo;预期目的&rdquo;是&ldquo;加密文件系统&rdquo;的证书，指向&ldquo;所有任务|导出&rdquo;，系统将打开&ldquo;证书导出向导&rdquo;指引您进行操作，向导将询问您是否需要导出私钥，您应该选择&ldquo;导出私钥&rdquo;，并按照向导的要求输入密码保护导出的私钥，然后选择存储导出后文件的位置即可完成。</p>
+<p>建议您将导出的证书存储在系统盘以外的其他磁盘上，以避免在使用磁盘镜像之类的软件恢复系统时将备份的证书覆盖掉。备份后，当加密文件的账户出现问题或重新安装了系统后需要访问或解密以前加密的文件时，您只需要使用鼠标右键单击备份的证书，选择&ldquo;安装PFX&rdquo;，系统将弹出&ldquo;证书导入向导&rdquo;指引您的操作，您只需要键入当初导出证书时输入用于保护备份证书的密码，然后选择让向导&ldquo;根据证书类型，自动选择证书存储区&rdquo;即可完成，完成后就可以访问以前的加密文件了。</p>
+<p>指定恢复代理</p>
+<p>如果您同时使用多个账户或者与其他用户共用一台电脑，担心更换账户或者其他账户加密的文件出问题，那么您可以考虑指定一个文件故障恢复代理，恢复代理可以解密系统内所有通过内建加密功能加密的文件，一般用于网络管理员在网络上处理文件故障，并能使管理员在职员离职后解密职员加密的工作资料。在Win2000中，默认Administrator为恢复代理，而在WinXP上，如果需要恢复代理则必须自行指定。但需要注意，恢复代理只能够解密指定恢复代理后被加密的文件，所以您应该在所有人开始使用加密功能前先指定恢复代理。</p>
+<p>如果您所使用的电脑是企业网络中的，那么您需要联系管理员查询是否已经制定了故障恢复策略，而如果您只是在使用一台单独的电脑，那么您可以按照下面的步骤指定恢复代理。首先，您需要使用准备指定为恢复代理的用户账户登录，申请一份故障恢复证书，该用户必须是管理员或者拥有管理员权限的管理组成员。对于企业网络上的电脑，登录后可以通过上面介绍过的&ldquo;证书管理器&rdquo;，在&ldquo;使用任务&rdquo;中的&ldquo;申请新证书&rdquo;中向服务器申请。而在个人电脑上，您必须单击&ldquo;开始|附件|命令提示符&rdquo;，在命令行窗口中键入&ldquo;cipher /r:c:\efs.txt&rdquo;（efs.txt可以是任一文件），命令行窗口将提示您输入保护证书的密码并生成我们需要的证书。生成的证书一个是PFX文件，一个是CER文件，先使用鼠标右键单击PFX文件，选择&ldquo;安装PFX&rdquo;，通过弹出的&ldquo;证书导入向导&rdquo;选择&ldquo;根据证书类型，自动选择证书存储区&rdquo; 导入证书。</p>
+<p>接下来再单击&ldquo;开始|运行&rdquo;，键入&ldquo;gpedit.msc&rdquo;打开组策略编辑器，在左边控制台上依次单击&ldquo;本地计算机策略|计算机配置|Windows 设置|安全设置|公钥策略|加密文件系统&rdquo;，然后在右边窗口中用鼠标右键单击选择&ldquo;添加数据恢复代理&rdquo;，然后在弹出的&ldquo;添加数据恢复代理向导&rdquo;中浏览并选择刚才生成的证书中的CER文件，在键入保护证书的密码后，向导将导入证书，完成指定恢复代理的工作。完成后，在以后需要的时候，只需使用被指定为恢复代理的账户登录，就可以解密系统内所有在指定恢复代理后被加密的文件。</p>
+<p>禁止加密功能</p>
+<p>在多用户共用电脑的环境下，我们往往通过将其他用户指定为普通用户权限，限制他们使用某些功能，但由于普通用户账户默认允许使用加密功能，因此在一些多用户共用的电脑上经常会带来一些困扰。如果担心电脑上其他用户乱加密磁盘上的文件，您可以设置特定的文件夹禁止被加密，也可以完全禁止文件加密功能。</p>
+<p>如果您希望将某个文件夹设置为禁止加密，可以编辑一个文本文件，内容包括&ldquo;[Encryption]&rdquo;和&ldquo;Disable=1&rdquo;两行，然后命名为&ldquo;Desktop.ini&rdquo;，将其放到不希望被加密的文件夹中即可。当其他用户试图加密该文件夹时，系统将提示用户该文件夹加密功能被禁止。但需要注意，您只能使用这种方法禁止其他用户加密该文件夹，文件夹中的子文件夹将不受保护。</p>
+<p>如果需要，您也可以完全禁止文件加密功能，在Win2000中，只需使用Administrator登录并运行&ldquo;secpol.msc&rdquo;打开策略编辑器，用鼠标右键单击左边控制台上的&ldquo;安全设置|公钥策略|加密文件系统&rdquo;，选择&ldquo;属性&rdquo;，在属性对话框上清除&ldquo;允许用户使用文件加密系统（EFS）来加密文件&rdquo;复选框上的选中标记，然后重新启动电脑即可。而在WinXP上虽然也有相应的选项，但实际上并不能够起作用，您需要通过编辑注册表来禁止文件加密功能。首先单击&ldquo;开始|运行&rdquo;，键入&ldquo;regedit.exe&rdquo;打开注册表编辑器，依次单击 &ldquo;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ Windows NT\CurrentVersion\EFS&rdquo;，再用鼠标右键单击建立一个&ldquo;DWORD&rdquo;值，双击新建的值并赋值为&ldquo;1&rdquo;，关闭注册表后重新启动电脑。这样，当其他用户试图使用文件加密功能时，系统将提示加密功能已被禁止</p>
+<p>防止泄密</p>
+<p>由于对文件加密功能缺乏了解，许多读者对该功能是否能够真正发挥作用抱有怀疑态度，而另外一些用户却又因为过分地放心而导致泄密事件频繁发生。首先，对于该功能的加密效果您大可放心，不必因为在您使用加密文件时不需要输入密码而怀疑加密效果，在加密后能够透明地使用恰恰正是该功能的优点。虽然有一些第三方软件曾经成功地破解使用该功能加密的文件，但这种软件暂时对于Windows XP是无效的，而且即使在其他版本的Windows 操作系统上，也是可以避免的。</p>
+<p>但您需要小心由于自己的失误引起加密失效，也需要了解该功能的特点。Windows XP内建的文件加密功能与用户的账户是联系在一起的，换言之，如果您的Windows账户没有保护好，密码被其他人获得，那么对方也就可以像您一样登录系统访问加密的文件。另外，当已加密的文件被拷贝或者移动到非NTFS文件系统磁盘上时，文件将被解密。在文件通过网络传输时，也是以明文方式进行传输的。这些您都需要清楚，避免错误操作引起泄密。而最主要的是加密后的文件并不是绝对安全的，虽然可以确保不被读取，但却无法避免被删除。</p>
+<p>此外，在加密文件的过程中，系统将把原来的文件存储到缓冲区，然后在加密后将原文件删除。这些被删除掉的文件在系统上并不是不可能恢复的，通过磁盘文件恢复工具很有可能被恢复过来而造成泄密，此时您需要考虑通过其他磁盘安全工具，或者使用系统内建的&ldquo;cipher&rdquo;命令对磁盘上的已删除文件进行清除，具体的步骤是，单击&ldquo;开始|附件|命令提示符&rdquo;，在命令行窗口中键入&ldquo;cipher /w C:\foldername&rdquo;即可清除C盘foldername文件夹中已删除文件残留的碎片，如果不输入文件夹名称则将对整个磁盘进行清理。</p>
+<p>疑难排解</p>
+<p>当您的Windows登录账户变更而无法访问已加密的文件时，由于用户的账户名称或者密码变更时将无法与原来的加密证书联系上，因而您需要考虑是否在使用其他账户时更改了当前账户的名称或者密码？又或者是管理员进行了这样的操作？如果的确如此，您可以尝试将自己的账户名称和密码更改成原来的，问题应该能够解决。但需要注意，根据微软的说法，改回账户名称与密码的方法在管理员账户上可能无效，而且如果您的账户并不是改变而是被删除后重建，也就是说是一个全新的账户，那么您只能够求助于恢复代理或者导入备份的证书。</p>
+<p>如果您已经重新格式化了硬盘、重新安装了系统又或者使用尚未加密文件时的系统盘镜像恢复了系统而导致无法访问加密文件，那么您只能够通过导入自己的证书或者恢复代理的方法来解决问题，这时基本上已经没有其他方法可以帮助您取回文件。另外，Windows XP SP1版后使用了新的加密算法，如果您加密时使用的是Windows XP SP1版本，那么当您尝试挽救数据时也应该使用该版本，或者未来的更新版本，否则在其他版本上乱试，加密文件可能会损毁。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e588a9e794a8adobe-designere588b6e4bd9ce794b5e5ad90e78988e8b083e69fa5e997aee58db7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/11/25/e588a9e794a8adobe-designere588b6e4bd9ce794b5e5ad90e78988e8b083e69fa5e997aee58db7/" class="article-date">
+  <time datetime="2007-11-24T16:09:00.000Z" itemprop="datePublished">Nov 25 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/11/25/e588a9e794a8adobe-designere588b6e4bd9ce794b5e5ad90e78988e8b083e69fa5e997aee58db7/">利用Adobe Designer制作电子版调查问卷</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原文地址:<a href="http://hi.baidu.com/networkcomputer/blog/item/30bc3cf37e017e53342acc22.html#send" target="_blank" rel="external">http://hi.baidu.com/networkcomputer/blog/item/30bc3cf37e017e53342acc22.html#send</a></p>
+<h1 id="调查问卷的制作"><span><font size="4">调查问卷的制作</font></span></h1>
+<p><span style="font-size: 14pt">我想大家在生活中经常填写调查问卷，公司会有评价调查表，政府有作风调查表，大街上也有很多调查。在网上，这类调查就更多呢，也更方便。</span></p>
+<p><span style="font-size: 14pt">那么，你有没有想到自己做一个调查问卷呢？</span></p>
+<p><span style="font-size: 14pt">如果你回答有，那么请往下看。</span></p>
+<p><span style="font-size: 14pt">首先，我们先确定调查问卷的使用方式，信息时代，</span><span style="font-size: 14pt"><font face="Calibri"> </font></span><span style="font-size: 14pt">我们当然首先抛弃纸质调查方式，第二种常见方式是</span><span style="font-size: 14pt"><font face="Calibri">WEB</font></span><span style="font-size: 14pt">页面调查，这种方式涉及太多程序开发的东西，我们今天也不讲，今天讲第三种方式，通过邮件方式进行。</span></p>
+<p><span style="font-size: 14pt">大家可能首先想到的是微软的</span><span style="font-size: 14pt"><font face="Calibri">WORD</font></span><span style="font-size: 14pt">，但使用</span><span style="font-size: 14pt"><font face="Calibri">WORD</font></span><span style="font-size: 14pt">制作的调查程序，除非使用</span><span style="font-size: 14pt"><font face="Calibri">VBA</font></span><span style="font-size: 14pt">进行二次开发，否则无法有效的进行统计。</span></p>
+<p><span style="font-size: 14pt">微软的</span><span style="font-size: 14pt"><font face="Calibri">Office</font></span><span style="font-size: 14pt">组件中，有一个叫</span><span style="font-size: 14pt"><font face="Calibri">InfoPath</font></span><span style="font-size: 14pt">的组件，专门用于制作表单，但一般情况下，要求填写表单的电脑安装</span><span style="font-size: 14pt"><font face="Calibri">InfoPath</font></span><span style="font-size: 14pt">，而</span><span style="font-size: 14pt"><font face="Calibri">InfoPath</font></span><span style="font-size: 14pt">价格不菲。</span></p>
+<p><span style="font-size: 14pt"><font face="Calibri">Adobe Designer</font></span><span style="font-size: 14pt">是</span><span style="font-size: 14pt"><font face="Calibri">Adobe</font></span><span style="font-size: 14pt">公司产品，内置表单设计程序，可以使用</span><span style="font-size: 14pt"><font face="Calibri">Adobe Reader</font></span><span style="font-size: 14pt">填写，重要的是，</span><span style="font-size: 14pt"><font face="Calibri">Adobe Reader</font></span><span style="font-size: 14pt">是免费的。</span></p>
+<p><span style="font-size: 14pt">下面我们将完整的过程记录下来。</span></p>
+<h2 id="一、&nbsp;&nbsp;&nbsp;_配置参数"><span><span style="mso-list: Ignore"><font face="Cambria">一、</font><span style="font: 7pt  Times New Roman ">&nbsp;&nbsp;&nbsp;  </span></span></span><span>配置参数</span></h2>
+<p><span style="font-size: 14pt">我们打开程序</span><span style="font-size: 14pt"><font face="Calibri">Adobe Designer,</font></span><span style="font-size: 14pt">点击菜单&ldquo;文件</span><span style="font-size: 14pt"><font face="Calibri">/</font></span><span style="font-size: 14pt">新建&rdquo;打开&ldquo;新建表单助手&rdquo;。我们这里选择新建空白表单。</span></p>
+<div forimg="1"><br><div forimg="1"><br><div forimg="1"><br><br><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/fd480cd10047b3df562c8403.jpg" alt=""><br><br><span style="font-size: 14pt"><font color="#000000">在接下来的布面中设置页面大小，方向，初始页数。</font></span><br><br><span style="font-size: 14pt"><font color="#000000"><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/34ad951313e18b8c6438db0c.jpg" alt=""></font></span><br><br><span style="font-size: 14pt"><span style="font-size: 14pt">指定要数据回复到的邮件地址，然后单击&ldquo;完成&rdquo;，进入平面设计流程。</span> </span><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/87553f019b95f9027aec2c17.jpg" alt=""><br><br>## <span><span style="mso-list: Ignore"><font face="Cambria">三、</font><span style="font: 7pt  Times New Roman ">&nbsp;&nbsp;&nbsp;  </span></span></span><span>表单填写与数据回复</span><br><br><span style="font-size: 14pt">我们可以用免费的</span><span style="font-size: 14pt"><font face="Calibri">Adobe Reader</font></span><span style="font-size: 14pt">填写表单，也可以用</span><span style="font-size: 14pt"><font face="Calibri">Adobe Acrobat<span style="mso-spacerun: yes"> </span>Professional</font></span><span style="font-size: 14pt">填写表单。</span><br><br><span style="font-size: 14pt">选择回复方法，即用户在填写完表单后，用何种方法提交填写的信息，一般选择第一项，即填写后通过邮件的方式提交填写的数据。</span><br><br><span style="font-size: 14pt"><br><div forimg="1"><br><br><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/1252f61fe9996cf9e1fe0b1d.jpg" alt=""><br><br></div><br></span><br><br><span style="font-size: 14pt"><span style="font-size: 14pt"><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/bc952bf5355fd829bd31090e.jpg" alt="">&nbsp;&nbsp;</span></span><br><br><span style="font-size: 14pt"><span style="font-size: 14pt"><br><br>## <span><span style="mso-list: Ignore"><font face="Cambria">一、</font><span style="font: 7pt  Times New Roman ">&nbsp;&nbsp;&nbsp;  </span></span></span><span>开始制作表单页面。</span><br><br><span style="font-size: 14pt">我们先熟悉一下程序最常用到的有两个调板，一个&ldquo;库&rdquo;调板，一个是&ldquo;对象&rdquo;调板。</span><br><br><span style="font-size: 14pt">&ldquo;库&rdquo;调板是我们用得最多的面板。</span><br><br><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/6fec332a5bfe51345243c10f.jpg" alt=""><br><br><span style="font-size: 14pt">而&ldquo;对象&rdquo;调板是调整对象属性的地方，比如对象的外观，绑定名称，验证等，不同的对象属性参数并不一样。</span><br><br><span style="font-size: 14pt"><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/8a8f8144635b5b40500ffe08.jpg" alt=""></span><br><br><span style="font-size: 14pt"><span style="font-size: 14pt">首先，我们添加一个标题控件与横线控件。</span></span><br><br><span style="font-size: 14pt"><span style="font-size: 14pt"><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/6d441c4cdbab98f5d62afc09.jpg" alt=""></span></span><br><br><span style="font-size: 14pt"><span style="font-size: 14pt"><br><br><span style="font-size: 14pt">第三个需要添加的控件是经常用到的控件，&ldquo;数字域&rdquo;控件</span><span style="font-size: 14pt"><font face="Calibri">(</font></span><span style="font-size: 14pt">文本域与数字域在设置方面类似</span><span style="font-size: 14pt"><font face="Calibri">)</font></span><span style="font-size: 14pt">，并修改其属性，把绑定名称改为&ldquo;年龄&rdquo;，其它保持不变。</span><br><br><span style="font-size: 14pt"><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/0c3ebf010b37b70f728da514.jpg" alt=""></span><br><br></span></span></span></span><span style="font-size: 14pt"><span style="font-size: 14pt"><br><br><span style="font-size: 14pt">第四个要添加的控件是&ldquo;下拉列表&rdquo;，在对象面板中，我们可以添加、修改或删除在下拉列表框要出现的项目，在这里，让我们可以选择男或女，我们把绑定名称修改为&ldquo;性别&rdquo;。</span><br><br></span></span><br><br><span style="font-size: 14pt"><span style="font-size: 14pt"><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/3eb27dece94077dd2e2e2114.jpg" alt=""></span></span><br><br><span style="font-size: 14pt"><span style="font-size: 14pt"><br><br><span style="font-size: 14pt">第五个要添加的是&ldquo;单选钮&rdquo;控件，我们需要添加两个组成一组（这里的设置与功能都与下拉列表框差不多），为了把两个或更多的单选钮组成一组，你只需要把它们要绑定的名称改成一样即可，这里我们把名称改为&ldquo;</span><span style="font-size: 14pt"><font face="Calibri">isknow</font></span><span style="font-size: 14pt">&rdquo;。</span><br><br><div forimg="1"><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/b711cdefc7ca0a3aadafd5e8.jpg" alt=""></div><br></span></span><span style="font-size: 14pt"><span style="font-size: 14pt"><br><br><span style="font-size: 14pt">第六个要添加的是&ldquo;复选框&rdquo;控件，复选框要实现的功能就是多选，我们把复选框控件组的名称修改为&ldquo;</span><span style="font-size: 14pt"><font face="Calibri">age-select</font></span><span style="font-size: 14pt">&rdquo;。</span><br><br><span style="font-size: 14pt"><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/8c6d64d9917a162010df9b16.jpg" alt=""></span><br><br><span style="font-size: 14pt"><br><br><span style="font-size: 14pt">第七个要添加的&ldquo;日历&rdquo;控件，这个控件可以让我们在输入日期类项目时更加人性化，我们把绑定名称修改为&ldquo;出生日期&rdquo;。</span><br><br><span style="font-size: 14pt"><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/54a708f4097fec62dcc47416.jpg" alt=""></span><br><br><span style="font-size: 14pt"><br><br><span style="font-size: 14pt">至此，我们的平面设计工作告一段落。看一看效果图。</span><br><br></span></span></span></span></div><br></div><br></div>
+
+<div forimg="1"> </div>
+
+<div forimg="1"> </div>
+
+<div forimg="1"> </div>
+
+<div forimg="1"> </div>
+
+<div forimg="1"><br><div forimg="1"> </div><br></div>
+
+<div forimg="1"> </div>
+
+<div forimg="1"> </div>
+
+<div forimg="1"> </div>
+
+<div forimg="1"> </div>
+
+<div forimg="1"> </div>
+
+<div forimg="1"> </div>
+
+<div forimg="1"> </div>
+
+<div forimg="1">
+
+<div forimg="1">
+
+<p><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/40e01638cc88bafeb311c7f0.jpg" alt=""></p>
+<p><span style="font-size: 14pt">填写完成后，请按&ldquo;通过电子邮件提交&rdquo;按钮，即可完成调查。</span></p>
+<p><span style="font-size: 14pt">我们可以通过桌面电子邮件应用程序，比如</span><span style="font-size: 14pt"><font face="Calibri"> outlook,foxmail</font></span><span style="font-size: 14pt">等等程序发送数据文件。你也可以通过因特网电子邮件或者把数据文件保留在本地，通过其它方式发送回调查设计的相关人员。</span></p>
+<div forimg="1">
+
+<p><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/968455435b3cf31d9213c6f3.jpg" alt=""></p>
+<h2 id="四、&nbsp;&nbsp;&nbsp;_数据收集"><span><span style="mso-list: Ignore"><font face="Cambria">四、</font><span style="font: 7pt  Times New Roman ">&nbsp;&nbsp;&nbsp;  </span></span></span><span>数据收集</span></h2>
+<p><span style="font-size: 14pt">如果进行正常，我们将收到很多以</span><span style="font-size: 14pt"><font face="Calibri">XML</font></span><span style="font-size: 14pt">结尾的附件，我们把这些文件下载下来（请注意更改文件名称）。</span></p>
+<p><span style="font-size: 14pt">打开</span><span style="font-size: 14pt"><font face="Calibri">Adobe Acrobat<span style="mso-spacerun: yes"> </span>Professional</font></span><span style="font-size: 14pt">，文件</span><span style="font-size: 14pt"><font face="Calibri">—&gt;</font></span><span style="font-size: 14pt">表单数据</span><span style="font-size: 14pt"><font face="Calibri">—&gt;</font></span><span style="font-size: 14pt">从数据文件创建电子表格。下图是添加数据文件并导出统计文件的界面。</span></p>
+<h2 id="六、&nbsp;&nbsp;&nbsp;_总结"><span><span style="mso-list: Ignore"><font face="Cambria">六、</font><span style="font: 7pt  Times New Roman ">&nbsp;&nbsp;&nbsp;  </span></span></span><span>总结</span></h2>
+<p><span style="font-size: 14pt">就象文章开始说的一样，我们可以能过多很多其它的方式完成这类工作。但我认为</span><span style="font-size: 14pt"><font face="Calibri">PDF</font></span><span style="font-size: 14pt">是目前最容易每接收的人和使用。</span></p>
+<div forimg="1">
+
+<p><img src="http://hiphotos.baidu.com/networkcomputer/pic/item/b346e0cd5a58df5d0eb345fd.jpg" alt=""></p>
+<p><span style="font-size: 14pt">打开刚才导出的</span><span style="font-size: 14pt"><font face="Calibri">XML</font></span><span style="font-size: 14pt">文件，可以看到标准的</span><span style="font-size: 14pt"><font face="Calibri">XML</font></span><span style="font-size: 14pt">文件。</span></p>
+<p><span style="font-size: 14pt"><font face="Calibri">&lt;</font></span><span style="font-size: 14pt">问卷页面</span></p>
+<p><span style="font-size: 14pt"><font face="Calibri">&gt;&lt;</font></span><span style="font-size: 14pt">数字域</span><span style="font-size: 14pt"><font face="Calibri">1</font></span></p>
+<p><span style="font-size: 14pt"><font face="Calibri">&gt;00022&lt;/</font></span><span style="font-size: 14pt">数字域</span><span style="font-size: 14pt"><font face="Calibri">1</font></span></p>
+<p><span style="font-size: 14pt"><font face="Calibri">&gt;&lt;</font></span><span style="font-size: 14pt">下拉列表</span><span style="font-size: 14pt"><font face="Calibri">1</font></span></p>
+<p><span style="font-size: 14pt"><font face="Calibri">&gt;</font></span><span style="font-size: 14pt">男</span><span style="font-size: 14pt"><font face="Calibri">&lt;/</font></span><span style="font-size: 14pt">下拉列表</span><span style="font-size: 14pt"><font face="Calibri">1</font></span></p>
+<p><span style="font-size: 14pt"><font face="Calibri">&gt;&lt;age-select</font></span></p>
+<p><span style="font-size: 14pt"><font face="Calibri">&gt;0&lt;/age-select</font></span></p>
+<p><span style="font-size: 14pt"><font face="Calibri">&gt;&lt;age-select</font></span></p>
+<p>&lt;p class=”MsoNorma …</p>
+</div></div></div></div>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e5ada6e4b9a0linuxe79a84e4b99de69da1e5bfa0e5918a-zz-by-e78e8be59ea0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/11/24/e5ada6e4b9a0linuxe79a84e4b99de69da1e5bfa0e5918a-zz-by-e78e8be59ea0/" class="article-date">
+  <time datetime="2007-11-24T14:20:00.000Z" itemprop="datePublished">Nov 24 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/11/24/e5ada6e4b9a0linuxe79a84e4b99de69da1e5bfa0e5918a-zz-by-e78e8be59ea0/">学习Linux的九条忠告 zz by 王垠</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><strong>1. 不要当&ldquo;传教士&rdquo;</strong></p>
+<p>很多人在讨论区不断的引起 &quot;Linux vs. Windows&quot; 之类的讨论，甚至争的面红耳赤，这</p>
+<p>是没有必要的。这种争论是浪费时间而没有任何用处的。对，你花了一下午，用许多事实</p>
+<p>&ldquo;捍卫&rdquo;了 &ldquo;Linux 比 Windows 好&rdquo; 这个说法。但是 Windows 的支持者并不会喜欢上</p>
+<p>Linux，他们只是稍微退缩一下，然后找一些新的证据来跟你辩论。 世界上的人们都在</p>
+<p>利用Linux 研究最前沿的科学，我们还在这里讨论 &ldquo;要不要用Linux&rdquo; 这种无聊的问题</p>
+<p>，什么时候才能赶上时代前进的步伐？ 什么叫做&ldquo;Windows 支持者&rdquo;，什么叫做&ldquo;</p>
+<p>Linux 支持者&rdquo;？我们为什么要支持某一个而反对另外一个？你不需要为 Linux &ldquo;护法</p>
+<p>&rdquo;，不需要成为&ldquo;Linux 支持者&rdquo;或者&ldquo;GNU传教士&rdquo;，GNU/Linux 已经用事实向世界证</p>
+<p>明了它们的威力，已经被大多数人接受。你只需要安安静静享受 GNU/Linux 给你的乐趣</p>
+<p>和自由。 你需要关心的不是你的工具是什么，而是你用它做了什么。精通 Linux 并不说</p>
+<p>明任何问题，因为它只是一个工具而已。如果你用 Windows 能很好的完成你的任务，那</p>
+<p>你就没有必要费时间去熟悉 Linux。直到有一天你发现一项任务只有 Linux 才能完成的</p>
+<p>时候再换也不迟，因为你身边的 Linux 的爱好者一定会很乐意的帮助你。</p>
+<p>  工具不是人，不应该对工具有感情。这是你在进行任何对工具的讨论前需要提醒自己的</p>
+<p>事情。面对一些容易引起争论的东西：Word 和 TeX；Emacs 和 VIM；MAXIMA，</p>
+<p>Mathematica 和 Maple；Gnome， FVWM 和 KDE；Mutt 和 Pine …… 一定要冷静的对自</p>
+<p>己说：&ldquo;我不站在它们任何一边，因为它们不是人。&rdquo; 各人的需要不同，生活的环境不</p>
+<p>同。对你来说好的东西，对别人来说不一定好，我们需要尊重别人的选择。如果你当面说</p>
+<p>别人正在用的程序不好，没有人会乐意接受你的意见。我从来没有建议过我爸爸不用 </p>
+<p>Windows + WPS，而用 Linux + LaTeX 来处理他的英语试卷。因为 WPS 是我爸爸的选择</p>
+<p>，他能用 WPS 编辑出很好的试题去测试他的学生，那就足够了。</p>
+<p>我曾经帮我爸爸做了一个 perl 程序，能够自动从一种我自己设计的 markup 语言转化</p>
+<p>成 LaTeX 格式的英语试卷。可以自动对试题编号，乱序排版选择题的选项，自动生成答</p>
+<p>案表，生成老师用的显示答案的版本，自动对短文改错题进行优化分段，自动拼写检查，</p>
+<p>图形化的配置方式…… 我爸爸高兴的用了一段时间，可是后来他想用 WPS 里的一种标题</p>
+<p>样式，而我不在家，无法为他修改程序。所以他又换回了 WPS。这就像有人送爱因斯坦一</p>
+<p>罐剃须泡沫一样，刚开始几天，发现他神采飞扬，不断夸这个东西真舒服。过了几天，发</p>
+<p>现爱因斯坦又开始用白水剃胡子了，因为剃须泡沫用完了，他懒得自己去买那个东西。这</p>
+<p>只是习惯问题。</p>
+<p><strong><font class="col31">2. 不要强迫自己</font></strong></p>
+<p>喜欢电脑的人总是有某些心理强迫倾向。有的人说：&ldquo;键盘比鼠标快。我不要用鼠标。这</p>
+<p>样才有高效率。&rdquo; 所以他在编辑器里无论什么时候总是用 20w, 10j 这样的命令到达目</p>
+<p>的点。他甚至觉得图形界面是多余的，干脆 Xwindow 都不装。全部用键盘看起来的确比</p>
+<p>让手离开键盘去拿鼠标，再回来&ldquo;快&rdquo; 多了，但是快的击键频率不等于工作的高效率，</p>
+<p>对你的健康更没有什么好处。这只能把你变成打键盘的机器。当你正在检查你的文章或者</p>
+<p>程序，思维正在随着字符的含义流动，突然 20w, 10j 这样的东西出现在你的脑子里，是</p>
+<p>不是会打断思路？不？那说明你当时思考的问题比较简单，这些干扰还不会起到副作用。</p>
+<p>其实很多人用电脑的时候，思想都受到某种教条的束缚，上面这个只是众多教条中的一</p>
+<p>种。某些人制造了很多这种教条，用他的工作方式来要求别人，嘲笑方式跟他不一样的人</p>
+<p>。比如有的人嘲笑其它人写 C 程序不按 8 字符缩进，嘲笑别人在 vi 里用方向键，嘲笑</p>
+<p>别人不知道 PVM 是什么，嘲笑其它人用 JAVA, C# 这种由 GC 回收内存语言…… 你不用</p>
+<p>管各种各样的教条，电脑只是你的奴隶，你想怎么用就怎么用。没有人能够约束你，没有</p>
+<p>人可以嘲笑你的工作方式。电脑明天就不再是这个样子，所以今天你不用完全了解它。你</p>
+<p>没有必要知道别人创造的一切，因为你需要留点时间自己创造些东西。Just have fun! </p>
+<p>当你下次修改文章的时候，不妨试试悠闲的用鼠标在你眼睛看到的地方轻轻点一下。</p>
+<p><strong><font class="col31">3. 不要&ldquo;玩 Linux&rdquo;</font></strong></p>
+<p>很多人用 Linux 的时候会感觉很迷茫，该用哪个发行呢？是不是我少装了什么？怎么升</p>
+<p>级这么快啊！怎么这么不稳定！每当遇到新的软件他就想试用，每当新的版本出现，他就</p>
+<p>更新，然后用鼠标在新的菜单里选择从来没见过的程序来用用。 其实你是为了Linux而使</p>
+<p>用Linux，而没有找到正确的理由来利用 Linux。你首先要明确用电脑的目的，你用它是</p>
+<p>为了解决你的实际问题，而不是为了学习安装操作系统，不是为了测试哪个版本好用，不</p>
+<p>是为了&ldquo;赶上潮流&rdquo;，更不是因为你硬盘太大了，你想多占点空间。 如果你启动了电脑</p>
+<p>之后不知道应该干什么，那么最好先不要用电脑，因为你可能有更重要的事情需要做。</p>
+<p><strong><font class="col31">4. 不用挑剔发行版本</font></strong></p>
+<p>很多人刚开始用 Linux 的时候，总是在怀疑别的发行版本是否比自己正在用的这个好，</p>
+<p>总是怀疑自己以后时候会失去支持，不得不换用别的发行。所以很多人今天是 Redhat，</p>
+<p>明天又换成了 debian, 一会儿又是 gentoo, …… 甚至有的人在一台机器上装了两个版</p>
+<p>本的 Linux，然后比较哪一个好。 其实你完全没有必要这样做，任何发行，只要你熟悉</p>
+<p>了，你在上面的工作方式几乎是不会受到任何影响的。</p>
+<p>我以前一直用的 Redhat，当我有一天在我的一台新机器上安装 debian 时，我发现使用</p>
+<p>Redhat 的经验完全没有浪费。我用了一个下午就配置好了 debian，使它服服贴贴的听</p>
+<p>我的话，就跟没有换发行一样。 Debian, TurboLinux, SuSE, Redhat, Gentoo, … 任</p>
+<p>何一个版本都是不错的。很多人认为自己攒一个 LFS 是高水平黑客的象征，但是不是每</p>
+<p>个人都有精力去了解所有细节。 如果你是用于个人的日常事物和科研，可以试试 </p>
+<p>debian。它是我见过的最方便的一个发行。</p>
+<p><strong><font class="col31">5. 不要盲目升级</font></strong></p>
+<p>不知道这是心理作用还是什么，有的人看到比较大的版本号，就会很想换成那个。很多人</p>
+<p>的 Redhat 本来配置的很舒服了，可是一旦 Redhat 发行新的版本，他们就会尽快下载过</p>
+<p>来，然后选择升级安装。结果很多时候把自己原来修改得很好的配置文件给冲掉了。新的</p>
+<p>软件又带来了新的问题，比如有一次我的 rxvt 升级到 2.7.8 就跟 miniChinput 冲突了</p>
+<p>，升级到 Redhat 8.0，发现 xmms 居然缺省不能放mp3了，XFree86 的 xtt 模块在 </p>
+<p>I810 上有新的 bug，会导致 Mozilla 突然退出。如果你已经配置好了一切，千万别再整</p>
+<p>体升级了，这会浪费你很多很多时间的，不值得。有句话说得好:&quot;If it’s not </p>
+<p>broken, don’t fix it.&quot; 如果你的程序能够完成你需要做的事情，你何必升级呢？</p>
+<p><strong><font class="col31">6. 不要配置你不需要的东西</font></strong></p>
+<p>如果你只想做一个像我这样的普通用户，主要目的是用 Linux 来完成自己的科研任务和</p>
+<p>日常工作，那就可以不用系统管理员或者网络管理员的标准来要求自己，因为当一个系统</p>
+<p>和网络管理员确实很辛苦。普通用户学习那些不经常用到的复杂的维护系统的工具，其实</p>
+<p>是浪费时间，学了不用是会很快忘记的！我不是一个合格的网络管理员，我的服务器都只</p>
+<p>设置了我自己需要的功能，设置好 ssh, ftp 已经足够了，那样可以省去我很多麻烦。我</p>
+<p>从来不过度考虑&ldquo;安全&rdquo;，因为 Linux 缺省已经很安全了。我没有磁带机，就不用管 </p>
+<p>tar 的那些稀奇古怪的参数了，czf, xzf, ztf 已经可以满足我所有的需要。sed, </p>
+<p>awk, … 我也只会几种常用的命令行。</p>
+<p><strong><font class="col31">7. 不要习惯的使用 root 帐号。</font></strong></p>
+<p>在需要的时候才 su！ 这是很多刚接触 UNIX 类操作系统的人常见的现象，他们不喜欢在</p>
+<p>管理系统的时候才 su, 而是一直用 root 帐号干所有事情，配置系统，安装程序，浏览</p>
+<p>网页，玩游戏，编程 …… 结果有一天，他不小心在某个系统目录使用了 rm * … 后果</p>
+<p>不堪设想……</p>
+<p><strong><font class="col31">8. 不要用商业的眼光来看 Linux。</font></strong></p>
+<p>Linux 不是商业软件，所以不要用要求 Solaris, Windows 那样的眼光来看 Linux. 自</p>
+<p>由软件的作者们从来不拉拢用户，他们对用户不负有任何责任。实际上在自由软件的世界</p>
+<p>里，&ldquo;开发者&rdquo;和&ldquo;用户&rdquo; 并没有明确的界限，大家是朋友。自由软件很可能只是满足</p>
+<p>作者和他的朋友的需要，甚至是为了好玩而创造的。自由软件不是完美的，自由软件承认</p>
+<p>自己有缺点，它不会自吹自擂，蒙蔽&ldquo;用户&rdquo;的耳目。这种对作者责任的解脱激发了作者</p>
+<p>的创造力，他们不用过分考虑&ldquo;向上兼容&rdquo;，他们往往比背上重重包袱的商业软件结构更</p>
+<p>合理，技术更先进。所以当你用某个自由软件遇到困难的时候，不应该埋怨软件的作者，</p>
+<p>因为他们对你并没有义务。</p>
+<p>你不应该把自己当成一个挑剔的顾客，而要把自己作为这个软件的顾问和一个和蔼的建议</p>
+<p>者，这样你才能理解作者写这个程序时的快乐，在遇到问题时向作者反映，帮助他完善这</p>
+<p>个软件，成为一个快乐的参与者。就像你的哥哥送你一个他用旧了的自行车，你应该珍惜</p>
+<p>这份友情，而不要在车坏了，或者骑车摔了一交的时候大骂你的哥哥。如果你真的不能使</p>
+<p>用这种合作的心态，那么最好不要使用这个软件。这是一种先进的文化，它包含了互相合</p>
+<p>作，科学创新的精神。理解这一点不是很容易，很多人往往是因为不能理解这种文化而离</p>
+<p>开自由软件。这对于作者来说并没有什么损失。</p>
+<p><strong><font class="col31">9. 干你的正事去</font></strong></p>
+<p>  很多人跟我说，你的网页浪费我好多时间来配置这配置那，一会儿是 FVWM，一会儿是</p>
+<p>Mutt …… 嗯……那些东西都是我有空的时候一点一点积累的，如果你想一次性搞定所</p>
+<p>有那些东西，恐怕得花你几个星期甚至几个月的时间！并不是一定要搞定所有这些东西你</p>
+<p>才能正常工作的。除非你真的非得利用某个程序，或者你闲着没事，否则你可以不管这些</p>
+<p>东西。</p>
+<p><strong><font class="col31">10. 上面几条仅供参考 以上只是个人意见，不一定适合所有人。取舍由你了！</font></strong></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-linuxe4b88bcate591bde4bba4e4bdbfe794a8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/11/16/linuxe4b88bcate591bde4bba4e4bdbfe794a8/" class="article-date">
+  <time datetime="2007-11-16T07:24:00.000Z" itemprop="datePublished">Nov 16 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/11/16/linuxe4b88bcate591bde4bba4e4bdbfe794a8/">linux下cat命令使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>名称：cat </p>
+<p>使用权限：所有使用者 </p>
+<p>使用方式：cat [-AbeEnstTuv] [—help] [—version] fileName </p>
+<p>说明：把档案串连接后传到基本输出（萤幕或加 &gt; fileName 到另一个档案） </p>
+<p>参数： </p>
+<p>-n 或 —number 由 1 开始对所有输出的行数编号 </p>
+<p>-b 或 —number-nonblank 和 -n 相似，只不过对于空白行不编号 </p>
+<p>-b 或 —number-nonblank 和 -n 相似，只不过对于空白行不编号 </p>
+<p>-s 或 —squeeze-blank 当遇到有连续两行以上的空白行，就代换为一行的空白 </p>
+<p>行 </p>
+<p>-v 或 —show-nonprinting </p>
+<p>范例： </p>
+<p>cat -n textfile1 &gt; textfile2 把 textfile1 的档案内容加上行号后输入 </p>
+<p>textfile2 这个档案里 </p>
+<p>cat -b textfile1 textfile2 &gt;&gt; textfile3 把 textfile1 和 textfile2 的档 </p>
+<p>案内容加上行号（空白行不加）之后将内容附加到 textfile3</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++==</p>
+<div><font size="2">cat主要有三大功能：<br><br>1.一次显示整个文件。$ cat&nbsp;&nbsp;  filename<br><br>2.从键盘创建一个文件。$ cat &gt; filename<br><br>只能创建新文件,不能编辑已有文件.<br><br>3.将几个文件合并为一个文件。 $cat&nbsp;&nbsp;  file1&nbsp;&nbsp;  file2 &gt; file</font></div><br><div><font size="2">参数：<br><br>-n 或 —number 由 1 开始对所有输出的行数编号<br><br>-b 或 —number-nonblank 和 -n 相似，只不过对于空白行不编号<br><br>-s 或 —squeeze-blank 当遇到有连续两行以上的空白行，就代换为一行的空白行<br><br>-v 或 —show-nonprinting<br><br>范例：<br><br>cat -n textfile1 &gt; textfile2 把 textfile1 的档案内容加上行号后输入 textfile2 这个档案里<br><br>cat -b textfile1 textfile2 &gt;&gt; textfile3 把 textfile1 和 textfile2 的档案内容加上行号（空白行不加）之后将内容附加到 textfile3 里。<br><br>范例：<br><br>把 textfile1 的档案内容加上行号后输入 textfile2 这个档案里<br><br>cat -n textfile1 &gt; textfile2<br><br>把 textfile1 和 textfile2 的档案内容加上行号（空白行不加）之后将内容附加到 textfile3 里。<br><br>cat -b textfile1 textfile2 &gt;&gt; textfile3<br><br>cat /dev/null &gt; /etc/test.txt 此为清空/etc/test.txt档案内容<br><br>cat 也可以用来制作 image file。例如要制作软碟的 image file，将软碟放好后打<br><br>cat /dev/fd0 &gt; OUTFILE<br><br>相反的，如果想把 image file 写到软碟，请打<br><br>cat IMG_FILE &gt; /dev/fd0<br><br>注：<br><br>1. OUTFILE 指输出的 image 档名。<br><br>2. IMG_FILE 指 image file。<br><br>3. 若从 image file 写回 device 时，device 容量需与相当。<br><br>4. 通常用在制作开机磁片。 </font></div>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e7a7bbe58aa8e7a4bee58cbae697a0e6b395e7949fe5ad98e79a844e4b8aae79086e794b1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/11/13/e7a7bbe58aa8e7a4bee58cbae697a0e6b395e7949fe5ad98e79a844e4b8aae79086e794b1/" class="article-date">
+  <time datetime="2007-11-12T18:51:00.000Z" itemprop="datePublished">Nov 13 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/11/13/e7a7bbe58aa8e7a4bee58cbae697a0e6b395e7949fe5ad98e79a844e4b8aae79086e794b1/">移动社区无法生存的4个理由</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原文链接:<a href="http://www.yeeyan.com/articles/view/6279/2901" target="_blank" rel="external">www.yeeyan.com/articles/view/6279/2901</a></p>
+<table width="100%" cellspacing="0" cellpadding="4" border="0"><br>    <tbody><br>        <tr><br>            <td><img src="http://bp1.blogger.com/_LO__hoV3sJ4/RwJJQbiYVXI/AAAAAAAAAF8/H8gouRo6URg/s320/danah_boyd.jpg" alt="danah_boyd.jpg"></td><br>            <td><br>            <div align="left"><span><a href="http://www.zephoria.org/thoughts/" target="_blank" rel="external">Danah Boyd</a></span><span>毕业于贝克利与哈佛大学，金融时报形容她是<span>&ldquo;</span>社会网络的女祭司&rdquo;。在<span><a href="http://www.mocollywood.com/" target="_blank" rel="external">MoCollywood</a></span>移动大会上，她就有关<span>&lt;</span>社会性网络以及围绕社会型网络进行的移动平台上应用的挑战与可能<span>&gt;</span>发表了演讲。</span></div><br><br><span><span>她以<span>&quot;Soial Networking vs. A Social Network&quot;</span>这个题目作为演讲的开始。<span>&ldquo;Networking </span>是指与陌生人相识的关系，而<span>Network</span>则是维系一种已经存在着的关系。它们有着很微妙的区别。<span>&rdquo;</span></span></span><br><br><span><span>随后她向观众解释了社会空间的历史进程。</span> </span><br><br>            </td><br>        </tr><br>    </tbody><br></table>
+
+<p><span>真实生活的社会空间就像社会的测量计，它使得人们得以去理解社会本身，使得我们去了解别人。当我们观察那些<span>&ldquo;</span>公共场所<span>&rdquo;</span>（例如：公园、广场、花园）以及人们互相交流交际的方式时，我们会发现这个社会是如此巨大。而线上空间（<span>Online spaces</span>）同样，也给了我们这种洞察力。</span></p>
+<p><span>线上社会空间<span>(Online social spaces)</span>是依托于某种共同兴趣的基础而建立起来的<span>&mdash;&mdash;</span>比如用<span>&ldquo;rec/pets/cats&rdquo;</span>来标签那些特别喜欢猫的人群。随即，在这些以组为中心的基础上，设计<span>&ldquo;me&amp; my friends&rdquo;</span>的功能，这种功能可以使人们对自己的朋友作新的定义，他们可能并不完全是你最亲近的朋友，但这些<span>&ldquo;</span>朋友<span>&rdquo;</span>却能够构造出一个真实的你（译者注：所谓的物以类聚，人以群分）。一般来说<span>2/3</span>的人使用留言页面并不是为了获得电子邮件的功能，而很大一部分原因在于<span>&ldquo;</span>告知<span>&rdquo;</span>，那些签名可以让我了解到究竟谁看过这个页面？</span></p>
+<p><span>如果一直要使自己处于线上，那你必须要通过某种方式将自己呈现在网上（<span>Offline you exist online you have to write yourself into being.</span>）。朋友和那些你档案中所设的应用程序及标识一样，是达到这种目的的关键。</span></p>
+<p><span>社会性线上网络有别于传统的线下<span>&ldquo;</span>公共场所<span>&rdquo;</span>，因此与线下生活中相比，在线上环境下表现个人及其标识的方式会很不同：持续性、可检索性、可复制性、观众隐性（<span>Invisible Audiences</span>）、语境性是<span>5</span>个关键。而这<span>5</span>个关键我将在以后的文章中单独做出详述。</span></p>
+<p><span>Danah </span><span>随后探讨了为什么将<span>&ldquo;</span>社会<span>&rdquo;</span>的移动应用会存在困难。</span></p>
+<p><span>●</span><span><strong>非完整对话</strong><span></span></span></p>
+<p>移动对话呈现出的是一种<span>&ldquo;</span>一对一<span>&rdquo;</span>的形式，相对与互联网社会性站点的多联系性，移动这种点对点的方式使得人们不能同时看到整个对话，而是被分片破碎的。</p>
+<p><span>●</span><span><strong>不同步性（<span>Asynchronicity</span>）<span> vs </span>可同步性</strong><span></span></span></p>
+<p>信息的不同步是网络的表现，而同步性是移动的特有属性。移动属于即时的信息推送，其目的在于能够立即给予回应，因此它表现出对个人隐私的侵扰。而互联网社会性站点可以允许信息的接受者自己决定什么时候读这条消息，什么时候去回复它。</p>
+<p><span>●</span><span><strong>标准化</strong><span></span></span></p>
+<p>浏览器大都呈现出同样的功能和使用译言，而移动环境却有不同的设备、操作平台以及话费的套餐组合，而这意味着你可别指望你的信息接受者会按照你希望的去做。因此，标准化是将<span>&ldquo;</span>社会<span>&rdquo;</span>转嫁到移动上的阻碍。</p>
+<p><span>●</span><span><strong>匿名性</strong><span></span></span></p>
+<p>移动用户与互联网用户相比相比无法匿名，他们很容易被识别。而这种无法匿名性将潜在地阻碍网络社会的传播发展。</p>
+<p><span>最后一点我比较赞同，但对于<span>&ldquo;</span>移动与社会不相容<span>&rdquo;</span>我持有不同的看法。</span></p>
+<p><span>越来越多的移动设备将能够像浏览器那样提供上网的体验，而在目前阶段，阻碍其发展的只是屏幕的尺寸。当更多的公司开发其移动社会站点时<span>&mdash;&mdash;</span>例如：<span>mfacebook </span>、<span>mtwitter</span>、<span>bloger</span>、<span>sony mobile &mdash;&mdash;</span>他们发现并确信，移动应用并没有取代他们在互联网上的应用。而这种移动性及地域性的评论及帖子反而将会创造出更大的机遇。</span></p>
+<p><span>移动可以也应该成为社会网络的核心。</span></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e69bb4e5b091e79a84e585b3e7b3bbe7bd91e69bb4e5a49ae79a84e694b6e79b8a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/11/13/e69bb4e5b091e79a84e585b3e7b3bbe7bd91e69bb4e5a49ae79a84e694b6e79b8a/" class="article-date">
+  <time datetime="2007-11-12T18:50:00.000Z" itemprop="datePublished">Nov 13 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/11/13/e69bb4e5b091e79a84e585b3e7b3bbe7bd91e69bb4e5a49ae79a84e694b6e79b8a/">更少的关系网,更多的收益</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原文链接:<a href="http://www.yeeyan.com/articles/view/10035/2861" target="_blank" rel="external">www.yeeyan.com/articles/view/10035/2861</a></p>
+<div align="center"><font size="4"><strong>更少的关系网,更多的收益</strong></font></div>
+
+<p>&mdash;&mdash;注重已有的人际关系网比发展更多的关系网要更有用</p>
+<p>Bv Ivan Misner 2007年10月29日</p>
+<p>对人际关系网与其开荒不如去收获。过于重视从一个关系网转到另一个关系网，以寻求建立新的人际关系是在浪费时间，金钱和精力。你应该发展已经开始的人际关系。这就好像当你应该为未来而种下椰树时，你却四处去敲打别的椰子。</p>
+<p>当我们培训人们对关系网的态度时，告诉他们的第一件事会使他们很惊讶：不要再发展新的关系网了。先停一段时间。在 原地思考一下你现在所有的关系网，优先考虑它们，统计它们，利用好它们，而不是只在继续我们所谓的VCP过程（visibility可见的， credibility可信的，profitablility盈利的）中的&ldquo;V&rdquo;这一个进程。我们应该投入更多的时间在&ldquo;C&rdquo;和&ldquo;P&rdquo;的过程中。可信来自 于更亲近，更深厚的人际关系。盈力是目标，它只能通过不断培养双方的关系，达到互利互惠来维持。不是&ldquo;很高兴见到你，但现在我要去和那个人谈谈。&rdquo;而应该 是&ldquo;你在忙什么？我能帮你达到目标吗？&rdquo;</p>
+<p>&quot;关系网,关系网,关系网&quot;，使人们感到压力的一个原因就是：没有已经完善的方法告诉你，怎样用可以参照的策略来成功的得到自己想要的结果。&ldquo;越多越好&rdquo;的天性驱使着人们去寻求更多的关系网。实际上，你所做的一切，是在期待着大的销售额和减少事业上未来的机会。</p>
+<p>像这种重建新关系网效果的唯一检验方法就是你是否很快能获得收益。对每次联系，就像买彩票，有时可能会中奖，但大 多数会一无所得。长久成功人际关系的建立并不是可以通过估量得出的，因为它不可能估量。如果相互之间的联系屈指可数，即使你花时间尽力与某人建立这种联 系，以发展双赢，他可能从来不会买你的产品或服务。如果你的着重点是即时的销售量，那么你在失去许多未来的机会。</p>
+<font face="Times">Mike Garrison是职业分配研究所的副院长。Mike在商业关系网，市场职业分配和基督教商业方面，是位很受欢迎的演讲家，老师和顾问。他最近与我们一起分享了下面的故事：</font>
+
+<font face="Times">我知道有对夫妇,他们在房地产运作上非常成功,拥有大量的业务,发展了很 多的中介,他们要形成新的关系群来找到足够的人来运行新的业务。他们不再为自己寻求新的中介&mdash;&mdash;只是有足够的新人来处理他们带给团体的所有任务。除非你的 业务太多，否则我不建议你把有深厚联系的职业关系网的数量翻倍。</font>
+
+<font face="Times">事实上，你能参加的网络会议很少，但是你也可以参加很多。如果你身处一个 有着深厚联系的职业群体里，你可能被要求每个星期都去参加会议。这是个好的理由，你可以与群里的职业伙伴建立和维持良好的关系，关注他们所提供的不同的商 品和服务，在那里，你不仅仅是接受介绍，而且还是把他们介绍给你的关系伙伴。但是如果你应邀参加所有的会议，加入到各种不同类型的群体里，显而易见的推销 着自己，那就是在浪费与合作伙伴的宝贵时间。</font>
+
+<font face="Times">你也能明显的通过更多的掌控之外的介绍来推销自己，换句话说，在有利的事 情上，花费的太多。澳大利亚的顶极关系网专家Robyn Henderson&mdash;《成功的关系网》一书的作者，告诉我们，&ldquo;许多人在建立大量的战略联盟时，犯了个错误，他们忘记了维持这些战略联盟是要花时间，金钱 和许多精力的。&rdquo;保持这些关系健康的发展并能经常产生效益，这意味着你要定期的去会见你的合作伙伴，在忽略自己的核心业务的危险时，从他们那里得到很多好 的介绍。</font>
+
+<p>Henderson的忠告：&ldquo;目标是质量，而不是数量。&rdquo;建立你的联盟，这样你在面对面的交易量往往超过通过电 话，电话会议或视频会议所产生的数量。在一年中，注重三个联盟，在你的期望中排列他们的重要性，根据这个排列分配你的时间。跟踪和评估你的结果。不要过于 承诺。让忽略取消一个有用的关系网远远比在开始就没有建立起这个关系网要糟糕的多。</p>
+<p>被美国有线新闻网称为&ldquo;现代关系网之父&rdquo;的Dr,Ivan Misner是纽约时报最受欢迎的作家，同时，他也是企业家网站中&ldquo;现在的关系网&rdquo;的博客的作者。Ivan是BNI&mdash;世界上最大的商业网络组织的创始人和 主席。他最新出版的《掌握销售》被企业家新闻所定购。Dr,Misner也是职业分配研究院&mdash;一个国际性的职业培训公司的资深合作伙伴。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2007/">&laquo; Prev</a><a class="page-number" href="/archives/2007/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2007/page/3/">3</a><a class="page-number" href="/archives/2007/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2007/page/18/">18</a><a class="extend next" rel="next" href="/archives/2007/page/3/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

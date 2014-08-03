@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Solaris10下DNS服务器安全攻略 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DNS服务器是为了网络上的主机提供域名解析的服务的服务器。Solaris10虽然自带了BIND9.2.4版本，但它并不是Sun公司的产品，InternetSoftwareConsortium负责BIND软件的更新，我们应当到www.isc.org网站下载最新版本的BIND软件，因为新的版本的软件可以防止某些漏洞。下面我们来介绍如何配置DNS服务器。一、从源代码安装配置DNS服务器(1)为了下载最新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Solaris10下DNS服务器安全攻略">
+<meta property="og:url" content="http://yoursite.com/2008/10/01/solaris10e4b88bdnse69c8de58aa1e599a8e5ae89e585a8e694bbe795a5/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="DNS服务器是为了网络上的主机提供域名解析的服务的服务器。Solaris10虽然自带了BIND9.2.4版本，但它并不是Sun公司的产品，InternetSoftwareConsortium负责BIND软件的更新，我们应当到www.isc.org网站下载最新版本的BIND软件，因为新的版本的软件可以防止某些漏洞。下面我们来介绍如何配置DNS服务器。一、从源代码安装配置DNS服务器(1)为了下载最新">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Solaris10下DNS服务器安全攻略">
+<meta name="twitter:description" content="DNS服务器是为了网络上的主机提供域名解析的服务的服务器。Solaris10虽然自带了BIND9.2.4版本，但它并不是Sun公司的产品，InternetSoftwareConsortium负责BIND软件的更新，我们应当到www.isc.org网站下载最新版本的BIND软件，因为新的版本的软件可以防止某些漏洞。下面我们来介绍如何配置DNS服务器。一、从源代码安装配置DNS服务器(1)为了下载最新">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main"><article id="post-solaris10e4b88bdnse69c8de58aa1e599a8e5ae89e585a8e694bbe795a5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/10/01/solaris10e4b88bdnse69c8de58aa1e599a8e5ae89e585a8e694bbe795a5/" class="article-date">
+  <time datetime="2008-10-01T05:35:00.000Z" itemprop="datePublished">Oct 1 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Solaris10下DNS服务器安全攻略
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+		<a data-url="http://yoursite.com/2008/10/01/solaris10e4b88bdnse69c8de58aa1e599a8e5ae89e585a8e694bbe795a5/" data-title="Solaris10下DNS服务器安全攻略" data-id="jtp5u1q0kn3bgwqn" class="article-share-link">Share</a>
+	  
+      
+        <a href="http://yoursite.com/2008/10/01/solaris10e4b88bdnse69c8de58aa1e599a8e5ae89e585a8e694bbe795a5/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">Contents</strong>
+			
+			</div>
+		
+		<!-- 文章目录结束 -->
+		
+        <div class="content"><br><br>DNS服务器是为了网络上的主机提供域名解析的服务的服务器。Solaris10虽然自带了BIND9.2.4版本，但它并不是Sun公司的产品，InternetSoftwareConsortium负责BIND软件的更新，我们应当到www.isc.org网站下载最新版本的BIND软件，因为新的版本的软件可以防止某些漏洞。<br><br>下面我们来介绍如何配置DNS服务器。<br><br><strong>一、从源代码安装配置DNS服务器</strong><br><br>(1)为了下载最新的BIND软件，我们到<a href="http://www.isc.org/products/BIND/下载，本例子下载的是bind-9.3.2.tar.gz。" target="_blank" rel="external">http://www.isc.org/products/BIND/下载，本例子下载的是bind-9.3.2.tar.gz。</a><br><br>(2)将下载的软件放到系统中的某个目录下，本例中放在usr/local/src目录下。<br><br>#cdusr/local/src<br><br>#wget<a href="http://ftp.isc.org/isc/bind9/9.3.2/bind-9.3.2.tar.gz" target="_blank" rel="external">http://ftp.isc.org/isc/bind9/9.3.2/bind-9.3.2.tar.gz</a><br><br>#cpbind-9.3.2.tar.gz..<br><br>#cd..<br><br>#gzip-dbind-9.3.2.tar.gz<br><br>#tar-vxfbind-9.3.2.tar<br><br>#rmbind-9.3.2.tar<br><br>#cdbind-9.3.2<br><br>#./configure<br><br>#make<br><br>#makeinstall<br><br>#cd/usr/sbin<br><br>(3)生成的可执行文件位于/usr/local/sbin目录下。最重要的可执行文件为named和rndc。<br><br>#/usr/local/sbin/rndc-confgen&gt;/etc/rndc.conf<br><br>#cat/etc/rndc.conf<br><br>输出为：<br><br>#Startofrndc.conf<br><br>key&quot;rndc-key&quot;…{<br><br>algorithmhmac-md5;<br><br>secret&quot;y9xvvfQjdWv9f/Fo7wquBg==&quot;;<br><br>};<br><br>options…{<br><br>default-key&quot;rndc-key&quot;;<br><br>default-server127.0.0.1;<br><br>default-port953;<br><br>};<br><br>#Endofrndc.conf<br><br>#Usewiththefollowinginnamed.conf,adjustingtheallowlistasneeded:<br><br>#key&quot;rndc-key&quot;…{<br><br>#algorithmhmac-md5;<br><br>#secret&quot;y9xvvfQjdWv9f/Fo7wquBg==&quot;;<br><br>#};<br><br>#controls…{<br><br>#inet127.0.0.1port953<br><br>#allow…{127.0.0.1;}keys…{&quot;rndc-key&quot;;};<br><br>#};<br><br>#Endofnamed.conf<br><br>(9)创建rndc.key文件。将rndc.conf文件中注释部分拷贝生成如下文件：<br><br>#vi/etc/rndc.key<br><br>key&quot;rndc-key&quot;…{<br><br>algorithmhmac-md5;<br><br>secret&quot;y9xvvfQjdWv9f/Fo7wquBg==&quot;;<br><br>};<br><br>controls…{<br><br>inet127.0.0.1port953\<br><br>allow…{127.0.0.1;}keys…{&quot;rndc-key&quot;;};\<br><br>};<br><br>检查rndc是否正常工作：<br><br>#/usr/local/sbin/named-g<br><br>Jan1111:56:45.075startingBIND9.2.3-g<br><br>Jan1111:56:45.076using1CPU<br><br>Jan1111:56:45.079loadingconfigurationfrom’/etc/named.conf’<br><br>……<br><br>#/usr/local/sbin/rndcstatus<br><br>(10)编辑named.conf配置文件。<br><br>#vi/etc/named.conf<br><br>第一段的内容如下：<br><br>//generatedbynamed-bootconf.pl<br><br>options…{<br><br>directory&quot;/var/named&quot;;<br><br>/<strong>//<em>
+
+</em>Ifthereisafirewallbetweenyouandnameserversyouwant<br><br><em>totalkto,youmightneedtouncommentthequery-source
+
+</em>directivebelow.PreviousversionsofBINDalwaysasked<br><br><em>portbydefault.
+
+</em>/<br><br>//query-sourceaddress<em>port53;<br><br>};<br><br>上面的部分是在这个文件开头的options设定的，首先用directory指定了named的资源记录(RR-ResourceRecord文件目录所在位置为：&ldquo;/var/named&rdquo;。也就是说，它会到这个目录下面寻找DNS记录文件)。所以，我们在后面部分所指定的文件，就无须使用绝对路径了，但它们一定要放在这个目录下面。<br><br>那一段被注释文字，如果你仔细阅读一下，它大致意思是如果你要设定的DNS服务器和client之间隔着防火墙的话，要将&ldquo;//query-sourceaddress</em>port53;&rdquo;前面的注解符号&ldquo;//&rdquo;拿掉(当然，也必须要设定好你的火墙)。不过，这只对早期的版本有影响，而在bind8.1之后则无须担心这个设定。接下来再让我们看下一段句子：<br><br>//<br><br>//acachingonlynameserverconfig<br><br>//<br><br>zone&quot;.&quot;IN…{<br><br>typehint;<br><br>file&quot;named.root&quot;;<br><br>};<br><br>通过这几行语句，我们为named定义了DNS系统中的根区域&ldquo;.&rdquo;(rootzone)的设定，同时它是一个internet(IN)的区域类别。这里还指定了rootzone的服务器种类(type)为&ldquo;hint&rdquo;(也只有这个zone会使用这样的种类)。最后，用file指定这个区域记录文件为：&ldquo;named.root&rdquo;，也就是&ldquo;/var/named/named.root&rdquo;文件。在rootzone后面，你应该还会看到如下这两段：<br><br>zone&quot;localhost&quot;IN…{<br><br>typemaster;<br><br>file&quot;localhost.zone&quot;;<br><br>allow-update…{none;};<br><br>};<br><br>zone&quot;0.0.127.in-addr.arpa&quot;IN…{<br><br>typemaster;<br><br>file&quot;named.local&quot;;<br><br>allow-update…{none;};<br><br>};<br><br>这里是定义出关于本机名称的DNS解释：第一个zone是localhost的正解zone，其服务器种类是master，记录档名称是localhost.zone(在/var/named目录下面)，但这个zone不允许客户主机(或服务器)自行更新DNS的记录。而第二个zone则是本机区域的反向解析zone。<br><br>再看下面的两段，这两段是cjh.com域的正向和反向解析。<br><br>zone&quot;cjh.com&quot;IN…{//新加cjh.com的域<br><br>typemaster;<br><br>file&quot;cjh.com.zone&quot;;<br><br>allow-update…{none;};<br><br>};<br><br>zone&quot;9.168.192.in-addr.arpa&quot;IN…{//新加域的反向解析<br><br>typemaster;<br><br>file&quot;named.192.168.9&quot;;<br><br>allow-update…{none;};<br><br>};<br><br>最后一行是bind9.x版本的新功能，用来进行区域转移或DNS更新所用的加密处理。<br><br>include&quot;/etc/rndc.key&quot;;<br><br>(11)创建/var/named目录。<br><br>#mkdir/var/named<br><br>#cd/var/named<br><br>(12)匿名登录到ftp站点FTP.RS.INTERNIC.NET，获取/domain目录下的named.root文件，将该文件置于/var/named目录下。<br><br>(13)创建localhost.zone文件。<br><br>#vi/var/named/localhost.zone<br><br>$TTL86400<br><br>$ORIGINlocalhost.<br><br>@1DINSOA@root(<br><br>42;serial(d.adams)<br><br>3H;refresh<br><br>15M;retry<br><br>1W;expiry<br><br>1D);minimum<br><br>1DINNS@<br><br>1DINA127.0.0.1<br><br>(14)创建named.local文件。<br><br>#vinamed.local<br><br>$TTL86400<br><br>@INSOAlocalhost.root.localhost.(<br><br>2005022700;Serial<br><br>28800;Refresh<br><br>14400;Retry<br><br>3600000;Expire<br><br>86400);Minimum<br><br>INNSlocalhost.<br><br>1INPTRlocalhost.<br><br>[root@Linuxetc]#mkdir/var/named<br><br>//进入/var/named<br><br>[root@Linuxetc]#cd/var/named<br><br>//建立localhost.zone文件<br><br>[root@Linuxnamed]#vilocalhost.zone<br><br>$TTL86400<br><br>$ORIGINlocalhost.<br><br>@1DINSOA@root(<br><br>42;serial(d.adams)<br><br>3H;refresh<br><br>15M;retry<br><br>1W;expiry<br><br>1D);minimum<br><br>1DINNS@<br><br>1DINA127.0.0.1<br><br>//建立named.local文件<br><br>[root@Linuxnamed]#vinamed.local<br><br>$TTL86400<br><br>@INSOAlocalhost.root.localhost.(<br><br>1997022700;Serial<br><br>28800;Refresh<br><br>14400;Retry<br><br>360000061.177.252;Expire<br><br>86400);Minimum<br><br>INNSlocalhost.<br><br>1INPTRlocalhost.<br><br>(15)创建cjh.com.zone文件。<br><br>#vicjh.zone<br><br>$TTL1D<br><br>@INSOAcjh.com.root.cjh.com.(<br><br>1053891162<br><br>3H<br><br>15M<br><br>1W<br><br>1D)<br><br>INNScjh.com.<br><br>INMX5cjh.com.<br><br>wwwINA192.168.9.9<br><br>(16)创建named.192.168.9文件。<br><br>#vinamed.192.168.9<br><br>$TTL86400<br><br>@INSOAcjh.com.root.cjh.com.(<br><br>20031001;<br><br>7200;<br><br>3600;<br><br>43200;<br><br>86400);<br><br>@INNScjh.com.<br><br>9INPTRdns.cjh.com.<br><br>(17)在Solaris10操作系统中启动DNS服务。<br><br>#svcadmenable/network/dns/server<br><br>查看：<br><br>#svcs-l/network/dns/server<br><br>fmrisvc:/network/dns/server:default<br><br>nameInternetdomainnameserver(DNS)<br><br>enabledtrue<br><br>stateonline<br><br>next_statenone<br><br>restartersvc:/system/svc/restarter:default<br><br>contract_id25<br><br>dependencyrequire_all/nonesvc:/system/filesystem/minimal(online)<br><br>dependencyrequire_all/nonefile://localhost/etc/named.conf(online)<br><br>dependencyrequire_any/errorsvc:/network/loopback(online)<br><br>dependencyoptional_all/errorsvc:/network/physical(online)<br><br>(18)测试DNS反向解析是否成功。<br><br>#host192.168.9.9<br><br>9.9.168.192.in-addr.arpadomainnamepointerdns.cjh.com.<br><br>(19)测试DNS解析是否成功。<br><br>#nslookup<br><br>&gt;www.cjh.com<br><br>Server:192.168.9.9<br><br>Address:192.168.9.9#53<br><br>Name:www.cjh.com<br><br>Address:192.168.9.9<br><br>&gt;<br><br>出现上面的提示，说明DNS服务已经启动成功。<br><br>应用说明：<br><br>Solaris10基本上就已经安装好Bind9DNSServer，所以，跟本就不存在安装的问题。但为什么还要写这编文章呢?在某程度上跟和Solaris10的新功能ServiceManagementFacility(SMF)有关，而且，这编文章也有助于对SMF的深入了解。<br><br>Solaris10以前版本的DNS服务器启动和停止方法是：<br><br>启动DNSServer命令：<br><br>/etc/init.d/namedstart<br><br>停止DNSServer命令：<br><br>/etc/init.d/named<br><br>Solaris10版本的DNS服务器启动和停止方法是：<br><br>启动DNSServer命令：<br><br>svcadmenabledns/server或svcadmenabledns/server:default<br><br>停止DNSServer命令：<br><br>stopsvcadmdisabledns/server或svcadmdisabledns/server:default
+
+</strong>二、让DNS服务器在&ldquo;牢监&rdquo;中运行<strong><br><br>所谓&ldquo;监牢&rdquo;就是指通过chroot机制来更改某个软件运行时所能看到的根目录，即将某软件运行限制在指定目录中，保证该软件只能对该目录及其子目录的文件有所动作，从而保证整个服务器的安全。这样即使出现被破坏或被侵入，所受的损伤也较小。将软件chroot化的一个问题是该软件运行时需要的所有程序、配置文件和库文件都必须事先安装到chroot目录中，通常称这个目录为chrootjail(chroot&ldquo;监牢&rdquo;)。如果要在&ldquo;监牢&rdquo;中运行dns，而事实上根本看不到文件系统中那个真正的目录。因此需要事先创建目录，并将dns文件复制到其中。图-1中的例子，说明了牢监中的环境状态<br><br>图1&ldquo;监牢&rdquo;环境示意图<br><br>以下是具体步骤：<br><br>为DNSServer建立监牢目录<br><br>建立/chroot/dns目录<br><br>#mkdir/chroot/dns<br><br>建立一个空壳目录架构<br><br>#cd/chroot/dns<br><br>#mkdir-petc/namedvar/run<br><br>复制/etc/named.conf到监牢中<br><br>#cp/etc/named.conf/chroot/dns/etc/named.conf<br><br>复制/etc/named目录中的文件到Jail监牢中<br><br>#cp/etc/named/*/chroot/dns/etc/named/<br><br>更改/chroot/dns/var/run目录的权限<br><br>#chmod770/chroot/dns/var/run<br><br>#chownnoaccess:root/chroot/dns/var/run<br><br>为Solaris10建立一个新服务<br><br>原本的DNSServerService名称为dns/server。<br><br>建立新服务后，以后要启动旧版本的DNS服务时，不能只启动dns/server，而要改为dns/server:default。<br><br>新DNSServerChroot服务名称为，dns/server:chroot<br><br>开始建立新服务<br><br>#cd/var/svc/manifest/network/dns<br><br>#cpserver.xmlserver-chroot.xml<br><br>编辑server-chroot.xml<br><br>寻找<br><br>instancename=’default’enabled=’false’<br><br>改为<br><br>instancename=’chroot’enabled=’false’　<br><br>寻找<br><br>exec=’/usr/sbin/named’<br><br>改为<br><br>exec=’/usr/sbin/named-t/chroot/dns’<br><br>寻找<br><br>privileges=’basic,!proc_session,!proc_info,!file_link_any,net_privaddr,file_dac_read,file_dac_search,sys_resource’/&gt;<br><br>改为<br><br>privileges=’basic,!proc_session,!proc_info,!file_link_any,net_privaddr,priv_proc_chroot,priv_file_dac_read,file_dac_search,sys_resource’/&gt;<br><br>寻找<br><br>user=’root’<br><br>改为<br><br>user=’noaccess’<br><br>保存文件退出。<br><br>停止原来的DNS服务<br><br>#svcadmdisabledns/server:default<br><br>加入新的DNSServerChrootservice<br><br>#svccfgimportserver-chroot.xml<br><br>启动chrootDNSservice<br><br>#svcadmenabledns/server:chroot<br><br>#svcsdns/server<br><br>STATESTIMEFMRI<br><br>disabled6:21:03svc:/network/dns/server:default<br><br>online6:27:01svc:/network/dns/server:chroot<br><br>Bind9DNSServer现在已经能够在&ldquo;监牢&rdquo;环境中运行
+
+</strong>三、在Solaris环境下，DNS客户端程序的配置非常容易，它只需要几个简单的步骤就可以完成。<strong><br><br>(1)除了对/etc/inet/hosts文件或NIS/NIS+的主机名映射或者主机名(hostnames)表文件进行检查以外，还必须配置命名服务开关文件(/etc/nsswitch.conf)，指定域名解析服务向DNS进行查询。为了确保DNS的正常工作，在/etc/nsswitch.conf文件中必须包括下行的内容：<br><br>hosts:filesdns<br><br>这行的意思是如果需要命名服务，首先查找/etc/inet/hosts文件，如果找不到，就到DNS中去查找。<br><br>(2)我们需要将主机的本地域名输入到/etc/defaultdomain文件中。例如，主机www.cjh.net的/etc/defaultdomain文件应有如下的输入项：<br><br>cjh.net<br><br>(3)我们需要在/etc/resolv.conf文件中包含本地域名、本地基本DNS服务器的IP地址，以及辅助的DNS服务器的IP地址。这意味着本地DNS服务器出现故障，我们仍可以通过辅助的NDS服务器来提供最新的外部主机信息，而不必依赖/etc/hosts文件中的数据来解析本地地址。例如，/etc/resolv.conf文件的内容可能是这样：<br><br>domaincjh.net<br><br>nameserver202.104.0.20<br><br>nameserver53.58.31.2<br><br>它表明本地域是cjh.net，本地域有两台基本DNS服务器。其中，202.104.0.20为主DNS服务器，53.58.31.2为辅助DNS服务器。<br><br>(4)下面我们可以启动DNS客户端软件了。<br><br>#svcadmenablesvc:/network/dns/client<br><br>(5)使用nslookup命令来检查DNS客户端配置是否正确。<br><br>#nslookup<br><br>&gt;
+
+</strong>四、升级Solaris10自带BIND9.2.4版本到9.3.2的步骤<strong><br><br>如果您正在使用Solaris10自带的BIND9.2.4版本，升级步骤如下：<br><br>首先编译源代码同上。<br><br>#cd/usr/sbin<br><br>#mvnamednamed.orig<br><br>#mvnamed-checkconfnamed-checkconf.orig<br><br>#mvnamed-checkzonenamed-checkzone.orig<br><br>#cp/usr/local/sbin/named.<br><br>#cp/usr/local/sbin/named-checkconf.<br><br>#cp/usr/local/sbin/named-checkzone.　<br><br>检查新安装的BIND9DNSServer版本命令如下：<br><br>#/usr/sbin/named-v<br><br>BIND9.3.2<br><br>从新启动ChrootJail了的DNS服务<br><br>#svcadmdisabledns/server:chroot<br><br>#svcadmenabledns/server:chroot<br><br>#svcsdns/server<br><br>STATESTIMEFMRI<br><br>disabled6:21:03svc:/network/dns/server:default<br><br>online6:27:01svc:/network/dns/server:chroot<br><br>#ps-elf|grepnamed<br><br>noaccess1331020:31:29?0:00/usr/sbin/named-t/chroot/dns<br><br>新的Bind9DNSServerVersion9.3.2现在已经安装好了。
+
+</strong>总结：本文介绍了如下内容：**<br><br>&#61548;怎样启动和停止Bind9DNSServer?<br><br>&#61548;如何设定Bind9DNSServer?<br><br>&#61548;什么是监牢?<br><br>&#61548;Bind9DNSServer怎样使用ChrootJail(保安监牢)功能来防止入侵者进入系统?<br><br>&#61548;怎样建立新的SMFService来启动ChrootJail后的DNSServer?<br><br>&#61548;DNS客户端设置<br><br>&#61548;如何把Solaris10内的Bind9DNSServer升级到最新版本?<br><br>正如其他的Internet协议一样，DNS由几个Internet的RFC规范(最初是RFC882、883和973)。不过要理解DNS服务器的工作原理最好的标准还是RFC1035。你可以在Internet上的好几个地方找到RFC1035，比如在<a href="http://www.crynwr.com/crynwr/rfc1035/就有一个不错的HTML版本。正如你可能想到的那样，RFC具有相当的技术性，你不大可能会对超出DNS服务器一般操作的细节感兴趣。但是如果你想做个服务器管理员，那么就记住RFC吧。在Internet的命名服务中最常用的恐怕就是网络域名服务(DNS)了，所以Solaris10操作系统主要应用是BIND9DNS服务器。本文介绍如何设置和管理DNS服务器。" target="_blank" rel="external">http://www.crynwr.com/crynwr/rfc1035/就有一个不错的HTML版本。正如你可能想到的那样，RFC具有相当的技术性，你不大可能会对超出DNS服务器一般操作的细节感兴趣。但是如果你想做个服务器管理员，那么就记住RFC吧。在Internet的命名服务中最常用的恐怕就是网络域名服务(DNS)了，所以Solaris10操作系统主要应用是BIND9DNS服务器。本文介绍如何设置和管理DNS服务器。</a><br><br></div>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+    <footer class="article-footer">
+		
+	<a align="left" href="/2008/10/01/solarise4b88be5ae89e8a385openssh/" id="article-nav-older" class="article-nav-link-wrap">
+	  <div align="left" class="article-nav-title">上一篇 Solaris下安装OpenSSH</div>
+	</a>
+
+
+	<a align="right" href="/2008/10/01/mysql-client-library-e689bee4b88de588b0e5a484e79086e696b9e6b395/" id="article-nav-newer" class="article-nav-link-wrap">
+	  <div align="right" class="article-nav-title">下一篇 mysql client library 找不到处理方法</div>
+	</a>
+
+
+    </footer>
+	
+  </div>
+</article>
+
+<section id="comments">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Solaris10下DNS服务器安全攻略" data-title="Solaris10下DNS服务器安全攻略" data-url="http://yoursite.com/2008/10/01/solaris10e4b88bdnse69c8de58aa1e599a8e5ae89e585a8e694bbe795a5/"></div>
+	<!-- 多说评论框 end -->
+</section>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

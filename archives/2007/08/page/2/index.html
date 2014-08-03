@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2007/8 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/2007/08/page/2/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-e8a7a3e586b3phpmyadmine681a2e5a48dsqle79a842me99990e588b6e997aee9a298" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/17/e8a7a3e586b3phpmyadmine681a2e5a48dsqle79a842me99990e588b6e997aee9a298/" class="article-date">
+  <time datetime="2007-08-17T10:40:00.000Z" itemprop="datePublished">Aug 17 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/17/e8a7a3e586b3phpmyadmine681a2e5a48dsqle79a842me99990e588b6e997aee9a298/">解决PHPmyadmin恢复SQL的2M限制问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>一、修改c:\windows\php.ini文件。<font style="FONT-SIZE: 0px; COLOR: #fff">bbs.169n.com0K9](Q8U’I.P:l’Y+H#c f</font></p>
+<p>如果是Win2000的机器，应该是c\winnt\php.ini，用写字板打开php.ini文件：<font style="FONT-SIZE: 0px; COLOR: #fff">bbs.169n.com2y#Y;|1I5{:d&amp;a2e%U</font></p>
+<font style="FONT-SIZE: 0px; COLOR: #fff">bbs.169n.com:~3}&amp;C)l5]</font>
+
+<p>1、查找post_max_size，指通过表单POST给PHP的所能接收的最大值，包括表单里的所有值，默认为8M，看你自己需要进行改变。</p>
+<p><span style="DISPLAY: none">2</span>、查找File Uploads，首先确认file_uploads = on ;是否允许通过HTTP上传文件的开关，默认为ON即是开。 upload_tmp_dir ; 查找upload_max_filesize ;即允许上传文件大小的最大值。默认为2M。</p>
+<p>3、如果要上传&gt;8M的文件，那么只设置上述四项还不定一定可以。最好对下面的参数也进行设置： </p>
+<p>查找max_execution_time = 600 ;每个PHP页面运行的最大时间值(秒)，默认30秒。 <font style="FONT-SIZE: 0px; COLOR: #fff">Z+\1v*f+G”?</font></p>
+<p>max_input_time = 600 ;每个PHP页面接收数据所需的最大时间，默认60秒 。<font style="FONT-SIZE: 0px; COLOR: #fff">软件下载|电影音乐|技术教程|精品素材|魔力游戏7k5B2e0~:M5o T#G#K</font></p>
+<p>memory_limit = 8M ;每个PHP页面所吃掉的最大内存，默认8M。<font style="FONT-SIZE: 0px; COLOR: #fff">.e)Z+M;f6x,P*^</font></p>
+<p>二、修改c:\phpmyadmin\import.php文件。</p>
+<p>用写字板打开import.php文件：</p>
+<p>1、查找$memory_limit，默认为$memory_limit = 2 <em> 1024 </em> 1024;自己修改。</p>
+<p><span style="DISPLAY: none">2</span>、下边三四行的位置有同样的语句，自己修改。<font style="FONT-SIZE: 0px; COLOR: #fff">软件下载|电影音乐|技术教程|精品素材|魔力游戏1n’n2[3`4A”a</font></p>
+<p>三、到这里还不行，IIS的问题。<font style="FONT-SIZE: 0px; COLOR: #fff">绿城家园—-<a href="http://bbs.ewcn.net2O!q.k7U8j(`!e" target="_blank" rel="external">http://bbs.ewcn.net2O!q.k7U8j(`!e</a></font></p>
+<font style="FONT-SIZE: 0px; COLOR: #fff">*w%H0T2O0t’[1J</font>
+
+<p>1）解决在 IIS 6.0 中，无法上传大容量文件的办法：<font style="FONT-SIZE: 0px; COLOR: #fff">“n#}0x!\’_+v.x(a</font></p>
+<p>1、先在服务里关闭 iis admin service 服务。<font style="FONT-SIZE: 0px; COLOR: #fff">绿城家园+O$e2R(A/N7\/Z</font></p>
+<p>2、找到 windows\system32\inetsrv\ 下的 metabase.xml 文件。<font style="FONT-SIZE: 0px; COLOR: #fff">绿城家园 n4P7]2H/N)}.e!R9o6m6n</font></p>
+<p>3、用写字板打开，找到 ASPMaxRequestEntityAllowed 把它修改为需要的值（默认为：204800，即：200K）。<font style="FONT-SIZE: 0px; COLOR: #fff">绿城家园—-<a href="http://bbs.ewcn.net)}$s(_-N1g5D7B" target="_blank" rel="external">http://bbs.ewcn.net)}$s(_-N1g5D7B</a></font></p>
+<p>4、存盘，然后重启 iis admin service 服务，重启IIS。</p>
+<p>2）解决在 IIS 6.0 中，无法<span class="t_tag" href="tag.php?name=%CF%C2%D4%D8">下载</span>超过4M的附件步骤：<font style="FONT-SIZE: 0px; COLOR: #fff">软件下载|电影音乐|技术教程|精品素材|魔力游戏9`)I:I3X+?;V</font></p>
+<p>1、先在服务里关闭 iis admin service 服务。</p>
+<p><span style="DISPLAY: none">2</span>、找到 windows\system32\inetsrv\ 下的 metabase.xml 文件。<font style="FONT-SIZE: 0px; COLOR: #fff">软件下载|电影音乐|技术教程|精品素材|魔力游戏’q$^.n(W+u1].`-B&amp;P.I</font></p>
+<p>3、用写字板打开，找到 AspBufferingLimit 把它修改为需要的值（默认为：4194304，即：4MB）。<font style="FONT-SIZE: 0px; COLOR: #fff">绿城家园(D,f:m4V-`4^!X-Q/w</font></p>
+<p>4、存盘，然后重启 iis admin service 服务，重启IIS。</p>
+<font style="FONT-SIZE: 0px; COLOR: #fff">:~#b(k,s</font>
+
+<p>OK，有以上三步，PHP的2M限制完全搞定！</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e9858de7bdaephpmyadmin" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/17/e9858de7bdaephpmyadmin/" class="article-date">
+  <time datetime="2007-08-17T09:18:00.000Z" itemprop="datePublished">Aug 17 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/17/e9858de7bdaephpmyadmin/">配置phpmyAdmin</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>首先解压myphpAdmin，把里面的<strong>config.sample.inc.php</strong>改名<strong>config.inc.php</strong></p>
+<p>修改</p>
+<div class="hl-surround"><br><div class="hl-main"><span style="COLOR: #00008b">$cfg</span><span style="COLOR: olive">[</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: red">Servers</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: olive">][</span><span style="COLOR: #00008b">$i</span><span style="COLOR: olive">][</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: red">port</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: olive">]</span><span style="COLOR: gray">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = </span><span style="COLOR: #8b0000">‘</span><span style="COLOR: red">数据库端口</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: gray">;<br><br></span><span style="COLOR: #00008b">$cfg</span><span style="COLOR: olive">[</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: red">Servers</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: olive">][</span><span style="COLOR: #00008b">$i</span><span style="COLOR: olive">][</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: red">auth_type</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: olive">]</span><span style="COLOR: gray">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = </span><span style="COLOR: #8b0000">‘</span><span style="COLOR: red">改为cookie/http</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: gray">;<br><br></span><span style="COLOR: #00008b">$cfg</span><span style="COLOR: olive">[</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: red">Servers</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: olive">][</span><span style="COLOR: #00008b">$i</span><span style="COLOR: olive">][</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: red">user</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: olive">]</span><span style="COLOR: gray">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = </span><span style="COLOR: #8b0000">‘</span><span style="COLOR: red">登录名</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: gray">;<br><br></span><span style="COLOR: #00008b">$cfg</span><span style="COLOR: olive">[</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: red">Servers</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: olive">][</span><span style="COLOR: #00008b">$i</span><span style="COLOR: olive">][</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: red">password</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: olive">]</span><span style="COLOR: gray">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = </span><span style="COLOR: #8b0000">‘</span><span style="COLOR: red">密码</span><span style="COLOR: #8b0000">‘</span><span style="COLOR: gray">;</span></div><br></div>
+
+<p>修改<strong>PHP.INI</strong></p>
+<p>找到<strong>;session.save_path =</strong> 去掉前面的“；”，后面输入地址即可，但这个文件夹一定要存在，切记切记</p>
+<p>找到<strong>;extension=php_mbstring.dll</strong>，同上</p>
+<p>因为我使用的解压版的PHP，所以还要添加环境变量，在path后面添加php文件夹的路径即可</p>
+<p>然后把PHP文件夹里的<strong>libeay32.dll</strong>和<strong>ssleay32.dll</strong>以及/EXT文件下的<strong>php_mbstring.dll</strong>复制到system32下</p>
+<p>这样就能正常进入myphpAdmin</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e9858de7bdaee69687e4bbb6e78eb0e59ca8e99c80e8a681e7bb9de5af86e79a84e79fade8afade5af86e7a081blowfish_secret" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/17/e9858de7bdaee69687e4bbb6e78eb0e59ca8e99c80e8a681e7bb9de5af86e79a84e79fade8afade5af86e7a081blowfish_secret/" class="article-date">
+  <time datetime="2007-08-17T09:17:00.000Z" itemprop="datePublished">Aug 17 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/17/e9858de7bdaee69687e4bbb6e78eb0e59ca8e99c80e8a681e7bb9de5af86e79a84e79fade8afade5af86e7a081blowfish_secret/">配置文件现在需要绝密的短语密码(blowfish_secret)</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <table style="TABLE-LAYOUT: fixed"><br><tbody><br>    <tr><br>        <td><br><div class="cnt"><br><div><font size="2"><a href="http://hi.baidu.com/vking/blog/item/ad798302fe97d30e4bfb51a7.html" target="_blank" rel="external">http://hi.baidu.com/vking/blog/item/ad798302fe97d30e4bfb51a7.html</a></font></div><br>        <div><font size="2"></font></div><br>        <div><font size="2">配置phpmyadmin不成功，提示：#1045 - Access denied for user </font><a href="mailto:%20root%20@%20localhost" target="_blank" rel="external"><font color="#0066cc" size="2">‘root’@’localhost’</font></a><font size="2"> (using password: NO)<br><br>原因是第一次使用phpmyadmin不应设置mysql帐号和密码，如下图：<br><br></font><br><div forimg="1"><font size="2"><img src="http://hiphotos.baidu.com/vking/pic/item/8a6e37d1e0b4673c9a50274d.jpg" alt=""><br><br>不要像下图这么设置：</font></div><br>        <div forimg="1"><br><div forimg="1"><font size="2"><img src="http://hiphotos.baidu.com/vking/pic/item/c1b9e824d10577054d088d4f.jpg" alt=""><br><br>当然要改配置文件里的：</font><font color="#ff9900" size="2">$cfg[‘blowfish_secret’] = ‘ ‘;&nbsp;&nbsp;&nbsp;&nbsp; 单引号里面随便写个数<br><br></font><br><div forimg="1"><font size="2"><img src="http://hiphotos.baidu.com/vking/pic/item/0f41a686c1b6a13a66096e4b.jpg" alt=""></font></div><br></div><br></div><br>        <div><font size="2">下图是<font color="#ff9900">$cfg[‘blowfish_secret’] = ‘ ‘ </font>留空出现的错误：配置文件现在需要绝密的短语密码(blowfish_secret)<br><br></font><br><div forimg="1"><font size="2"><img src="http://hiphotos.baidu.com/vking/pic/item/3b54e6114776a8c2a6ef3f4c.jpg" alt=""></font></div><br></div><br></div><br></div><br></td><br>    </tr><br></tbody><br></table>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-discuze5ae89e8a385e58f8amysql-1045e99499e8afafe8a7a3e586b3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/17/discuze5ae89e8a385e58f8amysql-1045e99499e8afafe8a7a3e586b3/" class="article-date">
+  <time datetime="2007-08-16T18:23:00.000Z" itemprop="datePublished">Aug 17 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/17/discuze5ae89e8a385e58f8amysql-1045e99499e8afafe8a7a3e586b3/">Discuz安装及MySQL 1045错误解决</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>由于备案的问题，<a href="http://www.bhclub.net" target="_blank" rel="external">百合网站</a>被停，于是紧急备份，并且在另外一台机器上开始搭建PHP、MySQL环境；之所以不用比较简单的一键安装Apache、PHP和MySQL程序包，是因为找不到合适的版本，现在能找到的大部分的一体包内含的MySQL版本或高或低，版本不同数据迁移非常容易出问题，此前的有过教训。找到4.1.12版的MySQL,开始安装.第一次一切顺利,但开始安装discuz的时候发现无法识别php，原来在iis里对php支持没设好，没有在应用程序扩展里加上php以及可执行文件路径，改好之后再次运行discuz安装程序，结果无法连接数据库；用root登陆，mysql commad line client直接一闪一下就没了，运行设置向导，发现无法通过安全设置检验，提示1045错误&ldquo;mysql ERROR 1045 (28000): Access denied for user ‘root’@’localhost’&rdquo;。重装mysql多次未果。按理说这是由于数据库用户名密码错误导致的，但是确实没有错误，试了各种各种方法都不行。折腾了一天，没有头绪，干脆去吃饭。</p>
+<p>吃饭回来，继续搜解决方法，发现有个用户也遇到类似问题，它在安装的时候修改了mysql默认端口号，问题解决；我按照提示也把端口改为3308，再次安装，一切顺利，mysql1045错误的问题解决；这次遇到了版本号问题(Error 2003)，连不上数据库，这个问题简单，很容易找到了结果(解决方法见<a href="http://hi.baidu.com/xxx/blog/item/b4fe4610871d05fec3ce79e3.html" target="_blank" rel="external">这篇文章</a>)，数据库问题解决了，discuz的安装一路顺风，只待原来的mysql数据。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-mysql-e78988e69cace99499e8afafe5a484e79086efbc88client-does-not-support-authentication-protocol-requested-by-serverefbc89" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/17/mysql-e78988e69cace99499e8afafe5a484e79086efbc88client-does-not-support-authentication-protocol-requested-by-serverefbc89/" class="article-date">
+  <time datetime="2007-08-16T18:00:00.000Z" itemprop="datePublished">Aug 17 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/17/mysql-e78988e69cace99499e8afafe5a484e79086efbc88client-does-not-support-authentication-protocol-requested-by-serverefbc89/">MySQL 版本错误处理（Client does not support authentication protocol requested by server）</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><strong>解决方法 </strong>先用root登录MYSQL服务器，执行&nbsp;&nbsp;&nbsp;</p>
+<p>mysql&gt;set&nbsp;&nbsp; password&nbsp;&nbsp; for&nbsp;&nbsp;<a href="mailto:user1@&quot;localhost&quot;=old_password( yourPassword" target="_blank" rel="external">user1@”localhost”=old_password(‘yourPassword’</a>);&nbsp;&nbsp;</p>
+<p><strong>分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 析 </strong>原因是因为你使用的mysql服务器版本中使用了新的密码验证机制，这需要客户端的版本要在4.0以上，原来的密码函数被改为old_password();，这样使用password()生成的密码在旧的版本上的客户端就不好使了，而PHP中的MYSQL客户端都是3.23的(当然，mysqli的扩展除外)，问题就在这了</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-ubuntue4bfaee694b9dns" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/15/ubuntue4bfaee694b9dns/" class="article-date">
+  <time datetime="2007-08-15T08:29:00.000Z" itemprop="datePublished">Aug 15 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/15/ubuntue4bfaee694b9dns/">ubuntu修改DNS</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>sudo vi /etc/resolv.conf</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e8bdace8bdbdadobe-acrobat-80-e5ae89e8a385e4b880e997aae997aee9a298" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/15/e8bdace8bdbdadobe-acrobat-80-e5ae89e8a385e4b880e997aae997aee9a298/" class="article-date">
+  <time datetime="2007-08-15T07:10:00.000Z" itemprop="datePublished">Aug 15 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/15/e8bdace8bdbdadobe-acrobat-80-e5ae89e8a385e4b880e997aae997aee9a298/">[转载]Adobe acrobat 8.0 安装一闪问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>如果出现双击安装后安装界面出现一秒钟立刻消失的现象，请用以下方式发处理&nbsp;&nbsp;</p>
+<p>在安装<span class="t_tag" href="http://www.sh133.cn/bbs/tag.php?name=%CE%C4%BC%FE">文件</span>的同一个目录下，建立一个新文件：abc.bat   </p>
+<p>然后将下面的文字粘贴在这个文件中，保存并关闭，然后双击abc.bat运行即可：   </p>
+<p>AcroPro80_efg.exe -nos_o&quot;123&quot;</p>
+<p>原文地址：<a href="http://www.sh133.cn/bbs/viewthread.php?tid=12819" target="_blank" rel="external">http://www.sh133.cn/bbs/viewthread.php?tid=12819</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e8bdace8bdbde38091e69bb4e5a5bde79a84e58d8ee69687e9bb91e4bd93e6b8b2e69f93e69588e69e9c" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/15/e38090e8bdace8bdbde38091e69bb4e5a5bde79a84e58d8ee69687e9bb91e4bd93e6b8b2e69f93e69588e69e9c/" class="article-date">
+  <time datetime="2007-08-15T05:57:00.000Z" itemprop="datePublished">Aug 15 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/15/e38090e8bdace8bdbde38091e69bb4e5a5bde79a84e58d8ee69687e9bb91e4bd93e6b8b2e69f93e69588e69e9c/">【转载】更好的华文黑体渲染效果</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>原文链接：<a href="http://www.osxcn.com/ubuntu/stheiti-drawing.html" target="_blank" rel="external">http://www.osxcn.com/ubuntu/stheiti-drawing.html</a></p>
+<p>今天在测试几种黑体效果的时候，无意中发现了一种更好的华文黑体 (STHeiti) 渲染效果，比<a href="http://www.osxcn.com/ubuntu/edgy-stheiti.html" target="_blank" rel="external"><font color="#0077cc">以前搞出来的</font></a>更加清晰锐利，仔细对比下面这 2 张图中的文字，先凭肉眼观察是不是锐利多了，毛边少了？如果看不出来，可以下载后在图片浏览器中快速切换着来看，特别注意 “种、擎、际” 这几个字，还有大标题。</p>
+<p>方法已经找到，还是使用我这个 <a href="http://www.osxcn.com/ubuntu/edgy-stheiti.html" target="_blank" rel="external"><font color="#0077cc">《黑体解决方案》</font></a>，关键就在第三步的时候，我以前只尝试了单独给 STHeiti 设置不微调，然后再选择 “次象素平滑” 或者 “最佳形状” 这 2 种全局渲染设置，没有尝试过，在选择 “最佳形状” 后，再在 “细节” 里面把平滑选择为 “次像素(LCD)” 这种效果。原来 “更好的华文黑体渲染效果” 就这这么来的。</p>
+<p>我在自己的 CRT 上测试，文字更锐利了，而在液晶上测试，这么做的效果不是很明显，这个方法推荐 CRT 用户尝试。你也可以根据自己的实际情况来调整，怎么清晰就怎么弄。</p>
+<p><a href="http://www.osxcn.com/ubuntu/heiti-contrast.html" target="_blank" rel="external"><font color="#0077cc">更完全的黑体对比效果看这里。</font></a></p>
+<p><span></span></p>
+<p>以前的效果：</p>
+<p><img src="http://photo7.yupoo.com/20070421/143942_1860769832_zyjubrbs.jpg" alt="华文黑体"></p>
+<p>现在的效果：</p>
+<p><img src="http://photo7.yupoo.com/20070421/143943_2084858898_lektlckc.jpg" alt="华文黑体"></p>
+<p>文字中 CRT 拼错了。</p>
+<p><strong>最后，附上华文黑体 (STHeiti) 3 种渲染效果对比图：</strong></p>
+<p><strong>给华文黑体 (STHeiti) 单独定义为不微调，然后在“字体渲染”选项中选择 “最佳形状”。</strong></p>
+<p>说明：这是我以前常用的方式，英文字体为 Bitstream Vera Sans 显示很完美，缺点就是中文带点毛边。</p>
+<p><a href="http://photo7.yupoo.com/20070421/153238_64670182_sjkurzia.jpg" target="_blank" rel="external"><img src="http://photo7.yupoo.com/20070421/153238_64670182.jpg" alt=""></a></p>
+<p>这是缩略图，需要点击放大观看。</p>
+<p><strong>给华文黑体 (STHeiti) 单独定义为不微调，然后在“字体渲染”选项中选择 “次象素平滑”。</strong></p>
+<p>说明：中文毛边是少了，不过英文和数字看起来就不爽了，太细，和中文根本不协调。</p>
+<p><a href="http://photo7.yupoo.com/20070421/153236_446671154_xwfmppbh.jpg" target="_blank" rel="external"><img src="http://photo7.yupoo.com/20070421/153236_446671154.jpg" alt=""></a></p>
+<p>这是缩略图，需要点击放大观看。</p>
+<p><strong>给华文黑体 (STHeiti) 单独定义为不微调，然后在“字体渲染”选项中选择 “最佳形状”，然后在 “细节” 里面把平滑选择为 “次像素(LCD)” 。</strong></p>
+<p>说明：在我的 CRT 显示器上测试，综合上面 2 种优点，英文完美显示，中文毛边减少。</p>
+<p><a href="http://photo7.yupoo.com/20070421/153240_1378867273_sfmikehq.jpg" target="_blank" rel="external"><img src="http://photo7.yupoo.com/20070421/153240_1378867273.jpg" alt=""></a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e69d8ee5bc80e5a48de58d9ae5aea2e9808fe99cb2e5a4a7e5ada6e7949fe6b4bb-e69bbee5819ae8bf87e5be88e5a49ae697a0e8818ae4ba8bzz" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/08/08/e69d8ee5bc80e5a48de58d9ae5aea2e9808fe99cb2e5a4a7e5ada6e7949fe6b4bb-e69bbee5819ae8bf87e5be88e5a49ae697a0e8818ae4ba8bzz/" class="article-date">
+  <time datetime="2007-08-08T05:18:00.000Z" itemprop="datePublished">Aug 8 2007</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/08/08/e69d8ee5bc80e5a48de58d9ae5aea2e9808fe99cb2e5a4a7e5ada6e7949fe6b4bb-e69bbee5819ae8bf87e5be88e5a49ae697a0e8818ae4ba8bzz/">李开复博客透露大学生活 曾做过很多无聊事zz</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><strong>原文链接：</strong><a href="http://blog.sina.com.cn/s/blog_475b3d5601000ajq.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_475b3d5601000ajq.html</a></p>
+<p>&nbsp;&nbsp;  　　　　<a href="http://blog.sina.com.cn/s/blog_475b3d5601000asv.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_475b3d5601000asv.html</a> </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <strong>破灭的哈佛、法律、数学梦</strong> </p>
+<p>上大学前，我的梦想是做一个 哈佛人。我有这样一个梦想，一是因为那个笼罩着哈佛大学的光环，也因为我一直把学习法律当做我的目标，并把学习数学当做我的&ldquo;后备&rdquo;，而哈佛的这两个专业 都是全美最好的。1979年的四月，一封拒信打破我的这个梦想。至于原因，我估计是因为我的SAT英语成绩太差了，只有550分（如果当时有新东方，可能 就不是这个结局了）。</p>
+<p> 　　在申请大学的时候，我清楚地知道自身条件有不足，不能保证一定能上哪所大学，所以我一 共申请了12所学校，这样，我觉得才能把主动掌握在自己手里。回想当时，我的老师们可能都快恨死我了，因为申请大学的材料中需要老师给学生写的推荐信，而 对我，他们要一下子写那么多份（当时没有电脑，每封推荐信都需要老师亲手写成）。</p>
+<p>最后，我进入了哥伦比亚大学，这是一所很好的学 校，法律系和数学系也很有名。哥大给学生很大的发展空间，允许学生学习的课程范围很广。我在大一的时候，大部分时间都在学美术、历史、音乐、哲学等专业的 课程，接触了很多东西，我觉得这是找到自己兴趣的机会。直到今天，我还记得哲学系的一个老教授说的话：&ldquo;知道什么是make a difference吗？想象有两个世界，一个世界中有你，一个世界中没有你，让两者的difference最大，这就是你一生的意义。&rdquo;</p>
+<p>再来说说我的哥大法律梦。当时，我主要学的是&ldquo;政治科学（political science）&rdquo;，属于一种&ldquo;法学博士预科（pre-law）&rdquo;的专业。但是，上了几门&ldquo;政治科学&rdquo;的课后，我发现自己对此毫无兴趣，每天都打不起精神 来上课，十分苦恼。其中一门课实在太枯燥，我基本上每堂课都在睡觉，惟一的选择只是在教室里睡还是在宿舍里睡。睡到学期过半后，我的平均成绩勉强够得一个 C，我赶在限期的前一天把这门课退掉，才避免了因为平均分不到3.0导致助学金被取消的灾难。</p>
+<p>我向家人提起学习法律的苦闷时，他们都鼓 励我转系。姐姐说：&ldquo;你不是高中时就把大二的数学读完了，还得了全州数学冠军吗，怎么不转数学系？&rdquo;但是，这又让我碰到了我的第二个苦恼。进入大学后，学 校就安排我加入了一个 &ldquo;数学天才班&rdquo;，那里集中了哥大所有的数学尖子，一个班只有七个人。但很快，我就发现我的数学突然由&ldquo;最好的&rdquo;变成&ldquo;最差的&rdquo;了。这时，我才意识到，我虽 然是&ldquo;全州冠军&rdquo;，但是我所在的州是被称为&ldquo;乡下&rdquo;的田纳西州，而当我遇到了这些来自加州或纽约州的真正的&ldquo;数学天才&rdquo;，我不但技不如人，连问问题时都胆 怯了，生怕我的同学们看出我这个&ldquo;全州冠军&rdquo;的真正水平并不怎么样。这么一来，我就越来越落后，到今天我对这门课还是&ldquo;半懂不懂&rdquo;（这又是一个&ldquo;沉默不是 金&rdquo;的证明）。当我上完这门课后，我深深地体会到那些&ldquo;数学天才&rdquo;都是因为&ldquo;数学之美&rdquo;而为它痴迷，但我却并非如此。一方面，我羡慕他们找到了最爱；另一 方面，我遗憾地发现，自己既不是一个数学天才，也不会为了它的&ldquo;美&rdquo;而痴迷，因为我不希望我一生的意义就是为了理解数学之美。</p>
+<p>就这样，我与我向往的哈佛、选择的法律、自豪的数学一一挥别。 </p>
+<p><strong>因为懂计算机成了校园里的牛人</strong></p>
+<p>失去了哈佛、法律、数学，我的未来之路将往何方？幸好还有计算机。</p>
+<p>其实，我在高中时就对计算机有很浓厚的兴趣。高中时我很幸运，学校就有一台古董的IBM机器，当时是1977年，计算机还需要靠打卡片的方式使用（就是 先在一张一张的卡片上打洞，然后再把这一叠打了洞的卡片输入电脑）。有一个周末，我写了一个程序，让它去解一个复杂的数学方程式，然后把结果打印出来。因 为机器运行速度非常慢，写完程序后我就回家了。周一回到学校，我突然被老师叫去骂了一通说：&ldquo;你知不知道我们所有的纸都被你打印光了！&rdquo;原来，这个数学方 程式有无数的解，周五我走后程序一直在运行，也就一直源源不断地在打印结果。当时的打印纸都是每张连在一起的厚厚一叠，而这样一箱纸可能要花掉学校几十美 金，结果被我一个程序全部打光了，老师当然很生气。</p>
+<p>大一时，我很惊讶不用打卡片也可以使用计算机，而令我更惊讶的是这么好玩的东西 也可以作为一个&ldquo;专业&rdquo;。于是我选修了一门计算机课程，得到了我进入大学后的第一个&ldquo;A+&rdquo;。除了赢得老师、同学的赞扬，我还感觉到一种震撼：未来这种技 术能够思考吗？能够让人类更有效率吗？计算机可能有一天会取代人脑吗？解决这样的问题才是一生的意义呀！</p>
+<p>大一期末，我找到一份工 作，是在计算机中心打工，他们会按时间付点钱给我作为酬劳，虽然不多，但也是一种鼓励。同学们有什么计算机方面问题都会来找我解决，而且当时&ldquo;会计算机&rdquo; 在学校里是一件很时髦的事情，大家都觉得这个人太COOL了。甚至那时候我的ID都跟别人不一样：一般人的ID都是&ldquo;院系名+姓名&rdquo;，比如学计算机的就是 &ldquo;cs.kaifulee&rdquo;，学政治的就是 &ldquo;ps.kaifulee&rdquo;，而我的是&ldquo;cu.kaifulee&rdquo;，cu代表哥伦比亚大学，哥伦比亚+李开复，和校长一样，多牛啊！</p>
+<p>当然，我也做了很多无聊的事情，比如做程序去猜别人的密码。那个时候，大家还不知道密码是可以被破译的，当我&ldquo;黑掉&rdquo;别人的帐户以后，就用他的名义发一 些恶作剧的信。有一次，我用一位男同学的账号在BBS上发了一个&ldquo;单身女郎征友&rdquo;的启事，害他莫明其妙地收了一堆情书。这位同学现在也在北京工作，估计他 到今天还不知情，下次见到他我一定要记得告诉他，那个启事是我发的。</p>
+<p>当时，哥大法律系在全美排名第三，而计算机系只是新设的一个专 业，如果我选择计算机这个基础不是很厚重的专业，前途看起来并不很明朗。如果选择法律系，我的前途大概可以预测到：做法官、律师、参选议员等等。因为在我 之前有很多范本，我可以照着规划。而选择计算机专业，我甚至连将来要做什么都想不出来，当时也没有软件工程师这种职业。但是，我想的更多的是&ldquo;人生的意 义&rdquo;和&ldquo;我的兴趣&rdquo;（做一个不喜欢的工作多无聊、多沮丧啊！），并没有让这些现实就业的问题影响我。于是大二时，我从&ldquo;政治科学&rdquo;转到&ldquo;计算机科学&rdquo;。当 时，一个物理系的同学开玩笑说：&ldquo;任何一个学科要加&lsquo;科学&rsquo;做后缀，就肯定不是真的科学。看看你，从一个&lsquo;假科学&rsquo;跳到另一个&lsquo;假科学&rsquo;，跳来跳去还是成 不了科学家。&rdquo;[</p>
+<p> <a target="_blank" href="http://goto.www.iciba.com/3b87652ba0916c03c634d5db8558d494.php?sid=111&amp;pid=928&amp;spid=0&amp;loid=0&amp;aid=1333&amp;url=http://www.duba.net/zt/vb100/index.shtml"></a></p>
+<p>](http://blog.sina.com.cn/s/blog_475b3d5601000asv.html) </p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2007/08/">&laquo; Prev</a><a class="page-number" href="/archives/2007/08/">1</a><span class="page-number current">2</span>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

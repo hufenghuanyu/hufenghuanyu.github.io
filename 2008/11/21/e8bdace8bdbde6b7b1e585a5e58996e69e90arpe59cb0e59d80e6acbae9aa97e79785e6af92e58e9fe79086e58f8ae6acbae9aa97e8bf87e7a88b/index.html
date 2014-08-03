@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[转载]深入剖析ARP地址欺骗病毒原理及欺骗过程 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="**一、ARP病毒
+**ARP地址欺骗类病毒（以下简称ARP病毒）是一类特殊的病毒，该病毒一般属于木马(Trojan)病毒，不具备主动传播的特性，不会自我复制。但是由于其发作的时候会向全网发送伪造的ARP数据包，干扰全网的运行，因此它的危害比一些蠕虫还要严重得多。
+二、ARP病毒发作时的现象
+网络掉线，但网络连接正常，内网的部分PC机不能上网，或者所有电脑不能上网，无法打开网页或打开网页慢，局域">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[转载]深入剖析ARP地址欺骗病毒原理及欺骗过程">
+<meta property="og:url" content="http://yoursite.com/2008/11/21/e8bdace8bdbde6b7b1e585a5e58996e69e90arpe59cb0e59d80e6acbae9aa97e79785e6af92e58e9fe79086e58f8ae6acbae9aa97e8bf87e7a88b/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="**一、ARP病毒
+**ARP地址欺骗类病毒（以下简称ARP病毒）是一类特殊的病毒，该病毒一般属于木马(Trojan)病毒，不具备主动传播的特性，不会自我复制。但是由于其发作的时候会向全网发送伪造的ARP数据包，干扰全网的运行，因此它的危害比一些蠕虫还要严重得多。
+二、ARP病毒发作时的现象
+网络掉线，但网络连接正常，内网的部分PC机不能上网，或者所有电脑不能上网，无法打开网页或打开网页慢，局域">
+<meta property="og:image" content="http://new.51cto.com/files/uploadimg/20070717/1302210.gif">
+<meta property="og:image" content="http://new.51cto.com/files/uploadimg/20070717/1302211.gif">
+<meta property="og:image" content="http://new.51cto.com/files/uploadimg/20070717/123003349.gif">
+<meta property="og:image" content="http://new.51cto.com/files/uploadimg/20070717/1302213.gif">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[转载]深入剖析ARP地址欺骗病毒原理及欺骗过程">
+<meta name="twitter:description" content="**一、ARP病毒
+**ARP地址欺骗类病毒（以下简称ARP病毒）是一类特殊的病毒，该病毒一般属于木马(Trojan)病毒，不具备主动传播的特性，不会自我复制。但是由于其发作的时候会向全网发送伪造的ARP数据包，干扰全网的运行，因此它的危害比一些蠕虫还要严重得多。
+二、ARP病毒发作时的现象
+网络掉线，但网络连接正常，内网的部分PC机不能上网，或者所有电脑不能上网，无法打开网页或打开网页慢，局域">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main"><article id="post-e8bdace8bdbde6b7b1e585a5e58996e69e90arpe59cb0e59d80e6acbae9aa97e79785e6af92e58e9fe79086e58f8ae6acbae9aa97e8bf87e7a88b" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/11/21/e8bdace8bdbde6b7b1e585a5e58996e69e90arpe59cb0e59d80e6acbae9aa97e79785e6af92e58e9fe79086e58f8ae6acbae9aa97e8bf87e7a88b/" class="article-date">
+  <time datetime="2008-11-21T08:11:00.000Z" itemprop="datePublished">Nov 21 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      [转载]深入剖析ARP地址欺骗病毒原理及欺骗过程
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+		<a data-url="http://yoursite.com/2008/11/21/e8bdace8bdbde6b7b1e585a5e58996e69e90arpe59cb0e59d80e6acbae9aa97e79785e6af92e58e9fe79086e58f8ae6acbae9aa97e8bf87e7a88b/" data-title="[转载]深入剖析ARP地址欺骗病毒原理及欺骗过程" data-id="ymmyj58ob94ric9x" class="article-share-link">Share</a>
+	  
+      
+        <a href="http://yoursite.com/2008/11/21/e8bdace8bdbde6b7b1e585a5e58996e69e90arpe59cb0e59d80e6acbae9aa97e79785e6af92e58e9fe79086e58f8ae6acbae9aa97e8bf87e7a88b/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">Contents</strong>
+			
+			</div>
+		
+		<!-- 文章目录结束 -->
+		
+        <p><span class="Apple-style-span" style="word-spacing: 0px; font: 14px/26px 宋体; text-transform: none; color: rgb(0,0,0); text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: separate; orphans: 2; widows: 2; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0"></span></p>
+<p>**一、ARP病毒</p>
+<p>**ARP地址欺骗类病毒（以下简称ARP病毒）是一类特殊的病毒，该病毒一般属于木马(Trojan)病毒，不具备主动传播的特性，不会自我复制。但是由于其发作的时候会向全网发送伪造的ARP数据包，干扰全网的运行，因此它的危害比一些蠕虫还要严重得多。</p>
+<p><strong>二、ARP病毒发作时的现象</strong></p>
+<p>网络掉线，但网络连接正常，内网的部分PC机不能上网，或者所有电脑不能上网，无法打开网页或打开网页慢，局域网时断时续并且网速较慢等。</p>
+<p>**三、ARP病毒原理</p>
+<p>3.1  网络模型简介**</p>
+<p>众所周知，按照OSI (Open Systems Interconnection Reference Model 开放系统互联参考模型) 的观点，可将网络系统划分为7层结构，每一个层次上运行着不同的协议和服务，并且上下层之间互相配合，完成网络数据交换的功能，如图1：</p>
+<p><a href="http://new.51cto.com/files/uploadimg/20070717/1302210.gif" target="_blank" rel="external"><img src="http://new.51cto.com/files/uploadimg/20070717/1302210.gif" alt=""></a></p>
+<p>然而，OSI的模型仅仅是一个参考模型，并不是实际网络中应用的模型。实际上应用最广泛的商用网络模型即TCP/IP体系模型，将网络划分为四层，每一个层次上也运行着不同的协议和服务，如图2：</p>
+<p><a href="http://new.51cto.com/files/uploadimg/20070717/1302211.gif" target="_blank" rel="external"><img src="http://new.51cto.com/files/uploadimg/20070717/1302211.gif" alt=""></a></p>
+<p>上图中，蓝色字体表示该层的名称，绿色字表示运行在该层上的协议。由图2可见，我们即将要讨论的ARP协议，就是工作在网际层上的协议。</p>
+<p><strong>3.2  ARP协议简介</strong></p>
+<p>我们大家都知道，在局域网中，一台主机要和另一台主机进行通信，必须要知道目标主机的IP地址，但是最终负责在局域网中传送数据的网卡等物理设备是不识别IP地址的，只能识别其硬件地址即MAC地址。MAC地址是48位的，通常表示为12个16进制数，每2个16进制数之间用&ldquo;-&rdquo;或者冒号隔开，如：00-0B-2F-13-1A-11就是一个MAC地址。每一块网卡都有其全球唯一的MAC地址，网卡之间发送数据，只能根据对方网卡的MAC地址进行发送，这时就需要一个将高层数据包中的IP地址转换成低层MAC地址的协议，而这个重要的任务将由ARP协议完成。</p>
+<p>ARP全称为Address Resolution Protocol，地址解析协议。所谓&ldquo;地址解析&rdquo;就是主机在发送数据包前将目标主机IP地址转换成目标主机MAC地址的过程。ARP协议的基本功能就是通过目标设备的IP地址，查询目标设备的MAC地址，以保证通信的顺利进行。 这时就涉及到一个问题，一个局域网中的电脑少则几台，多则上百台，这么多的电脑之间，如何能准确的记住对方电脑网卡的MAC地址，以便数据的发送呢？这就涉及到了另外一个概念，ARP缓存表。在局域网的任何一台主机中，都有一个ARP缓存表，该表中保存这网络中各个电脑的IP地址和MAC地址的对照关系。当这台主机向同局域网中另外的主机发送数据的时候，会根据ARP缓存表里的对应关系进行发送。</p>
+<p>下面，我们用一个模拟的局域网环境，来说明ARP欺骗的过程。</p>
+<p><strong>3.3  ARP欺骗过程</strong></p>
+<p>假设一个只有三台电脑组成的局域网，该局域网由交换机(Switch)连接。其中一个电脑名叫A，代表攻击方；一台电脑叫S，代表源主机，即发送数据的电脑；令一台电脑名叫D，代表目的主机，即接收数据的电脑。这三台电脑的IP地址分别为192.168.0.2，192.168.0.3，192.168.0.4。MAC地址分别为<span style="border-top-width: 0px; padding-right: 0px; padding-left: 0px; border-left-width: 0px; font-size: 12pt; border-bottom-width: 0px; padding-bottom: 0px; margin: 0px; padding-top: 0px;  border-right-width: 0px"><span style="border-top-width: 0px; padding-right: 0px; padding-left: 0px; border-left-width: 0px; border-bottom-width: 0px; padding-bottom: 0px; margin: 0px; padding-top: 0px; position: relative; top: 5pt; border-right-width: 0px"> </span></span>MAC_A，MAC_S，MAC_D。其网络拓扑环境如图3：</p>
+<p><a href="http://new.51cto.com/files/uploadimg/20070717/123003349.gif" target="_blank" rel="external"><img src="http://new.51cto.com/files/uploadimg/20070717/123003349.gif" alt=""></a></p>
+<p>现在，S电脑要给D电脑发送数据了，在S电脑内部，上层的TCP和UDP的数据包已经传送到了最底层的网络接口层，数据包即将要发送出去，但这时还不知道目的主机D电脑的MAC地址MAC_D。这时候，S电脑要先查询自身的ARP缓存表，查看里面是否有192.168.0.4这台电脑的MAC地址，如果有，那很好办，就将MAC_D封装在数据包的外面。直接发送出去即可。如果没有，这时S电脑要向全网络发送一个ARP广播包，大声询问：&ldquo;我的IP是192.168.0.3，硬件地址是MAC_S，我想知道IP地址为192.168.0.4的主机的硬件地址是多少？&rdquo; 这时，全网络的电脑都收到该ARP广播包了，包括A电脑和D电脑。A电脑一看其要查询的IP地址不是自己的，就将该数据包丢弃不予理会。而D电脑一看IP地址是自己的，则回答S电脑：&ldquo;我的IP地址是192.168.0.4，我的硬件地址是MAC_S&rdquo;需要注意的是，这条信息是单独回答的，即D电脑单独向S电脑发送的，并非刚才的广播。现在S电脑已经知道目的电脑D的MAC地址了，它可以将要发送的数据包上贴上目的地址MAC_D，发送出去了。同时它还会动态更新自身的ARP缓存表，将192.168.0.4－MAC_D这一条记录添加进去，这样，等S电脑下次再给D电脑发送数据的时候，就不用大声询问发送ARP广播包了。这就是正常情况下的数据包发送过程。</p>
+<p>这样的机制看上去很完美，似乎整个局域网也天下太平，相安无事。但是，上述数据发送机制有一个致命的缺陷，即它是建立在对局域网中电脑全部信任的基础上的，也就是说它的假设前提是：无论局域网中那台电脑，其发送的ARP数据包都是正确的。那么这样就很危险了！因为局域网中并非所有的电脑都安分守己，往往有非法者的存在。比如在上述数据发送中，当S电脑向全网询问&ldquo;我想知道IP地址为192.168.0.4的主机的硬件地址是多少？&rdquo;后，D电脑也回应了自己的正确MAC地址。但是当此时，一向沉默寡言的A电脑也回话了：&ldquo;我的IP地址是192.168.0.4，我的硬件地址是MAC_A&rdquo; ，注意，此时它竟然冒充自己是D电脑的IP地址，而MAC地址竟然写成自己的！由于A电脑不停地发送这样的应答数据包，本来S电脑的ARP缓存表中已经保存了正确的记录：192.168.0.4－MAC_D，但是由于A电脑的不停应答，这时S电脑并不知道A电脑发送的数据包是伪造的，导致S电脑又重新动态更新自身的ARP缓存表，这回记录成：192.168.0.4－MAC_A，很显然，这是一个错误的记录（这步也叫ARP缓存表中毒），这样就导致以后凡是S电脑要发送给D电脑，也就是IP地址为192.168.0.4这台主机的数据，都将会发送给MAC地址为MAC_A的主机，这样，在光天化日之下，A电脑竟然劫持了由S电脑发送给D电脑的数据！这就是ARP欺骗的过程。</p>
+<p>如果A这台电脑再做的&ldquo;过分&rdquo;一些，它不冒充D电脑，而是冒充网关，那后果会怎么样呢？我们大家都知道，如果一个局域网中的电脑要连接外网，也就是登陆互联网的时候，都要经过局域网中的网关转发一下，所有收发的数据都要先经过网关，再由网关发向互联网。在局域网中，网关的IP地址一般为192.168.0.1。如果A这台电脑向全网不停的发送ARP欺骗广播，大声说：&ldquo;我的IP地址是192.168.0.1，我的硬件地址是MAC_A&rdquo;这时局域网中的其它电脑并没有察觉到什么，因为局域网通信的前提条件是信任任何电脑发送的ARP广播包。这样局域网中的其它电脑都会更新自身的ARP缓存表，记录下192.168.0.1－MAC_A这样的记录，这样，当它们发送给网关，也就是IP地址为192.168.0.1这台电脑的数据，结果都会发送到MAC_A这台电脑中！这样，A电脑就将会监听整个局域网发送给互联网的数据包！</p>
+<p>实际上，这种病毒早就出现过，这就是ARP地址欺骗类病毒。一些传奇木马（Trojan/PSW.LMir）具有这样的特性，该木马一般通过传奇外挂、网页木马等方式使局域网中的某台电脑中毒，这样中毒电脑便可嗅探到整个局域网发送的所有数据包，该木马破解了《传奇》游戏的数据包加密算法，通过截获局域网中的数据包，分析数据包中的用户隐私信息，盗取用户的游戏帐号和密码。在解析这些封包之后，再将它们发送到真正的网关。这样的病毒有一个令网吧游戏玩家闻之色变的名字：&ldquo;传奇网吧杀手&rdquo; ！</p>
+<p>**四、ARP病毒新的表现形式</p>
+<p>**由于现在的网络游戏数据包在发送过程中，均已采用了强悍的加密算法，因此这类ARP病毒在解密数据包的时候遇到了很大的难度。现在又新出现了一种ARP病毒，与以前的一样的是，该类ARP病毒也是向全网发送伪造的ARP欺骗广播，自身伪装成网关。但区别是，它着重的不是对网络游戏数据包的解密，而是对于HTTP请求访问的修改。</p>
+<p>HTTP是应用层的协议，主要是用于WEB网页访问。还是以上面的局域网环境举例，如果局域网中一台电脑S要请求某个网站页面，如想请求<a href="http://www.sina.com.cn/" target="_blank" rel="external">www.sina.com.cn</a>这个网页，这台电脑会先向网关发送HTTP请求，说：&ldquo;我想登陆<a href="http://www.sina.com.cn/" target="_blank" rel="external">www.sina.com.cn</a>网页，请你将这个网页下载下来，并发送给我。&rdquo;这样，网关就会将<a href="http://www.sina.com.cn/" target="_blank" rel="external">www.sina.com.cn</a>页面下载下来，并发送给S电脑。这时，如果A这台电脑通过向全网发送伪造的ARP欺骗广播，自身伪装成网关，成为一台ARP中毒电脑的话，这样当S电脑请求WEB网页时，A电脑先是&ldquo;好心好意&rdquo;地将这个页面下载下来，然后发送给S电脑，但是它在返回给S电脑时，会向其中插入恶意网址连接！该恶意网址连接会利用MS06-014和MS07-017等多种系统漏洞，向S电脑种植木马病毒！同样，如果D电脑也是请求WEB页面访问，A电脑同样也会给D电脑返回带毒的网页，这样，如果一个局域网中存在这样的ARP病毒电脑的话，顷刻间，整个网段的电脑将会全部中毒！沦为黑客手中的僵尸电脑！</p>
+<p><strong>案例：</strong></p>
+<p>某企业用户反映，其内部局域网用户无论访问那个网站，在经过对该局域网分析之后，发现该局域网中有ARP病毒电脑导致其它电脑访问网页时，返回的网页带毒，并且该带毒网页通过MS06-014和MS07-017漏洞给电脑植入一个木马下载器，而该木马下载器又会下载10多个恶性网游木马，可以盗取包括魔兽世界，传奇世界，征途，梦幻西游，边锋游戏在内的多款网络游戏的帐号和密码，对网络游戏玩家的游戏装备造成了极大的损失。被ARP病毒电脑篡改的网页如图4：</p>
+<p><a href="http://new.51cto.com/files/uploadimg/20070717/1302213.gif" target="_blank" rel="external"><img src="http://new.51cto.com/files/uploadimg/20070717/1302213.gif" alt=""></a></p>
+<p> 图4 被ARP病毒插入的恶意网址连接</p>
+<p>从图4中可以看出，局域网中存在这样的ARP病毒电脑之后，其它客户机无论访问什么网页，当返回该网页时，都会被插入一条恶意网址连接，如果用户没有打过相应的系统补丁，就会感染木马病毒。</p>
+<p></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+    <footer class="article-footer">
+		
+	<a align="left" href="/2008/11/17/e8aeb0e5bd95e4b880e4b88be68f90e4be9be4b880e4b8aae58fafe4bba5e69bbfe4bba3ghsgooglecome79a84e59cb0e59d80/" id="article-nav-older" class="article-nav-link-wrap">
+	  <div align="left" class="article-nav-title">上一篇 记录一下:提供一个可以替代ghs.google.com的地址</div>
+	</a>
+
+
+	<a align="right" href="/2008/11/22/tcpdump-no-suitable-device-found/" id="article-nav-newer" class="article-nav-link-wrap">
+	  <div align="right" class="article-nav-title">下一篇 tcpdump: no suitable device found</div>
+	</a>
+
+
+    </footer>
+	
+  </div>
+</article>
+
+<section id="comments">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="[转载]深入剖析ARP地址欺骗病毒原理及欺骗过程" data-title="[转载]深入剖析ARP地址欺骗病毒原理及欺骗过程" data-url="http://yoursite.com/2008/11/21/e8bdace8bdbde6b7b1e585a5e58996e69e90arpe59cb0e59d80e6acbae9aa97e79785e6af92e58e9fe79086e58f8ae6acbae9aa97e8bf87e7a88b/"></div>
+	<!-- 多说评论框 end -->
+</section>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

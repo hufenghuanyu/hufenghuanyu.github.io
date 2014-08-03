@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>mplayer和ffmpeg的编译大全-3GP格式支持 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="MPlayer下载
+http://www.mplayerhq.hu/design7/dload.html
+目前版本MPlayer v1.0rc2
+MPlayer编译
+tar -xjvf MPlayer-1.0rc2.tar.bz2
+cd MPlayer-1.0rc2
+./configure
+make
+make install
+ 如果出现以下错误
+cabac.h: In function `get_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mplayer和ffmpeg的编译大全-3GP格式支持">
+<meta property="og:url" content="http://yoursite.com/2008/05/06/mplayere5928cffmpege79a84e7bc96e8af91e5a4a7e585a8-3gpe6a0bce5bc8fe694afe68c81/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="MPlayer下载
+http://www.mplayerhq.hu/design7/dload.html
+目前版本MPlayer v1.0rc2
+MPlayer编译
+tar -xjvf MPlayer-1.0rc2.tar.bz2
+cd MPlayer-1.0rc2
+./configure
+make
+make install
+ 如果出现以下错误
+cabac.h: In function `get_">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mplayer和ffmpeg的编译大全-3GP格式支持">
+<meta name="twitter:description" content="MPlayer下载
+http://www.mplayerhq.hu/design7/dload.html
+目前版本MPlayer v1.0rc2
+MPlayer编译
+tar -xjvf MPlayer-1.0rc2.tar.bz2
+cd MPlayer-1.0rc2
+./configure
+make
+make install
+ 如果出现以下错误
+cabac.h: In function `get_">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main"><article id="post-mplayere5928cffmpege79a84e7bc96e8af91e5a4a7e585a8-3gpe6a0bce5bc8fe694afe68c81" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/06/mplayere5928cffmpege79a84e7bc96e8af91e5a4a7e585a8-3gpe6a0bce5bc8fe694afe68c81/" class="article-date">
+  <time datetime="2008-05-05T19:03:00.000Z" itemprop="datePublished">May 6 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mplayer和ffmpeg的编译大全-3GP格式支持
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+		<a data-url="http://yoursite.com/2008/05/06/mplayere5928cffmpege79a84e7bc96e8af91e5a4a7e585a8-3gpe6a0bce5bc8fe694afe68c81/" data-title="mplayer和ffmpeg的编译大全-3GP格式支持" data-id="r3iko0z07rd7o4ml" class="article-share-link">Share</a>
+	  
+      
+        <a href="http://yoursite.com/2008/05/06/mplayere5928cffmpege79a84e7bc96e8af91e5a4a7e585a8-3gpe6a0bce5bc8fe694afe68c81/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">Contents</strong>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#rpm_-qa_|_grep_libogg"><span class="toc-number">1.</span> <span class="toc-text">rpm -qa | grep libogg</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rpm_-qa_|_grep_libvorbis"><span class="toc-number">2.</span> <span class="toc-text">rpm -qa | grep libvorbis</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cd_${xvidcore}/build/generic"><span class="toc-number">3.</span> <span class="toc-text">cd ${xvidcore}/build/generic</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-/configure"><span class="toc-number">4.</span> <span class="toc-text">./configure</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-/configure_–help"><span class="toc-number">5.</span> <span class="toc-text">./configure –help</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make"><span class="toc-number">6.</span> <span class="toc-text">make</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make_install"><span class="toc-number">7.</span> <span class="toc-text">make install</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cd_${prefix}/lib"><span class="toc-number">8.</span> <span class="toc-text">cd ${prefix}/lib</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ls_libxvidcore-so-*"><span class="toc-number">9.</span> <span class="toc-text">ls libxvidcore.so.*</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ln_-s_libxvidcore-so-MAJOR-MINOR_libxvidcore-so-MAJOR"><span class="toc-number">10.</span> <span class="toc-text">ln -s libxvidcore.so.MAJOR.MINOR libxvidcore.so.MAJOR</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ln_-s_libxvidcore-so-MAJOR_libxvidcore-so"><span class="toc-number">11.</span> <span class="toc-text">ln -s libxvidcore.so.MAJOR libxvidcore.so</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tar_zvxf_xvidcore-1-1-2-tar-gz"><span class="toc-number">12.</span> <span class="toc-text">tar zvxf xvidcore-1.1.2.tar.gz</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cd_xvidcore-1-1-2/build/generic/"><span class="toc-number">13.</span> <span class="toc-text">cd xvidcore-1.1.2/build/generic/</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-/configure_–prefix=/usr"><span class="toc-number">14.</span> <span class="toc-text">./configure –prefix=/usr</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make-1"><span class="toc-number">15.</span> <span class="toc-text">make</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make_install-1"><span class="toc-number">16.</span> <span class="toc-text">make install</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tar_xzvf_yasm-0-6-0-tar-gz"><span class="toc-number">17.</span> <span class="toc-text">tar xzvf yasm-0.6.0.tar.gz</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cd_yasm-0-6-0"><span class="toc-number">18.</span> <span class="toc-text">cd yasm-0.6.0</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-/configure_–prefix=/usr/local/yasm"><span class="toc-number">19.</span> <span class="toc-text">./configure –prefix=/usr/local/yasm</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make-2"><span class="toc-number">20.</span> <span class="toc-text">make</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make_install-1"><span class="toc-number">21.</span> <span class="toc-text">make install</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#export_PATH=”$PATH:/usr/local/yasm/bin”"><span class="toc-number">22.</span> <span class="toc-text">export PATH=”$PATH:/usr/local/yasm/bin”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vi_/etc/profile"><span class="toc-number">23.</span> <span class="toc-text">vi /etc/profile</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tar_xjvf_faac-1-25-Comsenz-tar-bz2"><span class="toc-number">24.</span> <span class="toc-text">tar xjvf faac-1.25-Comsenz.tar.bz2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cd_faac-Comsenz"><span class="toc-number">25.</span> <span class="toc-text">cd faac-Comsenz</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#autoreconf_-vif"><span class="toc-number">26.</span> <span class="toc-text">autoreconf -vif</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-/configure_–prefix=/usr_–with-mp4v2_–enable-shared"><span class="toc-number">27.</span> <span class="toc-text">./configure –prefix=/usr –with-mp4v2 –enable-shared</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make-3"><span class="toc-number">28.</span> <span class="toc-text">make</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make_install-1"><span class="toc-number">29.</span> <span class="toc-text">make install</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tar_xjvf_amrnb-7-0-0-0-tar-tar"><span class="toc-number">30.</span> <span class="toc-text">tar xjvf amrnb-7.0.0.0.tar.tar</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cd_amrnb-7-0-0-0"><span class="toc-number">31.</span> <span class="toc-text">cd amrnb-7.0.0.0</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-/configure_–prefix=/usr_–enable-shared"><span class="toc-number">32.</span> <span class="toc-text">./configure –prefix=/usr –enable-shared</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make-4"><span class="toc-number">33.</span> <span class="toc-text">make</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make_install_>_libamrwb"><span class="toc-number">34.</span> <span class="toc-text">make install > libamrwb</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tar_xjvf_amrwb-7-0-0-2-tar-tar"><span class="toc-number">35.</span> <span class="toc-text">tar xjvf amrwb-7.0.0.2.tar.tar</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cd_amrwb-7-0-0-2"><span class="toc-number">36.</span> <span class="toc-text">cd amrwb-7.0.0.2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-/configure_–prefix=/usr_–enable-shared-1"><span class="toc-number">37.</span> <span class="toc-text">./configure –prefix=/usr –enable-shared</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make-5"><span class="toc-number">38.</span> <span class="toc-text">make</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make_install-1"><span class="toc-number">39.</span> <span class="toc-text">make install</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#svn_checkout_svn://svn-mplayerhq-hu/ffmpeg/trunk_/usr/local/src/ffmpeg"><span class="toc-number">40.</span> <span class="toc-text">svn checkout svn://svn.mplayerhq.hu/ffmpeg/trunk /usr/local/src/ffmpeg</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cd_/usr/local/src/ffmpeg"><span class="toc-number">41.</span> <span class="toc-text">cd /usr/local/src/ffmpeg</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-/configure_–prefix=/usr_–enable-gpl_–enable-shared_–enable-libmp3lame_–enable-libvorbis_–enable-libamr-nb_–enable-libamr-wb_–enable-libxvid_–enable-libx264_–enable-liba52_–enable-liba52bin_–enable-libfaac_–enable-libfaad_–enable-libfaadbin_–enable-pp_–enable-pthreads_–disable-ffserver_–disable-ffplay"><span class="toc-number">42.</span> <span class="toc-text">./configure –prefix=/usr –enable-gpl –enable-shared –enable-libmp3lame –enable-libvorbis –enable-libamr-nb –enable-libamr-wb –enable-libxvid –enable-libx264 –enable-liba52 –enable-liba52bin –enable-libfaac –enable-libfaad –enable-libfaadbin –enable-pp –enable-pthreads –disable-ffserver –disable-ffplay</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make_clean_&&_make"><span class="toc-number">43.</span> <span class="toc-text">make clean && make</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make_install-1"><span class="toc-number">44.</span> <span class="toc-text">make install</span></a></li></ol>
+			</div>
+		
+		<!-- 文章目录结束 -->
+		
+        <p>MPlayer下载</p>
+<p><a href="http://www.mplayerhq.hu/design7/dload.html" target="_blank" rel="external">http://www.mplayerhq.hu/design7/dload.html</a></p>
+<p>目前版本MPlayer v1.0rc2</p>
+<p>MPlayer编译</p>
+<p>tar -xjvf MPlayer-1.0rc2.tar.bz2</p>
+<p>cd MPlayer-1.0rc2</p>
+<p>./configure</p>
+<p>make</p>
+<p>make install</p>
+<p> 如果出现以下错误</p>
+<p>cabac.h: In function `get_cabac_noinline&rsquo;:</p>
+<p>cabac.h:525: error: can&rsquo;t find a register in class <code>GENERAL_REGS&amp;rsquo; while reloading</code>asm&rsquo;</p>
+<p>make[1]: <em>*</em> [h264.o] 错误 1</p>
+<p>在make前加入</p>
+<p>export CFLAGS=-fomit-frame-pointer</p>
+<p>make clean</p>
+<p>ffmpeg的编译大全</p>
+<p>1. 首先获取ffmpeg</p>
+<p>很多人找不到怎么下载,其实之前ffmpeg可以通过cvs下载，不过最近他已经换成了更加强大的svn</p>
+<p>如何使用SVN我这里不再介绍，网上还有大量的安装和使用的文章可以借鉴，这里简单罗列几个SVN辅助的软件：</p>
+<p>SubVersion，从 <a href="http://subversion.tigris.org/" target="_blank" rel="external">http://subversion.tigris.org/</a> 下载，支持linux，我们这里就装这个</p>
+<p>TortoiseSVN，从 <a href="http://tortoisesvn.tigris.org/" target="_blank" rel="external">http://tortoisesvn.tigris.org/</a> 下载，是很不错的SVN客户端程序，为windows外壳程序集成到windows资源管理器和文件管理系统的Subversion客户端，用起来很方便，commit动作变得就像Winrar右键压缩一样方便。</p>
+<p>ok，那我们先装subversion，记住最好之前装过apr和apr-util，在apache.org网站能下到</p>
+<p>wget <a href="http://subversion.tigris.org/downloads/subversion-1.3.2.tar.gz" target="_blank" rel="external">http://subversion.tigris.org/downloads/subversion-1.3.2.tar.gz</a></p>
+<p>tar zvxf subversion-1.3.2.tar.gz</p>
+<p>cd subversion-1.3.2</p>
+<p>./configure &ndash;with-apr=/usr/local/apr-httpd &ndash;with-apr-util=/usr/local/apr-util-httpd/</p>
+<p>make</p>
+<p>make install</p>
+<p>到此，我们就可以通过svn命令获取最新的ffmpeg了</p>
+<p>svn checkout svn://svn.mplayerhq.hu/ffmpeg/trunk ffmpeg</p>
+<p>你会发现在你所在的目录，自动出现一个ffmpeg的目录，就是你下载的源代码。</p>
+<p>官网：<a href="http://ffmpeg.mplayerhq.hu/download.html" target="_blank" rel="external">http://ffmpeg.mplayerhq.hu/download.html</a></p>
+<p>我们还不能这么快编译ffmpeg，应该如果要让ffmpeg支持更多格式的转换，还需做一些前期工作</p>
+<p>2. 支持mp3，linux当然是lame，下载解压</p>
+<p><a href="http://sourceforge.net/projects/lame" target="_blank" rel="external">http://sourceforge.net/projects/lame</a></p>
+<table cellspacing="0" cellpadding="0" border="0" style="clear: both;" summary="File listings for the LAME (Lame Aint an MP3 Encoder) project"><br>    <tbody><br>        <tr class="show"><br>            <td colspan="2"> </td><br>            <td><a href="http://downloads.sourceforge.net/lame/lame-3.97.tar.gz?modtime=1159107882&amp;big_mirror=0" target="_blank" rel="external"><font color="#0033cc">lame-3.97.tar.gz</font></a>  <span class="mirrors"><a href="http://sourceforge.net/project/mirror_picker.php?height=350&amp;width=300&amp;group_id=290&amp;use_mirror=nchc&amp;filename=lame-3.97.tar.gz" title="Currently downloading from Tainan, Taiwan - Asia" target="_blank" rel="external">Mirror</a></span></td><br>        </tr><br>    </tbody><br></table>
+
+<p>cd lame-3.97</p>
+<p>./configure &ndash;enable-shared &ndash;prefix=/usr</p>
+<p>./make</p>
+<p>./make install</p>
+<p>这里推荐尽量装在/usr下，默认是装在/usr/local下。这样ffmpeg编译都能顺利的找到库文件</p>
+<p>3.支持Ogg Vorbis:</p>
+<p>as4自带相应的rpm包，你可以安装一下如下rpm包</p>
+<p>libvorbis, libvorbis-devel,libogg, libogg-devel</p>
+<p>FC3和FC4應該是預設安裝了有關的library的，實際上要安裝的套件有4個：libvorbis、libvorbis-devel、libogg和libogg-devel。您可以用以下指令檢查一下有沒有。</p>
+<h1 id="rpm_-qa_|_grep_libogg">rpm -qa | grep libogg</h1>
+<h1 id="rpm_-qa_|_grep_libvorbis">rpm -qa | grep libvorbis</h1>
+<p>如果沒有的話，用yum安裝就可以了。</p>
+<p>4.支持xvid x264，现在最流行的两种高质量的压缩格式</p>
+<p>xvid的编译安装</p>
+<p>Get the latest version on <a href="http://www.xvid.org/" target="_blank" rel="external">http://www.xvid.org/</a>, and uncompress it on</p>
+<p>your disk. Let&rsquo;s name the resulting source directory ${xvidcore}.</p>
+<p>wget <a href="http://downloads.xvid.org/downloads/xvidcore-1.1.3.tar.gz" target="_blank" rel="external">http://downloads.xvid.org/downloads/xvidcore-1.1.3.tar.gz</a></p>
+<p>The next step allows you to configure the xvid sources.</p>
+<h1 id="cd_${xvidcore}/build/generic">cd ${xvidcore}/build/generic</h1>
+<h1 id="-/configure">./configure</h1>
+<p>Some building options can be tuned thanks to the ./configure tool. You</p>
+<p>can use your own CC and CFLAGS variables in order to override xvid&rsquo;s</p>
+<p>default ones. To have a list of known options:</p>
+<h1 id="-/configure_&ndash;help">./configure &ndash;help</h1>
+<p>Now xvidcore is configured according to your specific platform. You</p>
+<p>can still handwrite the platform.inc file in order to add/remove</p>
+<p>specific flags that ./configure may have set them wrong.</p>
+<p>It is time to build xvidcore:</p>
+<h1 id="make">make</h1>
+<p>That creates a =build directory where all object files go, and where</p>
+<p>the build targets are linked. If no error was reported by the build</p>
+<p>process, then you can install it on your system:</p>
+<h1 id="make_install">make install</h1>
+<p>This copies the shared and static libraries to the prefix location</p>
+<p>passed to the ./configure tool (/usr/local by default). The xvid.h</p>
+<p>include file is also copied during the &ldquo;make install&rdquo; run.</p>
+<p>Voila, xvidcore is installed on your system, make sure your runtime</p>
+<p>linker knows about the xvidcore prefix lib dir where it is</p>
+<p>installed. And make also sure that it generates a symlink to its</p>
+<p>SONAME. In case it would do not take care of the symlink itself:</p>
+<h1 id="cd_${prefix}/lib">cd ${prefix}/lib</h1>
+<h1 id="ls_libxvidcore-so-*">ls libxvidcore.so.*</h1>
+<p>&nbsp;&nbsp;&nbsp;  ls should list at least one libxvidcore.so.MAJOR.MINOR file</p>
+<h1 id="ln_-s_libxvidcore-so-MAJOR-MINOR_libxvidcore-so-MAJOR">ln -s libxvidcore.so.MAJOR.MINOR libxvidcore.so.MAJOR</h1>
+<p>You may also add a .so link to .so.MAJOR, so that applications linked</p>
+<p>against .so are in fact linked to .so.MAJOR and thus ensures better</p>
+<p>binary compatibility as we take care not changing the MAJOR number</p>
+<p>until there is an incompatible ABI change.</p>
+<h1 id="ln_-s_libxvidcore-so-MAJOR_libxvidcore-so">ln -s libxvidcore.so.MAJOR libxvidcore.so</h1>
+<h1 id="tar_zvxf_xvidcore-1-1-2-tar-gz">tar zvxf xvidcore-1.1.2.tar.gz</h1>
+<h1 id="cd_xvidcore-1-1-2/build/generic/">cd xvidcore-1.1.2/build/generic/</h1>
+<h1 id="-/configure_&ndash;prefix=/usr">./configure &ndash;prefix=/usr</h1>
+<h1 id="make-1">make</h1>
+<h1 id="make_install-1">make install</h1>
+<p><strong>H264/AVC 支援：x264</strong></p>
+<p>要壓HQ1080、iPod和PSP的影片，x264是少不了的。不過要安裝x264，就需要用yasm來編譯。那就先裝個yasm吧。</p>
+<p>yasm下載網址：<a href="http://www.tortall.net/projects/yasm/releases/yasm-0.6.0.tar.gz" target="_blank" rel="external"><font color="#8a3207">http://www.tortall.net/projects/yasm/releases/yasm-0.6.0.tar.gz</font></a></p>
+<p>最新的 下载：&nbsp;&nbsp;&nbsp;&nbsp;  <a href="http://www.tortall.net/projects/yasm/releases/yasm-0.6.2.tar.gz" target="_blank" rel="external">Source .tar.gz</a> 0.6.2</p>
+<blockquote>
+<h1 id="tar_xzvf_yasm-0-6-0-tar-gz">tar xzvf yasm-0.6.0.tar.gz</h1>
+<h1 id="cd_yasm-0-6-0">cd yasm-0.6.0</h1>
+<h1 id="-/configure_&ndash;prefix=/usr/local/yasm">./configure &ndash;prefix=/usr/local/yasm</h1>
+<h1 id="make-2">make</h1>
+<h1 id="make_install-1">make install</h1>
+<h1 id="export_PATH=&rdquo;$PATH:/usr/local/yasm/bin&rdquo;">export PATH=&rdquo;$PATH:/usr/local/yasm/bin&rdquo;</h1>
+<h1 id="vi_/etc/profile">vi /etc/profile</h1>
+<p>&ndash;[在最後，插入]&ndash;</p>
+<p>export PATH=&rdquo;$PATH:/usr/local/yasm/bin&rdquo;</p>
+<p>&ndash;[存檔並關閉]&ndash;</p>
+</blockquote>
+<p>跟ffmpeg一樣，x264的官網也是鼓勵大家 checkout SVN來取得最新版本。但據SupeSite在2007年5月16日的說明指出官網的x264最新版有Bug，無法正常在一些Intel的CPU上編譯安 裝（甚麼雙至強、四至強CPU嘛，是指雙核和四核嗎？）。不過起碼米奇在公司的P4 2.8GHz CPU安裝沒有問題啦，所以…管它。如果您遇上問題的話，就去下載SupeSite的開發公司Comsenz的版本吧，不過先旨聲明，那個改版的授權還是 不是原來的GPL就不知道了。如果您在意於授權的話，那就用SVN checkout吧，我想那問題可能在您安裝時已經修正好了。</p>
+<p>x264的获取同样是采用svn方式，看来svn取代cvs不远了</p>
+<p>svn co svn://svn.videolan.org/x264/trunk x264</p>
+<p>cd x264</p>
+<p>./configure &ndash;prefix=/usr &ndash;enable-shared</p>
+<p>make</p>
+<p>make install</p>
+<p>5.AC3和dts编码的支持</p>
+<p>as4系统似乎已经支持ac3编码，编译的时候只要加&ndash;enable-a52 &ndash;enable-gpl参数就行</p>
+<font color="#3366ff">現在的ffmpeg又沒附有liba52了，所以，還是自己動手裝吧…<br><br>下載網站：<a href="http://liba52.sourceforge.net/" title="liba52" target="_blank" rel="external"><font color="#8a3207">http://liba52.sourceforge.net/</font></a></font>
+
+<blockquote>
+<font color="#3366ff"># tar zxvf a52dec-0.7.4.tar.gz<br><br># cd a52dec-0.7.4<br><br># ./configure &ndash;enable-shared &ndash;prefix=/usr<br><br># make<br><br># make install</font>
+
+</blockquote>
+<p>6.mpg4 aac格式支持，由于服务器还针对手机用户服务，所以，类似aac，mpg4铃声格式的支持，我们也得做。这里我们安装faad2和faac就行</p>
+<p>faac是用來壓製AAC音軌的，而faad2就是AAC音軌的解碼器。手機鈴聲和MP4影片都是使用AAC作聲音編碼的，所以要裝這個。</p>
+<p>另外，faac和faad2都可以配合libmp4v2來安裝，有些網站說需要先<a href="http://resare.com/libmp4v2/" target="_blank" rel="external"><font color="#8a3207">安裝libmp4v2</font></a>，（ <a href="http://mpeg4ip.net/" target="_blank" rel="external">http://mpeg4ip.net/</a>）不過米奇就發覺只要編譯faac和faad2時加入適當參數，就可以連同libmp4v2一同安裝了。</p>
+<p>下载请到<a href="http://www.audiocoding.com/downloads.html" target="_blank" rel="external">http://www.audiocoding.com/downloads.html</a></p>
+<p>FAAD2的编译</p>
+<p>cd faad2</p>
+<p>autoreconf -vif</p>
+<p>./configure &ndash;prefix=/usr &ndash;with-mp4v2 &ndash;enable-shared</p>
+<p>make</p>
+<p>make install</p>
+<p>faac的编译</p>
+<p>cd faac</p>
+<p>chmod +x bootstrap</p>
+<p>./bootstrap</p>
+<p>./configure &ndash;prefix=/usr &ndash;with-mp4v2 &ndash;enable-shared</p>
+<p>make</p>
+<p>make install</p>
+<p>Comsenz版下載網址：<a href="http://download.discuz.net/env/video/faac-1.25-Comsenz.tar.bz2" target="_blank" rel="external"><font color="#8a3207">http://download.discuz.net/env/video/faac-1.25-Comsenz.tar.bz2</font></a></p>
+<blockquote>
+<h1 id="tar_xjvf_faac-1-25-Comsenz-tar-bz2">tar xjvf faac-1.25-Comsenz.tar.bz2</h1>
+<h1 id="cd_faac-Comsenz">cd faac-Comsenz</h1>
+<h1 id="autoreconf_-vif">autoreconf -vif</h1>
+<h1 id="-/configure_&ndash;prefix=/usr_&ndash;with-mp4v2_&ndash;enable-shared">./configure &ndash;prefix=/usr &ndash;with-mp4v2 &ndash;enable-shared</h1>
+<h1 id="make-3">make</h1>
+<h1 id="make_install-1">make install</h1>
+</blockquote>
+<p>要知道安裝了faac和faad2之後有沒有安裝好libmp4v的話，只要找一找/usr/lib目錄裡有沒有libmp4v2.so等一系列檔案就可以了。找不到的話，就到<a href="http://resare.com/libmp4v2/" target="_blank" rel="external"><font color="#8a3207">這裡</font></a>去下載，安裝好之後再重頭安裝faac和faad2了。</p>
+<p>7.支持3gp格式，这也是现在好多手机支持的格式，因为手机用户是我们的主要用户，所以也得支持编译</p>
+<p>编译的时候加上&ndash;enable-amr_nb &ndash;enable-amr_wb参数就行，根据编译系统的提示，所以我们得下载一</p>
+<p>些编译3gp所需得文件。</p>
+<p>wget <a href="http://www.3gpp.org/ftp/Specs/archive/26_series/26.204/26204-510.zip" target="_blank" rel="external">http://www.3gpp.org/ftp/Specs/ar … 6.204/26204-510.zip</a></p>
+<p>解压以后把里面的文件都拷贝到libavcodec/amrwb_float</p>
+<p>wget <a href="http://www.3gpp.org/ftp/Specs/archive/26_series/26.104/26104-510.zip" target="_blank" rel="external">http://www.3gpp.org/ftp/Specs/ar … 6.104/26104-510.zip</a></p>
+<p>解压以后把里面的文件都拷贝到libavcodec/amr_float</p>
+<p>**3GPP AMR Floating point 和 AMR-Wideband支援：libamrnb、libamrwb</p>
+<p>**3GP影片的影像是h263編碼，而聲音就用AMR-NB或AMR-WB編碼，所以要轉換手機影片，就要安裝AMR程式庫。最初坊間的 安裝方式都是到3GPP官網去下載那些連名字也搞不懂的檔案來，放在ffmpeg裡的指定目錄去跟ffmpeg一同編譯的，但現在已經有人抽取了出來而成 為獨立的程式庫，安裝起來就簡單得多了。</p>
+<p>下載網址：<a href="http://www.penguin.cz/%7Eutx/amr" target="_blank" rel="external"><font color="#8a3207">http://www.penguin.cz/~utx/amr</font></a></p>
+<blockquote>
+<p><u>libamrnb</u></p>
+<h1 id="tar_xjvf_amrnb-7-0-0-0-tar-tar">tar xjvf amrnb-7.0.0.0.tar.tar</h1>
+<h1 id="cd_amrnb-7-0-0-0">cd amrnb-7.0.0.0</h1>
+<h1 id="-/configure_&ndash;prefix=/usr_&ndash;enable-shared">./configure &ndash;prefix=/usr &ndash;enable-shared</h1>
+<h1 id="make-4">make</h1>
+<h1 id="make_install_&gt;_libamrwb">make install &gt; <u>libamrwb</u></h1>
+<h1 id="tar_xjvf_amrwb-7-0-0-2-tar-tar">tar xjvf amrwb-7.0.0.2.tar.tar</h1>
+<h1 id="cd_amrwb-7-0-0-2">cd amrwb-7.0.0.2</h1>
+<h1 id="-/configure_&ndash;prefix=/usr_&ndash;enable-shared-1">./configure &ndash;prefix=/usr &ndash;enable-shared</h1>
+<h1 id="make-5">make</h1>
+<h1 id="make_install-1">make install</h1>
+</blockquote>
+<p><strong>8. DTS 支援：libdca</strong></p>
+<p>ffmpeg已經內含了用來解碼DTS的libdca，所以不用安裝，也沒有要入加的參數。</p>
+<p><strong>9. 安裝ffmpeg</strong></p>
+<p>安裝完成必要的程式庫之後，終於可以動手安裝ffmpeg本體了。如果您先前曾經安裝過ffmpeg的話，就先把ffmpeg的源碼目錄刪掉，再次checkout個新版本回來安裝吧。</p>
+<blockquote>
+<h1 id="svn_checkout_svn://svn-mplayerhq-hu/ffmpeg/trunk_/usr/local/src/ffmpeg">svn checkout svn://svn.mplayerhq.hu/ffmpeg/trunk /usr/local/src/ffmpeg</h1>
+<h1 id="cd_/usr/local/src/ffmpeg">cd /usr/local/src/ffmpeg</h1>
+<h1 id="-/configure_&ndash;prefix=/usr_&ndash;enable-gpl_&ndash;enable-shared_&ndash;enable-libmp3lame_&ndash;enable-libvorbis_&ndash;enable-libamr-nb_&ndash;enable-libamr-wb_&ndash;enable-libxvid_&ndash;enable-libx264_&ndash;enable-liba52_&ndash;enable-liba52bin_&ndash;enable-libfaac_&ndash;enable-libfaad_&ndash;enable-libfaadbin_&ndash;enable-pp_&ndash;enable-pthreads_&ndash;disable-ffserver_&ndash;disable-ffplay">./configure &ndash;prefix=/usr &ndash;enable-gpl &ndash;enable-shared &ndash;enable-libmp3lame &ndash;enable-libvorbis &ndash;enable-libamr-nb &ndash;enable-libamr-wb <font color="#3366ff">&ndash;enable-libxvid &ndash;enable-libx264</font> &ndash;enable-liba52 &ndash;enable-liba52bin &ndash;enable-libfaac &ndash;enable-libfaad &ndash;enable-libfaadbin &ndash;enable-pp &ndash;enable-pthreads &ndash;disable-ffserver &ndash;disable-ffplay</h1>
+<h1 id="make_clean_&amp;&amp;_make">make clean &amp;&amp; make</h1>
+<h1 id="make_install-1">make install</h1>
+</blockquote>
+<p>經過可以去看一節動畫的時間編譯之後，你應該可以在/usr/bin目錄裡找到ffmpeg程式。輸入ffmpeg便會列出用了甚麼參數來編譯這個 ffmpeg和它的版本。米奇試過用以這程序來安裝的ffmpeg來編製和解壓3GP、Xvid、mov、wmv9、msmpeg4、MPEG2+AC3 音源、h264+aac音源的mkv、PSP用的MP4和FLV影片，都沒有問題，只有wmv7的影片無法解碼，相信已經對應得到大部份現時流行的影音格 式了。</p>
+<p>可以用 ffmpeg -threads [thread_count] -deinterlace -i [input_file] -ac 2 -ab [audio_bitrate] -acodec libfaac -vcodec libx264 -b [video_bitrate] [output_file] 來產生 H.264+AAC 的 mp4 檔案了。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+    <footer class="article-footer">
+		
+	<a align="left" href="/2008/05/06/e5ae89e8a385e5ae8cphpmotione4b98be5908e-e4b88ae4bca0e8a786e9a291e6b2a1e69c89e58f8de5ba94/" id="article-nav-older" class="article-nav-link-wrap">
+	  <div align="left" class="article-nav-title">上一篇 安装完PHPmotion之后 上传视频没有反应</div>
+	</a>
+
+
+	<a align="right" href="/2008/05/06/ffmpege7bc96e8af91-e58fa6e5a496e4b880e4b8aae78988e69cac-3gpe694afe68c81e697b6e79bb4e68ea5e68f90e4be9be4ba86e8a7a3e7a081e58c85e4b88b/" id="article-nav-newer" class="article-nav-link-wrap">
+	  <div align="right" class="article-nav-title">下一篇 ffmpeg编译 ~另外一个版本 3GP支持时直接提供了解码包下载</div>
+	</a>
+
+
+    </footer>
+	
+  </div>
+</article>
+
+<section id="comments">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="mplayer和ffmpeg的编译大全-3GP格式支持" data-title="mplayer和ffmpeg的编译大全-3GP格式支持" data-url="http://yoursite.com/2008/05/06/mplayere5928cffmpege79a84e7bc96e8af91e5a4a7e585a8-3gpe6a0bce5bc8fe694afe68c81/"></div>
+	<!-- 多说评论框 end -->
+</section>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

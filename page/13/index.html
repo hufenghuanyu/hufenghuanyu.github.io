@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/13/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-e5a682e4bd95e59ca8windows-7e4b88ae8bf90e8a18cvmware-vsphere-client" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/07/01/e5a682e4bd95e59ca8windows-7e4b88ae8bf90e8a18cvmware-vsphere-client/" class="article-date">
+  <time datetime="2010-07-01T05:12:21.000Z" itemprop="datePublished">Jul 1 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/虚拟化/">虚拟化</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/07/01/e5a682e4bd95e59ca8windows-7e4b88ae8bf90e8a18cvmware-vsphere-client/">如何在Windows 7上运行VMware vSphere Client</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/esx/">esx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vmware/">vmware</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>1. 介绍<br>VMware已有明确说明vSphere Client目前不能运行在Windows 7上，请看此KB:<a href="http://kb.vmware.com/kb/1011329" target="_blank" rel="external">http://kb.vmware.com/kb/1011329</a><br>那么如果你要尝鲜使用Windows 7，又要使用vSphere Client怎么办呢，ebanban studio将为你提供解决方法。</p>
+<p>2. 方法<br>(1)首先，你需要下载<a href="http://jingyan.info/wp-content/uploads/2010/07/system.zip" target="_blank" rel="external">system.dll</a></p>
+<p>(2)下载完成后需要将system.dll放在指定目录<br>32位Windows 7放在C:\Program Files\VMware\Infrastructure\Virtual Infrastructure Client\Launcher\Lib<br>64位Windows 7放在C:\Program Files (x86)\VMware\Infrastructure\Virtual Infrastructure Client\Launcher\Lib<br>注意：若Lib目录不存在，则在Launcher目录下创建Lib目录</p>
+<p>(3)修改Launcher目录下的VpxClient.exe.config，修改以下代码<br>&lt;runtime&gt;<br>&lt;developmentMode developerInstallation=&quot;true&quot;/&gt;<br>&lt;/runtime&gt;<br>注意：若系统提示你无法保存文件，则关闭所有VMware相关的程序再进行保存。</p>
+<p>(4)修改你的环境变量<br>添加变量名DEVPATH<br>32位Windows 7的键值为C:\Program Files\VMware\Infrastructure\Virtual Infrastructure Client\Launcher\Lib<br>64位Windows 7的键值为C:\Program Files (x86)\VMware\Infrastructure\Virtual Infrastructure Client\Launcher\Lib</p>
+<p>关于VMware ESX 4的安装配置可参照：<a href="http://wangchunhai.blog.51cto.com/225186/172048" target="_blank" rel="external">http://wangchunhai.blog.51cto.com/225186/172048</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e4bb80e4b988e698afcurlphpe4b88ecurl" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/30/e4bb80e4b988e698afcurlphpe4b88ecurl/" class="article-date">
+  <time datetime="2010-06-30T15:36:47.000Z" itemprop="datePublished">Jun 30 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/30/e4bb80e4b988e698afcurlphpe4b88ecurl/">什么是CURL,PHP与CURL</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/curl/">curl</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>转载：找不到原文在哪里了……</p>
+<p>一<strong> 什么是CURL</strong><br><strong>curl</strong>是一个利用<strong>URL</strong>语法在命令行方式下工作的文件传输工具。<strong>curl</strong>是一个利用URL语法在命令行方式下工作的文件传输工具。<br>它支持很多协议：FTP, FTPS, HTTP, HTTPS, GOPHER, TELNET, DICT, FILE 以及 LDAP。curl同样支持HTTPS认证，HTTP POST方法, HTTP PUT方法, FTP上传, kerberos认证, HTTP上传, 代理服务器, cookies, 用户名/密码认证, 下载文件断点续传,<br>上载文件断点续传, http代理服务器管道（ proxy tunneling）, 甚至它还支持IPv6, socks5代理服务器, 通过http代理服务器上传文件到FTP服务器等等，功能十分强大。<br>原来php默认并不进行此项功能的扩展，但还是有的，只是没有让它生效罢了。打开PHP安装目录，搜索以下三个文件 ssleay32.dll、libeay32.dll和 php_curl.dll，<br>一一拷贝到系统目录下的system32文件夹下，修改 php.ini文件，找到;extension= php_curl.dll行，去掉前面的;号，保存，重启服务器<br>网站采集，登陆，COOKIE 等<br>二 PHP中的CURL库<br>curl_close - 关闭一个curl会话<br>curl_copy_handle - 拷贝一个curl连接资源的所有内容和参数<br>curl_errno - 返回一个包含当前会话错误信息的数字编号<br>curl_error - 返回一个包含当前会话错误信息的字符串<br>curl_exec - 执行一个curl会话<br>curl_getinfo - 获取一个curl连接资源句柄的信息<br>curl_init - 初始化一个curl会话<br>curl_multi_add_handle - 向curl批处理会话中添加单独的curl句柄资源<br>curl_multi_close - 关闭一个批处理句柄资源<br>curl_multi_exec - 解析一个curl批处理句柄<br>curl_multi_getcontent - 返回获取的输出的文本流<br>curl_multi_info_read - 获取当前解析的curl的相关传输信息<br>curl_multi_init - 初始化一个curl批处理句柄资源<br>curl_multi_remove_handle - 移除curl批处理句柄资源中的某个句柄资源<br>curl_multi_select - Get all the sockets associated with the cURL extension, which can then be &quot;selected&quot;<br>curl_setopt_array - 以数组的形式为一个curl设置会话参数<br>curl_setopt - 为一个curl设置会话参数<br>curl_version - 获取curl相关的版本信息<br>curl_init()函数的作用初始化一个curl会话，curl_init()函数唯一的一个参数是可选的，表示一个url地址。<br>curl_exec()函数的作用是执行一个curl会话，唯一的参数是curl_init()函数返回的句柄。<br>curl_close() 函数的作用是关闭一个curl会话，唯一的参数是curl_init()函数返回的句柄。<br>三关于CURL_SETOPT()函数的设置<br>bool curl_setopt (int ch, string option, mixed value)<br>curl_setopt()函数将为一个CURL会话设置选项。option参数是你想要的设置，value是这个选项给定的值。<br>下列选项的值将被作为长整形使用(在option参数中指定)：    </p>
+<ul>
+<li>CURLOPT_INFILESIZE: 当你上传一个文件到远程站点，这个选项告诉PHP你上传文件的大小。    </li>
+<li>CURLOPT_VERBOSE: 如果你想CURL报告每一件意外的事情，设置这个选项为一个非零值。    </li>
+<li>CURLOPT_HEADER: 如果你想把一个头包含在输出中，设置这个选项为一个非零值。    </li>
+<li>CURLOPT_NOPROGRESS: 如果你不会PHP为CURL传输显示一个进程条，设置这个选项为一个非零值。注意：PHP自动设置这个选项为非零值，你应该仅仅为了调试的目的来改变这个选项。    </li>
+<li>CURLOPT_NOBODY: 如果你不想在输出中包含body部分，设置这个选项为一个非零值。    </li>
+<li>CURLOPT_FAILONERROR: 如果你想让PHP在发生错误(HTTP代码返回大于等于300)时，不显示，设置这个选项为一人非零值。默认行为是返回一个正常页，忽略代码。    </li>
+<li>CURLOPT_UPLOAD: 如果你想让PHP为上传做准备，设置这个选项为一个非零值。    </li>
+<li>CURLOPT_POST: 如果你想PHP去做一个正规的HTTP POST，设置这个选项为一个非零值。这个POST是普通的 application/x-www-from-urlencoded 类型，多数被HTML表单使用。    </li>
+<li>CURLOPT_FTPLISTONLY: 设置这个选项为非零值，PHP将列出FTP的目录名列表。    </li>
+<li>CURLOPT_FTPAPPEND: 设置这个选项为一个非零值，PHP将应用远程文件代替覆盖它。    </li>
+<li>CURLOPT_NETRC: 设置这个选项为一个非零值，PHP将在你的 ~./netrc 文件中查找你要建立连接的远程站点的用户名及密码。    </li>
+<li>CURLOPT_FOLLOWLOCATION: 设置这个选项为一个非零值(象 “Location: “)的头，服务器会把它当做HTTP头的一部分发送(注意这是递归的，PHP将发送形如 “Location: “的头)。    </li>
+<li>CURLOPT_PUT: 设置这个选项为一个非零值去用HTTP上传一个文件。要上传这个文件必须设置CURLOPT_INFILE和CURLOPT_INFILESIZE选项.    </li>
+<li>CURLOPT_MUTE: 设置这个选项为一个非零值，PHP对于CURL函数将完全沉默。    </li>
+<li>CURLOPT_TIMEOUT: 设置一个长整形数，作为最大延续多少秒。    </li>
+<li>CURLOPT_LOW_SPEED_LIMIT: 设置一个长整形数，控制传送多少字节。    </li>
+<li>CURLOPT_LOW_SPEED_TIME: 设置一个长整形数，控制多少秒传送CURLOPT_LOW_SPEED_LIMIT规定的字节数。    </li>
+<li>CURLOPT_RESUME_FROM: 传递一个包含字节偏移地址的长整形参数，(你想转移到的开始表单)。    </li>
+<li>CURLOPT_SSLVERSION: 传递一个包含SSL版本的长参数。默认PHP将被它自己努力的确定，在更多的安全中你必须手工设置。    </li>
+<li>CURLOPT_TIMECONDITION: 传递一个长参数，指定怎么处理CURLOPT_TIMEVALUE参数。你可以设置这个参数为TIMECOND_IFMODSINCE 或 TIMECOND_ISUNMODSINCE。这仅用于HTTP。    </li>
+<li>CURLOPT_TIMEVALUE: 传递一个从1970-1-1开始到现在的秒数。这个时间将被CURLOPT_TIMEVALUE选项作为指定值使用，或被默认 TIMECOND_IFMODSINCE使用。<br>下列选项的值将被作为字符串：    </li>
+<li>CURLOPT_URL: 这是你想用PHP取回的URL地址。你也可以在用curl_init()函数初始化时设置这个选项。    </li>
+<li>CURLOPT_USERPWD: 传递一个形如[username]:[password]风格的字符串,作用PHP去连接。    </li>
+<li>CURLOPT_PROXYUSERPWD: 传递一个形如[username]:[password] 格式的字符串去连接HTTP代理。    </li>
+<li>CURLOPT_RANGE: 传递一个你想指定的范围。它应该是”X-Y”格式，X或Y是被除外的。HTTP传送同样支持几个间隔，用逗句来分隔(X-Y,N-M)。    </li>
+<li>CURLOPT_POSTFIELDS: 传递一个作为HTTP “POST”操作的所有数据的字符串。    </li>
+<li>CURLOPT_REFERER: 在HTTP请求中包含一个”referer”头的字符串。    </li>
+<li>CURLOPT_USERAGENT: 在HTTP请求中包含一个”user-agent”头的字符串。    </li>
+<li>CURLOPT_FTPPORT: 传递一个包含被ftp “POST”指令使用的IP地址。这个POST指令告诉远程服务器去连接我们指定的IP地址。这个字符串可以是一个IP地址，一个主机名，一个网络界面名 (在UNIX下)，或是‘-’(使用系统默认IP地址)。    </li>
+<li>CURLOPT_COOKIE: 传递一个包含HTTP cookie的头连接。    </li>
+<li>CURLOPT_SSLCERT: 传递一个包含PEM格式证书的字符串。    </li>
+<li>CURLOPT_SSLCERTPASSWD: 传递一个包含使用CURLOPT_SSLCERT证书必需的密码。    </li>
+<li>CURLOPT_COOKIEFILE: 传递一个包含cookie数据的文件的名字的字符串。这个cookie文件可以是Netscape格式，或是堆存在文件中的HTTP风格的头。    </li>
+<li>CURLOPT_CUSTOMREQUEST: 当进行HTTP请求时，传递一个字符被GET或HEAD使用。为进行DELETE或其它操作是有益的，更Pass a string to be used instead of GET or HEAD when doing an HTTP request. This is useful for doing or another, more obscure, HTTP request. 注意: 在确认你的服务器支持命令先不要去这样做。下列的选项要求一个文件描述(通过使用fopen()函数获得)：    </li>
+<li>CURLOPT_FILE: 这个文件将是你放置传送的输出文件，默认是STDOUT.    </li>
+<li>CURLOPT_INFILE: 这个文件是你传送过来的输入文件。    </li>
+<li>CURLOPT_WRITEHEADER: 这个文件写有你输出的头部分。    </li>
+<li>CURLOPT_STDERR: 这个文件写有错误而不是stderr。用来获取需要登录的页面的例子,当前做法是每次或许都登录一次,有需要的人再做改进了.<br>四 相关例子<br>1 例子<br>$cookie_jar = tempnam(‘./tmp’,’cookie’);<br>$ch = curl_init(); curl_setopt($ch,CURLOPT_URL,’<a href="http://******" target="_blank" rel="external">http://******</a>‘);<br>curl_setopt($ch, CURLOPT_POST, 1);<br>$request = ‘email_address=&amp;password=&amp;action=’;<br>curl_setopt($ch, CURLOPT_POSTFIELDS, $request);<br>//把返回来的cookie信息保存在$cookie_jar文件中<br>curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_jar);<br>//设定返回的数据是否自动显示<br>curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);<br>//设定是否显示头信息<br>curl_setopt($ch, CURLOPT_HEADER, false);<br>//设定是否输出页面内容<br>curl_setopt($ch, CURLOPT_NOBODY, false);<br>curl_exec($ch);<br>curl_close($ch); //get data after login<br>$ch2 = curl_init();<br>curl_setopt($ch2, CURLOPT_URL, ‘<a href="http://*****" target="_blank" rel="external">http://*****</a>‘);<br>curl_setopt($ch2, CURLOPT_HEADER, false);<br>curl_setopt($ch2, CURLOPT_RETURNTRANSFER, 1);<br>curl_setopt($ch2, CURLOPT_COOKIEFILE, $cookie_jar);<br>$orders = curl_exec($ch2);<br>echo ‘’;<br>echo strip_tags($orders);<br>echo ‘’;<br>curl_close($ch2);<br>2、刷楼了：<br>set_time_limit(0);<br>//设置程序执行时间无限制<br>$i=10000;<br>//耍10000 次<br>for($j=0;$j&amp;lt;$i;$j++)<br>{<br>$URL=&quot;<a href="http://www.yoururl.com/bbs/savepost.asp&amp;quot" target="_blank" rel="external">http://www.yoururl.com/bbs/savepost.asp&amp;quot</a>;;<br>// 这个地址是回复表单里面action的url地址<br>$ch = curl_init();<br>curl_setopt($ch,CURLOPT_URL,$URL);<br>curl_setopt($ch,CURLOPT_REFERER,&quot;<a href="http://www.hxfoods.com/bbs/dispbbs.asp?boardid=14&amp;amp;replyid=672709&amp;amp;id=127437&amp;amp;page=1&amp;amp;skin=0&amp;amp;Star=53&amp;quot" target="_blank" rel="external">http://www.hxfoods.com/bbs/dispbbs.asp?boardid=14&amp;amp;replyid=672709&amp;amp;id=127437&amp;amp;page=1&amp;amp;skin=0&amp;amp;Star=53&amp;quot</a>;);<br>// 设置来源地址，如果不设置，论坛服务器有可能有验证不允许回复<br>curl_setopt($ch,CURLOPT_COOKIESESSION,true);<br>// 能保存cookie<br>curl_setopt($ch,CURLOPT_COOKIE,&quot;DvForum=userid=24122&amp;amp;usercookies=0&amp;amp;userhidden=2&amp;amp;password=w0reu3g775VrY745&amp;amp;userclass=%96%7C&amp;amp;username=%A1%FA%A1%FA%B8%D2%CB%C0%B6%D3%A1%FA&amp;amp;StatUserID=2194783945 &quot;);<br>//这儿就是设置cookie了<br>curl_setopt($ch,CURLOPT_POST,1);<br>curl_setopt($ch,CURLOPT_NOBODY,1);<br>// 不显示内容，因为有很多论坛回复后要自动跳转。<br>curl_setopt($ch,CURLOPT_POSTFIELDS,’Body=gfdfgdfgasdfgdfgdfgdfg&amp;amp; followup=672709&amp;amp;RootID=127437&amp;amp;star=58&amp;amp;TotalUseTable=Dv_bbs3&amp;amp; amp;UserName=→→敢死队→&amp;amp;signflag=1&amp;amp;total=65535’);<br>//把你分析的回复表单的参数分别赋值<br>curl_setopt ($ch, CURLOPT_HEADER,true);<br>curl_exec($ch);<br>if (curl_errno($ch))<br>{<br>print curl_error($ch);<br>}<br>else<br>{<br>curl_close($ch);<br>}<br>}</li>
+</ul>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-php-secure-communications-library" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/24/php-secure-communications-library/" class="article-date">
+  <time datetime="2010-06-23T16:07:25.000Z" itemprop="datePublished">Jun 24 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>►<a class="article-category-link" href="/categories/php/php开源程序/">php开源程序</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/24/php-secure-communications-library/">PHP Secure Communications Library</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phpseclib/">phpseclib</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><a href="http://phpseclib.sourceforge.net/" target="_blank" rel="external"><strong>php<font color="#ff0000">sec</font>lib</strong></a>是一组 PHP 语言实现的用于进行 DES, 3DES, RC4, Rijndael, AES, SSH-1和 SSH-2 等标准的实现。</p>
+<p>相对于上一篇提到的<a href="http://jingyan.info/make-ssh-connections-with-php/" target="_blank" rel="external">PHP的ssh2支持</a>，这个用纯粹的PHP实现的SSH等的协议，效率差一些，不过使用简单，只要include一下即可，适合应急用，php.ssh2安装起来总会出各种问题，需要折腾。</p>
+<p>利用PHP的ssh插件或者现在的这个库，就比较方便的实现基于Web的Linux远程控制和管理，还可以把对Linux的远程控制管理置于用PHP写的管理系统里面，实现Web远程控制，可用于基于Linux平台的媒体发布系统等等。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-make-ssh-connections-with-php" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/23/make-ssh-connections-with-php/" class="article-date">
+  <time datetime="2010-06-23T14:32:38.000Z" itemprop="datePublished">Jun 23 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/23/make-ssh-connections-with-php/">Make SSH connections with PHP</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><span style="widows: 2; text-transform: none; text-indent: 0px; border-collapse: separate; font: medium simsun; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(0,0,0); word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px" class="Apple-style-span"><span style="line-height: 20px; font-family: tahoma; color: rgb(102,102,102); font-size: 12px; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px" class="Apple-style-span"><font style="line-height: normal" color="#000000">Not everyone knows about<span class="Apple-converted-space">&#160;</span><a href="http://kevin.vanzonneveld.net/techblog/tag/php/" target="_blank" rel="external">PHP</a>‘s capabilities of making<span class="Apple-converted-space">&#160;</span><a href="http://kevin.vanzonneveld.net/techblog/tag/ssh/" target="_blank" rel="external">SSH</a><span class="Apple-converted-space">&#160;</span>connections and executing remote commands, but it can be very useful. I’ve been using it a lot in PHP<span class="Apple-converted-space">&#160;</span><a href="http://kevin.vanzonneveld.net/techblog/tag/cli/" target="_blank" rel="external">CLI<span class="Apple-converted-space">&#160;</span></a>applications that I run from cronjobs, but initially it was a pain to get it to work. The<span class="Apple-converted-space">&#160;</span><a href="http://www.php.net/manual/en/ref.ssh2.php" target="_blank" rel="external">PHP manual on Secure Shell2 Functions</a><span class="Apple-converted-space">&#160;</span>is not very practicle or thorough for that matter, so I would like to share my knowledge in this how to, to make it a little less time consuming setting this up.</font>      </span></span></p>
+<font style="line-height: normal" color="#000000">In this article I’m going to assume that:</font>
+
+<ul>
+<li><font style="line-height: normal" color="#000000">You’re running Debian /<span class="Apple-converted-space">&#160;</span><a href="http://kevin.vanzonneveld.net/techblog/tag/ubuntu/" target="_blank" rel="external">Ubuntu</a>If not, you will have to substitute the package manager aptitude with whatever your distribution provides</font></li>
+<li><font style="line-height: normal" color="#000000">You’re running PHP 5If not, just replace php5 with php4 everywhere</font></li>
+<li><font style="line-height: normal" color="#000000">You have basic knowledge of PHP &amp; server administration</font></li>
+<li><font style="line-height: normal" color="#000000">You already have PHP installed</font>      
+
+</li>
+</ul>
+<h2 id="Prerequisites"><font style="line-height: normal" color="#000000">Prerequisites</font></h2>
+<h3 id="Packages"><font style="line-height: normal" color="#000000">Packages</font></h3>
+<font style="line-height: normal" color="#000000">First let’s install the following packages:</font><br>      <pre style="border-left: rgb(102,102,102) 8px solid; line-height: 22px; padding-left: 10px; padding-right: 5px; font-family: tahoma; margin-left: 10px; margin-right: 10px"><font style="line-height: normal" color="#000000">sudo aptitude update<br>sudo aptitude install php5-dev php5-cli php-pear build-essential \<br>openssl-dev zlib1g-dev</font></pre><br><br><font style="line-height: normal" color="#000000">That should set us up alright.</font>
+
+<font style="line-height: normal" color="#000000">Update - On recent Ubuntu machines, there’s no need to do any compiling anymore:</font>
+
+<pre><code>&lt;pre <span class="variable">style=</span><span class="string">"border-left: rgb(102,102,102) 8px solid; line-height: 22px; padding-left: 10px; padding-right: 5px; font-family: tahoma; margin-left: 10px; margin-right: 10px"</span>&gt;&lt;font <span class="variable">style=</span><span class="string">"line-height: normal"</span> <span class="variable">color=</span><span class="string">"#000000"</span>&gt;aptitude install libssh2-<span class="number">1</span>-dev
+</code></pre><p>pecl install -f ssh2<br>echo ‘extension=ssh2.so’ &gt; /etc/php5/conf.d/ssh2.ini</p>
+<font style="line-height: normal" color="#000000">If the above works for you (you should see: &quot;Build process completed successfully&quot;), you can<span class="Apple-converted-space">&#160;</span><strong>skip to Great! PHP supports SSH - time to code</strong>.</font>
+
+<font style="line-height: normal" color="#000000">If not, you probably need to compile manually, continue reading here.</font>
+
+<h3 id="libssh2"><font style="line-height: normal" color="#000000">libssh2</font></h3>
+<font style="line-height: normal" color="#000000">We need<span class="Apple-converted-space">&#160;</span><a href="http://kevin.vanzonneveld.net/techblog/tag/libssh2/" target="_blank" rel="external">libssh2</a><span class="Apple-converted-space">&#160;</span>from sourcefourge. We have to compile this, but no worries, this is all you need to do:</font>
+
+<pre><code>&lt;pre <span class="variable">style=</span><span class="string">"border-left: rgb(102,102,102) 8px solid; line-height: 22px; padding-left: 10px; padding-right: 5px; font-family: tahoma; margin-left: 10px; margin-right: 10px"</span>&gt;&lt;font <span class="variable">style=</span><span class="string">"line-height: normal"</span> <span class="variable">color=</span><span class="string">"#000000"</span>&gt;cd /usr/src
+</code></pre><p>wget <a href="http://surfnet.dl.sourceforge.net/sourceforge/libssh2/libssh2-0.14.tar.gz" target="_blank" rel="external">http://surfnet.dl.sourceforge.net/sourceforge/libssh2/libssh2-0.14.tar.gz</a><br>tar -zxvf libssh2-0.14.tar.gz<br>cd libssh2-0.14/<br>./configure<br>make all install</p>
+<font style="line-height: normal" color="#000000">That’s it! Easy right?</font>
+
+<font style="line-height: normal" color="#000000">- Update: since December 26th 2008, libssh2 has reached version 1.0. Though I have not tested it: it has been reported to work. So you may want to check<span class="Apple-converted-space">&#160;</span><a href="http://sourceforge.net/projects/libssh2/" target="_blank" rel="external">sf.net</a><span class="Apple-converted-space">&#160;</span>and download the latest stable version.</font>
+
+<h2 id="Installation"><font style="line-height: normal" color="#000000">Installation</font></h2>
+<h3 id="ssh2-so"><font style="line-height: normal" color="#000000">ssh2.so</font></h3>
+<font style="line-height: normal" color="#000000">Next we need to link libssh &amp; PHP together. There’s a<span class="Apple-converted-space">&#160;</span><a href="http://kevin.vanzonneveld.net/techblog/tag/pecl/" target="_blank" rel="external">PECL</a><span class="Apple-converted-space">&#160;</span>module for this so let’s install using:</font>
+
+<pre><code><span class="tag">&lt;<span class="title">pre</span> <span class="attribute">style</span>=<span class="value">"border-left: rgb(102,102,102) 8px solid; line-height: 22px; padding-left: 10px; padding-right: 5px; font-family: tahoma; margin-left: 10px; margin-right: 10px"</span>&gt;</span><span class="tag">&lt;<span class="title">font</span> <span class="attribute">style</span>=<span class="value">"line-height: normal"</span> <span class="attribute">color</span>=<span class="value">"#000000"</span>&gt;</span>pecl install -f ssh2<span class="tag">&lt;/<span class="title">font</span>&gt;</span><span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
+</code></pre><font style="line-height: normal" color="#000000">The -f makes sure ssh2 is installed even though there’s not a stable candidate. You could also use the package name:<span class="Apple-converted-space">&#160;</span><em>ssh2-beta</em><span class="Apple-converted-space">&#160;</span>to overrule this.</font>
+
+<font style="line-height: normal" color="#000000">Now you need to make sure our new ssh2.so module is loaded by PHP. Edit your php.ini file (for<span class="Apple-converted-space">&#160;</span><a href="http://kevin.vanzonneveld.net/techblog/tag/CLI/" target="_blank" rel="external">CLI</a><a href="http://kevin.vanzonneveld.net/techblog/tag/apache/" target="_blank" rel="external">Apache</a><span class="Apple-converted-space">&#160;</span>utilities /etc/php5/apache2/php.ini)</font>utitilies: /etc/php5/cli/php.ini, for<br><br>    <pre style="border-left: rgb(102,102,102) 8px solid; line-height: 22px; padding-left: 10px; padding-right: 5px; font-family: tahoma; margin-left: 10px; margin-right: 10px"><font style="line-height: normal" color="#000000">extension=ssh2.so</font></pre><br><br><font style="line-height: normal" color="#000000">It should be placed beneath the: &quot;Dynamic Extensions&quot; section somewhere around line 515.</font>
+
+<h2 id="Great!_PHP_supports_SSH_-_time_to_code"><font style="line-height: normal" color="#000000">Great! PHP supports SSH - time to code</font></h2>
+<font style="line-height: normal" color="#000000">You’ve just enabled ssh2 support in PHP. Now how can we make use of this? There are 2 options. SSH supports the: </font>
+
+<ul>
+<li><font style="line-height: normal" color="#000000"><strong>execute method</strong></font></li>
+</ul>
+<p>This tells the server’s operating system to execute something and pipe the output back to your script. (recommended)</p>
+<ul>
+<li><font style="line-height: normal" color="#000000"><strong>shell method</strong></font></li>
+</ul>
+<p>This opens an actual shell to the operating system, just as you would normally when logging in with your terminal application. Some<a href="http://kevin.vanzonneveld.net/techblog/tag/router/" target="_blank" rel="external">routers</a><span class="Apple-converted-space">&#160;</span>that don’t have a full POSIX compliant implementation, but run their own application as soon as you login, require this. (advanced)</p>
+<h3 id="Method_1:_Execute"><font style="line-height: normal" color="#000000">Method 1: Execute</font></h3>
+<font style="line-height: normal" color="#000000">Best would be to create functions or even a class for the following code, but this is the basic idea and will definitely get you started:</font>
+
+<pre><code><span class="tag">&lt;<span class="title">pre</span> <span class="attribute">style</span>=<span class="value">"border-left: rgb(102,102,102) 8px solid; line-height: 22px; padding-left: 10px; padding-right: 5px; font-family: tahoma; margin-left: 10px; margin-right: 10px"</span> <span class="attribute">class</span>=<span class="value">"mycode"</span>&gt;</span><span class="tag">&lt;<span class="title">font</span> <span class="attribute">style</span>=<span class="value">"line-height: normal"</span> <span class="attribute">color</span>=<span class="value">"#000000"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(177,177,0)"</span>&gt;</span>if<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span>![<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,102)"</span>&gt;</span>function_exists<span class="tag">&lt;/<span class="title">span</span>&gt;</span>](http://www.php.net/function_exists)<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(255,0,0)"</span>&gt;</span>&amp;quot;ssh2_connect&amp;quot;<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span> [<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,102)"</span>&gt;</span>die<span class="tag">&lt;/<span class="title">span</span>&gt;</span>](http://www.php.net/die)<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(255,0,0)"</span>&gt;</span>&amp;quot;function ssh2_connect doesn't exist&amp;quot;<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;
+</code></pre><p><span style="line-height: normal; font-style: italic; color: orange">// log in at server1.example.com on port 22</span><br><span style="line-height: normal; color: rgb(177,177,0)">if</span><span style="line-height: normal; color: rgb(102,204,102)">(</span>!<span style="line-height: normal; color: rgb(102,204,102)">(</span><span style="line-height: normal; color: rgb(0,0,255)">$con</span> = ssh2_connect<span style="line-height: normal; color: rgb(102,204,102)">(</span><span style="line-height: normal; color: rgb(255,0,0)">&quot;server1.example.com&quot;</span>, <span style="line-height: normal; color: rgb(204,102,204)">22</span><span style="line-height: normal; color: rgb(102,204,102)">)</span><span style="line-height: normal; color: rgb(102,204,102)">)</span><span style="line-height: normal; color: rgb(102,204,102)">)</span><span style="line-height: normal; color: rgb(102,204,102)">{</span><br>    <a href="http://www.php.net/echo" target="_blank" rel="external"><span style="line-height: normal; color: rgb(0,0,102)">echo</span></a> <span style="line-height: normal; color: rgb(255,0,0)">&quot;fail: unable to establish connection<span style="line-height: normal; color: rgb(0,0,153); font-weight: bold">\n</span>&quot;</span>;<br><span style="line-height: normal; color: rgb(102,204,102)">}</span> <span style="line-height: normal; color: rgb(177,177,0)">else</span> <span style="line-height: normal; color: rgb(102,204,102)">{</span><br>    <span style="line-height: normal; font-style: italic; color: orange">// try to authenticate with username root, password secretpassword</span><br>    <span style="line-height: normal; color: rgb(177,177,0)">if</span><span style="line-height: normal; color: rgb(102,204,102)">(</span>!ssh2_auth_password<span style="line-height: normal; color: rgb(102,204,102)">(</span><span style="line-height: normal; color: rgb(0,0,255)">$con</span>, <span style="line-height: normal; color: rgb(255,0,0)">&quot;root&quot;</span>, <span style="line-height: normal; color: rgb(255,0,0)">&quot;secretpassword&quot;</span><span style="line-height: normal; color: rgb(102,204,102)">)</span><span style="line-height: normal; color: rgb(102,204,102)">)</span> <span style="line-height: normal; color: rgb(102,204,102)">{</span><br>        <a href="http://www.php.net/echo" target="_blank" rel="external"><span style="line-height: normal; color: rgb(0,0,102)">echo</span></a> <span style="line-height: normal; color: rgb(255,0,0)">&quot;fail: unable to authenticate<span style="line-height: normal; color: rgb(0,0,153); font-weight: bold">\n</span>&quot;</span>;<br>    <span style="line-height: normal; color: rgb(102,204,102)">}</span> <span style="line-height: normal; color: rgb(177,177,0)">else</span> <span style="line-height: normal; color: rgb(102,204,102)">{</span><br>        <span style="line-height: normal; font-style: italic; color: orange">// allright, we’re in!</span><br>        <a href="http://www.php.net/echo" target="_blank" rel="external"><span style="line-height: normal; color: rgb(0,0,102)">echo</span></a> <span style="line-height: normal; color: rgb(255,0,0)">&quot;okay: logged in…<span style="line-height: normal; color: rgb(0,0,153); font-weight: bold">\n</span>&quot;</span>;</p>
+<pre><code>    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; font-style: italic; color: orange"</span>&gt;</span>// execute a command<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(177,177,0)"</span>&gt;</span>if<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span>!<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$stream<span class="tag">&lt;/<span class="title">span</span>&gt;</span> = ssh2_exec<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$con<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(255,0,0)"</span>&gt;</span>&amp;quot;ls -al&amp;quot;<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>{<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+        [<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,102)"</span>&gt;</span>echo<span class="tag">&lt;/<span class="title">span</span>&gt;</span>](http://www.php.net/echo) <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(255,0,0)"</span>&gt;</span>&amp;quot;fail: unable to execute command<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,153); font-weight: bold"</span>&gt;</span>\n<span class="tag">&lt;/<span class="title">span</span>&gt;</span>&amp;quot;<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;
+    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>}<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(177,177,0)"</span>&gt;</span>else<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>{<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; font-style: italic; color: orange"</span>&gt;</span>// collect returning data from command<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+        [<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,102)"</span>&gt;</span>stream_set_blocking<span class="tag">&lt;/<span class="title">span</span>&gt;</span>](http://www.php.net/stream_set_blocking)<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$stream<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,0); font-weight: bold"</span>&gt;</span>true<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;
+        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$data<span class="tag">&lt;/<span class="title">span</span>&gt;</span> = <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(255,0,0)"</span>&gt;</span>&amp;quot;&amp;quot;<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;
+        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(177,177,0)"</span>&gt;</span>while<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$buf<span class="tag">&lt;/<span class="title">span</span>&gt;</span> = [<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,102)"</span>&gt;</span>fread<span class="tag">&lt;/<span class="title">span</span>&gt;</span>](http://www.php.net/fread)<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$stream<span class="tag">&lt;/<span class="title">span</span>&gt;</span>,<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(204,102,204)"</span>&gt;</span>4096<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>{<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$data<span class="tag">&lt;/<span class="title">span</span>&gt;</span> .= <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$buf<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;
+        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>}<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+        [<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,102)"</span>&gt;</span>fclose<span class="tag">&lt;/<span class="title">span</span>&gt;</span>](http://www.php.net/fclose)<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$stream<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;
+    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>}<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>}<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+</code></pre><p><span style="line-height: normal; color: rgb(102,204,102)">}</span></p>
+<h3 id="Method_2:_Shell"><font style="line-height: normal" color="#000000">Method 2: Shell</font></h3>
+<font style="line-height: normal" color="#000000">Best would be to create functions or even a class for the following code, but this is the basic idea and will definitely get you started:</font>
+
+<pre><code><span class="tag">&lt;<span class="title">pre</span> <span class="attribute">style</span>=<span class="value">"border-left: rgb(102,102,102) 8px solid; line-height: 22px; padding-left: 10px; padding-right: 5px; font-family: tahoma; margin-left: 10px; margin-right: 10px"</span> <span class="attribute">class</span>=<span class="value">"mycode"</span>&gt;</span><span class="tag">&lt;<span class="title">font</span> <span class="attribute">style</span>=<span class="value">"line-height: normal"</span> <span class="attribute">color</span>=<span class="value">"#000000"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(177,177,0)"</span>&gt;</span>if<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span>![<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,102)"</span>&gt;</span>function_exists<span class="tag">&lt;/<span class="title">span</span>&gt;</span>](http://www.php.net/function_exists)<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(255,0,0)"</span>&gt;</span>&amp;quot;ssh2_connect&amp;quot;<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span> [<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,102)"</span>&gt;</span>die<span class="tag">&lt;/<span class="title">span</span>&gt;</span>](http://www.php.net/die)<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(255,0,0)"</span>&gt;</span>&amp;quot;function ssh2_connect doesn't exist&amp;quot;<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;
+</code></pre><p><span style="line-height: normal; font-style: italic; color: orange">// log in at server1.example.com on port 22</span><br><span style="line-height: normal; color: rgb(177,177,0)">if</span><span style="line-height: normal; color: rgb(102,204,102)">(</span>!<span style="line-height: normal; color: rgb(102,204,102)">(</span><span style="line-height: normal; color: rgb(0,0,255)">$con</span> = ssh2_connect<span style="line-height: normal; color: rgb(102,204,102)">(</span><span style="line-height: normal; color: rgb(255,0,0)">&quot;server1.example.com&quot;</span>, <span style="line-height: normal; color: rgb(204,102,204)">22</span><span style="line-height: normal; color: rgb(102,204,102)">)</span><span style="line-height: normal; color: rgb(102,204,102)">)</span><span style="line-height: normal; color: rgb(102,204,102)">)</span><span style="line-height: normal; color: rgb(102,204,102)">{</span><br>    <a href="http://www.php.net/echo" target="_blank" rel="external"><span style="line-height: normal; color: rgb(0,0,102)">echo</span></a> <span style="line-height: normal; color: rgb(255,0,0)">&quot;fail: unable to establish connection<span style="line-height: normal; color: rgb(0,0,153); font-weight: bold">\n</span>&quot;</span>;<br><span style="line-height: normal; color: rgb(102,204,102)">}</span> <span style="line-height: normal; color: rgb(177,177,0)">else</span> <span style="line-height: normal; color: rgb(102,204,102)">{</span><br>    <span style="line-height: normal; font-style: italic; color: orange">// try to authenticate with username root, password secretpassword</span><br>    <span style="line-height: normal; color: rgb(177,177,0)">if</span><span style="line-height: normal; color: rgb(102,204,102)">(</span>!ssh2_auth_password<span style="line-height: normal; color: rgb(102,204,102)">(</span><span style="line-height: normal; color: rgb(0,0,255)">$con</span>, <span style="line-height: normal; color: rgb(255,0,0)">&quot;root&quot;</span>, <span style="line-height: normal; color: rgb(255,0,0)">&quot;secretpassword&quot;</span><span style="line-height: normal; color: rgb(102,204,102)">)</span><span style="line-height: normal; color: rgb(102,204,102)">)</span> <span style="line-height: normal; color: rgb(102,204,102)">{</span><br>        <a href="http://www.php.net/echo" target="_blank" rel="external"><span style="line-height: normal; color: rgb(0,0,102)">echo</span></a> <span style="line-height: normal; color: rgb(255,0,0)">&quot;fail: unable to authenticate<span style="line-height: normal; color: rgb(0,0,153); font-weight: bold">\n</span>&quot;</span>;<br>    <span style="line-height: normal; color: rgb(102,204,102)">}</span> <span style="line-height: normal; color: rgb(177,177,0)">else</span> <span style="line-height: normal; color: rgb(102,204,102)">{</span><br>        <span style="line-height: normal; font-style: italic; color: orange">// allright, we’re in!</span><br>        <a href="http://www.php.net/echo" target="_blank" rel="external"><span style="line-height: normal; color: rgb(0,0,102)">echo</span></a> <span style="line-height: normal; color: rgb(255,0,0)">&quot;okay: logged in…<span style="line-height: normal; color: rgb(0,0,153); font-weight: bold">\n</span>&quot;</span>;</p>
+<pre><code>    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; font-style: italic; color: orange"</span>&gt;</span>// create a shell<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(177,177,0)"</span>&gt;</span>if<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span>!<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$shell<span class="tag">&lt;/<span class="title">span</span>&gt;</span> = ssh2_shell<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$con<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(255,0,0)"</span>&gt;</span>'vt102'<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,0); font-weight: bold"</span>&gt;</span>null<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(204,102,204)"</span>&gt;</span>80<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(204,102,204)"</span>&gt;</span>40<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, SSH2_TERM_UNIT_CHARS<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>{<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+        [<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,102)"</span>&gt;</span>echo<span class="tag">&lt;/<span class="title">span</span>&gt;</span>](http://www.php.net/echo) <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(255,0,0)"</span>&gt;</span>&amp;quot;fail: unable to establish shell<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,153); font-weight: bold"</span>&gt;</span>\n<span class="tag">&lt;/<span class="title">span</span>&gt;</span>&amp;quot;<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;
+    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>}<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(177,177,0)"</span>&gt;</span>else<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>{<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+        [<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,102)"</span>&gt;</span>stream_set_blocking<span class="tag">&lt;/<span class="title">span</span>&gt;</span>](http://www.php.net/stream_set_blocking)<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$shell<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,0); font-weight: bold"</span>&gt;</span>true<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;
+        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; font-style: italic; color: orange"</span>&gt;</span>// send a command <span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+        [<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,102)"</span>&gt;</span>fwrite<span class="tag">&lt;/<span class="title">span</span>&gt;</span>](http://www.php.net/fwrite)<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$shell<span class="tag">&lt;/<span class="title">span</span>&gt;</span>,<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(255,0,0)"</span>&gt;</span>&amp;quot;ls -al<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,153); font-weight: bold"</span>&gt;</span>\n<span class="tag">&lt;/<span class="title">span</span>&gt;</span>&amp;quot;<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;
+        [<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,102)"</span>&gt;</span>sleep<span class="tag">&lt;/<span class="title">span</span>&gt;</span>](http://www.php.net/sleep)<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(204,102,204)"</span>&gt;</span>1<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;
+
+        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; font-style: italic; color: orange"</span>&gt;</span>// &amp;amp; collect returning data<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$data<span class="tag">&lt;/<span class="title">span</span>&gt;</span> = <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(255,0,0)"</span>&gt;</span>&amp;quot;&amp;quot;<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;
+        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(177,177,0)"</span>&gt;</span>while<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$buf<span class="tag">&lt;/<span class="title">span</span>&gt;</span> = [<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,102)"</span>&gt;</span>fread<span class="tag">&lt;/<span class="title">span</span>&gt;</span>](http://www.php.net/fread)<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$shell<span class="tag">&lt;/<span class="title">span</span>&gt;</span>,<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(204,102,204)"</span>&gt;</span>4096<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>{<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$data<span class="tag">&lt;/<span class="title">span</span>&gt;</span> .= <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$buf<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;
+        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>}<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+        [<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,102)"</span>&gt;</span>fclose<span class="tag">&lt;/<span class="title">span</span>&gt;</span>](http://www.php.net/fclose)<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$shell<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;
+    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>}<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>}<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+</code></pre><p><span style="line-height: normal; color: rgb(102,204,102)">}</span></p>
+<h2 id="Tips"><font style="line-height: normal" color="#000000">Tips</font></h2>
+<font style="line-height: normal" color="#000000">Sometimes when a server is busy, or a connection is buggy, the buffer may run dry, and the PHP script stops collecting data from a command output (even though the command hasn’t completed yet!). There are a couple of things you could do about that:</font>
+
+<pre><code><span class="tag">&lt;<span class="title">pre</span> <span class="attribute">style</span>=<span class="value">"border-left: rgb(102,102,102) 8px solid; line-height: 22px; padding-left: 10px; padding-right: 5px; font-family: tahoma; margin-left: 10px; margin-right: 10px"</span> <span class="attribute">class</span>=<span class="value">"mycode"</span>&gt;</span><span class="tag">&lt;<span class="title">font</span> <span class="attribute">style</span>=<span class="value">"line-height: normal"</span> <span class="attribute">color</span>=<span class="value">"#000000"</span>&gt;</span>ssh2_exec<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$con<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(255,0,0)"</span>&gt;</span>'ls -al; echo &amp;quot;__COMMAND_FINISHED__&amp;quot;'<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;<span class="tag">&lt;/<span class="title">font</span>&gt;</span><span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
+</code></pre><font style="line-height: normal" color="#000000">Now, in the loop where you keep checking for the buffer, just see if the COMMAND_FINISHED line is coming by. Because then you know you have all the data. To avoid infinite loops, just limit the loop with a timeout of 10 seconds or so:</font>
+
+<pre><code><span class="tag">&lt;<span class="title">pre</span> <span class="attribute">style</span>=<span class="value">"border-left: rgb(102,102,102) 8px solid; line-height: 22px; padding-left: 10px; padding-right: 5px; font-family: tahoma; margin-left: 10px; margin-right: 10px"</span> <span class="attribute">class</span>=<span class="value">"mycode"</span>&gt;</span><span class="tag">&lt;<span class="title">font</span> <span class="attribute">style</span>=<span class="value">"line-height: normal"</span> <span class="attribute">color</span>=<span class="value">"#000000"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$time_start<span class="tag">&lt;/<span class="title">span</span>&gt;</span> = [<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,102)"</span>&gt;</span>time<span class="tag">&lt;/<span class="title">span</span>&gt;</span>](http://www.php.net/time)<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;
+</code></pre><p><span style="line-height: normal; color: rgb(0,0,255)">$data</span> = <span style="line-height: normal; color: rgb(255,0,0)">&quot;&quot;</span>;<br><span style="line-height: normal; color: rgb(177,177,0)">while</span><span style="line-height: normal; color: rgb(102,204,102)">(</span> <span style="line-height: normal; color: rgb(0,0,0); font-weight: bold">true</span> <span style="line-height: normal; color: rgb(102,204,102)">)</span><span style="line-height: normal; color: rgb(102,204,102)">{</span><br>    <span style="line-height: normal; color: rgb(0,0,255)">$data</span> .= <a href="http://www.php.net/fread" target="_blank" rel="external"><span style="line-height: normal; color: rgb(0,0,102)">fread</span></a><span style="line-height: normal; color: rgb(102,204,102)">(</span><span style="line-height: normal; color: rgb(0,0,255)">$stream</span>, <span style="line-height: normal; color: rgb(204,102,204)">4096</span><span style="line-height: normal; color: rgb(102,204,102)">)</span>;<br>    <span style="line-height: normal; color: rgb(177,177,0)">if</span><span style="line-height: normal; color: rgb(102,204,102)">(</span><a href="http://www.php.net/strpos" target="_blank" rel="external"><span style="line-height: normal; color: rgb(0,0,102)">strpos</span></a><span style="line-height: normal; color: rgb(102,204,102)">(</span><span style="line-height: normal; color: rgb(0,0,255)">$data</span>,<span style="line-height: normal; color: rgb(255,0,0)">&quot;<strong>COMMAND_FINISHED</strong>&quot;</span><span style="line-height: normal; color: rgb(102,204,102)">)</span> !== <span style="line-height: normal; color: rgb(0,0,0); font-weight: bold">false</span><span style="line-height: normal; color: rgb(102,204,102)">)</span><span style="line-height: normal; color: rgb(102,204,102)">{</span><br>        <a href="http://www.php.net/echo" target="_blank" rel="external"><span style="line-height: normal; color: rgb(0,0,102)">echo</span></a> <span style="line-height: normal; color: rgb(255,0,0)">&quot;okay: command finished<span style="line-height: normal; color: rgb(0,0,153); font-weight: bold">\n</span>&quot;</span>;<br>        <span style="line-height: normal; color: rgb(177,177,0)">break</span>;<br>    <span style="line-height: normal; color: rgb(102,204,102)">}</span><br>    <span style="line-height: normal; color: rgb(177,177,0)">if</span><span style="line-height: normal; color: rgb(102,204,102)">(</span> <span style="line-height: normal; color: rgb(102,204,102)">(</span><a href="http://www.php.net/time" target="_blank" rel="external"><span style="line-height: normal; color: rgb(0,0,102)">time</span></a><span style="line-height: normal; color: rgb(102,204,102)">(</span><span style="line-height: normal; color: rgb(102,204,102)">)</span>-<span style="line-height: normal; color: rgb(0,0,255)">$time_start</span><span style="line-height: normal; color: rgb(102,204,102)">)</span> &gt; <span style="line-height: normal; color: rgb(204,102,204)">10</span> <span style="line-height: normal; color: rgb(102,204,102)">)</span><span style="line-height: normal; color: rgb(102,204,102)">{</span><br>        <a href="http://www.php.net/echo" target="_blank" rel="external"><span style="line-height: normal; color: rgb(0,0,102)">echo</span></a> <span style="line-height: normal; color: rgb(255,0,0)">&quot;fail: timeout of 10 seconds has been reached<span style="line-height: normal; color: rgb(0,0,153); font-weight: bold">\n</span>&quot;</span>;<br>        <span style="line-height: normal; color: rgb(177,177,0)">break</span>;<br>    <span style="line-height: normal; color: rgb(102,204,102)">}</span><br><span style="line-height: normal; color: rgb(102,204,102)">}</span></p>
+<font style="line-height: normal" color="#000000">In the example above, you’d better set<span class="Apple-converted-space">&#160;</span><em>stream_set_blocking</em><span class="Apple-converted-space">&#160;</span>to<span class="Apple-converted-space">&#160;</span><strong>false</strong>.</font>
+
+<h2 id="Can’t_get_enough?"><font style="line-height: normal" color="#000000">Can’t get enough?</font></h2>
+<font style="line-height: normal" color="#000000">PHP can send files over ssh!</font>
+
+<pre><code><span class="tag">&lt;<span class="title">pre</span> <span class="attribute">style</span>=<span class="value">"border-left: rgb(102,102,102) 8px solid; line-height: 22px; padding-left: 10px; padding-right: 5px; font-family: tahoma; margin-left: 10px; margin-right: 10px"</span> <span class="attribute">class</span>=<span class="value">"mycode"</span>&gt;</span><span class="tag">&lt;<span class="title">font</span> <span class="attribute">style</span>=<span class="value">"line-height: normal"</span> <span class="attribute">color</span>=<span class="value">"#000000"</span>&gt;</span>ssh2_scp_send<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>(<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(0,0,255)"</span>&gt;</span>$con<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(255,0,0)"</span>&gt;</span>&amp;quot;/tmp/source.dat&amp;quot;<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(255,0,0)"</span>&gt;</span>&amp;quot;/tmp/dest.dat&amp;quot;<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(204,102,204)"</span>&gt;</span>0644<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"line-height: normal; color: rgb(102,204,102)"</span>&gt;</span>)<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;<span class="tag">&lt;/<span class="title">font</span>&gt;</span><span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
+</code></pre><h2 id="Doesn’t_work?"><font style="line-height: normal" color="#000000">Doesn’t work?</font></h2>
+<font style="line-height: normal" color="#000000">Check the following:</font>
+
+<font style="line-height: normal" color="#000000"><strong> - Did you follow every step of the prerequisites &amp; installation how to in this article?</strong><br><br>-<span class="Apple-converted-space">&#160;</span><strong>On the serverside, ‘PasswordAuthentication yes’ must be enabled in the sshd_config.</strong><span class="Apple-converted-space">&#160;</span>Default is yes on most servers, but in some cases you will have to turn this on yourself by making sure the following lines are in place in the file:<span class="Apple-converted-space">&#160;</span><em>/etc/ssh/sshd_config</em>:</font>
+
+<pre><code>&lt;pre <span class="variable">style=</span><span class="string">"border-left: rgb(102,102,102) 8px solid; line-height: 22px; padding-left: 10px; padding-right: 5px; font-family: tahoma; margin-left: 10px; margin-right: 10px"</span>&gt;&lt;font <span class="variable">style=</span><span class="string">"line-height: normal"</span> <span class="variable">color=</span><span class="string">"#000000"</span>&gt;<span class="comment"># Change to yes to enable tunnelled clear text passwords</span>
+</code></pre><p>PasswordAuthentication yes</p>
+<font style="line-height: normal" color="#000000">If you’ve made any changes, ssh needs a restart</font>
+
+<pre><code><span class="tag">&lt;<span class="title">pre</span> <span class="attribute">style</span>=<span class="value">"border-left: rgb(102,102,102) 8px solid; line-height: 22px; padding-left: 10px; padding-right: 5px; font-family: tahoma; margin-left: 10px; margin-right: 10px"</span>&gt;</span><span class="tag">&lt;<span class="title">font</span> <span class="attribute">style</span>=<span class="value">"line-height: normal"</span> <span class="attribute">color</span>=<span class="value">"#000000"</span>&gt;</span>/etc/init.d/ssh restart <span class="tag">&lt;/<span class="title">font</span>&gt;</span><span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
+</code></pre><p>  </p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-wordpress-3-0-e4b8ade69687e78988e58f8ae4b8ade69687e8afade8a880e58c85e4b88be8bdbd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/20/wordpress-3-0-e4b8ade69687e78988e58f8ae4b8ade69687e8afade8a880e58c85e4b88be8bdbd/" class="article-date">
+  <time datetime="2010-06-20T15:07:43.000Z" itemprop="datePublished">Jun 20 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress/">wordpress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/20/wordpress-3-0-e4b8ade69687e78988e58f8ae4b8ade69687e8afade8a880e58c85e4b88be8bdbd/">WordPress 3.0 中文版及中文语言包下载</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><a href="http://code.google.com/p/wpcn/" target="_blank" rel="external">wpcn团队出品</a></p>
+<p>中文版下载：<a href="http://wpcn.googlecode.com/files/WordPress.v3.0.Incl.Simp.Chinese.Pack.v1-wpcng.zip" target="_blank" rel="external">zip</a> <a href="http://wpcn.googlecode.com/files/WordPress.v3.0.Incl.Simp.Chinese.Pack.v1-wpcng.tar.gz" target="_blank" rel="external">tar.gz</a></p>
+<p>语言包下载：<a href="http://wpcn.googlecode.com/files/WordPress.v3.0.Simp.Chinese.Pack.Only.v1-wpcng.zip" target="_blank" rel="external">zip</a> <a href="http://wpcn.googlecode.com/files/WordPress.v3.0.Simp.Chinese.Pack.Only.v1-wpcng.tar.gz" target="_blank" rel="external">tar.gz</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e38090e696b0e997bbe38091wordpress-3-0-e6ada3e5bc8fe78988e58f91e5b883" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/18/e38090e696b0e997bbe38091wordpress-3-0-e6ada3e5bc8fe78988e58f91e5b883/" class="article-date">
+  <time datetime="2010-06-18T05:12:53.000Z" itemprop="datePublished">Jun 18 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress/">wordpress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/18/e38090e696b0e997bbe38091wordpress-3-0-e6ada3e5bc8fe78988e58f91e5b883/">【新闻】WordPress 3.0 正式版发布</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>终于发布了！</p>
+<p>WordPress是一种使用PHP语言开发的博客平台，用户可以在支持PHP和MySQL 数据库的服务器上架设自己的网志。也可以把 WordPress 当作一个内容管理系统（CMS）来使用。WordPress 是一个免费的开源项目，在GNU通用公共许可证下授权发布。目前最新版本为2010年6月18日发布的3.0版。</p>
+<p>更新内容：<br>新的可定制的默认主题；<br>新的后台管理界面；<br>整合多站点功能<br>修复大量BUG<br>下载地址：<a href="http://wordpress.org/download/" target="_blank" rel="external">http://wordpress.org/download/</a> 或后台自动更新（中文版即将发布</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-excele689b9e9878fe68f90e58f96e4bfaee694b9e8b685e993bee68ea5efbc9f" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/17/excele689b9e9878fe68f90e58f96e4bfaee694b9e8b685e993bee68ea5efbc9f/" class="article-date">
+  <time datetime="2010-06-17T04:54:28.000Z" itemprop="datePublished">Jun 17 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>►<a class="article-category-link" href="/categories/php/经验/">经验</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/17/excele689b9e9878fe68f90e58f96e4bfaee694b9e8b685e993bee68ea5efbc9f/">Excel批量提取修改超链接？</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/excel/">excel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>工作中需要将课程列表取出来并做成新的网页，从已有网页内可以取到的数据包括：id（包含超链接）、名称，现在需要把超链接取出来加到名称上去，思路有两种，第一种：把超链接作为元数据之一提取出来，然后进行操作；第二种直接利用正则表达式对现有的网页数据进行操作。按照这两种思路，经过百般搜索，发现以下几种方法。最后采用的第二种方法，把原始网页内容直接复制到excel里，利用下述宏将超链接提取出来，另存为csv文件，然后用PHP提取处理成静态页面。</p>
+<p><strong>方法一</strong></p>
+<p>Q：Excel2010如何批量修改超链接地址？<br>A：操作步骤如下：<br>1、将Excel文件的扩展名修改为.zip<br>2、双击打开zip压缩包，找到xl文件夹下的sharedStrings.xml文件，并双击打开（一般用IE打开），在页面上点击右键-&gt;选择“查看源文件”，会弹出源代码窗口（通常是以记事本打开），然后查找需要修改的内容(如：2008年），替换为新的内容（如：2009年），保存关闭记事本，解压包这里还会提示“文件<em>*</em>已经被修改。你希望在压缩文件中更新它吗？”，选择“是”；<br>3、打开压缩包中worksheets文件夹下的_rels文件夹下的sheet1.xml.rels文件，采用上一步的方法进行查找替换操作；<br>4、最后把zip文件扩展名再改回原来的扩展名，即.xlsx</p>
+<p>原文地址: <a href="http://www.exceltip.net/thread-5963-1-1-0.html" target="_blank" rel="external">http://www.exceltip.net/thread-5963-1-1-0.html</a></p>
+<p><strong>方法二</strong></p>
+<p>将下述代码贴到新录制的宏里，效果为将含有超链接的单元格中的链接复制到右侧单元格内</p>
+<p>word文档插入代码：</p>
+<p>Sub 超级链接()<br>For Each aHyperlink In ActiveDocument.Hyperlinks</p>
+<p>With Selection<br>.InsertAfter aHyperlink.Name<br>.Collapse Direction:=wdCollapseEnd<br>.InsertParagraphAfter<br>End With<br>Next aHyperlink</p>
+<p>End Sub</p>
+<p>excel文档插入代码：</p>
+<p>Sub ExtractHL()<br>&#160;&#160;&#160; Dim HL As Hyperlink<br>&#160;&#160;&#160; For Each HL In ActiveSheet.Hyperlinks<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160; HL.Range.Offset(0, 1).Value = HL.Address<br>&#160;&#160;&#160; Next<br>End Sub</p>
+<p><strong>方法三</strong><br> <span style="widows: 2; text-transform: none; text-indent: 0px; border-collapse: separate; font: medium simsun; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(0,0,0); word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px" class="Apple-style-span"><span style="text-align: left; line-height: 20px; font-family: 宋体, arial, helvetica, sans-serif; color: rgb(51,51,51); font-size: 14px" class="Apple-style-span">     </span></span></p>
+<p>有这么一段HTML，比较不规则的，如果要提取其中的链接地址和链接名称，怎么弄？</p>
+<p>//HTML<br>$str = ‘&lt;a id=&quot;top8&quot; href=&quot;<a href="http://www.updateweb.cn&amp;quot" target="_blank" rel="external">http://www.updateweb.cn&amp;quot</a>; class=&quot;p14&quot; target=&quot;_top&quot;&gt;更新网络&lt;/a&gt;&lt;br&gt;&lt;a target=&quot;_blank&quot; id=&quot;bp&quot; href=&quot;<a href="http://www.updateweb.cn&amp;quot" target="_blank" rel="external">http://www.updateweb.cn&amp;quot</a>; class=&quot;p14&quot;&gt;中文金曲榜&lt;/a&gt;&lt;br&gt;&lt;td nowrap=&quot;nowrap&quot;&gt;&amp;#8226;&amp;nbsp;&lt;a id=&quot;top19&quot; href=&quot;qingyinyue.html?top19&quot; class=&quot;p14&quot; target=&quot;_top&quot;&gt;轻音乐&lt;/a&gt;&lt;/td&gt;’;</p>
+<p>利用正则表达式是最简单的，其它的办法，偶米去想。。。</p>
+<p>$pat = ‘/&lt;a(.<em>?)href=&quot;(.</em>?)&quot;(.<em>?)&gt;(.</em>?)&lt;\/a&gt;/i’;<br>preg_match_all($pat, $str, $m);</p>
+<p>输出方法：</p>
+<p>print_r($m[2]);<br>print_r($m[4]);</p>
+<p>或者：<br>for($i=0;$i&lt;count($m[2]) ;$i++ ){<br>&#160;&#160;&#160; echo ‘&lt;li&gt;&lt;a href=&quot;’.$_SERVER[‘PHP_SELF’].’?url=’.$m[2][$i].’&quot;&gt;’.$m[4][$i].’&lt;/a&gt;’;<br>}</p>
+<p>显示结果是：</p>
+<p>Array ( [0] =&gt; <a href="http://www.updateweb.cn" target="_blank" rel="external">http://www.updateweb.cn</a> [1] =&gt; <a href="http://www.updateweb.cn" target="_blank" rel="external">http://www.updateweb.cn</a> [2] =&gt; qingyinyue.html?top19 ) Array ( [0] =&gt; 更新网络 [1] =&gt; 中文金曲榜 [2] =&gt; 轻音乐 )</p>
+<p>于是，我们要采集某个网站的标题及链接地址方法就出来了。。。自己根据需要套用就可以了。。。<br>   </p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-deans-fckeditor-for-wordpress-e69bb4e696b0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/08/deans-fckeditor-for-wordpress-e69bb4e696b0/" class="article-date">
+  <time datetime="2010-06-08T03:28:55.000Z" itemprop="datePublished">Jun 8 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress/">wordpress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/08/deans-fckeditor-for-wordpress-e69bb4e696b0/">Dean&#39;s FCKEditor for WordPress 更新</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress，ckeditor/">wordpress，ckeditor</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>WordPress下默认编辑器很难用，于是出现了很多第三方的编辑器插件，其中比较好的一个就是将著名的FCKEditor以插件形式集成到WordPress里来了，较为详细的介绍见<a href="http://jingyan.info/wordpress%e5%8f%af%e8%a7%86%e5%8c%96%e7%bc%96%e8%be%91%e5%99%a8-deans-fckeditor/" target="_blank" rel="external">这篇文章</a>。</p>
+<p>FCKEditor在某一次更新中改名为CKeditor，这个插件也随之更新，不过没有更新host在Google Code的项目，直接在博客里提供了新版链接。现在最新版是v3.3，集成了CKeditor 3.0.1版，<a href="http://downloads.wordpress.org/plugin/fckeditor-for-wordpress-plugin.3.3.1.zip" target="_blank" rel="external">下载链接</a></p>
+<p>其中几个有意义的更新包括：</p>
+<p><strong>1.评论时也可以用了<br>2.可以控制输出格式<br>3.和WordPress本身的添加媒体功能进行整合<br>4.界面也好看多了</strong></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-wordpresse5b8b8e794a8e587bde695b0-wpdbe7b1bb" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/07/wordpresse5b8b8e794a8e587bde695b0-wpdbe7b1bb/" class="article-date">
+  <time datetime="2010-06-07T01:48:11.000Z" itemprop="datePublished">Jun 7 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress开发/">wordpress开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/07/wordpresse5b8b8e794a8e587bde695b0-wpdbe7b1bb/">WordPress常用函数-wpdb类</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>转载自：<a href="http://www.wordpress.la/codex-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-wpdb%E7%B1%BB.html" target="_blank" rel="external">http://www.wordpress.la/codex-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-wpdb%E7%B1%BB.html</a><br>WordPress啦基本是中文WordPress资源中最丰富的地方，接下来会转载很多那里的文章，在此表示感谢</p>
+<h5 id="与数据库建立接口">与数据库建立接口</h5>
+<p>WordPress为用户提供了一系列用于数据库操作的函数类——wpdb。Wpdb类建立在Justin Vincent编写并维护的<a href="http://www.woyano.com/jv/ezsql" target="_blank" rel="external">ezSQL</a>类的基础上。</p>
+<p><strong>使用须知</strong></p>
+<p>不可直接调用wpdb类中的方法，应使用全局变量$wpdb。$wpdb是WordPress提供的一个全局变量，该全局变量是负责与WordPress数据库交流的类的实例化。（在自定义函数中使用$wpdb前，请记住<a href="http://www.php.net/manual/en/language.variables.scope.php#language.variables.scope.global" target="_blank" rel="external">全局化</a>$wpdb。）</p>
+<p>可以用$wpdb对象从任何一个WordPress数据库表（而非仅仅标准数据库表）中读取数据。例如，如果你需要从一个名为“mytable”的自定义表中选定一些信息，可以使用以下代码：<br>  <pre>$myrows = $wpdb-&gt;<a href="http://codex.wordpress.org/Function_Reference/wpdb_Class#SELECT_Generic_Results" target="_blank" rel="external">get_results</a>( &quot;SELECT id, name FROM mytable&quot; );  </pre></p>
+<p>$wpdb对象可以与任何数量的数据库表交流，但这些数据库表只能来自一个数据库——WordPress数据库。如果你要连接到其它数据库（极少情况），那么你就需要用相应的连接细节信息从wpdb类中将你的对象实例化。如果需要设置多个数据库，可以考虑使用 <a href="http://wordpress.org/extend/plugins/hyperdb/" target="_blank" rel="external">hyperdb</a>。</p>
+<h5 id="执行数据库查询">执行数据库查询</h5>
+<p>你可以通过query函数在WordPress数据库中执行_任何_SQL查询。不过我们推荐为SELECT查询使用更为具体的函数。</p>
+<p>&lt;?php $wpdb-&gt;query(‘query’); ?&gt; </p>
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的SQL语句。</p>
+<p>函数返回一个与选定内容的行数相应的整数。如果发生MySQL错误，函数返回FALSE。（注意：0和FALSE都可能被返回，确保使用正确的比较运算符：equality == vs. identicality ===）。</p>
+<p>注意：使用wpdb类中所有可执行SQL查询的函数时，都需要将所有输入内容/inputs进行字符转义（如wpdb-&gt;escape($user_entered_data_string)）。见下文。</p>
+<p><strong>示例</strong></p>
+<p>删除ID为13的文章的“gargle”元关键字和值。</p>
+<p>$wpdb-&gt;query(&quot;</p>
+<p>DELETE FROM $wpdb-&gt;postmeta WHERE post_id = ‘13’</p>
+<p>AND meta_key = ‘gargle’&quot;);</p>
+<p>由<a href="http://www.wordpress.la/codex-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-delete_post_meta%28%29.html" target="_blank" rel="external">delete_post_meta</a>执行。</p>
+<p>将<a href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html" target="_blank" rel="external">页面</a>7设为页面15的父级。</p>
+<p>$wpdb-&gt;query(&quot;</p>
+<p>UPDATE $wpdb-&gt;posts SET post_parent = 7</p>
+<p>WHERE ID = 15 AND post_status = ‘static’&quot;);</p>
+<h5 id="选择一个变量">选择一个变量</h5>
+<p>get_var函数返回一个来自数据库的变量。虽然只返回一个变量，但查询结果会被整体缓存，供后期使用。如果没有查询结果，返回NULL。</p>
+<p>&lt;?php $wpdb-&gt;get_var(‘query’,column_offset,row_offset); ?&gt; </p>
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的查询。将该参数设为null会使函数返回上一个查询缓存结果中的具体变量。</p>
+<p><strong>column_offset</strong></p>
+<p>（整数）预计的数据库表的列数（0为表中第一列）。默认值为0。</p>
+<p><strong>row_offset</strong></p>
+<p>（整数）预计的数据库表的行数（0为表中第一行）。默认值为0。</p>
+<p><strong>示例</strong></p>
+<p>检索并返回用户数量。</p>
+<p>&lt;?php</p>
+<p>$user_count = $wpdb-&gt;get_var($wpdb-&gt;prepare(&quot;SELECT COUNT(*) FROM $wpdb-&gt;users;&quot;));</p>
+<p>echo ‘&lt;p&gt;User count is ‘ . $user_count . ‘&lt;/p&gt;’;</p>
+<p>?&gt;</p>
+<p>检索并返回<a href="http://www.wordpress.la/codex-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5.html" target="_blank" rel="external">自定义字段</a>值的总数。</p>
+<p>&lt;?php</p>
+<p>$meta_key = ‘miles’;//set this to appropriate custom field meta key</p>
+<p>$allmiles=$wpdb-&gt;get_var($wpdb-&gt;prepare(&quot;SELECT sum(meta_value) FROM $wpdb-&gt;postmeta WHERE meta_key = %s&quot;, $meta_key));</p>
+<p>echo ‘&lt;p&gt;Total miles is ‘.$allmiles . ‘&lt;/p&gt;’;</p>
+<p>?&gt;</p>
+<h5 id="选择表行">选择表行</h5>
+<p>从某个查询中检索一整行内容，可使用get_row函数。该函数可将行作为对象、关联数组或数值索引数组返回。如果查询返回了多个行，函数只返回指定行，但所有返回的行都将被缓存以供日后使用。</p>
+<p>&lt;?php $wpdb-&gt;get_row(‘query’, output_type, row_offset); ?&gt; </p>
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的查询语句。</p>
+<p><strong>output_type</strong></p>
+<p>三个预定义的常量之一。默认值为OBJECT。</p>
+<ul>
+<li>OBJECT —— 返回的结果以对象形式输出<em>   ARRAY_A ——返回的结果以关联数组形式输出</em>   ARRAY_N —— 返回的结果以数值索引数组形式输出</li>
+</ul>
+<p><strong>row_offset</strong></p>
+<p>（整数）预计的数据库表的行数（0为表中第一行）。默认值为0。</p>
+<p><strong>示例</strong></p>
+<p>获取ID为10的链接的所有资料。</p>
+<pre>$mylink = $wpdb-&gt;get_row(&quot;SELECT * FROM $wpdb-&gt;links WHERE link_id = 10&quot;);  </pre>
+
+<p>$mylink对象的属性即SQL查询结果的行名称（在该例中，即 $wpdb-&gt;links表中的所有行）。</p>
+<pre>echo $mylink-&gt;link_id; // prints &quot;10&quot;  </pre>
+
+<p>使用</p>
+<pre>$mylink = $wpdb-&gt;get_row(&quot;SELECT * FROM $wpdb-&gt;links WHERE link_id = 10&quot;, ARRAY_A);  </pre>
+
+<p>则会生成一个关联数组：</p>
+<pre>echo $mylink['link_id']; // prints &quot;10&quot;  </pre>
+
+<p>而</p>
+<pre>$mylink = $wpdb-&gt;get_row(&quot;SELECT * FROM $wpdb-&gt;links WHERE link_id = 10&quot;, ARRAY_N);  </pre>
+
+<p>则会生成一个数值索引数组：</p>
+<pre>echo $mylink[1]; // prints &quot;10&quot;  </pre>
+
+<h5 id="选择表列">选择表列</h5>
+<p>要选择数据库表中的一列内容，可使用get_col函数。该函数输出一个空间数组，如果查询返回了多个列，函数只返回指定列，但所有返回的列都将被缓存以供日后使用。</p>
+<p>&lt;?php $wpdb-&gt;get_col(‘query’,column_offset); ?&gt; </p>
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的查询。将该参数设为null会使函数返回上一个查询的缓存结果中的执行表列。</p>
+<p><strong>column_offset</strong></p>
+<p>（整数）预计的数据库表的列数（0为表中第一列）。默认值为0。</p>
+<p><strong>示例</strong></p>
+<p>在这个例子中，我们假设有一个专注于发布汽车资讯的博客，博客中每篇文章都介绍了一辆特别的汽车（如1969 Ford Mustang）。此外我们将三个<a href="http://www.wordpress.la/codex-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5.html" target="_blank" rel="external">自定义字段</a>——manufacture、model和year指定给各篇文章。这里我们的目的是显示manufacturer（生产商）为Ford的所有文章的标题，各个标题按模型和年份排列。</p>
+<p>可以利用wpdb类的get_col形式返回一个符合要求、以正确顺序排列的文章ID数组。然后通过foreach构造函数重复该文章ID数组，显示每篇文章的标题。本示例的SQL查询由 <a href="http://stackoverflow.com/questions/1690762/complicated-mysql-query/1690808#1690808" target="_blank" rel="external">Andomar</a>编写。</p>
+<p>&lt;?php</p>
+<p>$meta_key1 = ‘model’;</p>
+<p>$meta_key2 = ‘year’;</p>
+<p>$meta_key3 = ‘manufacturer’;</p>
+<p>$meta_key3_value = ‘Ford’;</p>
+<p>$postids=$wpdb-&gt;get_col($wpdb-&gt;prepare(&quot;</p>
+<p>SELECT key3.post_id</p>
+<p>FROM $wpdb-&gt;postmeta key3</p>
+<p>INNER JOIN $wpdb-&gt;postmeta key1</p>
+<p>on key1.post_id = key3.post_id</p>
+<p>and key1.meta_key = %s</p>
+<p>INNER JOIN $wpdb-&gt;postmeta key2</p>
+<p>on key2.post_id = key3.post_id</p>
+<p>and key2.meta_key = %s</p>
+<p>WHERE key3.meta_key = %s</p>
+<p>and key3.meta_value = %s</p>
+<p>ORDER BY key1.meta_value, key2.meta_value&quot;,$meta_key1, $meta_key2, $meta_key3, $meta_key3_value));</p>
+<p>if ($postids) {</p>
+<p>echo ‘List of $meta_key3_value . ‘(s), sorted by ‘ . $meta_key1 . ‘, ‘ . $meta_key2;</p>
+<p>foreach ($postids as $id) {</p>
+<p>$post=get_post(intval($id));</p>
+<p>setup_postdata($post);?&gt;</p>
+<p>&lt;p&gt;&lt;a href=&quot;&lt;?php the_permalink() ?&gt;&quot; rel=&quot;bookmark&quot; title=&quot;Permanent Link to &lt;?php the_title_attribute(); ?&gt;&quot;&gt;&lt;?php the_title(); ?&gt;&lt;/a&gt;&lt;/p&gt;</p>
+<p>&lt;?php</p>
+<p>}</p>
+<p>}</p>
+<p>?&gt;</p>
+<h5 id="选择生成的结果">选择生成的结果</h5>
+<p>get_results可以从数据库中抽取函数生成的多行结果。Wpdb函数以数组形式返回整个查询结果。数组中每个元素都对应查询结果中的一行，如get_row既可以是对象，也可以是关联数组或数值型数组。</p>
+<p>&lt;?php $wpdb-&gt;get_results(‘query’, output_type); ?&gt; </p>
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的查询语句。将该参数设为null会使函数返回上一个查询的缓存结果中的信息。</p>
+<p><strong>output_type</strong></p>
+<p>三个预定义的常量之一。默认值为OBJECT。更多信息请见上文中的“<strong>选择表行</strong>”。</p>
+<ul>
+<li>OBJECT —— 以对象形式输出返回的结果<em>   ARRAY_A ——以关联数组形式输出返回的结果</em>   ARRAY_N —— 以数值索引数组形式输出返回的结果</li>
+</ul>
+<p><strong>示例</strong></p>
+<p>获取ID为5的用户的所有文章草稿的ID和标题并回应标题。</p>
+<p>$fivesdrafts = $wpdb-&gt;get_results(&quot;SELECT ID, post_title FROM $wpdb-&gt;posts</p>
+<p>WHERE post_status = ‘draft’ AND post_author = 5&quot;);</p>
+<p>foreach ($fivesdrafts as $fivesdraft) {</p>
+<p>echo $fivesdraft-&gt;post_title;</p>
+<p>}</p>
+<p>获取ID为5的用户的所有文章草稿信息。</p>
+<p>&lt;?php</p>
+<p>$fivesdrafts = $wpdb-&gt;get_results(&quot;SELECT * FROM $wpdb-&gt;posts</p>
+<p>WHERE post_status = ‘draft’ AND post_author = 5&quot;);</p>
+<p>if ($fivesdrafts) :</p>
+<p>foreach ($fivesdrafts as $post) :</p>
+<p>setup_postdata($post);</p>
+<p>?&gt;</p>
+<p>&lt;h2&gt;&lt;a href=&quot;&lt;?php the_permalink(); ?&gt;&quot; rel=&quot;bookmark&quot;</p>
+<p>title=&quot;Permanent Link to &lt;?php the_title(); ?&gt;&quot;&gt;&lt;?php the_title(); ?&gt;&lt;/a&gt;&lt;/h2&gt;</p>
+<p>&lt;?php</p>
+<p>endforeach;</p>
+<p>else :</p>
+<p>?&gt;</p>
+<p>&lt;h2&gt; Not Found&lt;/h2&gt;</p>
+<p>&lt;?php endif; ?&gt;</p>
+<h5 id="插入表行/列">插入表行/列</h5>
+<p>在数据库表中插入一行/列内容。</p>
+<p><strong>示例</strong></p>
+<p>在一行中插入两列内容，第一个列的值为字符串，第二列的值为数字：</p>
+<pre>$wpdb-&gt;insert( 'table', array( 'column1' =&gt; 'value1', 'column2' =&gt; 123 ), array( '%s', '%d' ) )  </pre>
+
+<p>可能的值：- %s 为字符串，- %d 为十进制数字，- %f 为浮点。</p>
+<h5 id="更新表行/列">更新表行/列</h5>
+<p>更新数据库表中某行/列的内容。</p>
+<p><strong>示例</strong></p>
+<p>要更新一个表行，其ID为1，该行第一列中的值是一个字符串，第二列中的值是一个数字：</p>
+<pre>$wpdb-&gt;update( 'table', array( 'column1' =&gt; 'value1', 'column2' =&gt; 'value2' ), array( 'ID' =&gt; 1 ), array( '%s', '%d' ), array( '%d' ) )  </pre>
+
+<h5 id="防止数据库查询遭到SQL注入式攻击">防止数据库查询遭到SQL注入式攻击</h5>
+<p>更多在WordPress中避免SQL攻击的信息，请看<a href="http://www.wordpress.la/codex-%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81.html" target="_blank" rel="external">数据验证</a>。这是WordPress代码编写者和插件开发者的必读文章。</p>
+<p>简单地说，执行SQL查询以阻止SQL注入式攻击前，SQL查询中的所有数据都需要经过SQL字符转义。可以通过prepare方法快速完成字符转义，该方法使用 <a href="http://php.net/sprintf" target="_blank" rel="external">sprintf()</a>-like语句。</p>
+<p>&lt;?php $sql = $wpdb-&gt;prepare( ‘query’[, value_parameter, value_parameter … ] ); ?&gt;</p>
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的SQL查询，以 %s 与%d作为占位符。</p>
+<p><strong>value_parameter</strong></p>
+<p>（字符串）提交到占位符中的值。该值此时必须没有被SQL转义。</p>
+<p><strong>示例</strong></p>
+<p>将Meta key =&gt; value pair &quot;Harriet’s Adages&quot; =&gt; &quot;WordPress’ database interface is like Sunday Morning: Easy.&quot;添加到ID为10的文章。</p>
+<p>$metakey = &quot;Harriet’s Adages&quot;;</p>
+<p>$metavalue = &quot;WordPress’ database interface is like Sunday Morning: Easy.&quot;;</p>
+<p>$wpdb-&gt;query( $wpdb-&gt;prepare( &quot;</p>
+<p>INSERT INTO $wpdb-&gt;postmeta</p>
+<p>( post_id, meta_key, meta_value )</p>
+<p>VALUES ( %d, %s, %s )&quot;,</p>
+<p>10, $metakey, $metavalue ) );</p>
+<p>由add_meta()执行。</p>
+<p>注意，这时你无须担心引用字符串。不要直接将变量传递给SQL查询，可将 %s作为字符串的占位符， %d作为整数的占位符。你可以传递任意个值，每一个都可以作为prepare()方法的新参数。</p>
+<h5 id="显示/隐藏SQL错误">显示/隐藏SQL错误</h5>
+<p>你可以用show_errors来显示SQL错误，也可以用hide_errors隐藏SQL错误。</p>
+<p> &lt;?php $wpdb-&gt;show_errors(); ?&gt;</p>
+<p>&lt;?php $wpdb-&gt;hide_errors(); ?&gt; </p>
+<p>同样也可以用print_error输出近期的查询所生成的错误。</p>
+<p>&lt;?php $wpdb-&gt;print_error(); ?&gt; </p>
+<h5 id="获取数据库表中某列信息">获取数据库表中某列信息</h5>
+<p>利用get_col_info可以检索到近期查询的表列信息。当你不了解某个函数返回的对象的属性时，就可以通过get_col_info函数获取信息。该函数从指定列中输出所需信息，如果没有指定某列，则函数输出一个以查询结果中所有列的信息为内容的数组。</p>
+<p>&lt;?php $wpdb-&gt;get_col_info(‘type’, offset); ?&gt; </p>
+<p><strong>type</strong></p>
+<p>（字符串）你希望检索的信息。可能为以下任何值之一（摘自 <a href="http://justinvincent.com/home/docs/ezsql/ez_sql_help.htm" target="_blank" rel="external">ezSQL</a>文档）。默认值为name。</p>
+<ul>
+<li>name ——表列的名称。默认值<em>   table ——列所属表格的表格名称</em>   max_length —— 表列的最大长度<em>   not_null —— 若表列不为Null则值为1</em>   primary_key —— 若表列是一个主键，值为1<em>   unique_key —— 若表列是唯一键，值为1</em>   multiple_key —— 若表列是非唯一键，值为1<em>   numeric —— 若表列是数值型，值为1</em>   blob —— 若表列为BLOB，值为1<em>   type —— 表列的类型</em>   unsigned —— 若表列无符号，值为1*   zerofill —— 若表列为zero-filled，值为1</li>
+</ul>
+<p><strong>offset</strong></p>
+<p>（整数）从某个检索信息的表中指定表列（0为表中第一列）。默认值为-1。</p>
+<ul>
+<li>-1 —— 从所有表列中检索信息。输出一个数组。默认值。*   非负整数 —— 从指定的表列中检索信息（0为表中第一列）。</li>
+</ul>
+<h5 id="清除缓存">清除缓存</h5>
+<p>用flush清除SQL结果缓存。</p>
+<p>&lt;?php $wpdb-&gt;flush(); ?&gt; </p>
+<p>这会清除$wpdb-&gt;last_result、$wpdb-&gt;last_query以及$wpdb-&gt;col_info信息。</p>
+<h5 id="类变量">类变量</h5>
+<p><strong>$show_errors</strong></p>
+<p>是否显示SQL错误信息。默认为TRUE。</p>
+<p><strong>$num_queries</strong></p>
+<p>已经被执行的查询次数</p>
+<p><strong>$last_query</strong></p>
+<p>最近一次已经被执行的查询</p>
+<p><strong>$queries</strong></p>
+<p>将SAVEQUERIES常量设为TRUE（该常量默认值为FALSE），可以保存所有数据库查询及其停止时间。如果SAVEQUERIES值为TRUE，你的查询会被作为数组保存在$queries变量中。</p>
+<p><strong>$last_result</strong></p>
+<p>最近一次查询结果。</p>
+<p><strong>$col_info</strong></p>
+<p>最近一次查询结果的表列信息。参见获取表列信息。</p>
+<p><strong>$insert_id</strong></p>
+<p>最近一次INSERT查询为AUTO_INCREMENT列生成的ID。</p>
+<p><strong>$num_rows</strong></p>
+<p>最近一次查询返回的行数。</p>
+<h5 id="表">表</h5>
+<p>在wpdb类中可以引用WordPress数据库表。</p>
+<p><strong>$posts </strong></p>
+<p>关于文章的数据库表</p>
+<p><strong>$users</strong></p>
+<p>关于用户的数据库表</p>
+<p><strong>$comments</strong></p>
+<p>评论表</p>
+<p><strong>$links</strong></p>
+<p>链接表</p>
+<p><strong>$options</strong></p>
+<p>选项表</p>
+<p><strong>$postmeta</strong></p>
+<p>元数据（<a href="http://www.wordpress.la/codex-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5.html" target="_blank" rel="external">自定义字段</a>）表</p>
+<p><strong>$usermate</strong></p>
+<p><a href="http://www.wordpress.la/codex-WordPress%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0.html" target="_blank" rel="external">usermeta</a>表中含有用户的其它信息，如昵称、个人说明与权限。</p>
+<p><strong>$terms</strong></p>
+<p><a href="http://www.wordpress.la/codex-WordPress%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0.html" target="_blank" rel="external">terms</a>表中包括对分类目录、链接分类、标签的“说明”（description）</p>
+<p><strong>$term_taxonomy</strong></p>
+<p><a href="http://www.wordpress.la/codex-WordPress%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0.html" target="_blank" rel="external">term_taxonomy</a>表介绍了WordPress的不同分类（taxonomy）。分类目录、链接分类、标签都是一种分类。</p>
+<p><strong>$term_relationships</strong></p>
+<p><a href="http://www.wordpress.la/codex-WordPress%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0.html" target="_blank" rel="external">term_relationships</a>表中含有术语以及使用术语的对象之间的链接，即该表可以指向日志所属的分类目录。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-wordpresse68f92e4bbb6apie6898be5868c" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/07/wordpresse68f92e4bbb6apie6898be5868c/" class="article-date">
+  <time datetime="2010-06-07T01:42:15.000Z" itemprop="datePublished">Jun 7 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/wordpress开发/">wordpress开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/07/wordpresse68f92e4bbb6apie6898be5868c/">WordPress插件API手册</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress，hook/">wordpress，hook</a></li></ul>
+
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>转载的，但找不到最初的地址了<br> <span style="widows: 2; text-transform: none; text-indent: 0px; border-collapse: separate; font: medium simsun; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(0,0,0); word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px" class="Apple-style-span"><span style="text-align: left; line-height: 21px; font-family: verdana, sans-serif; font-size: 14px" class="Apple-style-span">     </span></span></p>
+<h2 id="概述">概述</h2>
+<p>本文档介绍了在WordPress中对插件开发者有用的API（Application Programming Interface，应用编程接口）的使用方法。</p>
+<p>本文假设你已经阅读了简要介绍插件开发方法的文章：<a href="http://codex.wordpress.org/Writing_a_Plugin" title="Writing a Plugin" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Writing a Plugin</span></strong></a>，本文主要就介绍Hook API，比如Filters、Action，这使得WordPress可以加载你的插件。</p>
+<p>注意：本文所提到的信息针对WordPress1.2及以上版本，在1.2版之前，这些插件被称为“hacks”，他们主要是通过修改WordPress本身的源码来实现的。</p>
+<p>译者注：在本文中，为了便于对原文的准确翻译，一些程序设计的专有词汇没有进行翻译，你可以阅读如下单词表来参考：</p>
+<ul>
+<li>API，应用程序编程接口。</li>
+<li>Hook，钩子，意为在WordPress的处理中加入你自己的处理。</li>
+<li>Filter，过滤器。</li>
+<li>Action，动作。      </li>
+</ul>
+<h2 id="Hooks，Actions和Filters">Hooks，Actions和Filters</h2>
+<p>Hook是WordPress提供的，允许你的插件“勾入”WordPress的程序，或者说，可以在特定时候执行你插件中的函数，从而使得你的插件执行。这里提供了两种hook：</p>
+<ol>
+<li>Action：Action（动作）是WordPress程序核心在程序执行的特殊点（特定事件发生）加载的。使用Action API，你的插件可以在这些特殊点执行一个或者多个在插件中编写的PHP函数。</li>
+<li>Filter：Filter（过滤器）是WordPress加载的，当文本被存入数据库或发送到浏览器之前，Filter可用来对其进行多种类型的处理。使用Filter，你的插件可以使用定义在其中的PHP函数来对文本进行多种处理。      </li>
+</ol>
+<p>某 些时候，你可以用Action或者Filter实现同样的功能。举例来说，如果你编写了一个插件用来修改博客日志的文本，你可以加入一个Action函数 到publist_post的事件（这样日志就会在存入数据库时被修改），也可以加入一个Fliter函数到the_content（这时日志内会在显示 到浏览器之前被修改）。</p>
+<h2 id="Actions（动作）">Actions（动作）</h2>
+<p>Action（动作）在WordPress进行某些特殊事件处理时被触发，例如发布日志，修改主题，或者在管理员面板显示页面。你的插件可以通过执行PHP函数来发挥作用，他们可以用来做如下事情：</p>
+<ul>
+<li>修改数据库中的数据</li>
+<li>发送Email消息</li>
+<li>修改在浏览器中显示的信息（包括管理员看到的和访问者看到的）      </li>
+</ul>
+<p>实施Action的基本步骤是：</p>
+<ol>
+<li>在你的插件中编写当事件发生时执行的PHP函数。</li>
+<li>通过执行add_action函数将这些操作Hook（勾入）到WordPress中。</li>
+<li>将你的PHP函数放入插件文件，并且将其激活。      </li>
+</ol>
+<h3 id="编写Action函数">编写Action函数</h3>
+<p>在插件中创建Action的第一步是在插件中编写一个实现Action功能的PHP函数并且将其放入你的插件文件（插件文件必须放置在wp- content/plugins目录）中。比如，如果你希望当发表一篇日志后，发送Email通知给你的朋友，那么你可以定义如下函数：</p>
+<p><code>function email_friends($post_ID) {         
+&amp;#160;&amp;#160;&amp;#160; $friends = &#39;bob@example.org,susie@example.org&#39;;          
+&amp;#160;&amp;#160;&amp;#160; mail($friends, &amp;quot;sally&#39;s blog updated&amp;quot;,&lt;span class=&quot;Apple-converted-space&quot;&gt;&amp;#160;&lt;/span&gt;          
+&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; &#39;I just put something on my blog: http://blog.example.com&#39;);          
+&amp;#160;&amp;#160;&amp;#160; return $post_ID;          
+}</code></p>
+<p>在大多数Action中，你的函数应该接受一个参数（通常是日志或者帖子的编号，这取决于你要进行的操作）。某些Action可能有多余一个参数 —你可以通过查看Action的文档或者WordPress源代码来获得更多信息。除函数参数外，你还可以访问WordPress的全局变量以及执行 WordPress中定义的其他函数（或者在你的插件文件中定义的函数）。</p>
+<p><strong>注意</strong>：切记其他插件或者WordPress核心可能已经使用了你希望使用的函数名称，你可以浏览<a href="http://codex.wordpress.org//Writing_a_Plugin#Avoiding_Function_Name_Collisions" title="Writing a Plugin" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Avoiding Function Name Collisions</span></strong></a>（避免函数名称冲突—译者注）来获得更多信息。</p>
+<h3 id="Hook（勾入）到WordPress">Hook（勾入）到WordPress</h3>
+<p>完成你的函数的编写后，下一步就是将其hook（勾入）或者说注册到WordPress中，你可以通过执行全局空间中的add_action()函数来实现，如：</p>
+<p><code>add_action ( &#39;hook_name&#39;, &#39;your_function_name&#39;, [priority], [accepted_args] );</code></p>
+<p>此处</p>
+<ul>
+<li>hook_name参数是WordPress提供的Action Hook（动作钩子）名称，这决定了你的函数应当和哪个事件结合。</li>
+<li>your_function_name参数是你希望在特定事件（即hook_name参数指定的事件）后执行的函数名称。该函数可以是 标准的PHP函数，在WordPress核心中定义的函数或者你自己在插件文件中定义的函数（如刚才我们编写的emai_friends函数）。</li>
+<li>priority参数是一个可选的整型参数，他用来指明在结合特定事件的多个函数中，当前函数被执行的顺序（默认为10）。该参数指定的更小的数字会被更早的执行，priority参数相同的函数会依照他们被加入Action的顺序来执行。</li>
+<li>accepted_args参数是一个可选的整型参数，他定义了你的函数中可以接收多少个参数（默认为1）。该参数是非常有用的，因为某些Hook可以向你的函数中传入多个参数。该参数在1.5.1版本中被新加入。      </li>
+</ul>
+<p>在前面的例子中，我们可以在插件文件中加入如下代码：</p>
+<p><code>add_action(&#39;publish_post&#39;, &#39;email_friends&#39;);</code></p>
+<p>同样的，你也可以在Action Hook中移除Action，你可以参考<a href="http://www.yeeyan.com/#Removing_Actions_and_Filters" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Remove Actions</span></strong></a>来获得更多详情。</p>
+<h3 id="安装和激活">安装和激活</h3>
+<p>让你的Action Hook开始工作的最后一步是安装插件文件和激活插件。你必须将你编写的PHP函数和add_action函数存入同一个PHP文件，该PHP文件必须被 安装在wp-content/plugins目录，当该文件安装完毕，你需要浏览WordPress的管理面板，并且激活你的插件，你可以参考<a href="http://codex.wordpress.org/Managing_Plugins" title="Managing Plugins" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Managing Plugins</span></strong></a>文章来获得更多信息。</p>
+<h3 id="当前可用的Action_Hook">当前可用的Action Hook</h3>
+<p>请浏览<a href="http://codex.wordpress.org/Plugin_API/Action_Reference" title="Plugin API/Action Reference" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Plugin API/Action Reference</span></strong></a>（插件API/Action参考—译者注）来获得一份当前版本的WordPress中可用的Action Hook。</p>
+<h2 id="Filters（过滤器）">Filters（过滤器）</h2>
+<p>Filters（过滤器）是WordPress在执行中的特定点传递数据的函数，他发生在对数据进行操作（如将其加入数据库或发送到浏览器）之前。 Filter建立在数据库到浏览器之间的处理（当WordPress生成页面时），同时也建立在浏览器到数据库之间的处理（当WordPress新增日志 或者评论到数据库时）；多数WordPress中的输入输出都通过了至少一个filter。WordPress默认已经实现了一些过滤操作，你的插件也可 以加入你自己的过滤操作。</p>
+<p>将你的filter加入WordPress中的基本步骤如下：</p>
+<ol>
+<li>编写用于过滤数据的PHP函数。</li>
+<li>通过执行add_filter函数将filter Hook（勾入）到WordPress。</li>
+<li>将你的PHP函数放入插件文件，并且将其激活。      </li>
+</ol>
+<h3 id="编写Filter（过滤器）函数">编写Filter（过滤器）函数</h3>
+<p>Filter（过滤器）函数获得未经修改的数据，并返回修改后的数据（或者在某些情况下，返回null值来标识数据应当被删除或忽略）。如果你的filter不修改数据，那么应当返回原始数据，这样，如果必要，其余的插件可以继续修改数据。</p>
+<p>因此，在你的插件中创建filter的第一步是编写一个PHP函数来进行过滤处理，并且将其放在你的插件文件（插件文件必须放置在wp- content/plugins目录）当中。例如，如果你希望确保你的帖子和评论中不包含脏话，你可以定义一个存放禁止词汇的全局变量，然后编写如下的 PHP函数：</p>
+<p><code>function filter_profanity($content) {         
+&amp;#160;&amp;#160;&amp;#160; global $profanities;          
+&amp;#160;&amp;#160;&amp;#160; foreach($profanities as $profanity) {          
+&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; $content=str_ireplace($profanity,&#39;{censored}&#39;,$content);          
+&amp;#160;&amp;#160;&amp;#160; }          
+&amp;#160;&amp;#160;&amp;#160; return $content;          
+}</code></p>
+<p><strong>注意</strong>：切记其他插件或者WordPress核心可能已经使用了你希望使用的函数名称，你可以浏览<a href="http://codex.wordpress.org/Writing_a_Plugin#Avoiding_Function_Name_Collisions" title="Writing a Plugin" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Avoiding Function Name Collisions</span></strong></a>（避免函数名称冲突—译者注）来获得更多信息。</p>
+<h3 id="Hook（勾入）到WordPress-1">Hook（勾入）到WordPress</h3>
+<p>完成你的函数的编写后，下一步就是将其hook（勾入）或者说注册到WordPress中，你可以通过执行全局空间中的add_filter()函数来实现，如：</p>
+<p><code>add_filter(&#39;hook_name&#39;, &#39;your_filter&#39;, [priority], [accepted_args]);</code></p>
+<p>此处：</p>
+<ul>
+<li>hook_name参数是WordPress提供的Filter Hook（过滤器钩子）名称，这决定了你的函数在何时发挥作用。</li>
+<li>your_filter参数是你希望用来过滤的函数的名称。该函数可以是标准的PHP函数，在WordPress核心中定义的函数或者你自己在插件文件中定义的函数。</li>
+<li>priority参数是一个可选的整型参数，他用来指明在结合特定事件的多个函数中，当前函数被执行的顺序（默认为10）。该参数指定的更小的数字会被更早的执行，priority参数相同的函数会依照他们被加入Action的顺序来执行。</li>
+<li>accepted_args参数是一个可选的整型参数，他定义了你的函数中可以接收多少个参数（默认为1）。该参数是非常有用的，因为某些Hook可以向你的函数中传入多个参数。该参数在1.5.1版本中被新加入。      </li>
+</ul>
+<p>在前面的例子中，我们可以将下面的代码放入你的插件文件中的主要执行部分，来通知WordPress对评论中的脏话进行过滤处理：</p>
+<p>add_filter(‘comment_text’,’filter_profanity’);</p>
+<p>你也可以使用WordPress函数remove_filter()来移除filter hook中的filter。你可以参考<a href="http://www.yeeyan.com/#Removing_Actions_and_Filters" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Removing Actions and Filters</span></strong></a>。</p>
+<h3 id="安装和激活-1">安装和激活</h3>
+<p>让你的Filter Hook开始工作的最后一步是安装插件文件和激活插件。你必须将你编写的PHP函数和add_filter函数存入同一个PHP文件，该PHP文件必须被 安装在wp-content/plugins目录，当该文件安装完毕，你需要浏览WordPress的管理面板，并且激活你的插件，你可以参考<a href="http://codex.wordpress.org/Managing_Plugins" title="Managing Plugins" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Managing Plugins</span></strong></a>文章来获得更多信息。</p>
+<h3 id="当前可用的Filter_Hook">当前可用的Filter Hook</h3>
+<p>请浏览<a href="http://codex.wordpress.org/Plugin_API/Filter_Reference" title="Plugin API/Filter Reference" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Plugin API/Filter Reference</span></strong></a><span class="Apple-converted-space">&#160;</span>（插件API/Filter参考—译者注）来获得一份当前版本的WordPress中可用的Filter Hook。</p>
+<h2 id="删除Action和Filter">删除Action和Filter</h2>
+<p>在某些情况下，你会发现你希望你的插件屏蔽WordPress内建或者其他插件加入的Action或Filter。你可以通过执行<code>remove_filter(&#39;filter_hook&#39;,&#39;filter_function&#39;)函数或者remove_action(&#39;action_hook&#39;,&#39;action_function&#39;)函数来实现。</code></p>
+<p>举例来说，remove_action(‘publish_post’,’generic_ping’);会使得你在发表新日志时不发送日志引用（ping）。</p>
+<p>注意如果某个hook在注册时使用了除默认值10意外的priority参数，则你必须修改在remove_action()函数中的 priority参数。同时也请注意，通常来讲除非你知道这样做的原因和后果，你不应当移除任何东西—请检查WordPress或者其他插件的源代码来 保证这一点。</p>
+<h2 id="默认应用的Filter和Action">默认应用的Filter和Action</h2>
+<p>找出WordPress默认启用的filter和Action的最可靠方法是在WordPress核心文件中搜索 add_filter和add_action。</p>
+<h3 id="WordPress_2-1">WordPress 2.1</h3>
+<p>在WordPress 2.1中，大多数默认filter和action是通过文件wp-includes/default-filters.php来加入的，少数其他的在如下文件中被加入：</p>
+<ul>
+<li>wp-admin/admin-ajax.php</li>
+<li>wp-admin/admin-functions.php</li>
+<li>wp-admin/custom-header.php</li>
+<li>wp-admin/edit.php</li>
+<li>wp-admin/index.php</li>
+<li>wp-admin/options-permalink.php</li>
+<li>wp-admin/upload-functions.php</li>
+<li>wp-admin/upload.php</li>
+<li>wp-includes/bookmark.php</li>
+<li>wp-includes/general-template.php</li>
+<li>wp-includes/kses.php</li>
+<li>wp-includes/plugin.php</li>
+<li>wp-includes/rewrite.php</li>
+<li>wp-includes/template-loader.php</li>
+<li>wp-includes/theme.php      </li>
+</ul>
+<h3 id="WordPress_1-5">WordPress 1.5</h3>
+<p>大多数默认的filter和action在WordPress 1.5的文件wp-includes/default-filters.php中被加入。</p>
+<h2 id="你可以覆盖的函数">你可以覆盖的函数</h2>
+<p>除了前面描述的hook（包括action和filter）之外，另一个修改WordPress行为的插件编写方法是覆盖WordPress函数。 事实上，WordPress设计了一些让插件重新定义的函数。WordPress通过仅当所有插件都加载之后才加载这些函数的方式来使得这个方式变得容 易。</p>
+<p>这些函数均定义在文件wp-includes/pluggable.php中，如下是其清单（在2.1版本中）；这些函数中的部分文档可以在<a href="http://codex.wordpress.org/Function_Reference" title="Function Reference" target="_blank" rel="external"><strong><span style="line-height: 21px; color: rgb(0,51,102)">Function Reference</span></strong></a>（函数参考-译者注）中找到。</p>
+<ul>
+<li><tt>set_current_user</tt></li>
+<li><tt>wp_set_current_user</tt></li>
+<li><tt>wp_get_current_user</tt>   </li>
+</ul>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/12/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/57/">57</a><a class="extend next" rel="next" href="/page/14/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

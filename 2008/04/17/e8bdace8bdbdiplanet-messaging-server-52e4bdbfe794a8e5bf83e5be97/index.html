@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[转载]iplanet Messaging Server 5.2使用心得 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="http://www.chinaunix.net/jh/6/903673.html
+使用iplanet Messaging server 5.2三年有余了，把使用的一些心得以FAQ的形式列出来，也算是对自己过去工作的一些总结，也可以希望能够帮助到那些仍旧在用这个产品的兄弟 
+问：如何将LDAP中的信息导出 
+答：使用db2ldif命令，可将数据导成ldif文件。文件存放在db2ldif文件所在目录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[转载]iplanet Messaging Server 5.2使用心得">
+<meta property="og:url" content="http://yoursite.com/2008/04/17/e8bdace8bdbdiplanet-messaging-server-52e4bdbfe794a8e5bf83e5be97/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="http://www.chinaunix.net/jh/6/903673.html
+使用iplanet Messaging server 5.2三年有余了，把使用的一些心得以FAQ的形式列出来，也算是对自己过去工作的一些总结，也可以希望能够帮助到那些仍旧在用这个产品的兄弟 
+问：如何将LDAP中的信息导出 
+答：使用db2ldif命令，可将数据导成ldif文件。文件存放在db2ldif文件所在目录">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[转载]iplanet Messaging Server 5.2使用心得">
+<meta name="twitter:description" content="http://www.chinaunix.net/jh/6/903673.html
+使用iplanet Messaging server 5.2三年有余了，把使用的一些心得以FAQ的形式列出来，也算是对自己过去工作的一些总结，也可以希望能够帮助到那些仍旧在用这个产品的兄弟 
+问：如何将LDAP中的信息导出 
+答：使用db2ldif命令，可将数据导成ldif文件。文件存放在db2ldif文件所在目录">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main"><article id="post-e8bdace8bdbdiplanet-messaging-server-52e4bdbfe794a8e5bf83e5be97" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/04/17/e8bdace8bdbdiplanet-messaging-server-52e4bdbfe794a8e5bf83e5be97/" class="article-date">
+  <time datetime="2008-04-17T04:16:00.000Z" itemprop="datePublished">Apr 17 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      [转载]iplanet Messaging Server 5.2使用心得
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+		<a data-url="http://yoursite.com/2008/04/17/e8bdace8bdbdiplanet-messaging-server-52e4bdbfe794a8e5bf83e5be97/" data-title="[转载]iplanet Messaging Server 5.2使用心得" data-id="09lc2xtd86d8095z" class="article-share-link">Share</a>
+	  
+      
+        <a href="http://yoursite.com/2008/04/17/e8bdace8bdbdiplanet-messaging-server-52e4bdbfe794a8e5bf83e5be97/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">Contents</strong>
+			
+			</div>
+		
+		<!-- 文章目录结束 -->
+		
+        <p><a href="http://www.chinaunix.net/jh/6/903673.html" target="_blank" rel="external">http://www.chinaunix.net/jh/6/903673.html</a></p>
+<p>使用iplanet Messaging server 5.2三年有余了，把使用的一些心得以FAQ的形式列出来，也算是对自己过去工作的一些总结，也可以希望能够帮助到那些仍旧在用这个产品的兄弟 </p>
+<p><strong>问：如何将LDAP中的信息导出</strong> </p>
+<p>答：使用db2ldif命令，可将数据导成ldif文件。文件存放在db2ldif文件所在目录的ldif目录下，以日期为文件名 </p>
+<p><strong>问：如何将导出的ldif文件导回LDAP</strong>答：使用ldapmodify &ndash;a &ndash;c &ndash;h ldap-server-ip &ndash;h ldap-server-port &ndash;D &ldquo;cn=Directory Manager&rdquo; &ndash;w &ldquo;11111111&rdquo; &ndash;f xxx.ldif </p>
+<p>其中：ldap-server-ip为Directory Server的IP地址，ldap-server-port为服务端口，-w 参数跟的是密码，－D参数跟的是目录管理员，－a参数意为添加，－c参数意为遇到错误继续， </p>
+<p>－f参数为指定ldif文件位置 </p>
+<p>ldapmodify文件位置一般为ims安装目录下的shared/bin/下 </p>
+<p>具体使用方法见ldapmodify的帮助。 </p>
+<p><strong>问：如何修改LDAP中的一个属性值</strong> </p>
+<p>答：编写ldif文件，文件格式为： </p>
+<p>dn:uid=test,ou=people,o=test.com,o=isp(dn为唯一确定值) </p>
+<p>changetype:modify(意为修改，还可以是delete,add) </p>
+<p>replace:cn(属性名称) </p>
+<p>cn:测试帐户(属性新值) </p>
+<p>然后使用ldapmodify 导入这个ldif文件 </p>
+<p>ldapmodify &ndash;h ldap-server-ip &ndash;h ldap-server-port &ndash;D &ldquo;cn=directory manager&rdquo; &ndash;w &ldquo;111111111&rdquo; &ndash;f xxx.ldif </p>
+<p>参数说明同上 </p>
+<p><strong>问：如何限制一些人发信</strong> </p>
+<p>答：可以使用mappings映射表中的ORIG_MAIL_ACCESS映射值，按照src-channel|from-address|dst-channel|to-address $N添加需要限制的邮件地址 </p>
+<p>src-channel为来源通道 </p>
+<p>from-address为来源信件 </p>
+<p>dst-channel为目标通道 </p>
+<p>to-address为目标地址 </p>
+<p>注意目标地址应为重写过的地址 </p>
+<p>支持通配符* </p>
+<p>比如tcp_local|<em>|tcp_local|</em> $N </p>
+<p>限制所有来源于tcp_local通道的邮件地址发信到tcp_local通道中的所有地址，意思即为限制转发。 </p>
+<p>比如tcp_intarnet|[email]test@test.com.cn[/email]|tcp_local|* $N </p>
+<p>限制[email]test@test.com.cn[/email]这个帐号往intenet上发信 </p>
+<p>而如果不允许本地域发信给本地域时 </p>
+<p>应该： </p>
+<p>tcp_intarnet|<em>@test.com.cn|tcp_intarnet|</em>@ims-domans.test.com.cn </p>
+<p>目标地址是经重写规则后的地址 </p>
+<p><strong>问：为什么安装好HA环境下的邮件系统后,webmail就不能发信了？</strong> </p>
+<p>答：因为安装的时候是通过logic ip安装的，而webmail默认使用的ip地址仍然为提供邮件服务的物理地址。需要使用以下命令，指定发信ip。 </p>
+<p>./configutil &ndash;o service.http.smtphost &ndash;v logic_ip </p>
+<p><strong>问：为什么安装好HA环境下的邮件系统后，不能往外域发信</strong> </p>
+<p>答：因为对以用logic ip安装的邮件系统来说，其他ip都为不受信任用户(外域往外域发信是被禁止的)。需要在 </p>
+<p>/usr/iplanet/server5/msg-mail/imta/config/mappings文件中的INTERNAL_IP映射项中添加物理ip为受信任ip. </p>
+<p><strong>问：为什么新开的用户能发信而不能收信</strong> </p>
+<p>答：Message Server默认安装使用的是同步运行模式。在同步模式下，MTA缓存目录信息并通过访问缓存获得数据，而不是每处理一封邮件就查询目录服务 </p>
+<p>需要运行imsimta dirsync &ndash;F (带参数F表示为全同步，不带参数为增量同步)将LDAP中的数据同步到本地缓存当中。 </p>
+<p><strong>问：当我用ldifmodify添加objectclass时，为什么会出现object class violation的错误</strong> </p>
+<p>答：添加objectclass时，需要把objectclass下的attr也添加进去，例如以下ldif例子： </p>
+<p>dn: dc=wondertek,dc=com,o=internet </p>
+<p>changetype:modify </p>
+<p>add:objectclass </p>
+<p>objectclass:alias </p>
+<p>aliasedobjectname:dc=élan,dc=com,o=internet </p>
+<p>出错的时候可以在ldap的error 日志文件中找到一些提示 </p>
+<p><strong>问：为什么登录的时候会一直处于加载状态没有任何反应</strong> </p>
+<p>答：这是因为收件箱中有信件是乱码造成javascript错误，找出这封信件删除后，重建索引。 </p>
+<p>重建索引可以先删除用户信箱文件夹中的store.idx文件，然后用reconstruct &ndash;r user/lijiong/INBOX命令。</p>
+<p><strong>问：如何将nms3.x的信件升级到ims5.2</strong> </p>
+<p>答：数据迁移涉及到两个方面：一个是用户信息，一个是用户信件。由于用户信息和用户信件和ims5.2都不相符，必须经过格式转换才能使用。Nms3.5的用户信息可以保存在ldap中，也可以保存在本地数据文件中。将用户信息导成ldif文件后，根据ims5.2格式修改。用户信件不能3.x直接升级到5.2版本中去，4.x版本提供了一个信件升级工具:upgrade。使用这个工具就可以将信件转换成5.x认识的格式。安装nms4.x时会提示你是否需要从3.x升级，选择否。安装完成以后，将3.x中的用户导入到4.x的ldap中去，这里仍然需要将3.x的用户信息文件转换成4.x的格式。导入进去以后，运行upgrade &ndash;s给所有4.x用户建信箱 </p>
+<p>然后upgrade &ndash;m增量转换开始。可以使用upgrade &ndash;m &ndash;F 全部转换。 </p>
+<p><strong>问：如何在DS5.x中导出LDAP中的信息。</strong> </p>
+<p>答：使用./db2ldif&nbsp;&nbsp; -s o=isp 或者 ./db2ldif &ndash;s o=NetscapeRoot。参数-s后跟的是条目的suffix </p>
+<p><strong>问：已经建好的系统上修改IP该如何处理。</strong> </p>
+<p>答：Directory Server和Message Server是只认机器名，不认IP的，所以说直接修改IP是不会妨碍系统的。但是Administrator Server是要绑定IP的。而且Directory Server的Administrator Server是要被写入到LDAP中去的，这个时候只有修改LDAP中的值才行。 </p>
+<p>修改方法如下： </p>
+<p>使用./db2ldif &ndash;s o=NetscaptRoot导成ldif文件 </p>
+<p>查找nsserveraddress一行entry的dn </p>
+<p>撰写ldif如下： </p>
+<p>dn:xxxxxxxxxx(上面找到的) </p>
+<p>changetype:modify </p>
+<p>replace:nsserveraddress </p>
+<p>nsserveraddress:新的IP </p>
+<p>Message Server的Administrator Server的IP地址在admin-serv/config/local.conf文件中修改 </p>
+<p><strong>问：Ida中的timeoutsession在哪里可以设置？</strong> </p>
+<p>答：默认为15分钟To change the user session timeout, edit the servlet.properties file in </p>
+<p>the root_of_web_server/config directory. After the line: </p>
+<p>servlets.sessionmgr=com.netscape.server.http.session.SimpleSessionM </p>
+<p>anager </p>
+<p>add the following line: </p>
+<p>servlets.sessionmgr=com.netscape.server.http.session.SimpleSessionM </p>
+<p>anager, add servlets.sessionmgr.initArgs=timeOut=xx, where xx is the user </p>
+<p>session timeout in seconds after a session is accessed by the client before the </p>
+<p>session manager destroys it </p>
+<p><strong>问：如何找回已被删除的邮件</strong> </p>
+<p>答：将用户文件夹中的store.exp文件删除后，reconstruct &ndash;r user/xxxxx/INBOX </p>
+<p><strong>问：当邮件主机找不到MX记录发不出去信件的时候怎么处理？</strong> </p>
+<p>答：这样的情况往往发生在多层结构，邮件主机只有内网地址的时候。一些特殊信件要交到邮件主机由主机发信，比如自动回复信件。这个时候只要在imta.cnf的tcp_intranet,tcp_local通道定义加lastresort后面跟可以发信的机器的ip地址（比如前面的outbound） </p>
+<p><strong>问：如何实现域别名？</strong> </p>
+<p>答：域别名要在同步模式下才可完成。 </p>
+<p>比如要给test.com添加abc.com域别名 </p>
+<p>只要撰写ldif文件内容如下： </p>
+<p>dn:dc=abc.com,dc=com,o=internet </p>
+<p>object:alias </p>
+<p>objectclass:inetDomainAlias </p>
+<p>aliasedObjectName:dc=test,dc=com,o=internet </p>
+<p>dc:abc </p>
+<p>注意，你的同名域的dc一定存在，比如dc=com，如果不存在，则不可添加。如为test.com创建同名域test.net，可先创建dc=net,然后再实现同名域。 </p>
+<p><strong>问：不同的域可以使用不同的页面吗？</strong> </p>
+<p>答：可以。只要在html文件夹下创建一个域名文件夹，然后把所有的html文件拷贝至这个文件夹下即可。使用域名来进行访问不同的页面。注意：子域的登录主页的改写可能稍有不同。例如：在test.com域下创建abc.com域。则只需在html下创建abc.com文件夹,虚拟域的登录主页在html/abc.com/zh-CN/下，为default.html。而当访问虚拟域登录首页时，邮件会把这张default.html定位在html/下，所以改写页面时，图片的定位应该为abc.com/imx/xxx.jgp。 </p>
+<p><strong>问：使用ldapsearch搜索用户的时候为什么会出现Sizelimit exceeded的信息？</strong> </p>
+<p>答：在slapd.conf文件中，修改sizelimit项 </p>
+<p>在slapd.ldbm.conf文件中，修改lookthroughlimit项，修改后重起ldap就可放宽限制。 </p>
+<p><strong>问：如何使用webmail时也可显示外发邮件名？</strong> </p>
+<p>答：添加service.http.fullfromheader属性，属性值为yes </p>
+<p><strong>问：为何有的邮件系统会拒收我们的邮件，报错为need fully hostname？</strong> </p>
+<p>答：这个问题一般是由主机名的短文件名造成的，可以在tcp_local_option文件中添加 </p>
+<p>BANNER_HOST=hostname.domain </p>
+<p><strong>问：如何解决SMTP没有响应的问题？</strong> </p>
+<p>答：发信时长时间没有反应，通过telnet 连接到25端口后，对helo命令也没有反应，这个时候可以使用./imsimta recover-crash命令对db进行修复（只可使用在同步模式下），也可直接将访问模式改为ldap直接访问模式。 </p>
+<p><strong>问：如何防止一封信发给很多人</strong> </p>
+<p>答： </p>
+<p>在/server_root/msg-instance/imta/config下创建tcp_local_option文件 </p>
+<p>添加以下行 </p>
+<p>ALLOW_RECIPIENTS_PER_TRANSACTION=N </p>
+<p>N为具体限制数字 </p>
+<p>问：两台邮件服务器该如何安装邮件系统 </p>
+<p>答：一台服务器做mail store 和inbound,一台服务器做outbound。首先按正常方式安装mail store，然后安装outbound，有以下几点要注意 </p>
+<p>1：安装时机器名，主机名都应该为本机的主机名， </p>
+<p>2：安装选项应该多选一个MMP选项 </p>
+<p>3：安装完成后配置MMP的PopproxyAService.cfg文件，配置说明可参看管理员指南。 </p>
+<p>4：如果webmail也部署在outbound上（推荐），应该在outbound上启用webmail代理 </p>
+<p>configutil &ndash;o local.service.http.proxy &ndash;v 1 </p>
+<p><strong>问：如何使log记录IP</strong> </p>
+<p>答：在option.dat文件中添加LOG_CONNECTION=1 </p>
+<p><strong>问：如何阻止一个外部IP的连接</strong> </p>
+<p>答：在mappings文件的PORT_ACCESS映射项中添加 </p>
+<p><em>|</em>|<em>|192.168.0.176|</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $N$ not$ to$connection </p>
+<p><strong>问：如何为服务器添加SmatrHost</strong> </p>
+<p>答：在通道定义中添加关键字daemon ，后跟ip</p>
+<hr>
+<p><strong> <a href="http://bbs.chinaunix.net/viewpro.php?uid=100927" target="_blank" rel="external"><font color="#0000ff">lijiong</font></a> 回复于：2007-03-01 13:26:34</strong></p>
+<p><strong>问：ds5.1下的主从配置</strong> </p>
+<p>答： </p>
+<p>一、首先配置从服务器(consumer) </p>
+<p>6. 在directory server console端Configuration标签页右键单击Data项，点击New Root Suffix菜单，新建需同步的节点。比如o=internet,database名为internet </p>
+<p>7. 新建好后，展开Replication项，下面会自动生成一个同步的节点，选中。 </p>
+<p>8. 在Replica Settings中，选中Enable Replica，Replica Role项选Dedicated Consumer </p>
+<p>9. update Settings中，Enter a new Supplier DN：写入cn=directory manager ,然后 add </p>
+<p>10. Enter a new URL:写入主ldap服务器名字、端口（或者用Construct….），然后add </p>
+<p>11. 保存 </p>
+<p>二、配置主服务器 </p>
+<p>2. 在directory serer console端Configuration标签页下选择Replication,选中Enable Changelog </p>
+<p>3. Legacy Consumer Settings标签页下填入Supplier DN: cn=directory manager, </p>
+<p>4. 选中Replication下需同步的节点 </p>
+<p>5. 在Replica Settings中选中Enable Replica </p>
+<p>6. Replica Role选中Single Master </p>
+<p>7. Common Settings中，Replica ID，填入1～65535任意数字，但是必须唯一于其他同步项 </p>
+<p>8. save后邮件单击同步节点，New Replication Agreement… </p>
+<p>9. 填入Name,Description </p>
+<p>10. Consumer 中点击other ，填入从服务器的名字、端口 </p>
+<p>11. Connection下，Simple authentication 填入Supplier Dn：&nbsp;&nbsp; Bind as： cn=directory manager, </p>
+<p>12. 余下步骤Next </p>
+<p>13. 完成后会出现一个同步的job，邮件先Initialize Consumer后，Send Updates Now </p>
+<p>14. 如果同步成功，可以在Status标签页中看到同步的状态 </p>
+<p><strong>问：如何改变网页中可发送邮件附件大小</strong> </p>
+<p>答：修改maxmessagesize,maxpostsize属性值 </p>
+<p><strong>问：如何限制使用outlook等客户端发信的大小？</strong> </p>
+<p>答：可以参考使用maxblocks这个关键字。 </p>
+<p><strong>问：如何删除多值属性中的某一个值</strong> </p>
+<p>答：已mailSieveRuleSource举例 </p>
+<p>dn:uid=user29,ou=people,o=test.com,o=eem </p>
+<p>changetype:modify </p>
+<p>delete:mailSieveRuleSource </p>
+<p>mailSieveRuleSource:/usr/iplanet/server5/shared/bin/sieve.txt </p>
+<p>只要把属性值也加上，就会删除对应的值了。 </p>
+<p><strong>问：在Solaris10上安装Messaging Server 6.x版本时，为什么会出现主机名问题</strong> </p>
+<p>答：在 Solaris 10 平台上，您不仅必须将全限定域名 (FQDN) 添加至 /etc/hosts 文件， </p>
+<p>而且还必须将其添加至 /etc/inet/ipnodes 文件。否则，您将接收到错误，指示您的 </p>
+<p>主机名不是全限定域名。 </p>
+<p><strong>问：如何手工添加转发地址</strong> </p>
+<p>答：1、添加mailDeliveryOption=forward </p>
+<p>2、添加mailForwardingAddress=mail地址 </p>
+<p><strong>问：LDAP被设置为read-only后不可修改怎么办？</strong> </p>
+<p>答：在5.2之前的版本中，用console都可以去修改每个suffix的database的readonly属性，在5.2中不会有。如果在为suffix做索引的时候突然中断，suffix的database就会被设置成readonly，这个时候就可以在dse.ldif文件中修改将该suffix的nsslapd-readonly的属性值由on改为off即可。 </p>
+<p><strong>问：多条件搜索如何写filter?</strong>答：例：(&amp;(!(createtimestamp=200507<em>))(mail=</em>)) </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (&amp;(mail=<em>)(createtimestamp=200507</em>))</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+    <footer class="article-footer">
+		
+	<a align="left" href="/2008/04/10/e982aee4bbb6e69c8de58aa1e599a8e7aea1e79086e5b08fe5b08fe8bf9be5b195/" id="article-nav-older" class="article-nav-link-wrap">
+	  <div align="left" class="article-nav-title">上一篇 邮件服务器管理小小进展</div>
+	</a>
+
+
+	<a align="right" href="/2008/04/17/kerio-mail-servere68993e980a0e887aae5b7b1e79a84e982aee4bbb6e69c8de58aa1e599a8/" id="article-nav-newer" class="article-nav-link-wrap">
+	  <div align="right" class="article-nav-title">下一篇 Kerio mail server打造自己的邮件服务器</div>
+	</a>
+
+
+    </footer>
+	
+  </div>
+</article>
+
+<section id="comments">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="[转载]iplanet Messaging Server 5.2使用心得" data-title="[转载]iplanet Messaging Server 5.2使用心得" data-url="http://yoursite.com/2008/04/17/e8bdace8bdbdiplanet-messaging-server-52e4bdbfe794a8e5bf83e5be97/"></div>
+	<!-- 多说评论框 end -->
+</section>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

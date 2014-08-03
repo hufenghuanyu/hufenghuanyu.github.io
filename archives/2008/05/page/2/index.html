@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2008/5 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/2008/05/page/2/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"j-cn"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-e7bc96e8af91ffmpege697b6-x264e99499e8afaf-e8a7a3e586b3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/07/e7bc96e8af91ffmpege697b6-x264e99499e8afaf-e8a7a3e586b3/" class="article-date">
+  <time datetime="2008-05-07T12:14:00.000Z" itemprop="datePublished">May 7 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/07/e7bc96e8af91ffmpege697b6-x264e99499e8afaf-e8a7a3e586b3/">编译FFmpeg时 x264错误 解决</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>之前终于搭建成功PHPmotion，不过有问题支持的视频格式太少了，不能支持3GP，而且没有声音，于是重新编译FFmpeg；编译x264的时候，直接去 ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ 下了最新的源码包，结果编译FFmpeg的时候出现错误：</p>
+<p>x264.c: In function ‘X264_init’:</p>
+<p>x264.c:145: error: ‘struct &lt;anonymous&gt;’ has no member named ‘i_rf_constant’</p>
+<p>x264.c:151: error: ‘struct &lt;anonymous&gt;’ has no member named ‘b_cbr’</p>
+<p>make[1]: <em>*</em> [x264.o] Error 1</p>
+<p><a href="http://osdir.com/ml/redhat.fedora.freeworld/2006-11/msg00058.html" target="_blank" rel="external">据说</a>是x264版本太新了，改变了之前的api，以至于出现错误</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e7bd91e7bb9ce59cb0e59d80e7bdaee68da2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/06/e7bd91e7bb9ce59cb0e59d80e7bdaee68da2/" class="article-date">
+  <time datetime="2008-05-06T10:59:00.000Z" itemprop="datePublished">May 6 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/06/e7bd91e7bb9ce59cb0e59d80e7bdaee68da2/">网络地址置换</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>一.使用netsh命令。</p>
+<p>1、先将网络设置的tcp/ip设置为电信网。</p>
+<p>2、进入命令行模式(开始&mdash;&mdash;〉运行&mdash;&mdash;〉CMD)，输入&quot;netsh -c interface dump &gt;c:\dx.txt&quot;(不含引号)。</p>
+<p>3、更改网络设置。将tcp/ip定成铁通的网络设置。</p>
+<p>4、再次在命令行中输入：&quot;netsh -c interface dump &gt;c:\tt.txt&quot;。</p>
+<p>5、做一个批处理文件进行网络设置的切换。新建文本文档，编辑内容为:&quot;netsh -f c:\dx.txt&quot;,然后选另存为，保存类型选&quot;所有文件&quot;，文件名为：&quot;切换为电信网.bat&quot;(不含引号)。</p>
+<p>6、新建文本文档，内容为:&quot;netsh -f c:\tt.txt&quot;,然后同样的另存为，不过将文件名改为&quot;切换为铁通网.bat&quot;，其他不变。</p>
+<p>以后要改为电信网设置就运行&quot;切换为电信网.bat&quot;，要改为铁通设置就运行&quot;切换为铁通网.bat&quot;。快速切换，省却了麻烦。</p>
+<p>二,使用转换IP地址的工具。</p>
+<p>  一是国产的免费东东&ldquo;IPchange轻松换&rdquo;，另一个是共享软件&ldquo;IPchanger2.0&rdquo;。相比而言，笔者主要推荐前者，主要原因当然是后者仅有一个月的试用器。当然&ldquo;IPchange轻松换&rdquo;常驻系统托盘，对资源还是有那么一点点的占用的。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e5a682e4bd95e588a9e794a8google-docse8bf9be8a18ce59ca8e7babfe5ae9ee697b6e8b083e69fa5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/06/e5a682e4bd95e588a9e794a8google-docse8bf9be8a18ce59ca8e7babfe5ae9ee697b6e8b083e69fa5/" class="article-date">
+  <time datetime="2008-05-06T06:10:00.000Z" itemprop="datePublished">May 6 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/06/e5a682e4bd95e588a9e794a8google-docse8bf9be8a18ce59ca8e7babfe5ae9ee697b6e8b083e69fa5/">如何利用Google Docs进行在线实时调查</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>提供在线调查服务的网站有很多，而且其中也有一大部分是免费的。当然今天Chada不是介绍专业的在线调查服务网站，这篇文章将教你如何利用Google Docs创建一个在线调查表。</p>
+<p>创建这个调查表的前提是：你是<a href="http://www.google.com/" target="_blank" rel="external">Google</a>用户，如果不是，你可以<a href="http://www.google.com/" target="_blank" rel="external">点击这里</a>前往注册^^Chada还有很多朋友每天都使用Google的服务。所以这个帐号对你会很有用。</p>
+<p><span style="font-weight: bold">好的，我们现在开始：</span></p>
+<p>1、登入<a href="http://docs.google.com/" target="_blank" rel="external">Google Docs</a>，创建一个新的Spreadsheet。</p>
+<p><img src="http://www.cnbeta.com/upimg/080506/hidecloud_083303.jpg" alt=""> </p>
+<p>2、在新窗口选择最右边的Share，这时会跳出来一个对话窗口，填入文档名称即可。进入下一步。</p>
+<p><img src="http://www.cnbeta.com/upimg/080506/hidecloud_083354.jpg" alt=""></p>
+<p>3、选择to fill out a form [可以看到上面有个NEW，这个是Google Docs最近才推出的新功能]，然后点击下方的Start editing your form.</p>
+<p><img src="http://www.cnbeta.com/upimg/080506/hidecloud_083520.jpg" alt=""></p>
+<p>4、好的，我们开始这个新的文档的相关设置。</p>
+<p>1）、在Question Title填入这次调查的名称，让被调查者知道这次调查目的何在；</p>
+<p>2）、在Help Text填入一些提示，这样可以提醒被调查者一些东西。[可选]；</p>
+<p>3）、在Question Type里选择Multiple choice，因为我们要做的是可选调查表。</p>
+<p>4）、开始设置你的调查选项。</p>
+<p>5）、OK，完工之后点击Done，进入下一步。</p>
+<p><img src="http://www.cnbeta.com/upimg/080506/hidecloud_083556.jpg" alt=""></p>
+<p>5、关于这个调查表的所有内容已经完毕，我们要把这份调查表发出去。填入你所要邀请的被调查者的邮箱，另外在Preferences里填入调查表的 相关属性[比如是否将调查表包含在邮件里，是否允许被调查者查看已有调查结果以及编辑调查完毕之后的感谢语等]。另外，你还可以把右边的调查链接[下图红 框部分]放到我们的博客，网站或者其他地方。</p>
+<p><img src="http://www.cnbeta.com/upimg/080506/hidecloud_083638.jpg" alt=""></p>
+<p>好的，一个利用Google <span class="bodytag"><em>Docs</em></span>制作的在线调查表就完成了，邮件也发出去了，链接也贴上了。现在我们可以该干嘛干嘛去，我们的朋友完成调查之后Google Docs会自动帮我们将结果记录下来。多好^^</p>
+<p><strong>转载自GENMICHA | </strong><a href="http://genmicha.cn/make-your-own-poll-with-google-docs.htm" target="_blank" rel="external"><strong>趣站酷软</strong></a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-ffmpege7bc96e8af91-e58fa6e5a496e4b880e4b8aae78988e69cac-3gpe694afe68c81e697b6e79bb4e68ea5e68f90e4be9be4ba86e8a7a3e7a081e58c85e4b88b" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/06/ffmpege7bc96e8af91-e58fa6e5a496e4b880e4b8aae78988e69cac-3gpe694afe68c81e697b6e79bb4e68ea5e68f90e4be9be4ba86e8a7a3e7a081e58c85e4b88b/" class="article-date">
+  <time datetime="2008-05-05T19:18:00.000Z" itemprop="datePublished">May 6 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/06/ffmpege7bc96e8af91-e58fa6e5a496e4b880e4b8aae78988e69cac-3gpe694afe68c81e697b6e79bb4e68ea5e68f90e4be9be4ba86e8a7a3e7a081e58c85e4b88b/">ffmpeg编译 ~另外一个版本 3GP支持时直接提供了解码包下载</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <h3 id="ffmpeg的编译大全">ffmpeg的编译大全</h3>
+<p>ffmpeg的编译大全</p>
+<p>最近互联网视频共享的网站很火，公司也想搞类似的网站，初步是用fms+ffmpeg形式</p>
+<p>fms负责在线录制，播放，ffmpeg则在后台处理上传的资源转换成一定的格式。</p>
+<p>为了让ffmpeg支持的格式尽量多，所以特把我的编译笔记分享一下</p>
+<p>环境：redhat as4</p>
+<p>1。首先获取ffmpeg</p>
+<p>很多人找不到怎么下载,其实之前ffmpeg可以通过cvs下载，不过最近他已经换成了更加强大的svn</p>
+<p>如何使用SVN我这里不再介绍，网上还有大量的安装和使用的文章可以借鉴，这里简单罗列几个SVN辅助的软件：</p>
+<p>SubVersion，从 <a href="http://subversion.tigris.org/" target="_blank" rel="external">http://subversion.tigris.org/</a> 下载，支持linux，我们这里就装这个</p>
+<p>TortoiseSVN，从 <a href="http://tortoisesvn.tigris.org/" target="_blank" rel="external">http://tortoisesvn.tigris.org/</a> 下载，是很不错的SVN客户端程序，为windows外壳程序集成到windows资源管理器和文件管理系统的Subversion客户端，用起来很方 便，commit动作变得就像Winrar右键压缩一样方便。</p>
+<p>ok，那我们先装subversion，记住最好之前装过apr和apr-util，在apache.org网站能下到</p>
+<p>wget <a href="http://subversion.tigris.org/downloads/subversion-1.3.2.tar.gz" target="_blank" rel="external">http://subversion.tigris.org/downloads/subversion-1.3.2.tar.gz</a></p>
+<p>tar zvxf subversion-1.3.2.tar.gz</p>
+<p>cd subversion-1.3.2</p>
+<p>./configure —with-apr=/usr/local/apr-httpd —with-apr-util=/usr/local/apr-util-httpd/</p>
+<p>make</p>
+<p>make install</p>
+<p>到此，我们就可以通过svn命令获取最新的ffmpeg了</p>
+<p>svn checkout svn://svn.mplayerhq.hu/ffmpeg/trunk ffmpeg</p>
+<p>你会发现在你所在的目录，自动出现一个ffmpeg的目录，就是你下载的源代码。</p>
+<p>我们还不能这么快编译ffmpeg，应该如果要让ffmpeg支持更多格式的转换，还需做一些前期工作</p>
+<p>2.支持mp3，linux当然是lame，下载解压</p>
+<p>cd lame-3.96.1</p>
+<p>./configure —enable-shared —prefix=/usr</p>
+<p>这里推荐尽量装在/usr下，默认是装在/usr/local下。这样ffmpeg编译都能顺利的找到库文件</p>
+<p>3.支持Ogg Vorbis:</p>
+<p>as4自带相应的rpm包，你可以安装一下如下rpm包</p>
+<p>libvorbis, libvorbis-devel,libogg, libogg-devel</p>
+<p>4.支持xvid x264，现在最流行的两种高质量的压缩格式</p>
+<p>xvid的编译安装</p>
+<p>wget <a href="http://downloads.xvid.org/downloads/xvidcore-1.1.0.tar.gz" target="_blank" rel="external">http://downloads.xvid.org/downloads/xvidcore-1.1.0.tar.gz</a></p>
+<p>tar zvxf xvidcore-1.1.0.tar.gz</p>
+<p>./configure —prefix=/usr</p>
+<p>make</p>
+<p>make install</p>
+<p>x264的获取同样是采用svn方式，看来svn取代cvs不远了</p>
+<p>svn co svn://svn.videolan.org/x264/trunk x264</p>
+<p>cd x264</p>
+<p>./configure —prefix=/usr —enable-shared</p>
+<p>make</p>
+<p>make install</p>
+<p>5.AC3和dts编码的支持</p>
+<p>as4系统似乎已经支持ac3编码，编译的时候只要加—enable-a52 —enable-gpl参数就行</p>
+<p>libdts编译参数</p>
+<p>./configure —prefix=/usr</p>
+<p>make</p>
+<p>make install</p>
+<p>6.mpg4 aac格式支持，由于服务器还针对手机用户服务，所以，类似aac，mpg4铃声格式的支持，我们也得做。这里我们安装faad2和faac就行</p>
+<p>下载请到<a href="http://www.audiocoding.com/modules/mydownloads/" target="_blank" rel="external">http://www.audiocoding.com/modules/mydownloads/</a></p>
+<p>FAAD2的编译</p>
+<p>cd faad2</p>
+<font color="#ff0033">echo &gt; plugins/Makefile.am  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;<br><br>echo &gt; plugins/xmms/src/Makefile.am<br><br>sed -i ‘/E_B/d’ configure.in<br><br></font>
+
+<p>autoreconf -vif</p>
+<p>./configure —prefix=/usr —with-mp4v2 —enable-shared</p>
+<p>make</p>
+<p>make install</p>
+<p>faac的编译</p>
+<p>cd faac</p>
+<font color="#ff0033">cat bootstrap | tr -d ‘\015’ &gt; bootstrap.new &amp;&amp; cp bootstrap.new bootstrap</font>
+
+<p>chmod +x bootstrap</p>
+<p>./bootstrap</p>
+<p>./configure —prefix=/usr —with-mp4v2 —enable-shared</p>
+<p>make</p>
+<p>make install</p>
+<p>7.支持3gp格式，这也是现在好多手机支持的格式，因为手机用户是我们的主要用户，所以也得支持编译</p>
+<p>编译的时候加上—enable-amr_nb —enable-amr_wb参数就行，根据编译系统的提示，所以我们得下载一</p>
+<p>些编译3gp所需得文件。</p>
+<p>wget <a href="http://www.3gpp.org/ftp/Specs/archive/26_series/26.204/26204-510.zip" target="_blank" rel="external">http://www.3gpp.org/ftp/Specs/archive/26_series/26.204/26204-510.zip</a></p>
+<p>解压以后把里面的文件都拷贝到libavcodec/amrwb_float</p>
+<p>wget <a href="http://www.3gpp.org/ftp/Specs/archive/26_series/26.104/26104-510.zip" target="_blank" rel="external">http://www.3gpp.org/ftp/Specs/archive/26_series/26.104/26104-510.zip</a></p>
+<p>解压以后把里面的文件都拷贝到libavcodec/amr_float</p>
+<p>好了，基本ffmpeg支持的格式，我们基本都做好前期准备了，下面是ffmpeg的编译</p>
+<p>./configure —prefix=/usr —enable-gpl —enable-shared —enable-mp3lame —enable-amr_nb —enable-amr_wb —enable-amr_if2 —enable-libogg —enable-vorbis —enable-xvid —enable-a52 —enable-a52bin —enable-faadbin —enable-dts —enable-pp —enable-faad —enable-faac —enable-x264 —enable-pthreads —disable-ffserver —disable-ffplay</p>
+<p>make</p>
+<p>make install</p>
+<p>补充1：</p>
+<p>关于3gp的编译，如果大家要编译—enable-amr_nb-fixed，那就不能跟—enable-amr_nb同时编译，我不大清楚这两者到底有什么区别，似乎fixed是修正版，管他呢，编译的方法：</p>
+<p>wget <a href="http://www.3gpp.org/ftp/Specs/archive/26_series/26.073/26073-510.zip" target="_blank" rel="external">http://www.3gpp.org/ftp/Specs/archive/26_series/26.073/26073-510.zip</a></p>
+<p>解压以后把里面的文件都拷贝到libavcodec/amr目录下</p>
+<p>修改libavcodec/amr/makefile 找到CFLAGS = -Wall -pedantic-errors -I. $(CFLAGS<em>$(MODE)) -D$(VAD) 换成CFLAGS = -Wall -I. $(CFLAGS</em>$(MODE)) -D$(VAD) -DMMS_IO</p>
+<p>整体编译参数就是</p>
+<p>./configure —prefix=/usr —enable-gpl —enable-shared —enable-mp3lame —enable-amr_nb-fixed —enable-amr_wb —enable-amr_if2 —enable-libogg —enable-vorbis —enable-xvid —enable-a52 —enable-a52bin —enable-dts —enable-pp —enable-faad —enable-faadbin —enable-faac —enable-x264 —enable-pthreads —disable-ffserver —disable-ffplay</p>
+<p>make</p>
+<p>make install</p>
+<p>补充2：</p>
+<p>有朋友说在当在cpu是x86的情况下，不能编译过去，我这里没发生过这情况，如果你真编译不过去，可以试着加上cpu=cpu</p>
+<p>ok,一个强大的ffmpeg编译好了，不过目前管方的ffmpeg还不支持wma9和rmvb，不过网上有很多解决方法，大家去自己找找。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-mplayere5928cffmpege79a84e7bc96e8af91e5a4a7e585a8-3gpe6a0bce5bc8fe694afe68c81" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/06/mplayere5928cffmpege79a84e7bc96e8af91e5a4a7e585a8-3gpe6a0bce5bc8fe694afe68c81/" class="article-date">
+  <time datetime="2008-05-05T19:03:00.000Z" itemprop="datePublished">May 6 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/06/mplayere5928cffmpege79a84e7bc96e8af91e5a4a7e585a8-3gpe6a0bce5bc8fe694afe68c81/">mplayer和ffmpeg的编译大全-3GP格式支持</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>MPlayer下载</p>
+<p><a href="http://www.mplayerhq.hu/design7/dload.html" target="_blank" rel="external">http://www.mplayerhq.hu/design7/dload.html</a></p>
+<p>目前版本MPlayer v1.0rc2</p>
+<p>MPlayer编译</p>
+<p>tar -xjvf MPlayer-1.0rc2.tar.bz2</p>
+<p>cd MPlayer-1.0rc2</p>
+<p>./configure</p>
+<p>make</p>
+<p>make install</p>
+<p> 如果出现以下错误</p>
+<p>cabac.h: In function `get_cabac_noinline&rsquo;:</p>
+<p>cabac.h:525: error: can&rsquo;t find a register in class <code>GENERAL_REGS&amp;rsquo; while reloading</code>asm&rsquo;</p>
+<p>make[1]: <em>*</em> [h264.o] 错误 1</p>
+<p>在make前加入</p>
+<p>export CFLAGS=-fomit-frame-pointer</p>
+<p>make clean</p>
+<p>ffmpeg的编译大全</p>
+<p>1. 首先获取ffmpeg</p>
+<p>很多人找不到怎么下载,其实之前ffmpeg可以通过cvs下载，不过最近他已经换成了更加强大的svn</p>
+<p>如何使用SVN我这里不再介绍，网上还有大量的安装和使用的文章可以借鉴，这里简单罗列几个SVN辅助的软件：</p>
+<p>SubVersion，从 <a href="http://subversion.tigris.org/" target="_blank" rel="external">http://subversion.tigris.org/</a> 下载，支持linux，我们这里就装这个</p>
+<p>TortoiseSVN，从 <a href="http://tortoisesvn.tigris.org/" target="_blank" rel="external">http://tortoisesvn.tigris.org/</a> 下载，是很不错的SVN客户端程序，为windows外壳程序集成到windows资源管理器和文件管理系统的Subversion客户端，用起来很方便，commit动作变得就像Winrar右键压缩一样方便。</p>
+<p>ok，那我们先装subversion，记住最好之前装过apr和apr-util，在apache.org网站能下到</p>
+<p>wget <a href="http://subversion.tigris.org/downloads/subversion-1.3.2.tar.gz" target="_blank" rel="external">http://subversion.tigris.org/downloads/subversion-1.3.2.tar.gz</a></p>
+<p>tar zvxf subversion-1.3.2.tar.gz</p>
+<p>cd subversion-1.3.2</p>
+<p>./configure &ndash;with-apr=/usr/local/apr-httpd &ndash;with-apr-util=/usr/local/apr-util-httpd/</p>
+<p>make</p>
+<p>make install</p>
+<p>到此，我们就可以通过svn命令获取最新的ffmpeg了</p>
+<p>svn checkout svn://svn.mplayerhq.hu/ffmpeg/trunk ffmpeg</p>
+<p>你会发现在你所在的目录，自动出现一个ffmpeg的目录，就是你下载的源代码。</p>
+<p>官网：<a href="http://ffmpeg.mplayerhq.hu/download.html" target="_blank" rel="external">http://ffmpeg.mplayerhq.hu/download.html</a></p>
+<p>我们还不能这么快编译ffmpeg，应该如果要让ffmpeg支持更多格式的转换，还需做一些前期工作</p>
+<p>2. 支持mp3，linux当然是lame，下载解压</p>
+<p><a href="http://sourceforge.net/projects/lame" target="_blank" rel="external">http://sourceforge.net/projects/lame</a></p>
+<table cellspacing="0" cellpadding="0" border="0" style="clear: both;" summary="File listings for the LAME (Lame Aint an MP3 Encoder) project"><br>    <tbody><br>        <tr class="show"><br>            <td colspan="2"> </td><br>            <td><a href="http://downloads.sourceforge.net/lame/lame-3.97.tar.gz?modtime=1159107882&amp;big_mirror=0" target="_blank" rel="external"><font color="#0033cc">lame-3.97.tar.gz</font></a>  <span class="mirrors"><a href="http://sourceforge.net/project/mirror_picker.php?height=350&amp;width=300&amp;group_id=290&amp;use_mirror=nchc&amp;filename=lame-3.97.tar.gz" title="Currently downloading from Tainan, Taiwan - Asia" target="_blank" rel="external">Mirror</a></span></td><br>        </tr><br>    </tbody><br></table>
+
+<p>cd lame-3.97</p>
+<p>./configure &ndash;enable-shared &ndash;prefix=/usr</p>
+<p>./make</p>
+<p>./make install</p>
+<p>这里推荐尽量装在/usr下，默认是装在/usr/local下。这样ffmpeg编译都能顺利的找到库文件</p>
+<p>3.支持Ogg Vorbis:</p>
+<p>as4自带相应的rpm包，你可以安装一下如下rpm包</p>
+<p>libvorbis, libvorbis-devel,libogg, libogg-devel</p>
+<p>FC3和FC4應該是預設安裝了有關的library的，實際上要安裝的套件有4個：libvorbis、libvorbis-devel、libogg和libogg-devel。您可以用以下指令檢查一下有沒有。</p>
+<h1 id="rpm_-qa_|_grep_libogg">rpm -qa | grep libogg</h1>
+<h1 id="rpm_-qa_|_grep_libvorbis">rpm -qa | grep libvorbis</h1>
+<p>如果沒有的話，用yum安裝就可以了。</p>
+<p>4.支持xvid x264，现在最流行的两种高质量的压缩格式</p>
+<p>xvid的编译安装</p>
+<p>Get the latest version on <a href="http://www.xvid.org/" target="_blank" rel="external">http://www.xvid.org/</a>, and uncompress it on</p>
+<p>your disk. Let&rsquo;s name the resulting source directory ${xvidcore}.</p>
+<p>wget <a href="http://downloads.xvid.org/downloads/xvidcore-1.1.3.tar.gz" target="_blank" rel="external">http://downloads.xvid.org/downloads/xvidcore-1.1.3.tar.gz</a></p>
+<p>The next step allows you to configure the xvid sources.</p>
+<h1 id="cd_${xvidcore}/build/generic">cd ${xvidcore}/build/generic</h1>
+<h1 id="-/configure">./configure</h1>
+<p>Some building options can be tuned thanks to the ./configure tool. You</p>
+<p>can use your own CC and CFLAGS variables in order to override xvid&rsquo;s</p>
+<p>default ones. To have a list of known options:</p>
+<h1 id="-/configure_&ndash;help">./configure &ndash;help</h1>
+<p>Now xvidcore is configured according to your specific platform. You</p>
+<p>can still handwrite the platform.inc file in order to add/remove</p>
+<p>specific flags that ./configure may have set them wrong.</p>
+<p>It is time to build xvidcore:</p>
+<h1 id="make">make</h1>
+<p>That creates a =build directory where all object files go, and where</p>
+<p>the build targets are linked. If no error was reported by the build</p>
+<p>process, then you can install it on your system:</p>
+<h1 id="make_install">make install</h1>
+<p>This copies the shared and static libraries to the prefix location</p>
+<p>passed to the ./configure tool (/usr/local by default). The xvid.h</p>
+<p>include file is also copied during the &ldquo;make install&rdquo; run.</p>
+<p>Voila, xvidcore is installed on your system, make sure your runtime</p>
+<p>linker knows about the xvidcore prefix lib dir where it is</p>
+<p>installed. And make also sure that it generates a symlink to its</p>
+<p>SONAME. In case it would do not take care of the symlink itself:</p>
+<h1 id="cd_${prefix}/lib">cd ${prefix}/lib</h1>
+<h1 id="ls_libxvidcore-so-*">ls libxvidcore.so.*</h1>
+<p>&nbsp;&nbsp;&nbsp;  ls should list at least one libxvidcore.so.MAJOR.MINOR file</p>
+<h1 id="ln_-s_libxvidcore-so-MAJOR-MINOR_libxvidcore-so-MAJOR">ln -s libxvidcore.so.MAJOR.MINOR libxvidcore.so.MAJOR</h1>
+<p>You may also add a .so link to .so.MAJOR, so that applications linked</p>
+<p>against .so are in fact linked to .so.MAJOR and thus ensures better</p>
+<p>binary compatibility as we take care not changing the MAJOR number</p>
+<p>until there is an incompatible ABI change.</p>
+<h1 id="ln_-s_libxvidcore-so-MAJOR_libxvidcore-so">ln -s libxvidcore.so.MAJOR libxvidcore.so</h1>
+<h1 id="tar_zvxf_xvidcore-1-1-2-tar-gz">tar zvxf xvidcore-1.1.2.tar.gz</h1>
+<h1 id="cd_xvidcore-1-1-2/build/generic/">cd xvidcore-1.1.2/build/generic/</h1>
+<h1 id="-/configure_&ndash;prefix=/usr">./configure &ndash;prefix=/usr</h1>
+<h1 id="make-1">make</h1>
+<h1 id="make_install-1">make install</h1>
+<p><strong>H264/AVC 支援：x264</strong></p>
+<p>要壓HQ1080、iPod和PSP的影片，x264是少不了的。不過要安裝x264，就需要用yasm來編譯。那就先裝個yasm吧。</p>
+<p>yasm下載網址：<a href="http://www.tortall.net/projects/yasm/releases/yasm-0.6.0.tar.gz" target="_blank" rel="external"><font color="#8a3207">http://www.tortall.net/projects/yasm/releases/yasm-0.6.0.tar.gz</font></a></p>
+<p>最新的 下载：&nbsp;&nbsp;&nbsp;&nbsp;  <a href="http://www.tortall.net/projects/yasm/releases/yasm-0.6.2.tar.gz" target="_blank" rel="external">Source .tar.gz</a> 0.6.2</p>
+<blockquote>
+<h1 id="tar_xzvf_yasm-0-6-0-tar-gz">tar xzvf yasm-0.6.0.tar.gz</h1>
+<h1 id="cd_yasm-0-6-0">cd yasm-0.6.0</h1>
+<h1 id="-/configure_&ndash;prefix=/usr/local/yasm">./configure &ndash;prefix=/usr/local/yasm</h1>
+<h1 id="make-2">make</h1>
+<h1 id="make_install-1">make install</h1>
+<h1 id="export_PATH=&rdquo;$PATH:/usr/local/yasm/bin&rdquo;">export PATH=&rdquo;$PATH:/usr/local/yasm/bin&rdquo;</h1>
+<h1 id="vi_/etc/profile">vi /etc/profile</h1>
+<p>&ndash;[在最後，插入]&ndash;</p>
+<p>export PATH=&rdquo;$PATH:/usr/local/yasm/bin&rdquo;</p>
+<p>&ndash;[存檔並關閉]&ndash;</p>
+</blockquote>
+<p>跟ffmpeg一樣，x264的官網也是鼓勵大家 checkout SVN來取得最新版本。但據SupeSite在2007年5月16日的說明指出官網的x264最新版有Bug，無法正常在一些Intel的CPU上編譯安 裝（甚麼雙至強、四至強CPU嘛，是指雙核和四核嗎？）。不過起碼米奇在公司的P4 2.8GHz CPU安裝沒有問題啦，所以…管它。如果您遇上問題的話，就去下載SupeSite的開發公司Comsenz的版本吧，不過先旨聲明，那個改版的授權還是 不是原來的GPL就不知道了。如果您在意於授權的話，那就用SVN checkout吧，我想那問題可能在您安裝時已經修正好了。</p>
+<p>x264的获取同样是采用svn方式，看来svn取代cvs不远了</p>
+<p>svn co svn://svn.videolan.org/x264/trunk x264</p>
+<p>cd x264</p>
+<p>./configure &ndash;prefix=/usr &ndash;enable-shared</p>
+<p>make</p>
+<p>make install</p>
+<p>5.AC3和dts编码的支持</p>
+<p>as4系统似乎已经支持ac3编码，编译的时候只要加&ndash;enable-a52 &ndash;enable-gpl参数就行</p>
+<font color="#3366ff">現在的ffmpeg又沒附有liba52了，所以，還是自己動手裝吧…<br><br>下載網站：<a href="http://liba52.sourceforge.net/" title="liba52" target="_blank" rel="external"><font color="#8a3207">http://liba52.sourceforge.net/</font></a></font>
+
+<blockquote>
+<font color="#3366ff"># tar zxvf a52dec-0.7.4.tar.gz<br><br># cd a52dec-0.7.4<br><br># ./configure &ndash;enable-shared &ndash;prefix=/usr<br><br># make<br><br># make install</font>
+
+</blockquote>
+<p>6.mpg4 aac格式支持，由于服务器还针对手机用户服务，所以，类似aac，mpg4铃声格式的支持，我们也得做。这里我们安装faad2和faac就行</p>
+<p>faac是用來壓製AAC音軌的，而faad2就是AAC音軌的解碼器。手機鈴聲和MP4影片都是使用AAC作聲音編碼的，所以要裝這個。</p>
+<p>另外，faac和faad2都可以配合libmp4v2來安裝，有些網站說需要先<a href="http://resare.com/libmp4v2/" target="_blank" rel="external"><font color="#8a3207">安裝libmp4v2</font></a>，（ <a href="http://mpeg4ip.net/" target="_blank" rel="external">http://mpeg4ip.net/</a>）不過米奇就發覺只要編譯faac和faad2時加入適當參數，就可以連同libmp4v2一同安裝了。</p>
+<p>下载请到<a href="http://www.audiocoding.com/downloads.html" target="_blank" rel="external">http://www.audiocoding.com/downloads.html</a></p>
+<p>FAAD2的编译</p>
+<p>cd faad2</p>
+<p>autoreconf -vif</p>
+<p>./configure &ndash;prefix=/usr &ndash;with-mp4v2 &ndash;enable-shared</p>
+<p>make</p>
+<p>make install</p>
+<p>faac的编译</p>
+<p>cd faac</p>
+<p>chmod +x bootstrap</p>
+<p>./bootstrap</p>
+<p>./configure &ndash;prefix=/usr &ndash;with-mp4v2 &ndash;enable-shared</p>
+<p>make</p>
+<p>make install</p>
+<p>Comsenz版下載網址：<a href="http://download.discuz.net/env/video/faac-1.25-Comsenz.tar.bz2" target="_blank" rel="external"><font color="#8a3207">http://download.discuz.net/env/video/faac-1.25-Comsenz.tar.bz2</font></a></p>
+<blockquote>
+<h1 id="tar_xjvf_faac-1-25-Comsenz-tar-bz2">tar xjvf faac-1.25-Comsenz.tar.bz2</h1>
+<h1 id="cd_faac-Comsenz">cd faac-Comsenz</h1>
+<h1 id="autoreconf_-vif">autoreconf -vif</h1>
+<h1 id="-/configure_&ndash;prefix=/usr_&ndash;with-mp4v2_&ndash;enable-shared">./configure &ndash;prefix=/usr &ndash;with-mp4v2 &ndash;enable-shared</h1>
+<h1 id="make-3">make</h1>
+<h1 id="make_install-1">make install</h1>
+</blockquote>
+<p>要知道安裝了faac和faad2之後有沒有安裝好libmp4v的話，只要找一找/usr/lib目錄裡有沒有libmp4v2.so等一系列檔案就可以了。找不到的話，就到<a href="http://resare.com/libmp4v2/" target="_blank" rel="external"><font color="#8a3207">這裡</font></a>去下載，安裝好之後再重頭安裝faac和faad2了。</p>
+<p>7.支持3gp格式，这也是现在好多手机支持的格式，因为手机用户是我们的主要用户，所以也得支持编译</p>
+<p>编译的时候加上&ndash;enable-amr_nb &ndash;enable-amr_wb参数就行，根据编译系统的提示，所以我们得下载一</p>
+<p>些编译3gp所需得文件。</p>
+<p>wget <a href="http://www.3gpp.org/ftp/Specs/archive/26_series/26.204/26204-510.zip" target="_blank" rel="external">http://www.3gpp.org/ftp/Specs/ar … 6.204/26204-510.zip</a></p>
+<p>解压以后把里面的文件都拷贝到libavcodec/amrwb_float</p>
+<p>wget <a href="http://www.3gpp.org/ftp/Specs/archive/26_series/26.104/26104-510.zip" target="_blank" rel="external">http://www.3gpp.org/ftp/Specs/ar … 6.104/26104-510.zip</a></p>
+<p>解压以后把里面的文件都拷贝到libavcodec/amr_float</p>
+<p>**3GPP AMR Floating point 和 AMR-Wideband支援：libamrnb、libamrwb</p>
+<p>**3GP影片的影像是h263編碼，而聲音就用AMR-NB或AMR-WB編碼，所以要轉換手機影片，就要安裝AMR程式庫。最初坊間的 安裝方式都是到3GPP官網去下載那些連名字也搞不懂的檔案來，放在ffmpeg裡的指定目錄去跟ffmpeg一同編譯的，但現在已經有人抽取了出來而成 為獨立的程式庫，安裝起來就簡單得多了。</p>
+<p>下載網址：<a href="http://www.penguin.cz/%7Eutx/amr" target="_blank" rel="external"><font color="#8a3207">http://www.penguin.cz/~utx/amr</font></a></p>
+<blockquote>
+<p><u>libamrnb</u></p>
+<h1 id="tar_xjvf_amrnb-7-0-0-0-tar-tar">tar xjvf amrnb-7.0.0.0.tar.tar</h1>
+<h1 id="cd_amrnb-7-0-0-0">cd amrnb-7.0.0.0</h1>
+<h1 id="-/configure_&ndash;prefix=/usr_&ndash;enable-shared">./configure &ndash;prefix=/usr &ndash;enable-shared</h1>
+<h1 id="make-4">make</h1>
+<h1 id="make_install_&gt;_libamrwb">make install &gt; <u>libamrwb</u></h1>
+<h1 id="tar_xjvf_amrwb-7-0-0-2-tar-tar">tar xjvf amrwb-7.0.0.2.tar.tar</h1>
+<h1 id="cd_amrwb-7-0-0-2">cd amrwb-7.0.0.2</h1>
+<h1 id="-/configure_&ndash;prefix=/usr_&ndash;enable-shared-1">./configure &ndash;prefix=/usr &ndash;enable-shared</h1>
+<h1 id="make-5">make</h1>
+<h1 id="make_install-1">make install</h1>
+</blockquote>
+<p><strong>8. DTS 支援：libdca</strong></p>
+<p>ffmpeg已經內含了用來解碼DTS的libdca，所以不用安裝，也沒有要入加的參數。</p>
+<p><strong>9. 安裝ffmpeg</strong></p>
+<p>安裝完成必要的程式庫之後，終於可以動手安裝ffmpeg本體了。如果您先前曾經安裝過ffmpeg的話，就先把ffmpeg的源碼目錄刪掉，再次checkout個新版本回來安裝吧。</p>
+<blockquote>
+<h1 id="svn_checkout_svn://svn-mplayerhq-hu/ffmpeg/trunk_/usr/local/src/ffmpeg">svn checkout svn://svn.mplayerhq.hu/ffmpeg/trunk /usr/local/src/ffmpeg</h1>
+<h1 id="cd_/usr/local/src/ffmpeg">cd /usr/local/src/ffmpeg</h1>
+<h1 id="-/configure_&ndash;prefix=/usr_&ndash;enable-gpl_&ndash;enable-shared_&ndash;enable-libmp3lame_&ndash;enable-libvorbis_&ndash;enable-libamr-nb_&ndash;enable-libamr-wb_&ndash;enable-libxvid_&ndash;enable-libx264_&ndash;enable-liba52_&ndash;enable-liba52bin_&ndash;enable-libfaac_&ndash;enable-libfaad_&ndash;enable-libfaadbin_&ndash;enable-pp_&ndash;enable-pthreads_&ndash;disable-ffserver_&ndash;disable-ffplay">./configure &ndash;prefix=/usr &ndash;enable-gpl &ndash;enable-shared &ndash;enable-libmp3lame &ndash;enable-libvorbis &ndash;enable-libamr-nb &ndash;enable-libamr-wb <font color="#3366ff">&ndash;enable-libxvid &ndash;enable-libx264</font> &ndash;enable-liba52 &ndash;enable-liba52bin &ndash;enable-libfaac &ndash;enable-libfaad &ndash;enable-libfaadbin &ndash;enable-pp &ndash;enable-pthreads &ndash;disable-ffserver &ndash;disable-ffplay</h1>
+<h1 id="make_clean_&amp;&amp;_make">make clean &amp;&amp; make</h1>
+<h1 id="make_install-1">make install</h1>
+</blockquote>
+<p>經過可以去看一節動畫的時間編譯之後，你應該可以在/usr/bin目錄裡找到ffmpeg程式。輸入ffmpeg便會列出用了甚麼參數來編譯這個 ffmpeg和它的版本。米奇試過用以這程序來安裝的ffmpeg來編製和解壓3GP、Xvid、mov、wmv9、msmpeg4、MPEG2+AC3 音源、h264+aac音源的mkv、PSP用的MP4和FLV影片，都沒有問題，只有wmv7的影片無法解碼，相信已經對應得到大部份現時流行的影音格 式了。</p>
+<p>可以用 ffmpeg -threads [thread_count] -deinterlace -i [input_file] -ac 2 -ab [audio_bitrate] -acodec libfaac -vcodec libx264 -b [video_bitrate] [output_file] 來產生 H.264+AAC 的 mp4 檔案了。</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e5ae89e8a385e5ae8cphpmotione4b98be5908e-e4b88ae4bca0e8a786e9a291e6b2a1e69c89e58f8de5ba94" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/06/e5ae89e8a385e5ae8cphpmotione4b98be5908e-e4b88ae4bca0e8a786e9a291e6b2a1e69c89e58f8de5ba94/" class="article-date">
+  <time datetime="2008-05-05T18:10:00.000Z" itemprop="datePublished">May 6 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/06/e5ae89e8a385e5ae8cphpmotione4b98be5908e-e4b88ae4bca0e8a786e9a291e6b2a1e69c89e58f8de5ba94/">安装完PHPmotion之后 上传视频没有反应</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <font size="4">官方论坛里描述的是：<a href="http://phpmotion.com/forum/index.php?topic=362.0" target="_blank" rel="external">Videos or Thumbs not showing</a><br><br>根据提供的解决方法，我自己的php路径为/home/www/php/bin/php<br><br>改了config.ini.php中的php路径之后 问题解决<br><br>最初还以为是没有CLI支持，原来PHP路径没指对@.@<br><br>由于上国际网不方便，这里把官方解决方法贴过来</font>
+
+<font size="3" face="Arial">If you can upload videos and they are not showing then there could be a variety of reasons as to why this is the case. The list below is not a complete exhaustive one but will help debug the most common problems.<br><br>======================================================================================================<br><br><span style="text-decoration: underline;"><strong> 1) Missing Requirements</strong></span><br><br>If you run the tester.php script and get &quot;fail&quot; on the first 3 items on the list then video will not convert. You should check that you have these requirements installed. If you have a dedicated server or a VPS you can check yourself by logging in as root and running<br><br><strong>which ffmpeg</strong><br><br><strong>which mencoder</strong><br><br><strong>which flvtool2</strong><br><br>If you get a path showing then you have the modules installed, if not then you need to set these up. <a href="http://phpmotion.com/additions.html" target="_blank" rel="external">Click here</a> for help with this.<br><br>Ensure that the file paths that you get are the same ones as specified in your admin area.<br><br>======================================================================================================<br><br><span style="text-decoration: underline;"><strong>2) NO CLI support</strong></span><br><br>CLI (command line interface) is the means by which the videos are converted in the background so that users don’t have to wait while they are converted. When a video finishes uploading, CLI is used to run convertor.php in the background which goes to work converting the video.<br><br>You need to check that you have CLI support. to do this follow the steps below<br><br>a) Open <strong>convertor.php</strong> and edit the two sections below to include your <strong>own email address</strong> and remove the <strong>//</strong> (commenting)<br><br></font><br><div class="quoteheader"><font size="3" face="Arial">Quote</font></div><br><div class="quote"><font size="3" face="Arial"><span style="font-size: 9pt; line-height: 1.3em;">//CHECK POINT 1\<br><br><strong>//</strong>mail(&quot;<strong><a href="mailto:you@yourdomain.com" target="_blank" rel="external">you@yourdomain.com</a></strong>&quot;, &quot;PHPmotion - Check Point 1&quot;, &quot;Loaded OK&quot;, &quot;From: Server &lt;<a href="mailto:name@email.com" target="_blank" rel="external">name@email.com</a>&gt;&quot;);</span></font></div><br><font size="3" face="Arial"><br><br>and also<br><br></font><br><div class="quoteheader"><font size="3" face="Arial">Quote</font></div><br><div class="quote"><font size="3" face="Arial"><span style="font-size: 9pt; line-height: 1.3em;">//CHECK POINT 6\<br><br><strong>//</strong>mail(&quot;<strong><a href="mailto:you@yourdomain.com" target="_blank" rel="external">you@yourdomain.com</a></strong>&quot;, &quot;PHPmotion - Check Point 6&quot;, &quot;SCRIPT LOADED TO THE END&quot;, &quot;From: Server &lt;<a href="mailto:name@email.com" target="_blank" rel="external">name@email.com</a>&gt;&quot;);</span></font></div><br><font size="3" face="Arial"><br><br>b) upload a video and when uploading is completed  you <span style="text-decoration: underline;">should </span>get 2 emails from your server, if you get both emails it means that you have CLI support and the convertor.php was loaded correctly and as such this is not your current problem. If you dont get the emails then you don’t have CLI for PHP and you should:<br><br>   1) try and change the path to php in the file /classes/config.inc.php to <strong>/usr/local/bin/php</strong><br><br>    2) if step (1) does not resolve the problem try this alternative solution.  <a href="http://phpmotion.com/forum/index.php?topic=954.0" target="_blank" rel="external">http://phpmotion.com/forum/index.php?topic=954.0</a><br><br>=====================================================================================================<br><br><span style="text-decoration: underline;"><strong>3) Check your logs</strong></span><br><br>You can also check your log file which is created in the folder <strong>/logs</strong>. To enable logging do the following<br><br>a) Edit the file <strong>classes/config.inc.php</strong> and change logging to <strong>yes </strong>as shown below<br><br></font><br><div class="quoteheader"><font size="3" face="Arial">Quote</font></div><br><div class="quote"><font size="3" face="Arial"><span style="font-size: 9pt; line-height: 1.3em;">$log_encoder       = &quot;yes&quot;;  //change to &quot;yes&quot; to create a log file of encoding (created in /logs)</span></font></div><br><font size="3" face="Arial"><br><br>b) upload a video and then download the log file. If you are getting errors and you decide to post a question in the forum, remember to include your log file.<br><br>=====================================================================================================<br><br>Need more help? <a href="http://phpmotion.com/additions.html" target="_blank" rel="external">click here</a></font>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-phpmotion-uploade697b6e587bae78eb0e6b7b7e4b9b1e6ba90e4bba3e7a081" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/06/phpmotion-uploade697b6e587bae78eb0e6b7b7e4b9b1e6ba90e4bba3e7a081/" class="article-date">
+  <time datetime="2008-05-05T16:59:00.000Z" itemprop="datePublished">May 6 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/06/phpmotion-uploade697b6e587bae78eb0e6b7b7e4b9b1e6ba90e4bba3e7a081/">PHPmotion upload时出现混乱源代码</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>如：</p>
+<font color="#808080"> . $result[‘channel<em>name’] . ‘’; $fields_all = $fields_all . $field; }  //$fields_all = html_entity_decode($fields_all); //grab values from form if any  ////////////////////////////// $form_submitted =  $_POST[‘form_submitted’];//check if form has been submitted $title =  $_POST[‘title’]; $description = $_POST[‘description’]; $tags = $_POST[‘tags’];  $date_uploaded = $_POST[&quot;date_format&quot;]; $location_recorded =  $_POST[&quot;location_recorded&quot;]; $allow_comments = $_POST[‘allow_comments’];  $allow_embedding = $_POST[‘allow_embedding’]; $public_private =  $_POST[‘public_private’]; $channel = $_POST[‘channel’]; $procede = true; //  /////////////// // validating form // /////////////// if ($form_submitted ==  &quot;yes&quot;) { foreach ($_POST as $key =&gt; $value) { if ($key == &quot;title&quot; || $key ==  &quot;description&quot; || $key == &quot;tags&quot;) { if (!isset($value) || ($value == &quot;&quot;)) {  $display_key = @str_replace(‘</em>‘, &quot; &quot;, $key); //error TBS $message_type =  $config[&quot;notification_error&quot;]; $blk_notification = 1; $error_message =  $error_message . &quot; - &quot; . $display_key . &quot; is required &quot;; $procede = false; } } }  } // ////////////////////////////// // display page with form error //  ////////////////////////////// if ($procede == false &amp;&amp; $form_submitted  == &quot;yes&quot;) { $template = &quot;templates/main_1.htm&quot;; $inner_template1 =  &quot;templates/inner_upload_video_form.htm&quot;;//middle of page $TBS = new  clsTinyButStrong; $TBS-&gt;NoErr = true;// no more error message displayed.  $TBS-&gt;LoadTemplate(&quot;$template&quot;); $TBS-&gt;Render = TBS_OUTPUT;  $TBS-&gt;Show(); @mysql_close(); die(); } // ///////////////// // disply clean  page // ///////////////// if (!isset($form_submitted) || ($form_submitted ==  &quot;&quot;)) { $template = &quot;templates/main_1.htm&quot;; $inner_template1 =  &quot;templates/inner_upload_video_form.htm&quot;;//middle of page $TBS = new  clsTinyButStrong; $TBS-&gt;NoErr = true;// no more error message displayed.  $TBS-&gt;LoadTemplate(&quot;$template&quot;); $TBS-&gt;Render = TBS_OUTPUT;  $TBS-&gt;Show(); @mysql_close(); die(); } //  ///////////////////////////////////////////////////////// // if all has gone  well, register user and load welcome page // close sql connection here //  ///////////////////////////////////////////////////////// if ($procede == true  &amp;&amp; $form_submitted == &quot;yes&quot;) {  //================================================================START OF  UPLOAD===================================================================  $THIS_VERSION = &quot;2.0&quot;; if (isset($_GET[‘cmd’]) &amp;&amp; $_GET[‘cmd’] ==  ‘about’) { kak(&quot;UBER UPLOADER FILE UPLOAD<br><br>UBER UPLOADER VERSION = &quot; .  $UBER_VERSION . &quot;<br><br>UU_FILE_UPLOAD = &quot; . $THIS_VERSION . &quot;<br><br>\n&quot;); } $tmp_sid  = md5(uniqid(mt_rand(), true));  /////////////////////////////////////////////////////////////////////// // This  is where you might set your config file eg. // // if($_SESSION[‘user’] ==  &quot;tom&quot;){ $config_file = ‘uu_tom_config’; } //  ///////////////////////////////////////////////////////////////////////  $config_file = $default_config_file; $path_to_upload_script .= ‘?tmp_sid=’ .  $tmp_sid; $path_to_ini_status_script .= ‘?tmp_sid=’ . $tmp_sid; if  ($MULTI_CONFIGS_ENABLED) { $path_to_upload_script .=  &quot;&amp;config_file=$config_file&quot;; $path_to_ini_status_script .=  &quot;&amp;config_file=$config_file&quot;; } $template = &quot;templates/main_1.htm&quot;;  $inner_template1 = &quot;templates/inner_upload_video.htm&quot;;//middle of page $TBS =  new clsTinyButStrong; $TBS-&gt;NoErr = true;// no more error message displayed.  $TBS-&gt;LoadTemplate(&quot;$template&quot;); $TBS-&gt;Render = TBS_OUTPUT;  $TBS-&gt;Show(); @mysql_close(); die();  //====================================================================END OF  UPLOADER================================================================ }  ?&gt;<br><br><font color="#000000">修改php.ini， 把<font color="#ff9900">short_open_tag = </font><strong><font color="#0000ff">Off </font></strong>改为 <font color="#ff9900">short_open_tag =</font> <strong><font size="3" color="#ff0000">On</font></strong></font>
+
+<p></p></font><p></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-405-error-method-not-allowed" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/06/405-error-method-not-allowed/" class="article-date">
+  <time datetime="2008-05-05T16:51:00.000Z" itemprop="datePublished">May 6 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/06/405-error-method-not-allowed/">405 Error Method Not Allowed</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p>安装PHPmotion时遇到问题：</p>
+<h1 id="Method_Not_Allowed">Method Not Allowed</h1>
+<p>The requested method POST is not allowed for the URL /videx/cgi-bin/uu_upload.pl.</p>
+<p>经过搜索发现如下<strong><font color="#0000ff">解决方法</font></strong>：</p>
+<p>在主服务器配置文件中，使用Options指令显式地允许特定目录中CGI的执行：</p>
+<p>&lt;Directory /usr/local/apache/htdocs/somedir&gt; </p>
+<p>Options +ExecCGI</p>
+<p>&lt;/Directory&gt;</p>
+<p>上述指令使Apache允许CGI文件的执行。另外，还必须告诉服务器哪些文件是CGI文件。下面的AddHandler指令告诉服务器所有带有cgi或pl后缀的文件是CGI程序：</p>
+<p>AddHandler cgi-script cgi pl</p>
+<p>原文地址：<a href="http://bbs.chinaunix.net/viewthread.php?tid=960709" target="_blank" rel="external">http://bbs.chinaunix.net/viewthread.php?tid=960709</a></p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-e690ade5bbbaphpmotione78eafe5a283-how-to-setup-all-the-codecs-and-server-software" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/05/e690ade5bbbaphpmotione78eafe5a283-how-to-setup-all-the-codecs-and-server-software/" class="article-date">
+  <time datetime="2008-05-05T13:19:00.000Z" itemprop="datePublished">May 5 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/05/e690ade5bbbaphpmotione78eafe5a283-how-to-setup-all-the-codecs-and-server-software/">搭建PHPmotion环境 How to setup all the codecs and server software</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <p><a href="http://phpmotion.com/forum/index.php?topic=5133.0" target="_blank" rel="external">http://phpmotion.com/forum/index.php?topic=5133.0</a></p>
+<p>How Install FFMPEG,Mencoder,Flvtool &ndash; The easy way! </p>
+<hr>
+<p>A lot of people are getting hiring people to install FFMPEG as they think it&rsquo;s a difficult task, but it&rsquo;s much easier than you think if you follow these instructions. You should have root access &amp; basic Linux knowledge to the server to follow these instructions.</p>
+<p>Login to your box SSH as root!</p>
+<p>1. Create a directory to do our work in</p>
+<p>mkdir ~/ffmpeg</p>
+<p>cd ~/ffmpeg</p>
+<p>2. Get all the source files</p>
+<p>wget <a href="http://www3.mplayerhq.hu/MPlayer/releases/codecs/essential-20061022.tar.bz2" target="_blank" rel="external">http://www3.mplayerhq.hu/MPlayer/releases/codecs/essential-20061022.tar.bz2</a></p>
+<p>wget <a href="http://rubyforge.org/frs/download.php/9225/flvtool2_1.0.5_rc6.tgz" target="_blank" rel="external">http://rubyforge.org/frs/download.php/9225/flvtool2_1.0.5_rc6.tgz</a></p>
+<p>wget <a href="http://easynews.dl.sourceforge.net/sourceforge/lame/lame-3.97.tar.gz" target="_blank" rel="external">http://easynews.dl.sourceforge.net/sourceforge/lame/lame-3.97.tar.gz</a></p>
+<p>wget <a href="http://superb-west.dl.sourceforge.net/sourceforge/ffmpeg-php/ffmpeg-php-0.5.0.tbz2" target="_blank" rel="external">http://superb-west.dl.sourceforge.net/sourceforge/ffmpeg-php/ffmpeg-php-0.5.0.tbz2</a></p>
+<p>wget <a href="http://downloads.xiph.org/releases/ogg/libogg-1.1.3.tar.gz" target="_blank" rel="external">http://downloads.xiph.org/releases/ogg/libogg-1.1.3.tar.gz</a></p>
+<p>wget <a href="http://downloads.xiph.org/releases/vorbis/libvorbis-1.1.2.tar.gz" target="_blank" rel="external">http://downloads.xiph.org/releases/vorbis/libvorbis-1.1.2.tar.gz</a></p>
+<p>3. Extract all the source files</p>
+<p>bunzip2 essential-20061022.tar.bz2; tar xvf essential-20061022.tar</p>
+<p>tar zxvf flvtool2_1.0.5_rc6.tgz</p>
+<p>tar zxvf lame-3.97.tar.gz</p>
+<p>bunzip2 ffmpeg-php-0.5.0.tbz2; tar xvf ffmpeg-php-0.5.0.tar</p>
+<p>tar zxvf libogg-1.1.3.tar.gz</p>
+<p>tar zxvf libvorbis-1.1.2.tar.gz</p>
+<p>4. Create the codecs directory &amp; import them</p>
+<p>mkdir /usr/local/lib/codecs/</p>
+<p>mv essential-20061022/* /usr/local/lib/codecs/</p>
+<p>chmod -R 755 /usr/local/lib/codecs/</p>
+<p>5. Install SVN/Ruby (Depends on OS, this is for RHEL/CentOS)</p>
+<p>yum install subversion</p>
+<p>yum install ruby</p>
+<p>yum install ncurses-devel</p>
+<p>6. Get the latest FFMPEG/MPlayer from the subversion</p>
+<p>svn checkout svn://svn.mplayerhq.hu/ffmpeg/trunk ffmpeg</p>
+<p>svn checkout svn://svn.mplayerhq.hu/mplayer/trunk mplayer</p>
+<p>7. Compile LAME</p>
+<p>cd ~/ffmpeg/lame-3.97</p>
+<p>./configure</p>
+<p>make</p>
+<p>make install</p>
+<p>8. Compile libOGG</p>
+<p>cd ~/ffmpeg/libogg-1.1.3</p>
+<p>./configure</p>
+<p>make</p>
+<p>make install</p>
+<p>9. Compile libVorbis</p>
+<p>cd ~/ffmpeg/libvorbis-1.1.2</p>
+<p>./configure</p>
+<p>make</p>
+<p>make install</p>
+<p>10. Compile flvtool2</p>
+<p>cd ~/ffmpeg/flvtool2_1.0.5_rc6</p>
+<p>ruby setup.rb config</p>
+<p>ruby setup.rb setup</p>
+<p>ruby setup.rb install</p>
+<p>11. Compile MPlayer</p>
+<p>cd ~/ffmpeg/mplayer</p>
+<p>./configure</p>
+<p>make</p>
+<p>make install</p>
+<p>12. Compile FFMPEG</p>
+<p>cd ~/ffmpeg/ffmpeg</p>
+<p>./configure —enable-libmp3lame —enable-libogg —enable-libvorbis —disable-mmx —enable-shared</p>
+<p>echo ‘#define HAVE_LRINTF 1’ &gt;&gt; config.h</p>
+<p>make</p>
+<p>make install</p>
+<p>13. Finalize the codec setups</p>
+<p>ln -s /usr/local/lib/libavformat.so.50 /usr/lib/libavformat.so.50</p>
+<p>ln -s /usr/local/lib/libavcodec.so.51 /usr/lib/libavcodec.so.51</p>
+<p>ln -s /usr/local/lib/libavutil.so.49 /usr/lib/libavutil.so.49</p>
+<p>ln -s /usr/local/lib/libmp3lame.so.0 /usr/lib/libmp3lame.so.0</p>
+<p>ln -s /usr/local/lib/libavformat.so.51 /usr/lib/libavformat.so.51</p>
+<p>14. Compile FFMPEG-PHP</p>
+<p>cd ~/ffmpeg/ ffmpeg-php-0.5.0</p>
+<p>phpize</p>
+<p>./configure</p>
+<p>make</p>
+<p>make install</p>
+<p>15. Install FFMPEG-PHP (make sure the php.ini path is correct.)</p>
+<p>echo ‘extension=/usr/local/lib/php/extensions/no-debug-non-zts-20020429/ffmpeg.so’ &gt;&gt; /usr/local/Zend/etc/php.ini</p>
+<p>NOTE: You may find the correct location of php.ini from phpinfo();</p>
+<p>16. Restart Apache to load FFMPEG-PHP (Depends on OS, this is for RHEL/CentOS)</p>
+<p>service httpd restart</p>
+<p>17. Verify if it works</p>
+<p>php -r ‘phpinfo();’ | grep ffmpeg</p>
+<p>If you get a few lines such as</p>
+<p>ffmpeg</p>
+<p>ffmpeg support (ffmpeg-php) =&gt; enabled</p>
+<p>ffmpeg-php version =&gt; 0.5.0</p>
+<p>ffmpeg.allow_persistent =&gt; 0 =&gt; 0</p>
+
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+    <article id="post-ubuntu-71-servere4bb8ee697a0e588b0e69c89e690ade5bbbae585a8e883bdwebe7949fe4baa7e78eafe5a283" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2008/05/05/ubuntu-71-servere4bb8ee697a0e588b0e69c89e690ade5bbbae585a8e883bdwebe7949fe4baa7e78eafe5a283/" class="article-date">
+  <time datetime="2008-05-05T11:43:00.000Z" itemprop="datePublished">May 5 2008</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2008/05/05/ubuntu-71-servere4bb8ee697a0e588b0e69c89e690ade5bbbae585a8e883bdwebe7949fe4baa7e78eafe5a283/">Ubuntu 7.1 server从无到有搭建全能WEB生产环境</a>
+    </h1>
+  
+
+      </header>
+    
+    <!-- header-footer -->
+    <footer class="header-footer">
+	  
+      
+      
+    </footer>
+    <!-- 文章内容 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+		<!-- 文章目录开始 -->
+		
+		<!-- 文章目录结束 -->
+		
+        <font size="4">安装Ubuntu非常简单，不再多述。注意几点：<br><br>1、安装之前先插上网线<br><br>2、除了OpenSSH，不装其它任何的服务器软件，Apache/Mysql/PHP都不装，后面使用源码自己编译安装</font>
+
+<font size="4"><strong>Ubuntu安装后的配置：</strong><br><br><strong>1、启用root用户</strong><br><br>sudo passwd root<br><br>输入密码后：<br><br>su<br><br>即可用root用户完成后面的配置与维护。</font>
+
+<font size="4"><strong>2、配置网络</strong><br><br>如果在安装时没有配置好网络环境，可手工配置：<br><br>vi /etc/network/interfaces<br><br>根据环境正确配置即可。重启网络：<br><br>/etc/init.d/networking restart</font>
+
+<font size="4"><strong>3、配置apt-get的更新位置</strong><br><br>如果想使用最新版本的各种包，此步必须。<br><br>vi /etc/apt/sources.list<br><br>编辑文件，主要是禁止从cdrom安装软件，而从网上下载最新的版本。<br><br>#<br><br># deb cdrom:[Ubuntu-Server 7.10 <em>Gutsy Gibbon</em> - Release i386 (20071016)]/ gutsy main restricted</font>
+
+<font size="4">#deb cdrom:[Ubuntu-Server 7.10 <em>Gutsy Gibbon</em> - Release i386 (20071016)]/ gutsy main restricted<br><br># See <a href="http://help.ubuntu.com/community/UpgradeNotes" target="_blank" rel="external">http://help.ubuntu.com/community/UpgradeNotes</a> for how to upgrade to<br><br># newer versions of the distribution.</font>
+
+<font size="4">deb <a href="http://ubuntu.cn99.com/ubuntu/" target="_blank" rel="external">http://ubuntu.cn99.com/ubuntu/</a> gutsy main restricted<br><br>deb-src <a href="http://ubuntu.cn99.com/ubuntu/" target="_blank" rel="external">http://ubuntu.cn99.com/ubuntu/</a> gutsy main restricted</font>
+
+<font size="4">## Major bug fix updates produced after the final release of the<br><br>## distribution.<br><br>deb <a href="http://ubuntu.cn99.com/ubuntu/" target="_blank" rel="external">http://ubuntu.cn99.com/ubuntu/</a> gutsy-updates main restricted<br><br>deb-src <a href="http://ubuntu.cn99.com/ubuntu/" target="_blank" rel="external">http://ubuntu.cn99.com/ubuntu/</a> gutsy-updates main restricted</font>
+
+<font size="4">## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu<br><br>## team, and may not be under a free licence. Please satisfy yourself as to<br><br>## your rights to use the software. Also, please note that software in<br><br>## universe WILL NOT receive any review or updates from the Ubuntu security<br><br>## team.<br><br>deb <a href="http://ubuntu.cn99.com/ubuntu/" target="_blank" rel="external">http://ubuntu.cn99.com/ubuntu/</a> gutsy universe<br><br>deb-src <a href="http://ubuntu.cn99.com/ubuntu/" target="_blank" rel="external">http://ubuntu.cn99.com/ubuntu/</a> gutsy universe<br><br>deb <a href="http://ubuntu.cn99.com/ubuntu/" target="_blank" rel="external">http://ubuntu.cn99.com/ubuntu/</a> gutsy-updates universe<br><br>deb-src <a href="http://ubuntu.cn99.com/ubuntu/" target="_blank" rel="external">http://ubuntu.cn99.com/ubuntu/</a> gutsy-updates universe</font>
+
+<font size="4">## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu<br><br>## team, and may not be under a free licence. Please satisfy yourself as to<br><br>## your rights to use the software. Also, please note that software in<br><br>## multiverse WILL NOT receive any review or updates from the Ubuntu<br><br>## security team.<br><br>deb <a href="http://ubuntu.cn99.com/ubuntu/" target="_blank" rel="external">http://ubuntu.cn99.com/ubuntu/</a> gutsy multiverse<br><br>deb-src <a href="http://ubuntu.cn99.com/ubuntu/" target="_blank" rel="external">http://ubuntu.cn99.com/ubuntu/</a> gutsy multiverse<br><br>deb <a href="http://ubuntu.cn99.com/ubuntu/" target="_blank" rel="external">http://ubuntu.cn99.com/ubuntu/</a> gutsy-updates multiverse<br><br>deb-src <a href="http://ubuntu.cn99.com/ubuntu/" target="_blank" rel="external">http://ubuntu.cn99.com/ubuntu/</a> gutsy-updates multiverse</font>
+
+<font size="4">## Uncomment the following two lines to add software from the &lsquo;backports&rsquo;<br><br>## repository.<br><br>## N.B. software from this repository may not have been tested as<br><br>## extensively as that contained in the main release, although it includes<br><br>## newer versions of some applications which may provide useful features.<br><br>## Also, please note that software in backports WILL NOT receive any review<br><br>## or updates from the Ubuntu security team.<br><br># deb <a href="http://ubuntu.cn99.com/ubuntu/" target="_blank" rel="external">http://ubuntu.cn99.com/ubuntu/</a> gutsy-backports main restricted universe multiverse<br><br># deb-src <a href="http://ubuntu.cn99.com/ubuntu/" target="_blank" rel="external">http://ubuntu.cn99.com/ubuntu/</a> gutsy-backports main restricted universe multiverse</font>
+
+<font size="4">## Uncomment the following two lines to add software from Canonical&rsquo;s<br><br>## &lsquo;partner&rsquo; repository. This software is not part of Ubuntu, but is<br><br>## offered by Canonical and the respective vendors as a service to Ubuntu<br><br>## users.<br><br># deb <a href="http://archive.canonical.com/ubuntu" target="_blank" rel="external">http://archive.canonical.com/ubuntu</a> gutsy partner<br><br># deb-src <a href="http://archive.canonical.com/ubuntu" target="_blank" rel="external">http://archive.canonical.com/ubuntu</a> gutsy partner</font>
+
+<font size="4">deb <a href="http://security.ubuntu.com/ubuntu" target="_blank" rel="external">http://security.ubuntu.com/ubuntu</a> gutsy-security main restricted<br><br>deb-src <a href="http://security.ubuntu.com/ubuntu" target="_blank" rel="external">http://security.ubuntu.com/ubuntu</a> gutsy-security main restricted<br><br>deb <a href="http://security.ubuntu.com/ubuntu" target="_blank" rel="external">http://security.ubuntu.com/ubuntu</a> gutsy-security universe<br><br>deb-src <a href="http://security.ubuntu.com/ubuntu" target="_blank" rel="external">http://security.ubuntu.com/ubuntu</a> gutsy-security universe<br><br>deb <a href="http://security.ubuntu.com/ubuntu" target="_blank" rel="external">http://security.ubuntu.com/ubuntu</a> gutsy-security multiverse<br><br>deb-src <a href="http://security.ubuntu.com/ubuntu" target="_blank" rel="external">http://security.ubuntu.com/ubuntu</a> gutsy-security multiverse</font>
+
+<font size="4"><strong>4、更新Ubuntu：</strong><br><br>apt-get update<br><br>apt-get upgrade<br><br>此步需要花费大概30分钟，如果出现网络错误可重新执行或加上&ndash;fix-missing参数重新执行。</font>
+
+<font size="4"><strong>5、安装各种软件包</strong><br><br>可一次安装N个：<br><br>apt-get install binutils cpp fetchmail flex gcc libarchive-zip-perl libc6-dev libcompress-zlib-perl libdb4.3-dev libpcre3 libpopt-dev lynx m4 make ncftp nmap perl perl-modules unzip zip zlib1g-dev autoconf automake1.9 libtool bison autotools-dev g++ build-essential<br><br>上面的命令要放在一行执行。这些包基本都是后面需要使用的或者平时也经常可以用到的，可根据自己需要选择。</font>
+
+<font size="4"><strong>6、安装libncurses5-dev </strong><br><br>很多朋友在使用源码安装软件时在make时出现错误，就是因为没有安装这个包：<br><br>checking for termcap functions library… configure: error: No curses/termcap library found<br><br>解决办法:<br><br>apt-get install libncurses5-dev</font>
+
+<font size="4"><strong>7、增加ll别名</strong><br><br>以前用fedora core时都有ll命令，Ubuntu下没有，很不习惯，只好自己设置：<br><br>vi ~/.bashrc<br><br>此文件中其实已经有别名的配置，只是已经注释掉了，去掉注释即可，同时为vi设置别名为vim。<br><br>alias ll=&rsquo;ls -l&rsquo;<br><br>alias la=&rsquo;ls -A&rsquo;<br><br>alias l=&rsquo;ls -CF&rsquo;<br><br>alias vi=&rsquo;vim&rsquo;</font>
+
+<font size="4">正式开始安装软件，这部分主要是mysql/apache的安装。</font>
+
+<font size="4"><strong>一、安装mysql</strong><br><br>mysql使用utf-8作为默认编码：<br><br>groupadd mysql<br><br>useradd -g mysql mysql<br><br>tar -zxvf mysql-5.0.45.tar.gz<br><br>cd mysql-5.0.45<br><br>./configure &ndash;prefix=/usr/local/mysql &ndash;with-charset=utf8 &ndash;with-collation=utf8_general_ci &ndash;with-extra-charsets=latin1<br><br>make<br><br>make install<br><br>cp support-files/my-medium.cnf /etc/my.cnf<br><br>cd /usr/local/mysql<br><br>bin/mysql_install_db &ndash;user=mysql<br><br>chown -R root .<br><br>chown -R mysql var<br><br>chgrp -R mysql .<br><br>bin/mysqld_safe &ndash;user=mysql &amp;</font>
+
+<font size="4">将mysql加入PATH:<br><br>vi /etc/profile<br><br>增加：<br><br>PATH=/usr/local/mysql/bin:&rdquo;${PATH}&rdquo;</font>
+
+<font size="4">让mysql随系统一起启动<br><br>cp support-files/mysql.server /etc/init.d/mysqld<br><br>cd /etc/init.d<br><br>update-rc.d mysqld defaults</font>
+
+<font size="4">重启服务器，验证mysql是否能随系统正常启动，启动后：<br><br>mysql<br><br>如果能直接进入则说明启动成功。<br><br>为了安全，修改root密码：<br><br>mysql&gt;use mysql<br><br>mysql&gt;UPDATE user SET password=PASSWORD(&rsquo;new_password&rsquo;) WHERE user=&rsquo;root&rsquo;;<br><br>mysql&gt;FLUSH PRIVILEGES;<br><br>mysql&gt;exit</font>
+
+<font size="4"><strong>二、安装apache</strong><br><br>1、安装apache前，先安装openssl，因为后面要配置apache支持https协议：<br><br>tar -zxvf openssl-0.9.8e.tar.gz<br><br>cd openssl-0.9.8e<br><br>./config &ndash;prefix=/usr/local/ssl<br><br>make<br><br>make test<br><br>make install</font>
+
+<font size="4">2、安装apache，configure参数可根据需要调整。<br><br>tar -zxvf httpd-2.2.6.tar.gz<br><br>cd httpd-2.2.6<br><br>./configure &ndash;prefix=/usr/local/apache &ndash;enable-modules=all &ndash;enable-rewrite &ndash;enable-forward &ndash;enable-ssl &ndash;with-ssl=/usr/local/ssl &ndash;enable-mods-shared=all &ndash;enable-deflate &ndash;enable-proxy &ndash;enable-proxy-balancer &ndash;enable-proxy-http<br><br>make<br><br>make install<br><br>修改conf/httpd.conf的ServerName：<br><br>ServerName 127.0.0.1:80</font>
+
+<font size="4">测试apache是否正常</font>
+
+<font size="4">让apache随系统一起启动<br><br>cp /usr/local/apache/bin/apachectl /etc/init.d/httpd<br><br>cd /etc/init.d<br><br>update-rc.d httpd defaults</font>
+
+<p><strong><font size="4">三、安装PHP</font></strong></p>
+<font size="4">先安装php需要的一些包。</font>
+
+<font size="4"><strong>1、安装libxml2：</strong><br><br>apt-get install libxml2 libxml2-dev<br><br>tar -zxvf zlib-1.2.3.tar.gz<br><br>cd zlib-1.2.3<br><br>./configure &ndash;prefix=/usr/local/zlib<br><br>make<br><br>make install</font>
+
+<font size="4"><strong>2、安装jpeg：
+
+</strong>tar -zxvf jpegsrc.v6b.tar.gz<br><br>cd jpeg-6b<br><br>mkdir /usr/local/jpeg<br><br>mkdir /usr/local/jpeg/bin<br><br>mkdir /usr/local/jpeg/lib<br><br>mkdir /usr/local/jpeg/include<br><br>mkdir /usr/local/jpeg/man<br><br>mkdir /usr/local/jpeg/man/man1<br><br>./configure &ndash;prefix=/usr/local/jpeg &ndash;enable-shared &ndash;enable-static<br><br>make<br><br>make install</font>
+
+<font size="4"><strong>3、安装libpng：</strong><br><br>tar -zxvf libpng-1.2.16.tar.gz<br><br>cd libpng-1.2.16<br><br>./configure &ndash;prefix=/usr/local/libpng<br><br>make<br><br>make install</font>
+
+<font size="4"><strong>4、安装freetype：</strong><br><br>tar -zxvf freetype-2.3.3.tar.gz<br><br>cd freetype-2.3.3<br><br>./configure &ndash;prefix=/usr/local/freetype<br><br>make<br><br>make install</font>
+
+<font size="4"><strong>5、安装gd：</strong><br><br>tar -zxvf gd-2.0.33.tar.gz<br><br>cd gd-2.0.33<br><br>./configure &ndash;prefix=/usr/local/gd &ndash;with-jpeg=/usr/local/jpeg &ndash;with-freetype=/usr/local/freetype &ndash;with-png &ndash;with-zlib<br><br>make<br><br>make install</font>
+
+<font size="4"><strong>6、安装curl：</strong><br><br>tar -zxvf curl-7.16.1.tar.gz<br><br>cd curl-7.16.1<br><br>mkdir -p /usr/local/curl<br><br>./configure &ndash;prefix=/usr/local/curl &ndash;with-ssl<br><br>make<br><br>make install</font>
+
+<font size="4"><strong>7、安装libiconv：</strong><br><br>tar -zxvf libiconv-1.11.tar.gz<br><br>cd libiconv-1.11<br><br>./configure &ndash;prefix=/usr/local/iconv<br><br>make<br><br>make install</font>
+
+<font size="4"><strong>8、正式安装PHP：</strong><br><br>参数比较多，可根据需要安装，一般情况下这些已经够了。<br><br>tar -zxvf php-5.2.5.tar.gz<br><br>cd php-5.2.5<br><br>./configure &ndash;prefix=/usr/local/php &ndash;with-apxs2=/usr/local/apache/bin/apxs &ndash;with-config-file-path=/usr/local/apache/conf &ndash;enable-magic-quotes &ndash;with-openssl=/usr/local/ssl &ndash;with-zlib=/usr/local/zlib &ndash;with-zlib-dir=/usr/local/zlib &ndash;with-curl=/usr/local/curl &ndash;enable-ftp &ndash;with-openssl-dir=/usr/local/ssl &ndash;with-gd=/usr/local/gd &ndash;with-jpeg-dir=/usr/local/jpeg &ndash;with-png-dir=/usr/local/libpng &ndash;with-freetype-dir=/usr/local/freetype &ndash;enable-gd-native-ttf &ndash;enable-mbstring &ndash;with-mysql=/usr/local/mysql &ndash;with-pdo-mysql=/usr/local/mysql &ndash;enable-soap &ndash;enable-sockets &ndash;enable-zip &ndash;with-iconv &ndash;enable-zend-multibyte &ndash;with-mysql-sock=/tmp/mysql.sock &ndash;enable-sqlite-utf8<br><br>make<br><br>make test<br><br>make install<br><br>cp php.ini-dist /usr/local/apache/conf/php.ini</font>
+
+<font size="4"><strong>9、安装ZendOptimizer-3.3.0a</strong><br><br>tar -zxvf ZendOptimizer-3.3.0a-linux-glibc21-i386.tar.gz<br><br>cd ZendOptimizer-3.3.0a-linux-glibc21-i386<br><br>./install.sh<br><br>安装过程中指定ZendOptimizer的安装目录及php.ini所在的路径即可</font>
+
+<font size="4"><strong>10、让apache支持PHP：</strong><br><br>vi /usr/local/apache/conf/httpd.conf<br><br>在最后加上：<br><br>AddType application/x-httpd-php .php<br><br>AddType application/x-httpd-php-source .phps<br><br>将&lt;Directory &ldquo;/usr/local/apache/htdocs&rdquo;&gt;修改为：<br><br>&lt;Directory &ldquo;/home/dingl/php-web/test&rdquo;&gt;</font>
+
+<font size="4">修改DocumentRoot为&rdquo;/home/dingl/php-web/test&rdquo;<br><br>在此目录下新建index.php文件，内容如下：<br><br>&lt;?php phpinfo()?&gt;<br><br>打开</font><a href="http://192.168.1.xx/index.php" target="_blank" rel="external"><font size="4">http://192.168.1.xx/index.php</font></a><font size="4">即可看到php的信息，说明php安装成功</font>
+
+<font size="4">重启服务器即可看到Apache与Resin同时启动了，使用</font><a href="http://www.dingl.com/" target="_blank" rel="external"><font size="4">http://www.dingl.com/</font></a><font size="4">即可正常访问！</font>
+      
+    </div>
+    <!-- 文章底部 -->
+	
+  </div>
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2008/05/">&laquo; Prev</a><a class="page-number" href="/archives/2008/05/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2008/05/page/3/">3</a><a class="extend next" rel="next" href="/archives/2008/05/page/3/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">简介</h3>
+    <div class="widget">
+		<div align="center" backgroud="#0f0">
+		  <img id="avatar" src="http://yoursite.com/css/images/head.png" alt="头像"/> 
+		</div>
+		<div align="center">
+		  <ul>
+			<li>Android程序猿</li>
+		  </ul>
+		</div>
+		<br/><hr/>
+		<div align="center">
+		  <a href="mailto:JeremyHe_cn@qq.com" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/email.png" alt="email" width=32px height=32px/>
+		  </a>
+		  <a href="https://github.com/JeremyHe-cn" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/github.png" alt="github" width=32px height=32px/>
+		  </a>
+		  <a href="http://weibo.com/u/1706468932" target="_blank">
+			<img class="social-icon" src="http://yoursite.com/css/images/weibo.png" alt="weibo" width=32px height=32px/>
+		  </a>
+		</div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/">Office技巧</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Office技巧/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/R/">R</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/R/rserve/">rserve</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-Service/">Web Service</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/">Windows 7</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/启动/">启动</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows-7/最新资讯/">最新资讯</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/">Windows8.1</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/">经验</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows81/经验/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/android/">android</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/">css</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/android/css/html/">html</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/excel/">excel</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/excel/Office技巧/">Office技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html/php/">php</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jabber/">jabber</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/">R</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/">rserve</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/rserve/rsession/">rsession</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/R/ubuntu/">ubuntu</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/">limesurvey</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/">php开源程序</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/limesurvey/php开源程序/网络/">网络</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/经验/">经验</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/php/">php</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/">nginx</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/">ubuntu</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/ubuntu/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/nginx/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/">notebook</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/notebook/流言/">流言</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/openwrt/">openwrt</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p2p/">p2p</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/pb/">pb</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php/Windows-7/">Windows 7</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/php开源程序/">php开源程序</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/ubuntu/">ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/架构/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/经验/">经验</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/">php开源程序</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/php开源程序/wordpress/">wordpress</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/program/">program</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">project</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/solaris/">solaris</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/经验/">经验</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/wordpress开发/">wordpress开发</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress开发/">wordpress开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/云计算/">云计算</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/他山之石/">他山之石</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息化/">信息化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/奇文/">奇文</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/存储/">存储</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/存储/虚拟化/">虚拟化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/">最新资讯</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/最新资讯/经验/">经验</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/毒/">毒</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/">经验</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/经验/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/经验/运维/">运维</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络/">网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/">虚拟化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/评测/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">352</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            > <a href="/2014/08/04/e682a8e58fafe4bba5e4bdbfe794a8e8bf99e4ba9b-html-e6a087e7adbee5928ce5b19ee680a7e588a0e999a4e8af84e8aebae6a186e5908ee69687e5ad97/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/dotproject-e799bbe99986e5908ee99499e8afaffatal-error-call-to-a-member-function-execute-on-a-non-object-classesquery-class-php-e8a7a3e586b3/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/e5b18fe5b995e698bee7a4baprimary-ide-channel-no-80-conductor-cable-installed/">(no title)</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            > <a href="/2014/08/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+      <div class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近访客</h3>
+    <div class="widget">
+	  <ul class="ds-recent-visitors" data-num-items="12"></ul>
+	</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/301/" style="font-size: 10.00px;">301</a><a href="/tags/413-Request-Entity-Too-Large/" style="font-size: 10.00px;">413 Request Entity Too Large</a><a href="/tags/4G/" style="font-size: 10.00px;">4G</a><a href="/tags/500-Internal-Server-Error/" style="font-size: 10.00px;">500 Internal Server Error</a><a href="/tags/6relayd/" style="font-size: 10.00px;">6relayd</a><a href="/tags/G1/" style="font-size: 10.00px;">G1</a><a href="/tags/IT-Service/" style="font-size: 10.00px;">IT Service</a><a href="/tags/Intel/" style="font-size: 13.33px;">Intel</a><a href="/tags/MariaDB/" style="font-size: 10.00px;">MariaDB</a><a href="/tags/OOo/" style="font-size: 10.00px;">OOo</a><a href="/tags/SSD/" style="font-size: 10.00px;">SSD</a><a href="/tags/Thinkpad/" style="font-size: 20.00px;">Thinkpad</a><a href="/tags/Update-Retriever/" style="font-size: 13.33px;">Update Retriever</a><a href="/tags/Virtualbox/" style="font-size: 10.00px;">Virtualbox</a><a href="/tags/Web-Applacation/" style="font-size: 10.00px;">Web Applacation</a><a href="/tags/WinFS/" style="font-size: 10.00px;">WinFS</a><a href="/tags/access-connections/" style="font-size: 10.00px;">access connections</a><a href="/tags/adobe/" style="font-size: 10.00px;">adobe</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/allinone/" style="font-size: 10.00px;">allinone</a><a href="/tags/amd/" style="font-size: 10.00px;">amd</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apache/" style="font-size: 13.33px;">apache</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/apt-get/" style="font-size: 10.00px;">apt-get</a><a href="/tags/array_multisort/" style="font-size: 10.00px;">array_multisort</a><a href="/tags/array_unique/" style="font-size: 10.00px;">array_unique</a><a href="/tags/array_values/" style="font-size: 10.00px;">array_values</a><a href="/tags/attrib/" style="font-size: 10.00px;">attrib</a><a href="/tags/bb/" style="font-size: 10.00px;">bb</a><a href="/tags/bitcoin/" style="font-size: 16.67px;">bitcoin</a><a href="/tags/blackboard/" style="font-size: 10.00px;">blackboard</a><a href="/tags/bootcamp/" style="font-size: 10.00px;">bootcamp</a><a href="/tags/buffering/" style="font-size: 10.00px;">buffering</a><a href="/tags/buzz/" style="font-size: 10.00px;">buzz</a><a href="/tags/c/" style="font-size: 13.33px;">c</a><a href="/tags/centos/" style="font-size: 10.00px;">centos</a><a href="/tags/chart/" style="font-size: 10.00px;">chart</a><a href="/tags/checkbox/" style="font-size: 10.00px;">checkbox</a><a href="/tags/class/" style="font-size: 10.00px;">class</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09">September 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05">May 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01">January 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09">September 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12">December 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11">November 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10">October 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08">August 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06">June 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05">May 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04">April 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03">March 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02">February 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01">January 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12">December 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11">November 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10">October 2010</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/09">September 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08">August 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07">July 2010</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06">June 2010</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05">May 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03">March 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02">February 2010</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01">January 2010</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12">December 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11">November 2009</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10">October 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09">September 2009</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08">August 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/07">July 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06">June 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05">May 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04">April 2009</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03">March 2009</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02">February 2009</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01">January 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12">December 2008</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11">November 2008</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10">October 2008</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/09">September 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/08">August 2008</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07">July 2008</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06">June 2008</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05">May 2008</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04">April 2008</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03">March 2008</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02">February 2008</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01">January 2008</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12">December 2007</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11">November 2007</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10">October 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09">September 2007</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08">August 2007</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07">July 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06">June 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05">May 2007</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04">April 2007</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03">March 2007</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02">February 2007</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01">January 2007</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/07">July 2006</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://ibrother.me" target="_blank">ibrother</a>
+          </li>
+        
+          <li>
+            <a href="http://lotors.me" target="_blank">MarkBlaze</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
