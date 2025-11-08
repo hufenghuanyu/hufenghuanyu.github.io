@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>PHP中变量的传递小结 | ICT经验网</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">PHP中变量的传递小结</h1><a id="logo" href="/.">ICT经验网</a><p class="description">关注Linux、PHP、WordPress、虚拟化、深度学习等</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">PHP中变量的传递小结</h1><div class="post-meta">2009-06-23<span> | </span><span class="category"><a href="/categories/uncategorized/">uncategorized</a></span><span class="post-time"><span class="post-meta-item-text"> | </span><span class="post-meta-item-icon"><i class="fa fa-keyboard-o"></i><span class="post-count"> 75</span><span class="post-meta-item-text"> 字</span></span></span><span class="post-time"> | <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i><span class="post-count"> 1</span><span class="post-meta-item-text"> 分钟</span></span></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div></div></div><div class="post-content"><p>一． 表单传递<br>当一个表单提交给 PHP 脚本时，表单中的信息会自动在脚本中可用。<br>例： 一个简单的 HTML 表单
+ </p>
+<form action="foo.php" method="post">
+Name: <input type="text" name="username"><br>
+Email: <input type="text" name="email"><br>
+<input type="submit" name="submit" value="Submit me!">
+</form>
+ 
+有很多种方法访问 HTML 表单中的数据。例如：
+例：. 从一个简单的 POST HTML 表单访问数据
+ 
+<?php
+// 自 PHP 4.1.0 起可用
+print $_POST['username'];
+print $_REQUEST['username'];
+
+<p>import_request_variables(‘p’, ‘p_’);<br>print $p_username;</p>
+<p>&#x2F;&#x2F; 自 PHP 3 起可用<br>print $HTTP_POST_VARS[‘username’];</p>
+<p>&#x2F;&#x2F; 如果 PHP 指令 register_globals &#x3D; on 时可用。不过自<br>&#x2F;&#x2F; PHP 4.2.0 起默认值为 register_globals &#x3D; off。<br>&#x2F;&#x2F; 不提倡使用&#x2F;依赖此种方法。<br>print $username;<br>?&gt;<br> <br>使用 GET 表单也类似，只不过要用适当的 GET 预定义变量。<br>当提交表单时，可以用一幅图像代替标准的提交按钮，用类似这样的标记：<br><input type="image" src="image.gif" name="sub"><br>当用户点击到图像中的某处时，相应的表单会被传送到服务器，并加上两个变量 sub_x 和 sub_y。它们包含了用户点击图像的坐标。有经验的用户可能会注意到被浏览器发送的实际变量名包含的是一个点而不是下划线，但 PHP 自动将点转换成了下划线。</p>
+<p>二． 网址传递<br>&lt;a href&#x3D;”test.php?id&#x3D;3&amp;name&#x3D;mike”&gt;next</a><br>可用 $_GET[‘id’] 和$_GET[‘name’]访问GET 的数据。<br>三． Cookie 传递<br>1、 设置Cookie<br>简单的：<br>SetCookie(“MyCookie”, “Value of MyCookie”);<br>　　带失效时间的：<br>SetCookie(“WithExpire”, “Expire in 1 hour”, time()+3600);&#x2F;&#x2F;3600秒&#x3D;1小时<br>　　什么都有的：<br>SetCookie(“FullCookie”, “Full cookie value”, time()+3600, “&#x2F;forum”, “.phpuser.com”, 1);<br>　　如果要设置同名的多个Cookie，要用数组，方法是：<br>SetCookie(“CookieArray[0]”, “Value 1”);<br>SetCookie(“CookieArray[1]”, “Value 2”);<br>2、 接收和处理Cookie<br>echo $_COOKIE[‘MyCookie’];<br>echo $_COOKIE[‘CookieArray[0]’];<br>echo count($_COOKIE[‘CookieArray’]);<br>3、删除Cookie<br>要删除一个已经存在的Cookie，有两个办法：<br>一是调用只带有name参数的SetCookie，那么名为这个name的Cookie 将被从关系户机上删掉；另一个办法是设置Cookie的失效时间为time()或time()-1，那么这个Cookie在这个页面的浏览完之后就被删除了（其实是失效了）。<br>要注意的是，当一个Cookie被删除时，它的值在当前页在仍然有效的。<br>四． Session传递<br>test1.php<br> <br><?
+session_start();
+session_register("count");
+echo $count=0;
+?>
+ </p>
+<p>test2.php<br> <br><?
+session_start();
+echo $count++;
+?><br> <br>经过实验发现，PHP4的session只对当前打开的浏览器窗口有效（至少在W2K下的<br>IE5和NS6中是这样）。下面的代码可以实现session的跨窗口执行。<br>test1.php<br> <br><?
+session_start();
+session_register("count");
+setcookie("PHPSESSID",session_id(),time()+3600,"/","[www.md.hl.cn](http://www.md.hl.cn)");
+echo $count=0;
+?><br> <br>五． javascript变量传递到PHP脚本中<br>方法一:<br>先用PHP生成js代码，然后通过浏览器的自动刷新，将javascript变量传递到PHP脚本中。<br> <br>&lt;?php<br>if (isset($_GET[‘width’]) AND isset($_GET[‘height’])) {<br>&#x2F;&#x2F; output the geometry variables<br>echo “Screen width is: “. $_GET[‘width’] .”<br />\n”;<br>echo “Screen height is: “. $_GET[‘height’] .”<br />\n”;<br>} else {<br>&#x2F;&#x2F; pass the geometry variables<br>&#x2F;&#x2F; (preserve the original query string<br>&#x2F;&#x2F; – post variables will need to handled differently)</p>
+<p>echo “&lt;script language&#x3D;&quot;javascript&quot;&gt;\n”;<br>echo “ location.href&#x3D;&quot;${_SERVER[‘SCRIPT_NAME’]}?${_SERVER[‘QUERY_STRING’]}”<br>. “&amp;width&#x3D;&quot; + screen.width + &quot;&amp;height&#x3D;&quot; + screen.height;\n”;<br>echo “</script>\n”;<br>exit();<br>}<br>?&gt;
+ </p>
+<p>方法二:<br>先用document.cookie方法把js变量写入cookie中，再用PHP取出。<br>这种方法适用于变量少的情况。</p>
+<ol>
+<li>在JAVASCRIPT中设置COOKIE：document.cookie&#x3D;”cookiename&#x3D;”+value+”;path&#x3D;&#x2F;“</li>
+<li>在PHP中用$HTTP_COOKIE_VARS[“cookiename”]的方式读取。</li>
+</ol>
+<p> </p>
+<script>
+var name="myqq",value="66166457";
+document.cookie=”myqq”+"="+value+";"
+</script>
+<?php
+echo "$_COOKIE[‘myqq’]\n";
+$my="我的QQ是".$_COOKIE[‘myqq’];
+echo $my;
+?>
+
+<p> <br>方法三:<br>通过表单中的隐藏域的value属性将需要传递的变量通过提交表单传递给PHP。
+ </p>
+<script langeuage="javascript">
+function logon_sub(){
+if( pass_check() )
+{
+if(document.logon.f_over_clk.value=='0')
+{
+document.logon.f_over_clk.value='1';
+document.logon.submit();
+}
+}
+}
+</script>
+<form name="logon" action="logon_do.php" method="post">
+<a href="javascript:logon_sub();"><img name="Logon" src="../img/LogonBt_iu.gif"></a>
+<input type="hidden" name="mullang" value="0">
+</form>
+ 
+在logon_do.php页面就可以用$_POST[‘mullang’]取得这个变量了。
+六．多个页面之间传递数组
+可以把数组转化成字符串，作为一个参数来传递：
+- file1.php
+ 
+<?
+...
+$arg=implode(";", $parm);
+$link="file2.php?arg=$arg";
+?>
+
+<p> </p>
+<ul>
+<li>file2.php</li>
+</ul>
+<p> <br><?
+$parm=explode(";", $arg);
+...
+?></p>
+</div><div class="tags"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/" rel="tag">php</a></li></ul></div><div class="post-nav"><a class="pre" href="/wordpress-blog-%E7%9A%84%E5%88%86%E7%B1%BB%E4%B8%8E%E6%A0%87%E7%AD%BE%E7%A0%94%E7%A9%B6/">WordPress Blog 的分类与标签研究</a><a class="next" href="/wordpress%E5%A6%82%E4%BD%95%E6%98%BE%E7%A4%BA%E5%8D%95%E4%B8%AA%E5%88%86%E7%B1%BB%E7%9A%84rss/">WordPress如何显示单个分类的rss</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="输入关键词搜索"/><input type="hidden" name="sitesearch" value="http://example.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/%E5%AE%B6%E5%BA%AD%E7%BD%91%E7%BB%9C%E5%86%8D%E6%AC%A1%E4%BC%98%E5%8C%96%EF%BC%9A%E5%87%8F%E5%B0%91%E5%A4%8D%E6%9D%82%E6%80%A7%E5%87%8F%E5%B0%91%E8%AE%BE%E5%A4%87/">家庭网络再次优化：减少复杂性减少设备</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%8C%97%E4%BA%AC%E8%81%94%E9%80%9A%E6%9B%B4%E6%8D%A2%E5%85%89%E7%8C%AB%E7%83%BD%E7%81%ABhg5582a/">北京联通更换光猫烽火HG5582A</a></li><li class="post-list-item"><a class="post-list-link" href="/%E9%9D%9E%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%ACr%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/">非最新版本R安装软件包依赖问题</a></li><li class="post-list-item"><a class="post-list-link" href="/pycharm-r%E8%84%9A%E6%9C%AC%E7%94%BB%E5%9B%BE%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/">PyCharm R脚本 画图不显示问题</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%AE%B6%E5%BA%AD%E7%BD%91%E7%BB%9C%E5%8D%87%E7%BA%A7300m-1000m/">家庭网络升级300M-1000M</a></li><li class="post-list-item"><a class="post-list-link" href="/win11-23h2-%E5%8D%87%E7%BA%A724h2/">Win11 23H2 升级24H2：使用微软官方工具MBR2GPT转换磁盘MBR->GPT</a></li><li class="post-list-item"><a class="post-list-link" href="/%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%B8%A4%E4%B8%AA%E8%B4%A6%E5%8F%B7%E5%90%88%E5%B9%B6%EF%BC%88%E7%BD%91%E6%98%93%E9%82%AE%E7%AE%B1%E5%8F%8A%E5%BE%AE%E4%BF%A1%E8%B4%A6%E5%8F%B7%EF%BC%89/">有道云笔记两个账号合并（网易邮箱及微信账号）</a></li><li class="post-list-item"><a class="post-list-link" href="/kms%E5%B7%A5%E5%85%B7%E6%BF%80%E6%B4%BBoffice-ltsc-%E6%8A%A5%E9%94%99-error-code-0x80080005/">KMS工具激活Office LTSC 报错 Error Code: 0x80080005</a></li><li class="post-list-item"><a class="post-list-link" href="/vmware-esxi-%E7%94%B15-5%E5%8D%87%E7%BA%A7%E5%88%B07-0/">VMware ESXi 由5.5升级到7.0</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%B0%8F%E7%B1%B38-%E5%88%B7%E7%AC%AC%E4%B8%89%E6%96%B9%E5%9B%BA%E4%BB%B6%E5%A7%8B%E6%9C%AB/">小米8 刷第三方固件始末</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/lib/" style="font-size: 15px;">lib</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/php%E5%BC%80%E6%BA%90%E7%A8%8B%E5%BA%8F/" style="font-size: 15px;">php开源程序</a> <a href="/tags/301/" style="font-size: 15px;">301</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/adobe/" style="font-size: 15px;">adobe</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/spry/" style="font-size: 15px;">spry</a> <a href="/tags/access-connections/" style="font-size: 15px;">access connections</a> <a href="/tags/Thinkpad/" style="font-size: 15px;">Thinkpad</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/a2ensite/" style="font-size: 15px;">a2ensite</a> <a href="/tags/apache/" style="font-size: 15px;">apache</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 15px;">经验</a> <a href="/tags/htaccess/" style="font-size: 15px;">htaccess</a> <a href="/tags/bash/" style="font-size: 15px;">bash</a> <a href="/tags/windows/" style="font-size: 15px;">windows</a> <a href="/tags/windows10/" style="font-size: 15px;">windows10</a> <a href="/tags/bitcoin/" style="font-size: 15px;">bitcoin</a> <a href="/tags/p2p/" style="font-size: 15px;">p2p</a> <a href="/tags/hadoop/" style="font-size: 15px;">hadoop</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/" style="font-size: 15px;">分布式计算</a> <a href="/tags/bb/" style="font-size: 15px;">bb</a> <a href="/tags/centos/" style="font-size: 15px;">centos</a> <a href="/tags/iptables/" style="font-size: 15px;">iptables</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/buffering/" style="font-size: 15px;">buffering</a> <a href="/tags/output/" style="font-size: 15px;">output</a> <a href="/tags/output-buffering/" style="font-size: 15px;">output_buffering</a> <a href="/tags/php-ini/" style="font-size: 15px;">php.ini</a> <a href="/tags/cdrom/" style="font-size: 15px;">cdrom</a> <a href="/tags/CentOS/" style="font-size: 15px;">CentOS</a> <a href="/tags/yum/" style="font-size: 15px;">yum</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 15px;">运维</a> <a href="/tags/clear/" style="font-size: 15px;">clear</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/ie6/" style="font-size: 15px;">ie6</a> <a href="/tags/%E5%8D%A0%E7%94%A8%E9%AB%98%E5%BA%A6/" style="font-size: 15px;">占用高度</a> <a href="/tags/blackboard/" style="font-size: 15px;">blackboard</a> <a href="/tags/ckeditor/" style="font-size: 15px;">ckeditor</a> <a href="/tags/wordpress/" style="font-size: 15px;">wordpress</a> <a href="/tags/gd/" style="font-size: 15px;">gd</a> <a href="/tags/imagecreate/" style="font-size: 15px;">imagecreate</a> <a href="/tags/dfGallery/" style="font-size: 15px;">dfGallery</a> <a href="/tags/N-A/" style="font-size: 15px;">#N/A</a> <a href="/tags/excel/" style="font-size: 15px;">excel</a> <a href="/tags/Office%E6%8A%80%E5%B7%A7/" style="font-size: 15px;">Office技巧</a> <a href="/tags/dotproject/" style="font-size: 15px;">dotproject</a> <a href="/tags/project/" style="font-size: 15px;">project</a> <a href="/tags/office/" style="font-size: 15px;">office</a> <a href="/tags/compact/" style="font-size: 15px;">compact</a> <a href="/tags/extract/" style="font-size: 15px;">extract</a> <a href="/tags/fck%EF%BC%8Ceditor/" style="font-size: 15px;">fck，editor</a> <a href="/tags/ftp/" style="font-size: 15px;">ftp</a> <a href="/tags/buzz/" style="font-size: 15px;">buzz</a> <a href="/tags/google-reader/" style="font-size: 15px;">google reader</a> <a href="/tags/google/" style="font-size: 15px;">google</a> <a href="/tags/hosts/" style="font-size: 15px;">hosts</a> <a href="/tags/ipv6/" style="font-size: 15px;">ipv6</a> <a href="/tags/%E6%9C%80%E6%96%B0%E8%B5%84%E8%AE%AF/" style="font-size: 15px;">最新资讯</a> <a href="/tags/hook/" style="font-size: 15px;">hook</a> <a href="/tags/flash/" style="font-size: 15px;">flash</a> <a href="/tags/html4/" style="font-size: 15px;">html4</a> <a href="/tags/Web-Applacation/" style="font-size: 15px;">Web Applacation</a> <a href="/tags/insert-ino/" style="font-size: 15px;">insert ino</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/update/" style="font-size: 15px;">update</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/jeecms/" style="font-size: 15px;">jeecms</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/jQuery-lightBox/" style="font-size: 15px;">jQuery lightBox</a> <a href="/tags/js/" style="font-size: 15px;">js</a> <a href="/tags/jpgraph/" style="font-size: 15px;">jpgraph</a> <a href="/tags/0x80080005/" style="font-size: 15px;">0x80080005</a> <a href="/tags/kms/" style="font-size: 15px;">kms</a> <a href="/tags/SppExtComObj/" style="font-size: 15px;">SppExtComObj</a> <a href="/tags/pchart/" style="font-size: 15px;">pchart</a> <a href="/tags/limesurvey/" style="font-size: 15px;">limesurvey</a> <a href="/tags/fckeditor/" style="font-size: 15px;">fckeditor</a> <a href="/tags/%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93/" style="font-size: 15px;">中文字体</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 15px;">网络</a> <a href="/tags/mb-substr/" style="font-size: 15px;">mb_substr</a> <a href="/tags/spss/" style="font-size: 15px;">spss</a> <a href="/tags/bootcamp/" style="font-size: 15px;">bootcamp</a> <a href="/tags/macbook/" style="font-size: 15px;">macbook</a> <a href="/tags/macos/" style="font-size: 15px;">macos</a> <a href="/tags/%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81/" style="font-size: 15px;">重置密码</a> <a href="/tags/rss/" style="font-size: 15px;">rss</a> <a href="/tags/ssh/" style="font-size: 15px;">ssh</a> <a href="/tags/MariaDB/" style="font-size: 15px;">MariaDB</a> <a href="/tags/mysqlnd/" style="font-size: 15px;">mysqlnd</a> <a href="/tags/mysq/" style="font-size: 15px;">mysq</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" style="font-size: 15px;">命令行</a> <a href="/tags/%E5%A4%87%E4%BB%BD/" style="font-size: 15px;">备份</a> <a href="/tags/%E8%BF%98%E5%8E%9F/" style="font-size: 15px;">还原</a> <a href="/tags/expires/" style="font-size: 15px;">expires</a></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2025 <a href="/." rel="nofollow">ICT经验网.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a> Theme by<a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Maupassant.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>

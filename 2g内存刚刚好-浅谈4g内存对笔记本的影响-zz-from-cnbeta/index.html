@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>2G内存刚刚好 浅谈4G内存对笔记本的影响 zz from cnBeta | ICT经验网</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">2G内存刚刚好 浅谈4G内存对笔记本的影响 zz from cnBeta</h1><a id="logo" href="/.">ICT经验网</a><p class="description">关注Linux、PHP、WordPress、虚拟化、深度学习等</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">2G内存刚刚好 浅谈4G内存对笔记本的影响 zz from cnBeta</h1><div class="post-meta">2007-07-22<span> | </span><span class="category"><a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></span><span class="post-time"><span class="post-meta-item-text"> | </span><span class="post-meta-item-icon"><i class="fa fa-keyboard-o"></i><span class="post-count"> 4.9k</span><span class="post-meta-item-text"> 字</span></span></span><span class="post-time"> | <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i><span class="post-count"> 17</span><span class="post-meta-item-text"> 分钟</span></span></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div></div></div><div class="post-content"><p>采编来源：<a target="_blank" rel="noopener" href="http://publish.it168.com/2007/0719/20070719018801.shtml">it168.com</a><br>随着Intel P3x系列芯片组的发布，DDR3内存的普及日益临近，AMD K10系列处理器AM2+规格也正式支持DDR3内存，明年即将面临淘汰的DDRII内存是越来越便宜了。很多笔记本用户在购买笔记本的时候都把是否支持4G内存作为一个总要的衡量标准。官方资料里面仅仅支持2G内存的笔记本型号往往这些用户被无情的抛弃，不作为选择对象考虑，事实上我们真的有必要使用到4G内存么？与2GB内存相比，4GB内存对于提高笔记本综合性能是否有帮助？会在接下来的文章中，笔者将为大家详细回答这些问题。  </p>
+<p>         单从内存容量上看，4GB内存无疑是很多笔记本玩家都渴望得到的梦幻搭配，不少笔记本发烧友也深信4GB内存能够进一步提高配置的笔记本综合性能。然而很多花了大价钱（2G单条笔记本内存2007年7月售价一千二百多）购买4GB笔记本内存的用户在实际使用中却遭遇到了一个非常尴尬的问题，那就是明明安装了2条2GB笔记本内存，为什么开机无法点亮笔记本，黑屏？即使能够通过自检开机，在Windows XP操作系统中能够使用的内存却只有2.7-3.2GB？  </p>
+<p><img src="http://publish.it168.com/2007/0719/images/540375.png"></p>
+<p>         开机无法点亮笔记本，是2G内存和主板不兼容问题，可是能顺利开机的笔记本，在经过三番五次更换硬件后，Windows XP系统下面内存容量“缩水”的情况丝毫没有得到改变，这究竟是什么原因呢？  </p>
+<p>　　其实问题的根源并非内存质量和主板的硬件原因，而是这些用户在贸然购买4GB内存之前没有充分了解使用4GB内存所需要的软硬件支持，更没有对自己的笔记本配置进行认真评估，只是盲目地认为使用4GB内存能够带来更好的系统性能和游戏性能。事实上，尽管目前很多笔记本和主流操作系统都宣称能够支持4GB内存，但使用起来却远不如大家想象的那样简单。那么，究竟哪些主板和操作系统能够支持4GB内存？简单说来，造成4GB内存缩水的原因主要可以归结为硬件和软件两种，下面笔者来给分别解析：  </p>
+<p> <strong>导致4GB内存缩水的硬件原因</strong> 　　硬件原因其实指的就是笔记本上的移动主板芯片组。在很多人的印象中，主板能够支持多大容量的内存是由主板上的内存槽数量*单条内存容量决定的，这样的想法完全不正确。事实上，笔记本大部分只有2根内存插槽，所以组成4G内存的唯一选择就是安装2根2G单条的内存（4G单条内存并没有上市），因为2007年4月以来的内存一直走低，相信已经又不少网友把自己笔记本的内存升级到了2G，但是其中至少三成用户在升级笔记本内存时候遇到了兼容性问题，安装2条1G内存往往导致笔记本不能睡眠唤醒，无法开机，无故自动重启等奇怪问题。  </p>
+<p>         而笔记本主板对2G单条内存模块的兼容性要求比1G单条还要高不少。所以安装2条2G单条内存往往有必要在几个品牌产品之间选择一款跟自己的笔记本主板兼容的产品。实际情况是现在市场上2G内存现货寥寥无几，远没有像1G内存这样的替换余地，所以碰上不兼容问题基本上无法通过替换的方法很好的解决。  </p>
+<p>　　就算运气非常好，购买的4G内存在笔记本上能够正确的识别开机。我们又会面对操作系统里面识别不足4G内存的问题。为什么4G内存Windows XP仅仅报告3.2G甚至更少的2.77G呢？因为决定32位系统下面4G内存地址空间并不是仅仅是系统内存独占的。4G内存地址空间是系统中所有存储器的编码范围，这里面既包括有内存编码，也包括了主板BIOS、显卡BIOS、显存以及其他PCI设备的存储器编码。这是因为Intel x86平台中使用了名为内存映射I&#x2F;O（MMIO）的技术。  </p>
+<p>　　提示：内存映射I&#x2F;O是PCI规范的一部分，I&#x2F;O设备被放置在内存空间而不是I&#x2F;O空间。从处理器的角度看，内存映射I&#x2F;O后系统设备访问起来和内存一样。这样访问AGP&#x2F;PCI-E显卡上的帧缓存，BIOS，PCI设备就可以使用读写内存一样的汇编指令完成，简化了程序设计的难度和接口的复杂性。  </p>
+<p><img src="http://publish.it168.com/2007/0719/images/540391.png"></p>
+<p> Intel主板的内存映射官方PDF文档下载：<a target="_blank" rel="noopener" href="http://download.intel.com/support/motherboards/server/sb/ta71902.pdf">点击下载</a>  </p>
+<p>         以i945P主板为例，i945P芯片组只有32位地址总线，因此它对应的地址空间为4GB。表面上看似乎能够支持4GB容纳量的内存。但从下表中我们可以看到，芯片组支持的4GB地址空间中，有1MB分配给了DOS兼容存储区，1MB-2GB分配给了内存访问，而2GB-4GB的部分地址空间则优先分配给了显卡帧缓存，PCI&#x2F;PCI-E设备和BIOS区域，而这一区域也被Intel称作内存映射I&#x2F;O（MMIO）区域。那么，内存容量缩水与地址空间、MMIO区域又有什么联系吗？  </p>
+<p>　<a target="_blank" rel="noopener" href="http://download.intel.com/support/motherboards/server/sb/ta71902.pdf">Intel TA 719文档给出的x86&#x2F;x64系统典型内存地址分配表：</a>  </p>
+<p>典型系统内存映射表</p>
+<p>系统资源</p>
+<p>占用容量</p>
+<p>4G内存可用</p>
+<p>3G内存可用</p>
+<p>BIOS</p>
+<p>1MB</p>
+<p>3.99 GB</p>
+<p>3.00 GB</p>
+<p>本地APIC</p>
+<p>4KB</p>
+<p>芯片组保留</p>
+<p>2MB</p>
+<p>IO APIC</p>
+<p>4KB</p>
+<p>PCI设备</p>
+<p>256MB</p>
+<p>3.84 GB</p>
+<p>3.00 GB</p>
+<p>PCI Express设备</p>
+<p>256MB</p>
+<p>3.58 GB</p>
+<p>3.00 GB</p>
+<p>PCI设备(可选)</p>
+<p>256MB</p>
+<p>3.33 GB</p>
+<p>3.00 GB</p>
+<p>显示帧缓存</p>
+<p>16MB</p>
+<p>3.31 GB</p>
+<p>2.85 GB</p>
+<p>TSEG</p>
+<p>1MB</p>
+<p>3.30 GB</p>
+<p>2.84 GB</p>
+<p>操作系统，BIOS，软件可以自由使用的物理内存</p>
+<p>3.30 GB</p>
+<p>2.84 GB</p>
+<p>在i945PM&#x2F;GM芯片组4GB的地址空间中，DOS兼容存储区占用的空间较小，对内存容量影响可以忽略不计，但MMIO区域由于占用了大量的地址空间，势必会影响实际内存的使用——当用户使用2GB以下容量的内存时，内存地址与MMIO区域基本不会发生重叠，不会影响内存的正常使用；但用户使用3GB以上内存时，势必会与MMIO区域重叠，而此时系统会优先将空间分配给MMIO区域，那么重叠部分的内存将无法被系统访问，进而造成内存容量丢失。  </p>
+<p>         说得再简单一点，假设笔记本芯片组的内存地址编码空间是一根4米深的水缸，物理内存、DOS兼容存储区和MMIO区域则是一定体积的水，油，泥沙。其中泥沙（DOS占用）占了最底下的1厘米高度，油(系统设备MMIO区域占用)飘在水面上占了75厘米，剩下的这些水（可用内存部分）才能够被完全容纳在水缸中，一旦加起来水油的深度之和超过了4米，那么溢出部分自然不能被利用。  </p>
+<p>         由于4GB芯片组地址空间的限制(32条地址线的限制)，Intel 945系列及以前的芯片组、NVIDIA nForce Go C6100&#x2F;C6510，ATI Xpress 1150M，这些芯片组无论如何都不能完全支持4GB内存。具体原因有三方面：其一是芯片组没有设计剩余地址总线来供操作系统来调配；其二是不支持Memory Remap技术，而物理内存的编址必须是连续的，不能被割断；其三是系统开机时必需先从4GB的顶端地址(FFFF_FFFFh)读取BIOS数据, 这是IA32架构和4GB地址空间的局限。  </p>
+<p>　　所以建议使用这些芯片组主板的用户不要安装4GB的内存，这样会有部分内存容量不能被操作系统所使用。  </p>
+<p>　　经过以上介绍，相信大家已经基本了解了造成4GB内存缩水的硬件原因，那么，目前有哪些芯片组是能够顺利支持4GB内存的呢？在Intel笔记本平台上，Intel 　　PM965&#x2F;GM965以及未来推出的P&#x2F;G3系列芯片组都具有36位地址总线，地址空间达到了64GB。而在AMD平台上，M690T以上级别的芯片组同样支持64GB地址空间。  </p>
+<p>支持4G内存的笔记本芯片组一览表</p>
+<p>芯片组</p>
+<p>地址总线</p>
+<p>最大地址空间</p>
+<p>最大内存容量</p>
+<p>Intel平台</p>
+<p>Intel PM&#x2F;GM965</p>
+<p>36bit</p>
+<p>64GB</p>
+<p>8G</p>
+<p>AMD平台</p>
+<p>AMD M690T</p>
+<p>36bit</p>
+<p>64GB</p>
+<p>8G</p>
+<p>         需要注意的是，虽然从规格上看这些芯片组似乎能够顺利支持4GB内存，但事实上在默认情况下，芯片组仍然不能解决MMIO区域占用系统内存的问题。这就需要借助到BIOS中的Memory Remapping（内存重映射）技术。  </p>
+<p><img src="http://publish.it168.com/2007/0719/images/540428.png"></p>
+<p>         如图所示，在CPU寻址的物理空间中，MMIO空间仍然存在，然而，在实际插入的内存中，这部分MMIO空间对应的却是一部分重映射内存空间，在CPU想使用这部分内存的时候，CPU将寻址高于4GB内存的这部分空间，内存控制器再对其进行转换，再寻址到实际物理内存。  </p>
+<p>　　比如当用户在965P主板上使用4GB内存时，位于4GB地址以下的MMIO区域仍然会占用部分内存空间，此时4GB的内存容量无法得到充分利用。通过内存重映射技术，我们可以将MMIO区域重新影射到4GB地址以上的空间，此时4GB以下地址将完全留给内存使用，保证所有内存都能够被系统正确识别。那么，我们应该如何开启内存重映射技术呢？一般说来，基于Intel GM965&#x2F;PM965、AMD M690T及以上级别笔记本芯片组的主板在BIOS中都提供了类似“Memory Remapping Feature”这样的选项，大家只需设置为“Enable”即可启用此项功能。  </p>
+<p><img src="http://publish.it168.com/2007/0719/images/540429.jpg"></p>
+<p>         有些笔记本BIOS设置里面没得这个选项，那它多半是默认一直开启的，可以不用管它。如果很不幸BIOS设置没有这个选择而默认又没有开启。那只建议使用至多2G内存。  </p>
+<p> **导致4GB内存缩水的软件原因  </p>
+<p> 除了芯片组方面的原因外，不同版本的操作系统对内存容量的支持也不尽相同，这就是我们所提到的造成4GB内存缩水的软件原因。从下表中我们可以看到，虽然Windows XP系统号称最大可支持4GB容量的内存，但实际上即使在主板打开内存重映射技术的前提下，Windows XP系统仍然不能完全识别4GB容量的内存。  </p>
+<p> 微软给出的官方解释是因为32位驱动和软件兼容性支持，微软的技术文章地址见：Windows XP Service Pack 2由系统属性对话框和系统信息工具报告 RAM 的量小于您安装的容量  </p>
+<p> Windows VISTA 32位系统情况也跟XP类似，也有只有当用户使用类似Windows Server 2003这类面向高端服务器平台的32位系统由或者64位的Windows XP&#x2F;Vista系统时，4GB内存的限制才会被完全解除。  </p>
+<p> 操作系统支持,要是64位操作系统,就支持4G以上内存。32位系统要真正完全支持物理地址扩展的系统才支持。**          以下是支持4G以上内存的系统,大家确认一下,以免因为系统不支持浪费了内存。  </p>
+<p>操作系统版本</p>
+<p>最大支持内存</p>
+<p>Windows 2000 Advance Server SP4</p>
+<p>8-32 GB</p>
+<p>Windows Server 2003 Enterprise R2</p>
+<p>32-64GB</p>
+<p>Windows XP x64 Edition</p>
+<p>32GB</p>
+<p>Windows Server 2003 x64 Edition</p>
+<p>64-512GB</p>
+<p>Windows Vista x64 Edition</p>
+<p>8-128 GB</p>
+<p>         从上面可以看出，希望兼容最多游戏软件，又要4G内存支持的笔记本用户。最理想是安装32位Windows Server 2003。因为有接近Windows XP的兼容性。同时可以识别出超过8G的内存。Windows 2000已经逐渐被淘汰，64位系统，Windows VISTA虽然版本更新，但是驱动和软件兼容性远远不如32位版Windows Server 2003。  </p>
+<p> **4G内存系统实际性能分析  </p>
+<p> 经过前面的分析，相信大家对于4GB内存在实际使用中容量缩水的原因以及使用4GB内存时需要注意的问题已经有了初步的了解。看到这里，也许有网友会提出这样的观点：“虽然使用4GB内存需要大费周折，但如果能够明显提升笔记本电脑的系统整体性能，再麻烦我也愿意。”那么，4GB内存在实际使用中相对于是否能够有效笔记本电脑的系统性能呢？下面笔者在结合评测数据和自己的使用体验为大家进行简要的对比分析。  </p>
+<p> 以大家非常熟悉的网络游戏《魔兽世界》为例。当系统使用1GB内存时，游戏载入较为缓慢，进入游戏后一段时间内画面帧数不连续，游戏运行在主城过程中有较为明显的停顿感。从截图中可以看到游戏虽然平均fps很高，但是最小fps很低，这时候用户会有卡的感觉。** </p>
+<p><img src="http://publish.it168.com/2007/0719/images/540445.jpg"></p>
+<p>         将系统内存升级至2GB以后，游戏载入时间明显缩短，进入游戏后仅有很短暂的时候会出现帧数不连贯的现象，游戏过程中始终能够保持较为流畅的速度。而在系统内存容量增加至4GB后，此时在Windows XP系统中能够识别的内存容量只有3.25GB，为了完全使用4G内存，笔者采用了Windows VISTA Ultimate x64 Edition系统。运行同样的《魔兽世界》场景，系统载入时间与2GB内存基本相当，进入游戏后同样有短暂的不连续感，游戏帧数与使用2GB内存时没有明显差别。随后笔者又以《科林麦克雷·尘埃》作为测试对象，结果与《魔兽世界》基本一致。  </p>
+<p><img src="http://publish.it168.com/2007/0719/images/540449.jpg"></p>
+<p>         通过对上述现象进行分析我们可以清楚地看到，当内存容量从1GB升级至2GB时，系统的游戏性能得到了明显提升，载入时间和游戏速度都得到了很大的改善。不过在将内存容量增加至4GB以后，笔记本电脑的游戏性能与2GB内存时基本持平。换句话说，使用4GB内存对于提升游戏性能的帮助微乎其微。事实上，由于在Windows XP&#x2F;VISTA等32位操作系统中，单个进程可调用的内存只有2GB左右，所以4GB内存是无法在大型软件和游戏中被充分利用。  </p>
+<p>         进一步进行应用软件测试，笔者在运行着《魔兽世界》的情况下，切换出系统，启动PhotoShop CS，将分辨率为3072*2048 72dpi的PSD图片文件插值到300dpi，然后复制图层。1G物理内存在复制第三个图层的时候开始笔记本开始停止响应，2G物理内存情况下复制第六个图层的时候笔记本开始停止响应。等到系统恢复可操作时候，《魔兽世界》已经掉线。4G物理内存复制到第十个图层，系统依然可以正常操作。  </p>
+<p>　　实际测试表明，只有在高端商用或专业设计等经常涉及多程序同时运行的复杂环境中，4GB内存在容量上的优势才能得到较好的发挥；而在运行单一程序时（包括游戏和其他应用程序），受32位操作系统的制约，4GB内存的性能表现与2GB内存基本处于同一水平。要解决单一程序访问内存容量的限制，用户只能选择更高级的32位或64操作系统。  </p>
+<p>　　综合以上分析，我们可以得出以下结论：由于Intel 945PM&#x2F;GM、NVIDIA C6100&#x2F;C6150,ATI X1150M及以前推出的芯片组无法解决4GB地址空间的限制，因此正在使用这主板的用户使用4GB内存必然会造成部分内存容量无法被操作系统识别，损失的容量大约在750MB甚至1GB之间。另外，从软件来看，虽然目前主流的32位Windows XP&#x2F;Vista系统从理论上能够支持4GB内存，但实际上他们仍然不能对4GB内存提供完美的支持，这同样会造成部分内存容量的“丢失”。因此，就目前的主流笔记本配置来看，尚不能满足4GB物理内存的最佳硬件要求。  </p>
+<p>　　另一方面，虽然一部分高端用户可以通过购买最新的AMD和迅驰4笔记本、更换操作系统等一系列手段让笔记本电脑完全支持4GB内存，但一般游戏，视频，家用娱乐应用对大容量内存的利用也远不如我们想象的那样充分。在实际使用当中，1GB容量内存已经能够很好地满足大部分主流游戏的运行需要；即使是在Windows VISTA下运行《魔兽世界》、《科林麦克雷·尘埃》这类场景较大、模型较多的大型3D游戏，对内存的实际使用容量也只是在2GB左右。换句话说，就目前和未来一段时间的应用来看，2GB内存已经能够胜任包括VISTA下各种游戏的实际需要。与超过2GB的内存容量相比，处理器性能、显卡核心的性能以及显存容量、显存带宽等因素才是影响游戏，高清视频性能的瓶颈所在。  </p>
+<p>         当然，实际测试表明4GB内存对于提高系统在复杂应用环境（如出版级的图形处理）中的性能还有一定帮助的。但大家在选择4GB内存之前必须要做好相应的准备：  </p>
+<p>         一、在现有的32位Windows XP&#x2F;Vista系统中，4GB内存不可避的存在一些兼容性问题或者出现内存容量丢失的情况；建议采用Server 2003或者64位系统。  </p>
+<p>         二、使用完4G完整容量，笔记本主板BIOS必须支持内存重映射技术。并且是Intel 965系列，AMD M690T或者NF570 MCP(笔记本尚未推出)以上北桥芯片组。  </p>
+<p>         满足这些条件，才能充分利用上4G内存，不会造成内存容量和资金的浪费。</p>
+</div><div class="tags"></div><div class="post-nav"><a class="pre" href="/windows-vista%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E5%A4%8D%E5%88%B6%E3%80%81%E7%A7%BB%E5%8A%A8%E3%80%81%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E6%85%A2%E7%9A%847%E7%A7%8D%E4%B8%8D%E5%90%8C/">Windows Vista资源管理器复制、移动、删除文件慢的7种不同的解决办法和几个现象 zz from cnBeta</a><a class="next" href="/%E9%AD%94%E5%85%BD%E4%BA%89%E9%9C%B8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E8%AE%BE%E6%95%99%E7%A8%8B-zz1/">魔兽争霸服务器架设教程 zz(1)</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="输入关键词搜索"/><input type="hidden" name="sitesearch" value="http://example.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/%E5%AE%B6%E5%BA%AD%E7%BD%91%E7%BB%9C%E5%86%8D%E6%AC%A1%E4%BC%98%E5%8C%96%EF%BC%9A%E5%87%8F%E5%B0%91%E5%A4%8D%E6%9D%82%E6%80%A7%E5%87%8F%E5%B0%91%E8%AE%BE%E5%A4%87/">家庭网络再次优化：减少复杂性减少设备</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%8C%97%E4%BA%AC%E8%81%94%E9%80%9A%E6%9B%B4%E6%8D%A2%E5%85%89%E7%8C%AB%E7%83%BD%E7%81%ABhg5582a/">北京联通更换光猫烽火HG5582A</a></li><li class="post-list-item"><a class="post-list-link" href="/%E9%9D%9E%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%ACr%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/">非最新版本R安装软件包依赖问题</a></li><li class="post-list-item"><a class="post-list-link" href="/pycharm-r%E8%84%9A%E6%9C%AC%E7%94%BB%E5%9B%BE%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/">PyCharm R脚本 画图不显示问题</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%AE%B6%E5%BA%AD%E7%BD%91%E7%BB%9C%E5%8D%87%E7%BA%A7300m-1000m/">家庭网络升级300M-1000M</a></li><li class="post-list-item"><a class="post-list-link" href="/win11-23h2-%E5%8D%87%E7%BA%A724h2/">Win11 23H2 升级24H2：使用微软官方工具MBR2GPT转换磁盘MBR->GPT</a></li><li class="post-list-item"><a class="post-list-link" href="/%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%B8%A4%E4%B8%AA%E8%B4%A6%E5%8F%B7%E5%90%88%E5%B9%B6%EF%BC%88%E7%BD%91%E6%98%93%E9%82%AE%E7%AE%B1%E5%8F%8A%E5%BE%AE%E4%BF%A1%E8%B4%A6%E5%8F%B7%EF%BC%89/">有道云笔记两个账号合并（网易邮箱及微信账号）</a></li><li class="post-list-item"><a class="post-list-link" href="/kms%E5%B7%A5%E5%85%B7%E6%BF%80%E6%B4%BBoffice-ltsc-%E6%8A%A5%E9%94%99-error-code-0x80080005/">KMS工具激活Office LTSC 报错 Error Code: 0x80080005</a></li><li class="post-list-item"><a class="post-list-link" href="/vmware-esxi-%E7%94%B15-5%E5%8D%87%E7%BA%A7%E5%88%B07-0/">VMware ESXi 由5.5升级到7.0</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%B0%8F%E7%B1%B38-%E5%88%B7%E7%AC%AC%E4%B8%89%E6%96%B9%E5%9B%BA%E4%BB%B6%E5%A7%8B%E6%9C%AB/">小米8 刷第三方固件始末</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/lib/" style="font-size: 15px;">lib</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/php%E5%BC%80%E6%BA%90%E7%A8%8B%E5%BA%8F/" style="font-size: 15px;">php开源程序</a> <a href="/tags/301/" style="font-size: 15px;">301</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/adobe/" style="font-size: 15px;">adobe</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/spry/" style="font-size: 15px;">spry</a> <a href="/tags/access-connections/" style="font-size: 15px;">access connections</a> <a href="/tags/Thinkpad/" style="font-size: 15px;">Thinkpad</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/a2ensite/" style="font-size: 15px;">a2ensite</a> <a href="/tags/apache/" style="font-size: 15px;">apache</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 15px;">经验</a> <a href="/tags/htaccess/" style="font-size: 15px;">htaccess</a> <a href="/tags/bash/" style="font-size: 15px;">bash</a> <a href="/tags/windows/" style="font-size: 15px;">windows</a> <a href="/tags/windows10/" style="font-size: 15px;">windows10</a> <a href="/tags/bitcoin/" style="font-size: 15px;">bitcoin</a> <a href="/tags/p2p/" style="font-size: 15px;">p2p</a> <a href="/tags/hadoop/" style="font-size: 15px;">hadoop</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/" style="font-size: 15px;">分布式计算</a> <a href="/tags/bb/" style="font-size: 15px;">bb</a> <a href="/tags/centos/" style="font-size: 15px;">centos</a> <a href="/tags/iptables/" style="font-size: 15px;">iptables</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/buffering/" style="font-size: 15px;">buffering</a> <a href="/tags/output/" style="font-size: 15px;">output</a> <a href="/tags/output-buffering/" style="font-size: 15px;">output_buffering</a> <a href="/tags/php-ini/" style="font-size: 15px;">php.ini</a> <a href="/tags/cdrom/" style="font-size: 15px;">cdrom</a> <a href="/tags/CentOS/" style="font-size: 15px;">CentOS</a> <a href="/tags/yum/" style="font-size: 15px;">yum</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 15px;">运维</a> <a href="/tags/clear/" style="font-size: 15px;">clear</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/ie6/" style="font-size: 15px;">ie6</a> <a href="/tags/%E5%8D%A0%E7%94%A8%E9%AB%98%E5%BA%A6/" style="font-size: 15px;">占用高度</a> <a href="/tags/blackboard/" style="font-size: 15px;">blackboard</a> <a href="/tags/ckeditor/" style="font-size: 15px;">ckeditor</a> <a href="/tags/wordpress/" style="font-size: 15px;">wordpress</a> <a href="/tags/gd/" style="font-size: 15px;">gd</a> <a href="/tags/imagecreate/" style="font-size: 15px;">imagecreate</a> <a href="/tags/dfGallery/" style="font-size: 15px;">dfGallery</a> <a href="/tags/N-A/" style="font-size: 15px;">#N/A</a> <a href="/tags/excel/" style="font-size: 15px;">excel</a> <a href="/tags/Office%E6%8A%80%E5%B7%A7/" style="font-size: 15px;">Office技巧</a> <a href="/tags/dotproject/" style="font-size: 15px;">dotproject</a> <a href="/tags/project/" style="font-size: 15px;">project</a> <a href="/tags/office/" style="font-size: 15px;">office</a> <a href="/tags/compact/" style="font-size: 15px;">compact</a> <a href="/tags/extract/" style="font-size: 15px;">extract</a> <a href="/tags/fck%EF%BC%8Ceditor/" style="font-size: 15px;">fck，editor</a> <a href="/tags/ftp/" style="font-size: 15px;">ftp</a> <a href="/tags/buzz/" style="font-size: 15px;">buzz</a> <a href="/tags/google-reader/" style="font-size: 15px;">google reader</a> <a href="/tags/google/" style="font-size: 15px;">google</a> <a href="/tags/hosts/" style="font-size: 15px;">hosts</a> <a href="/tags/ipv6/" style="font-size: 15px;">ipv6</a> <a href="/tags/%E6%9C%80%E6%96%B0%E8%B5%84%E8%AE%AF/" style="font-size: 15px;">最新资讯</a> <a href="/tags/hook/" style="font-size: 15px;">hook</a> <a href="/tags/flash/" style="font-size: 15px;">flash</a> <a href="/tags/html4/" style="font-size: 15px;">html4</a> <a href="/tags/Web-Applacation/" style="font-size: 15px;">Web Applacation</a> <a href="/tags/insert-ino/" style="font-size: 15px;">insert ino</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/update/" style="font-size: 15px;">update</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/jeecms/" style="font-size: 15px;">jeecms</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/jQuery-lightBox/" style="font-size: 15px;">jQuery lightBox</a> <a href="/tags/js/" style="font-size: 15px;">js</a> <a href="/tags/jpgraph/" style="font-size: 15px;">jpgraph</a> <a href="/tags/0x80080005/" style="font-size: 15px;">0x80080005</a> <a href="/tags/kms/" style="font-size: 15px;">kms</a> <a href="/tags/SppExtComObj/" style="font-size: 15px;">SppExtComObj</a> <a href="/tags/pchart/" style="font-size: 15px;">pchart</a> <a href="/tags/limesurvey/" style="font-size: 15px;">limesurvey</a> <a href="/tags/fckeditor/" style="font-size: 15px;">fckeditor</a> <a href="/tags/%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93/" style="font-size: 15px;">中文字体</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 15px;">网络</a> <a href="/tags/mb-substr/" style="font-size: 15px;">mb_substr</a> <a href="/tags/spss/" style="font-size: 15px;">spss</a> <a href="/tags/bootcamp/" style="font-size: 15px;">bootcamp</a> <a href="/tags/macbook/" style="font-size: 15px;">macbook</a> <a href="/tags/macos/" style="font-size: 15px;">macos</a> <a href="/tags/%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81/" style="font-size: 15px;">重置密码</a> <a href="/tags/rss/" style="font-size: 15px;">rss</a> <a href="/tags/ssh/" style="font-size: 15px;">ssh</a> <a href="/tags/MariaDB/" style="font-size: 15px;">MariaDB</a> <a href="/tags/mysqlnd/" style="font-size: 15px;">mysqlnd</a> <a href="/tags/mysq/" style="font-size: 15px;">mysq</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" style="font-size: 15px;">命令行</a> <a href="/tags/%E5%A4%87%E4%BB%BD/" style="font-size: 15px;">备份</a> <a href="/tags/%E8%BF%98%E5%8E%9F/" style="font-size: 15px;">还原</a> <a href="/tags/expires/" style="font-size: 15px;">expires</a></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2025 <a href="/." rel="nofollow">ICT经验网.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a> Theme by<a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Maupassant.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>

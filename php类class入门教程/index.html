@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>PHP类(Class)入门教程 | ICT经验网</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">PHP类(Class)入门教程</h1><a id="logo" href="/.">ICT经验网</a><p class="description">关注Linux、PHP、WordPress、虚拟化、深度学习等</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">PHP类(Class)入门教程</h1><div class="post-meta">2009-12-24<span> | </span><span class="category"><a href="/categories/uncategorized/">uncategorized</a></span><span class="post-time"><span class="post-meta-item-text"> | </span><span class="post-meta-item-icon"><i class="fa fa-keyboard-o"></i><span class="post-count"> 161</span><span class="post-meta-item-text"> 字</span></span></span><span class="post-time"> | <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i><span class="post-count"> 1</span><span class="post-meta-item-text"> 分钟</span></span></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div></div></div><div class="post-content"><p><strong>诙谐易懂的解释什么是类 <a target="_blank" rel="noopener" href="http://www.phpchina.com/html/42/13542-2907.html">http://www.phpchina.com/html/42/13542-2907.html</a></strong></p>
+<p>刚在大略浏览了一下首页更新的那篇有关Class的文章（指PHPE的那篇<a target="_blank" rel="noopener" href="http://www.phpe.net/articles/389.shtml">http://www.phpe.net/articles/389.shtml</a>），很不错，建议看看。</p>
+<p>对类的摸索～～俺用了半年时间才大概理解类的作用和实现。主要是没有一篇能让我理解的文章（之前没接触过任何OO的东西）。PHPChina 开源社区门户.</p>
+<p>以我的观点来说说<a target="_blank" rel="noopener" href="http://www.phpchina.com/"><strong>PHP</strong></a>中的Class，用于表达的语言都是非正式的语言，也不能确定是否正确。</p>
+<p>建立一个类很简单。</p>
+<ol>
+<li><?php</li>
+<li>classmy_class{}</li>
+<li>?&gt;</li>
+</ol>
+<p>类到底干什么呢？很多人都是什么黑匣子，我在这里称它为一个独立的整体。我们只知道类名，而不知道里面有什么东西。那么，该如何使用这个类呢？<br>首先：要知道它里面是否定义了公共的变量－－专业术语上称它为“属性”。<br>其次：要知道它里面定义了什么函数－－专业术语中称它为“方法”。我都被这些专业术语搞糊涂了，所以干脆不理它了。</p>
+<p>类中的如何定义公共变量，它有什么作用呢？</p>
+<p>很简单，我们来扩充 my_class 类</p>
+<ol>
+<li><?php</li>
+<li>classmy_class</li>
+<li>{</li>
+<li>var$username;</li>
+<li>}</li>
+<li>?&gt;</li>
+</ol>
+<p>看上面很简单，我们定义了一个公共的变量，只是用 var+空格+普通变量名 构成。它有什么用呢？考虑一下函数中，如果我们要访问函数外的变量，是不是要先 global 一下呢？这个想实现的效果也是如此，它是想让这个类中的所有函数都能访问它，而它区别于函数的一个地方，是类的外部也可以访问这个变量，我随后再讲外部如何访问它。还有一个区别，不能用复杂的语句给这个变量赋值（具体的等理解了类以后自己去看规则）。给它一个默认值</p>
+<ol>
+<li><?php</li>
+<li>classmy_class</li>
+<li>{</li>
+<li>var$username&#x3D;”深空”;</li>
+<li>}</li>
+<li>?&gt;</li>
+</ol>
+<p>定义了一个公共的变量了，接下来定义一个函数（也就是所谓的“方法”）。</p>
+<ol>
+<li><?php</li>
+<li><p>classmy_class</p>
+</li>
+<li><p>{</p>
+</li>
+<li><p>var$username&#x3D;”深空”;</p>
+</li>
+<li><p>functionshow_username()</p>
+</li>
+<li><p>{</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>?&gt;</p>
+</li>
+</ol>
+<p>这个定义函数跟普通的定义函数形式上没什么区别了。简单就好，定义一个打印 $username 的函数：</p>
+<ol>
+<li><?php</li>
+<li><p>classmy_class</p>
+</li>
+<li><p>{</p>
+</li>
+<li><p>var$username&#x3D;”深空”;</p>
+</li>
+<li><p>functionshow_username($username)</p>
+</li>
+<li><p>{</p>
+</li>
+<li><p>echo$username;</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>?&gt;</p>
+</li>
+</ol>
+<p>到这里可能某些人开始迷糊了，呵呵，最关键的就是这里了，看清楚了。现在有三个 $username 了。到底哪个是哪个啊～～<br>函数所带的行参，不用解释了吧？这个函数功能就是打印行参所接收的值，也就是如果：</p>
+<ol>
+<li><?php</li>
+<li>show_username(“猪头深空”);</li>
+<li>?&gt;</li>
+</ol>
+<p>那么它将打印 “猪头深空” ，就这么简单。<br>怎么样访问这个函数？肯定不是我上面说的那样直接 show_username(”猪头深空”); 了，别急，类有类的一套。如下：</p>
+<ol>
+<li><?php</li>
+<li>$Name&#x3D;newmy_class();</li>
+<li>?&gt;</li>
+</ol>
+<p>这样就初始化上面的那个 my_class 的类了，并把这个<a target="_blank" rel="noopener" href="http://www.phpchina.com/"><strong>对象</strong></a>赋给变量 $Name ，你可以这样理解，这个变量就代表整个类了，呵呵。<br>使用类中的函数：</p>
+<ol>
+<li><?php</li>
+<li>$Name-&gt;show_username(“猪头深空”);</li>
+<li>?&gt;</li>
+</ol>
+<p>晕了，为什么这么复杂？还要箭头？其实很形象的。本来已经把类给了变量 $Name 了是吧？也就是 $Name 代表了这个类，然后用一个箭头指向类中的 show_username 这个函数。就是这么简单，也就是说，这个函数是这个类中的，而不是其他的函数－－你就理解为表示一个区别吧，呵呵。</p>
+<p>试试看哦，打印出 “猪头深空” 这四个字了。你说为什么要这么复杂？用函数不是也能实现么？我说，这么简单的你当然看不出好处了，我们继续扩充。<br>还有一个疑问：刚才说的“公共的变量”怎么一点用处都没有呢？为什么这个函数不会自动接收这个公共变量 var $username 中的默认值？也就是如果我使用：</p>
+<ol>
+<li><?php</li>
+<li>$Name-&gt;show_username($username);</li>
+<li>?&gt;</li>
+</ol>
+<p>会有什么结果呢?答案是没有任何输出。因为你没有给形参 $username 一个值。PHPChina 开源社区门户 jo)@BBy<br>那么该怎么使用这个公共的变量？我们来修改一下这个类:</p>
+<ol>
+<li><?php</li>
+<li><p>classmy_class</p>
+</li>
+<li><p>{</p>
+</li>
+<li><p>var$username&#x3D;”深空”;</p>
+</li>
+<li><p>functionshow_username()</p>
+</li>
+<li><p>{</p>
+</li>
+<li><p>echo$this-&gt;username;</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>?&gt;</p>
+</li>
+</ol>
+<p>哇靠，不是吧，这回脸形参都没有了？还多了一个$this-&gt;，晕了不是，呵呵。其实这也是类的一个最大的方便之处。<br>$this 的作用：访问一个公共的变量，或者类里面的函数。<br>访问？这么专业？其实就是用 $this-&gt;username 来代替 var $username 而已拉，$this 用来说明它是公共的。可以访问的，函数外部的东西。<br>试试看：</p>
+<ol>
+<li><?php</li>
+<li>$Name-&gt;show_username();</li>
+<li>?&gt;</li>
+</ol>
+<p>看到了吧，终于打印 “深空” 这两个字了，娃哈哈。<br>我不打印“深空”这两个字，我要打印“猪头深空”，怎么办？很简单，我们给这个公共变量重新赋值拉。服了你了。</p>
+<ol>
+<li><?php</li>
+<li>$Name-&gt;username&#x3D;”猪头深空”;</li>
+<li>?&gt;</li>
+</ol>
+<p>这个能明白意思么？$Name-&gt;username 表示的是类里面的这个公共变量。等号赋值不用我解释了。</p>
+<p>我们再来打印看看</p>
+<ol>
+<li><?php</li>
+<li>$Name-&gt;show_username();</li>
+<li>?&gt;</li>
+</ol>
+<p>哈哈，终于打印“猪头深空”了。不错吧，很方便吧，不用形参也能任意修改打印值哦～～。</p>
+<p>不过单单打印一个名称也太没意思了，我们说点欢迎的话吧，来扩充一下这个类，创建一个名叫 Welcome 的函数：</p>
+<ol>
+<li><?php</li>
+<li><p>classmy_class</p>
+</li>
+<li><p>{</p>
+</li>
+<li><p>var$username&#x3D;”深空”;</p>
+</li>
+<li><p>functionshow_username()</p>
+</li>
+<li><p>{</p>
+</li>
+<li><p>echo$this-&gt;username;</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>functionWelcome()</p>
+</li>
+<li><p>{</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>?&gt;</p>
+</li>
+</ol>
+<p>恩，实现什么功能好呢？简单点吧，就实现在名字前面有 “欢迎” 两个字好了</p>
+<ol>
+<li><?php</li>
+<li><p>classmy_class</p>
+</li>
+<li><p>{</p>
+</li>
+<li><p>var$username&#x3D;”深空”;</p>
+</li>
+<li><p>functionshow_username()</p>
+</li>
+<li><p>{</p>
+</li>
+<li><p>echo$this-&gt;username;</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>functionWelcome()</p>
+</li>
+<li><p>{</p>
+</li>
+<li><p>echo”欢迎”;</p>
+</li>
+<li><p>$this-&gt;show_username();</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>?&gt;</p>
+</li>
+</ol>
+<p>第二次看到 $this 了吧？$this-&gt;show_username(); 干什么用呢？其实它就是调用 show_username 这个函数，用 $this 来表示这个函数在类中并且和 Welcome 函数平行，而不是在其他地方（比如Welcome函数中）。</p>
+<p>Welcome 函数实现的功能很简单，首先打印两个字”欢迎”，然后接下去执行 show_username 函数，打印名字。</p>
+<p>来试试这个函数吧：</p>
+<ol>
+<li><?php</li>
+<li>$Name-&gt;Welcome();</li>
+<li>?&gt;</li>
+</ol>
+<p>看到了吧，打印出“欢迎深空”这四个字了。</p>
+<p>可是我要打印“欢迎猪头深空”，怎么办？我服了你了，我们给公共变量 var $username 一个值吧：</p>
+<ol>
+<li><?php</li>
+<li>$Name-&gt;username&#x3D;”猪头深空”;</li>
+<li>?&gt;</li>
+</ol>
+<p>接下去打印欢迎语：</p>
+<ol>
+<li><?php</li>
+<li>$Name-&gt;Welcome();</li>
+<li>?&gt;</li>
+</ol>
+<p>嘿嘿，终于打印“欢迎猪头深空”了。</p>
+<p>怎么样？明白了类的用法了么？好处在于能够调用类中的任意函数，只要用 $this 指出来，可以改变一个公共变量的值，可以在类中的函数中使用这个公共变量。………多了去了，它的应用等待你去发现了。</p>
+</div><div class="tags"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/class/" rel="tag">class</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/" rel="tag">php</a></li></ul></div><div class="post-nav"><a class="pre" href="/php%E4%B8%AD%E7%9A%84checkbox/">PHP中的CHECKBOX</a><a class="next" href="/php5%E4%B8%AD%E5%88%9D%E6%AC%A1%E4%BD%BF%E7%94%A8phplib%E5%B0%8F%E8%AE%B0/">PHP5中初次使用phplib小记</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="输入关键词搜索"/><input type="hidden" name="sitesearch" value="http://example.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/%E5%AE%B6%E5%BA%AD%E7%BD%91%E7%BB%9C%E5%86%8D%E6%AC%A1%E4%BC%98%E5%8C%96%EF%BC%9A%E5%87%8F%E5%B0%91%E5%A4%8D%E6%9D%82%E6%80%A7%E5%87%8F%E5%B0%91%E8%AE%BE%E5%A4%87/">家庭网络再次优化：减少复杂性减少设备</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%8C%97%E4%BA%AC%E8%81%94%E9%80%9A%E6%9B%B4%E6%8D%A2%E5%85%89%E7%8C%AB%E7%83%BD%E7%81%ABhg5582a/">北京联通更换光猫烽火HG5582A</a></li><li class="post-list-item"><a class="post-list-link" href="/%E9%9D%9E%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%ACr%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/">非最新版本R安装软件包依赖问题</a></li><li class="post-list-item"><a class="post-list-link" href="/pycharm-r%E8%84%9A%E6%9C%AC%E7%94%BB%E5%9B%BE%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/">PyCharm R脚本 画图不显示问题</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%AE%B6%E5%BA%AD%E7%BD%91%E7%BB%9C%E5%8D%87%E7%BA%A7300m-1000m/">家庭网络升级300M-1000M</a></li><li class="post-list-item"><a class="post-list-link" href="/win11-23h2-%E5%8D%87%E7%BA%A724h2/">Win11 23H2 升级24H2：使用微软官方工具MBR2GPT转换磁盘MBR->GPT</a></li><li class="post-list-item"><a class="post-list-link" href="/%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%B8%A4%E4%B8%AA%E8%B4%A6%E5%8F%B7%E5%90%88%E5%B9%B6%EF%BC%88%E7%BD%91%E6%98%93%E9%82%AE%E7%AE%B1%E5%8F%8A%E5%BE%AE%E4%BF%A1%E8%B4%A6%E5%8F%B7%EF%BC%89/">有道云笔记两个账号合并（网易邮箱及微信账号）</a></li><li class="post-list-item"><a class="post-list-link" href="/kms%E5%B7%A5%E5%85%B7%E6%BF%80%E6%B4%BBoffice-ltsc-%E6%8A%A5%E9%94%99-error-code-0x80080005/">KMS工具激活Office LTSC 报错 Error Code: 0x80080005</a></li><li class="post-list-item"><a class="post-list-link" href="/vmware-esxi-%E7%94%B15-5%E5%8D%87%E7%BA%A7%E5%88%B07-0/">VMware ESXi 由5.5升级到7.0</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%B0%8F%E7%B1%B38-%E5%88%B7%E7%AC%AC%E4%B8%89%E6%96%B9%E5%9B%BA%E4%BB%B6%E5%A7%8B%E6%9C%AB/">小米8 刷第三方固件始末</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/lib/" style="font-size: 15px;">lib</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/php%E5%BC%80%E6%BA%90%E7%A8%8B%E5%BA%8F/" style="font-size: 15px;">php开源程序</a> <a href="/tags/301/" style="font-size: 15px;">301</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/adobe/" style="font-size: 15px;">adobe</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/spry/" style="font-size: 15px;">spry</a> <a href="/tags/access-connections/" style="font-size: 15px;">access connections</a> <a href="/tags/Thinkpad/" style="font-size: 15px;">Thinkpad</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/a2ensite/" style="font-size: 15px;">a2ensite</a> <a href="/tags/apache/" style="font-size: 15px;">apache</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 15px;">经验</a> <a href="/tags/htaccess/" style="font-size: 15px;">htaccess</a> <a href="/tags/bash/" style="font-size: 15px;">bash</a> <a href="/tags/windows/" style="font-size: 15px;">windows</a> <a href="/tags/windows10/" style="font-size: 15px;">windows10</a> <a href="/tags/bitcoin/" style="font-size: 15px;">bitcoin</a> <a href="/tags/p2p/" style="font-size: 15px;">p2p</a> <a href="/tags/hadoop/" style="font-size: 15px;">hadoop</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/" style="font-size: 15px;">分布式计算</a> <a href="/tags/bb/" style="font-size: 15px;">bb</a> <a href="/tags/centos/" style="font-size: 15px;">centos</a> <a href="/tags/iptables/" style="font-size: 15px;">iptables</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/buffering/" style="font-size: 15px;">buffering</a> <a href="/tags/output/" style="font-size: 15px;">output</a> <a href="/tags/output-buffering/" style="font-size: 15px;">output_buffering</a> <a href="/tags/php-ini/" style="font-size: 15px;">php.ini</a> <a href="/tags/cdrom/" style="font-size: 15px;">cdrom</a> <a href="/tags/CentOS/" style="font-size: 15px;">CentOS</a> <a href="/tags/yum/" style="font-size: 15px;">yum</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 15px;">运维</a> <a href="/tags/clear/" style="font-size: 15px;">clear</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/ie6/" style="font-size: 15px;">ie6</a> <a href="/tags/%E5%8D%A0%E7%94%A8%E9%AB%98%E5%BA%A6/" style="font-size: 15px;">占用高度</a> <a href="/tags/blackboard/" style="font-size: 15px;">blackboard</a> <a href="/tags/ckeditor/" style="font-size: 15px;">ckeditor</a> <a href="/tags/wordpress/" style="font-size: 15px;">wordpress</a> <a href="/tags/gd/" style="font-size: 15px;">gd</a> <a href="/tags/imagecreate/" style="font-size: 15px;">imagecreate</a> <a href="/tags/dfGallery/" style="font-size: 15px;">dfGallery</a> <a href="/tags/N-A/" style="font-size: 15px;">#N/A</a> <a href="/tags/excel/" style="font-size: 15px;">excel</a> <a href="/tags/Office%E6%8A%80%E5%B7%A7/" style="font-size: 15px;">Office技巧</a> <a href="/tags/dotproject/" style="font-size: 15px;">dotproject</a> <a href="/tags/project/" style="font-size: 15px;">project</a> <a href="/tags/office/" style="font-size: 15px;">office</a> <a href="/tags/compact/" style="font-size: 15px;">compact</a> <a href="/tags/extract/" style="font-size: 15px;">extract</a> <a href="/tags/fck%EF%BC%8Ceditor/" style="font-size: 15px;">fck，editor</a> <a href="/tags/ftp/" style="font-size: 15px;">ftp</a> <a href="/tags/buzz/" style="font-size: 15px;">buzz</a> <a href="/tags/google-reader/" style="font-size: 15px;">google reader</a> <a href="/tags/google/" style="font-size: 15px;">google</a> <a href="/tags/hosts/" style="font-size: 15px;">hosts</a> <a href="/tags/ipv6/" style="font-size: 15px;">ipv6</a> <a href="/tags/%E6%9C%80%E6%96%B0%E8%B5%84%E8%AE%AF/" style="font-size: 15px;">最新资讯</a> <a href="/tags/hook/" style="font-size: 15px;">hook</a> <a href="/tags/flash/" style="font-size: 15px;">flash</a> <a href="/tags/html4/" style="font-size: 15px;">html4</a> <a href="/tags/Web-Applacation/" style="font-size: 15px;">Web Applacation</a> <a href="/tags/insert-ino/" style="font-size: 15px;">insert ino</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/update/" style="font-size: 15px;">update</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/jeecms/" style="font-size: 15px;">jeecms</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/jQuery-lightBox/" style="font-size: 15px;">jQuery lightBox</a> <a href="/tags/js/" style="font-size: 15px;">js</a> <a href="/tags/jpgraph/" style="font-size: 15px;">jpgraph</a> <a href="/tags/0x80080005/" style="font-size: 15px;">0x80080005</a> <a href="/tags/kms/" style="font-size: 15px;">kms</a> <a href="/tags/SppExtComObj/" style="font-size: 15px;">SppExtComObj</a> <a href="/tags/pchart/" style="font-size: 15px;">pchart</a> <a href="/tags/limesurvey/" style="font-size: 15px;">limesurvey</a> <a href="/tags/fckeditor/" style="font-size: 15px;">fckeditor</a> <a href="/tags/%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93/" style="font-size: 15px;">中文字体</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 15px;">网络</a> <a href="/tags/mb-substr/" style="font-size: 15px;">mb_substr</a> <a href="/tags/spss/" style="font-size: 15px;">spss</a> <a href="/tags/bootcamp/" style="font-size: 15px;">bootcamp</a> <a href="/tags/macbook/" style="font-size: 15px;">macbook</a> <a href="/tags/macos/" style="font-size: 15px;">macos</a> <a href="/tags/%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81/" style="font-size: 15px;">重置密码</a> <a href="/tags/rss/" style="font-size: 15px;">rss</a> <a href="/tags/ssh/" style="font-size: 15px;">ssh</a> <a href="/tags/MariaDB/" style="font-size: 15px;">MariaDB</a> <a href="/tags/mysqlnd/" style="font-size: 15px;">mysqlnd</a> <a href="/tags/mysq/" style="font-size: 15px;">mysq</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" style="font-size: 15px;">命令行</a> <a href="/tags/%E5%A4%87%E4%BB%BD/" style="font-size: 15px;">备份</a> <a href="/tags/%E8%BF%98%E5%8E%9F/" style="font-size: 15px;">还原</a> <a href="/tags/expires/" style="font-size: 15px;">expires</a></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2025 <a href="/." rel="nofollow">ICT经验网.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a> Theme by<a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Maupassant.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>

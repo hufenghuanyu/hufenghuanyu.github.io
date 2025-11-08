@@ -1,0 +1,360 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>WordPress常用函数-wpdb类 | ICT经验网</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">WordPress常用函数-wpdb类</h1><a id="logo" href="/.">ICT经验网</a><p class="description">关注Linux、PHP、WordPress、虚拟化、深度学习等</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">WordPress常用函数-wpdb类</h1><div class="post-meta">2010-06-07<span> | </span><span class="category"><a href="/categories/uncategorized/">uncategorized</a></span><span class="post-time"><span class="post-meta-item-text"> | </span><span class="post-meta-item-icon"><i class="fa fa-keyboard-o"></i><span class="post-count"> 2.7k</span><span class="post-meta-item-text"> 字</span></span></span><span class="post-time"> | <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i><span class="post-count"> 10</span><span class="post-meta-item-text"> 分钟</span></span></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BB%BA%E7%AB%8B%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.</span> <span class="toc-text">与数据库建立接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.</span> <span class="toc-text">执行数据库查询</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E4%B8%80%E4%B8%AA%E5%8F%98%E9%87%8F"><span class="toc-number">3.</span> <span class="toc-text">选择一个变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E8%A1%A8%E8%A1%8C"><span class="toc-number">4.</span> <span class="toc-text">选择表行</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E8%A1%A8%E5%88%97"><span class="toc-number">5.</span> <span class="toc-text">选择表列</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E7%94%9F%E6%88%90%E7%9A%84%E7%BB%93%E6%9E%9C"><span class="toc-number">6.</span> <span class="toc-text">选择生成的结果</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text">title&#x3D;”Permanent Link to “&gt;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text"> Not Found</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E8%A1%A8%E8%A1%8C-%E5%88%97"><span class="toc-number">1.</span> <span class="toc-text">插入表行&#x2F;列</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E8%A1%A8%E8%A1%8C-%E5%88%97"><span class="toc-number">2.</span> <span class="toc-text">更新表行&#x2F;列</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%98%B2%E6%AD%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E9%81%AD%E5%88%B0SQL%E6%B3%A8%E5%85%A5%E5%BC%8F%E6%94%BB%E5%87%BB"><span class="toc-number">3.</span> <span class="toc-text">防止数据库查询遭到SQL注入式攻击</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA-%E9%9A%90%E8%97%8FSQL%E9%94%99%E8%AF%AF"><span class="toc-number">4.</span> <span class="toc-text">显示&#x2F;隐藏SQL错误</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E4%B8%AD%E6%9F%90%E5%88%97%E4%BF%A1%E6%81%AF"><span class="toc-number">5.</span> <span class="toc-text">获取数据库表中某列信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E7%BC%93%E5%AD%98"><span class="toc-number">6.</span> <span class="toc-text">清除缓存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E5%8F%98%E9%87%8F"><span class="toc-number">7.</span> <span class="toc-text">类变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%A8"><span class="toc-number">8.</span> <span class="toc-text">表</span></a></li></ol></div></div><div class="post-content"><p>转载自：<a target="_blank" rel="noopener" href="http://www.wordpress.la/codex-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-wpdb%E7%B1%BB.html">http://www.wordpress.la/codex-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-wpdb%E7%B1%BB.html</a><br>WordPress啦基本是中文WordPress资源中最丰富的地方，接下来会转载很多那里的文章，在此表示感谢</p>
+<h5 id="与数据库建立接口"><a href="#与数据库建立接口" class="headerlink" title="与数据库建立接口"></a>与数据库建立接口</h5><p>WordPress为用户提供了一系列用于数据库操作的函数类——wpdb。Wpdb类建立在Justin Vincent编写并维护的<a target="_blank" rel="noopener" href="http://www.woyano.com/jv/ezsql">ezSQL</a>类的基础上。</p>
+<p><strong>使用须知</strong></p>
+<p>不可直接调用wpdb类中的方法，应使用全局变量$wpdb。$wpdb是WordPress提供的一个全局变量，该全局变量是负责与WordPress数据库交流的类的实例化。（在自定义函数中使用$wpdb前，请记住<a target="_blank" rel="noopener" href="http://www.php.net/manual/en/language.variables.scope.php#language.variables.scope.global">全局化</a>$wpdb。）</p>
+<p>可以用$wpdb对象从任何一个WordPress数据库表（而非仅仅标准数据库表）中读取数据。例如，如果你需要从一个名为“mytable”的自定义表中选定一些信息，可以使用以下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$myrows = $wpdb-&gt;[get_results](http://codex.wordpress.org/Function_Reference/wpdb_Class#SELECT_Generic_Results)( &quot;SELECT id, name FROM mytable&quot; );  </span><br></pre></td></tr></table></figure>
+
+<p>$wpdb对象可以与任何数量的数据库表交流，但这些数据库表只能来自一个数据库——WordPress数据库。如果你要连接到其它数据库（极少情况），那么你就需要用相应的连接细节信息从wpdb类中将你的对象实例化。如果需要设置多个数据库，可以考虑使用 <a target="_blank" rel="noopener" href="http://wordpress.org/extend/plugins/hyperdb/">hyperdb</a>。</p>
+<h5 id="执行数据库查询"><a href="#执行数据库查询" class="headerlink" title="执行数据库查询"></a>执行数据库查询</h5><p>你可以通过query函数在WordPress数据库中执行_任何_SQL查询。不过我们推荐为SELECT查询使用更为具体的函数。</p>
+<?php $wpdb->query('query'); ?>
+
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的SQL语句。</p>
+<p>函数返回一个与选定内容的行数相应的整数。如果发生MySQL错误，函数返回FALSE。（注意：0和FALSE都可能被返回，确保使用正确的比较运算符：equality &#x3D;&#x3D; vs. identicality &#x3D;&#x3D;&#x3D;）。</p>
+<p>注意：使用wpdb类中所有可执行SQL查询的函数时，都需要将所有输入内容&#x2F;inputs进行字符转义（如wpdb-&gt;escape($user_entered_data_string)）。见下文。</p>
+<p><strong>示例</strong></p>
+<p>删除ID为13的文章的“gargle”元关键字和值。</p>
+<p>$wpdb-&gt;query(“</p>
+<p>DELETE FROM $wpdb-&gt;postmeta WHERE post_id &#x3D; ‘13’</p>
+<p>AND meta_key &#x3D; ‘gargle’”);</p>
+<p>由<a target="_blank" rel="noopener" href="http://www.wordpress.la/codex-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-delete_post_meta%28%29.html">delete_post_meta</a>执行。</p>
+<p>将<a target="_blank" rel="noopener" href="http://www.wordpress.la/codex-%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8.html">页面</a>7设为页面15的父级。</p>
+<p>$wpdb-&gt;query(“</p>
+<p>UPDATE $wpdb-&gt;posts SET post_parent &#x3D; 7</p>
+<p>WHERE ID &#x3D; 15 AND post_status &#x3D; ‘static’”);</p>
+<h5 id="选择一个变量"><a href="#选择一个变量" class="headerlink" title="选择一个变量"></a>选择一个变量</h5><p>get_var函数返回一个来自数据库的变量。虽然只返回一个变量，但查询结果会被整体缓存，供后期使用。如果没有查询结果，返回NULL。</p>
+<?php $wpdb->get_var('query',column_offset,row_offset); ?>
+
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的查询。将该参数设为null会使函数返回上一个查询缓存结果中的具体变量。</p>
+<p><strong>column_offset</strong></p>
+<p>（整数）预计的数据库表的列数（0为表中第一列）。默认值为0。</p>
+<p><strong>row_offset</strong></p>
+<p>（整数）预计的数据库表的行数（0为表中第一行）。默认值为0。</p>
+<p><strong>示例</strong></p>
+<p>检索并返回用户数量。</p>
+<?php
+  
+$user_count = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM $wpdb->users;"));
+
+  
+echo '<p>User count is ' . $user_count . '</p>';
+
+  
+?>
+
+<p>检索并返回<a target="_blank" rel="noopener" href="http://www.wordpress.la/codex-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5.html">自定义字段</a>值的总数。</p>
+<?php
+  
+$meta_key = 'miles';//set this to appropriate custom field meta key
+
+  
+$allmiles=$wpdb->get_var($wpdb->prepare("SELECT sum(meta_value) FROM $wpdb->postmeta WHERE meta_key = %s", $meta_key));
+
+  
+echo '<p>Total miles is '.$allmiles . '</p>';
+
+  
+?>
+
+<h5 id="选择表行"><a href="#选择表行" class="headerlink" title="选择表行"></a>选择表行</h5><p>从某个查询中检索一整行内容，可使用get_row函数。该函数可将行作为对象、关联数组或数值索引数组返回。如果查询返回了多个行，函数只返回指定行，但所有返回的行都将被缓存以供日后使用。</p>
+<?php $wpdb->get_row('query', output_type, row_offset); ?>
+
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的查询语句。</p>
+<p><strong>output_type</strong></p>
+<p>三个预定义的常量之一。默认值为OBJECT。</p>
+<ul>
+<li><p>OBJECT —— 返回的结果以对象形式输出</p>
+</li>
+<li><p>ARRAY_A ——返回的结果以关联数组形式输出</p>
+</li>
+<li><p>ARRAY_N —— 返回的结果以数值索引数组形式输出</p>
+</li>
+</ul>
+<p><strong>row_offset</strong></p>
+<p>（整数）预计的数据库表的行数（0为表中第一行）。默认值为0。</p>
+<p><strong>示例</strong></p>
+<p>获取ID为10的链接的所有资料。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$mylink = $wpdb-&gt;get_row(&quot;SELECT * FROM $wpdb-&gt;links WHERE link_id = 10&quot;);  </span><br></pre></td></tr></table></figure>
+
+<p>$mylink对象的属性即SQL查询结果的行名称（在该例中，即 $wpdb-&gt;links表中的所有行）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $mylink-&gt;link_id; // prints &quot;10&quot;  </span><br></pre></td></tr></table></figure>
+
+<p>使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$mylink = $wpdb-&gt;get_row(&quot;SELECT * FROM $wpdb-&gt;links WHERE link_id = 10&quot;, ARRAY_A);  </span><br></pre></td></tr></table></figure>
+
+<p>则会生成一个关联数组：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $mylink[&#x27;link_id&#x27;]; // prints &quot;10&quot;  </span><br></pre></td></tr></table></figure>
+
+<p>而</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$mylink = $wpdb-&gt;get_row(&quot;SELECT * FROM $wpdb-&gt;links WHERE link_id = 10&quot;, ARRAY_N);  </span><br></pre></td></tr></table></figure>
+
+<p>则会生成一个数值索引数组：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $mylink[1]; // prints &quot;10&quot;  </span><br></pre></td></tr></table></figure>
+
+<h5 id="选择表列"><a href="#选择表列" class="headerlink" title="选择表列"></a>选择表列</h5><p>要选择数据库表中的一列内容，可使用get_col函数。该函数输出一个空间数组，如果查询返回了多个列，函数只返回指定列，但所有返回的列都将被缓存以供日后使用。</p>
+<?php $wpdb->get_col('query',column_offset); ?>
+
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的查询。将该参数设为null会使函数返回上一个查询的缓存结果中的执行表列。</p>
+<p><strong>column_offset</strong></p>
+<p>（整数）预计的数据库表的列数（0为表中第一列）。默认值为0。</p>
+<p><strong>示例</strong></p>
+<p>在这个例子中，我们假设有一个专注于发布汽车资讯的博客，博客中每篇文章都介绍了一辆特别的汽车（如1969 Ford Mustang）。此外我们将三个<a target="_blank" rel="noopener" href="http://www.wordpress.la/codex-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5.html">自定义字段</a>——manufacture、model和year指定给各篇文章。这里我们的目的是显示manufacturer（生产商）为Ford的所有文章的标题，各个标题按模型和年份排列。</p>
+<p>可以利用wpdb类的get_col形式返回一个符合要求、以正确顺序排列的文章ID数组。然后通过foreach构造函数重复该文章ID数组，显示每篇文章的标题。本示例的SQL查询由 <a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/1690762/complicated-mysql-query/1690808#1690808">Andomar</a>编写。</p>
+<?php
+  
+$meta_key1 = 'model';
+
+  
+$meta_key2 = 'year';
+
+  
+$meta_key3 = 'manufacturer';
+
+  
+$meta_key3_value = 'Ford';
+
+$postids=$wpdb->get_col($wpdb->prepare("
+  
+SELECT key3.post_id
+
+  
+FROM $wpdb->postmeta key3
+
+  
+INNER JOIN $wpdb->postmeta key1
+
+  
+on key1.post_id = key3.post_id
+
+  
+and key1.meta_key = %s
+
+  
+INNER JOIN $wpdb->postmeta key2
+
+  
+on key2.post_id = key3.post_id
+
+  
+and key2.meta_key = %s
+
+  
+WHERE key3.meta_key = %s
+
+  
+and key3.meta_value = %s
+
+  
+ORDER BY key1.meta_value, key2.meta_value",$meta_key1, $meta_key2, $meta_key3, $meta_key3_value));
+
+if ($postids) {
+  
+echo 'List of $meta_key3_value . '(s), sorted by ' . $meta_key1 . ', ' . $meta_key2;
+
+  
+foreach ($postids as $id) {
+
+  
+$post=get_post(intval($id));
+
+  
+setup_postdata($post);?>
+
+<p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
+
+  
+<?php
+
+  
+}
+
+  
+}
+
+  
+?>
+
+<h5 id="选择生成的结果"><a href="#选择生成的结果" class="headerlink" title="选择生成的结果"></a>选择生成的结果</h5><p>get_results可以从数据库中抽取函数生成的多行结果。Wpdb函数以数组形式返回整个查询结果。数组中每个元素都对应查询结果中的一行，如get_row既可以是对象，也可以是关联数组或数值型数组。</p>
+<?php $wpdb->get_results('query', output_type); ?>
+
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的查询语句。将该参数设为null会使函数返回上一个查询的缓存结果中的信息。</p>
+<p><strong>output_type</strong></p>
+<p>三个预定义的常量之一。默认值为OBJECT。更多信息请见上文中的“<strong>选择表行</strong>”。</p>
+<ul>
+<li><p>OBJECT —— 以对象形式输出返回的结果</p>
+</li>
+<li><p>ARRAY_A ——以关联数组形式输出返回的结果</p>
+</li>
+<li><p>ARRAY_N —— 以数值索引数组形式输出返回的结果</p>
+</li>
+</ul>
+<p><strong>示例</strong></p>
+<p>获取ID为5的用户的所有文章草稿的ID和标题并回应标题。</p>
+<p>$fivesdrafts &#x3D; $wpdb-&gt;get_results(“SELECT ID, post_title FROM $wpdb-&gt;posts</p>
+<p>WHERE post_status &#x3D; ‘draft’ AND post_author &#x3D; 5”);</p>
+<p>foreach ($fivesdrafts as $fivesdraft) {</p>
+<p>echo $fivesdraft-&gt;post_title;</p>
+<p>}</p>
+<p>获取ID为5的用户的所有文章草稿信息。</p>
+<?php
+  
+$fivesdrafts = $wpdb->get_results("SELECT * FROM $wpdb->posts
+
+  
+WHERE post_status = 'draft' AND post_author = 5");
+
+  
+if ($fivesdrafts) :
+
+  
+foreach ($fivesdrafts as $post) :
+
+  
+setup_postdata($post);
+
+  
+?>
+
+<h2><a href="<?php the_permalink(); ?>" rel="bookmark"
+
+  
+<p>title&#x3D;”Permanent Link to <?php the_title(); ?>“&gt;<?php the_title(); ?></a></h2></p>
+<?php
+
+  
+endforeach;
+
+  
+else :
+
+  
+?>
+
+<h2> Not Found</h2>
+
+  
+<?php endif; ?>
+
+<h5 id="插入表行-列"><a href="#插入表行-列" class="headerlink" title="插入表行&#x2F;列"></a>插入表行&#x2F;列</h5><p>在数据库表中插入一行&#x2F;列内容。</p>
+<p><strong>示例</strong></p>
+<p>在一行中插入两列内容，第一个列的值为字符串，第二列的值为数字：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$wpdb-&gt;insert( &#x27;table&#x27;, array( &#x27;column1&#x27; =&gt; &#x27;value1&#x27;, &#x27;column2&#x27; =&gt; 123 ), array( &#x27;%s&#x27;, &#x27;%d&#x27; ) )  </span><br></pre></td></tr></table></figure>
+
+<p>可能的值：- %s 为字符串，- %d 为十进制数字，- %f 为浮点。</p>
+<h5 id="更新表行-列"><a href="#更新表行-列" class="headerlink" title="更新表行&#x2F;列"></a>更新表行&#x2F;列</h5><p>更新数据库表中某行&#x2F;列的内容。</p>
+<p><strong>示例</strong></p>
+<p>要更新一个表行，其ID为1，该行第一列中的值是一个字符串，第二列中的值是一个数字：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$wpdb-&gt;update( &#x27;table&#x27;, array( &#x27;column1&#x27; =&gt; &#x27;value1&#x27;, &#x27;column2&#x27; =&gt; &#x27;value2&#x27; ), array( &#x27;ID&#x27; =&gt; 1 ), array( &#x27;%s&#x27;, &#x27;%d&#x27; ), array( &#x27;%d&#x27; ) )  </span><br></pre></td></tr></table></figure>
+
+<h5 id="防止数据库查询遭到SQL注入式攻击"><a href="#防止数据库查询遭到SQL注入式攻击" class="headerlink" title="防止数据库查询遭到SQL注入式攻击"></a>防止数据库查询遭到SQL注入式攻击</h5><p>更多在WordPress中避免SQL攻击的信息，请看<a target="_blank" rel="noopener" href="http://www.wordpress.la/codex-%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81.html">数据验证</a>。这是WordPress代码编写者和插件开发者的必读文章。</p>
+<p>简单地说，执行SQL查询以阻止SQL注入式攻击前，SQL查询中的所有数据都需要经过SQL字符转义。可以通过prepare方法快速完成字符转义，该方法使用 <a target="_blank" rel="noopener" href="http://php.net/sprintf">sprintf()</a>-like语句。</p>
+<?php $sql = $wpdb->prepare( 'query'[, value_parameter, value_parameter ... ] ); ?>
+
+<p><strong>query</strong></p>
+<p>（字符串）你希望执行的SQL查询，以 %s 与%d作为占位符。</p>
+<p><strong>value_parameter</strong></p>
+<p>（字符串）提交到占位符中的值。该值此时必须没有被SQL转义。</p>
+<p><strong>示例</strong></p>
+<p>将Meta key &#x3D;&gt; value pair “Harriet’s Adages” &#x3D;&gt; “WordPress’ database interface is like Sunday Morning: Easy.”添加到ID为10的文章。</p>
+<p>$metakey &#x3D; “Harriet’s Adages”;</p>
+<p>$metavalue &#x3D; “WordPress’ database interface is like Sunday Morning: Easy.”;</p>
+<p>$wpdb-&gt;query( $wpdb-&gt;prepare( “</p>
+<p>INSERT INTO $wpdb-&gt;postmeta</p>
+<p>( post_id, meta_key, meta_value )</p>
+<p>VALUES ( %d, %s, %s )”,</p>
+<p>10, $metakey, $metavalue ) );</p>
+<p>由add_meta()执行。</p>
+<p>注意，这时你无须担心引用字符串。不要直接将变量传递给SQL查询，可将 %s作为字符串的占位符， %d作为整数的占位符。你可以传递任意个值，每一个都可以作为prepare()方法的新参数。</p>
+<h5 id="显示-隐藏SQL错误"><a href="#显示-隐藏SQL错误" class="headerlink" title="显示&#x2F;隐藏SQL错误"></a>显示&#x2F;隐藏SQL错误</h5><p>你可以用show_errors来显示SQL错误，也可以用hide_errors隐藏SQL错误。</p>
+<?php $wpdb->show_errors(); ?>
+<?php $wpdb->hide_errors(); ?>
+
+<p>同样也可以用print_error输出近期的查询所生成的错误。</p>
+<?php $wpdb->print_error(); ?>
+
+<h5 id="获取数据库表中某列信息"><a href="#获取数据库表中某列信息" class="headerlink" title="获取数据库表中某列信息"></a>获取数据库表中某列信息</h5><p>利用get_col_info可以检索到近期查询的表列信息。当你不了解某个函数返回的对象的属性时，就可以通过get_col_info函数获取信息。该函数从指定列中输出所需信息，如果没有指定某列，则函数输出一个以查询结果中所有列的信息为内容的数组。</p>
+<?php $wpdb->get_col_info('type', offset); ?>
+
+<p><strong>type</strong></p>
+<p>（字符串）你希望检索的信息。可能为以下任何值之一（摘自 <a target="_blank" rel="noopener" href="http://justinvincent.com/home/docs/ezsql/ez_sql_help.htm">ezSQL</a>文档）。默认值为name。</p>
+<ul>
+<li><p>name ——表列的名称。默认值</p>
+</li>
+<li><p>table ——列所属表格的表格名称</p>
+</li>
+<li><p>max_length —— 表列的最大长度</p>
+</li>
+<li><p>not_null —— 若表列不为Null则值为1</p>
+</li>
+<li><p>primary_key —— 若表列是一个主键，值为1</p>
+</li>
+<li><p>unique_key —— 若表列是唯一键，值为1</p>
+</li>
+<li><p>multiple_key —— 若表列是非唯一键，值为1</p>
+</li>
+<li><p>numeric —— 若表列是数值型，值为1</p>
+</li>
+<li><p>blob —— 若表列为BLOB，值为1</p>
+</li>
+<li><p>type —— 表列的类型</p>
+</li>
+<li><p>unsigned —— 若表列无符号，值为1</p>
+</li>
+<li><p>zerofill —— 若表列为zero-filled，值为1</p>
+</li>
+</ul>
+<p><strong>offset</strong></p>
+<p>（整数）从某个检索信息的表中指定表列（0为表中第一列）。默认值为-1。</p>
+<ul>
+<li><p>-1 —— 从所有表列中检索信息。输出一个数组。默认值。</p>
+</li>
+<li><p>非负整数 —— 从指定的表列中检索信息（0为表中第一列）。</p>
+</li>
+</ul>
+<h5 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h5><p>用flush清除SQL结果缓存。</p>
+<?php $wpdb->flush(); ?>
+
+<p>这会清除$wpdb-&gt;last_result、$wpdb-&gt;last_query以及$wpdb-&gt;col_info信息。</p>
+<h5 id="类变量"><a href="#类变量" class="headerlink" title="类变量"></a>类变量</h5><p><strong>$show_errors</strong></p>
+<p>是否显示SQL错误信息。默认为TRUE。</p>
+<p><strong>$num_queries</strong></p>
+<p>已经被执行的查询次数</p>
+<p><strong>$last_query</strong></p>
+<p>最近一次已经被执行的查询</p>
+<p><strong>$queries</strong></p>
+<p>将SAVEQUERIES常量设为TRUE（该常量默认值为FALSE），可以保存所有数据库查询及其停止时间。如果SAVEQUERIES值为TRUE，你的查询会被作为数组保存在$queries变量中。</p>
+<p><strong>$last_result</strong></p>
+<p>最近一次查询结果。</p>
+<p><strong>$col_info</strong></p>
+<p>最近一次查询结果的表列信息。参见获取表列信息。</p>
+<p><strong>$insert_id</strong></p>
+<p>最近一次INSERT查询为AUTO_INCREMENT列生成的ID。</p>
+<p><strong>$num_rows</strong></p>
+<p>最近一次查询返回的行数。</p>
+<h5 id="表"><a href="#表" class="headerlink" title="表"></a>表</h5><p>在wpdb类中可以引用WordPress数据库表。</p>
+<p><strong>$posts</strong></p>
+<p>关于文章的数据库表</p>
+<p><strong>$users</strong></p>
+<p>关于用户的数据库表</p>
+<p><strong>$comments</strong></p>
+<p>评论表</p>
+<p><strong>$links</strong></p>
+<p>链接表</p>
+<p><strong>$options</strong></p>
+<p>选项表</p>
+<p><strong>$postmeta</strong></p>
+<p>元数据（<a target="_blank" rel="noopener" href="http://www.wordpress.la/codex-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5.html">自定义字段</a>）表</p>
+<p><strong>$usermate</strong></p>
+<p><a target="_blank" rel="noopener" href="http://www.wordpress.la/codex-WordPress%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0.html">usermeta</a>表中含有用户的其它信息，如昵称、个人说明与权限。</p>
+<p><strong>$terms</strong></p>
+<p><a target="_blank" rel="noopener" href="http://www.wordpress.la/codex-WordPress%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0.html">terms</a>表中包括对分类目录、链接分类、标签的“说明”（description）</p>
+<p><strong>$term_taxonomy</strong></p>
+<p><a target="_blank" rel="noopener" href="http://www.wordpress.la/codex-WordPress%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0.html">term_taxonomy</a>表介绍了WordPress的不同分类（taxonomy）。分类目录、链接分类、标签都是一种分类。</p>
+<p><strong>$term_relationships</strong></p>
+<p><a target="_blank" rel="noopener" href="http://www.wordpress.la/codex-WordPress%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0.html">term_relationships</a>表中含有术语以及使用术语的对象之间的链接，即该表可以指向日志所属的分类目录。</p>
+</div><div class="tags"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/" rel="tag">wordpress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress%E5%BC%80%E5%8F%91/" rel="tag">wordpress开发</a></li></ul></div><div class="post-nav"><a class="pre" href="/deans-fckeditor-for-wordpress-%E6%9B%B4%E6%96%B0/">Dean's FCKEditor for WordPress 更新</a><a class="next" href="/wordpress%E6%8F%92%E4%BB%B6api%E6%89%8B%E5%86%8C/">WordPress插件API手册</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="输入关键词搜索"/><input type="hidden" name="sitesearch" value="http://example.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/%E5%AE%B6%E5%BA%AD%E7%BD%91%E7%BB%9C%E5%86%8D%E6%AC%A1%E4%BC%98%E5%8C%96%EF%BC%9A%E5%87%8F%E5%B0%91%E5%A4%8D%E6%9D%82%E6%80%A7%E5%87%8F%E5%B0%91%E8%AE%BE%E5%A4%87/">家庭网络再次优化：减少复杂性减少设备</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%8C%97%E4%BA%AC%E8%81%94%E9%80%9A%E6%9B%B4%E6%8D%A2%E5%85%89%E7%8C%AB%E7%83%BD%E7%81%ABhg5582a/">北京联通更换光猫烽火HG5582A</a></li><li class="post-list-item"><a class="post-list-link" href="/%E9%9D%9E%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%ACr%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/">非最新版本R安装软件包依赖问题</a></li><li class="post-list-item"><a class="post-list-link" href="/pycharm-r%E8%84%9A%E6%9C%AC%E7%94%BB%E5%9B%BE%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/">PyCharm R脚本 画图不显示问题</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%AE%B6%E5%BA%AD%E7%BD%91%E7%BB%9C%E5%8D%87%E7%BA%A7300m-1000m/">家庭网络升级300M-1000M</a></li><li class="post-list-item"><a class="post-list-link" href="/win11-23h2-%E5%8D%87%E7%BA%A724h2/">Win11 23H2 升级24H2：使用微软官方工具MBR2GPT转换磁盘MBR->GPT</a></li><li class="post-list-item"><a class="post-list-link" href="/%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%B8%A4%E4%B8%AA%E8%B4%A6%E5%8F%B7%E5%90%88%E5%B9%B6%EF%BC%88%E7%BD%91%E6%98%93%E9%82%AE%E7%AE%B1%E5%8F%8A%E5%BE%AE%E4%BF%A1%E8%B4%A6%E5%8F%B7%EF%BC%89/">有道云笔记两个账号合并（网易邮箱及微信账号）</a></li><li class="post-list-item"><a class="post-list-link" href="/kms%E5%B7%A5%E5%85%B7%E6%BF%80%E6%B4%BBoffice-ltsc-%E6%8A%A5%E9%94%99-error-code-0x80080005/">KMS工具激活Office LTSC 报错 Error Code: 0x80080005</a></li><li class="post-list-item"><a class="post-list-link" href="/vmware-esxi-%E7%94%B15-5%E5%8D%87%E7%BA%A7%E5%88%B07-0/">VMware ESXi 由5.5升级到7.0</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%B0%8F%E7%B1%B38-%E5%88%B7%E7%AC%AC%E4%B8%89%E6%96%B9%E5%9B%BA%E4%BB%B6%E5%A7%8B%E6%9C%AB/">小米8 刷第三方固件始末</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/lib/" style="font-size: 15px;">lib</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/php%E5%BC%80%E6%BA%90%E7%A8%8B%E5%BA%8F/" style="font-size: 15px;">php开源程序</a> <a href="/tags/301/" style="font-size: 15px;">301</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/adobe/" style="font-size: 15px;">adobe</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/spry/" style="font-size: 15px;">spry</a> <a href="/tags/access-connections/" style="font-size: 15px;">access connections</a> <a href="/tags/Thinkpad/" style="font-size: 15px;">Thinkpad</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/a2ensite/" style="font-size: 15px;">a2ensite</a> <a href="/tags/apache/" style="font-size: 15px;">apache</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 15px;">经验</a> <a href="/tags/htaccess/" style="font-size: 15px;">htaccess</a> <a href="/tags/bash/" style="font-size: 15px;">bash</a> <a href="/tags/windows/" style="font-size: 15px;">windows</a> <a href="/tags/windows10/" style="font-size: 15px;">windows10</a> <a href="/tags/bitcoin/" style="font-size: 15px;">bitcoin</a> <a href="/tags/p2p/" style="font-size: 15px;">p2p</a> <a href="/tags/hadoop/" style="font-size: 15px;">hadoop</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/" style="font-size: 15px;">分布式计算</a> <a href="/tags/bb/" style="font-size: 15px;">bb</a> <a href="/tags/centos/" style="font-size: 15px;">centos</a> <a href="/tags/iptables/" style="font-size: 15px;">iptables</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/buffering/" style="font-size: 15px;">buffering</a> <a href="/tags/output/" style="font-size: 15px;">output</a> <a href="/tags/output-buffering/" style="font-size: 15px;">output_buffering</a> <a href="/tags/php-ini/" style="font-size: 15px;">php.ini</a> <a href="/tags/cdrom/" style="font-size: 15px;">cdrom</a> <a href="/tags/CentOS/" style="font-size: 15px;">CentOS</a> <a href="/tags/yum/" style="font-size: 15px;">yum</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 15px;">运维</a> <a href="/tags/clear/" style="font-size: 15px;">clear</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/ie6/" style="font-size: 15px;">ie6</a> <a href="/tags/%E5%8D%A0%E7%94%A8%E9%AB%98%E5%BA%A6/" style="font-size: 15px;">占用高度</a> <a href="/tags/blackboard/" style="font-size: 15px;">blackboard</a> <a href="/tags/ckeditor/" style="font-size: 15px;">ckeditor</a> <a href="/tags/wordpress/" style="font-size: 15px;">wordpress</a> <a href="/tags/gd/" style="font-size: 15px;">gd</a> <a href="/tags/imagecreate/" style="font-size: 15px;">imagecreate</a> <a href="/tags/dfGallery/" style="font-size: 15px;">dfGallery</a> <a href="/tags/N-A/" style="font-size: 15px;">#N/A</a> <a href="/tags/excel/" style="font-size: 15px;">excel</a> <a href="/tags/Office%E6%8A%80%E5%B7%A7/" style="font-size: 15px;">Office技巧</a> <a href="/tags/dotproject/" style="font-size: 15px;">dotproject</a> <a href="/tags/project/" style="font-size: 15px;">project</a> <a href="/tags/office/" style="font-size: 15px;">office</a> <a href="/tags/compact/" style="font-size: 15px;">compact</a> <a href="/tags/extract/" style="font-size: 15px;">extract</a> <a href="/tags/fck%EF%BC%8Ceditor/" style="font-size: 15px;">fck，editor</a> <a href="/tags/ftp/" style="font-size: 15px;">ftp</a> <a href="/tags/buzz/" style="font-size: 15px;">buzz</a> <a href="/tags/google-reader/" style="font-size: 15px;">google reader</a> <a href="/tags/google/" style="font-size: 15px;">google</a> <a href="/tags/hosts/" style="font-size: 15px;">hosts</a> <a href="/tags/ipv6/" style="font-size: 15px;">ipv6</a> <a href="/tags/%E6%9C%80%E6%96%B0%E8%B5%84%E8%AE%AF/" style="font-size: 15px;">最新资讯</a> <a href="/tags/hook/" style="font-size: 15px;">hook</a> <a href="/tags/flash/" style="font-size: 15px;">flash</a> <a href="/tags/html4/" style="font-size: 15px;">html4</a> <a href="/tags/Web-Applacation/" style="font-size: 15px;">Web Applacation</a> <a href="/tags/insert-ino/" style="font-size: 15px;">insert ino</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/update/" style="font-size: 15px;">update</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/jeecms/" style="font-size: 15px;">jeecms</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/jQuery-lightBox/" style="font-size: 15px;">jQuery lightBox</a> <a href="/tags/js/" style="font-size: 15px;">js</a> <a href="/tags/jpgraph/" style="font-size: 15px;">jpgraph</a> <a href="/tags/0x80080005/" style="font-size: 15px;">0x80080005</a> <a href="/tags/kms/" style="font-size: 15px;">kms</a> <a href="/tags/SppExtComObj/" style="font-size: 15px;">SppExtComObj</a> <a href="/tags/pchart/" style="font-size: 15px;">pchart</a> <a href="/tags/limesurvey/" style="font-size: 15px;">limesurvey</a> <a href="/tags/fckeditor/" style="font-size: 15px;">fckeditor</a> <a href="/tags/%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93/" style="font-size: 15px;">中文字体</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 15px;">网络</a> <a href="/tags/mb-substr/" style="font-size: 15px;">mb_substr</a> <a href="/tags/spss/" style="font-size: 15px;">spss</a> <a href="/tags/bootcamp/" style="font-size: 15px;">bootcamp</a> <a href="/tags/macbook/" style="font-size: 15px;">macbook</a> <a href="/tags/macos/" style="font-size: 15px;">macos</a> <a href="/tags/%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81/" style="font-size: 15px;">重置密码</a> <a href="/tags/rss/" style="font-size: 15px;">rss</a> <a href="/tags/ssh/" style="font-size: 15px;">ssh</a> <a href="/tags/MariaDB/" style="font-size: 15px;">MariaDB</a> <a href="/tags/mysqlnd/" style="font-size: 15px;">mysqlnd</a> <a href="/tags/mysq/" style="font-size: 15px;">mysq</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" style="font-size: 15px;">命令行</a> <a href="/tags/%E5%A4%87%E4%BB%BD/" style="font-size: 15px;">备份</a> <a href="/tags/%E8%BF%98%E5%8E%9F/" style="font-size: 15px;">还原</a> <a href="/tags/expires/" style="font-size: 15px;">expires</a></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2025 <a href="/." rel="nofollow">ICT经验网.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a> Theme by<a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Maupassant.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>

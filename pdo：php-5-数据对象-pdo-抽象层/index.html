@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>PDO：PHP 5 数据对象 (PDO) 抽象层 | ICT经验网</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">PDO：PHP 5 数据对象 (PDO) 抽象层</h1><a id="logo" href="/.">ICT经验网</a><p class="description">关注Linux、PHP、WordPress、虚拟化、深度学习等</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">PDO：PHP 5 数据对象 (PDO) 抽象层</h1><div class="post-meta">2010-10-08<span> | </span><span class="category"><a href="/categories/uncategorized/">uncategorized</a></span><span class="post-time"><span class="post-meta-item-text"> | </span><span class="post-meta-item-icon"><i class="fa fa-keyboard-o"></i><span class="post-count"> 3.4k</span><span class="post-meta-item-text"> 字</span></span></span><span class="post-time"> | <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i><span class="post-count"> 13</span><span class="post-meta-item-text"> 分钟</span></span></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div></div></div><div class="post-content"><blockquote>
+<p>通俗版解释：</p>
+<p>PDO是PHP 5新加入的一个重大功能，因为在PHP 5以前的php4&#x2F;php3都是一堆的数据库扩展来跟各个数据库的连接和处理，什么 php_mysql.dll、php_pgsql.dll、php_mssql.dll、php_sqlite.dll等等扩展来连接MySQL、PostgreSQL、MS SQL Server、SQLite，同样的，我们必须借助 ADOdb、PEAR::DB、PHPlib::DB之类的数据库抽象类来帮助我们，无比烦琐和低效，毕竟，php代码的效率怎么能够我们直接用C&#x2F;C++写的扩展斜率高捏？所以嘛，PDO的出现是必然的，大家要平静学习的心态去接受使用，也许你会发现能够减少你不少功夫哦。</p>
+</blockquote>
+<p>一名新 PHP 数据对象 (PDO) 数据抽象层的原始开发人员为您简要介绍该抽象层，重点讲述与 Oracle 一起运行的情况。</p>
+<p>需要 PHP：5.0<br>需要其他：Oracle 8 或更高版本客户端库<br>下载用于 Oracle 的 PDO (Windows)：php_pdo.dll,php_pdo_oci.dll<br>下载用于 Oracle 的 PDO (Unix)：pdo,pdo_oci</p>
+<p><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; PDO 简介 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<p>PHP 主要是由志愿者完成的项目；尽管有少数一些固定的“核心”开发人员，但是我们没有一个人在全职受薪的开发 PHP。除此之外，我们分别位于世界不同地方，您可以想象长期开发的协调工作是何等困难。因此，PHP 主要是基于突发奇想的个人短期需求来发展的，其原因也多种多样，有的是试验，有的则是因为“明天有活要交”。尽管这样通常每一步都会改善 PHP，但从长远来看则是缺乏完整性 － 数据库扩展就是一个重要的例子。</p>
+<p>在各种不同的数据扩展（oci、mysql、 postgresql、mssql 等）之间根本没有真正的一致性，甚至在某些情况下，在这些扩展内部也没有真正的一致性。几乎所有这些扩展都在使用与基础数据库 API 紧密相连的不同代码完成着相同种类的任务。而且因为我们（PHP 核心开发人员和扩展开发人员）的人手非常有限，因此这就造成了代码更加难以维护，从而为 PHP 带来了很大的问题。</p>
+<p>由于 PHP 越来越受欢迎并不断成功，因此主要 PHP 数据库扩展的维护者们参加了在德国举行的 LinuxTag 2003 大会，在会上我们交换了对 PHP 前景的看法。在讨论 PHP 发展的随机性时，我们确定了在 PHP 中进行数据库访问的一些目标：</p>
+<ul>
+<li>提供一种轻型、清晰、方便的 API  </li>
+<li>统一各种不同 RDBMS 库的共有特性，但不排除更高级的特性。  </li>
+<li>通过 PHP 脚本提供可选的较大程度的抽象&#x2F;兼容性。</li>
+</ul>
+<p>我们之所以提出了这种 PHP 数据对象 (PDO) 的概念，是因为我们希望通过采用 Zend Engine 2（PHP 5 的核心）先进的面向对象特性获得该 API 的一些更优秀的性能。</p>
+<p>PHP 中的数据抽象层概念一点都算不上新；在 Google 中查询“PHP database abstraction”会找到大约 83,200 个匹配项。它几乎是许多 PHP 开发人员梦寐以求的，而其产生则部分归因于我们不完整的 API。如果您曾经尝试过使用第三方抽象层来完成任何真正重要的工作，通常会发现这些抽象层对于手头的工作来说设计的功能过于强大了 － 或者表现为在使用前需要进行大量学习，或者表现为接口速度缓慢，参数需要经过多层脚本函数调用才能到达数据库自有的 API；通常是存在上述两种表象。</p>
+<p>为什么这些抽象层会存在这种问题？这些抽象层总是在试图完成太多的任务，甚至可能是不可能的任务。我们决定以实用为目标，仅将一些最常见的数据库 API 特性作为我们的基础，并使得 PDO 驱动程序能够将它们特定于产品的特性暴露为常规扩展函数。</p>
+<p><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 为什么使用 PDO？&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<p>听过有关数据库抽象扩展谣传的大多数人会立刻对 PDO 的扩展方面产生疑惑 － 我们是否要分析 SQL，将其转换为相应的后端方言呢？我们如何处理特性 X 或特性 Y，等等。因此，当您听说我们在 PDO 中根本不用为此而担忧时可能会大吃一惊；我们不希望使所有内容都完全统一，因为要使得这种统一成为可能，只能是将自己限制在最低的通用标准。</p>
+<p>如果 PDO 不是一个整体的抽象层，那还有什么别的原因值得您考虑使用它吗？</p>
+<ul>
+<li>性能。PDO 从一开始就吸取了现有数据库扩展成功和失败的经验教训。因为 PDO 的代码是全新的，所以我们有机会重新开始设计性能，以利用 PHP 5 的最新特性。  </li>
+<li>能力。PDO 旨在将常见的数据库功能作为基础提供，同时提供对于 RDBMS 独特功能的方便访问。  </li>
+<li>简单。PDO 旨在使您能够轻松使用数据库。API 不会强行介入您的代码，同时会清楚地表明每个函数调用的过程。  </li>
+<li>运行时可扩展。PDO 扩展是模块化的，使您能够在运行时为您的数据库后端加载驱动程序，而不必重新编译或重新安装整个 PHP 程序。例如，PDO_OCI 扩展会替代 PDO 扩展实现 Oracle 数据库 API。还有一些用于 MySQL、PostgreSQL、ODBC 和 Firebird 的驱动程序，更多的驱动程序尚在开发。</li>
+</ul>
+<p>您可能想了解 PDO 与其他常用的抽象层的对比情况，例如PEAR DB或ADODB。无论在 API 方面还是在性能方面，PDO 都比其他常见抽象层要轻型，但是涉及到在各个数据库后端之间提供统一性方面，则不如那些抽象层，例如用于处理大量可移植性问题的PEAR MDB 2抽象层。</p>
+<p><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 在哪里可以获得 PDO？&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<p>PDO 是通过 PECL（发音为“pee-kle”，欧洲语言风格），即 PHP 扩展库提供的。如果您在运行 Linux 计算机，请按照下面的说明进行设置；稍后是在 Windows 上安装的详细信息。</p>
+<p>请注意，PDO 及其驱动程序当前处于“alpha”状态；这就意味着我们会合理保证没有重大缺陷，但是该程序包功能并不完善 － 我们还要添加很多功能。虽然我们鼓励您测试该程序包，但是实在不推荐在现阶段将其用于生产。</p>
+<p><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; Unix&#x2F;Linux 安装&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<p>如果您以前尚未尝试过 PHP 5，则请花一点时间来通读一下“新闻”和各种声明。在 UNIX 计算机上，您可能要安装或升级 libxml2；如果没有 libxml2，“pear”程序包管理工具就无法运行，您安装 PDO 时就会遇到很多困难。获取PHP 5，并将其编译和安装。确保指定的前缀不是 &#x2F;usr&#x2F;local&#x2F;，这样它就不会与 PHP 4 安装发生冲突了：</p>
+<ol>
+<li>% .&#x2F;configure –prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;php5 –with-zlib [此处指定其他选项]</li>
+<li>% make install</li>
+</ol>
+<p>现在您就可以使用“pear”工具获取并安装 PDO 以及用于 PDO 的 Oracle 驱动程序了。因为 PDO 当前标记为 alpha，所以默认情况下 pear 工具不会下载该程序包。在该程序包名称后面添加后缀“-alpha”，通知该 pear 工具可以安装 alpha 版本：</p>
+<ol>
+<li>% PATH&#x3D;”&#x2F;usr&#x2F;local&#x2F;php5&#x2F;bin:$PATH”</li>
+<li>% pear install PDO-alpha</li>
+</ol>
+<p>您需要告知 PHP 从专用于 PHP 5 的 php.ini 文件加载 PDO 驱动程序。如果您使用的前缀与我使用的一样，PHP 则会在 &#x2F;usr&#x2F;local&#x2F;php5&#x2F;lib&#x2F;php.ini 中查找 php.ini 文件。向该文件中添加以下行：</p>
+<p>extension&#x3D;pdo.so</p>
+<p>现在您需要获取数据库特定的驱动程序；对于 Oracle，此特定程序称为 PDO_OCI。在 shell 中，键入：</p>
+<p>% pear install PDO_OCI-alpha</p>
+<p>此驱动程序也需要从 php.ini 文件加载；将下行添加到前面添加的那行之后：</p>
+<p>extension&#x3D;pdo_oci.so</p>
+<p>现在检查一下，确保它能够运行：</p>
+<p>% php -m</p>
+<p>在模块列表中，您应该会看到 PDO 和 PDO_OCI。</p>
+<p>防火墙碍事了？</p>
+<p>如果您位于防火墙的后面，则在使用 pear 安装程序获取程序包时可能会遇到一些问题。如果发生这种情况，则可以按照下列说明手动下载并安装这些程序包：</p>
+<ol>
+<li><p>% wget <a target="_blank" rel="noopener" href="http://pecl.php.net/get/PDO">http://pecl.php.net/get/PDO</a></p>
+</li>
+<li><p>% pear install PDO-0.1.1.tgz</p>
+</li>
+<li><p>[ 将 extension&#x3D;pdo.so 添加到 php.ini ]</p>
+</li>
+<li><p>% wget <a target="_blank" rel="noopener" href="http://pecl.php.net/get/PDO_OCI">http://pecl.php.net/get/PDO_OCI</a></p>
+</li>
+<li><p>% pear install PDO_OCI-0.1.tgz</p>
+</li>
+<li><p>[ 将 extension&#x3D;pdo_oci.so 添加到 php.ini ]</p>
+</li>
+</ol>
+<p>在上述两种情况下，都需要首先调用“pear install”（后跟下载的真正程序包）；上述示例中的版本号在本文编写之时是最新的，但随着开发的继续进行会发生变化。</p>
+<p><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; Windows 安装 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<p>如果您正在运行 Windows，则请按照下列说明执行：</p>
+<ol>
+<li>从<a target="_blank" rel="noopener" href="http://www.php.net/downloads.php#v5%E8%8E%B7%E5%8F%96">http://www.php.net/downloads.php#v5获取</a> PHP 5，将其解压缩到 C:\php5。  </li>
+<li>从<a target="_blank" rel="noopener" href="http://snaps.php.net/win32/PECL_5_0/php_pdo.dll%E5%92%8Chttp://snaps.php.net/win32/PECL_5_0/php_pdo_oci.dll%E5%88%86%E5%88%AB%E8%8E%B7%E5%8F%96">http://snaps.php.net/win32/PECL_5_0/php_pdo.dll和http://snaps.php.net/win32/PECL_5_0/php_pdo_oci.dll分别获取</a> PDO 和 PDO_OCI，将其放入 C:\php5\ext。或者，您可以从 PHP 5 下载页上列出的“用于 PHP 5.0.0 的 PECL 模块集合”zip 文件中找到所有这些 PDO 驱动程序，以及所有 PECL 程序包的所有 Windows 版本。  </li>
+<li>编辑 C:\php5\php.ini 文件，并添加下列内容：</li>
+</ol>
+<p>extension&#x3D;php_pdo.dll<br>extension&#x3D;php_pdo_oci.dll</p>
+<p>编辑 php.ini 文件时，有一点很重要，即要在任何其他 PDO 驱动程序之前先加载 PDO 扩展，否则就不能正确初始化（在这种情况下会出错）。</p>
+<p>如果在 Windows 目录中有一个 PHP 4 的全局 php.ini 文件，则可能会遇到问题。最好的解决方法是，移动该 php.ini 文件，使其与 PHP 4 SAPI 位于相同的文件夹中，以隔离 PHP 4 安装；例如，将其移动到与 php4apache.dll 相同的文件夹中。请注意，PHP 5 程序中并非所有文档都是最新的；推荐的安装过程如上面所述 － 如 install.txt 文件所声明的，请勿将任何 DLL 复制到 windows 文件夹或 system 文件夹中 － 任何内容都是自包含的。如果您运行的是 apache，并且遇到无法加载 DLL 的错误，则检查一下是否将 C:\php5 添加到了 PATH 中。另外，还要注意 PHP 5 的 CGI 版本现在的名称为 php-cgi.exe。</p>
+<p><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 连接 PDO &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<p>首先创建 PDO 类的一个实例，将其用作数据库句柄。使用哪个基础驱动程序并不重要；您总要使用 PDO 类名。构造函数的第一个参数为数据源名称 (DSN)，第二个参数为用户名，第三个参数为该用户名的口令。DSN 的 PDO 命名惯例为 PDO 驱动程序的名称，后面一个冒号，再后面是可选的驱动程序特定的信息。在我们的示例中，会加载 OCI 驱动程序但不指定任何其他信息；这样会使用默认的数据库。对于其他驱动程序，如 ODBC 驱动程序，第一个冒号后面的所有内容都将被用作 ODBC DSN。MySQL 驱动程序会同样以不同的方式解释它的 DSN。</p>
+<p>如果无法加载该驱动程序，或者发生了连接失败，则会抛出一个 PDOException，以便您可以决定如何最好地处理该故障。</p>
+<ol>
+<li><?php</li>
+<li>try {</li>
+<li>$dbh &#x3D; new PDO(“OCI:”, “scott”, “tiger”);</li>
+<li>} catch (PDOException $e) {</li>
+<li>echo “Failed to obtain database handle “ .$e-&gt;getMessage();</li>
+<li>}</li>
+<li>?&gt;</li>
+</ol>
+<p>在连接字符串中，您可以指定两个可选参数；第一个是数据库名称，第二个是字符集；这些参数与可选的第三个和第四个参数相对应，后两个参数您可能在 oci8 扩展函数ociconnect()或ociplogon()中使用过。要使用特定的字符集连接一个特定的数据库，则可以执行下列操作：</p>
+<ol>
+<li><?php</li>
+<li>try {</li>
+<li>$dbh &#x3D; new PDO(“OCI:dbname&#x3D;accounts;charset&#x3D;UTF-8”, “scott”, “tiger”);</li>
+<li>} catch (PDOException $e) {</li>
+<li>echo “Failed to obtain database handle “ .$e-&gt;getMessage();</li>
+<li>}</li>
+<li>?&gt;</li>
+</ol>
+<p>省略 try..catch 控制结构并无裨益。如果在应用程序的较高级别没有定义异常处理，则在无法建立数据库连接的情况下，该脚本会终止。</p>
+<p><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 连接管理&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<p>目前，PDO 完全没有执行自己的任何连接管理，因此每个“新 PDO”调用都会建立一个新的数据库连接。该连接在 $dbh 变量越界时，或者当您为其指定 NULL 值时会被释放。</p>
+<ol>
+<li><?php</li>
+<li><p>try {</p>
+</li>
+<li><p>$dbh &#x3D; new PDO(“OCI:dbname&#x3D;accounts;charset&#x3D;UTF-8”, “scott”, “tiger”);</p>
+</li>
+<li><p>} catch (PDOException $e) {</p>
+</li>
+<li><p>echo “Failed to obtain database handle “ .$e-&gt;getMessage();</p>
+</li>
+<li><p>exit;</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>&#x2F;&#x2F; 在此处对数据库执行一些操作</p>
+</li>
+<li><p>&#x2F;&#x2F; …</p>
+</li>
+<li><p>&#x2F;&#x2F; 现在完成，释放该连接</p>
+</li>
+<li><p>$dbh &#x3D; null;</p>
+</li>
+<li><p>?&gt;</p>
+</li>
+</ol>
+<p>计划在不久的将来为 PDO 增加连接缓存功能；就当前的 oci8 扩展而言，会重用与现有服务器的连接，并且在这些连接中，还会重用闲置的登录。当在缓存连接模式中运行时，如上面的代码段所示释放 $dbh 时会将该登录标记为可由其他连接重用。</p>
+<p>如果您使用 ODBC 驱动程序访问 Oracle，则可能会很高兴地注意到，默认情况下 PDO_ODBC 驱动程序支持 ODBC 连接池。</p>
+<p><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 使用 PDO&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<p>了解一个编程 API 的最好方式就是使用它，因此我们来看一下附带的这个演示，以了解如何进行批次更新（请参见示例代码）。</p>
+<p>既然我们已经成功连接到了 Oracle，那么现在就可以创建一个表来保存一些数据了。对于此示例，我们使用一些 PHP 扩展及其作者，并将这些内容输入一个数据库中。数据库句柄对象的 exec() 方法可用来发出不会返回结果集的快速一次性查询，因此我们在这里使用该方法来发出 CREATE TABLE 查询。</p>
+<p>为了使得示例更自然，我从 PHP 源代码中抽取了扩展及其作者的信息，并将其存储到了一个 CSV 文件中（请参见“credits.csv”）。这就代表一个常见情形：从 CSV 文件批次导入数据。在我们的示例中，我们充分利用了 Oracle 的预处理语句和绑定参数，以获得一个高效的数据导入脚本。在讲述该示例之前，有必要了解一下 PDO 处理事务的方式。</p>
+<p><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; PDO 中的事务处理&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<p>Oracle 具有一个敏感的默认操作模式：当您进行连接时，将会位于一个隐式事务处理中，在提交事务之前其中的更改不会完全生效。除了事务处理的标准优点（原子性、一致性、隔离性、可持久性 － ACID）之外，数据库服务器在执行每次更新之后还不需要重新构建索引和其他内部结构；它可以延迟到提交之后进行。这样会加速代码的执行。Oracle 这点确实很好。</p>
+<p>但不幸的是，并非每个数据库供应商都支持事务处理，并且因为 PDO 旨在以一种相对可移植的方式支持这些事务处理，所以它默认情况下以自动提交模式运行。启用自动提交模式后，数据库驱动程序会隐式提交每个成功的更新。当您调用$dbh-&gt;beginTransaction()时，就会请求关闭自动提交，直到调用$dbh-&gt;commit()或者$dbh-&gt;rollBack()才会重新启用，具体取决于您的代码是怎样编写的。如果基础驱动程序不支持事务处理，则会抛出一个 PDOException。</p>
+<p>如果发生了问题并且 PHP 出错，您的脚本将退出并且事务处于待批状态；或者您关闭数据库句柄时，PDO 会自动针对任何待批的事务调用$dbh-&gt;rollBack()。此行为会减少向数据库中提交可能未定义或者已损坏数据的可能性，这是用于处理已放弃事务的标准语义。</p>
+<p><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 预处理语句、存储过程 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<p>PDO 支持使用 Oracle 样式命名的占位符语法将变量帮定到 SQL 中的预处理语句（与 oci8 扩展中的ocibindbyname()类似）。PDO 还为其他数据库（如 ODBC）提供了命名占位符模拟，甚至可以为生来就不支持该概念的数据库（如 MySQL）模拟预处理语句和绑定参数。这是 PHP 向前迈进的积极一步，因为这样可以使开发人员能够用 PHP 编写“企业级”的数据库应用程序，而不必特别关注数据库平台的能力。</p>
+<p>使用 PDO 预处理语句非常简单，调用数据库句柄的prepare()方法即可。它会返回一个语句句柄对象，然后您可以使用该对象来绑定参数和执行语句。在此示例中，我们将要定义两个命名占位符，“:extension”和“:name”，这两个占位符分别与 .CSV 文件中的 PHP 扩展名称和其中一个作者的姓名相对应。</p>
+<p>$stmt &#x3D; $dbh-&gt;prepare(”INSERT INTO CREDITS (extension, name) VALUES (:extension, :name)”);</p>
+<p>预处理了语句之后，我们使用bindParam()方法来将这些命名参数分别与 PHP 变量名称“$extension”和“$name”相关联（这与ocibindbyname()类似）。我们还会通知 Oracle，这些数据将要格式化为字符串，最大长度为 64 个字符。</p>
+<p>$stmt-&gt;bindParam(’:extension’, $extension, PDO_PARAM_STR, 64);<br>$stmt-&gt;bindParam(’:name’, $name, PDO_PARAM_STR, 64);</p>
+<p>我们现在即准备好插入数据了 － 我们只需要打开该 CSV 文件，并从中获取数据即可。通过使用fopen()和fgetcsv()函数可以相当简单地完成此操作。然后，我们可以使用 PHP list() 构造函数直接将 CSV 的列指定给变量“$extension”和“$name”。因为这些变量已经绑定到了语句中，所以我们现在要做的只是调用该语句对象的execute()方法使其执行插入。这种方式既方便又快捷 － 在事务处理时每个迭代循环只有两行。到达文件尾时，我们就可以立即使用数据库句柄的commit()方法来提交这些更改了。</p>
+<p>如果您只是要传递输入参数，并且有许多这样的参数要传递，那么您会觉得下面所示的快捷方式语法非常有帮助；此语法使您能够省去对$stmt-&gt;bindParam()的调用。</p>
+<p>$stmt &#x3D; $dbh-&gt;prepare(”INSERT INTO CREDITS (extension, name) VALUES (:extension, :name)”);<br>$stmt-&gt;execute(array(’:extension’ &#x3D;&gt; $extension, ‘:name’ &#x3D;&gt; $name));</p>
+<p>您还可以使用bindParam来为存储过程设置输入&#x2F;输出参数；语法是完全相同的，只是查询有所不同。下面的代码演示如何调用一个名为 “sp_add_item”的存储过程；其目的是要针对输入设置$item_name，然后该存储过程将在返回时更新$error_code。</p>
+<p>$stmt &#x3D; $dbh-&gt;prepare(”begin sp_add_item(:item_name, :error_code); end”);<br>$stmt-&gt;bindParam(’:item_name’, $item_name, PDO_PARAM_STR, 12);<br>$stmt-&gt;bindParam(’:error_code’, $error_code, PDO_PARAM_STR, 12);<br>$stmt-&gt;execute();</p>
+<p><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 抓取数据&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<p>使用 PDO 抓取数据与进行插入或更新相似，只是您执行完查询之后，将要重复调用fetch()方法来获取结果集的下一行。进行获取的最简单情况如下所示，值得注意的一点是，您还可以将参数绑定到查询，以控制如 WHERE 子句这样的内容；执行此操作的语法与我们已经看到的bindParam()代码完全相同。</p>
+<ol>
+<li>$stmt &#x3D; $dbh-&gt;prepare(“SELECT extension, name from CREDITS”);</li>
+<li>if ($stmt-&gt;execute()) {</li>
+<li>while ($row &#x3D; stmt-&gt;fetch()) {</li>
+<li>print_r($row);</li>
+<li>}</li>
+<li>}</li>
+</ol>
+<p>PDO 支持一些不同的抓取策略，这些策略在方便性和性能方面有所差别；通过将下列选项之一指定为fetch()方法的参数，您可以更改其返回值以适应您的语法：</p>
+<ul>
+<li><p>PDO_FETCH_NUM－ 每个行抓取返回一个按照列位置索引的数组，并且以 0 为基数（第一列是第 0 个元素）。while ($row &#x3D; $stmt-&gt;fetch(PDO_FETCH_NUM)) {<br>printf(”Extension %s, by %s<br>“, $row[0], $row[1]);<br>}</p>
+</li>
+<li><p>PDO_FETCH_ASSOC－ 每个行抓取根据行集中的列名，返回一个按列名索引的数组。while ($row &#x3D; $stmt-&gt;fetch(PDO_FETCH_ASSOC)) {<br>echo “Extension $row[EXTENSION] by $row[NAME]<br>“;<br>}</p>
+</li>
+<li><p>PDO_FETCH_BOTH－ 每个行抓取返回一个既按照列位置又按照列名索引的数组。也就是上述两种情况的直接组合。如果没有指定抓取模式，则该模式为默认模式。  </p>
+</li>
+<li><p>PDO_FETCH_OBJ－ 每个行抓取返回一个匿名对象，其属性名与列名对应。while ($row &#x3D; $stmt-&gt;fetch(PDO_FETCH_ASSOC)) {<br>echo “Extension {$row-&gt;EXTENSION} by {$row-&gt;NAME}<br>“;<br>}</p>
+</li>
+<li><p>PDO_FETCH_LAZY－ 每个行抓取返回一个引用语句对象的重载对象。这“看起来”好像是PDO_FETCH_OBJ和PDO_FETCH_BOTH的组合，只是只有当您在脚本中访问 PHP 变量时才创建这些变量。  </p>
+</li>
+<li><p>PDO_FETCH_BOUND－ 抓取每行，返回 TRUE。在使用绑定输出列时这种方式非常有用，它可以避免创建不需要的任何数组或对象。（请参见下面的示例）。</p>
+</li>
+</ul>
+<p>无论您使用哪种抓取策略，当没有其他行可抓取时，fetch()方法将会返回 FALSE。</p>
+<p>现在我要讲述一些技巧，如果您需要最后再调整一下脚本性能的话，这些技巧可能会对您有所帮助。但先给你一个忠告：要像躲避瘟疫一样避免不成熟的优化。您应该总是首选最清晰、可维护性最好的解决方案。请记住，在一个典型的 Web 应用程序中，您不能衡量各种抓取模式间的区别，除非脚本要处理很多行。我再重复一遍：抓取模式间的性能区别非常小 － 请使用最适合您代码的模式。</p>
+<p>请记住，使用PDO_FETCH_NUM的花销最小，因为访问列数据只是一个简单的数值查询。PDO_FETCH_OBJ使您能够使用 OO 语法将数据集的列作为对象的属性来访问，但是每个属性访问都涉及一个附加的散列查询，使得使用它的花销基本上与PDO_FETCH_ASSOC相同。每个这样的模式都会复制整行，从而占用稍多的内存。</p>
+<p>很多数据库驱动程序都会代表您预先抓取并缓存一定数量的行。PHP 每次访问其中一个这样行中的列时，它都需要将其复制到自己的专用内存区域中。如果您的查询涉及很多行，而只需要基于某种复杂的逻辑访问给定行的特定列，则您会发现PDO_FETCH_LAZY是一种避免使用很多内存的有用方法，因为它只有在您访问给定列时才复制该列。使用此方式时要注意，从某个给定语句为每个fetch()抓取的“惰性对象”是每次迭代时使用的同一对象（以减少每次创建&#x2F;销毁它的开销）。这就暗示着您不能只是简单地存储该对象用于以后的比较，因为它仍然会引用该语句的当前行 － 您需要手动复制所需要的部分。</p>
+<p>最后一种模式为PDO_FETCH_BOUND，该模式会告知 PDO 您已经将所有列绑定到了 PHP 变量，并且除了要它在到达行集的末尾时通知您外不需要它执行别的任何操作。绑定输出列在概念上与绑定输入参数相似，只是绑定输出列可以用于所有数据库驱动程序。您可以将 PHP 变量绑定到命名列，PDO 将在每次调用execute()时对其进行更新。此技术可用来剃去结果集中每列、每行的一些虚拟机器操作码（这种代码速度比原生码要慢）。这种技术的缺点在于，可能会使您的代码难以跟踪（也称为 WTF 系数较高），您使用变量名称时需要倍加小心。下面的代码说明了绑定输出列的使用。请注意，您不必指定PDO_FETCH_BOUND即可使用$stmt-&gt;bindColumn()；PDO_FETCH_BOUND只是一个对于您了解只能使用绑定值的情况的一种优化。</p>
+<ol>
+<li>$stmt &#x3D; $dbh-&gt;prepare(“SELECT extension, name from CREDITS”);</li>
+<li>if ($stmt-&gt;execute()) {</li>
+<li>$stmt-&gt;bindColumn(‘EXTENSION’, $extension);</li>
+<li>$stmt-&gt;bindColumn(‘NAME’, $name);</li>
+<li>while ($stmt-&gt;fetch(PDO_FETCH_BOUND)) {</li>
+<li>echo “Extension:$extension, Author:$name\n”;</li>
+<li>}</li>
+<li>}</li>
+</ol>
+<p><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 可移植性&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<p>区分大小写的列</p>
+<p>PDO 旨在令使用可移植 SQL 的脚本运行良好、可移植。本文中提及的所有查询（调用存储过程除外）在使用任何 PDO 驱动程序时其运行性能应该相同 － 包括所有绑定输入变量和绑定输出列。</p>
+<p>但有一个转换问题 － 当您使用PDO_FETCH_ASSOC抓取数据时，不同的驱动程序会以不同的方式返回列名 － 某些会将列名转化为大写，某些转换为小写，某些则会使其呈查询中指定的样式。这对于 PHP 脚本来说是一个潜在的问题，因为数组键区分大小写。PDO 提供了一个兼容性属性来帮助规范脚本的结果。下面的小代码段是上面PDO_FETCH_BOUND示例的可移植版本，因为setAttribute()方法调用会指导 PDO 将抓取返回的列名全部转换为大写：</p>
+<ol>
+<li>$dbh &#x3D; new PDO(‘OCI:’, ‘scott’, ‘tiger’);</li>
+<li>$dbh-&gt;setAttribute(PDO_ATTR_CASE, PDO_CASE_UPPER);</li>
+<li>stmt &#x3D; $dbh-&gt;prepare(“SELECT extension, name from CREDITS”);</li>
+<li>if ($stmt-&gt;execute()) {</li>
+<li>$stmt-&gt;bindColumn(‘EXTENSION’, $extension);</li>
+<li>$stmt-&gt;bindColumn(‘NAME’, $name);</li>
+<li>while ($stmt-&gt;fetch(PDO_FETCH_BOUND)) {</li>
+<li>echo “Extension:$extension, Author:$name\n”;</li>
+<li>}</li>
+<li>}</li>
+</ol>
+<p>除了PDO_CASE_UPPER之外，还有PDO_CASE_LOWER（它会将列名转换为小写）和PDO_CASE_NATURAL（它是默认选项：使列保持数据库驱动程序返回的形式）。</p>
+<p><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 错误和错误处理&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<p>可移植脚本的另一个难题是处理从各种数据库处理程序返回的各种不同的错误消息；某些数据库对于程序化处理错误的支持能力很差，而其他一些数据库则具有非常丰富的错误代码。只要可行，PDO 将为您的脚本提供一个统一的错误代码，从而使您不必为应对可移植性的这个方面所累。当然，PDO 还会为驱动程序提供原生错误代码和错误消息，以防您需要用它来进行诊断，或者错误代码映射不完整。</p>
+<p>另一个困扰 PHP 数据库扩展的一致性问题是错误处理策略的一致性：某些扩展会返回的错误代码需要您手动抓取错误字符串，而其他一些扩展则只是发出 PHP 警告。PDO 允许您从下列三种不同的错误处理策略中选择一种：</p>
+<ul>
+<li>PDO_ERRMODE_SILENT<br>这是默认模式；它只是使用语句和数据库句柄对象的 errorCode() 和 errorInfo() 方法为您设置要检查的错误代码。</li>
+</ul>
+<ol>
+<li>if (!$dbh-&gt;exec($sql)) {</li>
+<li>echo $dbh-&gt;errorCode() .”<BR>“;</li>
+<li>$info &#x3D; $dbh-&gt;errorInfo();</li>
+<li>&#x2F;&#x2F; $info[0] &#x3D;&#x3D; $dbh-&gt;errorCode() 统一的错误代码</li>
+<li>&#x2F;&#x2F; $info[1] 是驱动程序特定的错误代码</li>
+<li>&#x2F;&#x2F; $info[2] 是驱动程序特定的错误字符串</li>
+<li>}</li>
+</ol>
+<ul>
+<li>PDO_ERRMODE_WARNING<br>除了设置错误代码之外，PDO 还会发出 PHP 警告，您可以使用常规的 PHP 错误处理程序捕获该警告，并集中应用您准备好用于应用程序的任何错误处理&#x2F;记录策略，或者只是使该错误显示在浏览器中（在内部测试过程中非常有用）。  </li>
+<li>PDO_ERRMODE_EXCEPTION<br>除了设置错误代码之外，PDO 还会抛出一个 PDOException，并将其属性设置为包含该错误代码和信息。然后，您可以在代码的较高级别捕获该异常，使用全局异常处理程序捕获该异常，或者不对其进行处理而终止脚本（此时将回滚任何未决的事务）。</li>
+</ul>
+<ol>
+<li>try {</li>
+<li>$dbh-&gt;exec($sql);</li>
+<li>} catch (PDOException $e) {</li>
+<li>&#x2F;&#x2F; 显示警告消息</li>
+<li>print $e-&gt;getMessage();</li>
+<li>$info &#x3D; $e-&gt;errorInfo;</li>
+<li>&#x2F;&#x2F; $info[0] &#x3D;&#x3D; $e-&gt;code; unified error code</li>
+<li>&#x2F;&#x2F; $info[1] 是驱动程序特定的错误代码</li>
+<li>&#x2F;&#x2F; $info[2] 是驱动程序特定的错误字符串</li>
+<li>}</li>
+</ol>
+<p>请注意，与警告或异常相比，静默模式针对运行时错误使用的资源最少，但是为了获得该速度，您牺牲了一些简单性，而变得有一点复杂。</p>
+<p>统一错误代码表当前包括下列常量：PDO_ERR_NONE、 PDO_ERR_CANT_MAP、PDO_ERR_SYNTAX、PDO_ERR_CONSTRAINT、PDO_ERR_NOT_FOUND、 PDO_ERR_ALREADY_EXISTS、PDO_ERR_NOT_IMPLEMENTED、PDO_ERR_MISMATCH、 PDO_ERR_TRUNCATED、PDO_ERR_DISCONNECTED。</p>
+<p>这些常量所代表的意思字面即可推知，但是 PDO_ERR_CANT_MAP 代码除外；这是一个 PDO 特定的代码，也就是说它无法将驱动程序特定的代码映射到统一的错误代码，因此您应该查询 errorInfo() 方法返回的驱动程序特定代码来获得更多信息。</p>
+<p><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 数据类型&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<p>PDO 在某种程度上类型不可知，因此它喜欢将数据表示为字符串，而不是将其转换为整数或双精度类型。此时您可能对此有些迷惑，但是原因非常简单：字符串类型是最精确的类型，在 PHP 中具有最广泛的应用范围；过早地将数据转换为整数或者双精度类型可能会导致截断或舍入错误。通过将数据以字符串抽出，PDO 为您提供了一些脚本控制，您可以使用普通的 PHP 类型转换工具（如数学运算过程中的转换和隐式）来控制如何进行转换以及何时进行转换。</p>
+<p>NULL</p>
+<p>如果结果集中的某列包含一个 NULL 值，PDO 则会将其映射为 PHP null 值。Oracle 在将数据返回 PDO 时会将空字符串转换为 NULL，但是 PHP 支持的任何其他数据库都不会这样处理，从而导致了可移植性问题。PDO 提供了一个驱动程序级属性PDO_ATTR_ORACLE_NULLS，该属性会为其他数据驱动程序模拟此行为：</p>
+<p>$dbh &#x3D; new PDO(’OCI:’, ’scott’, ‘tiger’);<br>$dbh-&gt;setAttribute(PDO_ATTR_ORACLE_NULLS, true);<br>&#x2F;&#x2F; 现在从此 $dbh 打开的任何语句中的<br>&#x2F;&#x2F; 空字符串都将被转换为 NULL</p>
+<p><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; POD 的现状和未来&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<p>PDO 现在仍相当不成熟，但是会快速成熟起来。在编写本文之时，我在本文中提到的任何内容都能够通过 PDO_OCI 驱动程序适用于 Oracle 8 或更高版本（在 Oracle 8.0 和 9.2 上测试过）。</p>
+<p>已经计划增加以下主要特性，在不久将可以使用：</p>
+<ul>
+<li>使用 PHP 流的 LOB 支持。使用绑定参数，您能够将任何流资源（如文件、套接字、HTTP 资源、压缩&#x2F;筛选的流）作为输入或输出参数传递到在 LOB 上运行的查询中。与之相似，类型为 LOB 的输出参数将表现为 PHP 流，因此您可以使用 fread()、fwrite()、fseek() 和其他流函数来访问这些参数。此时，在 PDO 中根本没有 LOB 支持。  </li>
+<li>持久性连接和缓存的预处理语句。持久性连接使您能够避免在每个页面命中时打开和关闭数据库服务器连接。缓存的预处理语句又前进了一步，它使您能够持久保持查询的预处理版本以及数据库句柄。  </li>
+<li>游标。目前，PDO 只提供前向只读游标，但是将来会提供可滚动游标（需要基础驱动程序支持）、REF-CURSOR、使用游标进行定位更新，以及可更新滚动游标。</li>
+</ul>
+<p>我们希望在 PHP 5.1 中默认启用 PHP 扩展（距此目标尚远），但是在此之前，我们希望能让 PDO 在 PHP 5.0 发布时稳定运行，但是我们日常工作中的压力稍稍拖延了这些工作。同时，通过 PECL 发布 PDO 使我们能够在收到问题报告时做出回应，并根据不同于 PHP 5.0 发布时间表的时间表发布修复版本，因此您在 PHP 5.1 发布前即可使用 PDO。</p>
+<p>我们需要您的反馈</p>
+<p>如果您试用了 PDO，并且发现了问题，请务必使用我们的错误跟踪软件将其报告给我们。如果您使用的是 Oracle 驱动程序，则请使用此页：</p>
+<p><a target="_blank" rel="noopener" href="http://pecl.php.net/bugs/report.php?package=PDO_OCI">http://pecl.php.net/bugs/report.php?package=PDO_OCI</a></p>
+<p>如果您使用的是其他驱动程序，则请用其名称替换该 URL 中 PDO_OCI。</p>
+<p>如果您使用 PDO 时遇到问题，或者针对某些特性存在疑问，或者具有特性请求，请联系<a href="mailto:&#112;&#x65;&#x63;&#x6c;&#45;&#x64;&#101;&#118;&#64;&#108;&#105;&#115;&#116;&#x73;&#46;&#112;&#104;&#112;&#x2e;&#110;&#x65;&#x74;">&#112;&#x65;&#x63;&#x6c;&#45;&#x64;&#101;&#118;&#64;&#108;&#105;&#115;&#116;&#x73;&#46;&#112;&#104;&#112;&#x2e;&#110;&#x65;&#x74;</a>。如果您愿意，当然还可以直接联系我 (<a href="mailto:&#119;&#x65;&#x7a;&#x40;&#x70;&#104;&#112;&#x2e;&#x6e;&#101;&#x74;">&#119;&#x65;&#x7a;&#x40;&#x70;&#104;&#112;&#x2e;&#x6e;&#101;&#x74;</a>)，但是请注意，我每天都会收到大量有关 PHP 的电子邮件；您可能会发现如果首先与前面的邮件列表联系会更快得到答复。</p>
+<p>Wez Furlong是 Brain Room Ltd. 的技术总监，他在该公司不但使用 PHP 用于 Web 开发，还将其用作 Linux 和 Windows 应用程序和系统的嵌入式脚本引擎。Wez 是 PHP 的核心开发人员，经常向 SQLite、COM&#x2F;.Net、ActivePHP、mailparse 和 Streams API 等投稿，他是 PECL 即 PHP 扩展社区库的“头儿”。</p>
+</div><div class="tags"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pdo/" rel="tag">pdo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/" rel="tag">php</a></li></ul></div><div class="post-nav"><a class="pre" href="/ios-for-wordpress/">iOS for WordPress</a><a class="next" href="/%E4%BF%AE%E6%94%B9-%E8%B0%B7%E6%AD%8C%E5%9C%B0%E7%90%83google-earthge-%E4%B8%AD%E6%96%87%E7%89%88%E7%95%8C%E9%9D%A2%E9%BB%98%E8%AE%A4%E5%AD%97%E4%BD%93/">修改 谷歌地球(google earth/GE) 中文版界面默认字体</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="输入关键词搜索"/><input type="hidden" name="sitesearch" value="http://example.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/%E5%AE%B6%E5%BA%AD%E7%BD%91%E7%BB%9C%E5%86%8D%E6%AC%A1%E4%BC%98%E5%8C%96%EF%BC%9A%E5%87%8F%E5%B0%91%E5%A4%8D%E6%9D%82%E6%80%A7%E5%87%8F%E5%B0%91%E8%AE%BE%E5%A4%87/">家庭网络再次优化：减少复杂性减少设备</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%8C%97%E4%BA%AC%E8%81%94%E9%80%9A%E6%9B%B4%E6%8D%A2%E5%85%89%E7%8C%AB%E7%83%BD%E7%81%ABhg5582a/">北京联通更换光猫烽火HG5582A</a></li><li class="post-list-item"><a class="post-list-link" href="/%E9%9D%9E%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%ACr%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/">非最新版本R安装软件包依赖问题</a></li><li class="post-list-item"><a class="post-list-link" href="/pycharm-r%E8%84%9A%E6%9C%AC%E7%94%BB%E5%9B%BE%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/">PyCharm R脚本 画图不显示问题</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%AE%B6%E5%BA%AD%E7%BD%91%E7%BB%9C%E5%8D%87%E7%BA%A7300m-1000m/">家庭网络升级300M-1000M</a></li><li class="post-list-item"><a class="post-list-link" href="/win11-23h2-%E5%8D%87%E7%BA%A724h2/">Win11 23H2 升级24H2：使用微软官方工具MBR2GPT转换磁盘MBR->GPT</a></li><li class="post-list-item"><a class="post-list-link" href="/%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%B8%A4%E4%B8%AA%E8%B4%A6%E5%8F%B7%E5%90%88%E5%B9%B6%EF%BC%88%E7%BD%91%E6%98%93%E9%82%AE%E7%AE%B1%E5%8F%8A%E5%BE%AE%E4%BF%A1%E8%B4%A6%E5%8F%B7%EF%BC%89/">有道云笔记两个账号合并（网易邮箱及微信账号）</a></li><li class="post-list-item"><a class="post-list-link" href="/kms%E5%B7%A5%E5%85%B7%E6%BF%80%E6%B4%BBoffice-ltsc-%E6%8A%A5%E9%94%99-error-code-0x80080005/">KMS工具激活Office LTSC 报错 Error Code: 0x80080005</a></li><li class="post-list-item"><a class="post-list-link" href="/vmware-esxi-%E7%94%B15-5%E5%8D%87%E7%BA%A7%E5%88%B07-0/">VMware ESXi 由5.5升级到7.0</a></li><li class="post-list-item"><a class="post-list-link" href="/%E5%B0%8F%E7%B1%B38-%E5%88%B7%E7%AC%AC%E4%B8%89%E6%96%B9%E5%9B%BA%E4%BB%B6%E5%A7%8B%E6%9C%AB/">小米8 刷第三方固件始末</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/lib/" style="font-size: 15px;">lib</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/php%E5%BC%80%E6%BA%90%E7%A8%8B%E5%BA%8F/" style="font-size: 15px;">php开源程序</a> <a href="/tags/301/" style="font-size: 15px;">301</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/adobe/" style="font-size: 15px;">adobe</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/spry/" style="font-size: 15px;">spry</a> <a href="/tags/access-connections/" style="font-size: 15px;">access connections</a> <a href="/tags/Thinkpad/" style="font-size: 15px;">Thinkpad</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/a2ensite/" style="font-size: 15px;">a2ensite</a> <a href="/tags/apache/" style="font-size: 15px;">apache</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 15px;">经验</a> <a href="/tags/htaccess/" style="font-size: 15px;">htaccess</a> <a href="/tags/bash/" style="font-size: 15px;">bash</a> <a href="/tags/windows/" style="font-size: 15px;">windows</a> <a href="/tags/windows10/" style="font-size: 15px;">windows10</a> <a href="/tags/bitcoin/" style="font-size: 15px;">bitcoin</a> <a href="/tags/p2p/" style="font-size: 15px;">p2p</a> <a href="/tags/hadoop/" style="font-size: 15px;">hadoop</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/" style="font-size: 15px;">分布式计算</a> <a href="/tags/bb/" style="font-size: 15px;">bb</a> <a href="/tags/centos/" style="font-size: 15px;">centos</a> <a href="/tags/iptables/" style="font-size: 15px;">iptables</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/buffering/" style="font-size: 15px;">buffering</a> <a href="/tags/output/" style="font-size: 15px;">output</a> <a href="/tags/output-buffering/" style="font-size: 15px;">output_buffering</a> <a href="/tags/php-ini/" style="font-size: 15px;">php.ini</a> <a href="/tags/cdrom/" style="font-size: 15px;">cdrom</a> <a href="/tags/CentOS/" style="font-size: 15px;">CentOS</a> <a href="/tags/yum/" style="font-size: 15px;">yum</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 15px;">运维</a> <a href="/tags/clear/" style="font-size: 15px;">clear</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/ie6/" style="font-size: 15px;">ie6</a> <a href="/tags/%E5%8D%A0%E7%94%A8%E9%AB%98%E5%BA%A6/" style="font-size: 15px;">占用高度</a> <a href="/tags/blackboard/" style="font-size: 15px;">blackboard</a> <a href="/tags/ckeditor/" style="font-size: 15px;">ckeditor</a> <a href="/tags/wordpress/" style="font-size: 15px;">wordpress</a> <a href="/tags/gd/" style="font-size: 15px;">gd</a> <a href="/tags/imagecreate/" style="font-size: 15px;">imagecreate</a> <a href="/tags/dfGallery/" style="font-size: 15px;">dfGallery</a> <a href="/tags/N-A/" style="font-size: 15px;">#N/A</a> <a href="/tags/excel/" style="font-size: 15px;">excel</a> <a href="/tags/Office%E6%8A%80%E5%B7%A7/" style="font-size: 15px;">Office技巧</a> <a href="/tags/dotproject/" style="font-size: 15px;">dotproject</a> <a href="/tags/project/" style="font-size: 15px;">project</a> <a href="/tags/office/" style="font-size: 15px;">office</a> <a href="/tags/compact/" style="font-size: 15px;">compact</a> <a href="/tags/extract/" style="font-size: 15px;">extract</a> <a href="/tags/fck%EF%BC%8Ceditor/" style="font-size: 15px;">fck，editor</a> <a href="/tags/ftp/" style="font-size: 15px;">ftp</a> <a href="/tags/buzz/" style="font-size: 15px;">buzz</a> <a href="/tags/google-reader/" style="font-size: 15px;">google reader</a> <a href="/tags/google/" style="font-size: 15px;">google</a> <a href="/tags/hosts/" style="font-size: 15px;">hosts</a> <a href="/tags/ipv6/" style="font-size: 15px;">ipv6</a> <a href="/tags/%E6%9C%80%E6%96%B0%E8%B5%84%E8%AE%AF/" style="font-size: 15px;">最新资讯</a> <a href="/tags/hook/" style="font-size: 15px;">hook</a> <a href="/tags/flash/" style="font-size: 15px;">flash</a> <a href="/tags/html4/" style="font-size: 15px;">html4</a> <a href="/tags/Web-Applacation/" style="font-size: 15px;">Web Applacation</a> <a href="/tags/insert-ino/" style="font-size: 15px;">insert ino</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/update/" style="font-size: 15px;">update</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/jeecms/" style="font-size: 15px;">jeecms</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/jQuery-lightBox/" style="font-size: 15px;">jQuery lightBox</a> <a href="/tags/js/" style="font-size: 15px;">js</a> <a href="/tags/jpgraph/" style="font-size: 15px;">jpgraph</a> <a href="/tags/0x80080005/" style="font-size: 15px;">0x80080005</a> <a href="/tags/kms/" style="font-size: 15px;">kms</a> <a href="/tags/SppExtComObj/" style="font-size: 15px;">SppExtComObj</a> <a href="/tags/pchart/" style="font-size: 15px;">pchart</a> <a href="/tags/limesurvey/" style="font-size: 15px;">limesurvey</a> <a href="/tags/fckeditor/" style="font-size: 15px;">fckeditor</a> <a href="/tags/%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93/" style="font-size: 15px;">中文字体</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 15px;">网络</a> <a href="/tags/mb-substr/" style="font-size: 15px;">mb_substr</a> <a href="/tags/spss/" style="font-size: 15px;">spss</a> <a href="/tags/bootcamp/" style="font-size: 15px;">bootcamp</a> <a href="/tags/macbook/" style="font-size: 15px;">macbook</a> <a href="/tags/macos/" style="font-size: 15px;">macos</a> <a href="/tags/%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81/" style="font-size: 15px;">重置密码</a> <a href="/tags/rss/" style="font-size: 15px;">rss</a> <a href="/tags/ssh/" style="font-size: 15px;">ssh</a> <a href="/tags/MariaDB/" style="font-size: 15px;">MariaDB</a> <a href="/tags/mysqlnd/" style="font-size: 15px;">mysqlnd</a> <a href="/tags/mysq/" style="font-size: 15px;">mysq</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" style="font-size: 15px;">命令行</a> <a href="/tags/%E5%A4%87%E4%BB%BD/" style="font-size: 15px;">备份</a> <a href="/tags/%E8%BF%98%E5%8E%9F/" style="font-size: 15px;">还原</a> <a href="/tags/expires/" style="font-size: 15px;">expires</a></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2025 <a href="/." rel="nofollow">ICT经验网.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a> Theme by<a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Maupassant.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>
